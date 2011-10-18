@@ -1,0 +1,56 @@
+
+table#result_list a {
+    font-size: 150%;
+}
+
+
+table#result_list tr {
+    height: 60px;
+}
+
+div.breadcrumbs {
+    display:none;
+}
+
+
+a.addlink {
+    font-size: 150%;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+
+#changelist .actions label {
+    font-size: 15px;
+    margin-left: 0.5em;
+}
+
+span.action-counter {
+    font-size: 15px;
+}
+
+
+ul.message_list li {
+    font-size: 15px;
+}
+
+
+div.actions {
+    display:none;
+}
+
+table#result_list th.action-checkbox-column {
+    display:none;
+}
+
+table#result_list  tbody tr td:first-child {
+    display:none;
+}
+
+
+ul.messagelist li {
+    font-size: 24px;
+    height:48px;
+}
