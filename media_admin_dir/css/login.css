@@ -9,7 +9,9 @@ body.login {
     width: 100%;
 }
 
-
+.login .login_page_info_div {
+    width: 300px;
+}
 /*
 .login #container {
     background: white;

@@ -14,3 +14,5 @@ pushd ve/lib/python2.7/site-packages/django/contrib/admin
 ln -s ../../../../../../../media_admin_dir/ media
 popd
 
+
+mv ve/lib/python2.7/site-packages/django/contrib/admin/

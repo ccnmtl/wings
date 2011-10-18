@@ -15,23 +15,42 @@
             <table>
             
                 <tr>
-                    <td>    <div>
-                                Log in as wanda / wanda
-                            </div>        
+                    <td>        <div>
+                                 Log in as wanda / wanda
+                                </div> 
                         <img src = "http://lawker.googlecode.com/svn/fridge/share/img/littleauk2.jpg" />
+                        
+                        <div class = "login_page_info_div">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Proin sed felis sed enim dapibus accumsan sed sit amet
+nisl. Pellentesque eget dolor non felis vehicula cursus sed
+eget nibh. Ut metus urna, elementum vitae luctus
+scelerisque, imperdiet at neque.
+In tristique semper fermentum. Morbi tempus
+pellentesque neque, at tempor mauris rutrum id. Donec et
+velit ante. Nullam nec velit sed dui hendrerit gravida id
+sit amet enim. Aliquam non purus metus, vel placerat
+massa
+
+                        </div>
                     </td>
                     <td>
                                {% if error_message %}
                                     <p class="errornote">{{ error_message }}</p>
                                 {% endif %}
+                                <p>
+                                Administer Intervention (log in required)
+                                </p>
                                 <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
                                     <label for="id_username">{% trans 'Username:' %}</label> <input type="text" name="username" id="id_username" /><br />
 
                                     <label for="id_password">{% trans 'Password:' %}</label> <input type="password" name="password" id="id_password" /><br />
                                     <input type="hidden" name="this_is_the_login_form" value="1" />
                                     <input type="submit" value="{% trans 'Log in' %}" /><br />
+
                                 </form>
 
+                                
                     </td>
                     </tr>
             </table>
