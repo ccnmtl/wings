@@ -1,9 +1,16 @@
 /* LOGIN FORM */
 
 body.login {
-    background: #eee;
+    background: #fff;
 }
 
+
+.login #content-main {
+    width: 100%;
+}
+
+
+/*
 .login #container {
     background: white;
     border: 1px solid #ccc;
@@ -51,4 +58,4 @@ body.login {
     clear: both;
     padding: 1em 0 0 9.4em;
 }
-
+*/
