@@ -1,4 +1,4 @@
-from main.models import Participant
+from models import Participant
 from django.contrib import admin
 
 class ParticipantAdmin (admin.ModelAdmin):

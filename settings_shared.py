@@ -62,31 +62,37 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django.contrib.markup',
-    'staticmedia',
-    'sorl.thumbnail',
     'django.contrib.admin',
-    'tagging',
-    'smartif',
-    'template_utils',
-    'typogrify',
-    'sentry.client',
-    'munin',
-    'main',
+
+    #these all throw a  'no module named' error:
+    #'staticmedia',
+    #'sorl.thumbnail',
+    #'tagging',
+    #'smartif',
+    #'template_utils',
+    #'typogrify',
+    #'munin',
+
+    #not needed for now:
+    #'sentry.client',
+
+    'wings_main',
 )
 
 import logging
-from sentry.client.handlers import SentryHandler
 logger = logging.getLogger()
-if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
-    logger.addHandler(SentryHandler())
-    logger = logging.getLogger('sentry.errors')
-    logger.propagate = False
-    logger.addHandler(logging.StreamHandler())
-
-SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
-# remember to set the SENTRY_KEY in a local_settings.py
-# as documented in the wiki
-SENTRY_SITE = 'wings'
+if 1 == 0:
+    from sentry.client.handlers import SentryHandler
+    if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
+        logger.addHandler(SentryHandler())
+        logger = logging.getLogger('sentry.errors')
+        logger.propagate = False
+        logger.addHandler(logging.StreamHandler())
+        
+        SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
+        # remember to set the SENTRY_KEY in a local_settings.py
+        # as documented in the wiki
+        SENTRY_SITE = 'wings'
 
 THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[wings] "

@@ -1,12 +1,7 @@
-from models import Video, Series
-from django import forms
+from models import Stand
+from django.forms import ModelForm
 
-class AddSeriesForm(forms.ModelForm):
+class StandForm(ModelForm):
     class Meta:
-        model = Series
-
-class UploadVideoForm(forms.ModelForm):
-    class Meta:
-        model = Video
-
+        model = Stand
 
