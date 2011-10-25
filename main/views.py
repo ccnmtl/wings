@@ -72,10 +72,17 @@ def has_responses(section):
 @stand()
 def page(request,path):
     hierarchy = request.get_host()
+    
+    print hierarchy
     section = get_section_from_path(path,hierarchy=hierarchy)
 
+    print section
     root = section.hierarchy.get_root()
+    print root
     module = get_module(section)
+    print module
+    
+    
     if not request.stand.can_view(request.user):
         return HttpResponse("you do not have permission")
     can_edit = request.stand.can_edit(request.user)

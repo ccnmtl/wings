@@ -65,13 +65,15 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     #these all throw a  'no module named' error:
-    #'staticmedia',
-    #'sorl.thumbnail',
-    #'tagging',
-    #'smartif',
-    #'template_utils',
-    #'typogrify',
-    #'munin',
+    'staticmedia',
+    'sorl.thumbnail',
+    'tagging',
+    'smartif',
+    'template_utils',
+    'typogrify',
+    'munin',
+    'pagetree',
+    'main', #this is actually forest main
 
     #not needed for now:
     #'sentry.client',
