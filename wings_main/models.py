@@ -5,8 +5,12 @@ from django import forms
 
 class Participant(models.Model):
     id_string = models.CharField(max_length=16)
-    state =  models.TextField(default="",blank=True,null=True)
+    #state =  models.TextField(default="",blank=True,null=True)
+    
+    #TODO: just use the user.
     active = models.BooleanField (default=True)
+
+    user =  models.ForeignKey(User,blank=True,null=True)
 
     def __unicode__(self):
         return "P%s" % self.id_string

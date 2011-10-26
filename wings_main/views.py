@@ -1,10 +1,14 @@
 # Create your views here.
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from wings_main.models import Participant
+
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+
 #from forms import UploadVideoForm,AddSeriesForm
 import uuid, os, re, datetime
 from django.conf import settings
@@ -38,8 +42,8 @@ def participant_list(request):
     return dict ()
 
 @login_required
-@rendered_with('wings_main/launch_participant.html')
-def launch_participant(request, id):
+#@rendered_with('wings_main/launch_participant.html')
+def launch_participant(request, id_string):
     """   
     create a new user with a pointer to the participant object.
     generate a UUID for its password
@@ -48,7 +52,29 @@ def launch_participant(request, id):
     
     http://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
     """
-    return dict ()
+    
+    participant = get_object_or_404(Participant,id_string=id_string)
+
+    if participant.user:
+        messages.info(request, "This participant already has a user.")
+        return HttpResponseRedirect("/admin/wings_main/participant/")
+
+    assert participant.user == None
+    
+    print id_string
+    #import pdb
+    #pdb.set_trace()
+    new_user = User()
+    new_user.password = 'asd'
+    new_user.username = id_string
+    participant.user = new_user
+    new_user.save()
+    participant.save()
+    messages.info(request, "Logged in!")
+    new_user.backend='django.contrib.auth.backends.ModelBackend' 
+    authenticate(username=new_user.username, password= new_user.password)
+    login(request, new_user)
+    return HttpResponseRedirect("/introduction/")
 
 
 @login_required

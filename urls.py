@@ -17,16 +17,20 @@ urlpatterns = patterns('',
     #user crud happens thru django admin for now.
 
     
-    (r'^participant/(?P<id>\d+)/launch/',    'wings_main.views.launch_participant'),                       
-    (r'^participant/(?P<id>\d+)/land/',     'wings_main.views.land_participant'),
+    (r'^participant/(?P<id_string>\d+)/launch/',   'wings_main.views.launch_participant'),                       
+    (r'^participant/(?P<id_string>\d+)/land/',     'wings_main.views.land_participant'),
     
     
-
+    # for now these are taken care of by django admin.
+    
     #(r'^participant/(?P<id>\d+)/add/',            'wings_main.views.add_participant'),                       
     #(r'^participant/(?P<id>\d+)/edit/',           'wings_main.views.edit_participant'),
     #(r'^participant/(?P<id>\d+)/delete/',         'wings_main.views.delete_participant'),
     #(r'^participant/(?P<id>\d+)/all_answers/',    'wings_main.views.all_participant_answers'),
     
+    (r'^pagetree/',include('pagetree.urls')),
+    (r'^_quiz/',include('quizblock.urls')),
+
     #(r'^all_participants/all_answers/','main.views.all_answers'),
 
     #(r'^selenium/setup/','main.views.selenium_setup'),                       
@@ -43,21 +47,16 @@ urlpatterns = patterns('',
     
 
 
-
+    # Note: this is nonstandard, but the standard is confusing.
+    # For this site: "site_media"  points at "site_media".
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media_root }),
     (r'^uploads/(?P<path>.*)$','django.views.static.serve',{'document_root' : settings.UPLOADS_ROOT}),
 
+        
+    
 
     #Put this after the static files, otherwise it will try to serve them.
     (r'^(?P<path>.*)$','main.views.page'),
 
 ) + staticmedia.serve()
-
-
-print 'site_media_root is'
-print site_media_root #/usr/local/share/sandbox/wings/../wings/media
-
-print 'admin media prefix is:'
-print settings.ADMIN_MEDIA_PREFIX
-
 
