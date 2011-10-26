@@ -6,10 +6,10 @@ from django.views.generic.simple import redirect_to
 import os.path
 admin.autodiscover()
 import staticmedia
-site_media_root = os.path.join(os.path.dirname(__file__),"media")
+
+site_media_root = os.path.join(os.path.dirname(__file__),"site_media")
+
 urlpatterns = patterns('',
-    # Example:
-    #(r'^wings/', include('wings.foo.urls')),
     
     #TODO use a proper reverse:
     ('^$', redirect_to, {'url': '/admin/wings_main/participant/'}),
@@ -40,11 +40,24 @@ urlpatterns = patterns('',
     #from forest:
     (r'^edit/(?P<path>.*)$','main.views.edit_page',{},'edit-page'),
     (r'^instructor/(?P<path>.*)$','main.views.instructor_page'),
+    
+
+
+
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media_root }),
+    (r'^uploads/(?P<path>.*)$','django.views.static.serve',{'document_root' : settings.UPLOADS_ROOT}),
+
+
+    #Put this after the static files, otherwise it will try to serve them.
     (r'^(?P<path>.*)$','main.views.page'),
 
-    
-    
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media_root}),
-    (r'^uploads/(?P<path>.*)$','django.views.static.serve',{'document_root' : settings.MEDIA_ROOT}),
 ) + staticmedia.serve()
+
+
+print 'site_media_root is'
+print site_media_root #/usr/local/share/sandbox/wings/../wings/media
+
+print 'admin media prefix is:'
+print settings.ADMIN_MEDIA_PREFIX
+
 

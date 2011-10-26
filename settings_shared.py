@@ -9,20 +9,30 @@ ADMINS = ( )
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'wings' # Or path to database file if using sqlite3.
-DATABASE_USER = ''             # Not used with sqlite3.
-DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+DATABASE_ENGINE = 'postgresql_psycopg2'
+DATABASE_NAME = 'wings'
+DATABASE_USER = ''
+DATABASE_PASSWORD = ''
+DATABASE_HOST = ''
+DATABASE_PORT = ''
 
 TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 USE_I18N = False
-MEDIA_ROOT = "/var/www/wings/uploads/"
-MEDIA_URL = '/uploads/'
-ADMIN_MEDIA_PREFIX = '/media/'
+
+UPLOADS_ROOT = "/var/www/wings/uploads/" #this is referenced in settings_shared. /uploads URLS point to this.
+
+
+#MEDIA_URL = '/uploads/' #probably not used.
+
+#ADMIN_MEDIA_PREFIX = '/media/'
+#this is set to 'media' by default.
+
+
+APPEND_SLASH = False
+
+
 SECRET_KEY = '^>C}WX)BP5Zs.+T0QW,)(wallaby!"6_t*sm[SIT'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
@@ -63,8 +73,6 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.markup',
     'django.contrib.admin',
-
-    #these all throw a  'no module named' error:
     'staticmedia',
     'sorl.thumbnail',
     'tagging',
@@ -73,11 +81,9 @@ INSTALLED_APPS = (
     'typogrify',
     'munin',
     'pagetree',
+    'pageblocks',
     'main', #this is actually forest main
-
-    #not needed for now:
-    #'sentry.client',
-
+    'sentry.client',
     'wings_main',
 )
 
@@ -101,10 +107,11 @@ EMAIL_SUBJECT_PREFIX = "[wings] "
 EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "wings@ccnmtl.columbia.edu"
 
+#disabling this until I know exactly what it does.
 # put any static media here to override app served static media
-STATICMEDIA_MOUNTS = (
-    ('/sitemedia', 'sitemedia'),
-)
+#STATICMEDIA_MOUNTS = (
+#    ('/sitemedia', 'sitemedia'),
+#)
 
 # WIND settings
 

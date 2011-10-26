@@ -73,14 +73,14 @@ def has_responses(section):
 def page(request,path):
     hierarchy = request.get_host()
     
-    print hierarchy
+    #print hierarchy
     section = get_section_from_path(path,hierarchy=hierarchy)
 
-    print section
+    #print section
     root = section.hierarchy.get_root()
-    print root
+    #print root
     module = get_module(section)
-    print module
+    #print module
     
     
     if not request.stand.can_view(request.user):
