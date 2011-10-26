@@ -56,20 +56,32 @@ def launch_participant(request, id_string):
     participant = get_object_or_404(Participant,id_string=id_string)
 
     if participant.user:
-        messages.info(request, "This participant already has a user.")
+        messages.info(request, "This participant has already started the intervention.")
         return HttpResponseRedirect("/admin/wings_main/participant/")
+
+    #else:
+    #    import pdb
+    #    pdb.set_trace()
 
     assert participant.user == None
     
-    print id_string
+    #print id_string
     #import pdb
     #pdb.set_trace()
+    
     new_user = User()
     new_user.password = 'asd'
     new_user.username = id_string
-    participant.user = new_user
     new_user.save()
+    
+    
+    participant.user = new_user
     participant.save()
+    
+    
+    assert participant.user != None
+    
+    
     messages.info(request, "Logged in!")
     new_user.backend='django.contrib.auth.backends.ModelBackend' 
     authenticate(username=new_user.username, password= new_user.password)
