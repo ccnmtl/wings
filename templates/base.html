@@ -1,17 +1,24 @@
+{% load getroot %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>wings: {% block title %}{% endblock %}</title>
-	<link rel="stylesheet" href="/site_media/css/main.css" media="screen" />
-	<link rel="stylesheet" href="/site_media/css/print.css" media="print" />
+	<title>{{stand.title}}: {% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="/site_media/css/main.css?site=forest" media="screen" />
+	<link rel="stylesheet" href="/site_media/css/print.css?site=forest" media="print" />
 	<!--[if IE 6]>
-	<link rel="stylesheet" href="/site_media/css/main_ie6_1col.css" media="screen" />
+	<link rel="stylesheet" href="/site_media/css/main_ie6_1col.css?site=forest" media="screen" />
 	<![endif]-->
 	<link rel="shortcut icon" href="/site_media/img/favicon.ico" type="image/x-icon" />
 	{% block css %}{% endblock %}
 	{% block js %}{% endblock %}
 	{% block feeds %}{% endblock %}
+	{% if stand %}
+	{% if stand.css %}
+	<!-- stand specific CSS -->
+	<link rel="stylesheet" type="text/css" href="/_stand/css/?hash={{stand.css_hash}}"
+	{% endif %}
+	{% endif %}
 </head>
 <body class="one_column {% block widthtype %}fixed{% endblock %}">
 {% comment %}
@@ -28,12 +35,10 @@
 {% block masthead %}
 	<!-- ###### Site banner ###### -->
 	<div id="header">
-		<!-- Project title/logo --><h1 id="logo_project"><a href="./" title="Project Title: Project Django"><span>Project Title: Project Django </span></a></h1>	
+		<!-- Project title/logo --><h1 id="logo_project"><a href="./" title="{{stand.title}}"><span>{{stand.title}}</span></a></h1>	
 		{% block standardnav %}
 		<ul id="standardnav">
-			<li><a href="#">About</a></li>
-			<li><a href="#">Help</a></li>
-			<li><a href="#">Contact</a></li>
+
 		</ul>
 		{% endblock %}
 		<!-- CCNMTL title/logo --><h4 id="logo_ccnmtl"><a href="http://ccnmtl.columbia.edu" target="_blank" title="Columbia Center for New Media Teaching and Learning"><span>Produced by the Columbia Center for New Media Teaching and Learning</span></a></h4>
@@ -54,16 +59,34 @@
    rightside :  all tabs aligning to the right, login to the left
 {% endcomment %}
 
-			{% block primarynavtabs %}
-			<ul>
-				<li><a href="#">Item 1</a></li>
-				<li><a href="#">Item 2</a></li>
-				<li><a href="#">Item 3</a></li>
-				<li><a href="#">Item 4</a></li>
-			</ul><!-- id="primarynavtabs" -->
-			{% endblock %}
-			
-			{% block usernav %}{% endblock %}
+{% block primarynavtabs %}
+
+<ul class="globalnav">
+  {% for section in modules %}
+  <li{% ifequal section.id module.id %} class="active"{% endifequal %}><a href="{{section.get_absolute_url}}">{{section.label}}</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block usernav %}
+<div id="usernav">{% if request.user.is_anonymous %}
+<a href="/accounts/login/?next=/">login</a>
+{% else %}
+logged in as {{request.user.first_name}} {{request.user.last_name}} [<a href="/logout/">logout</a>]
+{% if can_edit %}
+[<a href="/edit{{request.path}}">edit</a>]
+{% if instructor_link %}
+[<a href="/instructor{{request.path}}">responses</a>]
+{% endif %}
+{% endif %}
+
+{% if can_admin %}
+[<a href="/_stand/">admin</a>]
+{% endif %}
+
+{% endif %}</div>
+{% endblock %}
 
 		</div><!-- id="leftside/rightside" -->
 	</div><!-- id="primarynav" -->
@@ -74,7 +97,7 @@
 
 	<!-- ###### Page: Sidebars and Content ###### -->
 	<div id="pagebody">
-
+	  {% block sidenav %}{% endblock %}
 
 		<!-- ###### Page Content ###### -->
 		<div id="content">
@@ -83,16 +106,12 @@
 					{% block pagetitle %}{% endblock %}
 				
 					{% block content %}{% endblock %}
-
-				<!-- ###### Don't touch this ###### -->
-				<div class="visualclear"></div><!-- id="visualclear" -->				
+					{% block content-nav %}{% endblock %}
 
 				</div><!-- class="block" -->
 			</div><!-- id="squish" -->
 		</div><!-- id="content" -->
 
-
-		<!-- ###### Don't touch this ###### -->
 		<div class="visualclear"></div>
 	
 	</div><!-- id="pagebody" -->
