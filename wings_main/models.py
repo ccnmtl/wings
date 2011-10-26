@@ -4,18 +4,24 @@ from sorl.thumbnail.fields import ImageWithThumbnailsField
 from django import forms
 
 class Participant(models.Model):
-    id_string = models.CharField(max_length=16)
+
+    id_string = models.IntegerField(unique=True) 
     #state =  models.TextField(default="",blank=True,null=True)
     
-    #TODO: just use the user.
-    active = models.BooleanField (default=True)
-
     user =  models.ForeignKey(User,blank=True,null=True)
+
+    def label(self):
+        return self.__unicode__()
 
     def __unicode__(self):
         return "P%s" % self.id_string
 
-
+    def has_user(self):
+        return self.user != None
+        
+    def has_started_intervention(self):
+        return self.has_user()
+        #return True
 
 if 1 == 0:
             TAHOE_BASE = "http://tahoe.ccnmtl.columbia.edu/"

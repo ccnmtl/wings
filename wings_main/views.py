@@ -70,7 +70,7 @@ def launch_participant(request, id_string):
     #pdb.set_trace()
     
     new_user = User()
-    new_user.password = 'asd'
+    new_user.set_unusable_password()
     new_user.username = id_string
     new_user.save()
     
