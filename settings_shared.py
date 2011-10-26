@@ -83,9 +83,20 @@ INSTALLED_APPS = (
     'pagetree',
     'pageblocks',
     'main', #this is actually forest main
+    'quizblock',
     'sentry.client',
     'wings_main',
 )
+
+PAGEBLOCKS = ['pageblocks.TextBlock',
+              'pageblocks.HTMLBlock',
+              'pageblocks.PullQuoteBlock',
+              'pageblocks.ImageBlock',
+              'pageblocks.ImagePullQuoteBlock',
+              'quizblock.Quiz',
+              #'careermapblock.CareerMap',
+              #'fridgeblock.FridgeBlock',
+              ]
 
 import logging
 logger = logging.getLogger()
