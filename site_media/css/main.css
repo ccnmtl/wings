@@ -1,5 +1,6 @@
 /* ***** Principal Elements ***** */
 
+/* NOTES: THESE ARE DEFAULTS FOR ALL FOREST SITES. MORE STYLES SPECIFIC TO WINGS OVERRIDES THEM. SEE THE BOTTOM OF THIS FILE. */
 .printonly
 {
 	display: none;
@@ -990,3 +991,101 @@ p.warning {
   color: #900;
 }
 
+/* BEGIN WINGS OVERRIDES */
+
+body {
+background-color: #e3d8e0;
+width: 960px
+}
+
+#container {
+width: 960px;
+}
+
+#header {
+    
+width: 960px;
+background: url("http://ccnmtl.columbia.edu/draft/lizday/wings/wings_placeholder_banner.png") no-repeat scroll left top transparent;
+
+}
+
+#primarynav {
+width: 960px;
+background-color: #64436d;
+
+}
+
+#primarynav #usernav {
+
+background-color: #e9e0e6;
+color: #696969;
+font-size: 80%;
+margin-right: 15px;
+padding: 6px 18px;
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+a,a:link, a:visited,
+#primarynav #usernav a,
+.content_nav a,
+#content .content-nav a,
+#secondary_nav a,
+#secondary_nav a:visited {
+color: #391c4c;
+
+}
+
+#primarynav ul.globalnav {
+margin: 0;
+}
+
+#primarynav ul.globalnav li {
+
+}
+
+#primarynav ul.globalnav li a {
+background-color: #64436d;
+color: #e3d8e0;
+font-size: 80%;
+font-weight: normal;
+}
+
+#primarynav ul.globalnav li a:hover,
+#primarynav ul.globalnav li a.active:hover {
+color: #fff;
+}
+
+#primarynav ul.globalnav li.active a {
+background-color: #9e7c97;
+color: #fff;
+}
+
+#content .content-nav {
+
+border-color: #696969;
+}
+
+#secondary_navigation .block h3 {
+display:none;
+
+}
+
+#secondary_navigation .block ul ul {
+margin: 6px 0 8px 5px;
+
+}
+
+#secondary_navigation .block ul ul li {
+
+font-size: 95%;
+padding-left: 10px;
+}
+
+.casetitle {
+background-color: #e3d8e0;
+}
