@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from sorl.thumbnail.fields import ImageWithThumbnailsField
 from django import forms
+from pagetree.models import Section, Hierarchy, PageBlock
+
 
 class Participant(models.Model):
 
@@ -9,6 +11,7 @@ class Participant(models.Model):
     #state =  models.TextField(default="",blank=True,null=True)
     
     user =  models.ForeignKey(User,blank=True,null=True)
+    current_section = models.ForeignKey(Section,blank= True,null=True)
 
     def label(self):
         return self.__unicode__()
@@ -22,6 +25,10 @@ class Participant(models.Model):
     def has_started_intervention(self):
         return self.has_user()
         #return True
+        
+    #import pdb
+    #pdb.set_trace()
+
 
 if 1 == 0:
             TAHOE_BASE = "http://tahoe.ccnmtl.columbia.edu/"
