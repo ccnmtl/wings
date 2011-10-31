@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'quizblock',
     'sentry.client',
     'wings_main',
+    'south'
 )
 
 PAGEBLOCKS = ['pageblocks.TextBlock',
