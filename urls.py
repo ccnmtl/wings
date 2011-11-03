@@ -57,6 +57,9 @@ urlpatterns = patterns('',
 
     #Put this after the static files, otherwise it will try to serve them.
     (r'^(?P<path>.*)$','main.views.page'),
+    #changing this to our version of page:
+    #(r'^(?P<path>.*)$','wings_main.views.wings_page'),
+    
 
 ) + staticmedia.serve()
 

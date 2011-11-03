@@ -4,6 +4,8 @@ from sorl.thumbnail.fields import ImageWithThumbnailsField
 from django import forms
 from pagetree.models import Section, Hierarchy, PageBlock
 
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, HttpRequest
 
 class Participant(models.Model):
 
@@ -26,8 +28,43 @@ class Participant(models.Model):
         return self.has_user()
         #return True
         
-    #import pdb
-    #pdb.set_trace()
+    def current_url ( self):
+        return self.current_section.get_absolute_url()
+
+    def log_visit (self, new_section):
+        """" return true if it's ok for a participant to see this page.
+        set the current section, also,         """
+        
+        if self.current_section == None:
+            self.current_section = new_section.hierarchy.get_root().get_first_child()
+            self.save()
+        old_current_section = self.current_section
+        if old_current_section == new_section:
+            return True
+        if old_current_section.get_next() == new_section:
+            self.current_section = new_section
+            self.save()
+            return True
+        node_list = []
+        #note: given the UI, this code will seldom get executed in real life.
+        traverse_tree( new_section.hierarchy.get_root(), node_list)
+        if node_list.index(new_section) < node_list.index (old_current_section):
+            return True #just navigated back; no big deal
+        return False
+        
+
+def traverse_tree (node, the_list):
+    the_list.append(node)
+    kids = node.get_children()
+    for k in kids:
+        traverse_tree(k, the_list)
+    
+
+#monkey-patch method:
+def user_participant (self):
+    return Participant.objects.get(user=self)
+User.part = user_participant
+
 
 
 if 1 == 0:

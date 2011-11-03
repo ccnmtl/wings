@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from wings_main.models import Participant
+from main.views import page as pagetree_page
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -41,6 +42,8 @@ def participant_list(request):
     """   """
     return dict ()
 
+
+
 @login_required
 #@rendered_with('wings_main/launch_participant.html')
 def launch_participant(request, id_string):
@@ -52,36 +55,18 @@ def launch_participant(request, id_string):
     
     http://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
     """
-    
     participant = get_object_or_404(Participant,id_string=id_string)
-
     if participant.user:
         messages.info(request, "This participant has already started the intervention.")
         return HttpResponseRedirect("/admin/wings_main/participant/")
-
-    #else:
-    #    import pdb
-    #    pdb.set_trace()
-
     assert participant.user == None
-    
-    #print id_string
-    #import pdb
-    #pdb.set_trace()
-    
     new_user = User()
     new_user.set_unusable_password()
     new_user.username = id_string
     new_user.save()
-    
-    
     participant.user = new_user
     participant.save()
-    
-    
     assert participant.user != None
-    
-    
     messages.info(request, "Logged in!")
     new_user.backend='django.contrib.auth.backends.ModelBackend' 
     authenticate(username=new_user.username, password= new_user.password)
@@ -97,6 +82,9 @@ def land_participant(request, id):
     redirect to /
     """
     return dict ()
+
+
+
 
 
 if 1 == 0:
