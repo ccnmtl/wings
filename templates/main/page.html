@@ -18,6 +18,7 @@
 
 {% block sidenav %}
         <!-- ###### Secondary Navigation ###### -->
+    {% if not user.part%}
         <div id="secondary_navigation">
                 <div id="fadetop"></div>
                 <div class="block">
@@ -28,6 +29,7 @@
                 </div><!-- div id="block" -->
                 <div id="fadebottom"></div>
         </div><!-- div id="secondary_navigation" -->
+    {%endif %}
 {% endblock %}
 
 {% block content %}

@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     
     #TODO use a proper reverse:
     ('^$', redirect_to, {'url': '/admin/wings_main/participant/'}),
+    ('^logout/$', redirect_to, {'url': '/admin/logout/'}),
 
     #user crud happens thru django admin for now.
 

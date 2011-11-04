@@ -62,7 +62,11 @@ def traverse_tree (node, the_list):
 
 #monkey-patch method:
 def user_participant (self):
-    return Participant.objects.get(user=self)
+    try:
+        return Participant.objects.get(user=self)
+    except Participant.DoesNotExist:
+        return None
+        
 User.part = user_participant
 
 

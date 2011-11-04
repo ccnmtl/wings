@@ -341,12 +341,11 @@ a:visited
 	color: #000; 
 	background-color: #8c8;
 }
-
 #primarynav #usernav
 {
 	display: block;
-	float: right;
 	overflow: hidden;
+	font-size: 0.2em;
 	margin: 0 6px 0 0;
 	padding: 0;
 	border: 0;
@@ -737,12 +736,27 @@ a:visited
 
 .casetitle
 {
-	background-color: #e6f2d8;
+    background-color: #e3d8e0;
 	margin: 0;
 	padding: 5px 10px;
 	border: 0;
 	font-weight: bold;
+	display:none; /* sorry; not showing these... */
+
 }
+
+
+
+.casequestion p
+{
+    background-color: #e3d8e0;
+	margin: 0;
+	padding: 5px 10px;
+	border: 0;
+	font-weight: bold;
+
+}
+
 
 .casecontent
 {
@@ -1016,7 +1030,8 @@ background-color: #64436d;
 }
 
 #primarynav #usernav {
-
+float:right;
+max-width:200px;
 background-color: #e9e0e6;
 color: #696969;
 font-size: 80%;
@@ -1089,3 +1104,6 @@ padding-left: 10px;
 .casetitle {
 background-color: #e3d8e0;
 }
+
+
+

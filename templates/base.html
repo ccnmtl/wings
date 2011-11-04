@@ -53,46 +53,40 @@
 	<!-- ###### Primary navigation ###### -->
 	<div id="primarynav">
 		<div class="encase" id="{% block navalignment %}leftside{% endblock %}">
-{% comment %}
-###### FOR ALIGNMENT OF TABS on the primary navigation--
-   leftside : all tabs aligning to the left, login to the right
-   rightside :  all tabs aligning to the right, login to the left
-{% endcomment %}
 
-{% block primarynavtabs %}
 
-<ul class="globalnav">
-  {% for section in modules %}
-  <li{% ifequal section.id module.id %} class="active"{% endifequal %}><a href="{{section.get_absolute_url}}">{{section.label}}</a></li>
-  {% endfor %}
-</ul>
+    {% block primarynavtabs %}
+    {% if not user.part%}
 
+    <ul class="globalnav">
+      {% for section in modules %}
+      <li{% ifequal section.id module.id %} class="active"{% endifequal %}><a href="{{section.get_absolute_url}}">{{section.label}}</a></li>
+      {% endfor %}
+    </ul>
+
+	{%endif %} <!-- not user.part -->
+    {% endblock %}
+    {% block usernav %}
+    
+    
+    
+    <div id="usernav">{% if request.user.is_anonymous %}
+        <a href="/accounts/login/?next=/">login</a>
+    {% else %}
+        {{request.user}} [<a href="/logout/">logout</a>]
+        {% if can_edit %}
+            [<a href="/edit{{request.path}}">edit</a>]
+            {% if instructor_link %}
+                [<a href="/instructor{{request.path}}">responses</a>]
+            {% endif %}
+        {% endif %}
+    {% endif %}</div>
+    {% endblock %}
+
+		    </div><!-- id="leftside/rightside" -->
+	    </div><!-- id="primarynav" -->
 {% endblock %}
 
-{% block usernav %}
-<div id="usernav">{% if request.user.is_anonymous %}
-<a href="/accounts/login/?next=/">login</a>
-{% else %}
-logged in as {{request.user.first_name}} {{request.user.last_name}} [<a href="/logout/">logout</a>]
-{% if can_edit %}
-[<a href="/edit{{request.path}}">edit</a>]
-{% if instructor_link %}
-[<a href="/instructor{{request.path}}">responses</a>]
-{% endif %}
-{% endif %}
-
-{% if can_admin %}
-[<a href="/_stand/">admin</a>]
-{% endif %}
-
-{% endif %}</div>
-{% endblock %}
-
-		</div><!-- id="leftside/rightside" -->
-	</div><!-- id="primarynav" -->
-{% endblock %}
-
-{% comment %} not using this now <div id="breadcrumbs">{% block breadcrumbs %}{% endblock %}</div> {% endcomment %}
 
 
 	<!-- ###### Page: Sidebars and Content ###### -->

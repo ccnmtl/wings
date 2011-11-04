@@ -106,19 +106,14 @@ def page(request,path):
         
        
         if 1 == 1: #eddie adding this clause.
-                user_participant = None
-                try:
-                    user_participant = request.user.part()
-                except AttributeError:
-                    pass # don't apply this
-                
-                if user_participant:
-                    #this is a participant. log their visit and double-check they can see the page:
-                    participant_can_navigate_to_page = user_participant.log_visit (section)
-                    if not participant_can_navigate_to_page:
-                        #clients can only advance one page at a time.
-                        return HttpResponseRedirect(user_participant.current_url())
-        
+            user_participant = request.user.part()
+            if user_participant:
+                #this is a participant. log their visit and double-check they can see the page:
+                participant_can_navigate_to_page = user_participant.log_visit (section)
+                if not participant_can_navigate_to_page:
+                    #clients can only advance one page at a time.
+                    return HttpResponseRedirect(user_participant.current_url())
+    
         return dict(section=section,
                     module=module,
                     needs_submit=needs_submit(section),
