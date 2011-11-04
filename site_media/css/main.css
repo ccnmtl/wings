@@ -745,6 +745,23 @@ a:visited
 
 }
 
+input[type="text"] {
+    width: 642px;
+	font-size: 2em;
+    height: 40px;
+}
+
+textarea {
+    width: 642px;
+	font-size: 2em;
+    height: 80px;
+}
+
+input[type="submit"] {
+	font-size: 1.2em;
+    height: 35px;
+}
+
 
 
 .casequestion p

@@ -32,7 +32,21 @@
     {%endif %}
 {% endblock %}
 
+
+
 {% block content %}
+<div class="content-nav">
+
+{% if section.get_previous %}
+<a href="{{section.get_previous.get_absolute_url}}" id="previous">« {{section.get_previous.label}}</a>
+{% endif %}
+
+{% if section.get_next %}
+{% with section.get_next as next_section %}
+<a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
+{% endwith %}
+{% endif %}
+</div><!-- div id="content-nav" -->
 
 {% if needs_submit %}
 {% if is_submitted %}
