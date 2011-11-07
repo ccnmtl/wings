@@ -68,6 +68,7 @@ def has_responses(section):
     quizzes = [p.block() for p in section.pageblock_set.all() if hasattr(p.block(),'needs_submit') and p.block().needs_submit()]
     return quizzes != []
 
+@login_required
 @rendered_with('main/page.html')
 @stand()
 def page(request,path):
@@ -106,7 +107,10 @@ def page(request,path):
         
        
         if 1 == 1: #eddie adding this clause.
-            user_participant = request.user.part()
+            try:
+                user_participant = request.user.part()
+            except AttributeError:
+                user_participant = None
             if user_participant:
                 #this is a participant. log their visit and double-check they can see the page:
                 participant_can_navigate_to_page = user_participant.log_visit (section)

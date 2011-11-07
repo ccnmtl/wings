@@ -744,6 +744,9 @@ a:visited
 	display:none; /* sorry; not showing these... */
 
 }
+/* don't want to show these on the edit pages*/
+
+
 
 input[type="text"] {
     width: 642px;
@@ -760,6 +763,26 @@ textarea {
 input[type="submit"] {
 	font-size: 1.2em;
     height: 35px;
+}
+
+/* but in the edit pages, closer to default values: */
+
+div#tabber input[type="text"] {
+    width: 300px;
+	font-size: 1em;
+    height: 20px;
+
+}
+div#tabber textarea {
+    width:  300px;
+	font-size: 1em;
+    height: 80px;
+
+}
+div#tabber [type="submit"] {
+	font-size: 1em;
+    height: 30px;
+
 }
 
 

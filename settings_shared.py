@@ -84,9 +84,16 @@ INSTALLED_APPS = (
     'pageblocks',
     'main', #this is actually forest main
     'quizblock',
+    #these are new for this project:
+    'audioblock',
+    'helpblock',
+    'ssnmtreeblock',
+    'servicesblock',
+    'riskblock',
+    
     'sentry.client',
     'wings_main',
-    'south'
+    'south',
 )
 
 PAGEBLOCKS = ['pageblocks.TextBlock',
@@ -95,8 +102,11 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'pageblocks.ImageBlock',
               'pageblocks.ImagePullQuoteBlock',
               'quizblock.Quiz',
-              #'careermapblock.CareerMap',
-              #'fridgeblock.FridgeBlock',
+              'audioblock.AudioBlock',
+              'helpblock.HelpBlock',
+              'ssnmtreeblock.SsnmTreeBlock',
+              'servicesblock.ServicesBlock',
+              'riskblock.RiskBlock',
               ]
 
 import logging
