@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'ssnmtreeblock',
     'servicesblock',
     'riskblock',
+    'exitmaterialsblock',
     
     'sentry.client',
     'wings_main',
@@ -107,6 +108,7 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'ssnmtreeblock.SsnmTreeBlock',
               'servicesblock.ServicesBlock',
               'riskblock.RiskBlock',
+              'exitmaterialsblock.ExitMaterialsBlock',
               ]
 
 import logging
