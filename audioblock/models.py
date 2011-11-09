@@ -7,13 +7,17 @@ from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
 import os, json
 
 class AudioBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
     description = models.TextField(blank=True)
-    template_file = "audioblock/audioblock.html"
-    js_template_file = "audioblock/audioblock_js.html"
+    audio_file = models.FileField(upload_to='audio_block', blank=True, null=True)
+
+    template_file     = "audioblock/audioblock.html"
+    js_template_file  = "audioblock/audioblock_js.html"
     css_template_file = "audioblock/audioblock_css.html"
 
     display_name = "Audio Block"
@@ -23,22 +27,25 @@ class AudioBlock(models.Model):
 
     def __unicode__(self):
         return unicode(self.pageblock())
-
-    def edit_form(self):
+    
+    def edit_form(self ):
         class EditForm(forms.Form):
-            description = forms.CharField(initial=self.description,
-                                          widget=forms.widgets.Textarea())
-            if 1 == 0:                              
-                alt_text = "<a href=\"" + reverse("edit-careermap-basemaps",args=[self.id]) + "\">base maps</a><br />" + \
-                    "<a href=\"" + reverse("edit-careermap-layers",args=[self.id]) + "\">layers</a><br />" + \
-                    "<a href=\"" + reverse("edit-careermap-counties",args=[self.id]) + "\">counties</a><br />" + \
-                    "<a href=\"" + reverse("edit-careermap-county_stat_types",args=[self.id]) + "\">county stat types</a><br />" + \
-                    "<a href=\"" + reverse("edit-careermap-questions",args=[self.id]) + "\">questions</a>" 
+            description = forms.CharField(initial=self.description, widget=forms.widgets.Textarea(), label="Transcript")
+            audio_file = forms.FileField(label="Replace audio file:")
+            if False:
+                current_path = settings.UPLOADS_ROOT + "/"  + self.audio_file
+                alt_text = "<strong>Current audio file:</strong>  <a href = \"%s\">%s</a>" % (current_path, current_path)
+            current_path =    self.audio_file
+            alt_text = "<strong>Current audio file:</strong>  %s" % ( current_path)
         return EditForm()
 
     def edit(self,vals,files=None):
+        print files
         self.description = vals.get('description','')
+        if files.has_key('audio_file'):
+            self.save_audio_file (files['audio_file'])
         self.save()
+        
 
     def dir(self):
         return dir(self)
@@ -47,6 +54,7 @@ class AudioBlock(models.Model):
     def add_form(self):
         class AddForm(forms.Form):
             description = forms.CharField(widget=forms.widgets.Textarea())
+            audio_file = forms.FileField(label="Replace audio file:")
         return AddForm()
 
     @classmethod
@@ -62,6 +70,31 @@ class AudioBlock(models.Model):
     def unlocked(self,user):
         return False
 
+
+    def save_audio_file(self,f):
+        print "saving "
+        print f
+        ext = f.name.split(".")[-1].lower()
+        basename = slugify(f.name.split(".")[-2].lower())[:20]
+        if ext not in ['mp3']:
+            # unsupported image format
+            print 'only mp3'
+            return None
+        now = datetime.now()
+        path = "audio_file/%04d/%02d/%02d/" % (now.year,now.month,now.day)
+
+
+        try:
+            os.makedirs(settings.UPLOADS_ROOT + "/" + path)
+        except:
+            pass
+        full_filename = path + "%s.%s" % (basename,ext)
+        fd = open(settings.UPLOADS_ROOT + "/" + full_filename,'wb')
+        for chunk in f.chunks():
+            fd.write(chunk)
+        fd.close()
+        self.audio_file = full_filename
+        self.save()
 
     if 1 == 0:
 

@@ -139,6 +139,7 @@ SERVER_EMAIL = "wings@ccnmtl.columbia.edu"
 
 # WIND settings
 
+#Todo: kill all these. We don't want wind.
 AUTHENTICATION_BACKENDS = ('djangowind.auth.WindAuthBackend','django.contrib.auth.backends.ModelBackend',)
 WIND_BASE = "https://wind.columbia.edu/"
 WIND_SERVICE = "cnmtl_full_np"
