@@ -40,7 +40,6 @@ class AudioBlock(models.Model):
         return EditForm()
 
     def edit(self,vals,files=None):
-        print files
         self.description = vals.get('description','')
         if files.has_key('audio_file'):
             self.save_audio_file (files['audio_file'])
@@ -72,13 +71,10 @@ class AudioBlock(models.Model):
 
 
     def save_audio_file(self,f):
-        print "saving "
-        print f
         ext = f.name.split(".")[-1].lower()
         basename = slugify(f.name.split(".")[-2].lower())[:20]
         if ext not in ['mp3']:
             # unsupported image format
-            print 'only mp3'
             return None
         now = datetime.now()
         path = "audio_file/%04d/%02d/%02d/" % (now.year,now.month,now.day)
