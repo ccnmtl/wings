@@ -1,0 +1,1 @@
+sudo -u pusher /home/pusher/update_wings_liz_db.sh
