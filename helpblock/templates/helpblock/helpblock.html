@@ -1,7 +1,49 @@
-{% load markup %}
 {% load smartif %}
 
 
-<div id="{{block.id}}-audio">
-Description: {{block.description|markdown}}
-</div>
+    <div id = "show_help_link_div_{{block.id}}" class="show_help_link_div">
+        <a href="javascript:show_help_block({{block.id}});">*HELP*</a>
+
+    </div>
+
+<div id = "help_block_box_{{block.id}}" class="help_block_box">
+
+            <div id = "hide_help_link_div_{{block.id}}" class="hide_help_link_div">
+                <a href="javascript:hide_help_block({{block.id}});">x</a>
+            </div>
+            {% if block.audio_file %}
+                <p id="help_block_{{block.id}}">{{block.audio_file}}</p>
+                <script type="text/javascript">
+                    AudioPlayer.embed("help_block_{{block.id}}", {
+                        soundFile: "/uploads/{{block.audio_file}}",
+                        noinfo: 'yes',
+                        animation: 'no',
+                        initialvolume : '100',
+                        transparentpagebg : 'yes',
+                        bg : '391C4C',
+                        lefticon: 'E3D8E0',
+                        leftbg: '391C4C',
+                        rightbg: '391C4C',
+                        border: '391C4C',
+                        rightbghover: '000000',
+                        voltrack :	'391C4C',
+                        volslider :	'E3D8E0',
+                        lefticon: '000000',
+                        righticon: 'E3D8E0',
+                        tracker : '391C4C',
+                    });
+                </script>
+            {%else %}
+                <i>No help audio uploaded yet.</i>
+            {%endif %}
+
+            {% if  block.description %}
+            <p>
+                Help block transcript: <em>{{block.description}}</em>
+            </p>
+            {%else %}
+            <p>
+               <em>(No help block transcript)</em>
+            </p>
+            {% endif %}
+</div> <!-- end help_block_box_{{block.id}} -->
