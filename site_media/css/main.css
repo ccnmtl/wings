@@ -773,7 +773,7 @@ div#tabber input[type="text"] {
     height: 20px;
 
 }
-div#tabber textarea {
+div#tabber textarea, textarea#id_text,  textarea#id_intro_text, textarea#id_explanation {
     width:  300px;
 	font-size: 1em;
     height: 80px;
