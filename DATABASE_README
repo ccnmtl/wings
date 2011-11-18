@@ -1,0 +1,24 @@
+THIS INFO IS CURRENT AS OF NOV 2011.
+
+* The production database for Wings is on host macana.cul.columbia.edu
+* The production webserver for Wings is 
+dolph.ccnmtl.columbia.edu.
+
+The production db is only accessible from  dolph.ccnmtl.columbia.edu,
+
+as follows:
+
+psql -h macana.cul.columbia.edu -U ccnmtl wings
+     protected by the silver pair.
+
+To dump the prod database, from dolph.ccnmtl.columbia.edu:
+
+pg_dump  -h macana.cul.columbia.edu  --no-owner --no-privileges  -U ccnmtl wings
+ > ~/wings_test.sql
+
+There are also two scripts for transferring the DB from production to dev environments:
+
+update_wings_liz_db.sh
+update_wings_eddie_db.sh
+
+these are both stored in the x (executables) directory.

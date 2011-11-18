@@ -1,4 +1,5 @@
-scp kang.ccnmtl.columbia.edu:/home/pusher/wings.sql .
+ssh pusher@dolph.ccnmtl.columbia.edu "/home/pusher/dump_wings.sh"
+scp dolph.ccnmtl.columbia.edu:/tmp/wings.sql .
 dropdb wings
 createdb -O eddie  wings
 psql eddie -d wings -f ./wings.sql
