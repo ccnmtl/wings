@@ -33,7 +33,7 @@ class AudioBlock(models.Model):
             description = forms.CharField(initial=self.description, widget=forms.widgets.Textarea(), label="Audio Block Transcript")
             audio_file = forms.FileField(label="Replace audio file:")
             if False:
-                current_path = settings.UPLOADS_ROOT + "/"  + self.audio_file
+                current_path = settings.MEDIA_ROOT + "/"  + self.audio_file
                 alt_text = "<strong>Current audio file:</strong>  <a href = \"%s\">%s</a>" % (current_path, current_path)
             current_path =    self.audio_file
             alt_text = "<strong>Current audio file:</strong>  %s" % ( current_path)
@@ -80,11 +80,11 @@ class AudioBlock(models.Model):
 
 
         try:
-            os.makedirs(settings.UPLOADS_ROOT + "/" + path)
+            os.makedirs(settings.MEDIA_ROOT + "/" + path)
         except:
             pass
         full_filename = path + "%s.%s" % (basename,ext)
-        fd = open(settings.UPLOADS_ROOT + "/" + full_filename,'wb')
+        fd = open(settings.MEDIA_ROOT + "/" + full_filename,'wb')
         for chunk in f.chunks():
             fd.write(chunk)
         fd.close()

@@ -21,10 +21,13 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 USE_I18N = False
 
-UPLOADS_ROOT = "/var/www/wings/uploads/" #this is referenced in settings_shared. /uploads URLS point to this.
 
+#WHERE DO UPLOADED STATIC FILES GO ON THE FILESYSTEM?
+UPLOADS_ROOT = "/var/www/wings/uploads/" # /uploads URLS point to this.
+MEDIA_ROOT = UPLOADS_ROOT
 
-#MEDIA_URL = '/uploads/' #probably not used.
+#HOW DO I REFER TO UPLOADED STATIC FILES FROM A TEMPLATE?
+MEDIA_URL = '/uploads/'
 
 #ADMIN_MEDIA_PREFIX = '/media/'
 #this is set to 'media' by default.
