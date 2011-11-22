@@ -389,7 +389,6 @@ a:visited
 #pagebody
 {
 	min-width: 912px;
-	min-height: 600px;
 	position: relative;
 	width: 912px;
 	padding: 0;
@@ -514,8 +513,7 @@ a:visited
 {
 	display: block;
 	float: left;
-	width: 670px;
-	margin: 20px 15px 0 20px;
+	margin: 3em 2em 0 5em;
 	padding: 0;
 	border: 0;
 
@@ -565,29 +563,69 @@ a:visited
 
 #content .content-nav
 {
-	height: 1.5em;
-	margin: 2em 0 0 0;
+	height: 53px;
+	margin: 4em 0 0 0;
 	padding: 0.5em 0;
 	border: 0;
-	border-top: 1px dotted #6c0;
-	border-bottom: 1px dotted #6c0;
+
+}
+
+#content .content-nav a
+{
+	display: block;
+	width: auto;
+	line-height: 1.5em;
+	background: #bea5b4; /* Old browsers */
+background: -moz-linear-gradient(top,  #bea5b4 0%, #9b7a95 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bea5b4), color-stop(100%,#9b7a95)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* IE10+ */
+background: linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bea5b4', endColorstr='#9b7a95',GradientType=0 ); /* IE6-9 */
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+        text-align: center;
+        height: 53px;
+
 }
 
 #content .content-nav a#previous
 {
-	display: block;
+
 	float: left;
-	width: auto;
-	line-height: 1.5em;
+    color: transparent;
+        background-image: url('../img/previous_button_bg.png');
+    background-position: -20px -15px;
+    width: 135px;
+
+}
+
+#content .content-nav a#help
+{
+
+	float: right;
+    color: transparent;
+        background-image: url('../img/help_button_bg.png');
+    background-position: -20px -15px;
+    width: 135px;
+    margin: 0 10px;
+
+
 }
 
 #content .content-nav a#next
 {
-	display: block;
-	float: right;
-	width: auto;
-	line-height: 1.5em;
-	text-align: right;
+
+    float: right;
+    color: transparent;
+        background-image: url('../img/next_button_bg.png');
+    background-position: -55px -15px;
+    width: 150px;
+
+
+
 }
 
 /* Login page */
@@ -1118,11 +1156,6 @@ color: #fff;
 #primarynav ul.globalnav li.active a {
 background-color: #9e7c97;
 color: #fff;
-}
-
-#content .content-nav {
-
-border-color: #696969;
 }
 
 #secondary_navigation .block h3 {
