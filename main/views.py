@@ -14,6 +14,7 @@ from pagetree.models import Section
 from pagetree_export.exportimport import export_zip, import_zip
 from pageblocks.exportimport import *
 from quizblock.exportimport import *
+from django.contrib import messages
 import os
 
 class rendered_with(object):
@@ -116,6 +117,8 @@ def page(request,path):
                 participant_can_navigate_to_page = user_participant.log_visit (section)
                 if not participant_can_navigate_to_page:
                     #clients can only advance one page at a time.
+                    
+                    messages.warning(request, 'Please answer all the questions before moving on.')
                     return HttpResponseRedirect(user_participant.current_url())
     
         return dict(section=section,

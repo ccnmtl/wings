@@ -73,7 +73,10 @@
     <div id="usernav">{% if request.user.is_anonymous %}
         <a href="/accounts/login/?next=/">login</a>
     {% else %}
-        {{request.user}} [<a href="/logout/">logout</a>]
+        {% if user.part%}P{%endif%}{{request.user}}
+        {% if not user.part%}
+             [<a href="/logout/">logout</a>]
+         {%endif%}
         {% if can_edit %}
             [<a href="/edit{{request.path}}">edit</a>]
             {% if instructor_link %}
