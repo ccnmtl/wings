@@ -64,18 +64,6 @@
 
 {% block content %}
 
-<div class="content-nav">
-
-{% if section.get_previous %}
-<a href="{{section.get_previous.get_absolute_url}}" id="previous">« {{section.get_previous.label}}</a>
-{% endif %}
-
-{% if section.get_next %}
-{% with section.get_next as next_section %}
-<a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
-{% endwith %}
-{% endif %}
-</div><!-- div id="content-nav" -->
 
 
 {% if messages %}
@@ -113,11 +101,20 @@
 <a href="{{section.get_previous.get_absolute_url}}" id="previous">« {{section.get_previous.label}}</a>
 {% endif %}
 
+
+
 {% if section.get_next %}
     {% with section.get_next as next_section %}
         <a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
     {% endwith %}
 {% endif %}
+
+
+{% if section.get_help %}
+<a href="{{section.get_help.get_absolute_url}}" id="help">« {{section.get_help.label}}</a>
+{% endif %}
+
+<a href="#" id="help">Help!</a>
 
 
 </div><!-- div id="content-nav" -->
