@@ -5,6 +5,34 @@
 {% for block in section.pageblock_set.all %}
 {% renderjs block %}
 {% endfor %}
+
+{% if needs_submit %}
+    <!-- TODO: use local jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" ></script> 
+
+    <script language = "javascript">
+    /*
+            connect (b, 'onblur', partial (box_blur, b));
+            connect (b, 'onchange', partial (box_blur, b));
+    */
+    
+    
+    
+        function submit_when_changed(thing) {
+            //alert (thing);
+            jQuery('#submit_to_self_form').submit()
+        }
+    
+        function connect_forms () {
+            jQuery('input[type="text"]') .blur(submit_when_changed);
+            jQuery('input[type="text"]') .change(submit_when_changed);
+            jQuery('input[type="radio"]').blur(submit_when_changed);
+            jQuery('input[type="radio"]').change(submit_when_changed);
+        }
+        jQuery (connect_forms)
+    </script>
+{%endif%}
+
 {% endblock %}
 
 {% block css %}
@@ -36,42 +64,6 @@
 
 {% block content %}
 
-{% if needs_submit %}
-{% if is_submitted %}
-{% else %}
-<form action="." method="post">
-{% endif %}
-{% endif %}
-
-
-{% for block in section.pageblock_set.all %}
-{% if block.label %}<h3>{{block.label}}</h3>{% endif %}
-{% render block %}
-{% endfor %}
-
-
-{% if needs_submit %}
-{% if request.user.is_anonymous %}
-{% else %}
-
-{% if is_submitted %}
-<form action="." method="post">
-<input type="hidden" name="action" value="reset" />
-<input type="submit" value="clear your answers and try again" />
-</form>
-{% else %}
-<input type="submit" value="Submit" />
-
-</form>
-{% endif %}
-{% endif %}
-{% endif %}
-
-{% endblock %}
-
-
-{% block content-nav %}
-
 <div class="content-nav">
 
 {% if section.get_previous %}
@@ -83,5 +75,50 @@
 <a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
 {% endwith %}
 {% endif %}
+</div><!-- div id="content-nav" -->
+
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+{% if needs_submit %}
+<form id="submit_to_self_form" action="." method="post">
+{% endif %}
+
+
+{% for block in section.pageblock_set.all %}
+{% if block.label %}<h3>{{block.label}}</h3>{% endif %}
+{% render block %}
+{% endfor %}
+
+
+{% if needs_submit %}
+</form>
+{% endif %}
+
+{% endblock %}
+
+
+{% block content-nav %}
+
+<div class="content-nav">
+    <!-- Django messages go here-- e.g. "Please finish all quiz answers before continuing."-->
+{% if section.get_previous %}
+<a href="{{section.get_previous.get_absolute_url}}" id="previous">« {{section.get_previous.label}}</a>
+{% endif %}
+
+{% if section.get_next %}
+    {% with section.get_next as next_section %}
+        <a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
+    {% endwith %}
+{% endif %}
+
+
 </div><!-- div id="content-nav" -->
 {% endblock %}

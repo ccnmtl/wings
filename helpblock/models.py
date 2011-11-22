@@ -64,7 +64,7 @@ class HelpBlock(models.Model):
         return True
 
     def unlocked(self,user):
-        return False
+        return True
         
     def save_audio_file(self,f):
         ext = f.name.split(".")[-1].lower()

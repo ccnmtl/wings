@@ -1,0 +1,13 @@
+{% load markup %}
+<ol type="A">
+  {% for answer in question.answer_set.all %}
+    {% if block.rhetorical %}
+      <li><input name="question{{question.id}}" value="{{answer.label}}" type="radio" />{{answer.label}}</li>
+    {% else %}
+      <li>     
+    <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}"
+	  value="{{answer.value}}" type="radio" {% if response %}{% ifequal response.value answer.value %}checked="checked"{% endifequal %}{% endif %} />{{answer.label}}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ol>

@@ -113,18 +113,16 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
 
 import logging
 logger = logging.getLogger()
-if 1 == 0:
-    from sentry.client.handlers import SentryHandler
-    if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
-        logger.addHandler(SentryHandler())
-        logger = logging.getLogger('sentry.errors')
-        logger.propagate = False
-        logger.addHandler(logging.StreamHandler())
-        
-        SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
-        # remember to set the SENTRY_KEY in a local_settings.py
-        # as documented in the wiki
-        SENTRY_SITE = 'wings'
+from sentry.client.handlers import SentryHandler
+if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
+    logger.addHandler(SentryHandler())
+    logger = logging.getLogger('sentry.errors')
+    logger.propagate = False
+    logger.addHandler(logging.StreamHandler())
+    
+    SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
+    SENTRY_KEY = 'this_is_just_for_dev6411E157C4ED1660' #overwritten in settings_production.py.
+    SENTRY_SITE = 'wings'
 
 THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[wings] "

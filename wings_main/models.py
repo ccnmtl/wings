@@ -7,7 +7,12 @@ from pagetree.models import Section, Hierarchy, PageBlock
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, HttpRequest
 
+
+
+
 class Participant(models.Model):
+
+
 
     id_string = models.IntegerField(unique=True) 
     #state =  models.TextField(default="",blank=True,null=True)
@@ -31,10 +36,35 @@ class Participant(models.Model):
     def current_url ( self):
         return self.current_section.get_absolute_url()
 
+
+    def all_unlocked (self, section):
+        #import pdb
+        #pdb.set_trace()
+        user = self.user
+        for p in section.pageblock_set.all():
+           if hasattr(p.block(),'unlocked'):
+                 if p.block().unlocked(user) == False:
+                     return False
+        return True
+
+
     def log_visit (self, new_section):
         """" return true if it's ok for a participant to see this page.
         set the current section, also,         """
         
+        #if 1 == 0:
+        #print self
+        #print new_section
+        #import pdb
+        #pdb.set_trace()
+        
+        #print 'previous'
+        #print self.all_unlocked (new_section.get_previous())
+        #print 'this one'
+        #print self.all_unlocked (new_section)
+        
+        #import pdb
+        #pdb.set_trace()
         if self.current_section == None:
             self.current_section = new_section.hierarchy.get_root().get_first_child()
             self.save()
@@ -42,6 +72,10 @@ class Participant(models.Model):
         if old_current_section == new_section:
             return True
         if old_current_section.get_next() == new_section:
+        
+            if not self.all_unlocked (old_current_section):
+                return False #finish all the work on the old page before you move to this page.
+                
             self.current_section = new_section
             self.save()
             return True
