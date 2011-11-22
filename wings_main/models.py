@@ -51,31 +51,15 @@ class Participant(models.Model):
     def log_visit (self, new_section):
         """" return true if it's ok for a participant to see this page.
         set the current section, also,         """
-        
-        #if 1 == 0:
-        #print self
-        #print new_section
-        #import pdb
-        #pdb.set_trace()
-        
-        #print 'previous'
-        #print self.all_unlocked (new_section.get_previous())
-        #print 'this one'
-        #print self.all_unlocked (new_section)
-        
-        #import pdb
-        #pdb.set_trace()
         if self.current_section == None:
             self.current_section = new_section.hierarchy.get_root().get_first_child()
             self.save()
         old_current_section = self.current_section
         if old_current_section == new_section:
             return True
-        if old_current_section.get_next() == new_section:
-        
+        if old_current_section.get_next() == new_section:        
             if not self.all_unlocked (old_current_section):
                 return False #finish all the work on the old page before you move to this page.
-                
             self.current_section = new_section
             self.save()
             return True

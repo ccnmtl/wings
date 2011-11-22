@@ -116,9 +116,9 @@ def page(request,path):
                 #this is a participant. log their visit and double-check they can see the page:
                 participant_can_navigate_to_page = user_participant.log_visit (section)
                 if not participant_can_navigate_to_page:
-                    #clients can only advance one page at a time.
-                    
-                    messages.warning(request, 'Please answer all the questions before moving on.')
+                    # clients can only advance one page at a time.
+                    # and must answer all quiz questions before proceeding.
+                    messages.warning(request, 'Please finish this page before moving forward.')
                     return HttpResponseRedirect(user_participant.current_url())
     
         return dict(section=section,
