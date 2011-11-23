@@ -109,12 +109,16 @@
     {% endwith %}
 {% endif %}
 
+{%comment %}
+    {% if section.get_help %}
+    <a href="{{section.get_help.get_absolute_url}}" id="help">« {{section.get_help.label}}</a>
+    {% endif %}
+{%endcomment %}
 
-{% if section.get_help %}
-<a href="{{section.get_help.get_absolute_url}}" id="help">« {{section.get_help.label}}</a>
-{% endif %}
-
-<a href="#" id="help">Help!</a>
+{%comment %}
+    <!-- this is liz' help button-->
+    <a href="#" id="help">Help!</a>
+{%endcomment %}
 
 
 </div><!-- div id="content-nav" -->

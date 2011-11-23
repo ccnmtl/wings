@@ -13,7 +13,9 @@
     });
     
     
+    
     function show_help_block(block_id) {
+        
         //alert (" showing " + block_id );
         jQuery ('#help_block_box_' + block_id).show();
         jQuery ('#show_help_link_div_' + block_id).hide();
@@ -27,6 +29,8 @@
     // initially hide all help blocks
     function init_help () {
         jQuery ('.help_block_box').hide();
+    
+        // show_help_block({{block.id}})
     }
     
     jQuery (init_help);

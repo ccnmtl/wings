@@ -124,19 +124,13 @@ if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
     logger.addHandler(logging.StreamHandler())
     
     SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
-    SENTRY_KEY = 'this_is_just_for_dev6411E157C4ED1660' #overwritten in settings_production.py.
+    SENTRY_KEY = 'NOT_USED_IN_DEV' #overwritten in settings_production.py.
     SENTRY_SITE = 'wings'
 
 THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[wings] "
 EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "wings@ccnmtl.columbia.edu"
-
-#disabling this until I know exactly what it does.
-# put any static media here to override app served static media
-#STATICMEDIA_MOUNTS = (
-#    ('/sitemedia', 'sitemedia'),
-#)
 
 # WIND settings
 
