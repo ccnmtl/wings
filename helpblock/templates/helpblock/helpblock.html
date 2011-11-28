@@ -2,14 +2,16 @@
 
 
     <div id = "show_help_link_div_{{block.id}}" class="show_help_link_div">
-        <a href="javascript:show_help_block({{block.id}});">*HELP*</a>
+        <a href="javascript:show_help_block();">*HELP*</a>
     </div>
 
 <div id = "help_block_box_{{block.id}}" class="help_block_box">
 
+<!--
             <div id = "hide_help_link_div_{{block.id}}" class="hide_help_link_div">
-                <a href="javascript:hide_help_block({{block.id}});">x</a>
+                <a href="javascript:hide_help_block({{block.id}});">[close]</a>
             </div>
+-->
             {% if block.audio_file %}
                 <p id="help_block_{{block.id}}">{{block.audio_file}}</p>
                 <script type="text/javascript">
@@ -30,6 +32,7 @@
                         lefticon: '000000',
                         righticon: 'E3D8E0',
                         tracker : '391C4C',
+                        width: 150 
                     });
                 </script>
             {%else %}
@@ -38,7 +41,7 @@
 
             {% if  block.description %}
             <p>
-                Help block transcript: <em>{{block.description}}</em>
+                <em>{{block.description}}</em>
             </p>
             {%else %}
             <p>

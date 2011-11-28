@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load render %}
+{% load smartif %}
 
 {% block js %}
 {% for block in section.pageblock_set.all %}
@@ -10,16 +11,8 @@
     <!-- TODO: use local jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" ></script> 
 
-    <script language = "javascript">
-    /*
-            connect (b, 'onblur', partial (box_blur, b));
-            connect (b, 'onchange', partial (box_blur, b));
-    */
-    
-    
-    
+    <script language = "javascript">    
         function submit_when_changed(thing) {
-            //alert (thing);
             jQuery('#submit_to_self_form').submit()
         }
     
@@ -81,8 +74,10 @@
 
 
 {% for block in section.pageblock_set.all %}
-{% if block.label %}<h3>{{block.label}}</h3>{% endif %}
-{% render block %}
+    {% if not block.block.is_help_block %}
+        {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
+        {% render block %}
+    {%endif %}
 {% endfor %}
 
 
@@ -119,6 +114,13 @@
     <!-- this is liz' help button-->
     <a href="#" id="help">Help!</a>
 {%endcomment %}
+
+
+{% for block in section.pageblock_set.all %}
+    {% if block.block.is_help_block %}
+        {% render block %}
+    {%endif %}
+{% endfor %}
 
 
 </div><!-- div id="content-nav" -->

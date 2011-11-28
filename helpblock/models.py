@@ -20,6 +20,9 @@ class HelpBlock(models.Model):
     css_template_file = "helpblock/helpblock_css.html"
     display_name =      "Help Block"
 
+    def is_help_block(self):
+        return True
+
     def pageblock(self):
         return self.pageblocks.all()[0]
 

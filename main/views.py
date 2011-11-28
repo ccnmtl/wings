@@ -14,6 +14,8 @@ from pagetree.models import Section
 from pagetree_export.exportimport import export_zip, import_zip
 from pageblocks.exportimport import *
 from quizblock.exportimport import *
+from helpblock.models import HelpBlock
+
 from django.contrib import messages
 import os
 
@@ -106,6 +108,7 @@ def page(request,path):
     else:
         instructor_link = has_responses(section)
         
+        
        
         if 1 == 1: #eddie adding this clause.
             try:
@@ -120,7 +123,7 @@ def page(request,path):
                     # and must answer all quiz questions before proceeding.
                     messages.warning(request, 'Please finish this page before moving forward.')
                     return HttpResponseRedirect(user_participant.current_url())
-    
+
         return dict(section=section,
                     module=module,
                     needs_submit=needs_submit(section),
