@@ -1,7 +1,7 @@
 {% load smartif %}
     <div id="{{block.id}}-audio">
     {% if block.audio_file %}
-        <p id="audio_block_{{block.id}}">{{block.audio_file}}</p>
+        <div class="audioblock"><p id="audio_block_{{block.id}}">{{block.audio_file}}</p>
         <script type="text/javascript">
             AudioPlayer.embed("audio_block_{{block.id}}", {
                 soundFile: "/uploads/{{block.audio_file}}",
@@ -9,16 +9,16 @@
                 animation: 'no',
                 initialvolume : '100',
                 transparentpagebg : 'yes',
-                bg : '391C4C',
-                lefticon: 'E3D8E0',
-                leftbg: '391C4C',
-                rightbg: '391C4C',
+                bg : '999999',
+                lefticon: '666666',
+                leftbg: 'DEDEDE',
+                rightbg: 'DEDEDE',
                 border: '391C4C',
-                rightbghover: '000000',
+                rightbghover: '666666',
                 voltrack :	'391C4C',
                 volslider :	'E3D8E0',
                 lefticon: '000000',
-                righticon: 'E3D8E0',
+                righticon: '000000',
                 tracker : '391C4C',
             });
         </script>
@@ -26,7 +26,7 @@
         <i>No audio uploaded yet.</i>
     {%endif %}
 
-    {% if  block.description %}
+<!--    {% if  block.description %}
     <p>
         Transcript: <em>{{block.description}}</em>
     </p>
@@ -34,5 +34,5 @@
     <p>
        <em>(No transcript)</em>
     </p>
-    {% endif %}
+    {% endif %}-->
 </div>

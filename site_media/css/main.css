@@ -512,10 +512,26 @@ a:visited
 #content
 {
 	display: block;
-	margin: 3em 2em 0 5em;
+	margin: 3em 2em 0 14em;
 	padding: 0;
 	border: 0;
 
+}
+
+.leftblock {
+    border: 1px solid red;
+    float: left;
+    margin: 15px 15px 15px 0;
+    min-height: 30px;
+    min-width: 50px;
+}
+
+.rightblock {
+    border: 1px solid blue;
+    float: right;
+    margin: 15px 0px 15px 15px;
+        min-height: 30px;
+    min-width: 50px;
 }
 
 .content_one_column
@@ -559,6 +575,14 @@ a:visited
 {
 	line-height: 140%;
 }
+
+.audioblock {
+
+    float: left;
+    margin-left: -12em;
+
+}
+
 
 #content .content-nav
 {
