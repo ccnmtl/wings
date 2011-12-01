@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 {% load render %}
 {% load smartif %}
+{% load random_image %}
 
 {% block js %}
 {% for block in section.pageblock_set.all %}
 {% renderjs block %}
 {% endfor %}
+
+
+{%comment %}
+	
+
+    Make the page template as follows:
+    For most pages there is a decoration image at the top of the page
+    and an image at the bottom of the page.
+    When there is an image or video block specifically assigned to the page
+    these decorations are NOT SHOWN.
+    These decorations take the following form:
+    They are given a CSS style at random between A and B. (Liz will later make them float left and right.)
+    The actual image files to display are chosen from 4 pools of images: viz: top A, top B, bottom A, bottom B. As much of this is possible should take place in CSS.
+
+{%endcomment %}
 
 {% if needs_submit %}
     <!-- TODO: use local jquery -->
@@ -57,7 +73,12 @@
 
 {% block content %}
 <h3>{{section.label}}</h3>
-<!--<img class="rightblock" src="http://farm5.staticflickr.com/4047/4224354870_d461bcc085_b.jpg">-->
+
+
+{% if show_decorations %}
+    <img class="decoration_image_{{'12'|make_list|random}}"  src = '{% random_image "site_media/img/decoration_images" %}' />
+    </div>
+{% endif %}
 
 {% if messages %}
     <ul class="messages">
@@ -123,5 +144,11 @@
 {% endfor %}
 
 
+
+{% if section.show_decorations %}
+<div id ="decoration_2" class = "decoration_image">
+    <img source ="" />
+</div>
+{%endif %}
 </div><!-- div id="content-nav" -->
 {% endblock %}

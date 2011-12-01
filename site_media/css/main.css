@@ -518,7 +518,9 @@ a:visited
 
 }
 
-.leftblock {
+
+/* these used to be .leftblock and .rightblock */
+.decoration_image_1 {
 
     float: left;
     margin: 0 15px 15px 0;
@@ -529,7 +531,7 @@ a:visited
     overflow: hidden;
 }
 
-.rightblock {
+.decoration_image_2 {
 
     float: right;
     margin: 0 0px 0 15px;
