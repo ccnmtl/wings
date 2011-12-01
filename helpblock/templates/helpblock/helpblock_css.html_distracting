@@ -1,0 +1,82 @@
+<style type="text/css">
+    /*
+    .show_help_link_div, .help_block_box{
+    
+        background-color: #dedede;
+        width: 160px;
+        float: right;
+        
+        -webkit-border-bottom-right-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        
+        
+        
+        
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-topleft: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        
+        
+        margin: 2px;
+        padding: 0 20px;
+        border: 2px;
+
+    }
+    
+    .show_help_link_div {
+        text-align: center;
+    
+    }
+    
+    .hide_help_link_div {
+        text-align: right;
+        color: red;
+    }
+     
+    */
+    
+    div.help_block_box {
+    
+        /* cursor: pointer; */
+        background-color: #E3D8E0;
+        width: 620px;
+        float: right;        
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        margin: 0 10px;
+        height: 53px !important;
+    }
+    
+    .help_block_box p , {
+        padding-left: 5px;
+    }
+
+.show_help_link_div  a{
+        /*#content .content-nav a#help */
+	    float: right;
+        color: transparent !important;
+        height: 53px !important;
+        width: 135px !important;
+        margin: 0 10px;
+        background-image: url('/site_media/img/help_button_bg.png') !important;
+        background-position: -20px -15px;
+        background: #bea5b4; /* Old browsers */
+        background: -moz-linear-gradient(top,  #bea5b4 0%, #9b7a95 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bea5b4), color-stop(100%,#9b7a95)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* IE10+ */
+        background: linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bea5b4', endColorstr='#9b7a95',GradientType=0 ); /* IE6-9 */
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+}
+    
+</style>

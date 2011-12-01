@@ -4,8 +4,9 @@ from django.contrib import messages
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
-from wings_main.models import Participant
+from wings_main.models import Participant, traverse_tree
 from main.views import page as pagetree_page
+from pagetree.models import Section, Hierarchy, PageBlock
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -33,14 +34,6 @@ class rendered_with(object):
 
         return rendered_func
 
-
-
-
-@login_required
-@rendered_with('wings_main/participant_list.html')
-def participant_list(request):
-    """   """
-    return dict ()
 
 
 
@@ -75,15 +68,11 @@ def launch_participant(request, id_string):
 
 
 @login_required
-@rendered_with('wings_main/launch_participant.html')
-def land_participant(request, id):
-    """   
-    log out the participant user.
-    redirect to /
-    """
-    return dict ()
-
-
+@rendered_with('wings_main/summary.html')
+def summary(request):
+    node_list = []
+    traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
+    return {'tree': node_list}
 
 
 

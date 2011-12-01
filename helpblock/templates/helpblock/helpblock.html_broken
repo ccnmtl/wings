@@ -1,0 +1,94 @@
+{% load smartif %}
+
+ {% if block.audio_file %}
+           
+{%comment %}
+    <div id = "show_help_link_div_{{block.id}}" class="show_help_link_div">
+        <a href="javascript:show_help_block();">*HELP*</a>
+    </div>
+
+<div id = "help_block_box_{{block.id}}" class="help_block_box">
+
+{%endcomment %}
+
+
+                       
+		<div id="jquery_jplayer"></div>
+		<div id="jp_container" class="demo-container">
+			<p>
+				Listen to audio:
+				<span href="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" class="track track-default">Cro Magnon Man</span>
+				( at <span class="jp-current-time"></span>
+				of <span class="jp-duration"></span> )
+			</p>
+			<ul>
+				<li><a class="jp-play" href="#">Play</a></li>
+				<li><a class="jp-pause" href="#">Pause</a></li>
+				<li><a class="jp-stop" href="#">Stop</a></li>
+			</ul>
+		</div>
+
+            
+            
+            {%comment%}
+            
+        		<div id="jquery_jplayer"></div>
+
+            
+              <div id="jp_container" class="demo-container">
+
+				        Listen to audio:
+				        <span href="/uploads/{{block.audio_file}}" class="track track-default">/uploads/{{block.audio_file}}</span>
+
+				        ( at <span class="jp-current-time"></span>
+				        of <span class="jp-duration"></span> )
+				        <a class="jp-play" href="#">Play</a>
+                        State is  <span class="play-state"></span>
+				        <!--
+				        <a class="jp-pause" href="#">Pause</a>
+				        <a class="jp-stop" href="#">Stop</a>
+				        
+				        -->
+			
+			</div>
+			{%endcomment %}
+			
+            {%comment %}
+                                <p id="help_block_{{block.id}}">{{block.audio_file}}</p>
+                                <script type="text/javascript">
+                                    AudioPlayer.embed("help_block_{{block.id}}", {
+                                        soundFile: "/uploads/{{block.audio_file}}",
+                                        noinfo: 'yes',
+                                        animation: 'no',
+                                        initialvolume : '100',
+                                        transparentpagebg : 'yes',
+                                        bg : '391C4C',
+                                        lefticon: 'E3D8E0',
+                                        leftbg: '391C4C',
+                                        rightbg: '391C4C',
+                                        border: '391C4C',
+                                        rightbghover: '000000',
+                                        voltrack :	'391C4C',
+                                        volslider :	'E3D8E0',
+                                        lefticon: '000000',
+                                        righticon: 'E3D8E0',
+                                        tracker : '391C4C',
+                                        width: 150 
+                                    });
+                                </script>
+          {%endcomment %}      
+                
+            {%else %}
+                <i>No help audio uploaded yet.</i>
+            {%endif %}
+
+            {% if  block.description %}
+            <p>
+                <em>{{block.description}}</em>
+            </p>
+            {%else %}
+            <p>
+               <em>(No help block transcript)</em>
+            </p>
+            {% endif %}
+</div> <!-- end help_block_box_{{block.id}} -->

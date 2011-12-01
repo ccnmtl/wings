@@ -17,12 +17,14 @@ urlpatterns = patterns('',
     ('^admin/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
     ('^accounts/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
     ('^login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
-    ('^logout/$', redirect_to, {'url': '/admin/logout/'}),
+    ('^logout/$', redirect_to, {'url': '/admin/logout/'}), 
+    
+    #summary of all pages 
+    ('^summary/$', 'wings_main.views.summary'),
 
     #user crud happens thru django admin for now.
 
-    (r'^participant/(?P<id_string>\d+)/launch/',   'wings_main.views.launch_participant'),                       
-    (r'^participant/(?P<id_string>\d+)/land/',     'wings_main.views.land_participant'),
+    (r'^participant/(?P<id_string>\d+)/launch/',   'wings_main.views.launch_participant'),                     
     
     # for now these are taken care of by django admin.
     
