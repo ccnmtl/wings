@@ -35,7 +35,7 @@ class rendered_with(object):
         return rendered_func
 
 
-
+#TODO: de-hardcode references to '/introduction/'. Should just be the first page of the intervention.
 
 @login_required
 #@rendered_with('wings_main/launch_participant.html')
@@ -48,24 +48,34 @@ def launch_participant(request, id_string):
     
     http://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
     """
+    
+    if not request.user.is_staff:
+        messages.info(request, "Sorry, you can't launch participants.")
+        return HttpResponseRedirect("/introduction/")
+    
     participant = get_object_or_404(Participant,id_string=id_string)
-    if participant.user:
-        messages.info(request, "This participant has already started the intervention.")
-        return HttpResponseRedirect("/admin/wings_main/participant/")
-    assert participant.user == None
-    new_user = User()
-    new_user.set_unusable_password()
-    new_user.username = id_string
-    new_user.save()
-    participant.user = new_user
-    participant.save()
+    if not participant.user:
+        assert participant.user == None
+        new_user = User()
+        new_user.set_unusable_password()
+        new_user.username = id_string
+        new_user.save()
+        participant.user = new_user
+        participant.save()
+    participant.user.backend='django.contrib.auth.backends.ModelBackend' 
+    
+    #messages.info(request, "This participant has already started the intervention.")
+    #return HttpResponseRedirect("/admin/wings_main/participant/")
+
     assert participant.user != None
     messages.info(request, "Logged in!")
-    new_user.backend='django.contrib.auth.backends.ModelBackend' 
-    authenticate(username=new_user.username, password= new_user.password)
-    login(request, new_user)
-    return HttpResponseRedirect("/introduction/")
-
+    authenticate(username=participant.user.username, password= participant.user.password)
+    login(request, participant.user)
+    
+    if not participant.current_section_id:
+        return HttpResponseRedirect("/introduction/")
+    else:
+        return HttpResponseRedirect(Section.objects.get(id=participant.current_section_id).get_absolute_url())
 
 @login_required
 @rendered_with('wings_main/summary.html')

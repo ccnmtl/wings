@@ -108,10 +108,6 @@ def page(request,path):
     else:
         instructor_link = has_responses(section)
         
-        
-
-
-
         if 1 == 1: #eddie adding this clause.
             try:
                 user_participant = request.user.part()
@@ -126,13 +122,11 @@ def page(request,path):
                     messages.warning(request, 'Please finish this page before moving forward.')
                     return HttpResponseRedirect(user_participant.current_url())
 
-        
         if 1 == 1: #eddie also adding this clause.
-            block_types_that_hide_decorations = ['Image Block', 'Video Block', 'Quiz Block']
+            block_types_that_hide_decorations = ['Image Block', 'Video Block', 'Quiz']
             myblocks = section.pageblock_set.all()
             show_decorations = not any(b.block().display_name in block_types_that_hide_decorations for b in myblocks)
-            
-
+        
         return dict(section=section,
             module=module,
             needs_submit=needs_submit(section),
