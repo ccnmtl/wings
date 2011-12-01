@@ -128,7 +128,7 @@ def page(request,path):
 
         
         if 1 == 1: #eddie also adding this clause.
-            block_types_that_hide_decorations = ['Image Block', 'Video Block']
+            block_types_that_hide_decorations = ['Image Block', 'Video Block', 'Quiz Block']
             myblocks = section.pageblock_set.all()
             show_decorations = not any(b.block().display_name in block_types_that_hide_decorations for b in myblocks)
             
