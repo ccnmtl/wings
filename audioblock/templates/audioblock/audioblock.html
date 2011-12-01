@@ -1,12 +1,8 @@
 {% load smartif %}
-{%comment%}
     <div id="{{block.id}}-audio">
     {% if block.audio_file %}
-    
         <p id="audio_block_{{block.id}}">{{block.audio_file}}</p>
-       
         <script type="text/javascript">
-        
             AudioPlayer.embed("audio_block_{{block.id}}", {
                 soundFile: "/uploads/{{block.audio_file}}",
                 noinfo: 'yes',
@@ -25,7 +21,6 @@
                 righticon: 'E3D8E0',
                 tracker : '391C4C',
             });
-            
         </script>
     {%else %}
         <i>No audio uploaded yet.</i>
@@ -41,5 +36,3 @@
     </p>
     {% endif %}
 </div>
-
-{%endcomment%}

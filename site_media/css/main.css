@@ -512,11 +512,32 @@ a:visited
 #content
 {
 	display: block;
-	float: left;
-	margin: 3em 2em 0 5em;
+	margin: 3em 2em 0 14em;
 	padding: 0;
 	border: 0;
 
+}
+
+.leftblock {
+
+    float: left;
+    margin: 0 15px 15px 0;
+    min-height: 30px;
+    min-width: 50px;
+    max-height: 300px;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.rightblock {
+
+    float: right;
+    margin: 0 0px 0 15px;
+        min-height: 30px;
+    min-width: 50px;
+        max-height: 300px;
+    max-width: 300px;
+    overflow: hidden;
 }
 
 .content_one_column
@@ -560,6 +581,14 @@ a:visited
 {
 	line-height: 140%;
 }
+
+.audioblock {
+
+    float: left;
+    margin-left: -12em;
+
+}
+
 
 #content .content-nav
 {
