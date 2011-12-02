@@ -1,0 +1,54 @@
+{% load smartif %}
+{%comment%}
+    <div id="{{block.id}}-audio">
+    {% if block.audio_file %}
+<<<<<<< HEAD
+    
+        <p id="audio_block_{{block.id}}">{{block.audio_file}}</p>
+       
+=======
+        <div class="audioblock"><p id="audio_block_{{block.id}}">{{block.audio_file}}</p>
+>>>>>>> 82a0737a45d7105198d01f94603e84b0dd15bddd
+        <script type="text/javascript">
+        
+            AudioPlayer.embed("audio_block_{{block.id}}", {
+                soundFile: "/uploads/{{block.audio_file}}",
+                noinfo: 'yes',
+                animation: 'no',
+                initialvolume : '100',
+                transparentpagebg : 'yes',
+                bg : '999999',
+                lefticon: '666666',
+                leftbg: 'DEDEDE',
+                rightbg: 'DEDEDE',
+                border: '391C4C',
+                rightbghover: '666666',
+                voltrack :	'391C4C',
+                volslider :	'E3D8E0',
+                lefticon: '000000',
+                righticon: '000000',
+                tracker : '391C4C',
+            });
+            
+        </script>
+    {%else %}
+        <i>No audio uploaded yet.</i>
+    {%endif %}
+
+<!--    {% if  block.description %}
+    <p>
+        Transcript: <em>{{block.description}}</em>
+    </p>
+    {%else %}
+    <p>
+       <em>(No transcript)</em>
+    </p>
+<<<<<<< HEAD
+    {% endif %}
+</div>
+
+{%endcomment%}
+=======
+    {% endif %}-->
+</div></div>
+>>>>>>> 82a0737a45d7105198d01f94603e84b0dd15bddd
