@@ -3,19 +3,18 @@
               {% if block.audio_file %}
                    <p id="audio_block_{{block.id}}"></p>
                	   <div id="jquery_jplayer"></div>
-	               <div id="jp_container" class="demo-container">
-		            <p class = "audio_controls">
-			            <span href="/uploads/{{block.audio_file}}" class="track track-default">{{block.audio_file}}</span>
-			            ( at <span class="jp-current-time"></span>
-			            of <span class="jp-duration"></span> )
-		            </p>
-		            <ul>
-			            <li><a class="jp-play" href="#">Audio</a></li>
-			            <li><a class="jp-pause" href="#">Pause</a></li>
-			            <!--
-			                <li><a class="jp-stop" href="#">Stop</a></li>
-                        -->
-		            </ul>
+	               <div id="jp_container" class="audioblock-container">
+		                <p class = "audio_controls">
+			                <span href="/uploads/{{block.audio_file}}" class="track track-default">{{block.audio_file}}</span>
+			                ( at <span class="jp-current-time"></span>
+			                of <span class="jp-duration"></span> )
+		                </p>
+		                <ul>
+			                <li><a class="jp-play" href="#">Audio</a></li>
+			                <li><a class="jp-pause" href="#">Pause</a></li>
+			                <li class="jp-stop-li"><a class="jp-stop" href="#">Stop</a></li>
+		                </ul>
+		            </div>
 			    {%else %}
                     <i>No audio uploaded yet.</i>
                 {%endif %}

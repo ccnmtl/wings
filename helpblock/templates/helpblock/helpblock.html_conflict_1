@@ -1,0 +1,65 @@
+{% load smartif %}
+
+ {% if block.audio_file %}
+           
+            <div id = "show_help_link_div_{{block.id}}" class="show_help_link_div">
+                <a href="javascript:show_help_block();">*HELP*</a>
+            </div>
+
+            <div id = "help_block_box_{{block.id}}" class="help_block_box">
+		            <div id="jquery_jplayer"></div>
+		            <div id="jp_container" class="demo-container">
+				            <span href="/uploads/{{block.audio_file}}" class="track track-default">/uploads/{{block.audio_file}}</span>
+				            ( at <span class="jp-current-time"></span>
+				            of <span class="jp-duration"></span> )
+				           
+                            <a class="jp-play" href="#">Play</a>
+                         
+                        <!-- not really needed -->
+		            </div>
+
+
+
+            <div id = "hide_help_link_div_{{block.id}}" class="hide_help_link_div">
+                <a href="javascript:hide_help_block({{block.id}});">x</a>
+            </div>
+            {% if block.audio_file %}
+                <div class="audioblock"><p id="help_block_{{block.id}}">{{block.audio_file}}</p></div>
+                <script type="text/javascript">
+                    AudioPlayer.embed("help_block_{{block.id}}", {
+                        soundFile: "/uploads/{{block.audio_file}}",
+                noinfo: 'yes',
+                animation: 'no',
+                initialvolume : '100',
+                transparentpagebg : 'yes',
+                bg : '999999',
+                lefticon: '666666',
+                leftbg: 'DEDEDE',
+                rightbg: 'DEDEDE',
+                border: '391C4C',
+                rightbghover: '666666',
+                voltrack :	'391C4C',
+                volslider :	'E3D8E0',
+                lefticon: '000000',
+                righticon: '000000',
+                tracker : '391C4C',
+                    });
+                </script>
+            {%else %}
+                <i>No help audio uploaded yet.</i>
+            {%endif %}
+
+{%else %}
+    <i>No help audio uploaded yet.</i>
+{%endif %}
+
+{% if  block.description %}
+<p>
+    <em>{{block.description}}</em>
+</p>
+{%else %}
+<p>
+   <em>(No help block transcript)</em>
+</p>
+{% endif %}
+</div> <!-- end help_block_box_{{block.id}} -->
