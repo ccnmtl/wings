@@ -1,182 +1,42 @@
-<style type="text/css">
+<style type="text/css">   
+.helpblock-container {
+}
 
-/* Version 1 giant button */
-
-/*
-  .show_help_link_div, .help_block_box{
-        background-color: #ccc;
-
-        
-        -webkit-border-bottom-right-radius: 5px;
-        -webkit-border-bottom-left-radius: 5px;
-        -moz-border-radius-bottomright: 5px;
-        -moz-border-radius-bottomleft: 5px;
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;
-        
-        
-        
-        
-        -webkit-border-top-right-radius: 5px;
-        -webkit-border-top-left-radius: 5px;
-        -moz-border-radius-topright: 5px;
-        -moz-border-radius-topleft: 5px;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-        
-        
-        margin: 2em 0 -4em -13em;
-        padding: 1em;
-
-
-    }
-    
-    .help_block_box .audioblock {
-    
-    margin: 0 1.3em 0 0em;
-    }
-    
-    .show_help_link_div {
-        text-align: center;
-    
-    }
-    
-    .hide_help_link_div {
-    display: block;
+.helpblock-container a, .helpblock-container a:link, .helpblock-container a:visited, .helpblock-container a:hover, .helpblock-container a:focus, .helpblock-container a:active {
     float: right;
-    margin: -1em -5px;
-    text-align: right;
-    
-    }
-     
-    .help_block_box p {
-        line-height: 100%;
-        border: 0 none;
-        display: block;
-        font-size: 100%;
-        margin: 0 0 0;
-        padding: 0;
-    }
-    
-    */
+    margin: 0 10px !important;
+    padding 10px 10px 10px 10px !important;
+}
 
-/* Version 2 */
-/*
-    .show_help_link_div, .help_block_box{
-        background-color: #dedede;
-        width: 160px;
-        float: right;
-        
-        -webkit-border-bottom-right-radius: 5px;
-        -webkit-border-bottom-left-radius: 5px;
-        -moz-border-radius-bottomright: 5px;
-        -moz-border-radius-bottomleft: 5px;
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;
-        
-        
-        
-        
-        -webkit-border-top-right-radius: 5px;
-        -webkit-border-top-left-radius: 5px;
-        -moz-border-radius-topright: 5px;
-        -moz-border-radius-topleft: 5px;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-        
-        
-        margin: 2px;
-        padding: 0 20px;
-        border: 2px;
+.helpblock-container ul {
+    list-style-type:none;
+}
 
-    }
-    
-    .show_help_link_div {
-        text-align: center;
-    
-    }
-    
-    .hide_help_link_div {
-        text-align: right;
-        color: red;
-    
-    }
-     
-    .help_block_box p {
-        line-height: 100%;
-        border: 0 none;
-        display: block;
-        font-size: 100%;
-        margin: 0 0 0;
-        padding: 0;
-    }
-    
-    */
-    
-    /* end version 2*/
-    
-    .helpblock-container {
-    /*
-	    padding:0 20px;
-	*/
-	}
+.helpblock-container ul span {
+}
 
-    .helpblock-container a, .helpblock-container a:link, .helpblock-container a:visited, .helpblock-container a:hover, .helpblock-container a:focus, .helpblock-container a:active {
-	/*
-	    color: #009BE3;
-    */
-        float: right;
-        margin: 0 10px !important;
-        padding 10px 10px 10px 10px !important;
-    }
+.helpblock-container li {
+}
 
-    .helpblock-container ul {
-	    list-style-type:none;
-	    /*
-	    padding:0;
-	    margin:1em 0;
-	    width:100%;
-	    overflow:hidden;
-	    */
-    }
+.helpblock-container p span.track-name {
+}
 
-    .helpblock-container ul span {
-    /*
-	    color: #A0A600;
-    */
-    }
+.helpblock-container .audio_controls, .helpblock-container .jp-stop-li {
+    display:none;
+}
 
-    .helpblock-container li {
-    /*
-	    float:left;
-	    margin-right:1em;
-    */
-    }
+div.help_block_box {
+     background-color: #E3D8E0;
+     float: right;        
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+ }
+ 
+.help_block_box p , {
+     padding-left: 5px;
+ }
 
-    .helpblock-container p span.track-name {
-	/*
-	    color: #CC0090;
-    */
-    }
-    .helpblock-container .audio_controls, .helpblock-container .jp-stop-li {
-        display:none;
-    }
-     div.help_block_box {
-         /* cursor: pointer; */
-         background-color: #E3D8E0;
-         float: right;        
-         -webkit-border-radius: 10px;
-         -moz-border-radius: 10px;
-         /*
-         margin: 0 10px;
-         */
-     }
-     
-     .help_block_box p , {
-         padding-left: 5px;
-     }
-
- .show_help_link_div  a{
+.show_help_link_div  a{
          /*#content .content-nav a#help */
          float: right;
          color: transparent !important;
@@ -184,7 +44,7 @@
          width: 135px !important;
          margin: 0 10px;
          background-image: url('/site_media/img/help_button_bg.png') !important;
-         background-position: -20px -15px;
+         background-position: -20px -15px; 
          background: #bea5b4; /* Old browsers */
          background: -moz-linear-gradient(top,  #bea5b4 0%, #9b7a95 100%); /* FF3.6+ */
          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bea5b4), color-stop(100%,#9b7a95)); /* Chrome,Safari4+ */
@@ -197,7 +57,12 @@
          -moz-border-radius: 10px;
  }
 
+#hide_help_link_div {
+    
+}
+#hide_help_link_div a {
 
+}
 
     
 </style>
