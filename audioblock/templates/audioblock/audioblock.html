@@ -1,38 +1,22 @@
 {% load smartif %}
-    <div id="{{block.id}}-audio">
-    {% if block.audio_file %}
-        <p id="audio_block_{{block.id}}">{{block.audio_file}}</p>
-        <script type="text/javascript">
-            AudioPlayer.embed("audio_block_{{block.id}}", {
-                soundFile: "/uploads/{{block.audio_file}}",
-                noinfo: 'yes',
-                animation: 'no',
-                initialvolume : '100',
-                transparentpagebg : 'yes',
-                bg : '391C4C',
-                lefticon: 'E3D8E0',
-                leftbg: '391C4C',
-                rightbg: '391C4C',
-                border: '391C4C',
-                rightbghover: '000000',
-                voltrack :	'391C4C',
-                volslider :	'E3D8E0',
-                lefticon: '000000',
-                righticon: 'E3D8E0',
-                tracker : '391C4C',
-            });
-        </script>
-    {%else %}
-        <i>No audio uploaded yet.</i>
-    {%endif %}
-
-    {% if  block.description %}
-    <p>
-        Transcript: <em>{{block.description}}</em>
-    </p>
-    {%else %}
-    <p>
-       <em>(No transcript)</em>
-    </p>
-    {% endif %}
+<div id="{{block.id}}-audio">
+              {% if block.audio_file %}
+                   <p id="audio_block_{{block.id}}"></p>
+               	   <div id="jquery_jplayer"></div>
+	               <div id="jp_container" class="demo-container">
+		            <p class = "audio_controls">
+			            <span href="/uploads/{{block.audio_file}}" class="track track-default">{{block.audio_file}}</span>
+			            ( at <span class="jp-current-time"></span>
+			            of <span class="jp-duration"></span> )
+		            </p>
+		            <ul>
+			            <li><a class="jp-play" href="#">Audio</a></li>
+			            <li><a class="jp-pause" href="#">Pause</a></li>
+			            <!--
+			                <li><a class="jp-stop" href="#">Stop</a></li>
+                        -->
+		            </ul>
+			    {%else %}
+                    <i>No audio uploaded yet.</i>
+                {%endif %}
 </div>

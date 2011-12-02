@@ -1,5 +1,5 @@
 {% load smartif %}
-
+{%comment %}
 
     <div id = "show_help_link_div_{{block.id}}" class="show_help_link_div">
         <a href="javascript:show_help_block({{block.id}});">*HELP*</a>
@@ -46,3 +46,5 @@
             </p>
             {% endif %}
 </div> <!-- end help_block_box_{{block.id}} -->
+
+{%endcomment %}

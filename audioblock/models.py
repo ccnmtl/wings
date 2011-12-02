@@ -22,6 +22,9 @@ class AudioBlock(models.Model):
 
     display_name = "Audio Block"
     
+    def is_audio_block(self):
+        return True
+    
     def pageblock(self):
         return self.pageblocks.all()[0]
 
