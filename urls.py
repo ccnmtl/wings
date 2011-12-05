@@ -33,6 +33,7 @@ urlpatterns = patterns('',
 
     #standard django stuff:
     ('^accounts/',include('djangowind.urls')),
+    (r'^admin/pagetree/section/move/(?P<section_id>\d+)/$', 'pagetree.views.move_section', {}, 'move-section'),
     (r'^admin/(.*)', admin.site.root),
     (r'^munin/',include('munin.urls')),
 
