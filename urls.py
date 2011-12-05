@@ -7,8 +7,6 @@ import os.path
 admin.autodiscover()
 import staticmedia
 
-site_media_root = os.path.join(os.path.dirname(__file__),"site_media")
-
 urlpatterns = patterns('',
     
     #TODO use a proper reverse:
@@ -23,7 +21,6 @@ urlpatterns = patterns('',
     ('^summary/$', 'wings_main.views.summary'),
 
     #user crud happens thru django admin for now.
-
     (r'^participant/(?P<id_string>\d+)/launch/',   'wings_main.views.launch_participant'),                     
     
     # for now these are taken care of by django admin.
@@ -39,13 +36,11 @@ urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
     (r'^munin/',include('munin.urls')),
 
-    # Note: this is nonstandard, but the standard is confusing.
-    # For this site: "site_media"  points at "site_media".
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media_root }),
+    # Note: this is nonstandard, but the standard is incredibly confusing to mere mortals.
+    # I'm sorry, but for this site, "site_media"  is going to reference "site_media".
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.SITE_MEDIA_ROOT }),
     (r'^uploads/(?P<path>.*)$','django.views.static.serve',{'document_root' : settings.UPLOADS_ROOT}),
 
-        
-    
     #from forest:
     #Put this after the static files, otherwise it will try to serve them.
     (r'^edit/(?P<path>.*)$','main.views.edit_page',{},'edit-page'),

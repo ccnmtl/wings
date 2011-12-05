@@ -22,9 +22,14 @@ SITE_ID = 1
 USE_I18N = False
 
 
+
+#WHERE ARE THE NON-UPLOADED STATIC FILES?
+SITE_MEDIA_ROOT = os.path.join(os.path.dirname(__file__),"site_media")
+
 #WHERE DO UPLOADED STATIC FILES GO ON THE FILESYSTEM?
-UPLOADS_ROOT = "/var/www/wings/uploads/" # /uploads URLS point to this.
+UPLOADS_ROOT = "/var/www/wings/uploads/"
 MEDIA_ROOT = UPLOADS_ROOT
+
 
 #HOW DO I REFER TO UPLOADED STATIC FILES FROM A TEMPLATE?
 MEDIA_URL = '/uploads/'
