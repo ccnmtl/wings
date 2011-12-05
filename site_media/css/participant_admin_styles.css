@@ -56,14 +56,81 @@ ul.messagelist li {
     line-height:56px;
 }
 
-input[name="_continue"], input[name="_addanother"] {
-    display:none;
+input[name="_continue"], input[name="_addanother"],{
+    display:none; 
 }
 
-/* overview of intervention */
+/* link to overview of intervention */
 .overview {
     font-size: 24px;
     height:48px;
     line-height:56px;
     display:block;
 }
+
+
+
+/* OBJECT TOOLS  (e.g. add participant, history button, etc. */
+
+.object-tools {
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Arial,Helvetica,sans-serif;
+    padding-left: 0;
+    float: right;
+    position: relative;
+    margin-top: -2.4em;
+    margin-bottom: -2em;
+}
+
+.form-row .object-tools {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: none;
+    height: 2em;
+    padding-left: 3.5em;
+}
+
+.object-tools li {
+    background: white;
+    display: block;
+    float: left;
+    padding: 0 0 0 8px;
+    margin-left: 2px;
+    height: 16px;
+}
+
+.object-tools li:hover {
+}
+
+.object-tools a:link, .object-tools a:visited {
+    background: #999;
+    display: block;
+    float: left;
+    color: white;
+    padding: .1em 14px .1em 8px;
+    height: 14px;
+}
+
+.object-tools a:hover, .object-tools li:hover a {
+}
+
+.object-tools a.viewsitelink, .object-tools a.golink {
+    padding-right: 28px;
+}
+
+.object-tools a.viewsitelink:hover, .object-tools a.golink:hover {;
+}
+
+.object-tools a.addlink {
+    padding-right: 28px;
+}
+
+.object-tools a.addlink:hover {
+}
+
+.object-tools a.historylink {
+    display:none !important;
+}
+
+
