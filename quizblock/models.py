@@ -49,24 +49,46 @@ class Quiz(models.Model):
                         submission=s,
                         question=question,
                         value=data[k])
-
-
+    
     def redirect_to_self_on_submit(self):
         return True
-
+    
     def user_answered_all_questions(self,user):
         for question in self.question_set.all():
-            if len (question.answer_set.all()) > 0 and len (question.user_responses(user)) == 0:
-                return False
+            #print "QUESTION:"
+            #print question.id
+            #print question.answer_set.all()
+            #print question.user_responses(user)
+            if question.is_short_text() == True:
+                #print "short_text"
+                #print question
+                if len (question.user_responses(user)) == 0:
+                    #print "no response found to short text"
+                    return False
+                else:
+                    #print "found response from this user, to wit:"
+                    #print question.user_responses(user)
+                    #print question.user_responses(user)[0].value
+                    if len (question.user_responses(user)[0].value) == 0:
+                        #not allowing zero-length short - text answers any more:
+                        return False
+            if question.is_single_choice() == True:
+                #print "single_choice"
+                #print question
+                if len (question.answer_set.all()) > 0:
+                    if len (question.user_responses(user)) == 0:
+                        #print "no answer found to single choice"
+                        return False
+                else:
+                    pass
+                    #print "question was empty"
         return True
 
     def unlocked(self,user):
         # meaning that the user can proceed *past* this one,
         # not that they can access this one. careful.
-        
         #this is the default for forest.
         #return Submission.objects.filter(quiz=self,user=user).count() > 0
-        
         
         # for wings, we want all questions with > 0 answers to be answered.
         if not self.user_answered_all_questions( user):
@@ -205,8 +227,14 @@ class Question(models.Model):
 
     def user_responses(self,user):
         if len (Submission.objects.filter(user=user,quiz=self.quiz)) == 0:
+            #print "No responses"
             return []
         submission = Submission.objects.filter(user=user,quiz=self.quiz).order_by("-submitted")[0]
+        #print "Submission found"
+        #print submission
+        #print "sss"
+        #import pdb
+        #pdb.set_trace()
         return Response.objects.filter(question=self,submission=submission)
 
 
