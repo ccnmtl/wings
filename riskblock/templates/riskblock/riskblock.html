@@ -1,7 +1,19 @@
-{% load markup %}
 {% load smartif %}
 
+{% comment %}
+    You can assume block.risk_level is one of 'no_risk', 'some_risk', or 'severe_risk'.
+{% endcomment %}
 
-<div id="{{block.id}}-audio">
-Description: {{block.description|markdown}}
+
+<div id="risk_determination" class="{{block.risk_level}}">
+    {% if block.risk_level == 'no_risk'%}
+            {{block.no_risk_copy}}
+    {%endif%}
+    {% if block.risk_level == 'some_risk'%}
+        {{block.some_risk_copy}}
+    {%endif%}
+    {% if block.risk_level == 'severe_risk'%}
+            {{block.severe_risk_copy}}
+    {%endif%}
 </div>
+

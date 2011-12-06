@@ -36,8 +36,6 @@ MEDIA_URL = '/uploads/'
 
 #ADMIN_MEDIA_PREFIX = '/media/'
 #this is set to 'media' by default.
-
-
 APPEND_SLASH = False
 
 
@@ -102,6 +100,9 @@ INSTALLED_APPS = (
     
     'sentry.client',
     'wings_main',
+    #paging apparently required by south
+    'paging',
+    'indexer',
     'south',
 )
 
@@ -118,7 +119,6 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'riskblock.RiskBlock',
               'exitmaterialsblock.ExitMaterialsBlock',
               ]
-
 import logging
 logger = logging.getLogger()
 from sentry.client.handlers import SentryHandler
