@@ -227,14 +227,8 @@ class Question(models.Model):
 
     def user_responses(self,user):
         if len (Submission.objects.filter(user=user,quiz=self.quiz)) == 0:
-            #print "No responses"
             return []
         submission = Submission.objects.filter(user=user,quiz=self.quiz).order_by("-submitted")[0]
-        #print "Submission found"
-        #print submission
-        #print "sss"
-        #import pdb
-        #pdb.set_trace()
         return Response.objects.filter(question=self,submission=submission)
 
 

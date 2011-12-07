@@ -3,28 +3,34 @@ from pagetree.models import PageBlock
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django import forms
-from datetime import datetime
-from django.core.urlresolvers import reverse
-from django.template.defaultfilters import slugify
 from django.conf import settings
+from quizblock.models import *
 import os, json
+import random
+
+
+def risk_score (user):
+    return random.choice (['no_risk', 'some_risk', 'severe_risk'])
+
+def risk_copy (block, user):
+    tmp = risk_score (user)
+    if   tmp ==  'no_risk':
+        return block.no_risk_copy
+    elif tmp ==  'some_risk':
+        return block.some_risk_copy
+    elif tmp ==  'severe_risk':
+        return block.severe_risk_copy
 
 class RiskBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
-    
-    no_risk_copy = models.TextField(blank=True)
-    some_risk_copy = models.TextField(blank=True)
+    no_risk_copy =     models.TextField(blank=True)
+    some_risk_copy =   models.TextField(blank=True)
     severe_risk_copy = models.TextField(blank=True)
-    
-    
-    template_file = "riskblock/riskblock.html"
-    js_template_file = "riskblock/riskblock_js.html"
+    template_file =     "riskblock/riskblock.html"
+    js_template_file =  "riskblock/riskblock_js.html"
     css_template_file = "riskblock/riskblock_css.html"
 
     display_name = "Risk Block"
-    
-    def risk_level (self):
-        return 'severe_risk'
 
     def pageblock(self):
         return self.pageblocks.all()[0]
@@ -34,12 +40,9 @@ class RiskBlock(models.Model):
 
     def edit_form(self):
         class EditForm(forms.Form):
-            no_risk_copy = forms.CharField(initial=self.no_risk_copy,
-                                          widget=forms.widgets.Textarea())
-            some_risk_copy = forms.CharField(initial=self.some_risk_copy,
-                                          widget=forms.widgets.Textarea())
-            severe_risk_copy = forms.CharField(initial=self.severe_risk_copy,
-                                          widget=forms.widgets.Textarea())
+            no_risk_copy = forms.CharField(initial=self.no_risk_copy, widget=forms.widgets.Textarea())
+            some_risk_copy = forms.CharField(initial=self.some_risk_copy, widget=forms.widgets.Textarea())
+            severe_risk_copy = forms.CharField(initial=self.severe_risk_copy, widget=forms.widgets.Textarea())
         return EditForm()
 
     def edit(self,vals,files=None):
@@ -74,7 +77,7 @@ class RiskBlock(models.Model):
         return True
 
     def unlocked(self,user):
-        return False
+        return True
 
 
 
