@@ -744,3 +744,7 @@ table#change-history tbody th {
     color: #666;
 }
 
+#site-name {
+    padding: 5px;
+    color: #fff;
+}
