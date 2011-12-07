@@ -100,7 +100,7 @@
 {% endif %}
 
 {% endblock %}
-<br />
+<div class="visualclear"></div>
 
 {% block content-nav %}
 
@@ -110,17 +110,18 @@
 <a href="{{section.get_previous.get_absolute_url}}" id="previous">« {{section.get_previous.label}}</a>
 {% endif %}
 
-{% for block in section.pageblock_set.all %}
-    {% if block.block.is_help_block %}
-        {% render block %}
-    {%endif %}
-{% endfor %}
 
 {% if section.get_next %}
     {% with section.get_next as next_section %}
         <a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
     {% endwith %}
 {% endif %}
+
+{% for block in section.pageblock_set.all %}
+    {% if block.block.is_help_block %}
+        {% render block %}
+    {%endif %}
+{% endfor %}
 
 </div>
 {% endblock %}

@@ -643,7 +643,17 @@ border-radius: 10px;
     background-position: -55px -15px;
     width: 150px;
 
+}
 
+#content .content-nav a.help
+{
+
+    float: right;
+    color: transparent;
+        background-image: url('../img/help_button_bg.png');
+    background-position: -19px -15px;
+    width: 135px;
+    margin: 0 10px;
 
 }
 
@@ -1023,7 +1033,7 @@ body#poctools a#poctools
 	border: 0;
 }
 
-#visualclear
+.visualclear
 {
 	display: block;
 	clear: both;
