@@ -35,6 +35,7 @@
 	    // Instance jPlayer
 	    my_jPlayer.jPlayer({
 		    ready: function () {
+			    jQuery("#helpblock_jp_container .jp-rewind").hide();
 			    jQuery("#helpblock_jp_container .track-default").click();
 		    },
 		    timeupdate: function(event) {
@@ -42,12 +43,14 @@
 		    },
 		    play: function(event) {
 			    my_playState.text(opt_text_playing);
+			    jQuery("#helpblock_jp_container .jp-rewind").show();
 		    },
 		    pause: function(event) {
 			    my_playState.text(opt_text_selected);
 		    },
 		    ended: function(event) {
 			    my_playState.text(opt_text_selected);
+			    jQuery("#helpblock_jp_container .jp-rewind").hide();
 		    },
 		    swfPath: "/site_media/swf/",
 		    cssSelectorAncestor: "#helpblock_jp_container",
@@ -69,8 +72,16 @@
 		    return false;
 	    });            
 	    
-        
+	    
+	    
+	    jQuery("#helpblock_jp_container .jp-rewind").click(function(e) {
+			    my_jPlayer.jPlayer("play", 0);
+		    jQuery(this).blur();
+		    return false;
+	    });            
+	    
     }
+
 
 
     function show_help_block() {

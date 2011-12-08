@@ -32,19 +32,22 @@
 	    // Instance jPlayer
 	    my_jPlayer.jPlayer({
 		    ready: function () {
-			    $("#audioblock_jp_container .track-default").click();
+			    jQuery("#audioblock_jp_container .jp-rewind").hide();
+			    jQuery("#audioblock_jp_container .track-default").click();
 		    },
 		    timeupdate: function(event) {
 			    my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
 		    },
 		    play: function(event) {
 			    my_playState.text(opt_text_playing);
+			    jQuery("#audioblock_jp_container .jp-rewind").show();
 		    },
 		    pause: function(event) {
 			    my_playState.text(opt_text_selected);
 		    },
 		    ended: function(event) {
 			    my_playState.text(opt_text_selected);
+			    jQuery("#audioblock_jp_container .jp-rewind").hide();
 		    },
 		    swfPath: "/site_media/swf/",
 		    cssSelectorAncestor: "#audioblock_jp_container",
@@ -65,6 +68,14 @@
 		    $(this).blur();
 		    return false;
 	    });
+	    
+	    
+	    
+	    jQuery("#audioblock_jp_container .jp-rewind").click(function(e) {
+			    my_jPlayer.jPlayer("play", 0);
+		    jQuery(this).blur();
+		    return false;
+	    });            
 	    
 	    
     }
