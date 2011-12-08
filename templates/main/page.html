@@ -121,10 +121,9 @@
         <a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
     {% endwith %}
 {% endif %}
-
 {% for block in section.pageblock_set.all %}
     {% if block.block.is_help_block %}
-        {% render block %}
+       {% render block %}
     {%endif %}
 {% endfor %}
 
