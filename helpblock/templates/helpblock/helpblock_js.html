@@ -1,91 +1,101 @@
+<!--
+<script src="/site_media/js/jquery-1.4.2.min.js" type="text/javascript" ></script> 
+-->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" ></script> 
 <script type="text/javascript" src="http://ccnmtl.columbia.edu/remote/jquery-jplayer-2.1.0/js/jquery.jplayer.min.js"></script>
-<script type="text/javascript"  >
-$(document).ready(function(){
-/*
-    // Local copy of jQuery selectors, for performance.
-	var	my_jPlayer = $("#helpblock_jquery_jplayer"),
-		my_trackName = $("#helpblock_jp_container .track-name"),
-		my_playState = $("#helpblock_jp_container .play-state"),
-		my_extraPlayInfo = $("#helpblock_jp_container .extra-play-info");
-
-	// Some options
-	var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
-		opt_auto_play = false, // If true, when a track is selected, it will auto-play.
-		opt_text_playing = "Now playing", // Text when playing
-		opt_text_selected = "Track selected"; // Text when not playing
-
-	// A flag to capture the first track
-	var first_track = true;
-
-	// Change the time format
-	$.jPlayer.timeFormat.padMin = false;
-	$.jPlayer.timeFormat.padSec = false;
-	$.jPlayer.timeFormat.sepMin = " min ";
-	$.jPlayer.timeFormat.sepSec = " sec";
-
-	// Initialize the play state text
-	my_playState.text(opt_text_selected);
-
-	// Instance jPlayer
-	my_jPlayer.jPlayer({
-		ready: function () {
-			$("#helpblock_jp_container .track-default").click();
-		},
-		timeupdate: function(event) {
-			my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
-		},
-		play: function(event) {
-			my_playState.text(opt_text_playing);
-		},
-		pause: function(event) {
-			my_playState.text(opt_text_selected);
-		},
-		ended: function(event) {
-			my_playState.text(opt_text_selected);
-		},
-		swfPath: "js",
-		cssSelectorAncestor: "#helpblock_jp_container",
-		supplied: "mp3",
-		wmode: "window"
-	});
-
-	// Create click handlers for the different tracks
-	$("#helpblock_jp_container .track").click(function(e) {
-		my_trackName.text($(this).text());
-		my_jPlayer.jPlayer("setMedia", {
-			mp3: $(this).attr("href")
-		});
-		if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
-			my_jPlayer.jPlayer("play");
-		}
-		first_track = false;
-		$(this).blur();
-		return false;
-	});            
-	*/
-});
+<script type="text/javascript">
 
 
-function show_help_block() {
-    
-    jQuery ('.help_block_box' ).show();
-    jQuery ('.show_help_link_div' ).hide();
-    // start playing.
-}
-function hide_help_block() {
-    //alert (" hiding " + block_id );
-    jQuery ('.help_block_box').hide();
-    jQuery ('.show_help_link_div' ).show();
-}
+    function init_help_block_audio_player() {
 
-// initially hide all help blocks
-function init_help () {
-    jQuery ('.help_block_box').hide();
-    // jQuery ('.help_block_box').click (hide_help_block);
-    // show_help_block({{block.id}})
-}
+        // Local copy of jQuery selectors, for performance.
+	    var	my_jPlayer = jQuery("#helpblock_jquery_jplayer"),
+		    my_trackName = jQuery("#helpblock_jp_container .track-name"),
+		    my_playState = jQuery("#helpblock_jp_container .play-state"),
+		    my_extraPlayInfo = jQuery("#helpblock_jp_container .extra-play-info");
+        
+	    // Some options
+	    var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+		    opt_auto_play = false, // If true, when a track is selected, it will auto-play.
+		    opt_text_playing = "Now playing", // Text when playing
+		    opt_text_selected = "Track selected"; // Text when not playing
 
-jQuery (init_help);
+	    // A flag to capture the first track
+	    var first_track = true;
+
+
+	    // Change the time format
+
+	    jQuery.jPlayer.timeFormat.padMin = false;
+	    jQuery.jPlayer.timeFormat.padSec = false;
+	    jQuery.jPlayer.timeFormat.sepMin = " min ";
+	    jQuery.jPlayer.timeFormat.sepSec = " sec";
+	   
+	    // Initialize the play state text
+
+	    my_playState.text(opt_text_selected);
+
+	    // Instance jPlayer
+	    my_jPlayer.jPlayer({
+		    ready: function () {
+			    jQuery("#helpblock_jp_container .track-default").click();
+		    },
+		    timeupdate: function(event) {
+			    my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+		    },
+		    play: function(event) {
+			    my_playState.text(opt_text_playing);
+		    },
+		    pause: function(event) {
+			    my_playState.text(opt_text_selected);
+		    },
+		    ended: function(event) {
+			    my_playState.text(opt_text_selected);
+		    },
+		    swfPath: "js",
+		    cssSelectorAncestor: "#helpblock_jp_container",
+		    supplied: "mp3",
+		    wmode: "window"
+	    });
+
+	    // Create click handlers for the different tracks
+	    jQuery("#helpblock_jp_container .track").click(function(e) {
+		    my_trackName.text(jQuery(this).text());
+		    my_jPlayer.jPlayer("setMedia", {
+			    mp3: jQuery(this).attr("href")
+		    });
+		    if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+			    my_jPlayer.jPlayer("play");
+		    }
+		    first_track = false;
+		    jQuery(this).blur();
+		    return false;
+	    });            
+	    
+        
+    }
+
+
+    function show_help_block() {
+        
+        jQuery ('.help_block_box' ).show();
+        jQuery ('.show_help_link_div' ).hide();
+        // start playing.
+    }
+    function hide_help_block() {
+        //alert (" hiding " + block_id );
+        jQuery ('.help_block_box').hide();
+        jQuery ('.show_help_link_div' ).show();
+    }
+
+    // initially hide all help blocks
+    function init_help () {
+        jQuery ('.help_block_box').hide();
+        init_help_block_audio_player();
+        // jQuery ('.help_block_box').click (hide_help_block);
+        // show_help_block({{block.id}})
+    }
+
+    jQuery (init_help);
 
 </script>
