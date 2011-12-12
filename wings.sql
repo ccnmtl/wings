@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 215, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 227, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 105, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 108, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 120, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 123, true);
 
 
 --
@@ -1473,7 +1473,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 250, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 251, true);
 
 
 --
@@ -1673,7 +1673,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 111, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 118, true);
 
 
 --
@@ -1711,7 +1711,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 142, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 154, true);
 
 
 --
@@ -1720,7 +1720,9 @@ SELECT pg_catalog.setval('quizblock_submission_id_seq', 142, true);
 
 CREATE TABLE riskblock_riskblock (
     id integer NOT NULL,
-    description text NOT NULL
+    no_risk_copy text NOT NULL,
+    some_risk_copy text NOT NULL,
+    severe_risk_copy text NOT NULL
 );
 
 
@@ -1747,7 +1749,7 @@ ALTER SEQUENCE riskblock_riskblock_id_seq OWNED BY riskblock_riskblock.id;
 -- Name: riskblock_riskblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('riskblock_riskblock_id_seq', 1, false);
+SELECT pg_catalog.setval('riskblock_riskblock_id_seq', 1, true);
 
 
 --
@@ -1821,7 +1823,7 @@ ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
 -- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('south_migrationhistory_id_seq', 17, true);
+SELECT pg_catalog.setval('south_migrationhistory_id_seq', 18, true);
 
 
 --
@@ -1970,7 +1972,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 49, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 51, true);
 
 
 --
@@ -2411,6 +2413,7 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
+222	17	Logged in!
 \.
 
 
@@ -2596,6 +2599,7 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 62	12547				!	f	t	f	2011-10-28 09:45:15.099363-04	2011-10-28 09:45:15.091096-04
 63	1234				!	f	t	f	2011-10-28 09:46:18.125712-04	2011-10-28 09:46:18.117174-04
 75	987654				!	f	t	f	2011-11-09 11:39:30.398863-05	2011-11-09 11:39:30.392313-05
+106	231				!	f	t	f	2011-12-05 12:28:45.72567-05	2011-12-05 12:28:45.714528-05
 64	55555				!	f	t	f	2011-10-31 10:34:12.357299-04	2011-10-31 10:34:12.345139-04
 76	9876				!	f	t	f	2011-11-09 15:51:42.736658-05	2011-11-09 15:51:42.728185-05
 77	4862				!	f	t	f	2011-11-09 15:52:57.556896-05	2011-11-09 15:52:57.548421-05
@@ -2624,13 +2628,15 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 96	475820				!	f	t	f	2011-11-28 13:53:52.888806-05	2011-11-28 13:53:52.880283-05
 103	777666555				!	f	t	f	2011-12-02 10:39:54.806307-05	2011-12-02 10:39:54.794694-05
 97	211777				!	f	t	f	2011-11-30 10:49:17.846438-05	2011-11-30 10:49:17.828943-05
+17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-06 12:23:51.943256-05	2011-10-18 11:54:07-04
 98	777777				!	f	t	f	2011-11-30 11:16:11.325227-05	2011-11-30 11:16:11.316854-05
 99	242424242				!	f	t	f	2011-11-30 13:30:18.081878-05	2011-11-30 13:30:18.073349-05
-104	666777222				!	f	t	f	2011-12-02 11:18:36.064064-05	2011-12-02 11:18:36.055233-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-06 15:02:18.096048-05	2011-10-11 11:39:54-04
+108	111111111				!	f	t	f	2011-12-06 16:52:53.830941-05	2011-12-06 12:23:58.646784-05
 105	545				!	f	t	f	2011-12-02 14:00:50.535075-05	2011-12-02 14:00:50.526501-05
-17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-02 14:12:20.522834-05	2011-10-18 11:54:07-04
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-05 10:38:55.083656-05	2011-06-02 15:22:04-04
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-05 10:42:51.538435-05	2011-10-11 11:39:54-04
+104	666777222				!	f	t	f	2011-12-05 11:41:58.271671-05	2011-12-02 11:18:36.055233-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-09 13:03:02.6341-05	2011-06-02 15:22:04-04
+107	11111				!	f	t	f	2011-12-09 13:03:17.676886-05	2011-12-05 16:12:38.678186-05
 \.
 
 
@@ -2890,6 +2896,9 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 118	2011-12-02 13:32:31.126187-05	13	42	42	P242424242	2	No fields changed.
 119	2011-12-02 14:00:49.084022-05	17	42	48	P545	1	
 120	2011-12-05 10:39:04.00124-05	5	42	49	P231	1	
+121	2011-12-05 16:12:33.26145-05	5	42	50	P11111	1	
+122	2011-12-05 16:14:31.802444-05	5	42	51	P111111111	1	
+123	2011-12-06 17:33:34.210751-05	5	42	51	P111111111	3	
 \.
 
 
@@ -3089,20 +3098,27 @@ aee183a950cccef2685e1bfa0cd9df77	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 18197bfdbf76dc1b0480a5b57ba73888	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-11-29 12:23:24.34709-05
 a5f68ae123636b26f5724a51747d1f6e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFkdS5iYTA3YTY1ZDdlNTUyMWQ1NDMx\nNWJmMmU4OTUxZmIwYQ==\n	2011-12-14 13:38:03.586349-05
 53e8d6b855b2d71267c67a7139d4f067	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-11-30 10:12:21.694884-05
-2c0eefb83358a561ec83c92179d8a8a1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-14 10:51:58.697797-05
 4c2d829b5ca3bdb5b206e7554269903e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFSdS45NjlmNjQ0NmIzZDI0MWM5NjZj\nNDIwOTA4OTkxNDg0ZA==\n	2011-11-30 12:06:13.072433-05
 1e3234f7119dc090b263d6843deb3674	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFodS5iNzYyZTYyMTI2NzU2Y2NmOGNm\nMTNlZWRjZTY5ZGFjNQ==\n	2011-12-16 11:18:36.074567-05
 fb024c77eda0a0d651ad34999951b4c8	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-14 14:30:35.005574-05
-ccb300ff712f1884636b58aa3b353c32	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVQ1fYXV0aF91c2VyX2lkcQSKAVNVEl9hdXRo\nX3VzZXJfYmFja2VuZHEFVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2Vu\nZHEGdS4yMGZjYjBhYzVlNzZiNzMxYTcxOTk1NDkwOWFiOWJlYw==\n	2011-12-14 16:27:15.536104-05
 5b90c41bd716af6a26d54cb5f2e79bf3	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 12:29:55.202325-05
 ab7d407e23618b1f700f4614694bf6a7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-15 15:56:33.064672-05
 11e2dae72af6f904ea218fd9e9213bdb	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-15 17:31:57.727918-05
 3fc26076d55ba07d98c5e9ba8ba2300a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 00:45:10.346025-05
 daac80c207ef4f6f5655c06819327c9c	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 07:41:04.584845-05
+4bfc131fea8dd2dc64088f41808cd02e	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2011-12-19 10:47:26.65133-05
 7892f9a11c5196bd7d848e9cb6cbcb8f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 13:17:57.014955-05
 bb3d603b881bd7db45f3d1c945088084	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 14:12:20.532915-05
-52784d50d4c353548ec5720cda2a26f8	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-19 10:38:55.107863-05
-79fa0ff6c12a967034788a8ec019bc2c	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-19 10:42:51.548648-05
+a893ba0d0ea0a5df8296635475d51f0f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFsdS5kODM4Y2Y5MWJjMWQxMmVkMWJh\nMTM5NjgzZGI1MzExZg==\n	2011-12-20 12:23:58.67971-05
+0ca3b43c48c33db96a22d9ebe659b298	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFqdS4xZTg3NWQwYzQ1N2Y5MGRiZDA5\nM2VmNGMwNDI5YmFhMg==\n	2011-12-19 12:28:45.743514-05
+c8d4e60e3f8b183bc1db70aa83a21a59	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-19 16:14:22.387576-05
+2a7879869869b0b74bef3a5f1785f47b	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-19 15:01:18.961448-05
+ccb300ff712f1884636b58aa3b353c32	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVRJfYXV0aF91c2VyX2JhY2tlbmRxBFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxBVUNX2F1dGhfdXNlcl9pZHEG\nigFTdS5iYmQ5OWEyNmRjNmNiZDE5MTdjNmVjYzRjMjJlNjFjYQ==\n	2011-12-20 12:22:57.757849-05
+b5c3aedf7b0ede14b4e637ecdcebc47a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-20 15:02:18.106815-05
+f502fa62272ac8082238d974a609824b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-20 17:34:09.908135-05
+c5e0e489929f255f54a87edd7a4fc6e1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 12:10:09.319994-05
+83d23b4895c1a2236f49f573abaf65f6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-23 12:12:44.019333-05
+dd889696293ac7d5221f0541916aa2e0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 13:03:17.703475-05
 \.
 
 
@@ -3410,10 +3426,10 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 21	In addition to physical violence, verbal abuse, such as screaming, yelling, threats, name calling, and putdowns can include angry words that make you feel hurt, ashamed or insignificant. These behaviors are also sometimes referred to as emotional abuse. 
 30	Many women who experience violence from their partner have difficulty in telling someone about what is happening. Some women feel that there is no way out of the situation and their partner has control. Addressing such a situation may not be easy. But the purpose of our conversation today is to consider any risks you or your loved ones may be facing, and to consider what supports and resources are available to you.
 31	One type of violence includes physical abuse with behaviors such as shoving, pushing, slapping, hitting, kicking, pulling hair or punching. \r\n\r\n[power and control pull-out graphic of physical abuse bubble]
-23	Sexual abuse may include being forced to have sex or feeling pressured into having unwanted sexual activity, like if a partner pressures you to have oral or anal sex when you don’t want to or if a partner takes sexual advantage of you when you are under the influence of drugs or alcohol. \r\n\r\n[power and control pull-out graphic of sexual abuse bubble]
 27	Encouraging a woman to be dependent on drugs, or preventing her from accessing drug treatment, is also a form of abuse that can occur in intimate relationships. Pressuring women to sell sex for money or drugs is also a form of abuse.
 29	Women who experience abuse by their partners may develop sleep disturbances, sexual dysfunction, depression, anxiety, posttraumatic stress disorder, eating disorders, feminine problems, become isolated, feel an intense loss of social connections, and may attempt suicide. Such abuse may also make it difficult for women to negotiate condom use with their partners and protect themselves against HIV and other sexually transmitted infections.  
 17	We'll be talking about recognizing relationship conflict and different types of abuse now. What we talk about might be upsetting to you, especially if it touches on something that's going on in your life. Please remember that we're here to help.\r\n
+23	Sexual abuse may include being forced to have sex or feeling pressured into having unwanted sexual activity.  For example if a partner pressures you to have oral or anal sex when you don’t want to or if a partner takes sexual advantage of you when you are under the influence of drugs or alcohol. \r\n\r\n[power and control pull-out graphic of sexual abuse bubble]
 28	Approximately 1 in 4 women will experience domestic abuse in her lifetime. Each year there are approximately 16,800 homicides and over 2 million medically treated injuries related to intimate partner violence.  Among women on probation or parole in New York City, the rate of experiencing physical or sexual violence is very high – over one third of women have gone to the emergency room for injuries resulting from a fight with a partner.\r\n\r\nBecause so many women experience violence in relationships, we are introducing this WINGS program.
 35	Relationship conflicts with partners – which may include emotional, physical, or sexual abuse – are common triggers for using drugs and alcohol to cope with the emotional and sometimes physical pain. Violence often causes women in recovery to relapse and drop out of treatment. 
 36	Thinking through your relationship with your partner(s) now or in the past, when you experience conflict or if you are being hurt by your partner, what are some negative consequences that you have experienced or have concerns about?
@@ -3433,17 +3449,16 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 62	Economic abuse occurs when a partner attempts to make a woman financially dependent, takes her money, or forces her to sell drugs.\r\n\r\n[power and control pull-out graphic of economic abuse bubble]
 60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
 46	Call 311 and ask for the NYC Domestic Violence Hotline (800-621-4673 or 866-604-5350) if you need counseling, legal assistance or emergency housing.  If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.
-41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all the strategies on the following pages to stay safe.
 58	[video of Charlene saying the following:]\r\n\r\nThank you for taking the time to participate in the WINGS project today. \r\n\r\nMy name is Charlene and I will be speaking with you throughout the next hour. The purpose of this project is to provide information and resources to women. We’ll start by talking about relationships and different types of conflict. Then I will ask you a few questions about relationships. At the end of this session, we’ll discuss safety planning, support and goals.\r\n
 38	Thinking through your relationship with your partner(s), when conflict or abuse occurs what are some negative consequences that you experience or are concerned about? Please answer the following questions.
 37	After considering the different negative ways that relationship conflict may be affecting your life and your family, what are some reasons why it would be important for you to reduce conflict? Please answer the following questions.
 47	Keep change for phone calls on you at all times. If you use your cell phone, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your calls confidential, you must either use coins at a pay phone or use a calling card for a limited time when you first leave. 
 49	Let's identify the goals you most want to pursue.\r\n
+41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all of the following strategies to stay safe.
 64	Sometimes alcohol and drug use make the pattern of violence worse. People who use drugs and alcohol are more likely to commit acts of violence against their partners. Women who are under the influence of drugs or alcohol may be less likely to escape or resist abusive situations. When an intimate partner keeps someone from attending treatment or threatens to hurt them if they use or don’t use drugs, this is a part of abusive behavior.  
 65	Some women who experience violence in relationships may become angry and want to fight back. By fighting back, women may put themselves at risk for receiving criminal charges or going to jail.  Women who experience intense relationship conflict are also more likely to turn to drugs or alcohol to cope with the pain from the abuse. This may also increase their risk for being arrested for drug-related charges.
 66	[video clips from Strength of a Woman plus VO that says:\r\n\r\nMany women have a hard time talking about the abuse they are experiencing and getting help]
 33	Now you're going to complete a screening on how safe and comfortable you feel in your relationship with your intimate partner(s). The next three pages will ask you some questions about sexual or romantic partners you've had in the past year.
-67	Severe Risk for Relationship Conflict or Intimate Partner Violence:\r\n\r\nFrom your answers, it looks like there is a serious concern about safety in your relationship. I’d like to ask a few more questions about how you are influenced by the relationship, and then I’d like to go through some steps of safety planning to make sure that you are prepared in case conflict gets out of hand. \r\nSome Risk:\r\nFrom your answers, it looks like there are some concerns about safety in your relationship. I’d like to ask a few more questions about how you are influenced by the relationship, and then I’d like to go through some steps of safety planning to make sure that you are prepared in case conflict gets out of hand. \r\nNo IPV Risk:\r\nFrom your answers, it doesn’t look like you are experiencing serious relationship conflict, but we would like you to continue learning about how to help your family or friends who may experiencing serious relationship conflict or intimate partner violence.\r\n
 68	You answered that relationship conflict gives you these feelings and concerns:\r\n\r\n[list of question text from the previous questions numbered 1-12 with 'yes' and 'maybe' answers\r\n\r\nplus\r\n\r\nany text typed into field in question 13]
 70	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies.  You can use some or all the strategies on the following pages to stay safe.
 71	You will be given or mailed a copy of this safety plan.  Do you have a safe place to keep the safety plan at home or with a friend?\r\n\r\nYou will also get a list called 'Items to Remember' that provides a suggested list of things to take with you if you have to leave.  Where can you keep this list?\r\n\r\nDo you have a safe place to keep the 24-hour hotline number and other important numbers?
@@ -3453,8 +3468,8 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 77	It looks like you haven't entered any names on the tree. There are times in life when you may feel isolated from all your friends and family, but can you think of any people who you would like to reach out to and connect with?  This may include extended family members you have lost contact with, neighbors, people you work with, clergy, or service providers.  Please try to put at least two names on the tree.
 76	Can you think of two things you can do to strengthen your support from family or friends in the next week?  This may be calling someone who you like to hang out with to get together for coffee or go for walk so that you have a chance to connect with him or her. It may mean calling or a text, email or letter to someone who you have lost touch with but who you would like to reconnect with.  It may mean choosing someone who you trust and respect to talk with about the relationship conflict or abuse that you are experiencing so that you can get their advice or support on how to deal with it.
 78	Now you're going to answer some questions about the types of issues that can trigger conflict for you and your partner.  Then you'll learn about services and organizations that might be able to help you with your particular needs.
+40	If you or a family member or friend is experiencing relationship conflict or abuse by a partner, there are steps you can take to reduce conflict and help to prevent being hurt by a partner. Now we’ll cover two things that can reduce your risk for being hurt by your partner: coming up with a safety plan and identifying friends or family members you can turn to for support.
 63	Exposure to violence can also have lasting consequences for children. Kids who see or hear violence often experience grief, fear, and anxiety. Boys who witness violence between their parents are ten times more likely to abuse their partners when they become adults. Girls who witness parental violence are much more likely to be abused by their partners when they grow up. 
-40	If you or a family member or friend is experiencing relationship conflict or abuse by a partner, there are steps you can take to reduce conflict and help to prevent being hurt by a partner. Now we’ll cover two things that can reduce your risk for being hurt by your partner: coming up with a safety plan and identifying friends or family members you can turn for support.
 72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
 \.
 
@@ -3517,7 +3532,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 212	188	1		26	106
 213	189	1		26	107
 74	74	1	Emotional Abuse	19	5
-64	65	1	Sexual Abuse	16	23
+121	56	1	Taking steps to increase relationship safety 	16	40
 163	151	1	Economic Abuse	16	62
 68	69	1	Drug Use and IPV	16	27
 69	70	1	How Common It Is	16	28
@@ -3557,7 +3572,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 205	183	1		26	102
 206	184	1		26	103
 207	185	1		26	104
-208	186	1	feeback options	16	67
 215	191	1		26	109
 230	63	2		19	10
 231	62	2		19	11
@@ -3572,7 +3586,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 222	198	1		26	116
 234	65	2		19	13
 226	204	1		26	119
-121	56	1	Taking steps to increase relationship safety 	16	40
 224	202	1		26	117
 225	203	1		26	118
 223	201	1	How relationship conflict makes you feel	16	68
@@ -3603,8 +3616,10 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 141	120	1		16	47
 147	57	1	Goal Setting	16	49
 240	55	1	Social Support Tree	16	72
+64	65	1	Sexual Abuse	16	23
 249	146	1	Resources to help you towards your goals	26	126
 250	200	1		26	127
+251	186	1		47	1
 \.
 
 
@@ -4396,7 +4411,6 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 162	59	Other things I can do to increase my independence include: 	long text			0
 166	63	The person I will ask is:\r\n\t\r\n	short text		Ask a trusted friend or advocate to help you review review your plan.  	0
 163	60	I will check with the following people to see if I can stay with them or borrow money:	long text		It is important to find people who will let you stay with them or lend you some money.  	0
-165	62	In order to plan the safest way to leave the residence, I will sit down and review my safety plan every (time frame): 	short text			0
 167	64	If you could choose the best outcome (s) for you and your partner, what would it be?  (mark all that apply)	multiple choice			0
 168	64	Other desired outcomes:	long text			1
 170	66	Initials or a fake name of an intimate partner you've had in the past year:	short text			0
@@ -4423,6 +4437,7 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 192	88	In the past year, have you had a good relationship with your partner(s)?	single choice			0
 193	89	In the past year, have you been able to count on your partner(s) to help you out if you had a problem?	single choice			0
 160	57	I will keep copies of important documents (social security cards, birth certificates, immunization records) or keys at :	short text			0
+165	62	It's important to review your safety plan occasionally.  How often will you sit down and review your safety plan?	short text			0
 194	90	In the past year, has your partner(s) choked you?	single choice			0
 195	91	In the past year, has your partner(s) punched or hit you with something that could hurt or used or threatened to use a knife or gun on you?	single choice			0
 212	107	I am concerned that relationship conflict makes me feel isolated from my friends and family.	single choice			0
@@ -4679,6 +4694,13 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 109	158	140	
 110	159	141	
 111	165	142	
+112	170	143	
+113	172	144	3
+114	170	147	hd
+115	172	148	3
+116	170	151	hd
+117	172	152	3
+118	174	154	1
 \.
 
 
@@ -4816,6 +4838,18 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 140	55	17	2011-12-02 15:09:40.324027-05
 141	56	17	2011-12-02 15:11:44.855558-05
 142	62	17	2011-12-02 15:19:02.686698-05
+143	66	106	2011-12-05 12:33:37.888571-05
+144	67	106	2011-12-05 12:33:37.917236-05
+145	68	106	2011-12-05 12:33:37.922669-05
+146	69	106	2011-12-05 12:33:37.925367-05
+147	66	106	2011-12-05 12:33:48.700038-05
+148	67	106	2011-12-05 12:33:48.706158-05
+149	68	106	2011-12-05 12:33:48.711388-05
+150	69	106	2011-12-05 12:33:48.714034-05
+151	66	106	2011-12-05 12:34:00.332241-05
+152	67	106	2011-12-05 12:34:00.338579-05
+153	68	106	2011-12-05 12:34:00.343841-05
+154	69	106	2011-12-05 12:34:00.346704-05
 \.
 
 
@@ -4823,7 +4857,8 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 -- Data for Name: riskblock_riskblock; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY riskblock_riskblock (id, description) FROM stdin;
+COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FROM stdin;
+1	From your answers, it doesn’t look like you are experiencing serious relationship conflict, but we would like you to continue learning about how to help your family or friends who may experiencing serious relationship conflict or intimate partner violence.	From your answers, it looks like there are some concerns about safety in your relationship. I’d like to ask a few more questions about how you are influenced by the relationship, and then I’d like to go through some steps of safety planning to make sure that you are prepared in case conflict gets out of hand.	From your answers, it looks like there is a serious concern about safety in your relationship. I’d like to ask a few more questions about how you are influenced by the relationship, and then I’d like to go through some steps of safety planning to make sure that you are prepared in case conflict gets out of hand. 
 \.
 
 
@@ -4857,6 +4892,7 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 15	exitmaterialsblock	0001_initial	2011-11-07 22:12:43.888206-05
 16	audioblock	0002_auto__add_field_audioblock_audio_file	2011-11-09 20:11:26.073815-05
 17	helpblock	0002_auto__add_field_helpblock_audio_file	2011-11-17 17:21:36.350609-05
+18	riskblock	0002_auto__del_field_riskblock_description__add_field_riskblock_no_risk_cop	2011-12-06 21:48:00.747592-05
 \.
 
 
@@ -4890,6 +4926,7 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 
 COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM stdin;
 2	12345	57	\N
+49	231	106	157
 22	76544	74	52
 35	357098	88	65
 19	100	71	148
@@ -4907,16 +4944,16 @@ COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM st
 45	654321	102	\N
 46	777666555	103	\N
 37	132456	90	156
-47	666777222	104	59
+50	11111	107	156
 42	242424242	99	156
 32	1423	85	158
 48	545	105	52
-49	231	\N	\N
 33	46464	86	149
 41	777777	98	156
 27	89766	79	100
 30	654879	83	52
 34	78787	87	52
+47	666777222	104	156
 21	25252	73	148
 \.
 
