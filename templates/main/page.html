@@ -18,73 +18,14 @@
      {%endif %}
      
 <script language = "javascript">
-    // For text input boxes,
-    // this snippet ( http://mathiasbynens.be/notes/oninput )
-    // defines a working oninput event.
-    /*
-    jQuery.fn.input = function(fn) {
-        var $this = this;
-        if (!fn) {
-            return $this.trigger('keydown.input');
-        }
-        return $this.bind({
-            'input.input': function(event) {
-            $this.unbind('keydown.input');
-            fn.call(this, event);
-        },
-        'keydown.input': function(event) {
-            fn.call(this, event);
-        }
-        });
-    };
-    /////////////////////////////
-    // If you leave a text field and immediately make a change to a radio button,
-    // the radio button will often accept your change before he page reloads. Thus your change will be lost.
-    // So we're going to freeze all the radio buttons until the page reloads.
-    // && thing.originalEvent.type == 'change'
-    
-    
-    var TAINTED = false;
-    function set_taint ( e) {
-        if (!TAINTED ) {
-            console.log ('preventing radios.');
-            jQuery('input[type="radio"]').click (radio_clicked);
-        }
-        TAINTED = true;
-    }
-    
-    function submit_when_changed() {
-        jQuery('#submit_to_self_form').submit();
-    }
-    
-    function radio_clicked (e) {
-        console.log ('prevented');
-        e.preventDefault();
-    }
-    
-    function connect_forms () {
-        jQuery('input[type="text"]') .blur(submit_when_changed);
-        jQuery('input[type="text"]') .change(submit_when_changed);
-        jQuery('input[type="radio"]').blur(submit_when_changed);
-        jQuery('input[type="radio"]').change(submit_when_changed);
-        jQuery('input[type="text"]').input( set_taint);
-    }
-    // basically, if you're radio button always submit.
-    // Basically if you're a text input, do not submit.
-    // Basically if you leave a text for a radio button, don't submit.
-    
-    jQuery (connect_forms)
-    */
     function submit_and_next() {
         jQuery ('#destination')[0].value = 'next';
         jQuery('#submit_to_self_form').submit();
     }
-    
     function submit_and_prev() {
         jQuery ('#destination')[0].value = 'previous';
         jQuery('#submit_to_self_form').submit();
     }
-    
 </script>
      
 {%endif%}
@@ -174,12 +115,8 @@
         <a href="#" id="previous" onclick ="javascript:submit_and_prev()">{{section.get_previous.label}} »</a>
     {%else %}
         <a href="{{section.get_previous.get_absolute_url}}" id="previous">« {{section.get_previous.label}}</a>
-    {%endif %}
-      
+    {%endif %}      
 {% endif %}
-
-
-
 
 {% if section.get_next %}
     {% with section.get_next as next_section %}
