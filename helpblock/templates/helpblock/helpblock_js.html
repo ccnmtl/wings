@@ -45,6 +45,7 @@
 		    },
 		    pause: function(event) {
 			    my_playState.text(opt_text_selected);
+			    jQuery("#helpblock_jp_container .jp-rewind").hide();
 		    },
 		    ended: function(event) {
 			    my_playState.text(opt_text_selected);
@@ -83,21 +84,22 @@
 
 
     function show_help_block() {
-        
         jQuery ('.help_block_box' ).show();
         jQuery ('.show_help_link_div' ).hide();
-        // start playing.
+        jQuery ('.hide_help_link_div' ).show();
     }
     function hide_help_block() {
         //alert (" hiding " + block_id );
         jQuery ('.help_block_box').hide();
         jQuery ('.show_help_link_div' ).show();
+        jQuery ('.hide_help_link_div' ).hide();
     }
 
     // initially hide all help blocks
     function init_help () {
-        jQuery ('.help_block_box').hide();
+        
         init_help_block_audio_player();
+        hide_help_block();
         // jQuery ('.help_block_box').click (hide_help_block);
         // show_help_block({{block.id}})
     }

@@ -18,6 +18,7 @@ class HelpBlock(models.Model):
     template_file =     "helpblock/helpblock.html"
     js_template_file =  "helpblock/helpblock_js.html"
     css_template_file = "helpblock/helpblock_css.html"
+    
     display_name =      "Help Block"
 
     def is_help_block(self):

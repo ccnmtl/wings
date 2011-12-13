@@ -18,8 +18,8 @@ class AudioBlock(models.Model):
 
     template_file     = "audioblock/audioblock.html"
     js_template_file  = "audioblock/audioblock_js.html"
-    css_template_file = "audioblock/audioblock_css.html"
-
+    #this is a symlink:
+    css_template_file = "audioblock/helpblock_css.html"
     display_name = "Audio Block"
     
     def is_audio_block(self):
