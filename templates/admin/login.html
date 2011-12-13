@@ -11,17 +11,21 @@
 
 {% block content %}
 
+<div id="siteinfo">
+<h2>Welcome to WINGS</h2>
+<p>Info or video about this site to go here</p>
+</div>
 
-            <table>
+            <table id="login">
                 <tr>
 
                     <td>
                                {% if error_message %}
                                     <p class="errornote">{{ error_message }}</p>
                                 {% endif %}
-                                <p>
+                                <h4>
                                 Log in below to start Wings:
-                                </p>
+                                </h4>
                                 <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
                                     <label for="id_username">{% trans 'Username:' %}</label> <input type="text" name="username" id="id_username" /><br />
 

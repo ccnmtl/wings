@@ -16,10 +16,6 @@ a.addlink {
     font-size: 150%;
 }
 
-h1 {
-    font-size: 200%;
-}
-
 
 #changelist .actions label {
     font-size: 15px;
@@ -90,14 +86,7 @@ input[name="_continue"], input[name="_addanother"],{
     padding-left: 3.5em;
 }
 
-.object-tools li {
-    background: white;
-    display: block;
-    float: left;
-    padding: 0 0 0 8px;
-    margin-left: 2px;
-    height: 16px;
-}
+
 
 .object-tools li:hover {
 }

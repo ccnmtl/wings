@@ -161,7 +161,6 @@ table {
 td, th {
     font-size: 11px;
     line-height: 13px;
-    border-bottom: 1px solid #eee;
     vertical-align: top;
     padding: 5px;
     font-family: "Lucida Grande", Verdana, Arial, sans-serif;
@@ -276,8 +275,11 @@ textarea {
     vertical-align: top !important;
 }
 
-input[type=text], input[type=password], textarea, select, .vTextField {
+input[type="text"], input[type="password"], textarea, select, .vTextField {
     border: 1px solid #ccc;
+    width: 250px;
+	font-size: 1em;
+    height: 20px;
 }
 
 /* FORM BUTTONS */
@@ -662,3 +664,155 @@ table#change-history tbody th {
     color: #fff;
 
 }
+
+/* Login page */
+
+#siteinfo {
+
+    float: left;
+    display: block;
+    width: 500px;
+    background-color: #dedede;
+    padding: 0 15px 15px 15px;
+    margin: 0 30px 15px 0;
+}
+
+table#login td {
+
+    padding: 10px;
+}
+
+.loginbox
+{
+	float: right;
+	width: 280px;
+	margin: 0 10px;
+	padding: 0;
+	border: 0;
+	background: #fff url('../img/bg_login_middle.gif') repeat-y top;
+}
+
+.loginbox .boxtop
+{
+	width: 280px;
+	height: 16px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #fff url('../img/bg_login_top.gif') no-repeat top;
+}
+
+.loginbox .boxbottom
+{
+	width: 280px;
+	height: 16px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #fff url('../img/bg_login_bottom.gif') no-repeat bottom;
+}
+
+.loginbox h2
+{
+	margin: 0 0 10px 10px;
+	padding: 0;
+	border: 0;
+	font: bold 16px "lucida grande", arial, helvetica, sans-serif;
+}
+
+.loginbox h3
+{
+	margin: 0 0 10px 10px;
+	padding: 0;
+	border: 0;
+	font: bold 1em "lucida grande", arial, helvetica, sans-serif;
+}
+
+.loginbox .alert
+{
+	margin: 0 0 10px 10px;
+	padding: 0;
+	border: 0;
+	font: bold italic 1em "lucida grande", arial, helvetica, sans-serif;
+	color: #000;
+}
+
+.loginbox .alert a
+{
+	text-decoration: underline;
+}
+
+.loginbox hr
+{
+	height: 1px;
+	margin: 15px 0;
+	padding: 0;
+	border: 0;
+	background-color: #999;
+	color: #999;
+}
+
+.loginbox form
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.loginbox input.regButton
+{
+	margin: 0 0 0 10px;
+	padding: 1px;
+	background-color: #e0e0e0;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #666;
+	border-bottom: 2px solid #666;
+	font: normal 1em "lucida grande", arial, helvetica, sans-serif;
+	cursor: pointer;
+}
+
+.loginbox input.regButton:active
+{
+	background-color: #ccc;
+	border-top: 2px solid #666;
+	border-left: 2px solid #666;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+}
+
+.loginbox input#id_password,
+.loginbox input#id_username
+{
+	width: 170px;
+	margin: 0;
+	padding: 2px;
+	border: 1px solid #999;
+	background-color: white;
+	font: normal 12px "lucida grande", arial, helvetica, sans-serif;
+	color: #000;
+	vertical-align: middle;
+
+}
+
+.loginbox table
+{
+	margin: 0 10px;
+	padding: 0;
+	border: 0;
+}
+
+.loginbox table td
+{
+	margin: 0;
+	padding: 3px 2px 3px 0;
+	border: 0;
+}
+
+.loginbox table td a
+{
+	font-size: 11px;
+	color: #069;
+	text-decoration: underline;
+}
+

@@ -169,7 +169,21 @@ fieldset.monospace textarea {
 
 .submit-row input {
     margin: 0 0 0 5px;
+    cursor: pointer;
 }
+
+.submit-row a {
+    cursor: pointer;
+    background-color: #ccc;
+    border: 2px solid #999;
+    color: white;
+    font-weight: bold;
+        font-size: 1.2em;
+       vertical-align: middle;
+            padding: 4px 5px 3px;
+            float: right;
+}
+
 
 .submit-row p {
     margin: 0.3em;

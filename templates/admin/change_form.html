@@ -23,6 +23,14 @@
 {% endif %}{% endblock %}
 
 {% block content %}<div id="content-main">
+
+
+{% if change %}
+<h1>Edit Participant</h1>
+{% else %}
+<h1>Add Participant</h1>
+{% endif %}
+
 {% block object-tools %}
 {% if change %}{% if not is_popup %}
   <ul class="object-tools"><li><a href="history/" class="historylink">{% trans "History" %}</a></li>
