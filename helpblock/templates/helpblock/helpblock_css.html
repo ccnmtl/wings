@@ -41,8 +41,10 @@ div.help_block_box {
 
  }
 
-#content .content-nav a.help
-{
+a.show_help_link, a.hide_help_link {
+    background-position: -19px -15px !important;
+    color: transparent !important;
+    float: right !important;
     width: 135px !important;
     margin: 0 10px !important;
 }
@@ -50,20 +52,32 @@ div.help_block_box {
 
 a.show_help_link {
     background-image: url('/site_media/img/help_button_bg.png') !important; 
-    background-position: -19px -15px !important;
-    color: transparent !important;
-    float: right !important;
 }
 
 
 a.hide_help_link {
-/*    color: blue !important; */
     background-image: url('/site_media/img/close_help_button_bg.png') !important; 
-    background-position: -19px -15px !important;
-    color: transparent !important;
-    float: right !important;
+}
 
 
+#helpblock_jp_container a.jp-rewind,  a.jp-play, a.jp-pause {
+        color: transparent !important;
+        background-position: 0px 0px !important; 
+        width: 44px !important; 
+        height: 45px !important; 
+
+}
+
+#helpblock_jp_container a.jp-rewind {
+        background-image: url('/site_media/img/rewind_help_button_bg.png') !important; 
+}
+
+#helpblock_jp_container  a.jp-play {
+        background-image: url('/site_media/img/play_help_button_bg.png') !important; 
+}
+
+#helpblock_jp_container  a.jp-pause {
+        background-image: url('/site_media/img/pause_help_button_bg.png') !important; 
 }
 
 </style>

@@ -1,35 +1,31 @@
 <style type="text/css">
-
+    /*
+    .audioblock-container li {
+    }
+    .audioblock-container p span.track-name {
+    }
+    .audioblock-container {
+    }
+    .audioblock-container a, .audioblock-container a:link, .audioblock-container a:visited, .audioblock-container a:hover, .audioblock-container a:focus, .audioblock-container a:active {
+    }
+    */
+    
     .audioblock_div {
         margin: 0 0 0 -5em;
-	border: 0;
-	float: left;
-	/*border: 1px solid #ccc;*/
-	height: 45px;
-	padding: 5px
+	    border: 0;
+	    float: left;
+	    /*border: 1px solid #ccc;*/
+	    height: 45px;
+	    padding: 5px
     }
-
-    .audioblock-container {
-
-	}
-
-    .audioblock-container a, .audioblock-container a:link, .audioblock-container a:visited, .audioblock-container a:hover, .audioblock-container a:focus, .audioblock-container a:active {
-
-
+    
+    .audioblock-container .audio_controls, .audioblock-container .jp-stop-li {
+        display:none;
     }
-
     .audioblock-container ul {
 	    list-style-type:none;
 	    margin: 0;
-
     }
-
-
-    .audioblock-container li {
-
-
-    }
-    
     .audioblock-container li a{
         display: block;
         width: auto;
@@ -48,25 +44,21 @@
         text-align: center;
         height: 45px;
     }
-    
-            .audioblock-container li a.jp-play{
-    color: transparent;
+    .audioblock-container li a.jp-play, .audioblock-container li a.jp-pause,  .audioblock-container li a.jp-rewind{
+        color: transparent;
+        background-position: 0px 0px;
+        width: 44px;
+        height: 45px;
+    }
+    .audioblock-container li a.jp-play{
         background-image: url('/site_media/img/audio_button_bg.png');
-    background-position: 0px 0px;
-    width: 44px;
-    height: 45px;
+    }
+    .audioblock-container li a.jp-pause{
+        background-image: url('/site_media/img/pause_audio_button_bg.png');
+    }
+    .audioblock-container li a.jp-rewind{
+        background-image: url('/site_media/img/rewind_audio_button_bg.png');
     }
 
-    .audioblock-container p span.track-name {
-    /*
-	    color: #CC0090;
-    */
-    }
-    .audioblock-container .audio_controls, .audioblock-container .jp-stop-li {
-        display:none;
-    }
-
-
-         
 
 </style>
