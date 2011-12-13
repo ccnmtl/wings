@@ -146,7 +146,7 @@ def page(request,path):
                     return HttpResponseRedirect(user_participant.current_url())
 
         if 1 == 1: #eddie also adding this clause.
-            block_types_that_hide_decorations = ['Image Block', 'Video Block', 'Quiz']
+            block_types_that_hide_decorations = ['Image Block', 'Video Block', 'Quiz', 'Social Support Network Tree Block']
             myblocks = section.pageblock_set.all()
             show_decorations = not any(b.block().display_name in block_types_that_hide_decorations for b in myblocks)
         

@@ -98,7 +98,7 @@ INSTALLED_APPS = (
     'riskblock',
     'exitmaterialsblock',
     
-    'sentry.client',
+    #'sentry.client',
     'wings_main',
     #paging apparently required by south
     'paging',
@@ -119,18 +119,23 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'riskblock.RiskBlock',
               'exitmaterialsblock.ExitMaterialsBlock',
               ]
-import logging
-logger = logging.getLogger()
-from sentry.client.handlers import SentryHandler
-if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
-    logger.addHandler(SentryHandler())
-    logger = logging.getLogger('sentry.errors')
-    logger.propagate = False
-    logger.addHandler(logging.StreamHandler())
-    
-    SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
-    SENTRY_KEY = 'NOT_USED_IN_DEV' #overwritten in settings_production.py.
-    SENTRY_SITE = 'wings'
+              
+BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Quiz', 'Social Support Network Tree Block']
+
+
+if 1 == 0:
+    import logging
+    logger = logging.getLogger()
+    from sentry.client.handlers import SentryHandler
+    if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
+        logger.addHandler(SentryHandler())
+        logger = logging.getLogger('sentry.errors')
+        logger.propagate = False
+        logger.addHandler(logging.StreamHandler())
+        
+        SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
+        SENTRY_KEY = 'NOT_USED_IN_DEV' #overwritten in settings_production.py.
+        SENTRY_SITE = 'wings'
 
 THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[wings] "
