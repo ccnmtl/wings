@@ -1,3 +1,27 @@
+<script src="/site_media/js/jquery-1.4.2.min.js" type="text/javascript" ></script> 
 <script>
-    // Look Ma, no Javascript!
+    function toggle_style (style, div) {
+        
+    }
+
+    function box_clicked (e) {
+        jQuery(e.currentTarget).toggleClass( 'offers_support' );
+    }
+    
+    
+    function input_clicked (e) {
+        //jQuery(e.currentTarget).toggleClass( 'offers_support' ); 
+        e.stopPropagation();
+
+    }
+    
+    function setup_ssnm() {
+        jQuery ('.ssnm_tree_box_div').click(box_clicked)
+        jQuery ('.ssnm_tree_box_input').click(input_clicked)
+    }
+    jQuery(setup_ssnm);
+    
+    
+    
 </script>
+

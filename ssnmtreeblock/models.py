@@ -129,7 +129,7 @@ class  SsnmTreePerson (models.Model):
     """ somebody that a user knows. Shows up in a particular box on that user's tree."""
     user             = models.ForeignKey( User)
     tree_box         = models.ForeignKey( SsnmTreeBox)
-    name             = models.TextField(blank=True, null=True)
+    name             = models.TextField(blank=True, null=True, default='')
     support_types    = models.ManyToManyField (SsnmTreeSupportType)
     unique_together = (("user", "tree_box"),)
     

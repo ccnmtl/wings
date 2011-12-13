@@ -120,7 +120,7 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'exitmaterialsblock.ExitMaterialsBlock',
               ]
               
-BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Quiz', 'Social Support Network Tree Block']
+BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block']
 
 
 if 1 == 0:

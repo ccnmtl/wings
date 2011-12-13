@@ -1,20 +1,48 @@
 <style type="text/css">
+
+/* ok here's the tree */
 .ssnm_tree_block {
     width  :    300px;
     height :    400px;
     position:   relative;
     background: url('/site_media/img/ssnm_tree.jpg') no-repeat scroll left top;
 }
-.ssnm_tree_box_input {
-    width: 120px !important;
-    height: 25px !important;
-    font-size: 1.5em !important;
+
+/* this is the div that contains the input box. it's clickable to change the support types each person gives you. */
+.ssnm_tree_box_div {
+    display: inline;
     position: absolute;
+    width: 170px !important;
+    height: 50px !important;
+    background: green;
+    opacity:0.8;
+    filter:alpha(opacity=0.8); /* For IE8 and earlier */
 }
+
+.offers_support {
+    background: blue;
+}
+
+/* this positions each of the divs according to the left and top info found at:
+    http://wings.ccnmtl.columbia.edu/admin/ssnmtreeblock/ssnmtreebox/
+*/
+
 {%for box in block.boxes.all %}
-    .ssnm_tree_box_input.{{box.label}} {
+    .ssnm_tree_box_div.{{box.label}} {
         left:{{box.pixels_from_left}}px !important;
         top:{{box.pixels_from_top}}px !important;
     }
 {%endfor%}
+
+/* these are the actual text input boxes */
+.ssnm_tree_box_input {
+    position: absolute;
+    left: 10px !important;
+    top: 10px !important;
+    width: 120px !important;
+    height: 25px !important;
+    font-size: 1.5em !important;
+    opacity:0.8;
+    filter:alpha(opacity=0.8); /* For IE8 and earlier */
+}
 </style>
