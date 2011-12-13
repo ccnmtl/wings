@@ -1,41 +1,35 @@
 {% load smartif %}
-           
 <div id = "show_help_link_div_{{block.id}}" class="show_help_link_div">
-    <a class="help" href="javascript:show_help_block();"></a>
+    <a class="help show_help_link" href="javascript:show_help_block();"></a>
 </div>
-
-
-
-           <div id = "hide_help_link_div_{{block.id}}" class="hide_help_link_div">
-               <a class="help" href="javascript:hide_help_block({{block.id}});">Close help</a>
-           </div>
-
+<div id = "hide_help_link_div_{{block.id}}" class="hide_help_link_div">
+   <a class="help hide_help_link" href="javascript:hide_help_block({{block.id}});">Close help</a>
+</div>
 <div id = "help_block_box_{{block.id}}" class="help_block_box">
-            {% if block.audio_file %}
-                            <div id="helpblock_jquery_jplayer"></div>
-                            <div id="helpblock_jp_container" class="helpblock-container">
-                                <div class = "audio_controls">
-                                    <span href="/uploads/{{block.audio_file}}" class="track track-default">/uploads/{{block.audio_file}}</span>
-                                    ( at <span class="jp-current-time"></span> of <span class="jp-duration"></span> )
-                                </div>
-                                <ul>
-                                    <li><a class="jp-play" href="#">Play help</a></li>
-                                    <li><a class="jp-pause" href="#">Pause help</a></li>
-                                    <li class="jp-stop-li"><a class="jp-stop" href="#">Stop</a></li>
-                                </ul>
-                            </div>
-            {%else %}
-                <i>No help audio uploaded yet.</i>
-            {%endif %}
-            
-            
-            {%if block.description %}
-                <p>
-                    <em>{{block.description}}</em>
-                </p>
-            {%else %}
-                <p>
-                   <em>(No help block transcript)</em>
-                </p>
-            {% endif %}
+    {% if block.audio_file %}
+        <div id="helpblock_jquery_jplayer"></div>
+        <div id="helpblock_jp_container" class="helpblock-container">
+            <div class = "audio_controls">
+                <span href="/uploads/{{block.audio_file}}" class="track track-default">/uploads/{{block.audio_file}}</span>
+                ( at <span class="jp-current-time"></span> of <span class="jp-duration"></span> )
+            </div>
+            <ul>
+                <li><a class="jp-play" href="#">Play help</a></li>
+                <li><a class="jp-pause" href="#">Pause help</a></li>
+                <li><a class="jp-rewind" href="#">Rewind help</a></li>
+                <li class="jp-stop-li"><a class="jp-stop" href="#">Stop</a></li>
+            </ul>
+        </div>
+    {%else %}
+        <i>No help audio uploaded yet.</i>
+    {%endif %}
+    {%if block.description %}
+        <p>
+            <em>{{block.description}}</em>
+        </p>
+    {%else %}
+        <p>
+           <em>(No help block transcript)</em>
+        </p>
+    {% endif %}
 </div>

@@ -642,17 +642,6 @@ border-radius: 10px;
 
 }
 
-#content .content-nav a.help
-{
-
-    float: right;
-    color: transparent;
-        background-image: url('../img/help_button_bg.png');
-    background-position: -19px -15px;
-    width: 135px;
-    margin: 0 10px;
-
-}
 
 
 /* Case quizzes */

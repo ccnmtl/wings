@@ -1,5 +1,8 @@
 {% load markup %}
 {% load getresponse %}
+
+
+
 {{ block.description|markdown }}
 
 {% if request.user.is_anonymous %}
