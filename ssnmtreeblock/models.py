@@ -24,15 +24,13 @@ SSNM_PAGE_TYPE_CHOICES = (
 class SsnmTreeBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
     error_copy = models.TextField(blank=True, null=True)
-    
-    page_type = models.TextField( choices=SSNM_PAGE_TYPE_CHOICES, default='page_1') #can't be null.
-
+    page_type =  models.TextField( choices=SSNM_PAGE_TYPE_CHOICES, default='page_1') #can't be null.
+    boxes = models.ManyToManyField ('SsnmTreeBox') # this is the text boxes on the tree.
     template_file =     "ssnmtreeblock/ssnmtreeblock.html"
     js_template_file =  "ssnmtreeblock/ssnmtreeblock_js.html"
     css_template_file = "ssnmtreeblock/ssnmtreeblock_css.html"
-
     display_name = "Social Support Network Tree Block"
-    boxes = models.ManyToManyField ('SsnmTreeBox') # this is the text boxes on the tree.
+    
 
     def dir(self):
         return dir(self)
@@ -42,6 +40,9 @@ class SsnmTreeBlock(models.Model):
 
     def __unicode__(self):
         return unicode(self.pageblock())
+
+    def needs_submit(self):
+        return True
 
     def edit_form(self):
         class EditForm(forms.Form):
@@ -68,31 +69,61 @@ class SsnmTreeBlock(models.Model):
             page_type=     request.POST.get('page_type', ''),
         )
 
-    @classmethod
-    def get_tree_info (self, user):
+
+    def get_people (self, user):
         import pdb
         pdb.set_trace()
 
-
     def submit(self,user,data):
-        pass
-        
+        for box_id, person_name in data.iteritems():
+            box = SsnmTreeBox.objects.get(pk = box_id)
+            assert box != None
+            person, created = SsnmTreePerson.objects.get_or_create(tree_box=box, user=user)
+            assert person != None
+            person.name = person_name
+            person.save()
+
     def redirect_to_self_on_submit(self):
         return True
 
     def unlocked(self,user):
         return True
 
-    
+    class Meta:
+        verbose_name = 'SSNM Tree Block'
+        verbose_name_plural = 'SSNM Tree Blocks'
+
+
+def name_for_box (box, user):
+    return box.name(user)
+
+
 class SsnmTreeBox(models.Model):
     """ A text box on a tree."""
-    pixels_from_top  = models.IntegerField( default= 0)
+    def __unicode__(self):
+        return  u"%s ( %d , %d)"% (self.label, self.pixels_from_left, self.pixels_from_top)
+    label            = models.TextField(blank=True, null=True, unique=True)
     pixels_from_left = models.IntegerField( default = 0)
-    # Not sure we need to add crud for these right now. I'm going to say these are going to be in the DB once and for all.
+    pixels_from_top  = models.IntegerField( default= 0)
+
+    def name (self, user):
+         """ The name of the person the user typed into this box"""
+         person, created = SsnmTreePerson.objects.get_or_create(tree_box=self, user=user)
+         return person.name
+    
+    class Meta:
+        verbose_name = 'SSNM Tree Box'
+        verbose_name_plural = 'SSNM Tree Boxes'
+        #order_with_respect_to = 'label'
+
 
 class SsnmTreeSupportType (models.Model):
-    label            = models.TextField(blank=True, null=True)
+    """ e.g. "practical" or "emotional" """
+    label            = models.TextField(blank=True, null=True, unique=True)
     description      = models.TextField(blank=True, null=True)
+    
+    class Meta:
+        verbose_name_plural = 'SSNM Tree Support Type'
 
 class  SsnmTreePerson (models.Model):
     """ somebody that a user knows. Shows up in a particular box on that user's tree."""
@@ -100,8 +131,11 @@ class  SsnmTreePerson (models.Model):
     tree_box         = models.ForeignKey( SsnmTreeBox)
     name             = models.TextField(blank=True, null=True)
     support_types    = models.ManyToManyField (SsnmTreeSupportType)
-
+    unique_together = (("user", "tree_box"),)
     
+    class Meta:
+        verbose_name_plural = 'SSNM Tree Person'
+        verbose_name = 'SSNM Tree People'
     
     
         
