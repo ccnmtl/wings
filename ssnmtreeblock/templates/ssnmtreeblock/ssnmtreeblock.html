@@ -13,7 +13,8 @@
                 
                 
                 {%for type in block.visible_support_types.all %}
-                    <div class="heart type_{{type.id}}">{{type.label}}</div>
+                    <div id =".box_{{box.id}}.type_{{type.id}}"
+                    class="heart box_{{box.id}}  type_{{type.id}}">{{type.label}}</div>
                 {%endfor%}
                 
             </div>
@@ -21,13 +22,11 @@
     </div>
     {%for type in block.editable_support_types.all %}
         {%for box in block.boxes.all %}
-            <div class = "ssnm_tree_test">type_{{type.id}}box_{{box.id}}
                 <input
                     type="checkbox"
-                    class="type_{{type.id}} box_{{box.id}}"
+                    class="form_checkbox box_{{box.id}} type_{{type.id}}"
                     name="pageblock-{{block.pageblock.id}}-box_{{box.id}}_type_{{type.id}}"
                   />
-            </div>    
         {%endfor%}
     {%endfor%}
 </form>

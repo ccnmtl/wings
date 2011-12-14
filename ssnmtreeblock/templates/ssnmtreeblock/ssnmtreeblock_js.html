@@ -1,9 +1,5 @@
 <script src="/site_media/js/jquery-1.4.2.min.js" type="text/javascript" ></script> 
 <script>
-    function toggle_style (style, div) {
-        
-    }
-
     function box_clicked (e) {
         // for now, we're assuming at most one type of support is editable on each page.
         {%for type in block.editable_support_types.all %}
@@ -13,6 +9,7 @@
     }
     
     function input_clicked (e) {
+        // if you click inside a text box, that doesn't affect the div outside it.
         e.stopPropagation();
     }
     
@@ -21,13 +18,25 @@
         jQuery ('.ssnm_tree_box_input').click(input_clicked)
     }
     
-    function update_checkboxes() {
-        
+    function get_checkbox_from_div (div) {
+        return jQuery('.form_checkbox' + div.id)[0];
     }
     
+    function update_checkbox(i, div) {
+        get_checkbox_from_div(div).checked = true;
+    }
+    
+    function turn_off_checkbox (i, checkbox) {
+        checkbox.checked = false;
+    }
+    
+    function update_checkboxes() {
+        jQuery ('.form_checkbox').each (turn_off_checkbox);
+        {%for type in block.editable_support_types.all %}
+           jQuery ('.heart.type_{{type.id}}').filter(":visible").each (update_checkbox);
+        {%endfor%}
+        
+    }
     jQuery(setup_ssnm);
-    
-    
-    
 </script>
 
