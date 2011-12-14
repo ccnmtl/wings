@@ -3,7 +3,7 @@ from django.contrib import admin
 
 class SsnmTreeBlockAdmin (admin.ModelAdmin):
     list_display = ('pageblock', 'error_copy',)
-    fields = ('error_copy', 'boxes',)    
+    fields = ('error_copy', 'boxes','support_types',)    
 admin.site.register(SsnmTreeBlock, SsnmTreeBlockAdmin)    
 
 class SsnmTreeBoxAdmin (admin.ModelAdmin):

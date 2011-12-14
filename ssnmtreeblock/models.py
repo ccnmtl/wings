@@ -14,24 +14,29 @@ from django.forms.widgets import RadioSelect, CheckboxSelectMultiple
 
 
 SSNM_PAGE_TYPE_CHOICES = (
-    (u'page_1', u'Choose names'), #choose the names
-    (u'page_2', u'Emotional support'), #emotional support  
-    (u'page_3', u'Practical support'), #practical support
-    (u'page_e', u'Error page'), #error page / prompt for no names
+        (u'page_1', u'Choose names'), #choose the names
+        (u'page_2', u'Emotional support'), #emotional support  
+        (u'page_3', u'Practical support'), #practical support
+        (u'page_e', u'Error page'), #error page / prompt for no names
     )
-    
     
 class SsnmTreeBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
     error_copy = models.TextField(blank=True, null=True)
     page_type =  models.TextField( choices=SSNM_PAGE_TYPE_CHOICES, default='page_1') #can't be null.
-    boxes = models.ManyToManyField ('SsnmTreeBox') # this is the text boxes on the tree.
+    #text boxes on the tree:
+    boxes = models.ManyToManyField ('SsnmTreeBox') 
+    #which support type(s) can a user turn on or off on this page?
+    support_types    = models.ManyToManyField ('SsnmTreeSupportType', blank=True, null=True,)
     template_file =     "ssnmtreeblock/ssnmtreeblock.html"
     js_template_file =  "ssnmtreeblock/ssnmtreeblock_js.html"
     css_template_file = "ssnmtreeblock/ssnmtreeblock_css.html"
     display_name = "Social Support Network Tree Block"
     
-
+    class Meta:
+        verbose_name = 'SSNM Tree: Page Block'
+        verbose_name_plural = 'SSNM Tree: Page Blocks'
+        
     def dir(self):
         return dir(self)
 
@@ -62,17 +67,15 @@ class SsnmTreeBlock(models.Model):
             page_type =        forms.ChoiceField(required=True,  widget=RadioSelect, choices=SSNM_PAGE_TYPE_CHOICES)
         return AddForm()
 
+    def all_support_types(self):
+        return SsnmTreeSupportType.objects.all()
+
     @classmethod
     def create(self,request):
         return SsnmTreeBlock.objects.create(
             error_copy=    request.POST.get('error_copy', ''),
             page_type=     request.POST.get('page_type', ''),
         )
-
-
-    def get_people (self, user):
-        import pdb
-        pdb.set_trace()
 
     def submit(self,user,data):
         for box_id, person_name in data.iteritems():
@@ -97,7 +100,6 @@ class SsnmTreeBlock(models.Model):
 def name_for_box (box, user):
     return box.name(user)
 
-
 class SsnmTreeBox(models.Model):
     """ A text box on a tree."""
     def __unicode__(self):
@@ -112,10 +114,9 @@ class SsnmTreeBox(models.Model):
          return person.name
     
     class Meta:
-        verbose_name = 'SSNM Tree Box'
-        verbose_name_plural = 'SSNM Tree Boxes'
+        verbose_name = 'SSNM Tree: Text Box'
+        verbose_name_plural = 'SSNM Tree: Text Boxes'
         #order_with_respect_to = 'label'
-
 
 class SsnmTreeSupportType (models.Model):
     """ e.g. "practical" or "emotional" """
@@ -123,7 +124,11 @@ class SsnmTreeSupportType (models.Model):
     description      = models.TextField(blank=True, null=True)
     
     class Meta:
-        verbose_name_plural = 'SSNM Tree Support Type'
+        verbose_name_plural = 'SSNM Tree: Type of Support'
+        verbose_name_plural = 'SSNM Tree: Types of Support'
+
+    def __unicode__(self):
+        return unicode(self.description)
 
 class  SsnmTreePerson (models.Model):
     """ somebody that a user knows. Shows up in a particular box on that user's tree."""
@@ -134,11 +139,10 @@ class  SsnmTreePerson (models.Model):
     unique_together = (("user", "tree_box"),)
     
     class Meta:
-        verbose_name_plural = 'SSNM Tree Person'
-        verbose_name = 'SSNM Tree People'
+        verbose_name_plural = 'SSNM Tree: Person'
+        verbose_name = 'SSNM Tree: People'
+
     
-    
-        
 if 1 == 3:
 
                     from django.db import models

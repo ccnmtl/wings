@@ -1,15 +1,33 @@
 {% load smartif %}
 {% load get_name %}
-<div id="{{block.id}}-ssnm" class="ssnm_tree_block">
-    <form id="submit_to_self_form" method="post" action=".">
-        {%for box in block.boxes.all %}
+<form id="submit_to_self_form" method="post" action=".">
+    <div id="{{block.id}}-ssnm" class="ssnm_tree_block">
         
-        <div class = "ssnm_tree_box_div {{box.label}}">    
-            <input type="text" name="pageblock-{{block.pageblock.id}}-{{box.id}}"  value="{%get_name_for_box box user%}" class="ssnm_tree_box_input {{box.label}}"/>
-        
-        <div class="bird_on_it">bird</div>
-        </div>
-        {%endfor%}
-    </form>
-</div>
+            {%for box in block.boxes.all %}
+                <div class = "ssnm_tree_box_div {{box.label}} box_{{box.id}}">    
+                
+                    <input
+                        type="text"
+                        name="pageblock-{{block.pageblock.id}}-{{box.id}}"
+                        value="{% get_name_for_box box user %}"
+                        class="ssnm_tree_box_input {{box.label}}" />
+                    <div class="bird_on_it">bird</div>
+                
+                </div>
+            {%endfor%}
+            
 
+    </div>
+    {%for type in block.all_support_types %}
+        {%for box in block.boxes.all %}
+            <div class = "ssnm_tree_test">type_{{type.id}}box_{{box.id}}
+                <input
+                    type="checkbox"
+                    class="type_{{type.id}} box_{{box.id}}"
+                    name="pageblock-{{block.pageblock.id}}-box_{{box.id}}_type_{{type.id}}"
+                  />
+            </div>    
+        {%endfor%}
+    {%endfor%}
+    
+</form>
