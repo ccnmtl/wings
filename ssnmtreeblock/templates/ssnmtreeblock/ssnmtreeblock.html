@@ -3,12 +3,16 @@
 <form id="submit_to_self_form" method="post" action=".">
     <div id="{{block.id}}-ssnm" class="ssnm_tree_block">
         {%for box in block.boxes.all %}
-            <div class = "ssnm_tree_box_div box_{{box.id}}">    
+            <div class = "ssnm_tree_box_div box_{{box.id}} {%list_of_support_types_for box user block %}">
+            
+            
                 <input
                     type="text"
                     name="pageblock-{{block.pageblock.id}}-{{box.id}}"
                     value="{% get_name_for_box box user %}"
                     class="ssnm_tree_box_input {{box.label}}" />
+                    
+                    
                 <div class="bird_on_it">bird</div>
                 
                 

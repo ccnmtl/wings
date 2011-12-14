@@ -75,13 +75,21 @@ class SsnmTreeBlock(models.Model):
         )
 
     def submit(self,user,data):
-        for box_id, person_name in data.iteritems():
-            box = SsnmTreeBox.objects.get(pk = box_id)
+        for box in self.boxes.all():
+            person_name = data.get (unicode(box.id), '')
+            assert person_name != None
+            box = SsnmTreeBox.objects.get(pk = box.id)
             assert box != None
             person, created = SsnmTreePerson.objects.get_or_create(tree_box=box, user=user)
             assert person != None
             person.name = person_name
             person.save()
+            for the_type in self.editable_support_types.all():
+                key = 'box_%d_type_%d' % (box.id, the_type.id)
+                if data.get (key, '') == 'on':
+                    person.support_types.add(the_type)
+                    person.save()
+                    assert the_type in person.support_types.all()
 
     def redirect_to_self_on_submit(self):
         return True
@@ -106,6 +114,11 @@ class SsnmTreeBox(models.Model):
          """ The name of the person the user typed into this box"""
          person, created = SsnmTreePerson.objects.get_or_create(tree_box=self, user=user)
          return person.name
+    
+    def support_types_for_user_and_block(self, user, block):
+        """ convenience method: returns space-separated css classes for front end """
+        person, created = SsnmTreePerson.objects.get_or_create(tree_box=self, user=user)
+        return ' '.join ('offers_support_type_%d' %st.id for st in person.support_types.all())
     
     class Meta:
         verbose_name = 'SSNM Tree: Text Box'
