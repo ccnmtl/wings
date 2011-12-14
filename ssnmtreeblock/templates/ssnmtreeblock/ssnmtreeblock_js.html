@@ -5,7 +5,11 @@
     }
 
     function box_clicked (e) {
-        jQuery(e.currentTarget).toggleClass( 'offers_support' );
+        // for now, we're assuming at most one type of support is editable on each page.
+        {%for type in block.editable_support_types.all %}
+           jQuery(e.currentTarget).toggleClass( 'offers_support_type_{{type.id}}' );
+        {%endfor%}
+        update_checkboxes();
     }
     
     function input_clicked (e) {
@@ -16,6 +20,11 @@
         jQuery ('.ssnm_tree_box_div').click(box_clicked)
         jQuery ('.ssnm_tree_box_input').click(input_clicked)
     }
+    
+    function update_checkboxes() {
+        
+    }
+    
     jQuery(setup_ssnm);
     
     

@@ -56,4 +56,45 @@
     cursor: default;
 }
 
+/* put a bird icon in this div */
+.bird_on_it {
+    position: absolute;
+    left: 140px !important;
+    top: 0px !important;
+    font-style:italic;
+    color:white;
+    cursor: default;
+}
+
+
+.heart {
+    position: absolute;
+    left: 140px !important;
+    font-style:italic;
+    font-size: 0.8em !important;
+    cursor: default;
+    display: none;
+}
+
+/* show the heart div if the person selects the ssnm_tree_box_div. */
+.ssnm_tree_box_div.offers_support_type_1 .heart.type_1 {
+    display: block !important;
+}
+
+.ssnm_tree_box_div.offers_support_type_2 .heart.type_2 {
+    display: block !important;
+}
+
+/* emotional support */
+.heart.type_1 {
+    top: 15px !important;
+    color:red;
+}
+
+/* practical support */
+.heart.type_2 {
+    top: 25px !important;
+    color:yellow;
+}
+
 </style>

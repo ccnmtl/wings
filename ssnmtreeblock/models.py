@@ -14,20 +14,24 @@ from django.forms.widgets import RadioSelect, CheckboxSelectMultiple
 
 
 SSNM_PAGE_TYPE_CHOICES = (
-        (u'page_1', u'Choose names'), #choose the names
-        (u'page_2', u'Emotional support'), #emotional support  
-        (u'page_3', u'Practical support'), #practical support
-        (u'page_e', u'Error page'), #error page / prompt for no names
-    )
+    (u'page_1', u'Choose names'), #choose the names
+    (u'page_2', u'Emotional support'), #emotional support  
+    (u'page_3', u'Practical support'), #practical support
+    (u'page_e', u'Error page'), #error page / prompt for no names
+)
     
 class SsnmTreeBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
     error_copy = models.TextField(blank=True, null=True)
-    page_type =  models.TextField( choices=SSNM_PAGE_TYPE_CHOICES, default='page_1') #can't be null.
+    page_type =  models.TextField( choices=SSNM_PAGE_TYPE_CHOICES, default='page_1') 
+    
     #text boxes on the tree:
-    boxes = models.ManyToManyField ('SsnmTreeBox') 
-    #which support type(s) can a user turn on or off on this page?
-    support_types    = models.ManyToManyField ('SsnmTreeSupportType', blank=True, null=True,)
+    boxes = models.ManyToManyField ('SsnmTreeBox')
+    
+    editable_support_types    = models.ManyToManyField ('SsnmTreeSupportType', blank=True, null=True, related_name='blocks_where_you_can_edit_this_support_type', help_text ="Support Types you can *edit* on this page.")
+
+    visible_support_types    = models.ManyToManyField ('SsnmTreeSupportType', blank=True, null=True,  related_name='blocks_where_you_can_see_this_support_type', help_text ="Support Types you can *see* on this page.")
+     
     template_file =     "ssnmtreeblock/ssnmtreeblock.html"
     js_template_file =  "ssnmtreeblock/ssnmtreeblock_js.html"
     css_template_file = "ssnmtreeblock/ssnmtreeblock_css.html"
@@ -66,9 +70,6 @@ class SsnmTreeBlock(models.Model):
             error_copy =       forms.CharField(widget=forms.widgets.Textarea())
             page_type =        forms.ChoiceField(required=True,  widget=RadioSelect, choices=SSNM_PAGE_TYPE_CHOICES)
         return AddForm()
-
-    def all_support_types(self):
-        return SsnmTreeSupportType.objects.all()
 
     @classmethod
     def create(self,request):
@@ -118,6 +119,10 @@ class SsnmTreeBox(models.Model):
         verbose_name_plural = 'SSNM Tree: Text Boxes'
         #order_with_respect_to = 'label'
 
+
+    def dir(self):
+        return dir(self)
+
 class SsnmTreeSupportType (models.Model):
     """ e.g. "practical" or "emotional" """
     label            = models.TextField(blank=True, null=True, unique=True)
@@ -128,7 +133,11 @@ class SsnmTreeSupportType (models.Model):
         verbose_name_plural = 'SSNM Tree: Types of Support'
 
     def __unicode__(self):
-        return unicode(self.description)
+        return unicode(self.label)
+        
+
+    def dir(self):
+        return dir(self)
 
 class  SsnmTreePerson (models.Model):
     """ somebody that a user knows. Shows up in a particular box on that user's tree."""
@@ -142,6 +151,8 @@ class  SsnmTreePerson (models.Model):
         verbose_name_plural = 'SSNM Tree: Person'
         verbose_name = 'SSNM Tree: People'
 
+    def dir(self):
+        return dir(self)
     
 if 1 == 3:
 

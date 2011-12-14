@@ -2,23 +2,24 @@
 {% load get_name %}
 <form id="submit_to_self_form" method="post" action=".">
     <div id="{{block.id}}-ssnm" class="ssnm_tree_block">
-        
-            {%for box in block.boxes.all %}
-                <div class = "ssnm_tree_box_div {{box.label}} box_{{box.id}}">    
+        {%for box in block.boxes.all %}
+            <div class = "ssnm_tree_box_div box_{{box.id}}">    
+                <input
+                    type="text"
+                    name="pageblock-{{block.pageblock.id}}-{{box.id}}"
+                    value="{% get_name_for_box box user %}"
+                    class="ssnm_tree_box_input {{box.label}}" />
+                <div class="bird_on_it">bird</div>
                 
-                    <input
-                        type="text"
-                        name="pageblock-{{block.pageblock.id}}-{{box.id}}"
-                        value="{% get_name_for_box box user %}"
-                        class="ssnm_tree_box_input {{box.label}}" />
-                    <div class="bird_on_it">bird</div>
                 
-                </div>
-            {%endfor%}
-            
-
+                {%for type in block.visible_support_types.all %}
+                    <div class="heart type_{{type.id}}">{{type.label}}</div>
+                {%endfor%}
+                
+            </div>
+        {%endfor%}
     </div>
-    {%for type in block.all_support_types %}
+    {%for type in block.editable_support_types.all %}
         {%for box in block.boxes.all %}
             <div class = "ssnm_tree_test">type_{{type.id}}box_{{box.id}}
                 <input
@@ -29,5 +30,4 @@
             </div>    
         {%endfor%}
     {%endfor%}
-    
 </form>
