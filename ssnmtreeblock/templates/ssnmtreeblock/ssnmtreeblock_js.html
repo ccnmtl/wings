@@ -8,14 +8,31 @@
         update_checkboxes();
     }
     
+    function contains_text (box) {
+        return jQuery(box).find ('.ssnm_tree_box_input')[0].value == '';
+    }
+    
+    function select_or_unselect (box) {
+        contains_name_class = 'contains_name';
+        if(contains_text (box)) {
+            jQuery(box).removeClass (contains_name_class)
+        } else {
+            jQuery(box).addClass (contains_name_class)
+        }
+    }
+    
+    function tmp (a, b) {
+        select_or_unselect(b);
+    }
+    
+    function box_changed (e) {
+        select_or_unselect (e.currentTarget)
+    }
+    
+    
     function input_clicked (e) {
         // if you click inside a text box, that doesn't affect the div outside it.
         e.stopPropagation();
-    }
-    
-    function setup_ssnm() {
-        jQuery ('.ssnm_tree_box_div').click(box_clicked)
-        jQuery ('.ssnm_tree_box_input').click(input_clicked)
     }
     
     function get_checkbox_from_div (div) {
@@ -35,8 +52,15 @@
         {%for type in block.editable_support_types.all %}
            jQuery ('.heart.type_{{type.id}}').filter(":visible").each (update_checkbox);
         {%endfor%}
-        
     }
+        
+    function setup_ssnm() {
+        jQuery ('.ssnm_tree_box_div').click(box_clicked)
+        jQuery ('.ssnm_tree_box_div').change(box_changed)
+        jQuery ('.ssnm_tree_box_input').click(input_clicked)
+        jQuery ('.ssnm_tree_box_div').each (function(i, box) { select_or_unselect(box);});
+    }
+    
     jQuery(setup_ssnm);
 </script>
 
