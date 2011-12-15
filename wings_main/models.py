@@ -18,12 +18,14 @@ class Participant(models.Model):
 
     def __unicode__(self):
         return "P%s" % self.id_string
+    __unicode__.admin_order_field = 'id_string'
 
     def has_user(self):
         return self.user != None
         
     def has_started_intervention(self):
         return self.has_user()
+    has_started_intervention.admin_order_field = 'user'
         
     def current_url ( self):
         return self.current_section.get_absolute_url()
