@@ -194,7 +194,7 @@ fieldset.monospace textarea {
 }
 
 .submit-row .deletelink {
-    background: url(../img/admin/icon_deletelink.gif) 0 50% no-repeat;
+    background: url(../img/admin/icon_deletelink.gif) 3px 50% no-repeat;
     padding-left: 14px;
 }
 

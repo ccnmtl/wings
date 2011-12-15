@@ -178,7 +178,6 @@ tfoot td {
     padding: 2px 5px;
     font-size: 11px;
     background: #e1e1e1 url(../img/admin/nav-bg.gif) top left repeat-x;
-    border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
 
@@ -313,7 +312,6 @@ input[type="text"], input[type="password"], textarea, select, .vTextField {
 /* MODULES */
 
 .module {
-    border: 1px solid #ccc;
     margin-bottom: 5px;
     background: white;
 }
@@ -483,19 +481,23 @@ a.deletelink:hover {
     float: none;
     height: 2em;
     padding-left: 3.5em;
+
 }
 
 .object-tools li {
     display: block;
     float: left;
-    background: url(../img/admin/tool-left.gif) 0 0 no-repeat;
-    padding: 0 0 0 8px;
+    border-radius: 15px; 
+-moz-border-radius: 15px; 
+-webkit-border-radius: 15px; 
+padding: 0 0 0 8px;
     margin-left: 2px;
-    height: 16px;
+    height: 17px;
+    background-color:  #999;
 }
 
 .object-tools li:hover {
-    background: url(../img/admin/tool-left_over.gif) 0 0 no-repeat;
+    background-color:  #64436D;
 }
 
 .object-tools a:link, .object-tools a:visited {
@@ -508,7 +510,7 @@ a.deletelink:hover {
 }
 
 .object-tools a:hover, .object-tools li:hover a {
-    background: #64436D url(../img/admin/tool-right_over.gif) 100% 0 no-repeat;
+    background-color: #64436D;
 }
 
 .object-tools a.viewsitelink, .object-tools a.golink {
