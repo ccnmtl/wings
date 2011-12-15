@@ -298,7 +298,7 @@ input[type="text"], input[type="password"], textarea, select, .vTextField {
 }
 
 .button.default, input[type=submit].default, .submit-row input.default {
-    border: 2px solid #5b80b2;
+    border: 2px solid #64436D;
     background: #7CA0C7 url(../img/admin/default-bg.gif) bottom repeat-x;
     font-weight: bold;
     color: white;
@@ -508,7 +508,7 @@ a.deletelink:hover {
 }
 
 .object-tools a:hover, .object-tools li:hover a {
-    background: #5b80b2 url(../img/admin/tool-right_over.gif) 100% 0 no-repeat;
+    background: #64436D url(../img/admin/tool-right_over.gif) 100% 0 no-repeat;
 }
 
 .object-tools a.viewsitelink, .object-tools a.golink {
@@ -517,7 +517,7 @@ a.deletelink:hover {
 }
 
 .object-tools a.viewsitelink:hover, .object-tools a.golink:hover {
-    background: #5b80b2 url(../img/admin/tooltag-arrowright_over.gif) top right no-repeat;
+    background: #64436D url(../img/admin/tooltag-arrowright_over.gif) top right no-repeat;
 }
 
 .object-tools a.addlink {
@@ -526,7 +526,7 @@ a.deletelink:hover {
 }
 
 .object-tools a.addlink:hover {
-    background: #5b80b2 url(../img/admin/tooltag-add_over.gif) top right no-repeat;
+    background: #64436D url(../img/admin/tooltag-add_over.gif) top right no-repeat;
 }
 
 /* OBJECT HISTORY */

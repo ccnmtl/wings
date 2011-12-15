@@ -1059,5 +1059,7 @@ padding-left: 10px;
 background-color: #e3d8e0;
 }
 
-
+.floatright {
+    float: right;
+}
 

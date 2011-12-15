@@ -144,7 +144,7 @@
 }
 
 #changelist-filter li.selected a {
-    color: #5b80b2 !important;
+    color: #64436D !important;
 }
 
 /* DATE DRILLDOWN */
@@ -217,7 +217,7 @@
 
 .paginator a:hover {
     color: white;
-    background: #5b80b2;
+    background: #64436D;
     border-color: #036;
 }
 
