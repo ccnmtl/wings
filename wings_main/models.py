@@ -29,15 +29,12 @@ class Participant(models.Model):
         return self.current_section.get_absolute_url()
 
     def all_unlocked (self, section):
-        #import pdb
-        #pdb.set_trace()
         user = self.user
         for p in section.pageblock_set.all():
            if hasattr(p.block(),'unlocked'):
                  if p.block().unlocked(user) == False:
                      return False
         return True
-
 
     def log_visit (self, new_section):
         """" return true if it's ok for a participant to see this page.

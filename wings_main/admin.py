@@ -15,6 +15,6 @@ class ParticipantAdmin (admin.ModelAdmin):
             "all": ("/site_media/css/participant_admin_styles.css",)
         }
         
-    list_display = ('label', 'has_started_intervention', 'forest_url_field',)
+    list_display = ('__unicode__', 'has_started_intervention', 'forest_url_field',)
     fields = ('id_string', ) 
 admin.site.register(Participant, ParticipantAdmin)

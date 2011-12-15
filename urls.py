@@ -18,6 +18,10 @@ urlpatterns = patterns('',
     ('^logout/$', redirect_to, {'url': '/admin/logout/'}), 
     
     #summary of all pages 
+    ('^first/$', 'wings_main.views.first'),
+
+    
+    #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),
 
     #user crud happens thru django admin for now.

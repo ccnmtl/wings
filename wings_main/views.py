@@ -35,7 +35,13 @@ class rendered_with(object):
         return rendered_func
 
 
-#TODO: de-hardcode references to '/introduction/'. Should just be the first page of the intervention.
+
+@login_required
+#@rendered_with('wings_main/launch_participant.html')
+def first(request):
+    first_url = Hierarchy.objects.all()[0].get_root().get_first_child().get_absolute_url()
+    return HttpResponseRedirect(first_url)
+    
 
 @login_required
 #@rendered_with('wings_main/launch_participant.html')
@@ -51,7 +57,7 @@ def launch_participant(request, id_string):
     
     if not request.user.is_staff:
         messages.info(request, "Sorry, you can't launch participants.")
-        return HttpResponseRedirect("/introduction/")
+        return HttpResponseRedirect("/first/")
     
     participant = get_object_or_404(Participant,id_string=id_string)
     if not participant.user:
@@ -73,7 +79,7 @@ def launch_participant(request, id_string):
     login(request, participant.user)
     
     if not participant.current_section_id:
-        return HttpResponseRedirect("/introduction/")
+        return HttpResponseRedirect("/first/")
     else:
         return HttpResponseRedirect(Section.objects.get(id=participant.current_section_id).get_absolute_url())
 

@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 244, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 273, true);
 
 
 --
@@ -204,7 +204,7 @@ ALTER SEQUENCE auth_permission_id_seq OWNED BY auth_permission.id;
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_permission_id_seq', 144, true);
+SELECT pg_catalog.setval('auth_permission_id_seq', 153, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 111, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 112, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 128, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 200, true);
 
 
 --
@@ -557,7 +557,7 @@ ALTER SEQUENCE django_content_type_id_seq OWNED BY django_content_type.id;
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_content_type_id_seq', 48, true);
+SELECT pg_catalog.setval('django_content_type_id_seq', 51, true);
 
 
 --
@@ -1473,7 +1473,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 251, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 254, true);
 
 
 --
@@ -1823,7 +1823,7 @@ ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
 -- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('south_migrationhistory_id_seq', 18, true);
+SELECT pg_catalog.setval('south_migrationhistory_id_seq', 25, true);
 
 
 --
@@ -1832,8 +1832,83 @@ SELECT pg_catalog.setval('south_migrationhistory_id_seq', 18, true);
 
 CREATE TABLE ssnmtreeblock_ssnmtreeblock (
     id integer NOT NULL,
-    description text NOT NULL
+    error_copy text,
+    page_type text NOT NULL
 );
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_boxes; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ssnmtreeblock_ssnmtreeblock_boxes (
+    id integer NOT NULL,
+    ssnmtreeblock_id integer NOT NULL,
+    ssnmtreebox_id integer NOT NULL
+);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_boxes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ssnmtreeblock_ssnmtreeblock_boxes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_boxes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ssnmtreeblock_ssnmtreeblock_boxes_id_seq OWNED BY ssnmtreeblock_ssnmtreeblock_boxes.id;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_boxes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeblock_boxes_id_seq', 36, true);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_editable_support_types; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ssnmtreeblock_ssnmtreeblock_editable_support_types (
+    id integer NOT NULL,
+    ssnmtreeblock_id integer NOT NULL,
+    ssnmtreesupporttype_id integer NOT NULL
+);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_editable_support_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ssnmtreeblock_ssnmtreeblock_editable_support_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_editable_support_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ssnmtreeblock_ssnmtreeblock_editable_support_types_id_seq OWNED BY ssnmtreeblock_ssnmtreeblock_editable_support_types.id;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_editable_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeblock_editable_support_types_id_seq', 8, true);
 
 
 --
@@ -1859,7 +1934,194 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeblock_id_seq OWNED BY ssnmtreeblock_ssnmtre
 -- Name: ssnmtreeblock_ssnmtreeblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeblock_id_seq', 1, false);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeblock_id_seq', 3, true);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_visible_support_types; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ssnmtreeblock_ssnmtreeblock_visible_support_types (
+    id integer NOT NULL,
+    ssnmtreeblock_id integer NOT NULL,
+    ssnmtreesupporttype_id integer NOT NULL
+);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_visible_support_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ssnmtreeblock_ssnmtreeblock_visible_support_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_visible_support_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ssnmtreeblock_ssnmtreeblock_visible_support_types_id_seq OWNED BY ssnmtreeblock_ssnmtreeblock_visible_support_types.id;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_visible_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeblock_visible_support_types_id_seq', 12, true);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebox; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ssnmtreeblock_ssnmtreebox (
+    id integer NOT NULL,
+    pixels_from_top integer DEFAULT 0 NOT NULL,
+    pixels_from_left integer DEFAULT 0 NOT NULL,
+    label text
+);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebox_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ssnmtreeblock_ssnmtreebox_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebox_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ssnmtreeblock_ssnmtreebox_id_seq OWNED BY ssnmtreeblock_ssnmtreebox.id;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebox_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreebox_id_seq', 5, true);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ssnmtreeblock_ssnmtreeperson (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    tree_box_id integer NOT NULL,
+    name text
+);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtreeperson.id;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 5, true);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_support_types; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ssnmtreeblock_ssnmtreeperson_support_types (
+    id integer NOT NULL,
+    ssnmtreeperson_id integer NOT NULL,
+    ssnmtreesupporttype_id integer NOT NULL
+);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtreeblock_ssnmtreeperson_support_types.id;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 9, true);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreesupporttype; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE ssnmtreeblock_ssnmtreesupporttype (
+    id integer NOT NULL,
+    label text,
+    description text
+);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreesupporttype_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE ssnmtreeblock_ssnmtreesupporttype_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreesupporttype_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE ssnmtreeblock_ssnmtreesupporttype_id_seq OWNED BY ssnmtreeblock_ssnmtreesupporttype.id;
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreesupporttype_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreesupporttype_id_seq', 2, true);
 
 
 --
@@ -1972,7 +2234,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 53, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 55, true);
 
 
 --
@@ -2315,6 +2577,55 @@ ALTER TABLE ssnmtreeblock_ssnmtreeblock ALTER COLUMN id SET DEFAULT nextval('ssn
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ssnmtreeblock_ssnmtreeblock_boxes ALTER COLUMN id SET DEFAULT nextval('ssnmtreeblock_ssnmtreeblock_boxes_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ssnmtreeblock_ssnmtreeblock_editable_support_types ALTER COLUMN id SET DEFAULT nextval('ssnmtreeblock_ssnmtreeblock_editable_support_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ssnmtreeblock_ssnmtreeblock_visible_support_types ALTER COLUMN id SET DEFAULT nextval('ssnmtreeblock_ssnmtreeblock_visible_support_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ssnmtreeblock_ssnmtreebox ALTER COLUMN id SET DEFAULT nextval('ssnmtreeblock_ssnmtreebox_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ssnmtreeblock_ssnmtreeperson ALTER COLUMN id SET DEFAULT nextval('ssnmtreeblock_ssnmtreeperson_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ssnmtreeblock_ssnmtreeperson_support_types ALTER COLUMN id SET DEFAULT nextval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ssnmtreeblock_ssnmtreesupporttype ALTER COLUMN id SET DEFAULT nextval('ssnmtreeblock_ssnmtreesupporttype_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE tagging_tag ALTER COLUMN id SET DEFAULT nextval('tagging_tag_id_seq'::regclass);
 
 
@@ -2413,9 +2724,6 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
-241	109	Logged in!
-243	17	Logged in!
-244	13	Logged in!
 \.
 
 
@@ -2568,6 +2876,15 @@ COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
 142	Can add exit materials block	48	add_exitmaterialsblock
 143	Can change exit materials block	48	change_exitmaterialsblock
 144	Can delete exit materials block	48	delete_exitmaterialsblock
+145	Can add SSNM Tree: Text Box	49	add_ssnmtreebox
+146	Can change SSNM Tree: Text Box	49	change_ssnmtreebox
+147	Can delete SSNM Tree: Text Box	49	delete_ssnmtreebox
+148	Can add ssnm tree support type	50	add_ssnmtreesupporttype
+149	Can change ssnm tree support type	50	change_ssnmtreesupporttype
+150	Can delete ssnm tree support type	50	delete_ssnmtreesupporttype
+151	Can add SSNM Tree: People	51	add_ssnmtreeperson
+152	Can change SSNM Tree: People	51	change_ssnmtreeperson
+153	Can delete SSNM Tree: People	51	delete_ssnmtreeperson
 \.
 
 
@@ -2576,13 +2893,11 @@ COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_superuser, last_login, date_joined) FROM stdin;
-3	sbd12	Schuyler	Duveen	sbd12@columbia.edu	!	f	t	f	2011-06-02 15:12:50.799859-04	2011-06-02 15:12:50.799871-04
 4	zm4	Zarina	Mustapha	zm4@columbia.edu	!	f	t	f	2011-06-02 15:21:46.02636-04	2011-06-02 15:21:46.026372-04
 6	amm8	A.	Matiz	amm8@columbia.edu	!	f	t	f	2011-06-02 15:22:30.926288-04	2011-06-02 15:22:30.926301-04
 9	mar227	Marc	Raymond	mar227@columbia.edu	!	f	t	f	2011-06-02 15:23:00.029295-04	2011-06-02 15:23:00.029307-04
 10	sld2131	Susan	Dreher	sld2131@columbia.edu	!	f	t	f	2011-06-02 15:23:17.279174-04	2011-06-02 15:23:17.279188-04
 16	dg2121	Dawn	Goddard-Eckrich	dg2121@columbia.edu	!	f	t	f	2011-10-17 11:44:00.292812-04	2011-10-17 11:44:00.292828-04
-7	ej2223	Ethan	Jucovy	ej2223@columbia.edu	!	t	t	t	2011-06-28 11:55:46.658858-04	2011-06-02 15:22:41.332687-04
 15	sas2268	Stacey	Shaw	sas2268@columbia.edu	!	f	t	f	2011-10-17 12:56:56.268183-04	2011-10-17 11:43:47.944542-04
 11	cks2120	Cindy	Smalletz	cks2120@columbia.edu	!	t	t	f	2011-08-25 18:01:26.073388-04	2011-06-20 15:02:19.998826-04
 2	jb2410	Jonah	Bossewitch	jb2410@columbia.edu	!	t	t	t	2011-09-15 17:53:14.469942-04	2011-06-01 14:35:19.53697-04
@@ -2590,58 +2905,11 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	!	t	t	t	2011-09-15 17:58:04.768569-04	2011-06-02 15:22:48.818126-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
-57	12345				!	f	t	f	2011-10-26 14:23:35.301313-04	2011-10-26 14:23:35.296599-04
-58	12354				!	f	t	f	2011-10-26 15:11:23.818033-04	2011-10-26 15:11:23.813178-04
-59	154				!	f	t	f	2011-10-26 16:02:50.173142-04	2011-10-26 16:02:50.164867-04
-87	78787				!	f	t	f	2011-11-22 16:38:07.362844-05	2011-11-22 16:38:07.354207-05
-60	432				!	f	t	f	2011-10-26 17:03:43.924627-04	2011-10-26 17:03:43.916756-04
-100	8675309				!	f	t	f	2011-11-30 13:38:03.575773-05	2011-11-30 13:38:03.567114-05
-61	6543				!	f	t	f	2011-10-26 17:07:07.070924-04	2011-10-26 17:07:07.062599-04
-74	76544				!	f	t	f	2011-11-09 11:36:20.447204-05	2011-11-09 11:36:20.435689-05
-62	12547				!	f	t	f	2011-10-28 09:45:15.099363-04	2011-10-28 09:45:15.091096-04
-63	1234				!	f	t	f	2011-10-28 09:46:18.125712-04	2011-10-28 09:46:18.117174-04
-75	987654				!	f	t	f	2011-11-09 11:39:30.398863-05	2011-11-09 11:39:30.392313-05
-106	231				!	f	t	f	2011-12-05 12:28:45.72567-05	2011-12-05 12:28:45.714528-05
-64	55555				!	f	t	f	2011-10-31 10:34:12.357299-04	2011-10-31 10:34:12.345139-04
-76	9876				!	f	t	f	2011-11-09 15:51:42.736658-05	2011-11-09 15:51:42.728185-05
-77	4862				!	f	t	f	2011-11-09 15:52:57.556896-05	2011-11-09 15:52:57.548421-05
-65	543221				!	f	t	f	2011-11-03 09:33:18.523264-04	2011-11-03 09:33:18.510992-04
-66	7654				!	f	t	f	2011-11-03 16:31:43.751967-04	2011-11-03 16:31:43.743465-04
-88	357098				!	f	t	f	2011-11-23 11:36:05.954502-05	2011-11-23 11:36:05.942413-05
-67	6464				!	f	t	f	2011-11-03 16:50:19.439931-04	2011-11-03 16:50:19.431565-04
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-09 16:01:22.393041-05	2011-10-11 11:39:54-04
-78	879605				!	f	t	f	2011-11-09 16:10:49.64651-05	2011-11-09 16:10:49.638175-05
-69	123456				!	f	t	f	2011-11-04 10:08:34.632962-04	2011-11-04 10:08:34.623823-04
-82	565656				!	f	t	f	2011-11-16 12:06:13.054389-05	2011-11-16 12:06:13.02639-05
-70	2345				!	f	t	f	2011-11-04 10:57:37.776116-04	2011-11-04 10:57:37.767456-04
-17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-09 16:50:59.016261-05	2011-10-18 11:54:07-04
-71	100				!	f	t	f	2011-11-04 12:39:35.815957-04	2011-11-04 12:39:35.80774-04
-72	234567				!	f	t	f	2011-11-04 14:15:54.3038-04	2011-11-04 14:15:54.295125-04
-89	143567				!	f	t	f	2011-11-23 12:23:06.789834-05	2011-11-23 12:23:06.781337-05
-73	25252				!	f	t	f	2011-11-07 16:48:32.517049-05	2011-11-07 16:48:32.505522-05
-80	354657				!	f	t	f	2011-11-11 10:55:06.687539-05	2011-11-11 10:55:06.665431-05
-90	132456				!	f	t	f	2011-11-23 14:12:02.643168-05	2011-11-23 14:12:02.634423-05
-101	743777				!	f	t	f	2011-12-01 16:58:22.463437-05	2011-12-01 16:58:22.447354-05
-83	654879				!	f	t	f	2011-11-18 11:02:58.329075-05	2011-11-18 11:02:58.310442-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
-84	436789				!	f	t	f	2011-11-22 14:22:17.683842-05	2011-11-22 14:22:17.661975-05
-85	1423				!	f	t	f	2011-11-22 16:24:06.628585-05	2011-11-22 16:24:06.620142-05
-102	654321				!	f	t	f	2011-12-01 16:58:59.8783-05	2011-12-01 16:58:59.869576-05
-86	46464				!	f	t	f	2011-11-22 16:28:43.232115-05	2011-11-22 16:28:43.223752-05
-111	987555				!	f	t	f	2011-12-12 11:09:14.774786-05	2011-12-09 16:51:11.69558-05
-96	475820				!	f	t	f	2011-11-28 13:53:52.888806-05	2011-11-28 13:53:52.880283-05
-103	777666555				!	f	t	f	2011-12-02 10:39:54.806307-05	2011-12-02 10:39:54.794694-05
-97	211777				!	f	t	f	2011-11-30 10:49:17.846438-05	2011-11-30 10:49:17.828943-05
-98	777777				!	f	t	f	2011-11-30 11:16:11.325227-05	2011-11-30 11:16:11.316854-05
-99	242424242				!	f	t	f	2011-11-30 13:30:18.081878-05	2011-11-30 13:30:18.073349-05
-108	111111111				!	f	t	f	2011-12-06 16:52:53.830941-05	2011-12-06 12:23:58.646784-05
-105	545				!	f	t	f	2011-12-02 14:00:50.535075-05	2011-12-02 14:00:50.526501-05
-79	89766				!	f	t	f	2011-12-09 15:49:42.680133-05	2011-11-09 16:28:21.997488-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-09 15:50:06.426288-05	2011-06-02 15:22:04-04
-107	11111				!	f	t	f	2011-12-09 15:50:15.624459-05	2011-12-05 16:12:38.678186-05
-104	666777222				!	f	t	f	2011-12-09 15:56:56.169765-05	2011-12-02 11:18:36.055233-05
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-09 15:58:47.613033-05	2011-12-09 15:38:04-05
-110	54321				!	f	t	f	2011-12-09 15:59:13.132458-05	2011-12-09 15:59:13.123659-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-14 18:28:28.365303-05	2011-06-02 15:22:04-04
+17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-15 11:03:36.489084-05	2011-10-18 11:54:07-04
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-12 16:26:09.346662-05	2011-12-09 15:38:04-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-14 11:46:52.183812-05	2011-10-11 11:39:54-04
 \.
 
 
@@ -2684,9 +2952,6 @@ COPY auth_user_groups (id, user_id, group_id) FROM stdin;
 32	2	29
 33	2	30
 34	2	4
-35	7	2
-36	7	3
-37	7	4
 38	11	2
 39	11	31
 40	11	32
@@ -3063,6 +3328,78 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 126	2011-12-09 15:46:36.621314-05	5	3	109	ccnmtl	2	Changed user_permissions and groups.
 127	2011-12-09 15:59:10.070094-05	109	42	52	P54321	1	
 128	2011-12-09 16:51:08.499775-05	17	42	53	P987555	1	
+129	2011-12-12 16:23:13.993023-05	109	42	54	P14263765	1	
+130	2011-12-14 18:32:14.467139-05	5	50	1	Practical	1	
+131	2011-12-14 18:32:30.424115-05	5	50	2	Emotional	1	
+132	2011-12-14 18:45:31.343864-05	5	49	1	 ( 60 , 130)	1	
+133	2011-12-14 18:45:51.417845-05	5	49	2	box_2 ( 100 , 290)	1	
+134	2011-12-14 18:46:09.981362-05	5	49	1	box_1 ( 60 , 130)	2	Changed label.
+135	2011-12-14 18:51:55.200327-05	5	45	1	map screen 1 [2]: First page	2	Changed boxes.
+136	2011-12-14 18:52:22.124014-05	5	45	3	map screen 3 [2]: Practical Support	2	Changed boxes, editable_support_types and visible_support_types.
+137	2011-12-14 18:52:37.861397-05	5	45	2	map screen 2 [2]: Emotional support	2	Changed boxes, editable_support_types and visible_support_types.
+138	2011-12-14 18:52:43.382086-05	5	45	2	map screen 2 [2]: Emotional support	2	No fields changed.
+139	2011-12-14 18:52:48.542432-05	5	45	1	map screen 1 [2]: First page	2	No fields changed.
+140	2011-12-14 18:52:54.479994-05	5	45	3	map screen 3 [2]: Practical Support	2	No fields changed.
+141	2011-12-14 18:54:45.962623-05	5	49	3	box_3 ( 50 , 50)	1	
+142	2011-12-14 18:55:14.091098-05	5	45	3	map screen 3 [2]: Practical Support	2	Changed boxes.
+143	2011-12-14 18:55:18.420543-05	5	45	2	map screen 2 [2]: Emotional support	2	Changed boxes.
+144	2011-12-14 18:55:23.074142-05	5	45	1	map screen 1 [2]: First page	2	Changed boxes.
+145	2011-12-15 10:43:02.717163-05	5	49	4	box_4 ( 80 , 250)	1	
+146	2011-12-15 10:43:17.232192-05	5	49	5	box_5 ( 30 , 200)	1	
+147	2011-12-15 10:43:34.671958-05	5	45	3	map screen 3 [2]: Practical Support	2	Changed boxes.
+148	2011-12-15 10:43:42.087087-05	5	45	2	map screen 2 [2]: Emotional support	2	Changed boxes.
+149	2011-12-15 10:43:48.833868-05	5	45	1	map screen 1 [2]: First page	2	Changed boxes.
+150	2011-12-15 11:05:37.765002-05	5	42	55	P23	1	
+151	2011-12-15 11:08:35.513942-05	5	3	71	100	3	
+152	2011-12-15 11:08:35.515512-05	5	3	107	11111	3	
+153	2011-12-15 11:08:35.516648-05	5	3	108	111111111	3	
+154	2011-12-15 11:08:35.517819-05	5	3	63	1234	3	
+155	2011-12-15 11:08:35.519044-05	5	3	57	12345	3	
+156	2011-12-15 11:08:35.520143-05	5	3	69	123456	3	
+157	2011-12-15 11:08:35.521187-05	5	3	58	12354	3	
+158	2011-12-15 11:08:35.522236-05	5	3	62	12547	3	
+159	2011-12-15 11:08:35.523318-05	5	3	90	132456	3	
+160	2011-12-15 11:08:35.524384-05	5	3	85	1423	3	
+161	2011-12-15 11:08:35.525655-05	5	3	112	14263765	3	
+162	2011-12-15 11:08:35.526834-05	5	3	89	143567	3	
+163	2011-12-15 11:08:35.528014-05	5	3	59	154	3	
+164	2011-12-15 11:08:35.529141-05	5	3	97	211777	3	
+165	2011-12-15 11:08:35.530226-05	5	3	106	231	3	
+166	2011-12-15 11:08:35.531328-05	5	3	70	2345	3	
+167	2011-12-15 11:08:35.532392-05	5	3	72	234567	3	
+168	2011-12-15 11:08:35.533543-05	5	3	99	242424242	3	
+169	2011-12-15 11:08:35.534668-05	5	3	73	25252	3	
+170	2011-12-15 11:08:35.535745-05	5	3	80	354657	3	
+171	2011-12-15 11:08:35.536819-05	5	3	88	357098	3	
+172	2011-12-15 11:08:35.537881-05	5	3	60	432	3	
+173	2011-12-15 11:08:35.538976-05	5	3	84	436789	3	
+174	2011-12-15 11:08:35.540041-05	5	3	86	46464	3	
+175	2011-12-15 11:08:35.541122-05	5	3	96	475820	3	
+176	2011-12-15 11:08:35.542202-05	5	3	77	4862	3	
+177	2011-12-15 11:08:35.543264-05	5	3	110	54321	3	
+178	2011-12-15 11:08:35.544341-05	5	3	65	543221	3	
+179	2011-12-15 11:08:35.545469-05	5	3	105	545	3	
+180	2011-12-15 11:08:35.546545-05	5	3	64	55555	3	
+181	2011-12-15 11:08:35.5476-05	5	3	82	565656	3	
+182	2011-12-15 11:08:35.548685-05	5	3	67	6464	3	
+183	2011-12-15 11:08:35.549749-05	5	3	61	6543	3	
+184	2011-12-15 11:08:35.550829-05	5	3	102	654321	3	
+185	2011-12-15 11:08:35.5519-05	5	3	83	654879	3	
+186	2011-12-15 11:08:35.552953-05	5	3	104	666777222	3	
+187	2011-12-15 11:08:35.554022-05	5	3	101	743777	3	
+188	2011-12-15 11:08:35.555118-05	5	3	66	7654	3	
+189	2011-12-15 11:08:35.556204-05	5	3	74	76544	3	
+190	2011-12-15 11:08:35.557241-05	5	3	103	777666555	3	
+191	2011-12-15 11:08:35.558192-05	5	3	98	777777	3	
+192	2011-12-15 11:08:35.559196-05	5	3	87	78787	3	
+193	2011-12-15 11:08:35.560236-05	5	3	100	8675309	3	
+194	2011-12-15 11:08:35.561218-05	5	3	78	879605	3	
+195	2011-12-15 11:08:35.562194-05	5	3	79	89766	3	
+196	2011-12-15 11:08:35.563194-05	5	3	111	987555	3	
+197	2011-12-15 11:08:35.564149-05	5	3	76	9876	3	
+198	2011-12-15 11:08:35.56521-05	5	3	75	987654	3	
+199	2011-12-15 11:08:35.566272-05	5	3	7	ej2223	3	
+200	2011-12-15 11:08:35.567229-05	5	3	3	sbd12	3	
 \.
 
 
@@ -3119,6 +3456,9 @@ COPY django_content_type (id, name, app_label, model) FROM stdin;
 46	services block	servicesblock	servicesblock
 47	risk block	riskblock	riskblock
 48	exit materials block	exitmaterialsblock	exitmaterialsblock
+49	SSNM Tree: Text Box	ssnmtreeblock	ssnmtreebox
+50	ssnm tree support type	ssnmtreeblock	ssnmtreesupporttype
+51	SSNM Tree: People	ssnmtreeblock	ssnmtreeperson
 \.
 
 
@@ -3260,29 +3600,33 @@ dbfed5f967b06031e216cfa0109c0cdc	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 5866f5775a2d37c185fef36d4c433ded	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-19 10:44:19.667359-05
 0fe277b55431848174081011d086356b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFvdS43ZTRkZGUxMDIzZWQ4NzY1MjQy\nMDRhNGI2ZmMxOTA3ZQ==\n	2011-12-23 16:51:11.715923-05
 bc674a708e1244f740d30c6b1649d2f4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-01 08:48:14.837408-05
-4259352b6b789363265f4b79e2a7c4a0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES291LmIzYTEzMWE4NDg0ZjIwODJlZjAy\nZDZhOTAzNDFmYWQx\n	2011-12-26 11:09:14.804752-05
+063fa8f5c276bdb35511359e662e98a0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2011-12-26 16:25:01.257803-05
+faa8f66a5f87678bc5bba27519dde133	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2011-12-26 16:26:09.357284-05
 18197bfdbf76dc1b0480a5b57ba73888	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-11-29 12:23:24.34709-05
 a5f68ae123636b26f5724a51747d1f6e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFkdS5iYTA3YTY1ZDdlNTUyMWQ1NDMx\nNWJmMmU4OTUxZmIwYQ==\n	2011-12-14 13:38:03.586349-05
 53e8d6b855b2d71267c67a7139d4f067	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-11-30 10:12:21.694884-05
 4c2d829b5ca3bdb5b206e7554269903e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFSdS45NjlmNjQ0NmIzZDI0MWM5NjZj\nNDIwOTA4OTkxNDg0ZA==\n	2011-11-30 12:06:13.072433-05
-1e3234f7119dc090b263d6843deb3674	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFodS5iNzYyZTYyMTI2NzU2Y2NmOGNm\nMTNlZWRjZTY5ZGFjNQ==\n	2011-12-16 11:18:36.074567-05
+dd77c864283a81461bac42442bd39bb8	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-27 17:44:28.643042-05
+b36292d439a0ba8aaf8527753021bd07	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-28 10:30:47.428099-05
 fb024c77eda0a0d651ad34999951b4c8	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-14 14:30:35.005574-05
+2a763a3d38e9685c63b6aa6f0112e278	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-28 11:46:52.302522-05
 5b90c41bd716af6a26d54cb5f2e79bf3	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 12:29:55.202325-05
 ab7d407e23618b1f700f4614694bf6a7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-15 15:56:33.064672-05
 11e2dae72af6f904ea218fd9e9213bdb	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-15 17:31:57.727918-05
 3fc26076d55ba07d98c5e9ba8ba2300a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 00:45:10.346025-05
 daac80c207ef4f6f5655c06819327c9c	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 07:41:04.584845-05
+ff013ae28c76855e8b624d11e84232ef	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-28 18:28:28.375517-05
 4bfc131fea8dd2dc64088f41808cd02e	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2011-12-19 10:47:26.65133-05
+20e5fd397bc8febf54ca20f920df8278	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-28 22:05:25.464543-05
+aa98caaee8c8f05c8cbe6809d9f92ad1	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-28 22:05:25.523516-05
 7892f9a11c5196bd7d848e9cb6cbcb8f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 13:17:57.014955-05
+71a91b61eaa8936ecd008fdaf86e97f0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-29 11:03:36.521383-05
 bb3d603b881bd7db45f3d1c945088084	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 14:12:20.532915-05
-0ca3b43c48c33db96a22d9ebe659b298	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFqdS4xZTg3NWQwYzQ1N2Y5MGRiZDA5\nM2VmNGMwNDI5YmFhMg==\n	2011-12-19 12:28:45.743514-05
 2a7879869869b0b74bef3a5f1785f47b	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-19 15:01:18.961448-05
-ccb300ff712f1884636b58aa3b353c32	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVRJfYXV0aF91c2VyX2JhY2tlbmRxBFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxBVUNX2F1dGhfdXNlcl9pZHEG\nigFTdS5iYmQ5OWEyNmRjNmNiZDE5MTdjNmVjYzRjMjJlNjFjYQ==\n	2011-12-20 12:22:57.757849-05
 b5c3aedf7b0ede14b4e637ecdcebc47a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-20 15:02:18.106815-05
 c5e0e489929f255f54a87edd7a4fc6e1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 12:10:09.319994-05
 83d23b4895c1a2236f49f573abaf65f6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-23 12:12:44.019333-05
 dd889696293ac7d5221f0541916aa2e0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 13:03:17.703475-05
-702d67470063e5df9b134925d8f4c50d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-23 15:22:39.482781-05
 \.
 
 
@@ -3454,12 +3798,10 @@ COPY main_standsetting (id, stand_id, name, value) FROM stdin;
 
 COPY main_standuser (id, stand_id, user_id, access) FROM stdin;
 1	1	1	admin
-2	1	3	admin
 3	1	2	instructor
 4	1	4	instructor
 5	1	5	instructor
 6	1	6	student
-7	1	7	student
 8	1	8	student
 9	1	9	student
 10	1	10	student
@@ -3469,7 +3811,6 @@ COPY main_standuser (id, stand_id, user_id, access) FROM stdin;
 14	6	1	admin
 15	5	11	admin
 16	6	11	admin
-17	7	7	admin
 18	6	8	admin
 19	8	5	admin
 20	8	13	admin
@@ -3539,12 +3880,12 @@ COPY pageblocks_imageblock (id, image, caption, alt) FROM stdin;
 2	images/2011/06/07/04.jpg	tree!	
 3	images/2011/06/28/pageblocks1-04.jpg	Look! you can upload pictures!	\N
 6	images/2011/10/14/cycleofviolence.jpg	This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells around the partner.  	cycle of violence diagram
-5	images/2011/10/14/powerandcontrol-phsy.jpg	Emotional abuse occurs when a partner isolates a woman from her friends and family, or uses controlling behaviors (e.g. calling frequently to check where you are, follows you to see where you are going, tells you what to wear, who to talk to, where you can go, take’s control over your money, etc.). Abuse may also occur when one partner tries to control the other partner by such behaviors as threatening to call ACS regarding her children or threatening to report her to the police or probation for criminal activity. Verbal abuse includes behaviors such as screaming, yelling, threats, name calling, putdowns, or can other angry words that make you feel hurt, ashamed or insignificant. \r\n\r\n[power and control pull-out graphic of emotional abuse bubble]	
 10	images/2011/11/23/powerandcontrol-phys.jpg		
 11	images/2011/11/23/powerandcontrol.jpg		
 12	images/2011/11/23/powerandcontrol-emot.jpg		
 13	images/2011/11/23/powerandcontrol-sexu.jpg		
 14	images/2011/11/23/powerandcontrol-econ.jpg		
+5	images/2011/10/14/powerandcontrol-phsy.jpg	Emotional abuse occurs when a partner isolates a woman from her friends and family, or uses controlling behaviors (e.g. calling frequently to check where you are, follows you to see where you are going, tells you what to wear, who to talk to, where you can go, take’s control over your money, etc.). Abuse may also occur when one partner tries to control the other partner by such behaviors as threatening to call ACS regarding her children or threatening to report her to the police or probation for criminal activity. Verbal abuse includes behaviors such as screaming, yelling, threats, name calling, putdowns, or can other angry words that make you feel hurt, ashamed or insignificant.	
 \.
 
 
@@ -3589,12 +3930,12 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 25	All the types of behavior just described abuse are related to power and control, and they are forms of intimate partner violence. Such violence can occur from partners who are female or male, and within relationships that are long-term or casual, of the same or of different genders.    
 21	In addition to physical violence, verbal abuse, such as screaming, yelling, threats, name calling, and putdowns can include angry words that make you feel hurt, ashamed or insignificant. These behaviors are also sometimes referred to as emotional abuse. 
 30	Many women who experience violence from their partner have difficulty in telling someone about what is happening. Some women feel that there is no way out of the situation and their partner has control. Addressing such a situation may not be easy. But the purpose of our conversation today is to consider any risks you or your loved ones may be facing, and to consider what supports and resources are available to you.
-31	One type of violence includes physical abuse with behaviors such as shoving, pushing, slapping, hitting, kicking, pulling hair or punching. \r\n\r\n[power and control pull-out graphic of physical abuse bubble]
+23	Sexual abuse may include being forced to have sex or feeling pressured into having unwanted sexual activity.  For example if a partner pressures you to have oral or anal sex when you don’t want to or if a partner takes sexual advantage of you when you are under the influence of drugs or alcohol.
+31	One type of violence includes physical abuse with behaviors such as shoving, pushing, slapping, hitting, kicking, pulling hair or punching.
 27	Encouraging a woman to be dependent on drugs, or preventing her from accessing drug treatment, is also a form of abuse that can occur in intimate relationships. Pressuring women to sell sex for money or drugs is also a form of abuse.
-29	Women who experience abuse by their partners may develop sleep disturbances, sexual dysfunction, depression, anxiety, posttraumatic stress disorder, eating disorders, feminine problems, become isolated, feel an intense loss of social connections, and may attempt suicide. Such abuse may also make it difficult for women to negotiate condom use with their partners and protect themselves against HIV and other sexually transmitted infections.  
 17	We'll be talking about recognizing relationship conflict and different types of abuse now. What we talk about might be upsetting to you, especially if it touches on something that's going on in your life. Please remember that we're here to help.\r\n
-23	Sexual abuse may include being forced to have sex or feeling pressured into having unwanted sexual activity.  For example if a partner pressures you to have oral or anal sex when you don’t want to or if a partner takes sexual advantage of you when you are under the influence of drugs or alcohol. \r\n\r\n[power and control pull-out graphic of sexual abuse bubble]
 28	Approximately 1 in 4 women will experience domestic abuse in her lifetime. Each year there are approximately 16,800 homicides and over 2 million medically treated injuries related to intimate partner violence.  Among women on probation or parole in New York City, the rate of experiencing physical or sexual violence is very high – over one third of women have gone to the emergency room for injuries resulting from a fight with a partner.\r\n\r\nBecause so many women experience violence in relationships, we are introducing this WINGS program.
+29	Women who experience abuse by their partners may develop sleep disturbances, sexual dysfunction, depression, anxiety, posttraumatic stress disorder, eating disorders, feminine problems, become isolated, feel an intense loss of social connections, and may attempt suicide. Such abuse may also make it difficult for women to negotiate condom use with their partners and protect themselves against HIV and other sexually transmitted infections.  
 35	Relationship conflicts with partners – which may include emotional, physical, or sexual abuse – are common triggers for using drugs and alcohol to cope with the emotional and sometimes physical pain. Violence often causes women in recovery to relapse and drop out of treatment. 
 36	Thinking through your relationship with your partner(s) now or in the past, when you experience conflict or if you are being hurt by your partner, what are some negative consequences that you have experienced or have concerns about?
 42	I can teach my children how to use the telephone and dial 911 to contact the police and the fire department. 
@@ -3607,21 +3948,18 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 57	image of completed social support map\r\n\r\n[/safety-plan/during-a-violent-incident/plan-part-1/]'s Safety Plan\r\n\r\nPart One: Strategies for Safety During a Violent Incident\r\n\r\nIf I decide to leave, I will: [/safety-plan/during-a-violent-incident/plan-part-2/]\r\n\r\nIn order to leave quickly, I can keep my purse, identification, and metro card (or bus/train fare) ready and put them: [/safety-plan/during-a-violent-incident/plan-part-3/]\r\n\r\nI can tell a person that I trust about the violence and request they call the police if they hear suspicious noises coming from my apartment. One person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-4/]\r\n\r\nAnother person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-5/]\r\n\r\nI can teach my children how to use the telephone and dial 911 to contact the police and the fire department. \r\n\r\nI can use a code word with my children or my friends so they can call for help. (CODE WORDS should not evoke suspicion from partner, but should not also be “every day” language that might confuse helping person. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“. Code words for children need to be appropriate for their age. For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”. For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out whether your child can be entrusted with this task)\r\n\r\nMy code word will be: [/safety-plan/during-a-violent-incident/plan-part-7/]\r\n\r\nIf I have to leave my home I will go to: [/safety-plan/during-a-violent-incident/plan-part-8/]\r\n\r\nIf I cannot go to the location above I will go: [/safety-plan/during-a-violent-incident/plan-part-9/]\r\n\r\nI can also teach these strategies to some or all of my children.\r\n\r\nWhen I expect we are going to have an argument, I will try to move to a space that is lowest risk, such as: [/safety-plan/during-a-violent-incident/plan-part-11/]\r\n\r\nI will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.\r\n\r\nPart Two: Preparing to Leave\r\n\r\nSo that I can leave quickly, I will leave money and an extra set of keys with: [/safety-plan/preparing-to-leave/plan-part-1/]\r\n\r\nI will keep copies of important documents (social security cards, birth certificates, shot records – see step 8) or keys at :[/safety-plan/preparing-to-leave/plan-part-2/]\r\n\r\nTo increase my independence, I will open a savings account by: [/safety-plan/preparing-to-leave/plan-part-3/]\r\n\r\nOther things I can do to increase my independence include: [/safety-plan/preparing-to-leave/plan-part-4/]\r\n\r\nCall 311 and ask for the NYC Domestic Violence Hotline (800-621-4673; TDD 866-604-5350) if you need counseling, legal assistance or emergency housing. If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.\r\n\r\nKeep change for phone calls on you at all times. If you use your telephone credit card, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your telephone communications confidential, you must either use coins at a pay phone or get a friend to let you use their telephone credit card for a limited time when you first leave.\r\n\r\nI will check with the following people to see if I can stay with them or borrow money:[/safety-plan/preparing-to-leave/plan-part-7/]\r\n\r\nI can leave extra clothes with:[/safety-plan/preparing-to-leave/plan-part-8/]\r\n\r\nIn order to plan the safest way to leave the residence, I will sit down and review my safety plan every:[/safety-plan/preparing-to-leave/plan-part-9/]\r\n\r\n[safety-plan/preparing-to-leave/plan-part-10/] will help me review my safety plan.\r\n\r\nI will rehearse my escape plan and, as appropriate, practice it with my children.\r\n\r\nAny services viewed in the service referrals activity in this format:\r\n\r\nHigest Level Heading (i.e. 'Drugs and Alcohol)\r\n\r\nNext Level Heading (i.e. Detox)\r\n\r\nServices viewed under this heading\r\n\r\n\r\n
 14	Thank you for taking the time to participate in the WINGS project today. The purpose of this project is to provide information and resources to women. We are particularly interested in how women can stay safe in relationships with intimate partners. Test
 45	A woman may have to leave the residence she shares with her partner, who is out of control. Leaving must be done with a careful plan in order to increase safety.  A violent partner often strikes back if he or she believes that the woman is leaving a relationship.
+62	Economic abuse occurs when a partner attempts to make a woman financially dependent, takes her money, or forces her to sell drugs.
 61	This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells while others may feel like it's never going to happen again.\r\n\r\n[graphic of Cycle of Violence here]
+46	Call 311 and ask for the NYC Domestic Violence Hotline (800-621-4673 or 866-604-5350) if you need counseling, legal assistance or emergency housing.  If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.
 16	Most relationships have good times and bad times. Intimate relationships can be an important source of support, love, and purpose in life. Conflict can arise when partners have different needs or expectations or when difficult things happen that are outside of both partners’ control. While all relationships may have positives and negatives, we’d like to spend some time today talking about conflict and abuse, which sometimes occurs in intimate relationships. \r\n\r\nNow we’re going to hear from three women who have experienced conflict and will share some of their experiences.\r\n   
 59	this page holds a video clip from Strength of a woman cut together with some voice over:\r\n\r\nVO: Now we’re going to hear from three women who have experienced conflict and will share some of their experiences.\r\nVIDEO CLIP: “Intros/Stories”\r\nVO: None of these women expected to experience abuse or violence in their relationships. Things started off great, but over time their partners became more controlling\r\n
-62	Economic abuse occurs when a partner attempts to make a woman financially dependent, takes her money, or forces her to sell drugs.\r\n\r\n[power and control pull-out graphic of economic abuse bubble]
-60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
-46	Call 311 and ask for the NYC Domestic Violence Hotline (800-621-4673 or 866-604-5350) if you need counseling, legal assistance or emergency housing.  If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.
-58	[video of Charlene saying the following:]\r\n\r\nThank you for taking the time to participate in the WINGS project today. \r\n\r\nMy name is Charlene and I will be speaking with you throughout the next hour. The purpose of this project is to provide information and resources to women. We’ll start by talking about relationships and different types of conflict. Then I will ask you a few questions about relationships. At the end of this session, we’ll discuss safety planning, support and goals.\r\n
 38	Thinking through your relationship with your partner(s), when conflict or abuse occurs what are some negative consequences that you experience or are concerned about? Please answer the following questions.
 37	After considering the different negative ways that relationship conflict may be affecting your life and your family, what are some reasons why it would be important for you to reduce conflict? Please answer the following questions.
 47	Keep change for phone calls on you at all times. If you use your cell phone, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your calls confidential, you must either use coins at a pay phone or use a calling card for a limited time when you first leave. 
 49	Let's identify the goals you most want to pursue.\r\n
+60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
 41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all of the following strategies to stay safe.
-64	Sometimes alcohol and drug use make the pattern of violence worse. People who use drugs and alcohol are more likely to commit acts of violence against their partners. Women who are under the influence of drugs or alcohol may be less likely to escape or resist abusive situations. When an intimate partner keeps someone from attending treatment or threatens to hurt them if they use or don’t use drugs, this is a part of abusive behavior.  
-65	Some women who experience violence in relationships may become angry and want to fight back. By fighting back, women may put themselves at risk for receiving criminal charges or going to jail.  Women who experience intense relationship conflict are also more likely to turn to drugs or alcohol to cope with the pain from the abuse. This may also increase their risk for being arrested for drug-related charges.
-66	[video clips from Strength of a Woman plus VO that says:\r\n\r\nMany women have a hard time talking about the abuse they are experiencing and getting help]
+58	Welcome to Wings!\r\n\r\n[video of Charlene saying the following:]\r\n\r\nThank you for taking the time to participate in the WINGS project today. \r\n\r\nMy name is Charlene and I will be speaking with you throughout the next hour. The purpose of this project is to provide information and resources to women. We’ll start by talking about relationships and different types of conflict. Then I will ask you a few questions about relationships. At the end of this session, we’ll discuss safety planning, support and goals.\r\n
 33	Now you're going to complete a screening on how safe and comfortable you feel in your relationship with your intimate partner(s). The next three pages will ask you some questions about sexual or romantic partners you've had in the past year.
 68	You answered that relationship conflict gives you these feelings and concerns:\r\n\r\n[list of question text from the previous questions numbered 1-12 with 'yes' and 'maybe' answers\r\n\r\nplus\r\n\r\nany text typed into field in question 13]
 70	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies.  You can use some or all the strategies on the following pages to stay safe.
@@ -3633,8 +3971,11 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 76	Can you think of two things you can do to strengthen your support from family or friends in the next week?  This may be calling someone who you like to hang out with to get together for coffee or go for walk so that you have a chance to connect with him or her. It may mean calling or a text, email or letter to someone who you have lost touch with but who you would like to reconnect with.  It may mean choosing someone who you trust and respect to talk with about the relationship conflict or abuse that you are experiencing so that you can get their advice or support on how to deal with it.
 78	Now you're going to answer some questions about the types of issues that can trigger conflict for you and your partner.  Then you'll learn about services and organizations that might be able to help you with your particular needs.
 40	If you or a family member or friend is experiencing relationship conflict or abuse by a partner, there are steps you can take to reduce conflict and help to prevent being hurt by a partner. Now we’ll cover two things that can reduce your risk for being hurt by your partner: coming up with a safety plan and identifying friends or family members you can turn to for support.
-63	Exposure to violence can also have lasting consequences for children. Kids who see or hear violence often experience grief, fear, and anxiety. Boys who witness violence between their parents are ten times more likely to abuse their partners when they become adults. Girls who witness parental violence are much more likely to be abused by their partners when they grow up. 
+64	Sometimes alcohol and drug use make the pattern of violence worse. People who use drugs and alcohol are more likely to commit acts of violence against their partners. Women who are under the influence of drugs or alcohol may be less likely to escape or resist abusive situations. When an intimate partner keeps someone from attending treatment or threatens to hurt them if they use or don’t use drugs, this is a part of abusive behavior.  
+65	Some women who experience violence in relationships may become angry and want to fight back. By fighting back, women may put themselves at risk for receiving criminal charges or going to jail.  Women who experience intense relationship conflict are also more likely to turn to drugs or alcohol to cope with the pain from the abuse. This may also increase their risk for being arrested for drug-related charges.
 72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
+63	Exposure to violence can also have lasting consequences for children. Kids who see or hear violence often experience grief, fear, and anxiety. Boys who witness violence between their parents are ten times more likely to abuse their partners when they become adults. Girls who witness parental violence are much more likely to be abused by their partners when they grow up. 
+66	[video clips from Strength of a Woman plus VO that says:\r\n\r\nMany women have a hard time talking about the abuse they are experiencing and getting help]
 \.
 
 
@@ -3689,21 +4030,17 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 199	177	1		26	96
 200	178	1		26	97
 201	179	1		26	98
-57	59	1	Relationships	16	16
-160	149	1	Intros/Stories	16	59
+160	149	1		16	59
+162	150	1		16	61
 211	187	1		26	105
-73	63	1	Physical Abuse	16	31
+73	63	1		16	31
 212	188	1		26	106
 213	189	1		26	107
-74	74	1	Emotional Abuse	19	5
+74	74	1		19	5
 121	56	1	Taking steps to increase relationship safety 	16	40
-163	151	1	Economic Abuse	16	62
-68	69	1	Drug Use and IPV	16	27
-69	70	1	How Common It Is	16	28
+69	70	1		16	28
+164	152	1		16	63
 113	100	1	Cons of Relationship Conflict	16	38
-165	153	1	Alcohol, Drugs, and Violence	16	64
-166	154	1	Anger and Fighting Back	16	65
-167	155	1	Talking About the Abuse	16	66
 214	190	1		26	108
 173	157	1		26	70
 174	157	2		26	71
@@ -3741,7 +4078,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 231	62	2		19	11
 216	192	1		26	110
 232	74	2		19	12
-161	62	1	Types of Conflict	16	60
+68	69	1		16	27
 217	193	1		26	111
 218	194	1		26	112
 219	195	1		26	113
@@ -3750,6 +4087,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 222	198	1		26	116
 234	65	2		19	13
 226	204	1		26	119
+158	52	2		16	58
 224	202	1		26	117
 225	203	1		26	118
 223	201	1	How relationship conflict makes you feel	16	68
@@ -3758,7 +4096,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 235	151	2		19	14
 228	206	1		26	121
 236	207	1		26	122
-162	150	1	The Cycle of Violence	16	61
+161	62	1		16	60
 159	52	3		43	1
 172	52	1		44	1
 237	208	1		26	123
@@ -3773,17 +4111,23 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 244	215	1	Steps to increase support	16	76
 248	58	1	Service Referrals	16	78
 247	145	1	Issues that can trigger conflict in your relationship	26	125
-158	52	2	Welcome to WINGS!	16	58
-70	72	1	Negative Consequences	16	29
-164	152	1	Effects on Children	16	63
+57	59	1		16	16
+165	153	1		16	64
+70	72	1		16	29
 140	119	1		16	46
 141	120	1		16	47
 147	57	1	Goal Setting	16	49
 240	55	1	Social Support Tree	16	72
-64	65	1	Sexual Abuse	16	23
+64	65	1		16	23
+163	151	1		16	62
+166	154	1		16	65
+167	155	1		16	66
 249	146	1	Resources to help you towards your goals	26	126
 250	200	1		26	127
 251	186	1		47	1
+252	211	2	First page	45	1
+253	212	2	Emotional support	45	2
+254	213	2	Practical Support	45	3
 \.
 
 
@@ -3795,13 +4139,13 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 212	000A000M0002	3	0	map screen 2	map-screen-2	11
 215	000A000M0005	3	0	steps to increase support	steps-to-increase-support	11
 70	000A000I001T	3	0	How Common It Is	how-common-it-is	11
-149	000A000I001O0001	4	0	Relationships video	relationships-video	11
 59	000A000I001O	3	1	Relationships	relationships	11
+149	000A000I001O0001	4	0	Three Stories	three-stories	11
+150	000A000I001Q	3	0	The Cycle of Violence	cycle-of-violence	11
 53	000A000J	2	1	Screening for IPV	screening-for-ipv	11
 63	000A000I001R000L	4	0	Physical Abuse	physical-abuse	11
 161	000A000J00010006	4	0	question 1	question-1	11
 156	000A000J00010001	4	0	partner 1 questions	partner-1-questions	11
-150	000A000I001Q	3	0	Cycle of Violence	cycle-of-violence	11
 151	000A000I001R000O	4	0	Economic Abuse	economic-abuse	11
 74	000A000I001R000M	4	0	Emotional Abuse	emotional-abuse	11
 65	000A000I001R000N	4	0	Sexual Abuse	sexual-abuse	11
@@ -3819,10 +4163,10 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 213	000A000M0003	3	0	map screen 3	map-screen-3	11
 217	000A000O0004	3	0	results page	results-page	11
 193	000A000K0008000M	4	0	question 8	question-8	11
-52	000A000I	2	10	Introduction	introduction	11
+52	000A000I	2	10	Welcome	welcome	11
+155	000A000I001Y	3	0	Talking about the abuse	video-talking-about-the-abuse	11
 192	000A000K0008000L	4	0	question 7	question-7	11
 200	000A000K0008000K	4	0	question 6	question-6	11
-155	000A000I001Y	3	0	Video: talking about the abuse	video-talking-about-the-abuse	11
 152	000A000I001V	3	0	Negative Cosequences for Children	negative-cosequences-for-children	11
 153	000A000I001W	3	0	Negative Consequences and Alcohol or Drugs	negative-consequences-and-alcohol-or-drugs	11
 154	000A000I001X	3	0	Anger and Fighting Back	anger-and-fighting-back	11
@@ -4785,65 +5129,7 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 26	122	9	
 27	72	10	1
 28	73	11	2
-39	76	19	3
-40	72	20	2
 41	72	21	2
-42	170	22	test
-43	170	26	test
-44	172	27	1
-45	170	30	test
-46	172	31	1
-47	174	33	1
-48	175	34	asd
-49	175	38	asd
-50	176	39	2
-51	175	42	asd
-52	176	43	2
-53	178	45	1
-54	170	46	fake name
-55	170	50	fake name
-56	172	51	2
-57	170	54	fake name
-58	172	55	2
-59	174	57	2
-60	175	58	sdfsdf
-61	175	62	sdfsdf
-62	176	63	6
-63	175	66	sdfsdf
-64	176	67	6
-65	178	69	2
-66	170	70	
-67	172	71	2
-68	170	74	yt
-69	172	75	2
-70	170	78	yt
-71	172	79	2
-72	174	81	1
-73	175	82	na
-74	175	86	na
-75	178	89	3
-76	175	90	na
-77	176	91	12
-78	178	93	3
-79	179	94	na
-80	179	98	na
-81	182	101	3
-82	179	102	na
-83	180	103	12
-84	182	105	3
-85	183	106	1
-86	184	108	1
-87	185	109	1
-88	186	110	2
-89	187	111	2
-90	188	112	2
-91	189	113	2
-92	190	114	2
-93	191	115	2
-94	192	116	2
-95	192	117	1
-96	193	118	1
-97	194	119	1
 98	179	120	
 99	180	121	Ex-Wife
 100	179	124	
@@ -4858,121 +5144,6 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 109	158	140	
 110	159	141	
 111	165	142	
-112	170	143	
-113	172	144	3
-114	170	147	hd
-115	172	148	3
-116	170	151	hd
-117	172	152	3
-118	174	154	1
-119	170	155	person 1
-120	170	159	person 1
-121	172	160	2
-122	170	163	person 1
-123	172	164	2
-124	174	166	2
-125	175	167	person 2
-126	175	171	person 2
-127	178	174	1
-128	175	175	person 2
-129	176	176	2
-130	178	178	1
-131	179	179	person 3
-132	179	183	person 3
-133	180	184	2
-134	179	187	person 3
-135	180	188	2
-136	182	190	2
-137	170	191	this is a test
-138	170	195	a
-139	170	199	a
-140	172	200	1
-141	170	203	a
-142	172	204	2
-143	170	207	a
-144	172	208	2
-145	174	210	1
-146	170	211	a
-147	172	212	Ex-Wife
-148	174	214	1
-149	170	215	a
-150	172	216	4
-151	174	218	1
-152	170	219	a
-153	172	220	4
-154	174	222	1
-155	170	223	a
-156	172	224	4
-157	174	226	1
-158	170	227	a
-159	172	228	4
-160	174	230	1
-161	170	231	a
-162	172	232	4
-163	174	234	1
-164	170	235	a
-165	172	236	3
-166	174	238	1
-167	170	239	a
-168	172	240	4
-169	174	242	1
-170	170	243	a
-171	172	244	5
-172	174	246	1
-173	170	247	a
-174	172	248	5
-175	174	250	1
-176	170	251	a
-177	172	252	5
-178	174	254	1
-179	170	255	a
-180	172	256	5
-181	174	258	1
-182	170	259	a
-183	172	260	5
-184	174	262	2
-185	170	263	a
-186	172	264	5
-187	174	266	1
-188	170	267	a
-189	172	268	7
-190	174	270	1
-191	170	271	a
-192	172	272	6
-193	174	274	1
-194	170	275	a
-195	172	276	7
-196	174	278	1
-197	170	279	a
-198	172	280	4
-199	174	282	1
-200	170	283	aasd
-201	172	284	4
-202	174	286	1
-203	170	287	aas
-204	172	288	4
-205	174	290	1
-206	170	291	aas
-207	172	292	1
-208	174	294	1
-209	170	295	aas
-210	172	296	1
-211	174	298	1
-212	170	299	aas
-213	172	300	2
-214	174	302	1
-215	170	303	aas
-216	172	304	3
-217	174	306	1
-218	170	307	aas
-219	172	308	3
-220	174	310	1
-221	170	311	aas
-222	172	312	1
-223	174	314	1
-224	170	315	aas
-225	172	316	2
-226	174	318	1
 227	170	319	a
 228	170	323	a
 229	172	324	2
@@ -5185,107 +5356,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 9	28	15	2011-10-17 12:59:08.188626-04
 10	12	5	2011-10-18 14:48:35.781645-04
 11	13	5	2011-10-18 14:49:27.734903-04
-19	16	71	2011-11-04 12:40:44.931977-04
-20	12	72	2011-11-04 14:16:44.961681-04
 21	12	13	2011-11-10 09:29:04.058432-05
-22	66	84	2011-11-22 14:22:46.77683-05
-23	67	84	2011-11-22 14:22:46.8059-05
-24	68	84	2011-11-22 14:22:46.808663-05
-25	69	84	2011-11-22 14:22:46.811395-05
-26	66	84	2011-11-22 14:22:49.762727-05
-27	67	84	2011-11-22 14:22:49.769093-05
-28	68	84	2011-11-22 14:22:49.774522-05
-29	69	84	2011-11-22 14:22:49.777275-05
-30	66	84	2011-11-22 14:22:55.130173-05
-31	67	84	2011-11-22 14:22:55.141195-05
-32	68	84	2011-11-22 14:22:55.150246-05
-33	69	84	2011-11-22 14:22:55.153591-05
-34	70	84	2011-11-22 14:23:14.075328-05
-35	71	84	2011-11-22 14:23:14.080066-05
-36	72	84	2011-11-22 14:23:14.082068-05
-37	73	84	2011-11-22 14:23:14.086288-05
-38	70	84	2011-11-22 14:23:16.13892-05
-39	71	84	2011-11-22 14:23:16.14528-05
-40	72	84	2011-11-22 14:23:16.150648-05
-41	73	84	2011-11-22 14:23:16.153446-05
-42	70	84	2011-11-22 14:23:19.736593-05
-43	71	84	2011-11-22 14:23:19.742884-05
-44	72	84	2011-11-22 14:23:19.748089-05
-45	73	84	2011-11-22 14:23:19.750907-05
-46	66	85	2011-11-22 16:24:48.57312-05
-47	67	85	2011-11-22 16:24:48.58433-05
-48	68	85	2011-11-22 16:24:48.589091-05
-49	69	85	2011-11-22 16:24:48.592949-05
-50	66	85	2011-11-22 16:24:54.949175-05
-51	67	85	2011-11-22 16:24:54.955507-05
-52	68	85	2011-11-22 16:24:54.960636-05
-53	69	85	2011-11-22 16:24:54.963392-05
-54	66	85	2011-11-22 16:24:57.083091-05
-55	67	85	2011-11-22 16:24:57.089389-05
-56	68	85	2011-11-22 16:24:57.094422-05
-57	69	85	2011-11-22 16:24:57.097104-05
-58	70	85	2011-11-22 16:25:23.323154-05
-59	71	85	2011-11-22 16:25:23.329519-05
-60	72	85	2011-11-22 16:25:23.332276-05
-61	73	85	2011-11-22 16:25:23.334943-05
-62	70	85	2011-11-22 16:25:25.726925-05
-63	71	85	2011-11-22 16:25:25.733254-05
-64	72	85	2011-11-22 16:25:25.738532-05
-65	73	85	2011-11-22 16:25:25.741135-05
-66	70	85	2011-11-22 16:25:28.150042-05
-67	71	85	2011-11-22 16:25:28.155907-05
-68	72	85	2011-11-22 16:25:28.160841-05
-69	73	85	2011-11-22 16:25:28.163414-05
-70	66	96	2011-11-28 13:54:44.024899-05
-71	67	96	2011-11-28 13:54:44.036909-05
-72	68	96	2011-11-28 13:54:44.042314-05
-73	69	96	2011-11-28 13:54:44.045092-05
-74	66	96	2011-11-28 13:54:56.211561-05
-75	67	96	2011-11-28 13:54:56.217922-05
-76	68	96	2011-11-28 13:54:56.223421-05
-77	69	96	2011-11-28 13:54:56.226173-05
-78	66	96	2011-11-28 13:55:03.090755-05
-79	67	96	2011-11-28 13:55:03.097116-05
-80	68	96	2011-11-28 13:55:03.102273-05
-81	69	96	2011-11-28 13:55:03.104942-05
-82	70	96	2011-11-28 13:55:18.756766-05
-83	71	96	2011-11-28 13:55:18.763183-05
-84	72	96	2011-11-28 13:55:18.766002-05
-85	73	96	2011-11-28 13:55:18.768752-05
-86	70	96	2011-11-28 13:55:21.908215-05
-87	71	96	2011-11-28 13:55:21.914501-05
-88	72	96	2011-11-28 13:55:21.917287-05
-89	73	96	2011-11-28 13:55:21.920052-05
-90	70	96	2011-11-28 13:55:33.086132-05
-91	71	96	2011-11-28 13:55:33.091739-05
-92	72	96	2011-11-28 13:55:33.09597-05
-93	73	96	2011-11-28 13:55:33.098211-05
-94	74	96	2011-11-28 13:55:41.438695-05
-95	75	96	2011-11-28 13:55:41.444951-05
-96	76	96	2011-11-28 13:55:41.447635-05
-97	77	96	2011-11-28 13:55:41.450255-05
-98	74	96	2011-11-28 13:55:45.08599-05
-99	75	96	2011-11-28 13:55:45.092104-05
-100	76	96	2011-11-28 13:55:45.094697-05
-101	77	96	2011-11-28 13:55:45.097388-05
-102	74	96	2011-11-28 13:57:40.543574-05
-103	75	96	2011-11-28 13:57:40.549867-05
-104	76	96	2011-11-28 13:57:40.555243-05
-105	77	96	2011-11-28 13:57:40.558037-05
-106	78	96	2011-11-28 13:58:19.739067-05
-107	79	96	2011-11-28 13:58:19.744324-05
-108	80	96	2011-11-28 13:58:26.864318-05
-109	81	96	2011-11-28 13:58:30.029835-05
-110	82	96	2011-11-28 13:58:32.6893-05
-111	83	96	2011-11-28 13:58:34.98759-05
-112	84	96	2011-11-28 13:58:37.457358-05
-113	85	96	2011-11-28 13:58:39.649822-05
-114	86	96	2011-11-28 13:58:41.467775-05
-115	87	96	2011-11-28 13:59:18.395277-05
-116	88	96	2011-11-28 13:59:23.779118-05
-117	88	96	2011-11-28 13:59:25.356004-05
-118	89	96	2011-11-28 13:59:31.294733-05
-119	90	96	2011-11-28 13:59:43.695879-05
 120	74	5	2011-11-28 13:59:53.861876-05
 121	75	5	2011-11-28 13:59:53.868288-05
 122	76	5	2011-11-28 13:59:53.87375-05
@@ -5309,182 +5380,6 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 140	55	17	2011-12-02 15:09:40.324027-05
 141	56	17	2011-12-02 15:11:44.855558-05
 142	62	17	2011-12-02 15:19:02.686698-05
-143	66	106	2011-12-05 12:33:37.888571-05
-144	67	106	2011-12-05 12:33:37.917236-05
-145	68	106	2011-12-05 12:33:37.922669-05
-146	69	106	2011-12-05 12:33:37.925367-05
-147	66	106	2011-12-05 12:33:48.700038-05
-148	67	106	2011-12-05 12:33:48.706158-05
-149	68	106	2011-12-05 12:33:48.711388-05
-150	69	106	2011-12-05 12:33:48.714034-05
-151	66	106	2011-12-05 12:34:00.332241-05
-152	67	106	2011-12-05 12:34:00.338579-05
-153	68	106	2011-12-05 12:34:00.343841-05
-154	69	106	2011-12-05 12:34:00.346704-05
-155	66	107	2011-12-09 15:46:11.090446-05
-156	67	107	2011-12-09 15:46:11.102909-05
-157	68	107	2011-12-09 15:46:11.105645-05
-158	69	107	2011-12-09 15:46:11.108477-05
-159	66	107	2011-12-09 15:46:13.43861-05
-160	67	107	2011-12-09 15:46:13.444922-05
-161	68	107	2011-12-09 15:46:13.450304-05
-162	69	107	2011-12-09 15:46:13.453009-05
-163	66	107	2011-12-09 15:46:17.05661-05
-164	67	107	2011-12-09 15:46:17.0632-05
-165	68	107	2011-12-09 15:46:17.068776-05
-166	69	107	2011-12-09 15:46:17.07173-05
-167	70	107	2011-12-09 15:46:34.883471-05
-168	71	107	2011-12-09 15:46:34.889849-05
-169	72	107	2011-12-09 15:46:34.892567-05
-170	73	107	2011-12-09 15:46:34.895368-05
-171	70	107	2011-12-09 15:46:39.831647-05
-172	71	107	2011-12-09 15:46:39.837987-05
-173	72	107	2011-12-09 15:46:39.840578-05
-174	73	107	2011-12-09 15:46:39.843231-05
-175	70	107	2011-12-09 15:46:54.319386-05
-176	71	107	2011-12-09 15:46:54.325226-05
-177	72	107	2011-12-09 15:46:54.330278-05
-178	73	107	2011-12-09 15:46:54.332851-05
-179	74	107	2011-12-09 15:47:11.162122-05
-180	75	107	2011-12-09 15:47:11.168336-05
-181	76	107	2011-12-09 15:47:11.171167-05
-182	77	107	2011-12-09 15:47:11.173941-05
-183	74	107	2011-12-09 15:47:11.301928-05
-184	75	107	2011-12-09 15:47:11.3102-05
-185	76	107	2011-12-09 15:47:11.318185-05
-186	77	107	2011-12-09 15:47:11.321246-05
-187	74	107	2011-12-09 15:47:15.418065-05
-188	75	107	2011-12-09 15:47:15.424646-05
-189	76	107	2011-12-09 15:47:15.429831-05
-190	77	107	2011-12-09 15:47:15.432778-05
-191	66	104	2011-12-09 15:57:05.755123-05
-192	67	104	2011-12-09 15:57:05.763082-05
-193	68	104	2011-12-09 15:57:05.765967-05
-194	69	104	2011-12-09 15:57:05.772146-05
-195	66	110	2011-12-09 16:00:00.475242-05
-196	67	110	2011-12-09 16:00:00.481762-05
-197	68	110	2011-12-09 16:00:00.484434-05
-198	69	110	2011-12-09 16:00:00.487216-05
-199	66	110	2011-12-09 16:00:03.492629-05
-200	67	110	2011-12-09 16:00:03.499119-05
-201	68	110	2011-12-09 16:00:03.504223-05
-202	69	110	2011-12-09 16:00:03.506969-05
-203	66	110	2011-12-09 16:00:08.738789-05
-204	67	110	2011-12-09 16:00:08.74523-05
-205	68	110	2011-12-09 16:00:08.750581-05
-206	69	110	2011-12-09 16:00:08.75329-05
-207	66	110	2011-12-09 16:01:17.04964-05
-208	67	110	2011-12-09 16:01:17.056251-05
-209	68	110	2011-12-09 16:01:17.061417-05
-210	69	110	2011-12-09 16:01:17.064252-05
-211	66	110	2011-12-09 16:01:18.528107-05
-212	67	110	2011-12-09 16:01:18.534826-05
-213	68	110	2011-12-09 16:01:18.54032-05
-214	69	110	2011-12-09 16:01:18.543218-05
-215	66	110	2011-12-09 16:01:20.222508-05
-216	67	110	2011-12-09 16:01:20.228749-05
-217	68	110	2011-12-09 16:01:20.233954-05
-218	69	110	2011-12-09 16:01:20.236655-05
-219	66	110	2011-12-09 16:01:22.2709-05
-220	67	110	2011-12-09 16:01:22.277231-05
-221	68	110	2011-12-09 16:01:22.282476-05
-222	69	110	2011-12-09 16:01:22.285173-05
-223	66	110	2011-12-09 16:01:25.062537-05
-224	67	110	2011-12-09 16:01:25.068735-05
-225	68	110	2011-12-09 16:01:25.07379-05
-226	69	110	2011-12-09 16:01:25.076336-05
-227	66	110	2011-12-09 16:01:42.295426-05
-228	67	110	2011-12-09 16:01:42.301783-05
-229	68	110	2011-12-09 16:01:42.307185-05
-230	69	110	2011-12-09 16:01:42.309982-05
-231	66	110	2011-12-09 16:01:44.759041-05
-232	67	110	2011-12-09 16:01:44.765458-05
-233	68	110	2011-12-09 16:01:44.770824-05
-234	69	110	2011-12-09 16:01:44.773539-05
-235	66	110	2011-12-09 16:01:46.735168-05
-236	67	110	2011-12-09 16:01:46.741429-05
-237	68	110	2011-12-09 16:01:46.746499-05
-238	69	110	2011-12-09 16:01:46.749301-05
-239	66	110	2011-12-09 16:01:47.804827-05
-240	67	110	2011-12-09 16:01:47.810719-05
-241	68	110	2011-12-09 16:01:47.815692-05
-242	69	110	2011-12-09 16:01:47.818147-05
-243	66	110	2011-12-09 16:01:48.88288-05
-244	67	110	2011-12-09 16:01:48.889278-05
-245	68	110	2011-12-09 16:01:48.894643-05
-246	69	110	2011-12-09 16:01:48.897476-05
-247	66	110	2011-12-09 16:01:52.792519-05
-248	67	110	2011-12-09 16:01:52.799021-05
-249	68	110	2011-12-09 16:01:52.804304-05
-250	69	110	2011-12-09 16:01:52.80725-05
-251	66	110	2011-12-09 16:02:13.410477-05
-252	67	110	2011-12-09 16:02:13.416866-05
-253	68	110	2011-12-09 16:02:13.422252-05
-254	69	110	2011-12-09 16:02:13.425081-05
-255	66	110	2011-12-09 16:02:16.561076-05
-256	67	110	2011-12-09 16:02:16.567365-05
-257	68	110	2011-12-09 16:02:16.572828-05
-258	69	110	2011-12-09 16:02:16.575571-05
-259	66	110	2011-12-09 16:02:26.530376-05
-260	67	110	2011-12-09 16:02:26.536801-05
-261	68	110	2011-12-09 16:02:26.542131-05
-262	69	110	2011-12-09 16:02:26.544743-05
-263	66	110	2011-12-09 16:02:27.754051-05
-264	67	110	2011-12-09 16:02:27.760419-05
-265	68	110	2011-12-09 16:02:27.765557-05
-266	69	110	2011-12-09 16:02:27.768233-05
-267	66	110	2011-12-09 16:02:29.308622-05
-268	67	110	2011-12-09 16:02:29.315088-05
-269	68	110	2011-12-09 16:02:29.320519-05
-270	69	110	2011-12-09 16:02:29.323404-05
-271	66	110	2011-12-09 16:02:30.385883-05
-272	67	110	2011-12-09 16:02:30.392115-05
-273	68	110	2011-12-09 16:02:30.397328-05
-274	69	110	2011-12-09 16:02:30.400083-05
-275	66	110	2011-12-09 16:02:31.457919-05
-276	67	110	2011-12-09 16:02:31.46424-05
-277	68	110	2011-12-09 16:02:31.469387-05
-278	69	110	2011-12-09 16:02:31.472175-05
-279	66	110	2011-12-09 16:02:32.634683-05
-280	67	110	2011-12-09 16:02:32.640986-05
-281	68	110	2011-12-09 16:02:32.646372-05
-282	69	110	2011-12-09 16:02:32.64905-05
-283	66	110	2011-12-09 16:04:00.405034-05
-284	67	110	2011-12-09 16:04:00.411697-05
-285	68	110	2011-12-09 16:04:00.416848-05
-286	69	110	2011-12-09 16:04:00.419581-05
-287	66	110	2011-12-09 16:04:03.947957-05
-288	67	110	2011-12-09 16:04:03.954104-05
-289	68	110	2011-12-09 16:04:03.959423-05
-290	69	110	2011-12-09 16:04:03.962244-05
-291	66	110	2011-12-09 16:04:06.322356-05
-292	67	110	2011-12-09 16:04:06.328363-05
-293	68	110	2011-12-09 16:04:06.333346-05
-294	69	110	2011-12-09 16:04:06.335927-05
-295	66	110	2011-12-09 16:04:22.071698-05
-296	67	110	2011-12-09 16:04:22.077958-05
-297	68	110	2011-12-09 16:04:22.083233-05
-298	69	110	2011-12-09 16:04:22.085878-05
-299	66	110	2011-12-09 16:04:23.79635-05
-300	67	110	2011-12-09 16:04:23.802738-05
-301	68	110	2011-12-09 16:04:23.808032-05
-302	69	110	2011-12-09 16:04:23.81067-05
-303	66	110	2011-12-09 16:04:25.439364-05
-304	67	110	2011-12-09 16:04:25.445652-05
-305	68	110	2011-12-09 16:04:25.450763-05
-306	69	110	2011-12-09 16:04:25.453415-05
-307	66	110	2011-12-09 16:04:29.30866-05
-308	67	110	2011-12-09 16:04:29.31504-05
-309	68	110	2011-12-09 16:04:29.320466-05
-310	69	110	2011-12-09 16:04:29.323251-05
-311	66	110	2011-12-09 16:04:33.134692-05
-312	67	110	2011-12-09 16:04:33.141077-05
-313	68	110	2011-12-09 16:04:33.146178-05
-314	69	110	2011-12-09 16:04:33.148873-05
-315	66	110	2011-12-09 16:04:34.876558-05
-316	67	110	2011-12-09 16:04:34.883129-05
-317	68	110	2011-12-09 16:04:34.888514-05
-318	69	110	2011-12-09 16:04:34.891331-05
 319	66	5	2011-12-09 16:16:49.59296-05
 320	67	5	2011-12-09 16:16:49.599501-05
 321	68	5	2011-12-09 16:16:49.60216-05
@@ -5849,6 +5744,13 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 16	audioblock	0002_auto__add_field_audioblock_audio_file	2011-11-09 20:11:26.073815-05
 17	helpblock	0002_auto__add_field_helpblock_audio_file	2011-11-17 17:21:36.350609-05
 18	riskblock	0002_auto__del_field_riskblock_description__add_field_riskblock_no_risk_cop	2011-12-06 21:48:00.747592-05
+19	ssnmtreeblock	0002_auto__del_field_ssnmtreeblock_description__add_field_ssnmtreeblock_err	2011-12-14 23:30:41.746922-05
+20	ssnmtreeblock	0003_auto__add_ssnmtreebox	2011-12-14 23:30:41.860014-05
+21	ssnmtreeblock	0004_auto__add_ssnmtreeperson	2011-12-14 23:30:41.912516-05
+22	ssnmtreeblock	0005_auto__add_ssnmtreesupporttype__add_field_ssnmtreeperson_name	2011-12-14 23:30:41.990049-05
+23	ssnmtreeblock	0006_auto__add_field_ssnmtreebox_label	2011-12-14 23:30:42.039349-05
+24	ssnmtreeblock	0007_auto__add_unique_ssnmtreebox_label__add_unique_ssnmtreesupporttype_lab	2011-12-14 23:30:42.096431-05
+25	ssnmtreeblock	0008_auto	2011-12-14 23:30:42.172831-05
 \.
 
 
@@ -5856,7 +5758,107 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 -- Data for Name: ssnmtreeblock_ssnmtreeblock; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY ssnmtreeblock_ssnmtreeblock (id, description) FROM stdin;
+COPY ssnmtreeblock_ssnmtreeblock (id, error_copy, page_type) FROM stdin;
+3		page_3
+2		page_2
+1	(ignore this)	page_1
+\.
+
+
+--
+-- Data for Name: ssnmtreeblock_ssnmtreeblock_boxes; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY ssnmtreeblock_ssnmtreeblock_boxes (id, ssnmtreeblock_id, ssnmtreebox_id) FROM stdin;
+22	3	1
+23	3	2
+24	3	3
+25	3	4
+26	3	5
+27	2	1
+28	2	2
+29	2	3
+30	2	4
+31	2	5
+32	1	1
+33	1	2
+34	1	3
+35	1	4
+36	1	5
+\.
+
+
+--
+-- Data for Name: ssnmtreeblock_ssnmtreeblock_editable_support_types; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY ssnmtreeblock_ssnmtreeblock_editable_support_types (id, ssnmtreeblock_id, ssnmtreesupporttype_id) FROM stdin;
+7	3	1
+8	2	2
+\.
+
+
+--
+-- Data for Name: ssnmtreeblock_ssnmtreeblock_visible_support_types; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY ssnmtreeblock_ssnmtreeblock_visible_support_types (id, ssnmtreeblock_id, ssnmtreesupporttype_id) FROM stdin;
+10	3	1
+11	3	2
+12	2	2
+\.
+
+
+--
+-- Data for Name: ssnmtreeblock_ssnmtreebox; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FROM stdin;
+2	290	100	box_2
+1	130	60	box_1
+3	50	50	box_3
+4	250	80	box_4
+5	200	30	box_5
+\.
+
+
+--
+-- Data for Name: ssnmtreeblock_ssnmtreeperson; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
+2	5	1	mom
+1	5	2	dad
+3	5	3	helen
+4	5	4	
+5	5	5	
+\.
+
+
+--
+-- Data for Name: ssnmtreeblock_ssnmtreeperson_support_types; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtreesupporttype_id) FROM stdin;
+1	1	2
+2	2	2
+3	1	1
+4	2	1
+5	3	1
+6	3	2
+7	4	2
+8	4	1
+9	5	1
+\.
+
+
+--
+-- Data for Name: ssnmtreeblock_ssnmtreesupporttype; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY ssnmtreeblock_ssnmtreesupporttype (id, label, description) FROM stdin;
+1	Practical	Practical support
+2	Emotional	Emotional support.
 \.
 
 
@@ -5881,38 +5883,7 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 --
 
 COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM stdin;
-2	12345	57	\N
-49	231	106	157
-22	76544	74	52
-35	357098	88	65
-19	100	71	148
-12	55555	64	\N
-23	987654	75	62
-24	9876	76	63
-36	143567	89	65
-25	4862	77	52
-39	475820	96	172
-26	879605	78	63
-31	436789	84	158
-43	8675309	100	156
-44	743777	101	\N
-40	211777	97	65
-45	654321	102	\N
-46	777666555	103	\N
-37	132456	90	156
-50	11111	107	159
-42	242424242	99	156
-32	1423	85	158
-48	545	105	52
-33	46464	86	149
-41	777777	98	156
-27	89766	79	100
-30	654879	83	52
-34	78787	87	52
-47	666777222	104	156
-52	54321	110	156
-21	25252	73	148
-53	987555	111	156
+55	23	\N	\N
 \.
 
 
@@ -6373,11 +6344,115 @@ ALTER TABLE ONLY south_migrationhistory
 
 
 --
+-- Name: ssnmtreeblock_ssnmtreebl_ssnmtreeblock_id_1757f59bf81168ec_uniq; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_boxes
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreebl_ssnmtreeblock_id_1757f59bf81168ec_uniq UNIQUE (ssnmtreeblock_id, ssnmtreebox_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebl_ssnmtreeblock_id_1b7adae98b329839_uniq; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_visible_support_types
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreebl_ssnmtreeblock_id_1b7adae98b329839_uniq UNIQUE (ssnmtreeblock_id, ssnmtreesupporttype_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebl_ssnmtreeblock_id_42830aef3eddf5f8_uniq; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_editable_support_types
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreebl_ssnmtreeblock_id_42830aef3eddf5f8_uniq UNIQUE (ssnmtreeblock_id, ssnmtreesupporttype_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_boxes_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_boxes
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreeblock_boxes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_editable_support_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_editable_support_types
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreeblock_editable_support_types_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: ssnmtreeblock_ssnmtreeblock_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock
     ADD CONSTRAINT ssnmtreeblock_ssnmtreeblock_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_visible_support_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_visible_support_types
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreeblock_visible_support_types_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebox_label_uniq; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreebox
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreebox_label_uniq UNIQUE (label);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreebox_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreebox
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreebox_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreepe_ssnmtreeperson_id_820eb0cfcf2d822_uniq; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson_support_types
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreepe_ssnmtreeperson_id_820eb0cfcf2d822_uniq UNIQUE (ssnmtreeperson_id, ssnmtreesupporttype_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreeperson_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_support_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson_support_types
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreeperson_support_types_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreesupporttype_label_uniq; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreesupporttype
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreesupporttype_label_uniq UNIQUE (label);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreesupporttype_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreesupporttype
+    ADD CONSTRAINT ssnmtreeblock_ssnmtreesupporttype_pkey PRIMARY KEY (id);
 
 
 --
@@ -6751,6 +6826,76 @@ CREATE INDEX quizblock_submission_user_id ON quizblock_submission USING btree (u
 
 
 --
+-- Name: ssnmtreeblock_ssnmtreeblock_boxes_ssnmtreeblock_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeblock_boxes_ssnmtreeblock_id ON ssnmtreeblock_ssnmtreeblock_boxes USING btree (ssnmtreeblock_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_boxes_ssnmtreebox_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeblock_boxes_ssnmtreebox_id ON ssnmtreeblock_ssnmtreeblock_boxes USING btree (ssnmtreebox_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_editable_support_types_ssnmtreebloc; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeblock_editable_support_types_ssnmtreebloc ON ssnmtreeblock_ssnmtreeblock_editable_support_types USING btree (ssnmtreeblock_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_editable_support_types_ssnmtreesupp; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeblock_editable_support_types_ssnmtreesupp ON ssnmtreeblock_ssnmtreeblock_editable_support_types USING btree (ssnmtreesupporttype_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_visible_support_types_ssnmtreeblock; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeblock_visible_support_types_ssnmtreeblock ON ssnmtreeblock_ssnmtreeblock_visible_support_types USING btree (ssnmtreeblock_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeblock_visible_support_types_ssnmtreesuppo; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeblock_visible_support_types_ssnmtreesuppo ON ssnmtreeblock_ssnmtreeblock_visible_support_types USING btree (ssnmtreesupporttype_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_support_types_ssnmtreeperson_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeperson_support_types_ssnmtreeperson_id ON ssnmtreeblock_ssnmtreeperson_support_types USING btree (ssnmtreeperson_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_support_types_ssnmtreesupporttype_; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeperson_support_types_ssnmtreesupporttype_ ON ssnmtreeblock_ssnmtreeperson_support_types USING btree (ssnmtreesupporttype_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_tree_box_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeperson_tree_box_id ON ssnmtreeblock_ssnmtreeperson USING btree (tree_box_id);
+
+
+--
+-- Name: ssnmtreeblock_ssnmtreeperson_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX ssnmtreeblock_ssnmtreeperson_user_id ON ssnmtreeblock_ssnmtreeperson USING btree (user_id);
+
+
+--
 -- Name: tagging_taggeditem_content_type_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -7066,6 +7211,70 @@ ALTER TABLE ONLY quizblock_submission
 
 
 --
+-- Name: ssnmtreeblock_id_refs_id_2255450f40fc3a48; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_visible_support_types
+    ADD CONSTRAINT ssnmtreeblock_id_refs_id_2255450f40fc3a48 FOREIGN KEY (ssnmtreeblock_id) REFERENCES ssnmtreeblock_ssnmtreeblock(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: ssnmtreeblock_id_refs_id_2eb137987b0d67f9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_editable_support_types
+    ADD CONSTRAINT ssnmtreeblock_id_refs_id_2eb137987b0d67f9 FOREIGN KEY (ssnmtreeblock_id) REFERENCES ssnmtreeblock_ssnmtreeblock(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: ssnmtreeblock_id_refs_id_6d3aa1792be28447; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_boxes
+    ADD CONSTRAINT ssnmtreeblock_id_refs_id_6d3aa1792be28447 FOREIGN KEY (ssnmtreeblock_id) REFERENCES ssnmtreeblock_ssnmtreeblock(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: ssnmtreebox_id_refs_id_690738d9292ed271; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_boxes
+    ADD CONSTRAINT ssnmtreebox_id_refs_id_690738d9292ed271 FOREIGN KEY (ssnmtreebox_id) REFERENCES ssnmtreeblock_ssnmtreebox(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: ssnmtreeperson_id_refs_id_7dbc5c667216cfa5; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson_support_types
+    ADD CONSTRAINT ssnmtreeperson_id_refs_id_7dbc5c667216cfa5 FOREIGN KEY (ssnmtreeperson_id) REFERENCES ssnmtreeblock_ssnmtreeperson(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: ssnmtreesupporttype_id_refs_id_35fd9d349ad69a05; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_editable_support_types
+    ADD CONSTRAINT ssnmtreesupporttype_id_refs_id_35fd9d349ad69a05 FOREIGN KEY (ssnmtreesupporttype_id) REFERENCES ssnmtreeblock_ssnmtreesupporttype(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: ssnmtreesupporttype_id_refs_id_44297c13e48bcaa0; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson_support_types
+    ADD CONSTRAINT ssnmtreesupporttype_id_refs_id_44297c13e48bcaa0 FOREIGN KEY (ssnmtreesupporttype_id) REFERENCES ssnmtreeblock_ssnmtreesupporttype(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: ssnmtreesupporttype_id_refs_id_49256b7cc75157c4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeblock_visible_support_types
+    ADD CONSTRAINT ssnmtreesupporttype_id_refs_id_49256b7cc75157c4 FOREIGN KEY (ssnmtreesupporttype_id) REFERENCES ssnmtreeblock_ssnmtreesupporttype(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: tagging_taggeditem_content_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7079,6 +7288,22 @@ ALTER TABLE ONLY tagging_taggeditem
 
 ALTER TABLE ONLY tagging_taggeditem
     ADD CONSTRAINT tagging_taggeditem_tag_id_fkey FOREIGN KEY (tag_id) REFERENCES tagging_tag(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: tree_box_id_refs_id_515ef2e97e3c6ffe; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson
+    ADD CONSTRAINT tree_box_id_refs_id_515ef2e97e3c6ffe FOREIGN KEY (tree_box_id) REFERENCES ssnmtreeblock_ssnmtreebox(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: user_id_refs_id_493cdd86ee08451f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson
+    ADD CONSTRAINT user_id_refs_id_493cdd86ee08451f FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
