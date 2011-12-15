@@ -271,7 +271,7 @@ p.file-upload {
 }
 
 .calendar td a:hover, .timelist a:hover {
-    background: #5b80b2;
+    background: #64436D;
     color: white;
 }
 
@@ -432,7 +432,7 @@ ul.orderer li.deleted:hover, ul.orderer li.deleted a.selector:hover {
 
 .editinline button.addlink {
     border: 0px none;
-    color: #5b80b2;
+    color: #64436D;
     font-size: 100%;
     cursor: pointer;
 }

@@ -1,7 +1,4 @@
 
-table#result_list a {
-    font-size: 150%;
-}
 
 table#result_list tr {
     height: 60px;
@@ -92,7 +89,6 @@ input[name="_continue"], input[name="_addanother"],{
 }
 
 .object-tools a:link, .object-tools a:visited {
-    background: #999;
     display: block;
     float: left;
     color: white;
@@ -114,8 +110,6 @@ input[name="_continue"], input[name="_addanother"],{
     padding-right: 28px;
 }
 
-.object-tools a.addlink:hover {
-}
 
 .object-tools a.historylink {
     display:none !important;

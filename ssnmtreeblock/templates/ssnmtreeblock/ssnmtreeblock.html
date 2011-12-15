@@ -13,12 +13,11 @@
                     class="ssnm_tree_box_input {{box.label}}" />
                     
                     
-                <div class="bird_on_it">bird</div>
                 
                 
                 {%for type in block.visible_support_types.all %}
                     <div id =".box_{{box.id}}.type_{{type.id}}"
-                    class="heart box_{{box.id}}  type_{{type.id}}">{{type.label}}</div>
+                    class="heart box_{{box.id}}  type_{{type.id}}" title="{{type.label}}"></div>
                 {%endfor%}
                 
             </div>
