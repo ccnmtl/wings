@@ -512,7 +512,7 @@ a:visited
 #content
 {
 	display: block;
-	margin: 3em 2em 0 14em;
+	margin: 3em 1em 0 14em;
 	padding: 0;
 	border: 0;
 
@@ -587,7 +587,7 @@ a:visited
 {
 	height: 53px;
 	margin: 0;
-	padding: 0.5em 0;
+	padding: 0.5em 0 0 0;
 	border: 0;
 
 }
@@ -1056,6 +1056,8 @@ background-color: #e3d8e0;
 .floatright {
     float: right;
 }
+
+
 
 /**Audioblock and Buttons -- aplies to both main audio and help box audio **/
 

@@ -1,32 +1,32 @@
 <style type="text/css">
 /* ok here's the tree */
 .ssnm_tree_block {
-    width  :    615 px;
-    height :    400px;
+    width  :    475px;
+    height :    420px;
     position:   relative;
     background: url('/site_media/img/ssnm_tree.jpg') no-repeat scroll left top;
+    float: left;
+}
+
+.tree-instructions {
+    display: block;
+    float: left;
+    width: 160px;
+    padding: 0px 15px;
+    background-color: #ccc;
+    font-size: 90%;
 }
 
 /* this is the div that contains the input box. it's clickable to change the support types each person gives you. */
 .ssnm_tree_box_div {
     position: absolute;
-<<<<<<< HEAD
     width: 163px !important;
     height: 77px !important;
-    background: green;
-=======
-    width: 170px !important;
-    height: 50px !important;
-    background: blue;
->>>>>>> 2be77cf8bcb6aa9d735c4e17348d3c03ee2dddb5
-    opacity:0.8;
-    filter:alpha(opacity=0.8); /* For IE8 and earlier */
-    border-radius: 20px 20px 20px 20px;
      background: url('/site_media/img/bird_initial.png') no-repeat scroll left top;
 }
 
 .ssnm_tree_box_div.contains_name {
-    background: green !important;
+      background: url('/site_media/img/bird_selected.png') no-repeat scroll left top;
 }
 
 /*  this positions each of the divs according to the left and top info found at:
@@ -44,7 +44,7 @@
 .ssnm_tree_box_input {
     position: absolute;
     left: 55px !important;
-    top: 40px !important;
+    top: 44px !important;
     width: 70px !important;
     height: 14px !important;
     font-size: .8em !important;
@@ -71,8 +71,9 @@
     font-size: 0.8em !important;
     cursor: default;
     display: none;
-    height: 10px;
-    width: 10px;
+    height: 16px;
+    width: 20px;
+    top: 66px;
 
 }
 
@@ -80,30 +81,20 @@
 .ssnm_tree_box_div.offers_support_type_1 .heart.type_1 {
     display: block !important;
     background: url('/site_media/img/emotional_icon.png') no-repeat scroll left top;
-        background-color: pink;
+        left: 80px !important;
+
 }
 
 .ssnm_tree_box_div.offers_support_type_2 .heart.type_2 {
     display: block !important;
-        background-color: blue;
+    background: url('/site_media/img/practical_icon.png') no-repeat scroll left top;
+        left: 102px !important;
 }
 
 .form_checkbox {
     display:none;
 }
 
-/* emotional support */
-.heart.type_1 {
-    top: 15px !important;
-    left: 145px !important;
-    color:red;
-}
 
-/* practical support */
-.heart.type_2 {
-    top: 25px !important;
-    left: 150px !important;
-    color:yellow;
-}
 
 </style>
