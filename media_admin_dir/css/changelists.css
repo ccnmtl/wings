@@ -50,6 +50,7 @@
 #changelist table thead th {
     white-space: nowrap;
     vertical-align: middle;
+     font-size: 100%;
 }
 
 #changelist table thead th.action-checkbox-column {
@@ -59,6 +60,12 @@
 
 #changelist table tbody td {
     border-left: 1px solid #ddd;
+}
+
+#changelist table tbody td a {
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 #changelist table tbody td:first-child {

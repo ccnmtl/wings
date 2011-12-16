@@ -213,7 +213,7 @@ tr.alt {
 }
 
 .row1 {
-    background: #EDF3FE;
+    background: #f1f1f1;
 }
 
 .row2 {
@@ -228,11 +228,13 @@ thead th a:link, thead th a:visited {
 }
 
 table thead th.sorted {
-    background-position: bottom left !important;
+
 }
 
 table thead th.sorted a {
     padding-right: 13px;
+        background: url(../img/admin/arrow-down.gif) right .4em no-repeat;
+
 }
 
 table thead th.ascending a {
