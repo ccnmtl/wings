@@ -1,24 +1,18 @@
 <style type="text/css">   
     /* Help: */
-    .helpblock-container a, .helpblock-container a:link, .helpblock-container a:visited, .helpblock-container a:hover, .helpblock-container a:focus, .helpblock-container a:active {
-        float: right;
-        margin: 0 10px !important;
-        padding 10px 10px 10px 10px !important;
-    }
+
     .helpblock-container ul {
         list-style-type:none;
     }
-    .helpblock-container .audio_controls, .helpblock-container .jp-stop-li {
-        display:none;
-    }
+
     div.help_block_box {
-         background-color: #E3D8E0;
+         background-color: #9b9b9b;
          float: right;        
         -webkit-border-radius: 7px;
         -moz-border-radius: 7px;
         border-radius: 7px;
         width: 100%;     
-        margin: 10px 0;
+        margin: 0;
         padding: 10px;
     }
   
@@ -33,59 +27,9 @@
         background-image: url('/site_media/img/help_button_bg.png') !important; 
     }
     a.hide_help_link {
-        background-image: url('/site_media/img/close_help_button_bg.png') !important; 
+        background-image: url('/site_media/img/close_help_button_bg.png') !important;
+        height: 63px;
+        border-radius: 10px 10px 0 0;
     }
 
-    /* Audio: */
-    .audioblock_div {
-        margin: -40px 0 0 -7.5em;
-        border: 0;
-        float: left;
-        width: 100px;
-        height: 60px;
-        padding: 5px
-    }
-
-    .audioblock-container .audio_controls, .audioblock-container .jp-stop-li {
-        display:none;
-    }
-    .audioblock-container ul {
-        list-style-type:none;
-        margin: 0;
-    }
-    .audioblock-container li a{
-        display: block;
-        width: auto;
-        line-height: 1.5em;
-        background: #bea5b4; /* Old browsers */
-        background: -moz-linear-gradient(top,  #bea5b4 0%, #9b7a95 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bea5b4), color-stop(100%,#9b7a95)); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* IE10+ */
-        background: linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bea5b4', endColorstr='#9b7a95',GradientType=0 ); /* IE6-9 */
-        -webkit-border-radius: 7px;
-        -moz-border-radius: 7px;
-        border-radius: 7px;
-        text-align: center;
-        height: 45px;
-    }
-  li a.jp-play, li a.jp-pause,  li a.jp-rewind{
-        color: transparent;
-        background-position: 0px 0px;
-        width: 44px;
-        height: 45px;
-        float: right;
-        margin-left: 5px;
-    }
-li a.jp-play{
-        background-image: url('/site_media/img/audio_button_bg.png');
-    }
-li a.jp-pause{
-        background-image: url('/site_media/img/pause_audio_button_bg.png');
-    }
-li a.jp-rewind{
-        background-image: url('/site_media/img/rewind_audio_button_bg.png');
-    }
 </style>
