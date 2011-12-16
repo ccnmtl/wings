@@ -1073,7 +1073,7 @@ background-color: #e3d8e0;
         height: 60px;
         padding: 5px
     border: none;
-    background-color: pink;
+
     }
 
     .audioblock-container .audio_controls, .audioblock-container .jp-stop-li {
@@ -1083,7 +1083,7 @@ background-color: #e3d8e0;
         list-style-type:none;
         margin: 0;
     }
-    .audioblock-container li a{
+    .audioblock-container li a,  #content .content-nav .helpblock-container.audioblock_div .audioblock-container li a{
         display: block;
         width: auto;
         line-height: 1.5em;
@@ -1101,7 +1101,13 @@ background-color: #e3d8e0;
         text-align: center;
         height: 45px;
     }
-  li a.jp-play, li a.jp-pause,  li a.jp-rewind{
+  li a.jp-play, 
+  li a.jp-pause,  
+  li a.jp-rewind, 
+  #content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-play, 
+  #content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-pause,  
+  #content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-rewind
+  {
         color: transparent;
         background-position: 0px 0px;
         width: 44px;
@@ -1109,12 +1115,18 @@ background-color: #e3d8e0;
         float: right;
         margin-left: 5px;
     }
-li a.jp-play{
+li a.jp-play,
+#content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-play 
+  {
         background-image: url('/site_media/img/audio_button_bg.png');
     }
-li a.jp-pause{
+li a.jp-pause,
+#content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-pause  
+{
         background-image: url('/site_media/img/pause_audio_button_bg.png');
     }
-li a.jp-rewind{
+li a.jp-rewind,
+  #content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-rewind
+{
         background-image: url('/site_media/img/rewind_audio_button_bg.png');
     }
