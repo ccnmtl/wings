@@ -27,7 +27,8 @@ class SsnmTreeBlock(models.Model):
     editable_support_types    = models.ManyToManyField ('SsnmTreeSupportType', blank=True, null=True, related_name='blocks_where_you_can_edit_this_support_type', help_text ="Support Types you can *edit* on this page.")
 
     visible_support_types    = models.ManyToManyField ('SsnmTreeSupportType', blank=True, null=True,  related_name='blocks_where_you_can_see_this_support_type', help_text ="Support Types you can *see* on this page.")
-     
+    
+    
     template_file =     "ssnmtreeblock/ssnmtreeblock.html"
     js_template_file =  "ssnmtreeblock/ssnmtreeblock_js.html"
     css_template_file = "ssnmtreeblock/ssnmtreeblock_css.html"
@@ -54,6 +55,11 @@ class SsnmTreeBlock(models.Model):
             error_copy = forms.CharField(initial=self.error_copy, widget=forms.widgets.Textarea())
             page_type = forms.ChoiceField(required=True, initial=self.page_type, widget=RadioSelect, choices=SSNM_PAGE_TYPE_CHOICES)
         return EditForm()
+
+    @classmethod
+    def all_support_types (self):
+        return SsnmTreeSupportType.objects.all()
+
 
     def edit(self,vals,files=None):
         self.error_copy = vals.get('error_copy','')
@@ -90,7 +96,12 @@ class SsnmTreeBlock(models.Model):
                     person.support_types.add(the_type)
                     person.save()
                     assert the_type in person.support_types.all()
-
+                if data.get (key, '') == '':
+                    person.support_types.remove(the_type)
+                    person.save()
+                    assert the_type not in person.support_types.all()
+    
+    
     def redirect_to_self_on_submit(self):
         return True
 

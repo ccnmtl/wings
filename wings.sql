@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 273, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 289, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 112, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 114, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 200, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 211, true);
 
 
 --
@@ -1210,7 +1210,7 @@ ALTER SEQUENCE pageblocks_htmlblock_id_seq OWNED BY pageblocks_htmlblock.id;
 -- Name: pageblocks_htmlblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 27, true);
+SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 28, true);
 
 
 --
@@ -1394,7 +1394,7 @@ ALTER SEQUENCE pageblocks_textblock_id_seq OWNED BY pageblocks_textblock.id;
 -- Name: pageblocks_textblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_textblock_id_seq', 78, true);
+SELECT pg_catalog.setval('pageblocks_textblock_id_seq', 83, true);
 
 
 --
@@ -1473,7 +1473,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 254, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 261, true);
 
 
 --
@@ -1516,7 +1516,7 @@ ALTER SEQUENCE pagetree_section_id_seq OWNED BY pagetree_section.id;
 -- Name: pagetree_section_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_section_id_seq', 218, true);
+SELECT pg_catalog.setval('pagetree_section_id_seq', 220, true);
 
 
 --
@@ -1597,7 +1597,7 @@ ALTER SEQUENCE quizblock_question_id_seq OWNED BY quizblock_question.id;
 -- Name: quizblock_question_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_question_id_seq', 243, true);
+SELECT pg_catalog.setval('quizblock_question_id_seq', 245, true);
 
 
 --
@@ -1635,7 +1635,7 @@ ALTER SEQUENCE quizblock_quiz_id_seq OWNED BY quizblock_quiz.id;
 -- Name: quizblock_quiz_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_quiz_id_seq', 127, true);
+SELECT pg_catalog.setval('quizblock_quiz_id_seq', 128, true);
 
 
 --
@@ -1673,7 +1673,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 425, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 440, true);
 
 
 --
@@ -1711,7 +1711,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 639, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 652, true);
 
 
 --
@@ -2047,7 +2047,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 5, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 15, true);
 
 
 --
@@ -2234,7 +2234,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 55, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 58, true);
 
 
 --
@@ -2905,11 +2905,13 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	!	t	t	t	2011-09-15 17:58:04.768569-04	2011-06-02 15:22:48.818126-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
+114	344656756				!	f	t	f	2011-12-16 09:45:05.469537-05	2011-12-15 16:18:49.852391-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-16 09:45:46.390894-05	2011-10-11 11:39:54-04
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-16 10:28:42.997483-05	2011-06-02 15:22:04-04
+113	23				!	f	t	f	2011-12-16 10:46:12.342067-05	2011-12-15 13:47:09.128831-05
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-16 12:42:01.242356-05	2011-12-09 15:38:04-05
+17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-16 12:51:53.244178-05	2011-10-18 11:54:07-04
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-14 18:28:28.365303-05	2011-06-02 15:22:04-04
-17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-15 11:03:36.489084-05	2011-10-18 11:54:07-04
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-12 16:26:09.346662-05	2011-12-09 15:38:04-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-14 11:46:52.183812-05	2011-10-11 11:39:54-04
 \.
 
 
@@ -3400,6 +3402,17 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 198	2011-12-15 11:08:35.56521-05	5	3	75	987654	3	
 199	2011-12-15 11:08:35.566272-05	5	3	7	ej2223	3	
 200	2011-12-15 11:08:35.567229-05	5	3	3	sbd12	3	
+201	2011-12-15 15:57:48.316557-05	5	49	5	box_5 ( 30 , 200)	2	No fields changed.
+202	2011-12-15 15:57:54.112757-05	5	49	4	box_4 ( 80 , 250)	2	No fields changed.
+203	2011-12-15 15:58:05.322849-05	5	49	2	box_2 ( 333 , 225)	2	Changed pixels_from_top and pixels_from_left.
+204	2011-12-15 16:18:47.816891-05	109	42	56	P344656756	1	
+205	2011-12-16 09:49:43.970511-05	13	42	57	P256789	1	
+206	2011-12-16 10:31:53.550949-05	5	42	58	P4	1	
+207	2011-12-16 12:45:01.298669-05	109	49	5	box_5 ( 30 , 315)	2	Changed pixels_from_top.
+208	2011-12-16 12:45:10.176572-05	109	49	4	box_4 ( 260 , 10)	2	Changed pixels_from_top and pixels_from_left.
+209	2011-12-16 12:45:18.611537-05	109	49	3	box_3 ( 100 , 30)	2	Changed pixels_from_top and pixels_from_left.
+210	2011-12-16 12:45:28.791224-05	109	49	2	box_2 ( 300 , 160)	2	Changed pixels_from_top and pixels_from_left.
+211	2011-12-16 12:45:41.803203-05	109	49	1	box_1 ( 5 , 175)	2	Changed pixels_from_top and pixels_from_left.
 \.
 
 
@@ -3606,8 +3619,6 @@ faa8f66a5f87678bc5bba27519dde133	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 a5f68ae123636b26f5724a51747d1f6e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFkdS5iYTA3YTY1ZDdlNTUyMWQ1NDMx\nNWJmMmU4OTUxZmIwYQ==\n	2011-12-14 13:38:03.586349-05
 53e8d6b855b2d71267c67a7139d4f067	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-11-30 10:12:21.694884-05
 4c2d829b5ca3bdb5b206e7554269903e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFSdS45NjlmNjQ0NmIzZDI0MWM5NjZj\nNDIwOTA4OTkxNDg0ZA==\n	2011-11-30 12:06:13.072433-05
-dd77c864283a81461bac42442bd39bb8	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-27 17:44:28.643042-05
-b36292d439a0ba8aaf8527753021bd07	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-28 10:30:47.428099-05
 fb024c77eda0a0d651ad34999951b4c8	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-14 14:30:35.005574-05
 2a763a3d38e9685c63b6aa6f0112e278	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-28 11:46:52.302522-05
 5b90c41bd716af6a26d54cb5f2e79bf3	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 12:29:55.202325-05
@@ -3615,18 +3626,21 @@ ab7d407e23618b1f700f4614694bf6a7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 11e2dae72af6f904ea218fd9e9213bdb	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-15 17:31:57.727918-05
 3fc26076d55ba07d98c5e9ba8ba2300a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 00:45:10.346025-05
 daac80c207ef4f6f5655c06819327c9c	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-16 07:41:04.584845-05
-ff013ae28c76855e8b624d11e84232ef	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-28 18:28:28.375517-05
 4bfc131fea8dd2dc64088f41808cd02e	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2011-12-19 10:47:26.65133-05
 20e5fd397bc8febf54ca20f920df8278	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-28 22:05:25.464543-05
 aa98caaee8c8f05c8cbe6809d9f92ad1	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-28 22:05:25.523516-05
 7892f9a11c5196bd7d848e9cb6cbcb8f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 13:17:57.014955-05
-71a91b61eaa8936ecd008fdaf86e97f0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-29 11:03:36.521383-05
+1b4f16183b45af2b881a87304187acaf	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3F1LmI5ZThlMmZiODhiYjMyNmQ2ZGRh\nMjAzNTE2Yzg1N2Ri\n	2011-12-30 10:46:12.368278-05
+08a7939597cf63738f46425fcf86cb15	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-30 13:17:51.869488-05
 bb3d603b881bd7db45f3d1c945088084	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 14:12:20.532915-05
+c6f4efc87210113da350bb0558885d9c	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFydS5hMGM0NGZjNGRjN2ZkYzJlZTk5\nNDg4YTBkNDM0ZmU1YQ==\n	2011-12-29 16:18:49.872889-05
+2f59ff5ac2080e2803b6d5ec83426e89	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-30 09:45:46.40096-05
+872540531ba660603be1237eb1dfe6a1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-30 10:28:43.008356-05
 2a7879869869b0b74bef3a5f1785f47b	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-19 15:01:18.961448-05
+4bd3456d7fb4c5f74ae9955192ed3ca7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-30 12:51:53.254427-05
 b5c3aedf7b0ede14b4e637ecdcebc47a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-20 15:02:18.106815-05
 c5e0e489929f255f54a87edd7a4fc6e1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 12:10:09.319994-05
 83d23b4895c1a2236f49f573abaf65f6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-23 12:12:44.019333-05
-dd889696293ac7d5221f0541916aa2e0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 13:03:17.703475-05
 \.
 
 
@@ -3860,6 +3874,7 @@ COPY pageblocks_htmlblock (id, html) FROM stdin;
 25	<p>Kate, a patient you have seen twice requires extensive dental work that will best be accomplished in an OR.  She has been accompanied by her father, Dan, at the previous two office visits.  While Dan seemed a little overwhelmed by Kate and her dental needs, he was quick to understand why Kate’s needs would best be addressed in the OR, and readily agreed to it.  Your office team ensures that the OR, anesthesiologist and hospital team are pre-booked for the day of surgery.</p>\r\n\r\n<p>On the appointed day, you arrive at the hospital with your office team, and see that Kate is at the hospital with Dan, and a woman. Both adults are arguing loudly and you quickly realize that the woman is Kate’s mother, who is separated from Dan, and is complaining that she was not consulted before the appointment was set up, and that she will not allow her child to be “put under just” for dental treatment.</p>\r\n<p>You need to resolve the issue – you are paying for hospital and your staff time as well as the fact that you have blocked off your own time for Kate’s surgical case.</p>
 26	<p>In this case, the Dentist may want to engage a Hospital Social Worker to help the couple to both resolve the dispute and allow the case to be completed, and help them understand the importance of continued dental care for their daughter’s health and well-being.</p>
 27	<p>The emergency room in city xx calls you one evening to take care of an emergency on a Saturday evening.  The patient at the ER, 16-year old Natasha, is complaining of pain in her right lower jaw.  On clinical examination, there is an abscess at the mesio-bucco-cervical aspect of #30, a large mesio-occlusal amalgam that looks like it may be fractured, and on quick examination, you notice a number of other teeth that need restoration.  Natasha explains that the filling on #30 broke while she was at the movies with her friend Johnson, eating popcorn.  She thought nothing of it at the time, but there was a throbbing pain the next day, and now she is in a lot of pain, has a bad taste in her mouth and cannot drink her cold Coca-Cola and is having difficulty opening her mouth completely.  You decide that the best course of treatment would be to drain the abscess, prescribe pain killers and antibiotics and ask Natasha to see her dentist the following week to have her amalgam redone and also take care of the other carious teeth.</p>\r\n\r\n<p>You ask to meet Natasha’s parents for consent for treatment, and are told that she is under the legal care of her grandmother, Joyce, because her mother passed away two years ago and her father is incarcerated. Joyce, a lovely woman tells you that Natasha does not have a dentist because the family has no dental insurance, they cannot find a dentist close to home and school and there is nobody to watch the baby she is holding.  While Joyce is a young grandmother, you are convinced that she cannot be the mother of a child that looks to be no more than 24 months old.    As Joyce is telling you the rest of Natasha’s social history, baby, Joe begins to cry and Joyce pulls out a bottle filled with a pink liquid which quiets him immediately.  On enquiring, Joyce tells you that the pink stuff is “Yuhoo strawberry milk” which she thinks is a healthy choice for the baby since it combines milk and strawberries.  Natasha tells Joyce that she does not want Joe drinking Yahoo, but plain milk as Yahoo has sugar which is not good for him.  As you listen to them, you quickly realize that Joe is Natasha’s son and Joyce’s great-grandson.  You also notice that Joe has what looks like Early Childhood Caries.  You ask if Joe has a dentist and Natasha says that there is no need for him to see a dentist as he has not lost his “baby’ teeth yet.</p>\r\n\r\n<p>Joyce signs consent for Natasha’s treatment and you are able to get her out of immediate pain. Since Natasha has no dentist of record, you ask if she would come to your office.  Joyce asks if there is a bus line by the office, if you open on Saturday and what the charges will be.  You aren’t sure about the bus line but ask if the family has Medicaid (whatever the name is in City/State X).  Joyce indicates that they have Medicaid but no dental insurance.</p>
+28	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>\r\nwrite the names of one to five people you trust onto the birds on this tree.\r\n</p>\r\n</div>
 \.
 
 
@@ -3942,9 +3957,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 43	I can also teach these strategies to some or all of my children.
 44	I will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.
 48	I will rehearse my escape plan and, as appropriate, practice it with my children.
-54	Address line one\r\n\r\nAddress line two\r\n\r\nAddress line three
-55	Title/Name/\r\n\r\nphone number\r\n\r\nemail address
-56	Because you chose to view this service, the address, name and contact information will be saved for you and printed in your exit materials.
 57	image of completed social support map\r\n\r\n[/safety-plan/during-a-violent-incident/plan-part-1/]'s Safety Plan\r\n\r\nPart One: Strategies for Safety During a Violent Incident\r\n\r\nIf I decide to leave, I will: [/safety-plan/during-a-violent-incident/plan-part-2/]\r\n\r\nIn order to leave quickly, I can keep my purse, identification, and metro card (or bus/train fare) ready and put them: [/safety-plan/during-a-violent-incident/plan-part-3/]\r\n\r\nI can tell a person that I trust about the violence and request they call the police if they hear suspicious noises coming from my apartment. One person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-4/]\r\n\r\nAnother person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-5/]\r\n\r\nI can teach my children how to use the telephone and dial 911 to contact the police and the fire department. \r\n\r\nI can use a code word with my children or my friends so they can call for help. (CODE WORDS should not evoke suspicion from partner, but should not also be “every day” language that might confuse helping person. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“. Code words for children need to be appropriate for their age. For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”. For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out whether your child can be entrusted with this task)\r\n\r\nMy code word will be: [/safety-plan/during-a-violent-incident/plan-part-7/]\r\n\r\nIf I have to leave my home I will go to: [/safety-plan/during-a-violent-incident/plan-part-8/]\r\n\r\nIf I cannot go to the location above I will go: [/safety-plan/during-a-violent-incident/plan-part-9/]\r\n\r\nI can also teach these strategies to some or all of my children.\r\n\r\nWhen I expect we are going to have an argument, I will try to move to a space that is lowest risk, such as: [/safety-plan/during-a-violent-incident/plan-part-11/]\r\n\r\nI will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.\r\n\r\nPart Two: Preparing to Leave\r\n\r\nSo that I can leave quickly, I will leave money and an extra set of keys with: [/safety-plan/preparing-to-leave/plan-part-1/]\r\n\r\nI will keep copies of important documents (social security cards, birth certificates, shot records – see step 8) or keys at :[/safety-plan/preparing-to-leave/plan-part-2/]\r\n\r\nTo increase my independence, I will open a savings account by: [/safety-plan/preparing-to-leave/plan-part-3/]\r\n\r\nOther things I can do to increase my independence include: [/safety-plan/preparing-to-leave/plan-part-4/]\r\n\r\nCall 311 and ask for the NYC Domestic Violence Hotline (800-621-4673; TDD 866-604-5350) if you need counseling, legal assistance or emergency housing. If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.\r\n\r\nKeep change for phone calls on you at all times. If you use your telephone credit card, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your telephone communications confidential, you must either use coins at a pay phone or get a friend to let you use their telephone credit card for a limited time when you first leave.\r\n\r\nI will check with the following people to see if I can stay with them or borrow money:[/safety-plan/preparing-to-leave/plan-part-7/]\r\n\r\nI can leave extra clothes with:[/safety-plan/preparing-to-leave/plan-part-8/]\r\n\r\nIn order to plan the safest way to leave the residence, I will sit down and review my safety plan every:[/safety-plan/preparing-to-leave/plan-part-9/]\r\n\r\n[safety-plan/preparing-to-leave/plan-part-10/] will help me review my safety plan.\r\n\r\nI will rehearse my escape plan and, as appropriate, practice it with my children.\r\n\r\nAny services viewed in the service referrals activity in this format:\r\n\r\nHigest Level Heading (i.e. 'Drugs and Alcohol)\r\n\r\nNext Level Heading (i.e. Detox)\r\n\r\nServices viewed under this heading\r\n\r\n\r\n
 14	Thank you for taking the time to participate in the WINGS project today. The purpose of this project is to provide information and resources to women. We are particularly interested in how women can stay safe in relationships with intimate partners. Test
 45	A woman may have to leave the residence she shares with her partner, who is out of control. Leaving must be done with a careful plan in order to increase safety.  A violent partner often strikes back if he or she believes that the woman is leaving a relationship.
@@ -3964,9 +3976,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 68	You answered that relationship conflict gives you these feelings and concerns:\r\n\r\n[list of question text from the previous questions numbered 1-12 with 'yes' and 'maybe' answers\r\n\r\nplus\r\n\r\nany text typed into field in question 13]
 70	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies.  You can use some or all the strategies on the following pages to stay safe.
 71	You will be given or mailed a copy of this safety plan.  Do you have a safe place to keep the safety plan at home or with a friend?\r\n\r\nYou will also get a list called 'Items to Remember' that provides a suggested list of things to take with you if you have to leave.  Where can you keep this list?\r\n\r\nDo you have a safe place to keep the 24-hour hotline number and other important numbers?
-73	write the names of one to five people you trust onto the birds on this tree.
-74	now click on each of the people who can give you emotional support
-75	Now click on the names of people who can give you practical support, like giving you a place to stay, watching your pets, or lending you money.
 77	It looks like you haven't entered any names on the tree. There are times in life when you may feel isolated from all your friends and family, but can you think of any people who you would like to reach out to and connect with?  This may include extended family members you have lost contact with, neighbors, people you work with, clergy, or service providers.  Please try to put at least two names on the tree.
 76	Can you think of two things you can do to strengthen your support from family or friends in the next week?  This may be calling someone who you like to hang out with to get together for coffee or go for walk so that you have a chance to connect with him or her. It may mean calling or a text, email or letter to someone who you have lost touch with but who you would like to reconnect with.  It may mean choosing someone who you trust and respect to talk with about the relationship conflict or abuse that you are experiencing so that you can get their advice or support on how to deal with it.
 78	Now you're going to answer some questions about the types of issues that can trigger conflict for you and your partner.  Then you'll learn about services and organizations that might be able to help you with your particular needs.
@@ -3976,6 +3985,13 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
 63	Exposure to violence can also have lasting consequences for children. Kids who see or hear violence often experience grief, fear, and anxiety. Boys who witness violence between their parents are ten times more likely to abuse their partners when they become adults. Girls who witness parental violence are much more likely to be abused by their partners when they grow up. 
 66	[video clips from Strength of a Woman plus VO that says:\r\n\r\nMany women have a hard time talking about the abuse they are experiencing and getting help]
+79	Out of these services, which one is the most important, or addresses your most immediate or life-threatening issues?\r\n\r\n(list of answers from the preceding page are the choices here.  this is a multiple choice/single answer question)
+81	Would you like ro receive a printed copy of the safety plan and items we've talk about today, or would you prefer to have this sent by email, mailed to you, or mailed to another address?  If you don't take it with you today, please talk to the research assistant to give them the address where it should be sent.
+82	Than you so much for meeting with us today and taking the time to discuss this important issue that affects many women.
+83	In this next section I will be asking you a number of questions about your relationship(s) with all the partners you have had during the past year, and whether you have had any conflicts with any of them during the past year. 
+80	Here is a list of organizations that provide the service you just selected as the most important to you.  At the end of this session you'll be given or mailed a booklet that includes these as well as other service organizations.\r\n\r\n[header here that is the name of the chosen services on the previous page]\r\n\r\n[list of service organizations for the service chosen on the previous page]
+74	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>Now click on each of the people who can give you emotional support.\r\n</p>\r\n</div>
+75	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>Now click on the names of people who can give you practical support, like giving you a place to stay, watching your pets, or lending you money.\r\n</p>\r\n</div>
 \.
 
 
@@ -4016,16 +4032,9 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 129	110	1		26	52
 130	111	1		26	53
 131	111	2		26	54
-154	147	1	Service provider organization	16	54
-155	147	2	Provider Name	16	55
-156	147	3		16	56
 58	53	1	Screening for IPV	16	17
 79	76	1	Relationship Satisfaction	16	33
-168	156	1		26	66
-169	156	2		26	67
 157	148	1	what to include in the journal:	16	57
-170	156	3		26	68
-171	156	4		26	69
 198	176	1		26	95
 199	177	1		26	96
 200	178	1		26	97
@@ -4042,16 +4051,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 164	152	1		16	63
 113	100	1	Cons of Relationship Conflict	16	38
 214	190	1		26	108
-173	157	1		26	70
-174	157	2		26	71
-175	157	3		26	72
-176	157	4		26	73
-177	158	1		26	74
-178	158	2		26	75
-179	158	3		26	76
-180	158	4		26	77
-181	159	1		26	78
-182	159	2		26	79
 183	161	1		26	80
 184	162	1		26	81
 185	163	1		26	82
@@ -4103,9 +4102,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 135	103	1	Safety When Preparing to Leave	16	45
 127	102	1	Strategies for Saftey During a Violent Incident	16	41
 239	210	1		16	71
-241	211	1		16	73
-242	212	1		16	74
-243	213	1		16	75
 245	215	2		26	124
 246	214	1		16	77
 244	215	1	Steps to increase support	16	76
@@ -4122,12 +4118,21 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 163	151	1		16	62
 166	154	1		16	65
 167	155	1		16	66
+242	212	1		16	74
+243	213	1		16	75
 249	146	1	Resources to help you towards your goals	26	126
 250	200	1		26	127
 251	186	1		47	1
-252	211	2	First page	45	1
 253	212	2	Emotional support	45	2
 254	213	2	Practical Support	45	3
+255	219	1		16	79
+257	147	1		26	128
+258	147	2		16	81
+259	218	1		16	82
+260	160	1		16	83
+256	220	1		16	80
+252	211	2	First page	45	1
+261	211	1		17	28
 \.
 
 
@@ -4142,17 +4147,16 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 59	000A000I001O	3	1	Relationships	relationships	11
 149	000A000I001O0001	4	0	Three Stories	three-stories	11
 150	000A000I001Q	3	0	The Cycle of Violence	cycle-of-violence	11
+219	000A000O000G	3	0	services drill down 1	services-drill-down-1	11
 53	000A000J	2	1	Screening for IPV	screening-for-ipv	11
 63	000A000I001R000L	4	0	Physical Abuse	physical-abuse	11
 161	000A000J00010006	4	0	question 1	question-1	11
-156	000A000J00010001	4	0	partner 1 questions	partner-1-questions	11
 151	000A000I001R000O	4	0	Economic Abuse	economic-abuse	11
 74	000A000I001R000M	4	0	Emotional Abuse	emotional-abuse	11
 65	000A000I001R000N	4	0	Sexual Abuse	sexual-abuse	11
 62	000A000I001R	3	4	Types of Conflict	types-of-conflict	11
 69	000A000I001S	3	0	Drug Use and IPV	drug-use-and-ipv	11
 72	000A000I001U	3	0	Negative Consequences	negative-consequences	11
-159	000A000J00010004	4	0	main partner questions	main-partner-questions	11
 51	000A	1	8	Root		11
 198	000A000K0008000R	4	0	question 13	question-13	11
 197	000A000K0008000Q	4	0	question 12	question-12	11
@@ -4161,16 +4165,15 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 194	000A000K0008000N	4	0	question 9	question-9	11
 210	000A000L0001000P	4	0	plan part 12	plan-part-12	11
 213	000A000M0003	3	0	map screen 3	map-screen-3	11
-217	000A000O0004	3	0	results page	results-page	11
 193	000A000K0008000M	4	0	question 8	question-8	11
 52	000A000I	2	10	Welcome	welcome	11
 155	000A000I001Y	3	0	Talking about the abuse	video-talking-about-the-abuse	11
+220	000A000O000H	3	0	services drill down 2	services-drill-down-2	11
 192	000A000K0008000L	4	0	question 7	question-7	11
 200	000A000K0008000K	4	0	question 6	question-6	11
 152	000A000I001V	3	0	Negative Cosequences for Children	negative-cosequences-for-children	11
 153	000A000I001W	3	0	Negative Consequences and Alcohol or Drugs	negative-consequences-and-alcohol-or-drugs	11
 154	000A000I001X	3	0	Anger and Fighting Back	anger-and-fighting-back	11
-158	000A000J00010003	4	0	partner 3 questions	partner-3-questions	11
 163	000A000J00010008	4	0	question 3	question-3	11
 165	000A000J0001000A	4	0	question 5	question-5	11
 167	000A000J0001000C	4	0	question 7	question-7	11
@@ -4180,7 +4183,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 175	000A000J0001000K	4	0	question 15	question-15	11
 177	000A000J0001000M	4	0	question 17	question-17	11
 179	000A000J0001000O	4	0	question 19	question-19	11
-157	000A000J00010002	4	0	partner 2 questions	partner-2-questions	11
 160	000A000J00010005	4	0	events over past year intro	events-over-past-year-intro	11
 162	000A000J00010007	4	0	question 2	question-2	11
 164	000A000J00010009	4	0	question 4	question-4	11
@@ -4207,7 +4209,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 184	000A000J0001000T	4	0	question 24	question-24	11
 185	000A000J0001000U	4	0	question 25	question-25	11
 186	000A000J0001000V	4	0	feedback on relationshop satisfaction screener	feedback-on-relationshop-satisfaction-screener	11
-76	000A000J0001	3	31	Relationship Satisfaction	relationship-satisfaction	11
 207	000A000K00090006	4	0	question 6	question-6	11
 201	000A000K0008000S	4	0	summary of answers	summary-of-answers	11
 100	000A000K0008	3	14	Cons of Relationship Conflict	cons-of-relationship-conflict	11
@@ -4244,12 +4245,13 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 211	000A000M0001	3	0	map screen 1	map-screen-1	11
 214	000A000M0004	3	0	error message/prompt for no names	error-messageprompt-for-no-names	11
 55	000A000M	2	5	Social Support Map	social-support-map	11
-145	000A000O0001	3	0	issues question	issues-question	11
-146	000A000O0002	3	0	services selection page	services-selection-page	11
-147	000A000O0003	3	0	action plan	action-plan	11
-218	000A000O0005	3	0	wrap up and good bye	wrap-up-and-good-bye	11
-58	000A000O	2	5	Service Referrals	service-referrals	11
+145	000A000O000E	3	0	issues question	issues-question	11
+146	000A000O000F	3	0	services selection page	services-selection-page	11
 97	000A000K	2	2	Empowerment	empowerment	11
+147	000A000O000I	3	0	action plan	action-plan	11
+218	000A000O000K	3	0	wrap up and good bye	wrap-up-and-good-bye	11
+58	000A000O	2	6	Service Referrals	service-referrals	11
+76	000A000J0001	3	27	Relationship Satisfaction	relationship-satisfaction	11
 \.
 
 
@@ -4957,6 +4959,7 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 202	97	In the past year, My partner has told me that I wasn’t good enough. . .	single choice			0
 204	99	In the past year, My partner tried to turn my family, friends, and children against me. . .	single choice			0
 155	52	My code word will be:	short text		I can use a code word with my children or my friends so they can call for help. (CODE WORDS should not raise suspicion from partner, but should not also be “every day” language that might confuse people. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“.   Code words for children need to be appropriate for their age.  For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”.  For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out who you can trust with this task) 	0
+244	128	What are you going to do in the next week to address your most important service needs?	long text			0
 206	101	In the past year, My partner blamed me for causing their abusive behavior	single choice			0
 207	102	In the past year, My partner harassed me over the phone or through texts . . .	single choice			0
 208	103	In the past year, My partner told me that no one would ever want me. . .	single choice			0
@@ -4972,6 +4975,7 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 230	118	I want to feel less isolated from my family or friends	single choice			0
 231	119	I want to improve the quality of life for my kids or other family members who are affected by the relationship conflict	single choice			0
 232	120	I don’t want to feel scared or anxious when I am around my partner	single choice			0
+245	128	What are you going to do in the next week to take time for yourself?  Some ideas including going for a walk, writing, taking a bubble bath, creating art, or going to a nail salon.	long text			1
 233	121	I want to improve the relationship I have with my partner 	single choice			0
 234	122	I don't want to feel trapped in the relationship	single choice			0
 235	123	Other reasons to reduce relationship conflict:	long text			0
@@ -5102,6 +5106,7 @@ COPY quizblock_quiz (id, description, rhetorical, allow_redo) FROM stdin;
 125		f	f
 126		f	f
 127		f	f
+128		f	f
 \.
 
 
@@ -5129,6 +5134,12 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 26	122	9	
 27	72	10	1
 28	73	11	2
+426	245	640	
+427	244	640	
+430	168	643	
+434	165	646	
+437	162	649	
+440	159	652	
 41	72	21	2
 98	179	120	
 99	180	121	Ex-Wife
@@ -5144,6 +5155,11 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 109	158	140	
 110	159	141	
 111	165	142	
+428	242	641	
+431	236	644	
+432	237	644	
+435	164	647	
+438	161	650	
 227	170	319	a
 228	170	323	a
 229	172	324	2
@@ -5343,6 +5359,10 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 423	174	638	1
 424	236	639	
 425	237	639	
+429	240	642	
+433	166	645	
+436	163	648	
+439	160	651	
 \.
 
 
@@ -5356,7 +5376,14 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 9	28	15	2011-10-17 12:59:08.188626-04
 10	12	5	2011-10-18 14:48:35.781645-04
 11	13	5	2011-10-18 14:49:27.734903-04
+640	128	13	2011-12-16 12:37:35.874407-05
+642	125	13	2011-12-16 12:37:49.886043-05
+644	124	13	2011-12-16 12:37:59.962803-05
+646	62	13	2011-12-16 12:38:21.191107-05
+648	60	13	2011-12-16 12:38:25.468395-05
 21	12	13	2011-11-10 09:29:04.058432-05
+650	58	13	2011-12-16 12:38:33.448871-05
+652	56	13	2011-12-16 12:38:38.036868-05
 120	74	5	2011-11-28 13:59:53.861876-05
 121	75	5	2011-11-28 13:59:53.868288-05
 122	76	5	2011-11-28 13:59:53.87375-05
@@ -5380,6 +5407,12 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 140	55	17	2011-12-02 15:09:40.324027-05
 141	56	17	2011-12-02 15:11:44.855558-05
 142	62	17	2011-12-02 15:19:02.686698-05
+641	126	13	2011-12-16 12:37:44.099681-05
+643	64	13	2011-12-16 12:37:57.156669-05
+645	63	13	2011-12-16 12:38:19.37414-05
+647	61	13	2011-12-16 12:38:23.047075-05
+649	59	13	2011-12-16 12:38:30.956519-05
+651	57	13	2011-12-16 12:38:35.673998-05
 319	66	5	2011-12-09 16:16:49.59296-05
 320	67	5	2011-12-09 16:16:49.599501-05
 321	68	5	2011-12-09 16:16:49.60216-05
@@ -5814,11 +5847,11 @@ COPY ssnmtreeblock_ssnmtreeblock_visible_support_types (id, ssnmtreeblock_id, ss
 --
 
 COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FROM stdin;
-2	290	100	box_2
-1	130	60	box_1
-3	50	50	box_3
-4	250	80	box_4
-5	200	30	box_5
+5	315	30	box_5
+4	10	260	box_4
+3	30	100	box_3
+2	160	300	box_2
+1	175	5	box_1
 \.
 
 
@@ -5830,8 +5863,18 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 2	5	1	mom
 1	5	2	dad
 3	5	3	helen
-4	5	4	
-5	5	5	
+4	5	4	sd
+5	5	5	Zx
+6	13	1	
+7	13	2	
+8	13	3	this
+9	13	4	is
+10	13	5	a
+11	109	1	
+12	109	2	
+13	109	3	
+14	109	4	
+15	109	5	
 \.
 
 
@@ -5883,7 +5926,9 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 --
 
 COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM stdin;
-55	23	\N	\N
+56	344656756	114	62
+57	256789	\N	\N
+58	4	\N	\N
 \.
 
 
