@@ -645,6 +645,17 @@ border-radius: 10px;
 	margin: 1em 0;
 	padding: 0;
 	border: 1px solid #999;
+	width: 350px;
+}
+
+.cases.right
+{
+	float: right;
+}
+
+.cases.left
+{
+	float: left;
 }
 
 .casetitle
@@ -662,13 +673,13 @@ border-radius: 10px;
 
 
 input[type="text"] {
-    width: 642px;
-	font-size: 2em;
+   width: 324px;
+	font-size: 1.5em;
     height: 40px;
 }
 
 textarea {
-    width: 642px;
+  width: 324px;
 	font-size: 2em;
     height: 80px;
 }
@@ -703,7 +714,7 @@ div#tabber [type="submit"] {
 .casequestion p
 {
     background-color: #e3d8e0;
-	margin: 0;
+	margin: 0 0 5px 0;
 	padding: 5px 10px;
 	border: 0;
 	font-weight: bold;
