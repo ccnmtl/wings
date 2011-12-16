@@ -28,7 +28,6 @@
         select_or_unselect(b);
     }
     
-    
     function remove_hearts_from_empty_bird (box) {
         if (!contains_text (box)) {
             {%for type in block.all_support_types %}
@@ -43,7 +42,6 @@
         remove_hearts_from_empty_bird (box)     
         update_checkboxes();
     }
-    
     
     function input_clicked (e) {
         // if you click inside a text box, that doesn't affect the div outside it.
@@ -77,8 +75,14 @@
                 select_or_unselect(box);
                 remove_hearts_from_empty_bird (box);
             }
-        );   
+        );
+        
         update_checkboxes();
+        if (jQuery('.messages').length != 0) {
+            jQuery ('.error_text').show();
+        }
+
+        
     }
     
     jQuery(setup_ssnm);

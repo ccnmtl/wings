@@ -8,6 +8,8 @@ import os, json
 
 from django.forms.fields import ChoiceField, MultipleChoiceField
 from django.forms.widgets import RadioSelect, CheckboxSelectMultiple
+from django.contrib import messages
+                    
 
 SSNM_PAGE_TYPE_CHOICES = (
     (u'page_1', u'Choose names'), #choose the names
@@ -83,30 +85,27 @@ class SsnmTreeBlock(models.Model):
     def submit(self,user,data):
         for box in self.boxes.all():
             person_name = data.get (unicode(box.id), '')
-            assert person_name != None
             box = SsnmTreeBox.objects.get(pk = box.id)
-            assert box != None
             person, created = SsnmTreePerson.objects.get_or_create(tree_box=box, user=user)
-            assert person != None
             person.name = person_name
             person.save()
             for the_type in self.editable_support_types.all():
                 key = 'box_%d_type_%d' % (box.id, the_type.id)
                 if data.get (key, '') == 'on':
                     person.support_types.add(the_type)
-                    person.save()
-                    assert the_type in person.support_types.all()
                 if data.get (key, '') == '':
                     person.support_types.remove(the_type)
-                    person.save()
-                    assert the_type not in person.support_types.all()
-    
+                person.save()
     
     def redirect_to_self_on_submit(self):
         return True
 
     def unlocked(self,user):
-        return True
+        """ make sure at least one of the text boxes has a non-empty string in it"""
+        if any([ b.name(user)!= '' for b in self.boxes.all()]):
+            return True
+        else:
+            return False
 
     class Meta:
         verbose_name = 'SSNM Tree Block'

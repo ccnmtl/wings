@@ -1,5 +1,8 @@
 {% load smartif %}
 {% load get_name %}
+<div class = "error_text">
+    {{block.error_copy}}
+</div>
 <form id="submit_to_self_form" method="post" action=".">
     <div id="{{block.id}}-ssnm" class="ssnm_tree_block">
         {%for box in block.boxes.all %}
