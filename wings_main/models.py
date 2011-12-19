@@ -7,6 +7,9 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, HttpRequest
 
+def rank (section):
+    return [s for s in section.get_tree()].index(section)
+
 class Participant(models.Model):
 
     id_string = models.IntegerField(unique=True)

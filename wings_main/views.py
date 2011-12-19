@@ -91,7 +91,7 @@ if True:
                 return result
 
 
-            def check_next_page(request):
+            def check_next_page(request, section):
                 """ If the logged in user is a participant, checks that the user is allowed to see the next page."""
                 
                 assert request.user != None

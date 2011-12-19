@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 289, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 295, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 114, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 116, true);
 
 
 --
@@ -1673,7 +1673,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 440, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 476, true);
 
 
 --
@@ -1711,7 +1711,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 652, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 690, true);
 
 
 --
@@ -2047,7 +2047,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 15, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 20, true);
 
 
 --
@@ -2084,7 +2084,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 9, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 17, true);
 
 
 --
@@ -2724,6 +2724,8 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
+293	109	Logged in!
+295	5	Logged in!
 \.
 
 
@@ -2907,10 +2909,12 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
 114	344656756				!	f	t	f	2011-12-16 09:45:05.469537-05	2011-12-15 16:18:49.852391-05
 13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-16 09:45:46.390894-05	2011-10-11 11:39:54-04
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-16 10:28:42.997483-05	2011-06-02 15:22:04-04
 113	23				!	f	t	f	2011-12-16 10:46:12.342067-05	2011-12-15 13:47:09.128831-05
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-16 12:42:01.242356-05	2011-12-09 15:38:04-05
-17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-16 12:51:53.244178-05	2011-10-18 11:54:07-04
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-16 15:31:37.545066-05	2011-12-09 15:38:04-05
+116	256789				!	f	t	f	2011-12-16 15:31:42.921599-05	2011-12-16 15:31:42.914867-05
+17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-16 15:32:35.390545-05	2011-10-18 11:54:07-04
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-19 14:54:16.580451-05	2011-06-02 15:22:04-04
+115	4				!	f	t	f	2011-12-19 14:54:19.89036-05	2011-12-16 14:03:16.430084-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
 \.
 
@@ -3631,7 +3635,6 @@ daac80c207ef4f6f5655c06819327c9c	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc
 aa98caaee8c8f05c8cbe6809d9f92ad1	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-28 22:05:25.523516-05
 7892f9a11c5196bd7d848e9cb6cbcb8f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 13:17:57.014955-05
 1b4f16183b45af2b881a87304187acaf	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3F1LmI5ZThlMmZiODhiYjMyNmQ2ZGRh\nMjAzNTE2Yzg1N2Ri\n	2011-12-30 10:46:12.368278-05
-08a7939597cf63738f46425fcf86cb15	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-30 13:17:51.869488-05
 bb3d603b881bd7db45f3d1c945088084	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-16 14:12:20.532915-05
 c6f4efc87210113da350bb0558885d9c	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFydS5hMGM0NGZjNGRjN2ZkYzJlZTk5\nNDg4YTBkNDM0ZmU1YQ==\n	2011-12-29 16:18:49.872889-05
 2f59ff5ac2080e2803b6d5ec83426e89	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-30 09:45:46.40096-05
@@ -3641,6 +3644,9 @@ c6f4efc87210113da350bb0558885d9c	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 b5c3aedf7b0ede14b4e637ecdcebc47a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-20 15:02:18.106815-05
 c5e0e489929f255f54a87edd7a4fc6e1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 12:10:09.319994-05
 83d23b4895c1a2236f49f573abaf65f6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-23 12:12:44.019333-05
+5526e65e0466ab9c8ab4a564cdcae5fb	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-30 15:32:35.39853-05
+f6869d2ee2b0b186f7e702dc96e6284e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2011-12-30 14:08:33.629502-05
+95eba13b2567c7ad707a61d63426f54f	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVQ1fYXV0aF91c2VyX2lkcQRLc1USX2F1dGhf\ndXNlcl9iYWNrZW5kcQVVKWRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5k\ncQZ1LmNjN2M2N2U0OTYwMjQ5YTA2Mjk3NDcyODA3ZGU3NmNj\n	2012-01-02 14:54:26.474987-05
 \.
 
 
@@ -3972,7 +3978,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
 41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all of the following strategies to stay safe.
 58	Welcome to Wings!\r\n\r\n[video of Charlene saying the following:]\r\n\r\nThank you for taking the time to participate in the WINGS project today. \r\n\r\nMy name is Charlene and I will be speaking with you throughout the next hour. The purpose of this project is to provide information and resources to women. We’ll start by talking about relationships and different types of conflict. Then I will ask you a few questions about relationships. At the end of this session, we’ll discuss safety planning, support and goals.\r\n
-33	Now you're going to complete a screening on how safe and comfortable you feel in your relationship with your intimate partner(s). The next three pages will ask you some questions about sexual or romantic partners you've had in the past year.
 68	You answered that relationship conflict gives you these feelings and concerns:\r\n\r\n[list of question text from the previous questions numbered 1-12 with 'yes' and 'maybe' answers\r\n\r\nplus\r\n\r\nany text typed into field in question 13]
 70	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies.  You can use some or all the strategies on the following pages to stay safe.
 71	You will be given or mailed a copy of this safety plan.  Do you have a safe place to keep the safety plan at home or with a friend?\r\n\r\nYou will also get a list called 'Items to Remember' that provides a suggested list of things to take with you if you have to leave.  Where can you keep this list?\r\n\r\nDo you have a safe place to keep the 24-hour hotline number and other important numbers?
@@ -3992,6 +3997,7 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 80	Here is a list of organizations that provide the service you just selected as the most important to you.  At the end of this session you'll be given or mailed a booklet that includes these as well as other service organizations.\r\n\r\n[header here that is the name of the chosen services on the previous page]\r\n\r\n[list of service organizations for the service chosen on the previous page]
 74	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>Now click on each of the people who can give you emotional support.\r\n</p>\r\n</div>
 75	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>Now click on the names of people who can give you practical support, like giving you a place to stay, watching your pets, or lending you money.\r\n</p>\r\n</div>
+33	Now you're going to complete a screening on how safe and comfortable you feel in your relationship with your intimate partner(s). In this next section I will be asking you a number of questions about your relationship(s) with all the partners you have had during the past year, and whether you have had any conflicts with any of them during the past year. 
 \.
 
 
@@ -4009,7 +4015,10 @@ COPY pagetree_hierarchy (id, name, base_url) FROM stdin;
 --
 
 COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, object_id) FROM stdin;
+243	213	2		16	75
 132	112	1		16	43
+242	212	2		16	74
+79	76	1		16	33
 97	97	1		16	35
 133	113	1		26	55
 134	114	1		16	44
@@ -4033,7 +4042,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 130	111	1		26	53
 131	111	2		26	54
 58	53	1	Screening for IPV	16	17
-79	76	1	Relationship Satisfaction	16	33
 157	148	1	what to include in the journal:	16	57
 198	176	1		26	95
 199	177	1		26	96
@@ -4118,21 +4126,18 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 163	151	1		16	62
 166	154	1		16	65
 167	155	1		16	66
-242	212	1		16	74
-243	213	1		16	75
 249	146	1	Resources to help you towards your goals	26	126
 250	200	1		26	127
 251	186	1		47	1
-253	212	2	Emotional support	45	2
-254	213	2	Practical Support	45	3
+252	211	1		45	1
 255	219	1		16	79
 257	147	1		26	128
 258	147	2		16	81
 259	218	1		16	82
-260	160	1		16	83
 256	220	1		16	80
-252	211	2	First page	45	1
-261	211	1		17	28
+261	211	2		17	28
+254	213	1		45	3
+253	212	1		45	2
 \.
 
 
@@ -4141,16 +4146,16 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 --
 
 COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FROM stdin;
-212	000A000M0002	3	0	map screen 2	map-screen-2	11
 215	000A000M0005	3	0	steps to increase support	steps-to-increase-support	11
 70	000A000I001T	3	0	How Common It Is	how-common-it-is	11
 59	000A000I001O	3	1	Relationships	relationships	11
 149	000A000I001O0001	4	0	Three Stories	three-stories	11
 150	000A000I001Q	3	0	The Cycle of Violence	cycle-of-violence	11
 219	000A000O000G	3	0	services drill down 1	services-drill-down-1	11
+212	000A000M0002	3	0	Social Support Map: Emotional Support	map-screen-2	11
+161	000A000J00010006	4	0	Relationship Satisfaction Question 1	question-1	11
 53	000A000J	2	1	Screening for IPV	screening-for-ipv	11
 63	000A000I001R000L	4	0	Physical Abuse	physical-abuse	11
-161	000A000J00010006	4	0	question 1	question-1	11
 151	000A000I001R000O	4	0	Economic Abuse	economic-abuse	11
 74	000A000I001R000M	4	0	Emotional Abuse	emotional-abuse	11
 65	000A000I001R000N	4	0	Sexual Abuse	sexual-abuse	11
@@ -4164,30 +4169,29 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 195	000A000K0008000O	4	0	question  10	question-10	11
 194	000A000K0008000N	4	0	question 9	question-9	11
 210	000A000L0001000P	4	0	plan part 12	plan-part-12	11
-213	000A000M0003	3	0	map screen 3	map-screen-3	11
 193	000A000K0008000M	4	0	question 8	question-8	11
 52	000A000I	2	10	Welcome	welcome	11
 155	000A000I001Y	3	0	Talking about the abuse	video-talking-about-the-abuse	11
 220	000A000O000H	3	0	services drill down 2	services-drill-down-2	11
+213	000A000M0003	3	0	Social Support Map: Practical Support	map-screen-3	11
+162	000A000J00010007	4	0	Relationship Satisfaction Question 2	question-2	11
+163	000A000J00010008	4	0	Relationship Satisfaction Question 3	question-3	11
+164	000A000J00010009	4	0	Relationship Satisfaction Question 4	question-4	11
+165	000A000J0001000A	4	0	Relationship Satisfaction Question 5	question-5	11
 192	000A000K0008000L	4	0	question 7	question-7	11
+166	000A000J0001000B	4	0	Relationship Satisfaction Question 6	question-6	11
 200	000A000K0008000K	4	0	question 6	question-6	11
+167	000A000J0001000C	4	0	Relationship Satisfaction Question 7	question-7	11
+168	000A000J0001000D	4	0	Relationship Satisfaction Question 8	question-8	11
+169	000A000J0001000E	4	0	Relationship Satisfaction Question 9	question-9	11
 152	000A000I001V	3	0	Negative Cosequences for Children	negative-cosequences-for-children	11
 153	000A000I001W	3	0	Negative Consequences and Alcohol or Drugs	negative-consequences-and-alcohol-or-drugs	11
 154	000A000I001X	3	0	Anger and Fighting Back	anger-and-fighting-back	11
-163	000A000J00010008	4	0	question 3	question-3	11
-165	000A000J0001000A	4	0	question 5	question-5	11
-167	000A000J0001000C	4	0	question 7	question-7	11
-169	000A000J0001000E	4	0	question 9	question-9	11
 171	000A000J0001000G	4	0	question 11	question-11	11
 173	000A000J0001000I	4	0	question 13	question-13	11
 175	000A000J0001000K	4	0	question 15	question-15	11
 177	000A000J0001000M	4	0	question 17	question-17	11
 179	000A000J0001000O	4	0	question 19	question-19	11
-160	000A000J00010005	4	0	events over past year intro	events-over-past-year-intro	11
-162	000A000J00010007	4	0	question 2	question-2	11
-164	000A000J00010009	4	0	question 4	question-4	11
-166	000A000J0001000B	4	0	question 6	question-6	11
-168	000A000J0001000D	4	0	question 8	question-8	11
 170	000A000J0001000F	4	0	question 10	question-10	11
 172	000A000J0001000H	4	0	question 12	question-12	11
 174	000A000J0001000J	4	0	question 14	question-14	11
@@ -4242,7 +4246,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 113	000A000L0001000N	4	0	plan part 10	plan-part-10	11
 114	000A000L0001000O	4	0	plan part 11	plan-part-11	11
 102	000A000L0001	3	12	During a Violent Incident	during-a-violent-incident	11
-211	000A000M0001	3	0	map screen 1	map-screen-1	11
 214	000A000M0004	3	0	error message/prompt for no names	error-messageprompt-for-no-names	11
 55	000A000M	2	5	Social Support Map	social-support-map	11
 145	000A000O000E	3	0	issues question	issues-question	11
@@ -4251,7 +4254,8 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 147	000A000O000I	3	0	action plan	action-plan	11
 218	000A000O000K	3	0	wrap up and good bye	wrap-up-and-good-bye	11
 58	000A000O	2	6	Service Referrals	service-referrals	11
-76	000A000J0001	3	27	Relationship Satisfaction	relationship-satisfaction	11
+211	000A000M0001	3	0	Social Support Map: People	map-screen-1	11
+76	000A000J0001	3	26	Relationship Satisfaction	relationship-satisfaction	11
 \.
 
 
@@ -5140,7 +5144,18 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 434	165	646	
 437	162	649	
 440	159	652	
+443	186	655	1
 41	72	21	2
+446	189	658	1
+449	192	661	1
+452	195	664	1
+455	198	667	1
+458	202	670	0
+461	205	673	1
+464	208	676	0
+467	211	679	1
+470	221	682	1
+473	216	685	1
 98	179	120	
 99	180	121	Ex-Wife
 100	179	124	
@@ -5160,6 +5175,19 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 432	237	644	
 435	164	647	
 438	161	650	
+441	184	653	1
+444	187	656	1
+447	190	659	1
+450	193	662	1
+453	196	665	1
+456	199	668	1
+459	203	671	0
+462	206	674	0
+465	209	677	0
+468	212	680	1
+471	243	683	1
+474	236	686	
+475	237	686	
 227	170	319	a
 228	170	323	a
 229	172	324	2
@@ -5363,6 +5391,18 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 433	166	645	
 436	163	648	
 439	160	651	
+442	185	654	1
+445	188	657	1
+448	191	660	1
+451	194	663	1
+454	197	666	1
+457	200	669	1
+460	204	672	0
+463	207	675	0
+466	210	678	1
+469	213	681	1
+472	215	684	1
+476	210	687	2
 \.
 
 
@@ -5384,6 +5424,25 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 21	12	13	2011-11-10 09:29:04.058432-05
 650	58	13	2011-12-16 12:38:33.448871-05
 652	56	13	2011-12-16 12:38:38.036868-05
+654	81	115	2011-12-16 14:03:55.942463-05
+656	83	115	2011-12-16 14:04:09.694781-05
+658	85	115	2011-12-16 14:04:22.565779-05
+660	87	115	2011-12-16 14:04:35.727449-05
+662	89	115	2011-12-16 14:04:48.583898-05
+664	91	115	2011-12-16 14:05:00.684363-05
+666	93	115	2011-12-16 14:05:13.312993-05
+668	95	115	2011-12-16 14:05:26.640632-05
+670	97	115	2011-12-16 14:05:38.658557-05
+672	99	115	2011-12-16 14:05:51.346271-05
+674	101	115	2011-12-16 14:06:13.686836-05
+676	103	115	2011-12-16 14:06:26.039333-05
+678	105	115	2011-12-16 14:06:43.063619-05
+680	107	115	2011-12-16 14:07:06.593885-05
+682	109	115	2011-12-16 14:07:21.790159-05
+684	110	115	2011-12-16 14:07:34.600059-05
+686	124	109	2011-12-16 14:10:10.472467-05
+688	106	5	2011-12-16 14:20:20.160972-05
+690	108	5	2011-12-16 14:20:28.564892-05
 120	74	5	2011-11-28 13:59:53.861876-05
 121	75	5	2011-11-28 13:59:53.868288-05
 122	76	5	2011-11-28 13:59:53.87375-05
@@ -5413,6 +5472,25 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 647	61	13	2011-12-16 12:38:23.047075-05
 649	59	13	2011-12-16 12:38:30.956519-05
 651	57	13	2011-12-16 12:38:35.673998-05
+653	80	115	2011-12-16 14:03:49.461308-05
+655	82	115	2011-12-16 14:04:03.359113-05
+657	84	115	2011-12-16 14:04:16.160689-05
+659	86	115	2011-12-16 14:04:29.028596-05
+661	88	115	2011-12-16 14:04:42.303114-05
+663	90	115	2011-12-16 14:04:54.496279-05
+665	92	115	2011-12-16 14:05:07.144731-05
+667	94	115	2011-12-16 14:05:19.922121-05
+669	96	115	2011-12-16 14:05:32.808496-05
+671	98	115	2011-12-16 14:05:44.867658-05
+673	100	115	2011-12-16 14:05:57.589397-05
+675	102	115	2011-12-16 14:06:20.002977-05
+677	104	115	2011-12-16 14:06:32.214297-05
+679	106	115	2011-12-16 14:06:49.454569-05
+681	108	115	2011-12-16 14:07:12.886748-05
+683	127	115	2011-12-16 14:07:28.360949-05
+685	111	115	2011-12-16 14:07:40.753198-05
+687	105	5	2011-12-16 14:20:17.733631-05
+689	107	5	2011-12-16 14:20:25.029581-05
 319	66	5	2011-12-09 16:16:49.59296-05
 320	67	5	2011-12-09 16:16:49.599501-05
 321	68	5	2011-12-09 16:16:49.60216-05
@@ -5792,9 +5870,9 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 --
 
 COPY ssnmtreeblock_ssnmtreeblock (id, error_copy, page_type) FROM stdin;
+1		page_1
 3		page_3
 2		page_2
-1	(ignore this)	page_1
 \.
 
 
@@ -5860,21 +5938,26 @@ COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FR
 --
 
 COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
-2	5	1	mom
-1	5	2	dad
-3	5	3	helen
-4	5	4	sd
-5	5	5	Zx
-6	13	1	
+11	109	1	asdf
+12	109	2	
+13	109	3	asdfas
+14	109	4	asdf
+15	109	5	
+6	13	1	jane
 7	13	2	
 8	13	3	this
 9	13	4	is
 10	13	5	a
-11	109	1	
-12	109	2	
-13	109	3	
-14	109	4	
-15	109	5	
+2	5	1	
+1	5	2	
+3	5	3	
+4	5	4	
+5	5	5	
+16	17	1	b
+17	17	2	bob
+18	17	3	a
+19	17	4	alice
+20	17	5	c
 \.
 
 
@@ -5883,15 +5966,14 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 --
 
 COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtreesupporttype_id) FROM stdin;
-1	1	2
-2	2	2
-3	1	1
-4	2	1
-5	3	1
-6	3	2
-7	4	2
-8	4	1
-9	5	1
+10	9	1
+11	8	2
+12	10	1
+13	6	2
+14	3	1
+15	17	2
+16	19	2
+17	19	1
 \.
 
 
@@ -5927,8 +6009,8 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 
 COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM stdin;
 56	344656756	114	62
-57	256789	\N	\N
-58	4	\N	\N
+58	4	115	194
+57	256789	116	69
 \.
 
 
