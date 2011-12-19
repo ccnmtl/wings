@@ -14,7 +14,8 @@ from pagetree.models import Section
 from pagetree_export.exportimport import export_zip, import_zip
 from pageblocks.exportimport import *
 from quizblock.exportimport import *
-from helpblock.models import HelpBlock
+
+from wings_main.views import decoration_info, whether_to_show_decorations, check_next_page, destination_on_check_next_page_fail
 
 from django.contrib import messages
 import os
@@ -94,16 +95,14 @@ def page(request,path):
             # send them to the stand admin interface
             return HttpResponseRedirect("/_stand/")
 
+
+
     if request.method == "POST":
         # user has submitted a form. deal with it
         if request.POST.get('action','') == 'reset':
             section.reset(request.user)
             return HttpResponseRedirect(section.get_absolute_url())
-            
-            
-        # change this just a bit:
-        #import pdb
-        #pdb.set_trace()
+
         
         
         
@@ -131,24 +130,13 @@ def page(request,path):
     else:
         instructor_link = has_responses(section)
         
-        if 1 == 1: #eddie adding this clause.
-            try:
-                user_participant = request.user.part()
-            except AttributeError:
-                user_participant = None
-            if user_participant:
-                #this is a participant. log their visit and double-check they can see the page:
-                participant_can_navigate_to_page = user_participant.log_visit (section)
-                if not participant_can_navigate_to_page:
-                    # clients can only advance one page at a time.
-                    # and must answer all quiz questions before proceeding.
-                    messages.warning(request, 'Please finish this page before moving forward.')
-                    return HttpResponseRedirect(user_participant.current_url())
-
-        if 1 == 1: #eddie also adding this clause.
-            block_types_that_hide_decorations = settings.BLOCK_TYPES_THAT_HIDE_DECORATIONS
-            myblocks = section.pageblock_set.all()
-            show_decorations = not any(b.block().display_name in block_types_that_hide_decorations for b in myblocks)
+        if True:
+            #Wings-specific modifications:
+            if check_next_page(request) == False:
+                return destination_on_check_next_page_fail (request)
+            show_decorations = whether_to_show_decorations (section)
+            the_decoration_info = decoration_info(section)
+        
         
         return dict(section=section,
             module=module,
@@ -161,6 +149,7 @@ def page(request,path):
             can_admin=can_admin,
             instructor_link=instructor_link,
             show_decorations=show_decorations,
+            decoration_info=the_decoration_info
             )
 @login_required
 @rendered_with("main/instructor_page.html")

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from sorl.thumbnail.fields import ImageWithThumbnailsField
 from django import forms
 from pagetree.models import Section, Hierarchy, PageBlock
-
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, HttpRequest
 
@@ -31,8 +31,7 @@ class Participant(models.Model):
         return self.current_section.get_absolute_url()
 
     def all_unlocked (self, section):
-        #import pdb
-        #pdb.set_trace()
+        """for Wings, don't allow participant users to go forward until every block on the current page says they're done."""
         user = self.user
         for p in section.pageblock_set.all():
            if hasattr(p.block(),'unlocked'):
@@ -54,6 +53,7 @@ class Participant(models.Model):
         if self.current_section == None:
             self.current_section = new_section.hierarchy.get_root().get_first_child()
             self.save()
+            
         old_current_section = self.current_section
         if old_current_section == new_section:
             return True
@@ -64,12 +64,14 @@ class Participant(models.Model):
             self.current_section = new_section
             self.save()
             return True
-        node_list = []
-        #note: given the UI, this code will seldom get executed in real life.
-        traverse_tree( new_section.hierarchy.get_root(), node_list)
-        if node_list.index(new_section) < node_list.index (old_current_section):
+        
+        if rank (new_section) < rank (old_current_section):
             return True #just navigated back; no big deal
-        return False
+        
+        #new section is more than one step ahead of the old section.
+        return False     
+
+        
         
 def traverse_tree (node, the_list):
     the_list.append(node)

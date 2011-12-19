@@ -36,6 +36,13 @@ MEDIA_URL = '/uploads/'
 
 #ADMIN_MEDIA_PREFIX = '/media/'
 #this is set to 'media' by default.
+
+#URL of non-uploaded static files:
+SITE_MEDIA_URL = '/site_media'
+
+#path relative to SITE_MEDIA_URL of decoration images used in the intervention:
+DECORATION_IMAGE_PATH =  '/img/decoration_images/'
+
 APPEND_SLASH = False
 
 
