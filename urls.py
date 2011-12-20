@@ -20,20 +20,26 @@ urlpatterns = patterns('',
     #summary of all pages 
     ('^first/$', 'wings_main.views.first'),
 
+
+
     
     #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),
-
-    #user crud happens thru django admin for now.
     (r'^participant/(?P<id_string>\d+)/launch/',   'wings_main.views.launch_participant'),                     
-    
-    # for now these are taken care of by django admin.
     
     (r'^pagetree/',include('pagetree.urls')),
     (r'^_quiz/',include('quizblock.urls')),
 
-    #(r'^selenium/setup/','main.views.selenium_setup'),                       
-    #(r'^selenium/run/','main.views.selenium_run'),
+    #just for now:
+    (r'^test$',    redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
+    (r'^tests$',   redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
+    (r'^test/$',   redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
+    (r'^tests/$',  redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
+    
+    
+    (r'^selenium/(?P<task>\w+)/$',               'wings_main.views.selenium'),
+
+        
 
     #standard django stuff:
     ('^accounts/',include('djangowind.urls')),
@@ -42,7 +48,7 @@ urlpatterns = patterns('',
     (r'^munin/',include('munin.urls')),
 
     # Note: this is nonstandard, but the standard is incredibly confusing to mere mortals.
-    # I'm sorry, but for this site, "site_media"  is going to reference "site_media".
+    # I'm sorry, but for this site, urls in "site_media"  will reference directory "site_media".
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.SITE_MEDIA_ROOT }),
     (r'^uploads/(?P<path>.*)$','django.views.static.serve',{'document_root' : settings.UPLOADS_ROOT}),
 

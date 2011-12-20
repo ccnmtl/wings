@@ -105,7 +105,6 @@ def page(request,path):
 
         
         
-        
         proceed = section.submit(request.POST,request.user)
         
         if request.POST['destination'] == 'previous':
@@ -133,7 +132,7 @@ def page(request,path):
         if True:
             #Wings-specific modifications:
             if check_next_page(request, section) == False:
-                return destination_on_check_next_page_fail (request)
+                return HttpResponseRedirect(destination_on_check_next_page_fail (request))
             show_decorations = whether_to_show_decorations (section)
             the_decoration_info = decoration_info(section)
         

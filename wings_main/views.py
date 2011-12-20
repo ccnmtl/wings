@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
-from wings_main.models import Participant, traverse_tree
+from wings_main.models import Participant, traverse_tree, section_rank
 from pagetree.models import Section, Hierarchy, PageBlock
 
 from django.contrib.auth.models import User
@@ -36,7 +36,6 @@ class rendered_with(object):
 """ Wings-specific helper functions called by forest_main page view method. This is view code so it goes here."""
 if True:
 
-
             def is_image_file(filename):
                 """Does `filename` appear to be an image file?"""
                 img_types = [".jpg", ".jpeg", ".png", ".gif"]
@@ -55,31 +54,18 @@ if True:
             def pick_decoration_side ( rank):
                 even = (rank % 2 == 0)
                 if even:
-                    return 'decoration_image_1'
-                else:
-                    return 'decoration_image_2'
-
-            def new_pick_decoration_side ( rank):
-                even = (rank % 2 == 0)
-                if even:
                     return 'image_on_left'
                 else:
                     return 'image_on_right'
 
-
-            def rank (section):
-                return [s for s in section.get_tree()].index(section)
-
             def decoration_info(section):
                 """Generate some info that the section can use to decorate itself."""
-                the_rank = rank (section)
+                the_rank = section_rank (section)
                 return {
-                    'rank': the_rank,
-                    'side': pick_decoration_side ( the_rank),
-                    'image' : pick_decoration_image (the_rank),
-                    'decoration_side' : new_pick_decoration_side (the_rank)
+                    'rank'  :           the_rank,
+                    'image' :           pick_decoration_image    (the_rank),
+                    'decoration_side' : pick_decoration_side (the_rank)
                 }
-                return rank(section)
                 
             def whether_to_show_decorations (section):
                 """ Our decorations are annoying and/or counterproductive on some pages.
@@ -121,6 +107,62 @@ if True:
                 user_participant = request.user.part() 
                 assert user_participant != None
                 return user_participant.current_url()
+
+
+
+def selenium_teardown():
+    """ axe responses, visits. families."""
+    users_to_delete, participants_to_delete = [],[]
+    #import pdb
+    #pdb.set_trace()
+    #Participant.objects.get(id_string='9999999')
+    participants_to_delete.extend( Participant.objects.filter(id_string='9999999'))
+    users_to_delete.extend (p.user for p in participants_to_delete)
+    
+    #import pdb
+    #pdb.set_trace()
+    
+    for u in users_to_delete:
+        u.delete()
+    for p in participants_to_delete:
+        p.delete()
+            
+            
+    if 1 == 0:
+    
+        families_to_delete, visits_to_delete, responses_to_delete  = [], [], []
+
+        families_to_delete.extend (Family.objects.filter(study_id_number = 59638))
+        families_to_delete.extend (Family.objects.filter(study_id_number = 83695))
+        for f in families_to_delete:
+            visits_to_delete.extend (f.visit_set.all())
+        for v in visits_to_delete:
+            responses_to_delete.extend (v.response_set.all())
+
+        for r in responses_to_delete:
+            r.delete()
+        for v in visits_to_delete:
+            v.delete()
+        for f in families_to_delete:
+            f.delete()  
+  
+  
+@login_required
+@rendered_with('wings_main/selenium.html')
+def selenium(request,task):
+    if not request.user.is_staff:
+        return HttpResponseRedirect("/first/")
+    
+    selenium_teardown()
+    if task =='setup':
+        sel_message = "proceed"
+    
+    if task =='teardown':
+        sel_message = "success"
+    
+    return { 'task':task, 'sel_message':sel_message}
+
+
 
 @login_required
 def first(request):

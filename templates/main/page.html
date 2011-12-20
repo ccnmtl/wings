@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 {% load render %}
 {% load smartif %}
-{% load random_image %}
-
 {% block js %}
 {% for block in section.pageblock_set.all %}
 {% renderjs block %}

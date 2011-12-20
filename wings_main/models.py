@@ -7,7 +7,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, HttpRequest
 
-def rank (section):
+def section_rank (section):
     return [s for s in section.get_tree()].index(section)
 
 class Participant(models.Model):
@@ -68,7 +68,7 @@ class Participant(models.Model):
             self.save()
             return True
         
-        if rank (new_section) < rank (old_current_section):
+        if section_rank (new_section) < section_rank (old_current_section):
             return True #just navigated back; no big deal
         
         #new section is more than one step ahead of the old section.
