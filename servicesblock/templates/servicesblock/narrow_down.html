@@ -1,0 +1,11 @@
+<div>
+    <ol type="A">
+      {% for answer in question.answer_set.all %}
+       {% if answer.value in checked_responses%}
+          <li>
+            <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}" value="{{answer.value}}" type="radio"/>{{answer.label}}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+</div>
