@@ -2,7 +2,9 @@
   {% for answer in question.answer_set.all %}
    {% if answer.value in checked_responses%}
       <li>
-        <input name="pageblock-{{pageblock_id}}-narrowed_down_question_id_{{question.id}}" value="{{answer.id}}" type="radio"/>{{answer.label}}
+        <input name="pageblock-{{pageblock_id}}-narrowed_down_question_id_{{question.id}}" value="{{answer.id}}" type="radio"
+        {% if narrowed_down_answer.answer.id == answer.id%}checked = "checked"{%endif%}
+        />{{answer.label}}
       </li>
     {% endif %}
   {% endfor %}

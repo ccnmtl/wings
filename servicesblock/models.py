@@ -8,7 +8,13 @@ from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from django.conf import settings
+from django.forms.widgets import RadioSelect, CheckboxSelectMultiple
 import os, json
+
+SERVICES_PAGE_TYPE_CHOICES = (
+    (u'page_1', u'Drill down 1'), #choose the names
+    (u'page_2', u'Drill down 2'), #emotional support
+)
 
 class ServicesBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
@@ -17,6 +23,8 @@ class ServicesBlock(models.Model):
     template_file = "servicesblock/servicesblock.html"
     js_template_file = "servicesblock/servicesblock_js.html"
     css_template_file = "servicesblock/servicesblock_css.html"
+    
+    page_type =  models.TextField( choices=SERVICES_PAGE_TYPE_CHOICES, default='page_1') 
     
     display_name = "Services Block"
 
@@ -33,11 +41,14 @@ class ServicesBlock(models.Model):
         class EditForm(forms.Form):
             description = forms.CharField(initial=self.description,
                                           widget=forms.widgets.Textarea())
+            page_type = forms.ChoiceField(required=True, initial=self.page_type, widget=RadioSelect, choices=SERVICES_PAGE_TYPE_CHOICES)
         return EditForm()
 
     def edit(self,vals,files=None):
         self.description = vals.get('description','')
+        self.page_type = vals.get('page_type','')
         self.save()
+        
 
     def dir(self):
         return dir(self)
@@ -46,48 +57,32 @@ class ServicesBlock(models.Model):
     def add_form(self):
         class AddForm(forms.Form):
             description = forms.CharField(widget=forms.widgets.Textarea())
+            page_type = forms.ChoiceField(required=True, initial=self.page_type, widget=RadioSelect, choices=SERVICES_PAGE_TYPE_CHOICES)
         return AddForm()
 
     @classmethod
     def create(self,request):
-        return ServicesBlock.objects.create(description=request.POST.get('description', ''))
+        return ServicesBlock.objects.create(
+            description=   request.POST.get('description', ''),
+            page_type=     request.POST.get('page_type', ''),
+        )
+
 
     def submit(self,user,data):
-        #print "hi"
-        print self
-        print data
-        #import pdb
-        #pdb.set_trace()
         for q, a_id  in data.iteritems():
             if 'narrowed_down_question_id' in q:
                 qid_str = q.split ('_')[-1]
                 the_question = Question.objects.get (id=qid_str)
                 the_answer   =   Answer.objects.get (id=a_id)
-        
-                print q
-                print qid_str
-                print a_id
-                print the_question
-                print the_answer
-
-                import pdb
-                pdb.set_trace()
-                #narrowed_down_answer, created = NarrowedDownAnswer.objects.get_or_create(question=the_question, user=user, answer = the_answer)
                 narrowed_down_answer, created = NarrowedDownAnswer.objects.get_or_create(question=the_question, user=user)
                 narrowed_down_answer.answer = the_answer
                 narrowed_down_answer.save()
-                
-                
-                print NarrowedDownAnswer.objects.all()
         
     def redirect_to_self_on_submit(self):
         return True
 
     def unlocked(self,user):
         return False
-        
-
-
 
 class NarrowedDownAnswer (models.Model):
     """This is to record which of a multiple-choice, multiple-answer question (i.e. checkboxes) a user chose as the most important one."""
@@ -103,16 +98,15 @@ class NarrowedDownAnswer (models.Model):
     def dir(self):
         return dir(self)
 
-#Data sturcture:
-#        most_important_issue_chosen
-#           value
-#           question
-#           user
+class ServiceProvider(models.Model):
+    issue = models.ForeignKey     (Answer,     null=True, limit_choices_to = {'question__id': 241})
+    name = models.TextField       (blank=True, null=True)
+    phone = models.TextField      (blank=True, null=True)
+    url = models.TextField        (blank=True, null=True)
+    address = models.TextField    (blank=True, null=True)
+    map_image = models.ImageField(upload_to="images/", blank=True, null=True)
+    
+    
+    def dir(self):
+        return dir(self)
 
-#       services_to_show:
-#               issue
-#               Name
-#               Phone
-#               URL
-#               street address
-#               map image
