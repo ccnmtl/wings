@@ -1,6 +1,19 @@
 {% load smartif %}
 {% load services %}
 
-<div>
-   {%with '241' as question_id%}{% narrow_down %}{%endwith%}
-</div>
+<!-- DRILL DOWN 1: -->
+
+    <div>
+       {%with block.pageblock.id as pageblock_id%}
+           {%with '241' as question_id%}
+             {% narrow_down %}
+           {%endwith%}
+       {%endwith%}
+    </div>
+<!--end DRILL DOWN 1: -->
+
+<!-- DRILL DOWN 2: -->
+
+
+<!--end DRILL DOWN 2: -->
+

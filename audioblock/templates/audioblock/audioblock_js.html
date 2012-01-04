@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/site_media/js/jquery-1.4.2.min.js" ></script> 
+<!-- starting audioblock js -->
 <script type="text/javascript" src="/site_media/js/jquery.jplayer.min.js"></script>
 <script type="text/javascript">
     //<![CDATA[
@@ -18,6 +18,11 @@
 
 	    // A flag to capture the first track
 	    var first_track = true;
+
+        if ( typeof ($.jPlayer) == "undefined") {
+            console.log ('Jplayer not found.');
+            return;
+        }
 
 	    // Change the time format
 	    $.jPlayer.timeFormat.padMin = false;

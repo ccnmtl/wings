@@ -56,7 +56,7 @@ ALTER SEQUENCE audioblock_audioblock_id_seq OWNED BY audioblock_audioblock.id;
 -- Name: audioblock_audioblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('audioblock_audioblock_id_seq', 1, true);
+SELECT pg_catalog.setval('audioblock_audioblock_id_seq', 16, true);
 
 
 --
@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 318, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 334, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 119, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 120, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 214, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 215, true);
 
 
 --
@@ -1473,7 +1473,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 261, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 276, true);
 
 
 --
@@ -1673,7 +1673,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 680, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 743, true);
 
 
 --
@@ -1711,7 +1711,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 885, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 954, true);
 
 
 --
@@ -2234,7 +2234,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 61, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 62, true);
 
 
 --
@@ -2648,7 +2648,21 @@ ALTER TABLE wings_main_participant ALTER COLUMN id SET DEFAULT nextval('wings_ma
 --
 
 COPY audioblock_audioblock (id, description, audio_file) FROM stdin;
-1	Gal Costa sings "Trem das Onze".	audio_file/2011/11/09/trem.mp3
+2		audio_file/2012/01/04/intro_relationships.mp3
+3		audio_file/2012/01/04/intro_cycle_of_viole.mp3
+4		audio_file/2012/01/04/intro_types_of_confl.mp3
+5		audio_file/2012/01/04/intro_physical_abuse.mp3
+6		audio_file/2012/01/04/intro_emotional_abus.mp3
+7		audio_file/2012/01/04/intro_sexual_abuse.mp3
+8		audio_file/2012/01/04/intro_economic_abuse.mp3
+9		audio_file/2012/01/04/intro_drug_use_and_i.mp3
+10		audio_file/2012/01/04/intro_how_common_is_.mp3
+11		audio_file/2012/01/04/intro_negative_conse.mp3
+12		audio_file/2012/01/04/intro_effects_on_chi.mp3
+13		audio_file/2012/01/04/intro_alcohol_drugs_.mp3
+14		audio_file/2012/01/04/intro_anger_and_figh.mp3
+15		audio_file/2012/01/04/screening_question_1.mp3
+16		audio_file/2012/01/04/cons_of_relationship.mp3
 \.
 
 
@@ -2724,8 +2738,7 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
-307	13	Logged in!
-312	17	Logged in!
+319	17	Logged in!
 \.
 
 
@@ -2907,16 +2920,17 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	!	t	t	t	2011-09-15 17:58:04.768569-04	2011-06-02 15:22:48.818126-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-04 10:28:00.293291-05	2011-06-02 15:22:04-04
 114	344656756				!	f	t	f	2011-12-16 09:45:05.469537-05	2011-12-15 16:18:49.852391-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2011-12-16 09:45:46.390894-05	2011-10-11 11:39:54-04
 113	23				!	f	t	f	2011-12-16 10:46:12.342067-05	2011-12-15 13:47:09.128831-05
+120	357159				!	f	t	f	2012-01-04 14:10:09.783263-05	2012-01-04 10:20:25.965136-05
+119	9999999				!	f	t	f	2012-01-04 14:10:30.988562-05	2011-12-21 10:54:47.957444-05
 116	256789				!	f	t	f	2011-12-16 15:31:42.921599-05	2011-12-16 15:31:42.914867-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-04 14:14:32.765553-05	2011-10-11 11:39:54-04
 115	4				!	f	t	f	2011-12-19 14:54:19.89036-05	2011-12-16 14:03:16.430084-05
 17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-20 14:49:30.979779-05	2011-10-18 11:54:07-04
 117	1444444				!	f	t	f	2011-12-20 14:50:17.731081-05	2011-12-19 16:39:20.655156-05
 109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-20 14:51:33.875362-05	2011-12-09 15:38:04-05
-119	9999999				!	f	t	f	2011-12-21 10:54:47.970823-05	2011-12-21 10:54:47.957444-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2011-12-21 11:00:32.547907-05	2011-06-02 15:22:04-04
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
 \.
 
@@ -3422,6 +3436,7 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 212	2011-12-19 16:39:16.865774-05	17	42	59	P1444444	1	
 213	2011-12-20 16:19:07.731086-05	5	42	60	P9999999	1	
 214	2011-12-21 10:54:47.640026-05	5	42	61	P9999999	1	
+215	2012-01-04 10:20:20.876175-05	13	42	62	P357159	1	
 \.
 
 
@@ -3618,6 +3633,7 @@ d23483134577f75bafdd82385e53dc59	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 c6c5a48ec9d7b0146953d642e21314d5	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFPdS40MDQ0OGE3MTM2NTNkNTI4NmVl\nOTVkYmY1ZDdjOTY2YQ==\n	2011-11-23 16:28:22.015651-05
 e22ae6db690e6ea085fb2124d2f00daf	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-11-24 09:28:07.47234-05
 1196f71d0b36f74916e6a005610c1434	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-11-24 09:04:45.758836-05
+8b1183fd835535eb6f824a00cef6dcb2	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-18 10:28:00.303263-05
 dbfed5f967b06031e216cfa0109c0cdc	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-07 11:16:21.381876-05
 5866f5775a2d37c185fef36d4c433ded	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-19 10:44:19.667359-05
 0fe277b55431848174081011d086356b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFvdS43ZTRkZGUxMDIzZWQ4NzY1MjQy\nMDRhNGI2ZmMxOTA3ZQ==\n	2011-12-23 16:51:11.715923-05
@@ -3648,13 +3664,20 @@ b5c3aedf7b0ede14b4e637ecdcebc47a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 c5e0e489929f255f54a87edd7a4fc6e1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES2t1LmVmY2I3M2Y3OGViYjBiMWYwZmE5\nY2Y2MjQxYmMzZmIx\n	2011-12-23 12:10:09.319994-05
 83d23b4895c1a2236f49f573abaf65f6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2011-12-23 12:12:44.019333-05
 8b3406e5d97514d5ae19f83773561b24	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-03 13:10:26.742888-05
-5526e65e0466ab9c8ab4a564cdcae5fb	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2011-12-30 15:32:35.39853-05
+66ac1279dddfede111868d08ff9db01a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3d1Ljk5YTIxYjU5M2M5ZjJlNDZkMjg3\nMWI0YWEwOTRmNGRl\n	2012-01-04 18:21:13.292549-05
+10b1e9f7b314fc2d1f760da61602cd63	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-08 07:18:22.392192-05
+6508251ce8a666fd9d7e67423b9d6795	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-08 22:02:33.416954-05
+07b7f5294dd0604a0a81232b9abfee64	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-11 22:00:42.985441-05
+08c89b3f7cb17d9d2f68e1e5ee43e465	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-14 21:50:36.720771-05
+59379f9660a5e1bffe0fa7bf500043a5	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-17 21:50:57.570349-05
+cddd7d180082f5b747b26ef5a4bdd343	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 13:44:50.318446-05
 f6869d2ee2b0b186f7e702dc96e6284e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2011-12-30 14:08:33.629502-05
 8b77e8b2251bc65317ddcf1548373bf4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigF1dS4zMGFjY2Q1ODIyNmIzM2I3YWZm\nYmRkYTc4MDY3NGRlZg==\n	2012-01-02 16:39:20.677895-05
-87badf2bec0f2ce87037b3f34a2660ad	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-04 11:00:32.559198-05
+6e864d30ad701a6c1eb91c0d5ede9d2f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3d1Ljk5YTIxYjU5M2M5ZjJlNDZkMjg3\nMWI0YWEwOTRmNGRl\n	2012-01-18 14:10:31.014599-05
 b3de91fb29878a672d6ef11a3d9df56f	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:05:41.599994-05
 3f4891918036bd3b7d0a0d3a2adf23a5	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:06:08.892632-05
 f01c8cf838c9d8edac4cbd5640bcc527	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-01-03 14:51:33.885721-05
+bbba5716fb95d7d91b8b53836a2bee5e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 14:14:32.777067-05
 \.
 
 
@@ -3741,7 +3764,6 @@ COPY fridgeblock_session (id, fridgeblock_id, user_id, saved) FROM stdin;
 --
 
 COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
-1	Martha Argerich rocks a toccata by Prokofiev.	audio_file/2011/11/23/toccata.mp3
 \.
 
 
@@ -3914,7 +3936,7 @@ COPY pageblocks_imageblock (id, image, caption, alt) FROM stdin;
 12	images/2011/11/23/powerandcontrol-emot.jpg		
 13	images/2011/11/23/powerandcontrol-sexu.jpg		
 14	images/2011/11/23/powerandcontrol-econ.jpg		
-5	images/2011/10/14/powerandcontrol-phsy.jpg	Emotional abuse occurs when a partner isolates a woman from her friends and family, or uses controlling behaviors (e.g. calling frequently to check where you are, follows you to see where you are going, tells you what to wear, who to talk to, where you can go, take’s control over your money, etc.). Abuse may also occur when one partner tries to control the other partner by such behaviors as threatening to call ACS regarding her children or threatening to report her to the police or probation for criminal activity. Verbal abuse includes behaviors such as screaming, yelling, threats, name calling, putdowns, or can other angry words that make you feel hurt, ashamed or insignificant.	
+5	images/2011/10/14/powerandcontrol-phsy.jpg	Emotional abuse occurs when a partner isolates a woman from her friends and family, or uses controlling behaviors (e.g. calling frequently to check where you are, following you to see where you are going, telling you what to wear, who to talk to, where you can go, taking control over your money, etc.). Abuse may also occur when one partner tries to control the other partner by such behaviors as threatening to call ACS regarding her children or threatening to report her to the police or probation for criminal activity. Verbal abuse includes behaviors such as screaming, yelling, threats, name calling, putdowns, or can other angry words that make you feel hurt, ashamed or insignificant.	
 \.
 
 
@@ -3961,7 +3983,7 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 30	Many women who experience violence from their partner have difficulty in telling someone about what is happening. Some women feel that there is no way out of the situation and their partner has control. Addressing such a situation may not be easy. But the purpose of our conversation today is to consider any risks you or your loved ones may be facing, and to consider what supports and resources are available to you.
 23	Sexual abuse may include being forced to have sex or feeling pressured into having unwanted sexual activity.  For example if a partner pressures you to have oral or anal sex when you don’t want to or if a partner takes sexual advantage of you when you are under the influence of drugs or alcohol.
 31	One type of violence includes physical abuse with behaviors such as shoving, pushing, slapping, hitting, kicking, pulling hair or punching.
-27	Encouraging a woman to be dependent on drugs, or preventing her from accessing drug treatment, is also a form of abuse that can occur in intimate relationships. Pressuring women to sell sex for money or drugs is also a form of abuse.
+27	Encouraging a woman to be dependent on drugs, or preventing her from getting drug treatment, is also a form of abuse that can occur in intimate relationships. Pressuring women to sell sex for money or drugs is also a form of abuse.
 17	We'll be talking about recognizing relationship conflict and different types of abuse now. What we talk about might be upsetting to you, especially if it touches on something that's going on in your life. Please remember that we're here to help.\r\n
 28	Approximately 1 in 4 women will experience domestic abuse in her lifetime. Each year there are approximately 16,800 homicides and over 2 million medically treated injuries related to intimate partner violence.  Among women on probation or parole in New York City, the rate of experiencing physical or sexual violence is very high – over one third of women have gone to the emergency room for injuries resulting from a fight with a partner.\r\n\r\nBecause so many women experience violence in relationships, we are introducing this WINGS program.
 29	Women who experience abuse by their partners may develop sleep disturbances, sexual dysfunction, depression, anxiety, posttraumatic stress disorder, eating disorders, feminine problems, become isolated, feel an intense loss of social connections, and may attempt suicide. Such abuse may also make it difficult for women to negotiate condom use with their partners and protect themselves against HIV and other sexually transmitted infections.  
@@ -3976,11 +3998,11 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 45	A woman may have to leave the residence she shares with her partner, who is out of control. Leaving must be done with a careful plan in order to increase safety.  A violent partner often strikes back if he or she believes that the woman is leaving a relationship.
 62	Economic abuse occurs when a partner attempts to make a woman financially dependent, takes her money, or forces her to sell drugs.
 61	This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells while others may feel like it's never going to happen again.\r\n\r\n[graphic of Cycle of Violence here]
+37	After considering the different negative ways that relationship conflict may be affecting your life and your family, what are some reasons why it would be important for you to reduce conflict? Please answer the following questions.
 46	Call 311 and ask for the NYC Domestic Violence Hotline (800-621-4673 or 866-604-5350) if you need counseling, legal assistance or emergency housing.  If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.
 16	Most relationships have good times and bad times. Intimate relationships can be an important source of support, love, and purpose in life. Conflict can arise when partners have different needs or expectations or when difficult things happen that are outside of both partners’ control. While all relationships may have positives and negatives, we’d like to spend some time today talking about conflict and abuse, which sometimes occurs in intimate relationships. \r\n\r\nNow we’re going to hear from three women who have experienced conflict and will share some of their experiences.\r\n   
 59	this page holds a video clip from Strength of a woman cut together with some voice over:\r\n\r\nVO: Now we’re going to hear from three women who have experienced conflict and will share some of their experiences.\r\nVIDEO CLIP: “Intros/Stories”\r\nVO: None of these women expected to experience abuse or violence in their relationships. Things started off great, but over time their partners became more controlling\r\n
 38	Thinking through your relationship with your partner(s), when conflict or abuse occurs what are some negative consequences that you experience or are concerned about? Please answer the following questions.
-37	After considering the different negative ways that relationship conflict may be affecting your life and your family, what are some reasons why it would be important for you to reduce conflict? Please answer the following questions.
 47	Keep change for phone calls on you at all times. If you use your cell phone, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your calls confidential, you must either use coins at a pay phone or use a calling card for a limited time when you first leave. 
 49	Let's identify the goals you most want to pursue.\r\n
 60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
@@ -4026,7 +4048,19 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 243	213	2		16	75
 132	112	1		16	43
 242	212	2		16	74
+267	65	3		43	7
 79	76	1		16	33
+269	69	2		43	9
+158	52	1		16	58
+262	59	2		43	2
+263	150	2		43	3
+265	63	3		43	5
+74	74	1		19	5
+68	69	1		16	27
+271	72	2		43	11
+273	153	2		43	13
+275	161	2		43	15
+100	99	1		16	37
 97	97	1		16	35
 133	113	1		26	55
 134	114	1		16	44
@@ -4061,7 +4095,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 73	63	1		16	31
 212	188	1		26	106
 213	189	1		26	107
-74	74	1		19	5
 121	56	1	Taking steps to increase relationship safety 	16	40
 69	70	1		16	28
 164	152	1		16	63
@@ -4093,7 +4126,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 231	62	2		19	11
 216	192	1		26	110
 232	74	2		19	12
-68	69	1		16	27
 217	193	1		26	111
 218	194	1		26	112
 219	195	1		26	113
@@ -4102,18 +4134,14 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 222	198	1		26	116
 234	65	2		19	13
 226	204	1		26	119
-158	52	2		16	58
 224	202	1		26	117
 225	203	1		26	118
 223	201	1	How relationship conflict makes you feel	16	68
 227	205	1		26	120
-100	99	1	Identifying Reasons to Reduce Relationship Conflict and Improve Safety	16	37
 235	151	2		19	14
 228	206	1		26	121
 236	207	1		26	122
 161	62	1		16	60
-159	52	3		43	1
-172	52	1		44	1
 237	208	1		26	123
 135	103	1	Safety When Preparing to Leave	16	45
 127	102	1	Strategies for Saftey During a Violent Incident	16	41
@@ -4146,6 +4174,13 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 261	211	2		17	28
 254	213	1		45	3
 253	212	1		45	2
+264	62	3		43	4
+266	74	3		43	6
+268	151	3		43	8
+270	70	2		43	10
+272	152	2		43	12
+274	154	2		43	14
+276	100	2		43	16
 \.
 
 
@@ -4225,7 +4260,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 201	000A000K0008000S	4	0	summary of answers	summary-of-answers	11
 100	000A000K0008	3	14	Cons of Relationship Conflict	cons-of-relationship-conflict	11
 203	000A000K00090002	4	0	question 2	question-2	11
-99	000A000K0009	3	7	Reasons to Reduce Conflict	reasons-to-reduce-conflict	11
 205	000A000K00090004	4	0	question 4	question-4	11
 116	000A000L00020002	4	0	plan part 2	plan-part-2	11
 118	000A000L00020004	4	0	plan part 4	plan-part-4	11
@@ -4264,6 +4298,7 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 58	000A000O	2	6	Service Referrals	service-referrals	11
 211	000A000M0001	3	0	Social Support Map: People	map-screen-1	11
 76	000A000J0001	3	26	Relationship Satisfaction	relationship-satisfaction	11
+99	000A000K0009	3	7	Identifying Reasons to Reduce Relationship Conflict and Improve Safety	reasons-to-reduce-conflict	11
 \.
 
 
@@ -5229,6 +5264,34 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 674	241	882	3
 675	242	882	
 680	242	885	
+682	185	888	1
+684	187	890	2
+686	189	896	2
+688	240	900	
+693	240	903	
+697	188	906	2
+699	190	908	2
+701	192	910	1
+703	194	912	1
+705	196	914	1
+707	198	916	2
+709	200	918	2
+711	203	920	2
+713	205	923	0
+715	207	925	0
+717	209	927	2
+719	211	929	2
+721	213	931	1
+723	243	933	1
+725	216	935	2
+727	218	937	2
+729	220	939	2
+731	223	941	1
+733	231	943	1
+735	233	945	1
+737	235	947	this also works
+739	150	949	twa
+742	186	953	2
 428	242	641	
 431	236	644	
 432	237	644	
@@ -5537,6 +5600,41 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 677	239	884	1
 678	239	884	2
 679	239	884	3
+681	184	887	2
+683	186	889	1
+685	188	894	1
+687	190	897	2
+689	241	902	3
+690	241	902	4
+691	241	902	5
+692	242	902	
+694	241	905	8
+695	241	905	9
+696	242	905	
+698	189	907	2
+700	191	909	1
+702	193	911	1
+704	195	913	1
+706	197	915	2
+708	199	917	1
+710	202	919	2
+712	204	921	2
+714	206	924	0
+716	208	926	1
+718	210	928	2
+720	212	930	1
+722	221	932	1
+724	215	934	1
+726	217	936	2
+728	219	938	2
+730	222	940	this text box works
+732	230	942	1
+734	232	944	1
+736	234	946	1
+738	148	948	my name
+740	148	950	my name
+741	187	952	2
+743	185	954	2
 \.
 
 
@@ -5665,6 +5763,40 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 880	126	5	2011-12-21 12:00:47.463478-05
 882	126	5	2011-12-21 12:00:58.022628-05
 884	125	5	2011-12-21 14:32:29.016306-05
+886	125	13	2012-01-04 10:05:20.122227-05
+887	80	120	2012-01-04 10:21:41.858968-05
+889	82	120	2012-01-04 10:22:17.193048-05
+891	84	120	2012-01-04 10:25:38.105768-05
+893	84	120	2012-01-04 10:25:40.792435-05
+895	85	120	2012-01-04 10:25:45.603828-05
+897	86	120	2012-01-04 10:25:50.96021-05
+899	126	5	2012-01-04 10:28:35.821809-05
+901	125	5	2012-01-04 10:29:05.024048-05
+903	125	5	2012-01-04 10:32:06.468792-05
+905	126	5	2012-01-04 10:32:16.284128-05
+907	85	120	2012-01-04 11:15:17.894576-05
+909	87	120	2012-01-04 11:15:33.182535-05
+911	89	120	2012-01-04 11:15:56.338165-05
+913	91	120	2012-01-04 11:16:19.447263-05
+915	93	120	2012-01-04 11:16:41.951487-05
+917	95	120	2012-01-04 11:17:04.604025-05
+919	97	120	2012-01-04 11:17:27.276517-05
+921	99	120	2012-01-04 11:17:49.769252-05
+923	100	120	2012-01-04 11:18:29.318837-05
+925	102	120	2012-01-04 11:18:52.332435-05
+927	104	120	2012-01-04 11:19:23.105638-05
+929	106	120	2012-01-04 11:20:29.983032-05
+931	108	120	2012-01-04 11:20:55.441325-05
+933	127	120	2012-01-04 11:21:19.007-05
+935	111	120	2012-01-04 11:21:42.140528-05
+937	113	120	2012-01-04 11:22:04.784125-05
+939	115	120	2012-01-04 11:22:27.469644-05
+941	117	120	2012-01-04 11:24:19.610388-05
+943	119	120	2012-01-04 11:24:42.530207-05
+945	121	120	2012-01-04 11:25:05.564184-05
+947	123	120	2012-01-04 11:25:28.256469-05
+949	48	120	2012-01-04 11:27:26.077066-05
+951	84	119	2012-01-04 14:10:35.616107-05
 641	126	13	2011-12-16 12:37:44.099681-05
 643	64	13	2011-12-16 12:37:57.156669-05
 645	63	13	2011-12-16 12:38:19.37414-05
@@ -5753,6 +5885,33 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 881	125	5	2011-12-21 12:00:49.665442-05
 883	126	5	2011-12-21 12:01:01.669391-05
 885	126	5	2011-12-21 14:32:31.001534-05
+888	81	120	2012-01-04 10:22:05.142844-05
+890	83	120	2012-01-04 10:22:46.108355-05
+892	84	120	2012-01-04 10:25:39.324462-05
+894	84	120	2012-01-04 10:25:42.704226-05
+896	85	120	2012-01-04 10:25:48.273804-05
+898	125	5	2012-01-04 10:28:30.390943-05
+900	125	5	2012-01-04 10:29:01.499703-05
+902	126	5	2012-01-04 10:29:09.060846-05
+904	126	5	2012-01-04 10:32:10.011096-05
+906	84	120	2012-01-04 11:15:14.601858-05
+908	86	120	2012-01-04 11:15:21.872347-05
+910	88	120	2012-01-04 11:15:44.88571-05
+912	90	120	2012-01-04 11:16:08.11618-05
+914	92	120	2012-01-04 11:16:30.624965-05
+916	94	120	2012-01-04 11:16:53.416698-05
+918	96	120	2012-01-04 11:17:15.840852-05
+920	98	120	2012-01-04 11:17:38.401462-05
+922	100	120	2012-01-04 11:18:01.59959-05
+924	101	120	2012-01-04 11:18:40.497715-05
+926	103	120	2012-01-04 11:19:09.704603-05
+928	105	120	2012-01-04 11:20:18.613655-05
+930	107	120	2012-01-04 11:20:41.787966-05
+932	109	120	2012-01-04 11:21:07.877956-05
+934	110	120	2012-01-04 11:21:30.92461-05
+936	112	120	2012-01-04 11:21:53.414544-05
+938	114	120	2012-01-04 11:22:16.203536-05
+940	116	120	2012-01-04 11:22:38.631138-05
 319	66	5	2011-12-09 16:16:49.59296-05
 320	67	5	2011-12-09 16:16:49.599501-05
 321	68	5	2011-12-09 16:16:49.60216-05
@@ -5761,6 +5920,14 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 324	67	5	2011-12-09 16:16:54.114308-05
 325	68	5	2011-12-09 16:16:54.119629-05
 326	69	5	2011-12-09 16:16:54.122483-05
+942	118	120	2012-01-04 11:24:31.415806-05
+944	120	120	2012-01-04 11:24:54.195349-05
+946	122	120	2012-01-04 11:25:17.027224-05
+948	47	120	2012-01-04 11:25:44.336278-05
+950	47	120	2012-01-04 11:27:28.379265-05
+952	83	119	2012-01-04 14:10:37.848093-05
+953	82	119	2012-01-04 14:10:40.24641-05
+954	81	119	2012-01-04 14:10:42.764583-05
 327	66	5	2011-12-09 16:16:55.146854-05
 328	67	5	2011-12-09 16:16:55.15371-05
 329	68	5	2011-12-09 16:16:55.160538-05
@@ -6201,20 +6368,20 @@ COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FR
 
 COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 11	109	1	asdf
+6	13	1	jane
 12	109	2	
 13	109	3	asdfas
+7	13	2	
 14	109	4	asdf
 15	109	5	
+8	13	3	this
 2	5	1	
 1	5	2	
+9	13	4	is
 3	5	3	
 4	5	4	
-5	5	5	
-6	13	1	jane
-7	13	2	
-8	13	3	this
-9	13	4	is
 10	13	5	a
+5	5	5	
 16	17	1	b
 17	17	2	bob
 18	17	3	a
@@ -6276,6 +6443,7 @@ COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM st
 56	344656756	114	62
 57	256789	116	69
 58	4	115	198
+62	357159	120	105
 \.
 
 
