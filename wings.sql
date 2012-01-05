@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 337, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 342, true);
 
 
 --
@@ -1394,7 +1394,7 @@ ALTER SEQUENCE pageblocks_textblock_id_seq OWNED BY pageblocks_textblock.id;
 -- Name: pageblocks_textblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_textblock_id_seq', 83, true);
+SELECT pg_catalog.setval('pageblocks_textblock_id_seq', 84, true);
 
 
 --
@@ -1473,7 +1473,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 291, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 294, true);
 
 
 --
@@ -1673,7 +1673,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 756, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 777, true);
 
 
 --
@@ -1711,7 +1711,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 958, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 973, true);
 
 
 --
@@ -1865,7 +1865,7 @@ ALTER SEQUENCE servicesblock_servicesblock_id_seq OWNED BY servicesblock_service
 -- Name: servicesblock_servicesblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_servicesblock_id_seq', 2, true);
+SELECT pg_catalog.setval('servicesblock_servicesblock_id_seq', 3, true);
 
 
 --
@@ -2014,7 +2014,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeblock_id_seq OWNED BY ssnmtreeblock_ssnmtre
 -- Name: ssnmtreeblock_ssnmtreeblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeblock_id_seq', 3, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeblock_id_seq', 4, true);
 
 
 --
@@ -3033,13 +3033,13 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
 114	344656756				!	f	t	f	2011-12-16 09:45:05.469537-05	2011-12-15 16:18:49.852391-05
 113	23				!	f	t	f	2011-12-16 10:46:12.342067-05	2011-12-15 13:47:09.128831-05
-120	357159				!	f	t	f	2012-01-04 14:10:09.783263-05	2012-01-04 10:20:25.965136-05
 119	9999999				!	f	t	f	2012-01-04 14:10:30.988562-05	2011-12-21 10:54:47.957444-05
 116	256789				!	f	t	f	2011-12-16 15:31:42.921599-05	2011-12-16 15:31:42.914867-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-04 15:15:20.557888-05	2011-06-02 15:22:04-04
 115	4				!	f	t	f	2011-12-19 14:54:19.89036-05	2011-12-16 14:03:16.430084-05
 17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2012-01-04 16:52:53.947904-05	2011-10-18 11:54:07-04
 13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-04 16:56:20.879098-05	2011-10-11 11:39:54-04
+120	357159				!	f	t	f	2012-01-05 11:05:26.298471-05	2012-01-04 10:20:25.965136-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-05 11:21:39.750462-05	2011-06-02 15:22:04-04
 117	1444444				!	f	t	f	2011-12-20 14:50:17.731081-05	2011-12-19 16:39:20.655156-05
 109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-20 14:51:33.875362-05	2011-12-09 15:38:04-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
@@ -3749,7 +3749,6 @@ d23483134577f75bafdd82385e53dc59	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 c6c5a48ec9d7b0146953d642e21314d5	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFPdS40MDQ0OGE3MTM2NTNkNTI4NmVl\nOTVkYmY1ZDdjOTY2YQ==\n	2011-11-23 16:28:22.015651-05
 e22ae6db690e6ea085fb2124d2f00daf	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-11-24 09:28:07.47234-05
 1196f71d0b36f74916e6a005610c1434	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-11-24 09:04:45.758836-05
-8b1183fd835535eb6f824a00cef6dcb2	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-18 10:28:00.303263-05
 ca3c4a0423a7511d8d338fba69d5b5c9	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-18 14:54:18.662032-05
 dbfed5f967b06031e216cfa0109c0cdc	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-07 11:16:21.381876-05
 5866f5775a2d37c185fef36d4c433ded	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-19 10:44:19.667359-05
@@ -3794,6 +3793,7 @@ f6869d2ee2b0b186f7e702dc96e6284e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 efc30f49646e05679209eaef283deab9	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 16:56:20.890851-05
 b3de91fb29878a672d6ef11a3d9df56f	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:05:41.599994-05
 3f4891918036bd3b7d0a0d3a2adf23a5	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:06:08.892632-05
+07c08683705bb8a8e7a1f277abbb56c5	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-19 11:21:39.761145-05
 f01c8cf838c9d8edac4cbd5640bcc527	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-01-03 14:51:33.885721-05
 bbba5716fb95d7d91b8b53836a2bee5e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 14:14:32.777067-05
 \.
@@ -4111,7 +4111,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 43	I can also teach these strategies to some or all of my children.
 44	I will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.
 48	I will rehearse my escape plan and, as appropriate, practice it with my children.
-57	image of completed social support map\r\n\r\n[/safety-plan/during-a-violent-incident/plan-part-1/]'s Safety Plan\r\n\r\nPart One: Strategies for Safety During a Violent Incident\r\n\r\nIf I decide to leave, I will: [/safety-plan/during-a-violent-incident/plan-part-2/]\r\n\r\nIn order to leave quickly, I can keep my purse, identification, and metro card (or bus/train fare) ready and put them: [/safety-plan/during-a-violent-incident/plan-part-3/]\r\n\r\nI can tell a person that I trust about the violence and request they call the police if they hear suspicious noises coming from my apartment. One person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-4/]\r\n\r\nAnother person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-5/]\r\n\r\nI can teach my children how to use the telephone and dial 911 to contact the police and the fire department. \r\n\r\nI can use a code word with my children or my friends so they can call for help. (CODE WORDS should not evoke suspicion from partner, but should not also be “every day” language that might confuse helping person. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“. Code words for children need to be appropriate for their age. For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”. For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out whether your child can be entrusted with this task)\r\n\r\nMy code word will be: [/safety-plan/during-a-violent-incident/plan-part-7/]\r\n\r\nIf I have to leave my home I will go to: [/safety-plan/during-a-violent-incident/plan-part-8/]\r\n\r\nIf I cannot go to the location above I will go: [/safety-plan/during-a-violent-incident/plan-part-9/]\r\n\r\nI can also teach these strategies to some or all of my children.\r\n\r\nWhen I expect we are going to have an argument, I will try to move to a space that is lowest risk, such as: [/safety-plan/during-a-violent-incident/plan-part-11/]\r\n\r\nI will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.\r\n\r\nPart Two: Preparing to Leave\r\n\r\nSo that I can leave quickly, I will leave money and an extra set of keys with: [/safety-plan/preparing-to-leave/plan-part-1/]\r\n\r\nI will keep copies of important documents (social security cards, birth certificates, shot records – see step 8) or keys at :[/safety-plan/preparing-to-leave/plan-part-2/]\r\n\r\nTo increase my independence, I will open a savings account by: [/safety-plan/preparing-to-leave/plan-part-3/]\r\n\r\nOther things I can do to increase my independence include: [/safety-plan/preparing-to-leave/plan-part-4/]\r\n\r\nCall 311 and ask for the NYC Domestic Violence Hotline (800-621-4673; TDD 866-604-5350) if you need counseling, legal assistance or emergency housing. If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.\r\n\r\nKeep change for phone calls on you at all times. If you use your telephone credit card, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your telephone communications confidential, you must either use coins at a pay phone or get a friend to let you use their telephone credit card for a limited time when you first leave.\r\n\r\nI will check with the following people to see if I can stay with them or borrow money:[/safety-plan/preparing-to-leave/plan-part-7/]\r\n\r\nI can leave extra clothes with:[/safety-plan/preparing-to-leave/plan-part-8/]\r\n\r\nIn order to plan the safest way to leave the residence, I will sit down and review my safety plan every:[/safety-plan/preparing-to-leave/plan-part-9/]\r\n\r\n[safety-plan/preparing-to-leave/plan-part-10/] will help me review my safety plan.\r\n\r\nI will rehearse my escape plan and, as appropriate, practice it with my children.\r\n\r\nAny services viewed in the service referrals activity in this format:\r\n\r\nHigest Level Heading (i.e. 'Drugs and Alcohol)\r\n\r\nNext Level Heading (i.e. Detox)\r\n\r\nServices viewed under this heading\r\n\r\n\r\n
 14	Thank you for taking the time to participate in the WINGS project today. The purpose of this project is to provide information and resources to women. We are particularly interested in how women can stay safe in relationships with intimate partners. Test
 49	
 62	Economic abuse occurs when a partner attempts to make a woman financially dependent, takes her money, or forces her to sell drugs.
@@ -4122,6 +4121,7 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 59	this page holds a video clip from Strength of a woman cut together with some voice over:\r\n\r\nVO: Now we’re going to hear from three women who have experienced conflict and will share some of their experiences.\r\nVIDEO CLIP: “Intros/Stories”\r\nVO: None of these women expected to experience abuse or violence in their relationships. Things started off great, but over time their partners became more controlling\r\n
 47	Keep change for phone calls on you at all times. If you use your cell phone, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your calls confidential, you must either use coins at a pay phone or use a calling card for a limited time when you first leave. 
 60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
+57	[/safety-plan/during-a-violent-incident/plan-part-1/]'s Safety Plan\r\n\r\nPart One: Strategies for Safety During a Violent Incident\r\n\r\nIf I decide to leave, I will: [/safety-plan/during-a-violent-incident/plan-part-2/]\r\n\r\nIn order to leave quickly, I can keep my purse, identification, and metro card (or bus/train fare) ready and put them: [/safety-plan/during-a-violent-incident/plan-part-3/]\r\n\r\nI can tell a person that I trust about the violence and request they call the police if they hear suspicious noises coming from my apartment. One person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-4/]\r\n\r\nAnother person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-5/]\r\n\r\nI can teach my children how to use the telephone and dial 911 to contact the police and the fire department. \r\n\r\nI can use a code word with my children or my friends so they can call for help. (CODE WORDS should not evoke suspicion from partner, but should not also be “every day” language that might confuse helping person. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“. Code words for children need to be appropriate for their age. For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”. For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out whether your child can be entrusted with this task)\r\n\r\nMy code word will be: [/safety-plan/during-a-violent-incident/plan-part-7/]\r\n\r\nIf I have to leave my home I will go to: [/safety-plan/during-a-violent-incident/plan-part-8/]\r\n\r\nIf I cannot go to the location above I will go: [/safety-plan/during-a-violent-incident/plan-part-9/]\r\n\r\nI can also teach these strategies to some or all of my children.\r\n\r\nWhen I expect we are going to have an argument, I will try to move to a space that is lowest risk, such as: [/safety-plan/during-a-violent-incident/plan-part-11/]\r\n\r\nI will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.\r\n\r\nPart Two: Preparing to Leave\r\n\r\nSo that I can leave quickly, I will leave money and an extra set of keys with: [/safety-plan/preparing-to-leave/plan-part-1/]\r\n\r\nI will keep copies of important documents (social security cards, birth certificates, shot records – see step 8) or keys at :[/safety-plan/preparing-to-leave/plan-part-2/]\r\n\r\nTo increase my independence, I will open a savings account by: [/safety-plan/preparing-to-leave/plan-part-3/]\r\n\r\nOther things I can do to increase my independence include: [/safety-plan/preparing-to-leave/plan-part-4/]\r\n\r\nCall 311 and ask for the NYC Domestic Violence Hotline (800-621-4673; TDD 866-604-5350) if you need counseling, legal assistance or emergency housing. If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.\r\n\r\nKeep change for phone calls on you at all times. If you use your telephone credit card, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your telephone communications confidential, you must either use coins at a pay phone or get a friend to let you use their telephone credit card for a limited time when you first leave.\r\n\r\nI will check with the following people to see if I can stay with them or borrow money:[/safety-plan/preparing-to-leave/plan-part-7/]\r\n\r\nI can leave extra clothes with:[/safety-plan/preparing-to-leave/plan-part-8/]\r\n\r\nIn order to plan the safest way to leave the residence, I will sit down and review my safety plan every:[/safety-plan/preparing-to-leave/plan-part-9/]\r\n\r\n[safety-plan/preparing-to-leave/plan-part-10/] will help me review my safety plan.\r\n\r\nI will rehearse my escape plan and, as appropriate, practice it with my children.\r\n\r\n
 58	Welcome to Wings!\r\n\r\n[video of Charlene saying the following:]\r\n\r\nThank you for taking the time to participate in the WINGS project today. \r\n\r\nMy name is Charlene and I will be speaking with you throughout the next hour. The purpose of this project is to provide information and resources to women. We’ll start by talking about relationships and different types of conflict. Then I will ask you a few questions about relationships. At the end of this session, we’ll discuss safety planning, support and goals.\r\n
 38	Thinking through your relationship with your partner(s), when conflict or abuse occurs what are some negative consequences that you experience or are concerned about? Please answer the following questions.
 41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all of the following strategies to stay safe.
@@ -4146,6 +4146,7 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 75	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>Now click on the names of people who can give you practical support, like giving you a place to stay, watching your pets, or lending you money.\r\n</p>\r\n</div>
 72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
 33	Now you're going to complete a screening on how safe and comfortable you feel in your relationship with your intimate partner(s). In this next section I will be asking you a number of questions about your relationship(s) with all the partners you have had during the past year, and whether you have had any conflicts with any of them during the past year. 
+84	Let's put some intro copy here.
 \.
 
 
@@ -4214,9 +4215,11 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 131	111	2		26	54
 287	164	2		43	27
 289	166	2		43	29
-291	220	2	2	46	2
 58	53	1	Screening for IPV	16	17
-157	148	1	what to include in the journal:	16	57
+291	220	2		46	2
+292	148	2		45	4
+157	148	3		16	57
+294	148	1		16	84
 198	176	1		26	95
 199	177	1		26	96
 200	178	1		26	97
@@ -4276,7 +4279,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 237	208	1		26	123
 239	210	1		16	71
 245	215	2		26	124
-246	214	1		16	77
 247	145	1	Issues that can trigger conflict in your relationship	26	125
 57	59	1		16	16
 165	153	1		16	64
@@ -4312,7 +4314,8 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 284	58	2		43	24
 286	163	2		43	26
 288	165	2		43	28
-290	219	2	1	46	1
+290	219	2		46	1
+293	148	4		46	3
 \.
 
 
@@ -4418,8 +4421,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 112	000A000L0001000M	4	0	plan part 9	plan-part-9	11
 113	000A000L0001000N	4	0	plan part 10	plan-part-10	11
 114	000A000L0001000O	4	0	plan part 11	plan-part-11	11
-214	000A000M0004	3	0	error message/prompt for no names	error-messageprompt-for-no-names	11
-55	000A000M	2	5	Social Support Map	social-support-map	11
 145	000A000O000E	3	0	issues question	issues-question	11
 146	000A000O000F	3	0	services selection page	services-selection-page	11
 97	000A000K	2	2	Empowerment	empowerment	11
@@ -4431,6 +4432,7 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 99	000A000K0009	3	7	Identifying Reasons to Reduce Relationship Conflict and Improve Safety	reasons-to-reduce-conflict	11
 102	000A000L0001	3	12	Strategies for Saftey During a Violent Incident	during-a-violent-incident	11
 103	000A000L0002	3	11	Safety When Preparing to Leave	preparing-to-leave	11
+55	000A000M	2	4	Social Support Map	social-support-map	11
 \.
 
 
@@ -5431,6 +5433,15 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 754	241	958	11
 755	241	958	12
 756	242	958	
+764	245	960	
+765	244	960	
+767	151	963	
+769	153	965	asd
+771	153	967	asd
+773	154	969	y
+775	155	971	
+776	155	972	asd
+777	210	973	2
 428	242	641	
 431	236	644	
 432	237	644	
@@ -5780,6 +5791,18 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 747	239	957	1
 748	239	957	2
 749	239	957	3
+757	241	959	3
+758	241	959	4
+759	241	959	8
+760	241	959	9
+761	241	959	11
+762	241	959	11
+763	241	959	12
+766	151	962	
+768	151	964	asd
+770	154	966	
+772	154	968	
+774	154	970	y
 \.
 
 
@@ -6077,6 +6100,21 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 956	126	5	2012-01-04 17:51:48.906166-05
 957	125	5	2012-01-05 10:31:53.774634-05
 958	126	5	2012-01-05 10:31:58.918532-05
+959	126	5	2012-01-05 10:44:17.892152-05
+960	128	5	2012-01-05 10:44:26.731715-05
+961	48	120	2012-01-05 11:05:27.869799-05
+962	49	120	2012-01-05 11:05:29.075634-05
+963	49	120	2012-01-05 11:05:30.275789-05
+964	49	120	2012-01-05 11:05:33.591259-05
+965	50	120	2012-01-05 11:05:36.184442-05
+966	51	120	2012-01-05 11:08:12.97415-05
+967	50	120	2012-01-05 11:08:14.540645-05
+968	51	120	2012-01-05 11:08:15.742563-05
+969	51	120	2012-01-05 11:08:20.684526-05
+970	51	120	2012-01-05 11:09:17.552743-05
+971	52	120	2012-01-05 11:09:25.177947-05
+972	52	120	2012-01-05 11:09:29.824645-05
+973	105	120	2012-01-05 11:10:39.794223-05
 327	66	5	2011-12-09 16:16:55.146854-05
 328	67	5	2011-12-09 16:16:55.15371-05
 329	68	5	2011-12-09 16:16:55.160538-05
@@ -6407,7 +6445,7 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 --
 
 COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
-1	5	\N	241
+1	5	648	241
 \.
 
 
@@ -6427,8 +6465,9 @@ COPY servicesblock_serviceprovider (id, issue_id, name, phone, url, address, map
 --
 
 COPY servicesblock_servicesblock (id, description, page_type) FROM stdin;
-1	services drill down 1	page_1
 2	Second drill-down	page_2
+1	services drill down 1	page_1
+3	Services recap	page_2
 \.
 
 
@@ -6479,6 +6518,7 @@ COPY ssnmtreeblock_ssnmtreeblock (id, error_copy, page_type) FROM stdin;
 1		page_1
 3		page_3
 2		page_2
+4		page_3
 \.
 
 
@@ -6552,17 +6592,17 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 14	109	4	asdf
 15	109	5	
 8	13	3	this
+9	13	4	is
+10	13	5	a
 2	5	1	
 1	5	2	
-9	13	4	is
 3	5	3	
-4	5	4	
-10	13	5	a
-5	5	5	
 16	17	1	b
 17	17	2	bob
+4	5	4	
 18	17	3	a
 19	17	4	alice
+5	5	5	
 20	17	5	c
 \.
 
@@ -6579,8 +6619,6 @@ COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtree
 15	17	2
 16	19	2
 17	19	1
-18	1	2
-19	3	2
 \.
 
 
@@ -6620,7 +6658,7 @@ COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM st
 56	344656756	114	62
 57	256789	116	69
 58	4	115	198
-62	357159	120	105
+62	357159	120	111
 \.
 
 

@@ -1,10 +1,36 @@
 {% load smartif %}
 {% load services %}
 
+{%comment %}
+    Take a look at Quiz question 241:
+    
+    http://wings.ccnmtl.columbia.edu/admin/quizblock/question/241/
+
+    The goal of this section is to narrow down the answer.
+    
+    1) getting the participant to answer it as a regular multiple-answer question by checking one
+    or more checkboxes --  this happens on the previous page.
+    
+    2) (this is page_1 below) by picking just one of the previously
+    checked answers as the most important one as a radio button.
+             
+    3) (page_2 below) just show a recap, and also a helpful table of related resources that pertain
+    to the issue the participant selected.
+    
+{%endcomment %}
+           
+
+
 
 {% if block.page_type == 'page_1' %}
+   {%comment %}
+        Show a list of radio buttons corresponding to the answers checked on the previous page:
+   {%endcomment %}
    {%with block.pageblock.id as pageblock_id%}
        {%with '241' as question_id%}
+         {%comment %}
+            See narrow_down.html for the actual radio buttons.
+         {%endcomment %}
          {% narrow_down %}
        {%endwith%}
    {%endwith%}
@@ -12,14 +38,22 @@
 
 
 {% if block.page_type == 'page_2' %}
-        Chosen service:
+        <div class = "chosen_service_title">Chosen issue:</div>
            {%with '241' as question_id%}
-            {% show_narrowed_down_answer %}
+                {%comment %}
+                    This is the answer the participant picked as the most important issue to on the previous page.
+                    See show_narrowed_down_answer.html .
+                {%endcomment %}
+                {% show_narrowed_down_answer %}
            {%endwith%}
-
-        List of service orgs:
-           {%with '241' as question_id%}
-            {% show_related_resources %}
+        <div class = "list_of_services_title">List of service organizations:</div>
+        
+           {%with '241' as question_id%}          
+                {%comment %}
+                    This is the table of related resources, with addresses, phone #'s and maps.
+                    See show_show_related_resources.html .
+                {%endcomment %}
+                {% show_related_resources %}
            {%endwith%}
 {% endif%}
 
