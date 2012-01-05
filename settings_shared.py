@@ -106,7 +106,7 @@ INSTALLED_APPS = (
     'ssnmtreeblock',
     'servicesblock',
     'riskblock',
-    'exitmaterialsblock',
+    'pastquizanswersblock',
     
     'sentry.client',
     'wings_main',
@@ -127,7 +127,7 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'ssnmtreeblock.SsnmTreeBlock',
               'servicesblock.ServicesBlock',
               'riskblock.RiskBlock',
-              'exitmaterialsblock.ExitMaterialsBlock',
+              'pastquizanswersblock.PastQuizAnswersBlock',
               ]
               
 BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block']
