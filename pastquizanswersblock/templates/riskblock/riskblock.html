@@ -1,0 +1,11 @@
+{% load smartif %}
+
+{% load risk_score %}
+
+{% comment %}
+    You can assume block.risk_level is one of 'no_risk', 'some_risk', or 'severe_risk'.
+{% endcomment %}
+<div id="risk_determination" class="{% get_risk_score user%}">
+    {%get_risk_copy block user %}
+</div>
+
