@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 336, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 337, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 217, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 218, true);
 
 
 --
@@ -1673,7 +1673,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 745, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 756, true);
 
 
 --
@@ -1711,7 +1711,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 956, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 958, true);
 
 
 --
@@ -1787,7 +1787,7 @@ ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_na
 -- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 1, false);
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 1, true);
 
 
 --
@@ -1828,7 +1828,7 @@ ALTER SEQUENCE servicesblock_serviceprovider_id_seq OWNED BY servicesblock_servi
 -- Name: servicesblock_serviceprovider_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_serviceprovider_id_seq', 2, true);
+SELECT pg_catalog.setval('servicesblock_serviceprovider_id_seq', 3, true);
 
 
 --
@@ -3550,6 +3550,7 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 215	2012-01-04 10:20:20.876175-05	13	42	62	P357159	1	
 216	2012-01-04 17:55:46.474349-05	5	53	1	ServiceProvider object	1	
 217	2012-01-04 17:56:01.270835-05	5	53	2	ServiceProvider object	1	
+218	2012-01-05 10:30:36.196692-05	5	53	3	ServiceProvider object	1	
 \.
 
 
@@ -5423,6 +5424,13 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 737	235	947	this also works
 739	150	949	twa
 742	186	953	2
+750	241	958	3
+751	241	958	4
+752	241	958	8
+753	241	958	9
+754	241	958	11
+755	241	958	12
+756	242	958	
 428	242	641	
 431	236	644	
 432	237	644	
@@ -5768,6 +5776,10 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 743	185	954	2
 744	241	956	8
 745	241	956	9
+746	240	957	test
+747	239	957	1
+748	239	957	2
+749	239	957	3
 \.
 
 
@@ -6063,6 +6075,8 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 954	81	119	2012-01-04 14:10:42.764583-05
 955	125	5	2012-01-04 17:51:46.027731-05
 956	126	5	2012-01-04 17:51:48.906166-05
+957	125	5	2012-01-05 10:31:53.774634-05
+958	126	5	2012-01-05 10:31:58.918532-05
 327	66	5	2011-12-09 16:16:55.146854-05
 328	67	5	2011-12-09 16:16:55.15371-05
 329	68	5	2011-12-09 16:16:55.160538-05
@@ -6393,6 +6407,7 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 --
 
 COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
+1	5	\N	241
 \.
 
 
@@ -6403,6 +6418,7 @@ COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM
 COPY servicesblock_serviceprovider (id, issue_id, name, phone, url, address, map_image) FROM stdin;
 1	640	job training	123-1234	url	address	
 2	641	housing help	housing help	housing help	housing help	
+3	642	columbia university	646 319 8145	tiur.ccnmtl.columbia.edu	114th street 	images/2011-09-04_19.09.44.jpg
 \.
 
 
