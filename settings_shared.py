@@ -116,6 +116,7 @@ INSTALLED_APPS = (
 )
 
 PAGEBLOCKS = ['pageblocks.TextBlock',
+              'pastquizanswersblock.PastQuizAnswersBlock',
               'pageblocks.HTMLBlock',
               'pageblocks.PullQuoteBlock',
               'pageblocks.ImageBlock',
@@ -126,10 +127,9 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'ssnmtreeblock.SsnmTreeBlock',
               'servicesblock.ServicesBlock',
               'riskblock.RiskBlock',
-              'pastquizanswersblock.PastQuizAnswersBlock',
               ]
               
-BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block']
+BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block' ]
 
 
 if 1 == 0:
