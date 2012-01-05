@@ -56,7 +56,7 @@ ALTER SEQUENCE audioblock_audioblock_id_seq OWNED BY audioblock_audioblock.id;
 -- Name: audioblock_audioblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('audioblock_audioblock_id_seq', 16, true);
+SELECT pg_catalog.setval('audioblock_audioblock_id_seq', 29, true);
 
 
 --
@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 334, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 336, true);
 
 
 --
@@ -204,7 +204,7 @@ ALTER SEQUENCE auth_permission_id_seq OWNED BY auth_permission.id;
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_permission_id_seq', 153, true);
+SELECT pg_catalog.setval('auth_permission_id_seq', 159, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 215, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 217, true);
 
 
 --
@@ -557,7 +557,7 @@ ALTER SEQUENCE django_content_type_id_seq OWNED BY django_content_type.id;
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_content_type_id_seq', 51, true);
+SELECT pg_catalog.setval('django_content_type_id_seq', 53, true);
 
 
 --
@@ -1473,7 +1473,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 276, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 291, true);
 
 
 --
@@ -1673,7 +1673,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 743, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 745, true);
 
 
 --
@@ -1711,7 +1711,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 954, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 956, true);
 
 
 --
@@ -1753,12 +1753,92 @@ SELECT pg_catalog.setval('riskblock_riskblock_id_seq', 1, true);
 
 
 --
+-- Name: servicesblock_narroweddownanswer; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE servicesblock_narroweddownanswer (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    answer_id integer,
+    question_id integer NOT NULL
+);
+
+
+--
+-- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE servicesblock_narroweddownanswer_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_narroweddownanswer.id;
+
+
+--
+-- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 1, false);
+
+
+--
+-- Name: servicesblock_serviceprovider; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE servicesblock_serviceprovider (
+    id integer NOT NULL,
+    issue_id integer,
+    name text,
+    phone text,
+    url text,
+    address text,
+    map_image character varying(100)
+);
+
+
+--
+-- Name: servicesblock_serviceprovider_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE servicesblock_serviceprovider_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: servicesblock_serviceprovider_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE servicesblock_serviceprovider_id_seq OWNED BY servicesblock_serviceprovider.id;
+
+
+--
+-- Name: servicesblock_serviceprovider_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('servicesblock_serviceprovider_id_seq', 2, true);
+
+
+--
 -- Name: servicesblock_servicesblock; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE servicesblock_servicesblock (
     id integer NOT NULL,
-    description text NOT NULL
+    description text NOT NULL,
+    page_type text NOT NULL
 );
 
 
@@ -1785,7 +1865,7 @@ ALTER SEQUENCE servicesblock_servicesblock_id_seq OWNED BY servicesblock_service
 -- Name: servicesblock_servicesblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_servicesblock_id_seq', 1, false);
+SELECT pg_catalog.setval('servicesblock_servicesblock_id_seq', 2, true);
 
 
 --
@@ -1823,7 +1903,7 @@ ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
 -- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('south_migrationhistory_id_seq', 25, true);
+SELECT pg_catalog.setval('south_migrationhistory_id_seq', 31, true);
 
 
 --
@@ -2556,6 +2636,20 @@ ALTER TABLE riskblock_riskblock ALTER COLUMN id SET DEFAULT nextval('riskblock_r
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE servicesblock_narroweddownanswer ALTER COLUMN id SET DEFAULT nextval('servicesblock_narroweddownanswer_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE servicesblock_serviceprovider ALTER COLUMN id SET DEFAULT nextval('servicesblock_serviceprovider_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE servicesblock_servicesblock ALTER COLUMN id SET DEFAULT nextval('servicesblock_servicesblock_id_seq'::regclass);
 
 
@@ -2648,11 +2742,15 @@ ALTER TABLE wings_main_participant ALTER COLUMN id SET DEFAULT nextval('wings_ma
 --
 
 COPY audioblock_audioblock (id, description, audio_file) FROM stdin;
+26		audio_file/2012/01/04/screening_question_3.mp3
 2		audio_file/2012/01/04/intro_relationships.mp3
+27		audio_file/2012/01/04/screening_question_4.mp3
 3		audio_file/2012/01/04/intro_cycle_of_viole.mp3
 4		audio_file/2012/01/04/intro_types_of_confl.mp3
 5		audio_file/2012/01/04/intro_physical_abuse.mp3
+28		audio_file/2012/01/04/screening_question_5.mp3
 6		audio_file/2012/01/04/intro_emotional_abus.mp3
+29		
 7		audio_file/2012/01/04/intro_sexual_abuse.mp3
 8		audio_file/2012/01/04/intro_economic_abuse.mp3
 9		audio_file/2012/01/04/intro_drug_use_and_i.mp3
@@ -2663,6 +2761,14 @@ COPY audioblock_audioblock (id, description, audio_file) FROM stdin;
 14		audio_file/2012/01/04/intro_anger_and_figh.mp3
 15		audio_file/2012/01/04/screening_question_1.mp3
 16		audio_file/2012/01/04/cons_of_relationship.mp3
+18		audio_file/2012/01/04/empowerment_intro.mp3
+20		audio_file/2012/01/04/safety_intro.mp3
+19		audio_file/2012/01/04/strategies_during_a_.mp3
+21		audio_file/2012/01/04/safety_when_preparin.mp3
+22		audio_file/2012/01/04/preparing-to-leave-1.mp3
+23		audio_file/2012/01/04/tree_state_1.mp3
+24		audio_file/2012/01/04/service_referrals.mp3
+25		audio_file/2012/01/04/screening_question_2.mp3
 \.
 
 
@@ -2738,7 +2844,6 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
-319	17	Logged in!
 \.
 
 
@@ -2900,6 +3005,12 @@ COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
 151	Can add SSNM Tree: People	51	add_ssnmtreeperson
 152	Can change SSNM Tree: People	51	change_ssnmtreeperson
 153	Can delete SSNM Tree: People	51	delete_ssnmtreeperson
+154	Can add Services: Narrowed Down Answer	52	add_narroweddownanswer
+155	Can change Services: Narrowed Down Answer	52	change_narroweddownanswer
+156	Can delete Services: Narrowed Down Answer	52	delete_narroweddownanswer
+157	Can add service provider	53	add_serviceprovider
+158	Can change service provider	53	change_serviceprovider
+159	Can delete service provider	53	delete_serviceprovider
 \.
 
 
@@ -2920,15 +3031,15 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	!	t	t	t	2011-09-15 17:58:04.768569-04	2011-06-02 15:22:48.818126-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-04 10:28:00.293291-05	2011-06-02 15:22:04-04
 114	344656756				!	f	t	f	2011-12-16 09:45:05.469537-05	2011-12-15 16:18:49.852391-05
 113	23				!	f	t	f	2011-12-16 10:46:12.342067-05	2011-12-15 13:47:09.128831-05
 120	357159				!	f	t	f	2012-01-04 14:10:09.783263-05	2012-01-04 10:20:25.965136-05
 119	9999999				!	f	t	f	2012-01-04 14:10:30.988562-05	2011-12-21 10:54:47.957444-05
 116	256789				!	f	t	f	2011-12-16 15:31:42.921599-05	2011-12-16 15:31:42.914867-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-04 14:14:32.765553-05	2011-10-11 11:39:54-04
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-04 15:15:20.557888-05	2011-06-02 15:22:04-04
 115	4				!	f	t	f	2011-12-19 14:54:19.89036-05	2011-12-16 14:03:16.430084-05
-17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2011-12-20 14:49:30.979779-05	2011-10-18 11:54:07-04
+17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2012-01-04 16:52:53.947904-05	2011-10-18 11:54:07-04
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-04 16:56:20.879098-05	2011-10-11 11:39:54-04
 117	1444444				!	f	t	f	2011-12-20 14:50:17.731081-05	2011-12-19 16:39:20.655156-05
 109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2011-12-20 14:51:33.875362-05	2011-12-09 15:38:04-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
@@ -3437,6 +3548,8 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 213	2011-12-20 16:19:07.731086-05	5	42	60	P9999999	1	
 214	2011-12-21 10:54:47.640026-05	5	42	61	P9999999	1	
 215	2012-01-04 10:20:20.876175-05	13	42	62	P357159	1	
+216	2012-01-04 17:55:46.474349-05	5	53	1	ServiceProvider object	1	
+217	2012-01-04 17:56:01.270835-05	5	53	2	ServiceProvider object	1	
 \.
 
 
@@ -3496,6 +3609,8 @@ COPY django_content_type (id, name, app_label, model) FROM stdin;
 49	SSNM Tree: Text Box	ssnmtreeblock	ssnmtreebox
 50	ssnm tree support type	ssnmtreeblock	ssnmtreesupporttype
 51	SSNM Tree: People	ssnmtreeblock	ssnmtreeperson
+52	Services: Narrowed Down Answer	servicesblock	narroweddownanswer
+53	service provider	servicesblock	serviceprovider
 \.
 
 
@@ -3634,6 +3749,7 @@ c6c5a48ec9d7b0146953d642e21314d5	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 e22ae6db690e6ea085fb2124d2f00daf	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-11-24 09:28:07.47234-05
 1196f71d0b36f74916e6a005610c1434	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-11-24 09:04:45.758836-05
 8b1183fd835535eb6f824a00cef6dcb2	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-18 10:28:00.303263-05
+ca3c4a0423a7511d8d338fba69d5b5c9	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-18 14:54:18.662032-05
 dbfed5f967b06031e216cfa0109c0cdc	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2011-12-07 11:16:21.381876-05
 5866f5775a2d37c185fef36d4c433ded	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2011-12-19 10:44:19.667359-05
 0fe277b55431848174081011d086356b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigFvdS43ZTRkZGUxMDIzZWQ4NzY1MjQy\nMDRhNGI2ZmMxOTA3ZQ==\n	2011-12-23 16:51:11.715923-05
@@ -3671,9 +3787,10 @@ c5e0e489929f255f54a87edd7a4fc6e1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 08c89b3f7cb17d9d2f68e1e5ee43e465	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-14 21:50:36.720771-05
 59379f9660a5e1bffe0fa7bf500043a5	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-17 21:50:57.570349-05
 cddd7d180082f5b747b26ef5a4bdd343	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 13:44:50.318446-05
+fed4fb31a0ca1b4b31c07cbf96045c16	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-18 15:15:20.569208-05
 f6869d2ee2b0b186f7e702dc96e6284e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2011-12-30 14:08:33.629502-05
 8b77e8b2251bc65317ddcf1548373bf4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigF1dS4zMGFjY2Q1ODIyNmIzM2I3YWZm\nYmRkYTc4MDY3NGRlZg==\n	2012-01-02 16:39:20.677895-05
-6e864d30ad701a6c1eb91c0d5ede9d2f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3d1Ljk5YTIxYjU5M2M5ZjJlNDZkMjg3\nMWI0YWEwOTRmNGRl\n	2012-01-18 14:10:31.014599-05
+efc30f49646e05679209eaef283deab9	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 16:56:20.890851-05
 b3de91fb29878a672d6ef11a3d9df56f	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:05:41.599994-05
 3f4891918036bd3b7d0a0d3a2adf23a5	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:06:08.892632-05
 f01c8cf838c9d8edac4cbd5640bcc527	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-01-03 14:51:33.885721-05
@@ -3995,29 +4112,28 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 48	I will rehearse my escape plan and, as appropriate, practice it with my children.
 57	image of completed social support map\r\n\r\n[/safety-plan/during-a-violent-incident/plan-part-1/]'s Safety Plan\r\n\r\nPart One: Strategies for Safety During a Violent Incident\r\n\r\nIf I decide to leave, I will: [/safety-plan/during-a-violent-incident/plan-part-2/]\r\n\r\nIn order to leave quickly, I can keep my purse, identification, and metro card (or bus/train fare) ready and put them: [/safety-plan/during-a-violent-incident/plan-part-3/]\r\n\r\nI can tell a person that I trust about the violence and request they call the police if they hear suspicious noises coming from my apartment. One person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-4/]\r\n\r\nAnother person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-5/]\r\n\r\nI can teach my children how to use the telephone and dial 911 to contact the police and the fire department. \r\n\r\nI can use a code word with my children or my friends so they can call for help. (CODE WORDS should not evoke suspicion from partner, but should not also be “every day” language that might confuse helping person. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“. Code words for children need to be appropriate for their age. For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”. For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out whether your child can be entrusted with this task)\r\n\r\nMy code word will be: [/safety-plan/during-a-violent-incident/plan-part-7/]\r\n\r\nIf I have to leave my home I will go to: [/safety-plan/during-a-violent-incident/plan-part-8/]\r\n\r\nIf I cannot go to the location above I will go: [/safety-plan/during-a-violent-incident/plan-part-9/]\r\n\r\nI can also teach these strategies to some or all of my children.\r\n\r\nWhen I expect we are going to have an argument, I will try to move to a space that is lowest risk, such as: [/safety-plan/during-a-violent-incident/plan-part-11/]\r\n\r\nI will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.\r\n\r\nPart Two: Preparing to Leave\r\n\r\nSo that I can leave quickly, I will leave money and an extra set of keys with: [/safety-plan/preparing-to-leave/plan-part-1/]\r\n\r\nI will keep copies of important documents (social security cards, birth certificates, shot records – see step 8) or keys at :[/safety-plan/preparing-to-leave/plan-part-2/]\r\n\r\nTo increase my independence, I will open a savings account by: [/safety-plan/preparing-to-leave/plan-part-3/]\r\n\r\nOther things I can do to increase my independence include: [/safety-plan/preparing-to-leave/plan-part-4/]\r\n\r\nCall 311 and ask for the NYC Domestic Violence Hotline (800-621-4673; TDD 866-604-5350) if you need counseling, legal assistance or emergency housing. If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.\r\n\r\nKeep change for phone calls on you at all times. If you use your telephone credit card, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your telephone communications confidential, you must either use coins at a pay phone or get a friend to let you use their telephone credit card for a limited time when you first leave.\r\n\r\nI will check with the following people to see if I can stay with them or borrow money:[/safety-plan/preparing-to-leave/plan-part-7/]\r\n\r\nI can leave extra clothes with:[/safety-plan/preparing-to-leave/plan-part-8/]\r\n\r\nIn order to plan the safest way to leave the residence, I will sit down and review my safety plan every:[/safety-plan/preparing-to-leave/plan-part-9/]\r\n\r\n[safety-plan/preparing-to-leave/plan-part-10/] will help me review my safety plan.\r\n\r\nI will rehearse my escape plan and, as appropriate, practice it with my children.\r\n\r\nAny services viewed in the service referrals activity in this format:\r\n\r\nHigest Level Heading (i.e. 'Drugs and Alcohol)\r\n\r\nNext Level Heading (i.e. Detox)\r\n\r\nServices viewed under this heading\r\n\r\n\r\n
 14	Thank you for taking the time to participate in the WINGS project today. The purpose of this project is to provide information and resources to women. We are particularly interested in how women can stay safe in relationships with intimate partners. Test
-45	A woman may have to leave the residence she shares with her partner, who is out of control. Leaving must be done with a careful plan in order to increase safety.  A violent partner often strikes back if he or she believes that the woman is leaving a relationship.
+49	
 62	Economic abuse occurs when a partner attempts to make a woman financially dependent, takes her money, or forces her to sell drugs.
 61	This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells while others may feel like it's never going to happen again.\r\n\r\n[graphic of Cycle of Violence here]
 37	After considering the different negative ways that relationship conflict may be affecting your life and your family, what are some reasons why it would be important for you to reduce conflict? Please answer the following questions.
 46	Call 311 and ask for the NYC Domestic Violence Hotline (800-621-4673 or 866-604-5350) if you need counseling, legal assistance or emergency housing.  If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.
 16	Most relationships have good times and bad times. Intimate relationships can be an important source of support, love, and purpose in life. Conflict can arise when partners have different needs or expectations or when difficult things happen that are outside of both partners’ control. While all relationships may have positives and negatives, we’d like to spend some time today talking about conflict and abuse, which sometimes occurs in intimate relationships. \r\n\r\nNow we’re going to hear from three women who have experienced conflict and will share some of their experiences.\r\n   
 59	this page holds a video clip from Strength of a woman cut together with some voice over:\r\n\r\nVO: Now we’re going to hear from three women who have experienced conflict and will share some of their experiences.\r\nVIDEO CLIP: “Intros/Stories”\r\nVO: None of these women expected to experience abuse or violence in their relationships. Things started off great, but over time their partners became more controlling\r\n
-38	Thinking through your relationship with your partner(s), when conflict or abuse occurs what are some negative consequences that you experience or are concerned about? Please answer the following questions.
 47	Keep change for phone calls on you at all times. If you use your cell phone, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your calls confidential, you must either use coins at a pay phone or use a calling card for a limited time when you first leave. 
-49	Let's identify the goals you most want to pursue.\r\n
 60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
-41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all of the following strategies to stay safe.
 58	Welcome to Wings!\r\n\r\n[video of Charlene saying the following:]\r\n\r\nThank you for taking the time to participate in the WINGS project today. \r\n\r\nMy name is Charlene and I will be speaking with you throughout the next hour. The purpose of this project is to provide information and resources to women. We’ll start by talking about relationships and different types of conflict. Then I will ask you a few questions about relationships. At the end of this session, we’ll discuss safety planning, support and goals.\r\n
+38	Thinking through your relationship with your partner(s), when conflict or abuse occurs what are some negative consequences that you experience or are concerned about? Please answer the following questions.
+41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all of the following strategies to stay safe.
+45	A woman may have to leave the residence she shares with her partner, who is out of control. Leaving must be done with a careful plan in order to increase safety.  A violent partner often strikes back if he or she believes that the woman is leaving a relationship.
 68	You answered that relationship conflict gives you these feelings and concerns:\r\n\r\n[list of question text from the previous questions numbered 1-12 with 'yes' and 'maybe' answers\r\n\r\nplus\r\n\r\nany text typed into field in question 13]
 70	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies.  You can use some or all the strategies on the following pages to stay safe.
 71	You will be given or mailed a copy of this safety plan.  Do you have a safe place to keep the safety plan at home or with a friend?\r\n\r\nYou will also get a list called 'Items to Remember' that provides a suggested list of things to take with you if you have to leave.  Where can you keep this list?\r\n\r\nDo you have a safe place to keep the 24-hour hotline number and other important numbers?
 77	It looks like you haven't entered any names on the tree. There are times in life when you may feel isolated from all your friends and family, but can you think of any people who you would like to reach out to and connect with?  This may include extended family members you have lost contact with, neighbors, people you work with, clergy, or service providers.  Please try to put at least two names on the tree.
-76	Can you think of two things you can do to strengthen your support from family or friends in the next week?  This may be calling someone who you like to hang out with to get together for coffee or go for walk so that you have a chance to connect with him or her. It may mean calling or a text, email or letter to someone who you have lost touch with but who you would like to reconnect with.  It may mean choosing someone who you trust and respect to talk with about the relationship conflict or abuse that you are experiencing so that you can get their advice or support on how to deal with it.
 78	Now you're going to answer some questions about the types of issues that can trigger conflict for you and your partner.  Then you'll learn about services and organizations that might be able to help you with your particular needs.
 40	If you or a family member or friend is experiencing relationship conflict or abuse by a partner, there are steps you can take to reduce conflict and help to prevent being hurt by a partner. Now we’ll cover two things that can reduce your risk for being hurt by your partner: coming up with a safety plan and identifying friends or family members you can turn to for support.
 64	Sometimes alcohol and drug use make the pattern of violence worse. People who use drugs and alcohol are more likely to commit acts of violence against their partners. Women who are under the influence of drugs or alcohol may be less likely to escape or resist abusive situations. When an intimate partner keeps someone from attending treatment or threatens to hurt them if they use or don’t use drugs, this is a part of abusive behavior.  
 65	Some women who experience violence in relationships may become angry and want to fight back. By fighting back, women may put themselves at risk for receiving criminal charges or going to jail.  Women who experience intense relationship conflict are also more likely to turn to drugs or alcohol to cope with the pain from the abuse. This may also increase their risk for being arrested for drug-related charges.
-72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
+76	Can you think of two things you can do to strengthen your support from family or friends in the next week?  This may be calling someone who you like to hang out with to get together for coffee or go for walk so that you have a chance to connect with him or her. It may mean calling or a text, email or letter to someone who you have lost touch with but who you would like to reconnect with.  It may mean choosing someone who you trust and respect to talk with about the relationship conflict or abuse that you are experiencing so that you can get their advice or support on how to deal with it.
 63	Exposure to violence can also have lasting consequences for children. Kids who see or hear violence often experience grief, fear, and anxiety. Boys who witness violence between their parents are ten times more likely to abuse their partners when they become adults. Girls who witness parental violence are much more likely to be abused by their partners when they grow up. 
 66	[video clips from Strength of a Woman plus VO that says:\r\n\r\nMany women have a hard time talking about the abuse they are experiencing and getting help]
 79	Out of these services, which one is the most important, or addresses your most immediate or life-threatening issues?\r\n\r\n(list of answers from the preceding page are the choices here.  this is a multiple choice/single answer question)
@@ -4027,6 +4143,7 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 80	Here is a list of organizations that provide the service you just selected as the most important to you.  At the end of this session you'll be given or mailed a booklet that includes these as well as other service organizations.\r\n\r\n[header here that is the name of the chosen services on the previous page]\r\n\r\n[list of service organizations for the service chosen on the previous page]
 74	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>Now click on each of the people who can give you emotional support.\r\n</p>\r\n</div>
 75	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>Now click on the names of people who can give you practical support, like giving you a place to stay, watching your pets, or lending you money.\r\n</p>\r\n</div>
+72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
 33	Now you're going to complete a screening on how safe and comfortable you feel in your relationship with your intimate partner(s). In this next section I will be asking you a number of questions about your relationship(s) with all the partners you have had during the past year, and whether you have had any conflicts with any of them during the past year. 
 \.
 
@@ -4060,9 +4177,19 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 271	72	2		43	11
 273	153	2		43	13
 275	161	2		43	15
+283	212	3		43	23
+113	100	1		16	38
 100	99	1		16	37
+127	102	1		16	41
+244	215	1		16	76
+279	102	2		43	19
+135	103	1		16	45
+281	103	2		43	21
 97	97	1		16	35
 133	113	1		26	55
+240	55	1		16	72
+147	57	1		16	49
+248	58	1		16	78
 134	114	1		16	44
 136	115	1		26	56
 137	116	1		26	57
@@ -4074,6 +4201,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 145	125	1		26	63
 146	126	1		16	48
 148	57	2		26	64
+285	162	2		43	25
 122	104	1		26	47
 123	105	1		26	48
 124	106	1		26	49
@@ -4083,6 +4211,9 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 129	110	1		26	52
 130	111	1		26	53
 131	111	2		26	54
+287	164	2		43	27
+289	166	2		43	29
+291	220	2	2	46	2
 58	53	1	Screening for IPV	16	17
 157	148	1	what to include in the journal:	16	57
 198	176	1		26	95
@@ -4098,7 +4229,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 121	56	1	Taking steps to increase relationship safety 	16	40
 69	70	1		16	28
 164	152	1		16	63
-113	100	1	Cons of Relationship Conflict	16	38
 214	190	1		26	108
 183	161	1		26	80
 184	162	1		26	81
@@ -4143,21 +4273,15 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 236	207	1		26	122
 161	62	1		16	60
 237	208	1		26	123
-135	103	1	Safety When Preparing to Leave	16	45
-127	102	1	Strategies for Saftey During a Violent Incident	16	41
 239	210	1		16	71
 245	215	2		26	124
 246	214	1		16	77
-244	215	1	Steps to increase support	16	76
-248	58	1	Service Referrals	16	78
 247	145	1	Issues that can trigger conflict in your relationship	26	125
 57	59	1		16	16
 165	153	1		16	64
 70	72	1		16	29
 140	119	1		16	46
 141	120	1		16	47
-147	57	1	Goal Setting	16	49
-240	55	1	Social Support Tree	16	72
 64	65	1		16	23
 163	151	1		16	62
 166	154	1		16	65
@@ -4181,6 +4305,13 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 272	152	2		43	12
 274	154	2		43	14
 276	100	2		43	16
+278	97	2		43	18
+280	56	2		43	20
+282	55	2		43	22
+284	58	2		43	24
+286	163	2		43	26
+288	165	2		43	28
+290	219	2	1	46	1
 \.
 
 
@@ -4273,7 +4404,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 121	000A000L00020007	4	0	plan part 7	plan-part-7	11
 123	000A000L00020008	4	0	plan part 8	plan-part-8	11
 125	000A000L0002000A	4	0	plan part 10	plan-part-10	11
-103	000A000L0002	3	11	Preparing to Leave	preparing-to-leave	11
 57	000A000N	2	0	Goal Setting	goal-setting	11
 148	000A000P	2	0	exit materials	exit-materials	11
 104	000A000L0001000D	4	0	plan part 1	plan-part-1	11
@@ -4287,7 +4417,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 112	000A000L0001000M	4	0	plan part 9	plan-part-9	11
 113	000A000L0001000N	4	0	plan part 10	plan-part-10	11
 114	000A000L0001000O	4	0	plan part 11	plan-part-11	11
-102	000A000L0001	3	12	During a Violent Incident	during-a-violent-incident	11
 214	000A000M0004	3	0	error message/prompt for no names	error-messageprompt-for-no-names	11
 55	000A000M	2	5	Social Support Map	social-support-map	11
 145	000A000O000E	3	0	issues question	issues-question	11
@@ -4299,6 +4428,8 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 211	000A000M0001	3	0	Social Support Map: People	map-screen-1	11
 76	000A000J0001	3	26	Relationship Satisfaction	relationship-satisfaction	11
 99	000A000K0009	3	7	Identifying Reasons to Reduce Relationship Conflict and Improve Safety	reasons-to-reduce-conflict	11
+102	000A000L0001	3	12	Strategies for Saftey During a Violent Incident	during-a-violent-incident	11
+103	000A000L0002	3	11	Safety When Preparing to Leave	preparing-to-leave	11
 \.
 
 
@@ -5635,6 +5766,8 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 740	148	950	my name
 741	187	952	2
 743	185	954	2
+744	241	956	8
+745	241	956	9
 \.
 
 
@@ -5928,6 +6061,8 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 952	83	119	2012-01-04 14:10:37.848093-05
 953	82	119	2012-01-04 14:10:40.24641-05
 954	81	119	2012-01-04 14:10:42.764583-05
+955	125	5	2012-01-04 17:51:46.027731-05
+956	126	5	2012-01-04 17:51:48.906166-05
 327	66	5	2011-12-09 16:16:55.146854-05
 328	67	5	2011-12-09 16:16:55.15371-05
 329	68	5	2011-12-09 16:16:55.160538-05
@@ -6254,10 +6389,30 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 
 
 --
+-- Data for Name: servicesblock_narroweddownanswer; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: servicesblock_serviceprovider; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY servicesblock_serviceprovider (id, issue_id, name, phone, url, address, map_image) FROM stdin;
+1	640	job training	123-1234	url	address	
+2	641	housing help	housing help	housing help	housing help	
+\.
+
+
+--
 -- Data for Name: servicesblock_servicesblock; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY servicesblock_servicesblock (id, description) FROM stdin;
+COPY servicesblock_servicesblock (id, description, page_type) FROM stdin;
+1	services drill down 1	page_1
+2	Second drill-down	page_2
 \.
 
 
@@ -6291,6 +6446,12 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 23	ssnmtreeblock	0006_auto__add_field_ssnmtreebox_label	2011-12-14 23:30:42.039349-05
 24	ssnmtreeblock	0007_auto__add_unique_ssnmtreebox_label__add_unique_ssnmtreesupporttype_lab	2011-12-14 23:30:42.096431-05
 25	ssnmtreeblock	0008_auto	2011-12-14 23:30:42.172831-05
+26	servicesblock	0002_auto__add_narroweddownanswer	2012-01-04 20:04:47.632814-05
+27	servicesblock	0003_auto__add_field_narroweddownanswer_question	2012-01-04 20:04:47.680861-05
+28	servicesblock	0004_auto__chg_field_narroweddownanswer_answer	2012-01-04 20:04:47.787099-05
+29	servicesblock	0005_auto__add_serviceprovider	2012-01-04 22:50:55.284746-05
+30	servicesblock	0006_auto__chg_field_serviceprovider_map_image	2012-01-04 22:50:55.339044-05
+31	servicesblock	0007_auto__add_field_servicesblock_page_type	2012-01-04 22:50:55.394861-05
 \.
 
 
@@ -6888,6 +7049,22 @@ ALTER TABLE ONLY riskblock_riskblock
 
 
 --
+-- Name: servicesblock_narroweddownanswer_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY servicesblock_narroweddownanswer
+    ADD CONSTRAINT servicesblock_narroweddownanswer_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: servicesblock_serviceprovider_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY servicesblock_serviceprovider
+    ADD CONSTRAINT servicesblock_serviceprovider_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: servicesblock_servicesblock_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -7386,6 +7563,34 @@ CREATE INDEX quizblock_submission_user_id ON quizblock_submission USING btree (u
 
 
 --
+-- Name: servicesblock_narroweddownanswer_answer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX servicesblock_narroweddownanswer_answer_id ON servicesblock_narroweddownanswer USING btree (answer_id);
+
+
+--
+-- Name: servicesblock_narroweddownanswer_question_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX servicesblock_narroweddownanswer_question_id ON servicesblock_narroweddownanswer USING btree (question_id);
+
+
+--
+-- Name: servicesblock_narroweddownanswer_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX servicesblock_narroweddownanswer_user_id ON servicesblock_narroweddownanswer USING btree (user_id);
+
+
+--
+-- Name: servicesblock_serviceprovider_issue_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX servicesblock_serviceprovider_issue_id ON servicesblock_serviceprovider USING btree (issue_id);
+
+
+--
 -- Name: ssnmtreeblock_ssnmtreeblock_boxes_ssnmtreeblock_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -7488,6 +7693,14 @@ CREATE INDEX wings_main_participant_current_section_id ON wings_main_participant
 --
 
 CREATE INDEX wings_main_participant_user_id ON wings_main_participant USING btree (user_id);
+
+
+--
+-- Name: answer_id_refs_id_1ff19272f276894c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY servicesblock_narroweddownanswer
+    ADD CONSTRAINT answer_id_refs_id_1ff19272f276894c FOREIGN KEY (answer_id) REFERENCES quizblock_answer(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -7651,6 +7864,14 @@ ALTER TABLE ONLY auth_group_permissions
 
 
 --
+-- Name: issue_id_refs_id_331b37a41cee64cd; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY servicesblock_serviceprovider
+    ADD CONSTRAINT issue_id_refs_id_331b37a41cee64cd FOREIGN KEY (issue_id) REFERENCES quizblock_answer(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: main_standavailablepageblock_stand_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7720,6 +7941,14 @@ ALTER TABLE ONLY pagetree_pageblock
 
 ALTER TABLE ONLY pagetree_section
     ADD CONSTRAINT pagetree_section_hierarchy_id_fkey FOREIGN KEY (hierarchy_id) REFERENCES pagetree_hierarchy(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: question_id_refs_id_11e9e3519cf31efc; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY servicesblock_narroweddownanswer
+    ADD CONSTRAINT question_id_refs_id_11e9e3519cf31efc FOREIGN KEY (question_id) REFERENCES quizblock_question(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -7864,6 +8093,14 @@ ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson
 
 ALTER TABLE ONLY ssnmtreeblock_ssnmtreeperson
     ADD CONSTRAINT user_id_refs_id_493cdd86ee08451f FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: user_id_refs_id_72646c863a48d3a6; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY servicesblock_narroweddownanswer
+    ADD CONSTRAINT user_id_refs_id_72646c863a48d3a6 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --

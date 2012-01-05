@@ -74,7 +74,9 @@ class ServicesBlock(models.Model):
                 qid_str = q.split ('_')[-1]
                 the_question = Question.objects.get (id=qid_str)
                 the_answer   =   Answer.objects.get (id=a_id)
+                print "aaa"
                 narrowed_down_answer, created = NarrowedDownAnswer.objects.get_or_create(question=the_question, user=user)
+                print "bbb"
                 narrowed_down_answer.answer = the_answer
                 narrowed_down_answer.save()
         
