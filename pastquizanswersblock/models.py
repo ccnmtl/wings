@@ -14,9 +14,9 @@ class PastQuizAnswersBlock(models.Model):
     description = models.TextField(blank=True)
     copy = models.TextField(blank=True)
     
-    template_file =     "pastquizanswers/pastquizanswers.html"
-    js_template_file =  "pastquizanswers/pastquizanswers_js.html"
-    css_template_file = "pastquizanswers/pastquizanswers_css.html"
+    template_file =     "pastquizanswersblock/pastquizanswersblock.html"
+    js_template_file =  "pastquizanswersblock/pastquizanswersblock_js.html"
+    css_template_file = "pastquizanswersblock/pastquizanswersblock_css.html"
 
     display_name = "Past Quiz Answers Block"
 
