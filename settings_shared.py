@@ -106,9 +106,8 @@ INSTALLED_APPS = (
     'ssnmtreeblock',
     'servicesblock',
     'riskblock',
-#    'pastquizanswersblock',
-    
-    'sentry.client',
+#   'pastquizanswersblock',    
+#   'sentry.client',
     'wings_main',
     #paging apparently required by south
     'paging',
@@ -127,13 +126,13 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'ssnmtreeblock.SsnmTreeBlock',
               'servicesblock.ServicesBlock',
               'riskblock.RiskBlock',
- #             'pastquizanswersblock.PastQuizAnswersBlock',
+#             'pastquizanswersblock.PastQuizAnswersBlock',
               ]
               
 BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block' ]
 
 
-if 1 == 1:
+if 1 == 0:
     import logging
     logger = logging.getLogger()
     from sentry.client.handlers import SentryHandler
