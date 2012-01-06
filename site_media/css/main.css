@@ -1157,3 +1157,15 @@ ul.messages {
     display: block;
     list-style: none;
 }
+
+a.bigbutton {
+
+        background-color: #391c4d;
+        color: #fff;
+        padding: 0 15px 5px;
+        width: 210px;
+        margin: 10px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+}
