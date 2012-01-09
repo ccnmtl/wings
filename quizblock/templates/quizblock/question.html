@@ -11,6 +11,9 @@
   <div class="casecontent">
     <div class="casequestion">
       {{question.text|markdown}}
+
+<div> [[[{{question.id}}]]]
+</div>
       {% if question.answerable %}
                     {% if block.rhetorical %}
                         <form id="form-{{question.id}}" method="post">
