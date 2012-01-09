@@ -1,13 +1,10 @@
 from django import template
+from django.utils.html import escape
 from quizblock.models import Question, Response, Submission
 from servicesblock.models import NarrowedDownAnswer, ServiceProvider
 import re
-
 register = template.Library()
 
-
-
-#'is_long_text', 'is_multiple_choice', 'is_short_text', 'is_single_choice', 'is_single_choice_dropdown'
 
 def to_text (response):
     if response.question.is_short_text():
@@ -18,7 +15,7 @@ def to_text (response):
 	return "Multiple choice question: not implemented."
     if response.question.is_single_choice() or  response.question.is_single_choice_dropdown():
 	answer_set = response.question.answer_set.all()
-	if answer_set:
+	if answer_set:		
 	    return dict((r.value, r.label) for r in answer_set)[response.value]
 	else:
 	    return 'No answer'
@@ -36,7 +33,7 @@ def interpolate_previous_answers(user, block):
         submission = sub[0]
         res = Response.objects.filter(question=que,submission=submission)
         if res.count() > 0:
-            return to_text(res[0])
+            return escape(to_text(res[0]))
         else:
             return 'No answer'
 
