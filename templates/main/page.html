@@ -6,14 +6,13 @@
 {% renderjs block %}
 {% endfor %}
 
+{%if request.user.part %}
+     {% if request.user.part.current_section == section %}
+         <script src="/site_media/js/delay_next.js" type="text/javascript" ></script> 
+     {%endif %}
+{%endif %}
 
 {% if needs_submit %}
-    {%if request.user.part %}
-         {% if request.user.part.current_section == section %}
-             <script src="/site_media/js/delay_next.js" type="text/javascript" ></script> 
-         {%endif %}
-     {%endif %}
-     
 <script language = "javascript">
     function submit_and_next() {
         jQuery ('#destination')[0].value = 'next';
