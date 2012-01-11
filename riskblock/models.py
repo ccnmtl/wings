@@ -6,13 +6,52 @@ from django import forms
 from django.conf import settings
 from quizblock.models import *
 import os, json
-import random
 
+severe_risk_answers = [515, 517, 523, 538, 539, 540, 552, 553, 554, 555]
+
+some_risk_answers = [ 499, 501, 503, 505, 507, 509, 519, 521,  532, 533, 534, 535,  542, 543, 544, 545,  547, 548, 549, 550, 557, 558, 559, 560, 562, 563, 564, 565,  567, 568, 569, 570 ]
+
+def list_answers (answers):
+    for answer in Answer.objects.filter(id__in=answers):
+        print "   (%d) %s:(%d) %s " %  (answer.question.id, answer.question.text, answer.id, answer.label )
+        
+    
+def document ():
+    for label, answers in [('severe', severe_risk_answers), ('some', some_risk_answers)]:
+        print ''
+        print ''
+        print ''
+        print label
+        list_answers (answers)
+
+def user_chose_any_of (user, answers):
+    for answer in Answer.objects.filter(id__in=answers):
+        if answer.question.is_single_choice():
+            que = answer.question
+            quiz = que.quiz
+            sub = Submission.objects.filter(quiz=quiz,user=user).order_by("-submitted")
+            if sub.count() > 0: #user answered this question.
+                res = Response.objects.filter(question=que,submission=sub[0])
+                if res.count() > 0:
+                    if res[0].value == answer.value:
+                        return True
+    return False    
 
 def risk_score (user):
-    return random.choice (['no_risk', 'some_risk', 'severe_risk'])
+    """Here is the score recipe. It is not a matter of adding up answers to reach a threshold, rather it is a list of indicators. Any high risk indicator trumps a 'some' risk indicator. You only need one indicator to fall into a some or high risk category. The indicators are as follows:
+       
+       
+        
+    No risk: none of the above indicators"""
+    if user_chose_any_of (user, severe_risk_answers):
+        return 'severe_risk'
+    if user_chose_any_of (user, some_risk_answers):
+        return 'some_risk'
+    return 'no_risk'
+    
 
 def risk_copy (block, user):
+    document()
     tmp = risk_score (user)
     if   tmp ==  'no_risk':
         return block.no_risk_copy
@@ -20,6 +59,7 @@ def risk_copy (block, user):
         return block.some_risk_copy
     elif tmp ==  'severe_risk':
         return block.severe_risk_copy
+        
 
 class RiskBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
