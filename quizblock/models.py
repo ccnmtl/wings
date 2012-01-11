@@ -59,7 +59,7 @@ class Quiz(models.Model):
             #print question.id
             #print question.answer_set.all()
             #print question.user_responses(user)
-            if question.is_short_text() == True:
+            if question.is_short_text() == True or question.is_long_text() == True:
                 #print "short_text"
                 #print question
                 if len (question.user_responses(user)) == 0:

@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 838, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 841, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 1008, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 1010, true);
 
 
 --
@@ -4038,10 +4038,10 @@ COPY pageblocks_htmlblock (id, html) FROM stdin;
 26	<p>In this case, the Dentist may want to engage a Hospital Social Worker to help the couple to both resolve the dispute and allow the case to be completed, and help them understand the importance of continued dental care for their daughter’s health and well-being.</p>
 27	<p>The emergency room in city xx calls you one evening to take care of an emergency on a Saturday evening.  The patient at the ER, 16-year old Natasha, is complaining of pain in her right lower jaw.  On clinical examination, there is an abscess at the mesio-bucco-cervical aspect of #30, a large mesio-occlusal amalgam that looks like it may be fractured, and on quick examination, you notice a number of other teeth that need restoration.  Natasha explains that the filling on #30 broke while she was at the movies with her friend Johnson, eating popcorn.  She thought nothing of it at the time, but there was a throbbing pain the next day, and now she is in a lot of pain, has a bad taste in her mouth and cannot drink her cold Coca-Cola and is having difficulty opening her mouth completely.  You decide that the best course of treatment would be to drain the abscess, prescribe pain killers and antibiotics and ask Natasha to see her dentist the following week to have her amalgam redone and also take care of the other carious teeth.</p>\r\n\r\n<p>You ask to meet Natasha’s parents for consent for treatment, and are told that she is under the legal care of her grandmother, Joyce, because her mother passed away two years ago and her father is incarcerated. Joyce, a lovely woman tells you that Natasha does not have a dentist because the family has no dental insurance, they cannot find a dentist close to home and school and there is nobody to watch the baby she is holding.  While Joyce is a young grandmother, you are convinced that she cannot be the mother of a child that looks to be no more than 24 months old.    As Joyce is telling you the rest of Natasha’s social history, baby, Joe begins to cry and Joyce pulls out a bottle filled with a pink liquid which quiets him immediately.  On enquiring, Joyce tells you that the pink stuff is “Yuhoo strawberry milk” which she thinks is a healthy choice for the baby since it combines milk and strawberries.  Natasha tells Joyce that she does not want Joe drinking Yahoo, but plain milk as Yahoo has sugar which is not good for him.  As you listen to them, you quickly realize that Joe is Natasha’s son and Joyce’s great-grandson.  You also notice that Joe has what looks like Early Childhood Caries.  You ask if Joe has a dentist and Natasha says that there is no need for him to see a dentist as he has not lost his “baby’ teeth yet.</p>\r\n\r\n<p>Joyce signs consent for Natasha’s treatment and you are able to get her out of immediate pain. Since Natasha has no dentist of record, you ask if she would come to your office.  Joyce asks if there is a bus line by the office, if you open on Saturday and what the charges will be.  You aren’t sure about the bus line but ask if the family has Medicaid (whatever the name is in City/State X).  Joyce indicates that they have Medicaid but no dental insurance.</p>
 28	<div class="tree-instructions">\r\n<h3>Instructions</h3>\r\n<p>\r\nwrite the names of one to five people you trust onto the birds on this tree.\r\n</p>\r\n</div>
-29	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_intro.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_intro.jpg&protection=61cdb29236f80e3adf039185883ede5d93619692" />\r\n
-30	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_intro_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_intro_stories.jpg&protection=5096ae1f9761051284497ef50a506e5e30926f07" />
-31	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_hearing_other_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_hearing_other_stories.jpg&protection=b95a7cb4c12126cc6d355ae0d0c36231e5e6d204" />\r\n
-32	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_proud_of_what_i_am_now.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_proud_of_what_i_am_now.jpg&protection=d5ee5608050004ea8d07ebc153fc26f5856da89f" />\r\n
+29	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_intro.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_intro.jpg&protection=61cdb29236f80e3adf039185883ede5d93619692" ></iframe>\r\n
+30	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_intro_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_intro_stories.jpg&protection=5096ae1f9761051284497ef50a506e5e30926f07" ></iframe>
+31	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_hearing_other_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_hearing_other_stories.jpg&protection=b95a7cb4c12126cc6d355ae0d0c36231e5e6d204" ></iframe>\r\n
+32	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_proud_of_what_i_am_now.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_proud_of_what_i_am_now.jpg&protection=d5ee5608050004ea8d07ebc153fc26f5856da89f" ></iframe>\r\n
 \.
 
 
@@ -4178,6 +4178,8 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 262	59	2		43	2
 263	150	2		43	3
 309	201	1		54	1
+295	52	1		17	29
+296	149	1		17	30
 271	72	2		43	11
 273	153	2		43	13
 275	161	2		43	15
@@ -4217,7 +4219,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 131	111	2		26	54
 287	164	2		43	27
 289	166	2		43	29
-296	149	1		17	30
 230	63	1		19	10
 247	145	1		26	125
 292	148	2		45	4
@@ -4231,14 +4232,13 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 58	53	1		16	17
 162	150	1		16	61
 211	187	1		26	105
+298	221	1		17	32
 212	188	1		26	106
 213	189	1		26	107
 121	56	1	Taking steps to increase relationship safety 	16	40
 69	70	1		16	28
 164	152	1		16	63
 214	190	1		26	108
-295	52	1		17	29
-298	221	1		17	32
 147	57	1		16	49
 303	223	1		16	88
 79	76	1		16	33
@@ -4314,7 +4314,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 290	219	2		46	1
 293	148	4		46	3
 257	147	1		26	128
-297	155	1		17	31
 255	219	1		16	79
 256	220	1		16	80
 249	146	1		26	126
@@ -4322,6 +4321,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 266	74	2		43	6
 268	151	2		43	8
 306	224	1		43	31
+297	155	1		17	31
 \.
 
 
@@ -5875,6 +5875,9 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 836	241	1008	1
 837	241	1008	2
 838	241	1008	3
+839	236	1009	
+840	237	1009	
+841	168	1010	
 \.
 
 
@@ -6527,6 +6530,8 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1006	125	17	2012-01-09 21:53:54.186003-05
 1007	125	13	2012-01-10 17:11:46.075492-05
 1008	126	13	2012-01-10 17:11:53.911404-05
+1009	124	5	2012-01-11 13:37:54.442726-05
+1010	64	5	2012-01-11 13:37:57.555469-05
 \.
 
 
@@ -6702,12 +6707,12 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 2	5	1	
 1	5	2	
 3	5	3	
+4	5	4	
+5	5	5	
 16	17	1	b
 17	17	2	bob
-4	5	4	
 18	17	3	a
 19	17	4	alice
-5	5	5	
 20	17	5	c
 \.
 
