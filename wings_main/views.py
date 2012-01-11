@@ -61,11 +61,15 @@ if True:
             def decoration_info(section):
                 """Generate some info that the section can use to decorate itself."""
                 the_rank = section_rank (section)
-                return {
+                result = {
                     'rank'  :           the_rank,
                     'image' :           pick_decoration_image    (the_rank),
                     'decoration_side' : pick_decoration_side (the_rank)
                 }
+                if not whether_to_show_decorations (section):
+                    result ['decoration_side'] = '';
+                return result
+                
                 
             def whether_to_show_decorations (section):
                 """ Our decorations are annoying and/or counterproductive on some pages.
