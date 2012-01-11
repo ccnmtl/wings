@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     ('^login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
     ('^logout/$', redirect_to, {'url': '/admin/logout/'}), 
     
-    #summary of all pages 
+    #shortcut to first page 
     ('^first/$', 'wings_main.views.first'),
 
 

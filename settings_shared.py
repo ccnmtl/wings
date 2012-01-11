@@ -106,10 +106,10 @@ INSTALLED_APPS = (
     'ssnmtreeblock',
     'servicesblock',
     'riskblock',
-#   'pastquizanswersblock',    
-#   'sentry.client',
+    'pastquizanswersblock',
+    #kill sentry
+    #'sentry.client',
     'wings_main',
-    #paging apparently required by south
     'paging',
     'indexer',
     'south',
@@ -126,10 +126,11 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'ssnmtreeblock.SsnmTreeBlock',
               'servicesblock.ServicesBlock',
               'riskblock.RiskBlock',
-#             'pastquizanswersblock.PastQuizAnswersBlock',
+              'pastquizanswersblock.PastQuizAnswersBlock',
               ]
               
-BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block' ]
+              
+BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block', 'Past Quiz Answers Block']
 
 
 if 1 == 0:

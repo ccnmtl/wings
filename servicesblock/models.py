@@ -20,8 +20,8 @@ class ServicesBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
     description = models.TextField(blank=True)
     
-    template_file = "servicesblock/servicesblock.html"
-    js_template_file = "servicesblock/servicesblock_js.html"
+    template_file =     "servicesblock/servicesblock.html"
+    js_template_file =  "servicesblock/servicesblock_js.html"
     css_template_file = "servicesblock/servicesblock_css.html"
     
     page_type =  models.TextField( choices=SERVICES_PAGE_TYPE_CHOICES, default='page_1') 
@@ -39,14 +39,13 @@ class ServicesBlock(models.Model):
 
     def edit_form(self):
         class EditForm(forms.Form):
-            description = forms.CharField(initial=self.description,
-                                          widget=forms.widgets.Textarea())
-            page_type = forms.ChoiceField(required=True, initial=self.page_type, widget=RadioSelect, choices=SERVICES_PAGE_TYPE_CHOICES)
+            description = forms.CharField(initial=self.description, widget=forms.widgets.Textarea())
+            page_type   = forms.ChoiceField(required=True, initial=self.page_type, widget=RadioSelect, choices=SERVICES_PAGE_TYPE_CHOICES)
         return EditForm()
 
     def edit(self,vals,files=None):
         self.description = vals.get('description','')
-        self.page_type = vals.get('page_type','')
+        self.page_type =   vals.get('page_type','')
         self.save()
         
 
@@ -57,7 +56,7 @@ class ServicesBlock(models.Model):
     def add_form(self):
         class AddForm(forms.Form):
             description = forms.CharField(widget=forms.widgets.Textarea())
-            page_type = forms.ChoiceField(required=True, initial=self.page_type, widget=RadioSelect, choices=SERVICES_PAGE_TYPE_CHOICES)
+            page_type =   forms.ChoiceField(required=True, initial=self.page_type, widget=RadioSelect, choices=SERVICES_PAGE_TYPE_CHOICES)
         return AddForm()
 
     @classmethod

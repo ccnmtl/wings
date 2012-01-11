@@ -1,7 +1,6 @@
-{% load markup %}
 {% load smartif %}
+{% load pastquizanswers %}
 
-
-<div id="{{block.id}}-audio">
-Description: {{block.description|markdown}}
+<div>
+    {%interpolate_previous_answers user block%}
 </div>

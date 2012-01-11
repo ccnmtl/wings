@@ -177,7 +177,7 @@ def edit_page(request,path):
     can_admin = request.stand.can_admin(request.user)
     root = section.hierarchy.get_root()
     module = get_module(section)
-
+    print request.stand.available_pageblocks()
     return dict(section=section,
                 module=get_module(section),
                 modules=root.get_children(),
