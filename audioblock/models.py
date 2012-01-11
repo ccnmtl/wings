@@ -73,7 +73,7 @@ class AudioBlock(models.Model):
 
     def save_audio_file(self,f):
         ext = f.name.split(".")[-1].lower()
-        basename = slugify(f.name.split(".")[-2].lower())[:20]
+        basename = slugify(f.name.split(".")[-2].lower())[:40]
         if ext not in ['mp3']:
             # unsupported image format
             return None

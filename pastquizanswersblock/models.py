@@ -14,7 +14,6 @@ class PastQuizAnswersBlock(models.Model):
     description = models.TextField(blank=True)
     copy = models.TextField(blank=True)
     
-
     template_file =     "pastquizanswersblock/pastquizanswersblock.html"
     js_template_file =  "pastquizanswersblock/pastquizanswersblock_js.html"
     css_template_file = "pastquizanswersblock/pastquizanswersblock_css.html"
@@ -45,9 +44,7 @@ class PastQuizAnswersBlock(models.Model):
     def add_form(self):
         class AddForm(forms.Form):
             description = forms.CharField(widget=forms.widgets.Textarea())
-
             copy = forms.CharField(widget=forms.widgets.Textarea())
-
         return AddForm()
 
     @classmethod
@@ -64,4 +61,4 @@ class PastQuizAnswersBlock(models.Model):
         return True
 
     def unlocked(self,user):
-        return False
+        return True
