@@ -51,7 +51,7 @@ def risk_score (user):
     
 
 def risk_copy (block, user):
-    document()
+    #document()
     tmp = risk_score (user)
     if   tmp ==  'no_risk':
         return block.no_risk_copy
