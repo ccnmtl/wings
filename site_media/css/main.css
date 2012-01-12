@@ -684,14 +684,21 @@ div.cases
 
 
 input[type="text"] {
-   width: 324px;
+   width: 688px;
 	font-size: 1.5em;
     height: 40px;
+    font-family: "arial", sans-serif;
+    padding: 5px;
+}
+
+.image_on_left input[type="text"],
+.image_on_right input[type="text"] {
+  width: 361px;
 }
 
 textarea {
     width: 688px;
-	font-size: 2em;
+	font-size: 1.5em;
     height: 80px;
     font-family: "arial", sans-serif;
     padding: 5px;
@@ -703,7 +710,7 @@ textarea {
 }
 
 input[type="submit"] {
-	font-size: 1.2em;
+	font-size: 1.5em;
     height: 35px;
 }
 
