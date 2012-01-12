@@ -1189,7 +1189,9 @@ a.bigbutton {
 
 ul.answer_summary {
 
-    margin-bottom: 2.5em;
+    margin: 0em 0 0 1em;
+    width: 330px;
+    float: left;
 }
 
 ul.answer_summary h5 {
