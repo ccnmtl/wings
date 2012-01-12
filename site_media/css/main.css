@@ -763,7 +763,7 @@ div#tabber [type="submit"] {
 
 .cases li
 {
-	margin: 2px 0 5px;
+	margin: 2px 0 10px;
 }
 
 .casesanswerdisplay
@@ -1191,6 +1191,12 @@ a.bigbutton {
 .video {
 
     text-align: center;
+
+}
+
+.video a.bigbutton {
+    font-size: 200%;
+    padding: 10px 20px;
 
 }
 
