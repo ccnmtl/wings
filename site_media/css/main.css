@@ -690,9 +690,16 @@ input[type="text"] {
 }
 
 textarea {
-  width: 324px;
+    width: 688px;
 	font-size: 2em;
     height: 80px;
+    font-family: "arial", sans-serif;
+    padding: 5px;
+}
+
+.image_on_left textarea,
+.image_on_right textarea {
+    width: 361px;
 }
 
 input[type="submit"] {
@@ -926,10 +933,6 @@ body#poctools a#poctools
     border: #999 solid 1px;
     margin: 1em;
 }
-
-textarea {width: 100%;}
-
-
 
 .dragging { background-color: #fed;}
 
