@@ -81,7 +81,7 @@ class ServicesBlock(models.Model):
         return True
 
     def unlocked(self,user):
-        return False
+        return True
 
 class NarrowedDownAnswer (models.Model):
     """This is to record which of a multiple-choice, multiple-answer question (i.e. checkboxes) a user chose as the most important one."""
