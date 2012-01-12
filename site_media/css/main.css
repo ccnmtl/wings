@@ -1194,6 +1194,12 @@ a.bigbutton {
 
 }
 
+.video a.bigbutton {
+    font-size: 200%;
+    padding: 10px 20px;
+
+}
+
 ul.answer_summary {
 
     margin: 0em 0 0 1em;
