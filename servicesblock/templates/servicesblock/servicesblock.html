@@ -38,16 +38,14 @@
 
 
 {% if block.page_type == 'page_2' %}
-        <div class = "chosen_service_title">Chosen resource:</div>
            {%with '241' as question_id%}
                 {%comment %}
                     This is the answer the participant picked as the most important issue to on the previous page.
                     See show_narrowed_down_answer.html .
                 {%endcomment %}
-                {% show_narrowed_down_answer %}
+        <h4><div class = "chosen_service_title">Resources for: {% show_narrowed_down_answer %}</div></h4>
            {%endwith%}
-        <div class = "list_of_services_title">List of service organizations:</div>
-        
+<!--list starts here-->
            {%with '241' as question_id%}          
                 {%comment %}
                     This is the table of related resources, with addresses, phone #'s and maps.
