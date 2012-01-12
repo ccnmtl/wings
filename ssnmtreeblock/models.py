@@ -107,6 +107,9 @@ class SsnmTreeBlock(models.Model):
         else:
             return False
 
+    def unlocked_error_message (self, user):
+        return self.error_copy
+        
     class Meta:
         verbose_name = 'SSNM Tree Block'
         verbose_name_plural = 'SSNM Tree Blocks'
