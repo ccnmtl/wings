@@ -1186,3 +1186,28 @@ a.bigbutton {
     text-align: center;
 
 }
+
+ul.answer_summary {
+
+    margin-bottom: 2.5em;
+}
+
+ul.answer_summary h5 {
+
+    margin-bottom: 1.5em;
+}
+
+ul.answer_summary li {
+
+    margin: 0 0 0 25px;
+}
+
+ul.answer_summary li div.past_question_answer_div {
+
+    display: none;
+}
+
+ul.answer_summary li div.past_question_answer_div.user_added {
+    display: block;
+
+}
