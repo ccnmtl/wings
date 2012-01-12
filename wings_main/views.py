@@ -97,7 +97,7 @@ if True:
                     return True
                 else:
                     #this is a participant. log their visit and double-check they can see the page:
-                    participant_can_navigate_to_page = user_participant.log_visit (section)
+                    participant_can_navigate_to_page = user_participant.log_visit (section, request)
                     if participant_can_navigate_to_page:
                         return True
                     else:

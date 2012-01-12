@@ -6,6 +6,7 @@ from pagetree.models import Section, Hierarchy, PageBlock
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, HttpRequest
+from django.contrib import messages
 
 def section_rank (section):
     return [s for s in section.get_tree()].index(section)
@@ -33,16 +34,21 @@ class Participant(models.Model):
     def current_url ( self):
         return self.current_section.get_absolute_url()
 
-    def all_unlocked (self, section):
+    def all_unlocked (self, section, request):
         """for Wings, don't allow participant users to go forward until every block on the current page says they're done."""
         user = self.user
         for p in section.pageblock_set.all():
            if hasattr(p.block(),'unlocked'):
                  if p.block().unlocked(user) == False:
-                     return False
+                    #give the block a chance to add an error message to display to the user:
+                    if hasattr(p.block(),'unlocked_error_message'):
+                        the_message = p.block().unlocked_error_message(user)
+                        if the_message:
+                            messages.warning(request, the_message)
+                    return False
         return True
 
-    def log_visit (self, new_section):
+    def log_visit (self, new_section, request):#TODO pass in the request
         """" return true if it's ok for a participant to see this page.
         set the current section, also,         """
         
@@ -62,7 +68,7 @@ class Participant(models.Model):
             return True
         if old_current_section.get_next() == new_section:
             #print "old.next = new" 
-            if not self.all_unlocked (old_current_section):
+            if not self.all_unlocked (old_current_section, request): #TODO pass in the request
                 return False #finish all the work on the old page before you move to this page.
             self.current_section = new_section
             self.save()

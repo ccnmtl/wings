@@ -81,6 +81,7 @@ class ServicesBlock(models.Model):
         return True
 
     def unlocked(self,user):
+        """ TODO: http://pmt.ccnmtl.columbia.edu/item/78192/ """
         return True
 
 class NarrowedDownAnswer (models.Model):
