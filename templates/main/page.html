@@ -92,7 +92,6 @@
 {% for block in section.pageblock_set.all %}
     {% if not block.block.is_help_block and not block.block.is_audio_block %}
         {% if block.label %}<h3>{{block.label}} </h3>{% endif %}
-         ({{block.id}})
         {% render block %}
     {%endif %}
 {% endfor %}

@@ -15,15 +15,32 @@
 {%endblock %}
 {% block content %}
 
+
+
     <div class="exit_materials_main_content_div">
-            <h1>Social Support Network Tree</h1>
-            <div class="exit_materials_ssnm_tree">
-                
-                {%render ssnm_tree_node %}
+
+            <hr />
+            <div>
+                <a class="exit_materials_print_button" href="print"  onclick="javascript:print()">Print exit materials</a>
+            </div>
+            <hr />
             
+            <div>
+                <a class="exit_materials_logout_button" href="/logout/"  >Done -- log out.</a>
+            </div>
+            <hr />
+            
+            
+            <div>
+                <h1>Social Support Network Tree</h1>
+                <div class="exit_materials_ssnm_tree">
+                    {%render ssnm_tree_node %}
+                </div>
             </div>
             
-             <h3>Part One: Strategies for Safety During a Violent Incident</h3>
+            <br clear="all" />
+            <hr />
+            <h3>Part One: Strategies for Safety During a Violent Incident</h3>
                     {%for section in safety_plan_part_1_node_list %}
                         <div>
                             {% for block in section.pageblock_set.all %}
@@ -41,6 +58,7 @@
                     {%endfor %}
                 
             
+            <hr />
             <h3>Part Two: Preparing to Leave</h3>
                 {%for section in safety_plan_part_2_node_list %}
                     <div>
@@ -58,10 +76,23 @@
                     </div>
                 {%endfor %}
 
+            <hr />
             <h1>Services</h1>
             <div class="exit_materials_services">
                 {%render resources_node %}
             </div>
+            
+            
+            <hr />
+            <div>
+                <a class="exit_materials_print_button" href="print"  onclick="javascript:print()">Print exit materials</a>
+            </div>
+            <hr />
+            <div>
+                <a class="exit_materials_logout_button" href="/logout/"  >Done -- log out.</a>
+            </div>
+            <hr />
+            
             
     </div>
     
@@ -70,11 +101,5 @@
 
 
     
-    <div>
-        <a class="exit_materials_print_button" href="print"  onclick="javascript:print()">Print exit materials</a>
-    </div>
-    <div>
-        <a class="exit_materials_logout_button" href="/logout/"  >Done -- log out.</a>
-    </div>
             
 {%endblock%}
