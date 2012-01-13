@@ -99,33 +99,17 @@ def page(request,path):
 
     if request.method == "POST":
         # user has submitted a form. deal with it
-        if request.POST.get('action','') == 'reset':
-            section.reset(request.user)
+        section.submit(request.POST,request.user)
+        if request.POST['destination'] == '':
             return HttpResponseRedirect(section.get_absolute_url())
-
-        
-        
-        proceed = section.submit(request.POST,request.user)
-        
+    
         if request.POST['destination'] == 'previous':
             return HttpResponseRedirect(section.get_previous().get_absolute_url())
         
         if request.POST['destination'] == 'next':
             return HttpResponseRedirect(section.get_next().get_absolute_url())
 
-        if request.POST['destination'] == None:
-            assert 1 == 0
-            #this code should only be called by prev or next. isn't supposed to happen.            
-
-        #not using this.
-        if  1 == 0:
-            if proceed:
-                return HttpResponseRedirect(section.get_next().get_absolute_url())
-            else:
-                # giving them feedback before they proceed
-                return HttpResponseRedirect(section.get_absolute_url())
-    
-    
+        
     else:
         instructor_link = has_responses(section)
         
