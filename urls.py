@@ -29,6 +29,9 @@ urlpatterns = patterns('',
     (r'^participant/(?P<id_string>\d+)/launch/',           'wings_main.views.launch_participant'),                     
     (r'^participant/(?P<id_string>\d+)/exit_materials/',   'wings_main.views.exit_materials'),                     
 
+                   
+    (r'^exit_materials/',   'wings_main.views.participant_exit_materials'),
+
     (r'^pagetree/',include('pagetree.urls')),
     (r'^_quiz/',include('quizblock.urls')),
 

@@ -197,20 +197,26 @@ def launch_participant(request, id_string):
         return HttpResponseRedirect(Section.objects.get(id=participant.current_section_id).get_absolute_url())
 
 
+@login_required
+@rendered_with('wings_main/exit_materials.html')
+def participant_exit_materials(request):
+    return exit_materials_nodes()
+
 
 @login_required
 @rendered_with('wings_main/exit_materials.html')
 def exit_materials(request, id_string):
     """   
-    Show exit materials
+    logout user (if necessary), log in as a participant, and then show exit materials
     """
     if request.user.is_staff:
         user = make_and_login_participant(id_string, request)
     else:
         user = request.user
-
-    #get things we need"
+    return exit_materials_nodes()
     
+
+def exit_materials_nodes ():
     safety_plan_part_1_node_list = []
     traverse_tree(PageBlock.objects.get(id=127).section, safety_plan_part_1_node_list)
 
@@ -226,6 +232,7 @@ def exit_materials(request, id_string):
         'ssnm_tree_node'               :  ssnm_tree_node,
         'resources_node'               :  resources_node
     }
+
 
 
 @login_required

@@ -8,9 +8,9 @@ function show_next() {
 
 function hide_then_show_next() {
     hide_next();
-//  setTimeout (show_next, 2000);
+    setTimeout (show_next, 2000);
 // just while we develop the tests.
-    setTimeout (show_next, 1);
+//  setTimeout (show_next, 2);
 }
 
 jQuery (hide_then_show_next);
