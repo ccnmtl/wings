@@ -394,6 +394,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Please finish this page</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//form[@id='submit_to_self_form']/div/div[2]/div/ol/li[2]/input</td>
 	<td></td>
@@ -1144,6 +1154,7 @@
 	<td>id=next</td>
 	<td></td>
 </tr>
+<!--check here for a bug-->
 <tr>
 	<td>type</td>
 	<td>name=pageblock-245-question236</td>
@@ -1215,6 +1226,17 @@
 	<td>id=next</td>
 	<td></td>
 </tr>
+<!--Resources to help you (first page, just a regular quiz)-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Please finish this page</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>//input[@name='pageblock-249-question241' and @value='10']</td>
@@ -1231,13 +1253,35 @@
 	<td></td>
 </tr>
 <tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Please finish this page</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=pageblock-249-question242</td>
 	<td>other services</td>
 </tr>
+<!--Resource Prioritization -- page_1-->
 <tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
+	<td></td>
+</tr>
+<!--Try to advance. Should fail-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Please finish this page</td>
 	<td></td>
 </tr>
 <tr>

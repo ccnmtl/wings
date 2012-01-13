@@ -81,9 +81,20 @@ class ServicesBlock(models.Model):
         return True
 
     def unlocked(self,user):
-        """ TODO: http://pmt.ccnmtl.columbia.edu/item/78192/ """
-        return True
+        if self.page_type == 'page_1':
+            return NarrowedDownAnswer.objects.filter(user=user)[0].answer != None
 
+        if self.page_type == 'page_2':
+            #print 'ok np not checking on page 2 -- is read only'
+            return True
+ 
+        
+    def unlocked_error_message (self, user):
+        if self.page_type == 'page_1':
+            return 'Please pick the service that would be most helpful to you.'
+        return None
+        
+        
 class NarrowedDownAnswer (models.Model):
     """This is to record which of a multiple-choice, multiple-answer question (i.e. checkboxes) a user chose as the most important one."""
     user             = models.ForeignKey( User)
