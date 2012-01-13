@@ -132,25 +132,6 @@ def selenium_teardown():
         p.delete()
             
             
-    if 1 == 0:
-    
-        families_to_delete, visits_to_delete, responses_to_delete  = [], [], []
-
-        families_to_delete.extend (Family.objects.filter(study_id_number = 59638))
-        families_to_delete.extend (Family.objects.filter(study_id_number = 83695))
-        for f in families_to_delete:
-            visits_to_delete.extend (f.visit_set.all())
-        for v in visits_to_delete:
-            responses_to_delete.extend (v.response_set.all())
-
-        for r in responses_to_delete:
-            r.delete()
-        for v in visits_to_delete:
-            v.delete()
-        for f in families_to_delete:
-            f.delete()  
-  
-  
 @login_required
 @rendered_with('wings_main/selenium.html')
 def selenium(request,task):
@@ -165,6 +146,8 @@ def selenium(request,task):
         sel_message = "success"
     
     return { 'task':task, 'sel_message':sel_message}
+
+
 
 
 
@@ -214,6 +197,28 @@ def launch_participant(request, id_string):
         return HttpResponseRedirect("/first/")
     else:
         return HttpResponseRedirect(Section.objects.get(id=participant.current_section_id).get_absolute_url())
+
+
+
+@login_required
+@rendered_with('wings_main/exit_materials.html')
+def exit_materials(request, id_string):
+    """   
+    Show exit materials
+    """
+    
+    if not request.user.is_staff:
+        messages.info(request, "Sorry, you can't launch participants.")
+        return HttpResponseRedirect("/first/")
+    
+    participant = get_object_or_404(Participant,id_string=id_string)
+    assert participant.user != None
+    
+    return {
+        'participant': participant,
+        'asda' : 'asda',
+    }
+
 
 @login_required
 @rendered_with('wings_main/summary.html')

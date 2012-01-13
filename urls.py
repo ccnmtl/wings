@@ -25,17 +25,20 @@ urlpatterns = patterns('',
     
     #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),
-    (r'^participant/(?P<id_string>\d+)/launch/',   'wings_main.views.launch_participant'),                     
-    
+
+    (r'^participant/(?P<id_string>\d+)/launch/',           'wings_main.views.launch_participant'),                     
+    (r'^participant/(?P<id_string>\d+)/exit_materials/',   'wings_main.views.exit_materials'),                     
+
     (r'^pagetree/',include('pagetree.urls')),
     (r'^_quiz/',include('quizblock.urls')),
 
-    #just for now:
+
     (r'^test$',    redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
     (r'^tests$',   redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
     (r'^test/$',   redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
     (r'^tests/$',  redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
     
+
     
     (r'^selenium/(?P<task>\w+)/$',               'wings_main.views.selenium'),
 

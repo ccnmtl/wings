@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load render %}
+{% load smartif %}
+
+
+{% block content %}
+    <div>
+        exit materials
+        >>{{participant.user}}<<
+    </div>
+    
+    
+    <div>
+        <a href="print" class="print_button" onclick="javascript:print()">Print exit materials</a>
+    </div>
+    {%comment%}
+
+            {%for section in tree %}
+            <div>
+                {% for block in section.pageblock_set.all %}
+                {% if not block.block.is_help_block %}
+                    {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
+                    {% render block %}
+                {%endif %}
+                {% endfor %}
+            </div>
+            <hr />
+            {%endfor %}
+    {%endcomment%}
+                  
+{%endblock%}
