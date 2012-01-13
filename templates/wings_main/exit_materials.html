@@ -2,30 +2,79 @@
 {% load render %}
 {% load smartif %}
 
+{% block title %}Exit Materials{%endblock%}
 
+{% block js %}
+    {% renderjs ssnm_tree_node %}
+    {% renderjs resources_node %}
+{%endblock %}
+
+{% block css %}
+    {% rendercss ssnm_tree_node %}
+    {% rendercss resources_node %}
+{%endblock %}
 {% block content %}
-    <div>
-        exit materials
-        >>{{participant.user}}<<
-    </div>
-    
-    
-    <div>
-        <a href="print" class="print_button" onclick="javascript:print()">Print exit materials</a>
-    </div>
-    {%comment%}
 
-            {%for section in tree %}
-            <div>
-                {% for block in section.pageblock_set.all %}
-                {% if not block.block.is_help_block %}
-                    {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
-                    {% render block %}
-                {%endif %}
-                {% endfor %}
+    <div class="exit_materials_main_content_div">
+            <h1>Social Support Network Tree</h1>
+            <div class="exit_materials_ssnm_tree">
+                
+                {%render ssnm_tree_node %}
+            
             </div>
-            <hr />
-            {%endfor %}
-    {%endcomment%}
-                  
+            
+             <h3>Part One: Strategies for Safety During a Violent Incident</h3>
+                    {%for section in safety_plan_part_1_node_list %}
+                        <div>
+                            {% for block in section.pageblock_set.all %}
+                            {% if not block.block.is_help_block and not block.block.is_audio_block %}
+                                {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
+                                <!--
+                                <div >
+                                BLOCK ID {{block.id}}
+                                </div>
+                                -->
+                                {% render block %}
+                            {%endif %}
+                            {% endfor %}
+                        </div>
+                    {%endfor %}
+                
+            
+            <h3>Part Two: Preparing to Leave</h3>
+                {%for section in safety_plan_part_2_node_list %}
+                    <div>
+                        {% for block in section.pageblock_set.all %}
+                        {% if not block.block.is_help_block and not block.block.is_audio_block %}
+                            {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
+                            <!--
+                            <div>
+                            BLOCK ID {{block.id}}
+                            </div>
+                            -->
+                            {% render block %}
+                        {%endif %}
+                        {% endfor %}
+                    </div>
+                {%endfor %}
+
+            <h1>Services</h1>
+            <div class="exit_materials_services">
+                {%render resources_node %}
+            </div>
+            
+    </div>
+    
+    
+    
+
+
+    
+    <div>
+        <a class="exit_materials_print_button" href="print"  onclick="javascript:print()">Print exit materials</a>
+    </div>
+    <div>
+        <a class="exit_materials_logout_button" href="/logout/"  >Done -- log out.</a>
+    </div>
+            
 {%endblock%}

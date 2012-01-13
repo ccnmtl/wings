@@ -157,26 +157,15 @@ def first(request):
     first_url = Hierarchy.objects.all()[0].get_root().get_first_child().get_absolute_url()
     return HttpResponseRedirect(first_url)
     
-
-@login_required
-#@rendered_with('wings_main/launch_participant.html')
-def launch_participant(request, id_string):
-    """   
-    create a new user with a pointer to the participant object.
-    generate a UUID for its password
-    log in
-    redirect to the first forest page
     
-    http://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
+def make_and_login_participant(id_string, request):
+    """ If there is a participant with this id_string, log them in. If not, create one and log them in.
+    See: http://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
     """
-    
-    if not request.user.is_staff:
-        messages.info(request, "Sorry, you can't launch participants.")
-        return HttpResponseRedirect("/first/")
-    
+    assert request.user.is_staff #you'd better check before invoking this function.
     participant = get_object_or_404(Participant,id_string=id_string)
     if not participant.user:
-        assert participant.user == None
+        assert participant.user == None # do not mock this line.
         new_user = User()
         new_user.set_unusable_password()
         new_user.username = id_string
@@ -184,18 +173,27 @@ def launch_participant(request, id_string):
         participant.user = new_user
         participant.save()
     participant.user.backend='django.contrib.auth.backends.ModelBackend' 
-    
-    #messages.info(request, "This participant has already started the intervention.")
-    #return HttpResponseRedirect("/admin/wings_main/participant/")
-
     assert participant.user != None
     messages.info(request, "Logged in!")
     authenticate(username=participant.user.username, password= participant.user.password)
     login(request, participant.user)
+    return participant
+
+
+@login_required
+#@rendered_with('wings_main/launch_participant.html')
+def launch_participant(request, id_string):
+    """Create a new user with a pointer to the participant object. Redirect them to the first page of the intervention. """
+    if not request.user.is_staff:
+        messages.info(request, "Sorry, you can't launch participants.")
+        return HttpResponseRedirect('/first/')
+        
+    participant = make_and_login_participant(id_string, request)
     
     if not participant.current_section_id:
-        return HttpResponseRedirect("/first/")
+        return HttpResponseRedirect('/first/')
     else:
+        messages.info(request, "Welcome back!")
         return HttpResponseRedirect(Section.objects.get(id=participant.current_section_id).get_absolute_url())
 
 
@@ -206,17 +204,27 @@ def exit_materials(request, id_string):
     """   
     Show exit materials
     """
+    if request.user.is_staff:
+        user = make_and_login_participant(id_string, request)
+    else:
+        user = request.user
+
+    #get things we need"
     
-    if not request.user.is_staff:
-        messages.info(request, "Sorry, you can't launch participants.")
-        return HttpResponseRedirect("/first/")
+    safety_plan_part_1_node_list = []
+    traverse_tree(PageBlock.objects.get(id=127).section, safety_plan_part_1_node_list)
+
+    safety_plan_part_2_node_list = []
+    traverse_tree(PageBlock.objects.get(id=135).section, safety_plan_part_2_node_list)
     
-    participant = get_object_or_404(Participant,id_string=id_string)
-    assert participant.user != None
-    
+    ssnm_tree_node = PageBlock.objects.get(id=254)
+    resources_node = PageBlock.objects.get(id=291)
+
     return {
-        'participant': participant,
-        'asda' : 'asda',
+        'safety_plan_part_1_node_list' :  safety_plan_part_1_node_list,
+        'safety_plan_part_2_node_list' :  safety_plan_part_2_node_list,
+        'ssnm_tree_node'               :  ssnm_tree_node,
+        'resources_node'               :  resources_node
     }
 
 
