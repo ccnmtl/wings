@@ -172,7 +172,7 @@ def make_and_login_participant(id_string, request):
         new_user.save()
         participant.user = new_user
         participant.save()
-    participant.user.backend='django.contrib.auth.batckends.ModelBackend' 
+    participant.user.backend='django.contrib.auth.backends.ModelBackend' 
     assert participant.user != None
     messages.info(request, "Logged in!")
     authenticate(username=participant.user.username, password= participant.user.password)
