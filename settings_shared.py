@@ -108,7 +108,7 @@ INSTALLED_APPS = (
     'riskblock',
     'pastquizanswersblock',
     #kill sentry
-    #'sentry.client',
+    'sentry.client',
     'wings_main',
     'paging',
     'indexer',
@@ -133,7 +133,7 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
 BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block', 'Past Quiz Answers Block', 'HTML Block']
 
 
-if 1 == 0:
+if 1 == 1:
     import logging
     logger = logging.getLogger()
     from sentry.client.handlers import SentryHandler
