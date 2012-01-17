@@ -1240,8 +1240,12 @@ ul.answer_summary li div.past_question_answer_div.user_added {
 }
 
 /* adjustments to exit materials */
-.exit_materials_block.block_239 {
+.exit_materials_main_content_div .exit_materials_block.block_239 {
     display: none;
 }
-
+/*
+.exit_materials_main_content_div  input[type="text"], .exit_materials_main_content_div textarea{
+    color: red;
+}
+*/
 

@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 391, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 439, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 129, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 134, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 233, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 238, true);
 
 
 --
@@ -1174,7 +1174,7 @@ ALTER SEQUENCE pageblocks_htmlblock_id_seq OWNED BY pageblocks_htmlblock.id;
 -- Name: pageblocks_htmlblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 35, true);
+SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 36, true);
 
 
 --
@@ -1248,7 +1248,7 @@ ALTER SEQUENCE pageblocks_imageblock_id_seq OWNED BY pageblocks_imageblock.id;
 -- Name: pageblocks_imageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_imageblock_id_seq', 15, true);
+SELECT pg_catalog.setval('pageblocks_imageblock_id_seq', 16, true);
 
 
 --
@@ -1437,7 +1437,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 401, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 403, true);
 
 
 --
@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 1117, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 1438, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 1210, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 1500, true);
 
 
 --
@@ -1788,7 +1788,7 @@ ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_na
 -- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 6, true);
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 13, true);
 
 
 --
@@ -2128,7 +2128,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 30, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 70, true);
 
 
 --
@@ -2165,7 +2165,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 36, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 56, true);
 
 
 --
@@ -2315,7 +2315,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 70, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 75, true);
 
 
 --
@@ -2913,6 +2913,11 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
+438	13	Logged in!
+439	132	Welcome back!
+432	109	Logged in!
+434	5	Logged in!
+437	134	Welcome back!
 \.
 
 
@@ -3088,6 +3093,7 @@ COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_superuser, last_login, date_joined) FROM stdin;
+17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2012-01-17 15:30:00.937757-05	2011-10-18 11:54:07-04
 4	zm4	Zarina	Mustapha	zm4@columbia.edu	!	f	t	f	2011-06-02 15:21:46.02636-04	2011-06-02 15:21:46.026372-04
 6	amm8	A.	Matiz	amm8@columbia.edu	!	f	t	f	2011-06-02 15:22:30.926288-04	2011-06-02 15:22:30.926301-04
 9	mar227	Marc	Raymond	mar227@columbia.edu	!	f	t	f	2011-06-02 15:23:00.029295-04	2011-06-02 15:23:00.029307-04
@@ -3099,25 +3105,26 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 1	anp8	Anders	Pearson	anp8@columbia.edu	!	t	t	t	2011-10-24 11:37:17.52734-04	2011-05-18 15:57:36.886786-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
-17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2012-01-11 16:40:04.197211-05	2011-10-18 11:54:07-04
+132	80808				!	f	t	f	2012-01-17 15:35:30.632374-05	2012-01-17 13:02:45.362035-05
 114	344656756				!	f	t	f	2011-12-16 09:45:05.469537-05	2011-12-15 16:18:49.852391-05
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-12 11:29:19.853023-05	2011-12-09 15:38:04-05
-8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2011-09-15 17:58:04.768569-04	2011-06-02 15:22:48.818126-04
 113	23				!	f	t	f	2011-12-16 10:46:12.342067-05	2011-12-15 13:47:09.128831-05
 124	casi				sha1$92c83$216ed4e0c9a87d9d46f583a6763f11470a8cd2f5	t	t	t	2012-01-05 16:49:45.475507-05	2012-01-05 16:44:20-05
 127	33489576				!	f	t	f	2012-01-12 15:54:22.029489-05	2012-01-11 10:21:24.301561-05
 123	444444				!	f	t	f	2012-01-12 15:54:45.324032-05	2012-01-05 15:19:52.12015-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-12 16:06:06.76641-05	2011-10-11 11:39:54-04
 116	256789				!	f	t	f	2011-12-16 15:31:42.921599-05	2011-12-16 15:31:42.914867-05
-115	4				!	f	t	f	2011-12-19 14:54:19.89036-05	2011-12-16 14:03:16.430084-05
 125	99996				!	f	t	f	2012-01-09 10:15:22.392936-05	2012-01-06 14:50:51.600377-05
-129	9999999				!	f	t	f	2012-01-12 19:17:07.749954-05	2012-01-12 19:17:07.741572-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-12 19:19:08.63043-05	2011-06-02 15:22:04-04
 120	357159				!	f	t	f	2012-01-05 11:05:26.298471-05	2012-01-04 10:20:25.965136-05
 121	159753				!	f	t	f	2012-01-05 15:04:37.379841-05	2012-01-05 15:04:37.367552-05
+130	474747				!	f	t	f	2012-01-17 11:33:26.683187-05	2012-01-13 11:16:11.099991-05
 117	1444444				!	f	t	f	2011-12-20 14:50:17.731081-05	2011-12-19 16:39:20.655156-05
+115	4				!	f	t	f	2012-01-13 15:17:43.661198-05	2011-12-16 14:03:16.430084-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-17 13:03:40.938379-05	2011-10-11 11:39:54-04
 122	143680				!	f	t	f	2012-01-05 16:00:38.351839-05	2012-01-05 15:13:07.416884-05
+8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-17 13:30:37.038933-05	2011-06-02 15:22:48.818126-04
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-17 14:13:43.215702-05	2011-12-09 15:38:04-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-17 14:39:38.439363-05	2011-06-02 15:22:04-04
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
+134	9999999				!	f	t	f	2012-01-17 15:29:37.707479-05	2012-01-17 14:13:59.506518-05
 \.
 
 
@@ -3641,6 +3648,11 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 231	2012-01-12 17:32:48.387001-05	5	45	4	exit materials [2]: 	2	Changed boxes and visible_support_types.
 232	2012-01-12 17:34:03.012501-05	5	42	69	P9999999	1	
 233	2012-01-12 19:17:07.38842-05	5	42	70	P9999999	1	
+234	2012-01-13 11:14:24.127051-05	13	42	71	P474747	1	
+235	2012-01-13 15:18:21.41136-05	5	42	72	P9999999	1	
+236	2012-01-17 13:02:42.647719-05	13	42	73	P80808	1	
+237	2012-01-17 13:51:24.94326-05	5	42	74	P9999999	1	
+238	2012-01-17 14:13:59.212302-05	109	42	75	P9999999	1	
 \.
 
 
@@ -3879,14 +3891,18 @@ e6b5507ee097757ca581834307f504d3	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 07b7f5294dd0604a0a81232b9abfee64	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-11 22:00:42.985441-05
 08c89b3f7cb17d9d2f68e1e5ee43e465	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-14 21:50:36.720771-05
 59379f9660a5e1bffe0fa7bf500043a5	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-17 21:50:57.570349-05
+d76b778d6fd40ba33aa6e683070caa0d	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-31 13:20:32.608394-05
 cddd7d180082f5b747b26ef5a4bdd343	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 13:44:50.318446-05
+932050c0cc4298234920895ce2de50c6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-01-31 13:30:37.048896-05
 fed4fb31a0ca1b4b31c07cbf96045c16	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-18 15:15:20.569208-05
 da74533115ee9d2f6025aad1e0732bb1	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-23 21:53:10.266023-05
 318e6a4be967f9d238340f19d41be401	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-01-25 10:24:29.3673-05
 477d03448f2938f329b9977b78d22d7d	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-20 22:04:28.887525-05
-130f7ceaa7a71e5dd099e5905c38265f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-01-25 14:43:47.143568-05
+dadc7a176213b5dbfdd27749b62fef90	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-26 21:47:51.563033-05
+4a21773f8703f37305449ed94c950ed5	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-27 02:14:55.964002-05
+a54b8435e5f2f931ec5275b8c4064f5a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-27 08:03:46.174429-05
 ae2a85128011af20e03f2152c8aeb322	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-26 08:55:51.259163-05
-713b969cfa08d2a9acc85b1907947142	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-26 16:06:06.776771-05
+49df5e17d96290547bb83090edad23e8	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-27 13:05:31.058719-05
 f6869d2ee2b0b186f7e702dc96e6284e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2011-12-30 14:08:33.629502-05
 72c82bd203e6f5a3d1a9c419aa915c06	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-23 12:18:22.100311-05
 8b77e8b2251bc65317ddcf1548373bf4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigF1dS4zMGFjY2Q1ODIyNmIzM2I3YWZm\nYmRkYTc4MDY3NGRlZg==\n	2012-01-02 16:39:20.677895-05
@@ -3894,17 +3910,25 @@ f2c42bfae6cb2fda8edca51d0fedf3f9	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 df27f7d68668e863ffedfda43fbea55a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-20 10:17:49.111199-05
 d03c4fde258db82a57f630f67530e320	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-20 14:36:47.593169-05
 fab6986612d7fbd5e4805a061d46b2a0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-01-23 21:45:45.91967-05
+a1bc69af4ab08e0b4210383cac5f7023	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUqZGphbmdvLmNvbnRyaWIuYXV0aC5iYXRja2Vu\nZHMuTW9kZWxCYWNrZW5kcQNVDV9hdXRoX3VzZXJfaWRxBEuGdS5hODU1NjllMzUyMTQwMjMzNzQ4\nMzU3NmFiZDVmNDdhOA==\n	2012-01-31 14:39:44.599529-05
 8bdf58378a05ea623138c82c56524e8d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-25 15:00:35.298936-05
-e7bfa1225bb2ec86b0823e23bbff8de4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-01-26 11:29:19.864261-05
-f1629cbd9645e919df30effe3c138e20	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-01-26 19:19:08.640277-05
+e95592dd560365e6d715bb7543cd5d41	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-01-31 13:22:19.9517-05
+2571baedfc8eb3cc98882f44a5ea608c	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKGAHUuMGU4M2I2NDc5NWY2MDlhNDRk\nODk2ZjRiNWNjODg0ZjY=\n	2012-01-31 14:13:59.525013-05
 b3de91fb29878a672d6ef11a3d9df56f	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:05:41.599994-05
-b356bd7ac9d4ad474cca7b56b33ef295	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3t1LjIwOWNjMGFlZmE5NjRlY2I4ODY0\nMzU4MjU0NjMyY2Ux\n	2012-01-19 15:58:23.83577-05
+e9f68345b2095c855a293144c0c75e76	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-01-31 15:30:00.947808-05
+119d7358898407a8422e747f2bf382ee	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-27 19:54:19.315503-05
+a7741329b885cad7901a47eeb97eca27	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-30 15:44:50.84285-05
+46659a4d307b8b9d8dfa10514fba63d9	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-31 08:55:51.296867-05
 3f4891918036bd3b7d0a0d3a2adf23a5	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-01-03 14:06:08.892632-05
+12762158a290a14b81fb2f89716a42a2	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUqZGphbmdvLmNvbnRyaWIuYXV0aC5iYXRja2Vu\nZHMuTW9kZWxCYWNrZW5kcQNVDV9hdXRoX3VzZXJfaWRxBEuEdS5iNmFmYzFmODBiZDViYTA3MjVm\nNDgwOGI0MDlkMDk5Mg==\n	2012-01-31 15:35:30.657763-05
+fb96bc7e034c71ce4c4a4bf99985d44b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-01-31 10:25:56.718526-05
+6bf14e5cf34b13955a3e6b275e282b19	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4J1LjI4NzA3MWFiOGU2MTAyNzdhMWY0\nMDk1ZDg2Y2I1ODBm\n	2012-01-31 11:33:26.704699-05
 8f0e0c8d43856305e6239f49b69dcb1a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-19 13:08:05.714533-05
 6402b77a0332d2b3857c48bd813444da	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-01-19 14:13:30.587128-05
 f01c8cf838c9d8edac4cbd5640bcc527	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-01-03 14:51:33.885721-05
 bbba5716fb95d7d91b8b53836a2bee5e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-01-18 14:14:32.777067-05
 ea5ef78548f9a47adc852f86db5695e7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-01-19 14:42:33.93248-05
+8bb8dfe166f446143a818de9bc826207	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4J1LjI4NzA3MWFiOGU2MTAyNzdhMWY0\nMDk1ZDg2Y2I1ODBm\n	2012-01-28 17:12:35.621534-05
 \.
 
 
@@ -4112,9 +4136,10 @@ COPY pageblocks_htmlblock (id, html) FROM stdin;
 30	<div class="video"><iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_intro_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_intro_stories.jpg&protection=5096ae1f9761051284497ef50a506e5e30926f07" ></iframe></div>
 31	<div class="video"><iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_hearing_other_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_hearing_other_stories.jpg&protection=b95a7cb4c12126cc6d355ae0d0c36231e5e6d204" ></iframe></div>\r\n
 28	<div class="tree-instructions">\r\n<h3>Instructions: Add People</h3>\r\n<p>\r\nwrite the names of one to five people you trust onto the birds on this tree.\r\n</p>\r\n</div>
-33	<p>Thank you so much for meeting with us today and taking the time to discuss this important issue that affects many women. We hope that the information we have shared will be helpful for you and for other women you know who face relationship challenges.</p>\r\n<p>Ending the cycle of violence is not easy. Sometimes partners can work together to make changes and ensure their relationship will be respectful and safe. Sometimes one partner needs to end the relationship in order to keep herself or her children safe. This is a personal decision, but having support can help women spread their wings and choose safety.</p>\r\n<p>We hope you can find support and power within yourself, and also be a support to others.</p>\r\n<p>Thank you again for your time and your participation. Please check in with the caseworker on the way out so you can pick up any documents you want to take home, or provide an address where these documents can be sent to you.</p>\r\n\r\n<p>If you are done, click the button below.</p>\r\n\r\n<div class="video"><a class="bigbutton" href="/logout" >Done</a></div>
+33	<p>Thank you so much for meeting with us today and taking the time to discuss this important issue that affects many women. We hope that the information we have shared will be helpful for you and for other women you know who face relationship challenges.</p>\r\n<p>Ending the cycle of violence is not easy. Sometimes partners can work together to make changes and ensure their relationship will be respectful and safe. Sometimes one partner needs to end the relationship in order to keep herself or her children safe. This is a personal decision, but having support can help women spread their wings and choose safety.</p>\r\n<p>We hope you can find support and power within yourself, and also be a support to others.</p>\r\n<p>Thank you again for your time and your participation. Please check in with the caseworker on the way out so you can pick up any documents you want to take home, or provide an address where these documents can be sent to you.</p>\r\n\r\n<p>If you are done, click the button below.</p>\r\n<br />\r\n<div class="video"><a class="bigbutton" href="/service-referrals/getting-a-copy-of-your-plan/" >Done</a></div>
 32	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_proud_of_what_i_am_now.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_proud_of_what_i_am_now.jpg&protection=d5ee5608050004ea8d07ebc153fc26f5856da89f" ></iframe>\r\n
 35	<!-- just adding this to turn off the image -->
+36	<div class="image_on_left">\r\n<div id="decoration_image_container">\r\n<img class="decoration_image" src="/site_media/img/cycleofviolence-small.jpg">\r\n</div>\r\n<p>This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells while others may feel like it's never going to happen again.</p>\r\n</div>
 \.
 
 
@@ -4196,7 +4221,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 44	I will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.
 48	I will rehearse my escape plan and, as appropriate, practice it with my children.
 14	Thank you for taking the time to participate in the WINGS project today. The purpose of this project is to provide information and resources to women. We are particularly interested in how women can stay safe in relationships with intimate partners. Test
-61	This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells while others may feel like it's never going to happen again.\r\n\r\n[graphic of Cycle of Violence here]
 37	After considering the different negative ways that relationship conflict may be affecting your life and your family, what are some reasons why it would be important for you to reduce conflict? Please answer the following questions.
 46	Call 311 and ask for the NYC Domestic Violence Hotline (800-621-4673 or 866-604-5350) if you need counseling, legal assistance or emergency housing.  If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.
 47	Keep change for phone calls on you at all times. If you use your cell phone, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your calls confidential, you must either use coins at a pay phone or use a calling card for a limited time when you first leave. 
@@ -4220,8 +4244,8 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 88	We hope this activity has been helpful to you in thinking through what role the relationship with your partner plays in your life and thinking through why you may want to reduce relationship conflict or reduce your risk for being hurt by your partner. 
 80	<h5>Here is a list of organizations that provide the service you just selected as the most important to you.</h5>\r\n\r\n<p>At the end of this session you'll be given or mailed a booklet that includes these as well as other service organizations.</p>
 83	In this next section I will be asking you a number of questions about your relationship(s) with all the partners you have had during the past year, and whether you have had any conflicts with any of them during the past year. 
-87	Would you like to receive a printed copy of the safety plan and items we've talk about today, or would you prefer to have this sent by email, mailed to you, or mailed to another address? If you don't take it with you today, please talk to the caseworker to give her the address where it should be sent.
 79	<div class="cases">\r\n<div class="casecontent">\r\n<div class="casequestion">\r\n<p>Out of these services, which one is the most important, or addresses your most immediate or life-threatening issues?</p></div>
+87	Would you like to receive a printed copy of the safety plan and items we've talk about today, or would you prefer to have this sent by email, mailed to you, or mailed to another address? If you don't take it with you today, please talk to the caseworker to give her the address where it should be sent.\r\n<br /><br />\r\n<div class="video"><a class="bigbutton" href="/exit_materials/" >Print Now</a></div>
 72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
 63	Exposure to violence can also have lasting consequences for children. Kids who see or hear violence often experience grief, fear, and anxiety. Boys who witness violence between their parents are ten times more likely to abuse their partners when they become adults. Girls who witness parental violence are much more likely to be abused by their partners when they grow up.
 84	Let's put some intro copy here.
@@ -4242,10 +4266,10 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 104	I am concerned . . .
 105	I am concerned . . .
 106	It is important to find people who will let you stay with them or lend you some money. 
-107	Ask a trusted friend or advocate to help you review review your plan. 
 108	I can use some or all of the following safety strategies:
 109	It's important to become financially independent.  To get help with becoming financially independent from your partner call 1-800-873-2227.
 103	I am concerned . . .
+107	Ask a trusted friend or advocate to help you review your plan. 
 \.
 
 
@@ -4263,14 +4287,13 @@ COPY pagetree_hierarchy (id, name, base_url) FROM stdin;
 --
 
 COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, object_id) FROM stdin;
-326	218	1		17	33
+301	222	1		16	87
 242	212	2		16	74
 304	53	2		43	30
 311	167	2		43	32
 341	189	1		16	96
 262	59	2		43	2
 211	187	2		26	105
-263	150	2		43	3
 295	52	1		17	29
 296	149	1		17	30
 142	121	2		26	60
@@ -4304,18 +4327,14 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 287	164	2		43	27
 230	63	1		19	10
 247	145	1		26	125
-292	148	2		45	4
-301	222	1		16	87
-157	148	3		16	57
+326	218	1		17	33
 213	189	2		26	107
-294	148	1		16	84
 345	191	1		16	98
 198	176	1		26	95
 199	177	1		26	96
 200	178	1		26	97
 201	179	1		26	98
 58	53	1		16	17
-162	150	1		16	61
 298	221	1		17	32
 121	56	1	Taking steps to increase relationship safety 	16	40
 215	191	2		26	109
@@ -4408,6 +4427,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 138	117	2		26	58
 283	212	3		43	23
 355	195	1		16	103
+263	150	2		43	3
 251	186	1		47	1
 381	118	2		43	81
 338	187	3		43	52
@@ -4416,6 +4436,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 383	120	2		43	83
 346	191	3		43	56
 250	200	2		26	127
+403	150	1		17	36
 264	62	3		43	4
 348	200	3		43	57
 270	70	2		43	10
@@ -4432,7 +4453,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 344	190	3		43	55
 290	219	2		46	1
 350	192	3		43	58
-293	148	4		46	3
 352	193	3		43	59
 257	147	1		26	128
 384	121	3		43	84
@@ -4460,7 +4480,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 297	155	1		17	31
 387	124	2		43	86
 363	121	1		16	106
-364	125	1		16	107
 388	125	3		43	87
 389	126	2		43	88
 390	211	3		43	89
@@ -4501,6 +4520,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 401	146	1		17	35
 249	146	2		26	126
 395	146	3		43	94
+364	125	1		16	107
 \.
 
 
@@ -4510,9 +4530,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 
 COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FROM stdin;
 223	000A000K00090008	4	0	Reasons to Reduce Conflict: Wrap Up	reasons-to-reduce-conflict-wrap-up	11
-219	000A000O000V	3	0	Resource Prioritization	services-drill-down-1	11
 215	000A000M0005	3	0	steps to increase support	steps-to-increase-support	11
-222	000A000O000Y	3	0	Getting a copy of your plan	getting-a-copy-of-your-plan	11
 70	000A000I001T	3	0	How Common It Is	how-common-it-is	11
 59	000A000I001O	3	1	Relationships	relationships	11
 149	000A000I001O0001	4	0	Three Stories	three-stories	11
@@ -4523,12 +4541,14 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 212	000A000M0002	3	0	Social Support Map: Emotional Support	map-screen-2	11
 161	000A000J00010006	4	0	Relationship Satisfaction Question 1	question-1	11
 221	000A000K000A	3	0	I'm Proud of What I am Now	im-proud-of-what-i-am-now	11
+219	000A000O0012	3	0	Resource Prioritization	services-drill-down-1	11
+222	000A000O0016	3	0	Getting a copy of your plan	getting-a-copy-of-your-plan	11
+51	000A	1	7	Root		11
 63	000A000I001R000L	4	0	Physical Abuse	physical-abuse	11
 151	000A000I001R000O	4	0	Economic Abuse	economic-abuse	11
 74	000A000I001R000M	4	0	Emotional Abuse	emotional-abuse	11
 65	000A000I001R000N	4	0	Sexual Abuse	sexual-abuse	11
 72	000A000I001U	3	0	Negative Consequences	negative-consequences	11
-51	000A	1	8	Root		11
 170	000A000J0001000F	4	0	Relationship Satisfaction Question 10	question-10	11
 171	000A000J0001000G	4	0	Relationship Satisfaction Question 11	question-11	11
 155	000A000I001Y	3	0	Talking about the abuse	video-talking-about-the-abuse	11
@@ -4571,8 +4591,8 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 206	000A000K00090005	4	0	Reasons to Reduce Conflict Question 5	question-5	11
 208	000A000K00090007	4	0	Reasons to Reduce Conflict Question 7	question-7	11
 210	000A000L0001000P	4	0	Safety During a Violent Incident: Part 12	plan-part-12	11
-220	000A000O000W	3	0	List of Organizations	services-drill-down-2	11
 52	000A000I	2	9	Welcome	welcome	11
+220	000A000O0013	3	0	List of Organizations	services-drill-down-2	11
 100	000A000K0008	3	14	Cons of Relationship Conflict	cons-of-relationship-conflict	11
 181	000A000J0001000Q	4	0	Relationship Satisfaction Question 21	question-21	11
 182	000A000J0001000R	4	0	Relationship Satisfaction Question 22	question-22	11
@@ -4591,7 +4611,6 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 113	000A000L0001000N	4	0	Safety During a Violent Incident: Part 10	plan-part-10	11
 105	000A000L0001000F	4	0	Safety During a Violent Incident: Part 2	plan-part-2	11
 106	000A000L0001000G	4	0	Safety During a Violent Incident: Part 3	plan-part-3	11
-148	000A000P	2	0	exit materials	exit-materials	11
 58	000A000O	2	7	Service Referrals	service-referrals	11
 107	000A000L0001000H	4	0	Safety During a Violent Incident: Part 4	plan-part-4	11
 108	000A000L0001000I	4	0	Safety During a Violent Incident: Part 5	plan-part-5	11
@@ -4611,16 +4630,16 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 124	000A000L00020009	4	0	Preparing to Leave: Part 9	plan-part-9	11
 125	000A000L0002000A	4	0	Preparing to Leave: Part 10	plan-part-10	11
 126	000A000L0002000B	4	0	Preparing to Leave: Part 11	plan-part-11	11
-145	000A000O000T	3	0	Issues that can trigger conflict in your relationship	issues-question	11
 211	000A000M0001	3	0	Social Support Map: People	map-screen-1	11
 76	000A000J0001	3	26	Relationship Satisfaction	relationship-satisfaction	11
-146	000A000O000U	3	0	Resources to help you towards your goals	services-selection-page	11
-147	000A000O000X	3	0	Action Plan	action-plan	11
 103	000A000L0002	3	11	Safety When Preparing to Leave	preparing-to-leave	11
 55	000A000M	2	4	Social Support Map	social-support-map	11
 102	000A000L0001	3	12	Strategies for Safety During a Violent Incident	during-a-violent-incident	11
 97	000A000K	2	3	Empowerment	empowerment	11
-218	000A000O000Z	3	0	Wrap up and good bye	wrap-up-and-good-bye	11
+145	000A000O0010	3	0	Issues that can trigger conflict in your relationship	issues-question	11
+146	000A000O0011	3	0	Resources to help you towards your goals	services-selection-page	11
+147	000A000O0014	3	0	Action Plan	action-plan	11
+218	000A000O0015	3	0	Wrap up and good bye	wrap-up-and-good-bye	11
 \.
 
 
@@ -5568,6 +5587,9 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 560	199	786	1
 562	200	788	1
 564	203	790	3
+1369	184	1434	2
+1374	189	1439	2
+1379	194	1444	2
 98	179	120	
 99	180	121	Ex-Wife
 100	179	124	
@@ -5953,6 +5975,10 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 561	199	787	1
 563	202	789	4
 565	204	791	2
+1370	185	1435	2
+1375	190	1440	2
+1380	195	1445	2
+1384	199	1449	2
 648	242	863	
 650	239	865	2
 651	239	865	3
@@ -6185,6 +6211,36 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 968	208	1127	0
 969	209	1128	0
 970	185	1129	1
+1371	186	1436	2
+1376	191	1441	2
+1381	196	1446	2
+1385	200	1450	2
+1388	204	1454	1
+1391	207	1457	1
+1394	210	1460	2
+1396	212	1462	2
+1398	221	1464	2
+1400	215	1466	2
+1402	217	1468	2
+1404	219	1470	2
+1406	222	1472	Lorem ipsum
+1408	230	1474	2
+1410	232	1476	2
+1412	234	1478	2
+1414	148	1480	name
+1416	151	1482	id
+1418	151	1484	id
+1420	154	1486	person 2
+1422	156	1488	go to
+1423	157	1489	other go to
+1425	159	1491	extra keys
+1427	161	1493	savings acct
+1372	187	1437	2
+1377	192	1442	2
+1382	197	1447	2
+1386	202	1452	1
+1389	205	1455	1
+1392	208	1458	1
 1052	240	1199	
 1053	239	1199	1
 1054	239	1199	2
@@ -6251,6 +6307,214 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 1115	241	1210	8
 1116	241	1210	9
 1117	242	1210	
+1118	168	1211	
+1119	184	1213	1
+1120	185	1214	1
+1121	186	1215	2
+1122	187	1216	1
+1123	188	1217	1
+1124	188	1219	1
+1125	189	1220	1
+1126	190	1221	2
+1127	191	1222	1
+1128	192	1223	1
+1129	193	1224	2
+1130	194	1225	1
+1131	195	1226	2
+1132	196	1227	1
+1133	197	1228	2
+1134	198	1229	1
+1135	199	1230	2
+1136	200	1231	1
+1137	202	1232	1
+1138	203	1233	3
+1139	204	1234	4
+1140	205	1235	2
+1141	206	1236	1
+1142	207	1237	0
+1143	208	1238	1
+1144	209	1239	1
+1145	210	1240	1
+1146	211	1241	1
+1147	212	1242	2
+1148	213	1243	1
+1149	221	1244	1
+1150	243	1245	1
+1151	215	1246	1
+1152	216	1247	2
+1153	217	1248	2
+1154	218	1249	2
+1155	219	1250	2
+1156	220	1251	2
+1157	222	1252	this is a concern
+1158	223	1253	1
+1159	230	1254	1
+1160	231	1255	2
+1161	232	1256	1
+1162	233	1257	1
+1163	234	1258	1
+1164	235	1259	this is another reason
+1165	148	1260	participant x
+1166	150	1261	go out the fire escape
+1167	151	1262	behind the bookshelf by the door
+1168	153	1263	Andrea
+1169	154	1264	Rosa
+1170	155	1265	I think it might snow
+1171	156	1266	Henriette's apartment
+1172	157	1267	George's apartment
+1173	158	1268	the livingroom
+1174	159	1269	George
+1175	160	1270	George's place
+1176	161	1271	July 12
+1177	162	1272	this is an optional field
+1178	163	1273	Andrea, Liz, Jen, Laura
+1179	164	1274	George
+1180	164	1275	George
+1181	164	1276	George
+1182	165	1277	every week
+1183	165	1278	every week
+1184	166	1279	
+1185	166	1280	Shawn
+1186	236	1281	Call up Tina
+1187	237	1281	Call my mom
+1188	168	1282	
+1189	167	1282	2
+1190	167	1282	3
+1191	168	1283	this should be optional
+1192	167	1283	2
+1193	167	1283	3
+1194	240	1284	optional
+1195	239	1284	2
+1196	239	1284	6
+1197	239	1284	7
+1198	239	1284	8
+1199	239	1284	11
+1200	241	1285	5
+1201	241	1285	6
+1202	241	1285	12
+1203	242	1285	not sure
+1204	245	1286	go to the park
+1205	244	1286	call a counselor
+1212	168	1293	
+1213	240	1294	optional
+1214	239	1294	2
+1215	239	1294	6
+1216	239	1294	7
+1217	239	1294	8
+1218	239	1294	11
+1219	241	1295	5
+1220	241	1295	6
+1221	241	1295	12
+1222	242	1295	not sure
+1223	245	1296	go to the park
+1224	244	1296	call a counselor
+1373	188	1438	2
+1378	193	1443	2
+1383	198	1448	2
+1387	203	1453	1
+1390	206	1456	1
+1393	209	1459	1
+1231	184	1303	1
+1232	185	1304	1
+1233	186	1305	1
+1234	187	1306	1
+1235	188	1307	2
+1236	189	1308	1
+1237	190	1309	2
+1238	191	1310	2
+1239	192	1311	1
+1240	193	1312	1
+1241	194	1313	1
+1242	195	1314	2
+1243	196	1315	1
+1244	197	1316	2
+1245	198	1317	1
+1246	199	1318	1
+1247	200	1319	2
+1248	202	1320	1
+1249	203	1321	1
+1250	204	1322	1
+1251	205	1323	1
+1252	206	1324	2
+1253	207	1325	3
+1254	208	1326	3
+1255	209	1327	1
+1256	210	1328	1
+1257	211	1329	2
+1258	212	1330	1
+1259	213	1331	2
+1260	221	1332	1
+1261	243	1333	2
+1262	215	1334	1
+1263	216	1335	2
+1264	217	1336	1
+1265	218	1337	2
+1266	219	1338	3
+1267	220	1339	1
+1268	222	1340	hjgkuygf
+1269	223	1341	2
+1270	230	1342	2
+1271	231	1343	1
+1272	232	1344	3
+1273	233	1345	2
+1274	234	1346	1
+1275	235	1347	kygf
+1276	148	1348	 sdrf
+1277	150	1349	asrg
+1278	151	1350	 awregfag
+1279	153	1351	 asdfgadsgf
+1280	154	1352	 dfhnd
+1281	155	1353	 hstgfs
+1282	156	1354	 zdfdf
+1283	157	1355	 zdsfgzsdfg
+1284	158	1356	 zdfgdzfgd
+1285	159	1357	 fbzdfdzf
+1286	160	1358	 cfvbzdfg
+1287	161	1359	 xcvbdzf
+1288	162	1360	xcbxcvb
+1289	163	1361	cvbdvnb
+1290	164	1362	 ndf
+1291	165	1363	 dfgdfgdfg
+1292	166	1364	 dfgdfg
+1293	236	1365	 dfgdfg
+1294	237	1365	 dfgdfgdf
+1295	168	1366	gdfgdfg
+1296	167	1366	2
+1297	167	1366	3
+1298	240	1367	
+1299	240	1368	ggg
+1300	239	1368	1
+1301	239	1368	8
+1302	242	1369	
+1303	241	1370	6
+1304	242	1370	gg
+1395	211	1461	2
+1397	213	1463	2
+1399	243	1465	2
+1401	216	1467	2
+1403	218	1469	2
+1405	220	1471	2
+1407	223	1473	2
+1409	231	1475	2
+1411	233	1477	2
+1413	235	1479	other reasons
+1415	150	1481	exits
+1417	153	1483	person
+1419	153	1485	person
+1421	155	1487	code word
+1424	158	1490	low risk space
+1426	160	1492	docs
+1428	162	1494	independence
+1429	163	1495	support
+1430	164	1496	clothes
+1431	165	1497	review
+1432	166	1498	review2
+1433	236	1499	 
+1434	237	1499	 
+1435	240	1500	
+1436	239	1500	4
+1437	239	1500	7
+1438	239	1500	11
 \.
 
 
@@ -7036,6 +7300,221 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1208	64	5	2012-01-12 18:25:49.069298-05
 1209	125	5	2012-01-12 18:25:58.656254-05
 1210	126	5	2012-01-12 18:26:05.76105-05
+1211	64	13	2012-01-13 11:06:15.982025-05
+1212	80	130	2012-01-13 11:22:12.802874-05
+1213	80	130	2012-01-13 11:22:25.095379-05
+1214	81	130	2012-01-13 11:22:36.094785-05
+1215	82	130	2012-01-13 11:23:01.148935-05
+1216	83	130	2012-01-13 11:23:05.527277-05
+1217	84	130	2012-01-13 11:23:09.651138-05
+1218	85	130	2012-01-13 11:23:11.991733-05
+1219	84	130	2012-01-13 11:23:48.144696-05
+1220	85	130	2012-01-13 11:23:51.756043-05
+1221	86	130	2012-01-13 11:23:56.276525-05
+1222	87	130	2012-01-13 11:23:59.782283-05
+1223	88	130	2012-01-13 11:24:03.132136-05
+1224	89	130	2012-01-13 11:24:06.255712-05
+1225	90	130	2012-01-13 11:24:09.862166-05
+1226	91	130	2012-01-13 11:24:13.541976-05
+1227	92	130	2012-01-13 11:24:17.028103-05
+1228	93	130	2012-01-13 11:24:20.810385-05
+1229	94	130	2012-01-13 11:24:24.263861-05
+1230	95	130	2012-01-13 11:24:27.772843-05
+1231	96	130	2012-01-13 11:24:31.802127-05
+1232	97	130	2012-01-13 11:24:35.330039-05
+1233	98	130	2012-01-13 11:24:38.86636-05
+1234	99	130	2012-01-13 11:24:42.898832-05
+1235	100	130	2012-01-13 11:24:46.266069-05
+1236	101	130	2012-01-13 11:24:49.491628-05
+1237	102	130	2012-01-13 11:24:52.858782-05
+1238	103	130	2012-01-13 11:24:56.402989-05
+1239	104	130	2012-01-13 11:25:00.140573-05
+1240	105	130	2012-01-13 11:25:21.09693-05
+1241	106	130	2012-01-13 11:25:27.096563-05
+1242	107	130	2012-01-13 11:25:33.096521-05
+1243	108	130	2012-01-13 11:25:37.24626-05
+1244	109	130	2012-01-13 11:25:40.995912-05
+1245	127	130	2012-01-13 11:25:44.989405-05
+1246	110	130	2012-01-13 11:25:48.373848-05
+1247	111	130	2012-01-13 11:25:52.27071-05
+1248	112	130	2012-01-13 11:25:55.894093-05
+1249	113	130	2012-01-13 11:26:00.441939-05
+1250	114	130	2012-01-13 11:26:04.847168-05
+1251	115	130	2012-01-13 11:26:08.147989-05
+1252	116	130	2012-01-13 11:26:24.65444-05
+1253	117	130	2012-01-13 11:27:35.160287-05
+1254	118	130	2012-01-13 11:27:38.804895-05
+1255	119	130	2012-01-13 11:27:42.288704-05
+1256	120	130	2012-01-13 11:27:46.011856-05
+1257	121	130	2012-01-13 11:27:50.620751-05
+1258	122	130	2012-01-13 11:27:54.816904-05
+1259	123	130	2012-01-13 11:28:03.720885-05
+1260	47	130	2012-01-13 11:29:04.095465-05
+1261	48	130	2012-01-13 11:29:16.097151-05
+1262	49	130	2012-01-13 11:29:41.705069-05
+1263	50	130	2012-01-13 11:29:47.52216-05
+1264	51	130	2012-01-13 11:29:51.943337-05
+1265	52	130	2012-01-13 11:30:06.094849-05
+1266	53	130	2012-01-13 11:30:23.708719-05
+1267	54	130	2012-01-13 11:30:23.715069-05
+1268	55	130	2012-01-13 11:30:40.725082-05
+1269	56	130	2012-01-13 11:30:57.124227-05
+1270	57	130	2012-01-13 11:31:05.741221-05
+1271	58	130	2012-01-13 11:31:14.096415-05
+1272	59	130	2012-01-13 11:31:23.094631-05
+1273	60	130	2012-01-13 11:31:54.14096-05
+1274	61	130	2012-01-13 11:31:59.095966-05
+1275	61	130	2012-01-13 11:32:04.141217-05
+1276	61	130	2012-01-13 11:33:30.140747-05
+1277	62	130	2012-01-13 11:33:38.094621-05
+1278	62	130	2012-01-13 11:33:41.382551-05
+1279	63	130	2012-01-13 11:39:27.868-05
+1280	63	130	2012-01-13 11:39:38.096613-05
+1281	124	130	2012-01-13 11:41:07.320249-05
+1282	64	130	2012-01-13 11:41:17.096611-05
+1283	64	130	2012-01-13 11:41:26.517415-05
+1284	125	130	2012-01-13 11:41:52.141694-05
+1285	126	130	2012-01-13 11:42:08.615347-05
+1286	128	130	2012-01-13 11:42:39.831041-05
+1293	64	17	2012-01-17 10:50:03.126474-05
+1294	125	130	2012-01-17 11:07:41.606139-05
+1295	126	130	2012-01-17 11:07:46.180337-05
+1296	128	130	2012-01-17 11:07:57.970604-05
+1303	80	132	2012-01-17 13:04:50.929853-05
+1304	81	132	2012-01-17 13:04:59.772206-05
+1305	82	132	2012-01-17 13:05:04.919275-05
+1306	83	132	2012-01-17 13:05:08.357601-05
+1307	84	132	2012-01-17 13:05:12.294628-05
+1308	85	132	2012-01-17 13:05:15.747344-05
+1309	86	132	2012-01-17 13:05:19.122105-05
+1310	87	132	2012-01-17 13:05:22.902728-05
+1311	88	132	2012-01-17 13:05:27.050498-05
+1312	89	132	2012-01-17 13:05:30.544125-05
+1313	90	132	2012-01-17 13:05:34.469767-05
+1314	91	132	2012-01-17 13:05:40.910922-05
+1315	92	132	2012-01-17 13:05:45.254106-05
+1316	93	132	2012-01-17 13:05:49.660554-05
+1317	94	132	2012-01-17 13:05:52.85788-05
+1318	95	132	2012-01-17 13:05:56.533235-05
+1319	96	132	2012-01-17 13:06:00.206303-05
+1320	97	132	2012-01-17 13:06:03.997532-05
+1321	98	132	2012-01-17 13:06:07.24657-05
+1322	99	132	2012-01-17 13:06:10.510333-05
+1323	100	132	2012-01-17 13:06:13.965924-05
+1324	101	132	2012-01-17 13:06:17.645407-05
+1325	102	132	2012-01-17 13:06:22.488135-05
+1326	103	132	2012-01-17 13:06:27.725374-05
+1327	104	132	2012-01-17 13:06:32.564018-05
+1328	105	132	2012-01-17 13:06:45.437507-05
+1329	106	132	2012-01-17 13:06:49.004661-05
+1330	107	132	2012-01-17 13:06:54.395075-05
+1331	108	132	2012-01-17 13:06:57.788367-05
+1332	109	132	2012-01-17 13:07:01.275496-05
+1333	127	132	2012-01-17 13:07:04.618067-05
+1334	110	132	2012-01-17 13:07:08.499424-05
+1335	111	132	2012-01-17 13:07:11.958015-05
+1336	112	132	2012-01-17 13:07:15.64998-05
+1337	113	132	2012-01-17 13:07:18.883329-05
+1338	114	132	2012-01-17 13:07:22.508453-05
+1339	115	132	2012-01-17 13:07:25.91504-05
+1340	116	132	2012-01-17 13:07:31.534327-05
+1341	117	132	2012-01-17 13:07:45.299322-05
+1342	118	132	2012-01-17 13:07:48.195648-05
+1343	119	132	2012-01-17 13:07:51.224214-05
+1344	120	132	2012-01-17 13:07:54.455799-05
+1345	121	132	2012-01-17 13:07:57.791908-05
+1346	122	132	2012-01-17 13:08:01.016023-05
+1347	123	132	2012-01-17 13:08:05.056274-05
+1348	47	132	2012-01-17 13:08:22.270289-05
+1349	48	132	2012-01-17 13:08:25.60266-05
+1350	49	132	2012-01-17 13:08:29.937985-05
+1351	50	132	2012-01-17 13:08:33.386672-05
+1352	51	132	2012-01-17 13:08:37.595638-05
+1353	52	132	2012-01-17 13:08:48.159971-05
+1354	53	132	2012-01-17 13:08:54.504412-05
+1355	54	132	2012-01-17 13:08:54.510565-05
+1356	55	132	2012-01-17 13:09:02.546586-05
+1357	56	132	2012-01-17 13:09:16.64916-05
+1358	57	132	2012-01-17 13:09:20.293945-05
+1359	58	132	2012-01-17 13:09:24.411008-05
+1360	59	132	2012-01-17 13:09:27.987662-05
+1361	60	132	2012-01-17 13:09:37.703847-05
+1362	61	132	2012-01-17 13:09:41.473105-05
+1363	62	132	2012-01-17 13:09:45.481136-05
+1364	63	132	2012-01-17 13:09:48.971138-05
+1365	124	132	2012-01-17 13:10:33.71787-05
+1366	64	132	2012-01-17 13:10:42.246838-05
+1367	125	132	2012-01-17 13:10:49.764399-05
+1368	125	132	2012-01-17 13:11:04.504675-05
+1369	126	132	2012-01-17 13:11:17.771663-05
+1370	126	132	2012-01-17 13:11:28.439979-05
+1434	80	134	2012-01-17 14:14:48.166529-05
+1435	81	134	2012-01-17 14:14:50.739122-05
+1436	82	134	2012-01-17 14:14:53.230997-05
+1437	83	134	2012-01-17 14:14:55.765396-05
+1438	84	134	2012-01-17 14:14:58.640621-05
+1439	85	134	2012-01-17 14:15:01.305584-05
+1440	86	134	2012-01-17 14:15:04.052525-05
+1441	87	134	2012-01-17 14:15:07.518306-05
+1442	88	134	2012-01-17 14:15:12.538849-05
+1443	89	134	2012-01-17 14:15:15.4721-05
+1444	90	134	2012-01-17 14:15:18.140784-05
+1445	91	134	2012-01-17 14:15:20.833127-05
+1446	92	134	2012-01-17 14:15:23.441321-05
+1447	93	134	2012-01-17 14:15:26.020612-05
+1448	94	134	2012-01-17 14:15:28.57649-05
+1449	95	134	2012-01-17 14:15:31.187685-05
+1450	96	134	2012-01-17 14:15:33.85567-05
+1451	97	134	2012-01-17 14:15:34.526284-05
+1452	97	134	2012-01-17 14:15:37.149919-05
+1453	98	134	2012-01-17 14:15:39.77156-05
+1454	99	134	2012-01-17 14:15:42.438277-05
+1455	100	134	2012-01-17 14:15:45.041797-05
+1456	101	134	2012-01-17 14:15:47.691123-05
+1457	102	134	2012-01-17 14:15:50.449364-05
+1458	103	134	2012-01-17 14:15:53.087855-05
+1459	104	134	2012-01-17 14:15:55.648012-05
+1460	105	134	2012-01-17 14:16:06.470601-05
+1461	106	134	2012-01-17 14:16:09.115665-05
+1462	107	134	2012-01-17 14:16:11.752184-05
+1463	108	134	2012-01-17 14:16:14.439783-05
+1464	109	134	2012-01-17 14:16:16.99401-05
+1465	127	134	2012-01-17 14:16:19.547855-05
+1466	110	134	2012-01-17 14:16:22.211912-05
+1467	111	134	2012-01-17 14:16:24.937696-05
+1468	112	134	2012-01-17 14:16:27.750432-05
+1469	113	134	2012-01-17 14:16:30.303965-05
+1470	114	134	2012-01-17 14:16:33.0359-05
+1471	115	134	2012-01-17 14:16:35.740714-05
+1472	116	134	2012-01-17 14:16:38.312289-05
+1473	117	134	2012-01-17 14:16:43.957364-05
+1474	118	134	2012-01-17 14:16:46.471095-05
+1475	119	134	2012-01-17 14:16:49.019211-05
+1476	120	134	2012-01-17 14:16:51.445122-05
+1477	121	134	2012-01-17 14:16:53.876536-05
+1478	122	134	2012-01-17 14:16:56.384889-05
+1479	123	134	2012-01-17 14:16:56.838075-05
+1480	47	134	2012-01-17 14:16:59.680801-05
+1481	48	134	2012-01-17 14:17:00.402911-05
+1482	49	134	2012-01-17 14:17:01.166712-05
+1483	50	134	2012-01-17 14:17:01.899342-05
+1484	49	134	2012-01-17 14:17:02.517884-05
+1485	50	134	2012-01-17 14:17:03.072328-05
+1486	51	134	2012-01-17 14:17:03.772425-05
+1487	52	134	2012-01-17 14:17:05.199461-05
+1488	53	134	2012-01-17 14:17:06.112539-05
+1489	54	134	2012-01-17 14:17:06.118869-05
+1490	55	134	2012-01-17 14:17:07.846649-05
+1491	56	134	2012-01-17 14:17:10.400399-05
+1492	57	134	2012-01-17 14:17:11.151044-05
+1493	58	134	2012-01-17 14:17:12.148472-05
+1494	59	134	2012-01-17 14:17:12.950374-05
+1495	60	134	2012-01-17 14:17:14.875146-05
+1496	61	134	2012-01-17 14:17:15.567686-05
+1497	62	134	2012-01-17 14:17:16.273774-05
+1498	63	134	2012-01-17 14:17:17.417476-05
+1499	124	134	2012-01-17 14:17:22.134292-05
+1500	125	17	2012-01-17 15:30:53.034735-05
 \.
 
 
@@ -7053,10 +7532,15 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 --
 
 COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
-5	13	\N	241
-2	17	644	241
 1	5	647	241
+5	13	\N	241
+11	8	\N	241
+12	132	645	241
+13	134	\N	241
+2	17	644	241
 3	124	\N	241
+8	115	\N	241
+7	130	645	241
 \.
 
 
@@ -7205,21 +7689,46 @@ COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FR
 --
 
 COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
-11	109	1	asdf
-12	109	2	
-13	109	3	asdfas
-14	109	4	asdf
-15	109	5	
-6	13	1	jane
-7	13	2	Helen
-8	13	3	this
-9	13	4	is
-10	13	5	a
 16	17	1	b
 17	17	2	bob
 18	17	3	a
 19	17	4	alice
 20	17	5	c
+6	13	1	jane
+7	13	2	Helen
+8	13	3	this
+11	109	1	asdf
+12	109	2	
+9	13	4	is
+13	109	3	asdfas
+14	109	4	asdf
+10	13	5	a
+15	109	5	
+51	8	1	Name 1
+52	8	2	
+53	8	3	
+54	8	4	Name 2
+55	8	5	Name 3
+36	115	1	
+37	115	2	
+38	115	3	
+39	115	4	
+40	115	5	
+31	130	1	Tina
+32	130	2	James
+33	130	3	Alison
+34	130	4	Andrea
+35	130	5	liz
+56	132	1	gerry
+57	132	2	
+58	132	3	
+59	132	4	
+60	132	5	jen
+66	134	1	
+67	134	2	person 3
+68	134	3	person 1
+69	134	4	person 2
+70	134	5	
 2	5	1	
 1	5	2	
 3	5	3	
@@ -7242,6 +7751,21 @@ COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtree
 27	8	1
 35	4	1
 36	4	2
+37	33	2
+38	34	2
+39	31	1
+40	33	1
+42	54	2
+43	54	1
+44	55	1
+45	55	2
+46	56	2
+47	56	1
+48	60	1
+53	67	2
+54	68	2
+55	68	1
+56	69	1
 \.
 
 
@@ -7279,13 +7803,14 @@ COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM st
 63	159753	121	62
 65	444444	123	186
 59	1444444	117	181
-70	9999999	129	76
 56	344656756	114	62
 64	143680	122	63
 58	4	115	198
 66	99996	125	52
 68	33489576	127	201
+73	80808	132	220
 62	357159	120	111
+75	9999999	134	57
 \.
 
 
