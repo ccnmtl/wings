@@ -1238,3 +1238,10 @@ ul.answer_summary li div.past_question_answer_div.user_added {
     display: block;
 
 }
+
+/* adjustments to exit materials */
+.exit_materials_block.block_239 {
+    display: none;
+}
+
+

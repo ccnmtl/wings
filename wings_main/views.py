@@ -172,7 +172,7 @@ def make_and_login_participant(id_string, request):
         new_user.save()
         participant.user = new_user
         participant.save()
-    participant.user.backend='django.contrib.auth.backends.ModelBackend' 
+    participant.user.backend='django.contrib.auth.batckends.ModelBackend' 
     assert participant.user != None
     messages.info(request, "Logged in!")
     authenticate(username=participant.user.username, password= participant.user.password)
@@ -222,15 +222,27 @@ def exit_materials_nodes ():
 
     safety_plan_part_2_node_list = []
     traverse_tree(PageBlock.objects.get(id=135).section, safety_plan_part_2_node_list)
-    
-    ssnm_tree_node = PageBlock.objects.get(id=254)
-    resources_node = PageBlock.objects.get(id=291)
 
+    goal_setting_node_list = []
+    traverse_tree(Section.objects.get(id=57), goal_setting_node_list)
+
+    
+    ssnm_tree_node    = PageBlock.objects.get(id=254)
+    resources_node    = PageBlock.objects.get(id=291)
+    
+    
+    action_plan_node = PageBlock.objects.get(id=257)
+    
+    #import pdb
+    #pdb.set_trace()
+    
     return {
-        'safety_plan_part_1_node_list' :  safety_plan_part_1_node_list,
-        'safety_plan_part_2_node_list' :  safety_plan_part_2_node_list,
-        'ssnm_tree_node'               :  ssnm_tree_node,
-        'resources_node'               :  resources_node
+        'safety_plan_part_1_node_list' : safety_plan_part_1_node_list,
+        'safety_plan_part_2_node_list' : safety_plan_part_2_node_list,
+        'goal_setting_node_list'       : goal_setting_node_list,
+        'ssnm_tree_node'               : ssnm_tree_node,
+        'resources_node'               : resources_node,
+        'action_plan_node'             : action_plan_node,
     }
 
 

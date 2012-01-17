@@ -77,12 +77,41 @@
                     </div>
                 {%endfor %}
 
+            
+            <hr />
+            <h1>Goal Setting</h1>
+            {%for section in goal_setting_node_list %}
+                <div>
+                    {% for block in section.pageblock_set.all %}
+                    {% if not block.block.is_help_block and not block.block.is_audio_block %}
+                        {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
+                        <!--
+                        <div>
+                        BLOCK ID {{block.id}}
+                        </div>
+                        -->
+                        {% render block %}
+                    {%endif %}
+                    {% endfor %}
+                </div>
+            {%endfor %}
+
+
+
+
             <hr />
             <h1>Services</h1>
             <div class="exit_materials_services">
                 {%render resources_node %}
             </div>
             
+                        
+            <hr />
+            <h1>Action Plan</h1>
+            <div class="exit_materials_action_plan">
+                {%render action_plan_node %}
+            </div>
+
             
             <hr />
             <div>
@@ -93,14 +122,5 @@
                 <a class="exit_materials_logout_button" href="/logout/"  >Done -- log out.</a>
             </div>
             <hr />
-            
-            
-    </div>
-    
-    
-    
-
-
-    
-            
+    </div>        
 {%endblock%}

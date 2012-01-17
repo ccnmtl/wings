@@ -57,6 +57,12 @@
 
 {% block content %}
 <h3>{{section.label}}</h3>
+<!--
+    section id is:        {{section.id}}
+    parent section id is: {{section.parent.id}}
+-->
+
+
 
 {% for block in section.pageblock_set.all %}
     {% if block.block.is_audio_block %}
@@ -90,6 +96,9 @@
 
 {% for block in section.pageblock_set.all %}
     {% if not block.block.is_help_block and not block.block.is_audio_block %}
+    <!--
+        Block id is: {{block.id}} 
+    -->
         {% if block.label %}<h3>{{block.label}} </h3>{% endif %}
         {% render block %}
     {%endif %}

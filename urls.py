@@ -20,15 +20,11 @@ urlpatterns = patterns('',
     #shortcut to first page 
     ('^first/$', 'wings_main.views.first'),
 
-
-
-    
     #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),
 
     (r'^participant/(?P<id_string>\d+)/launch/',           'wings_main.views.launch_participant'),                     
     (r'^participant/(?P<id_string>\d+)/exit_materials/',   'wings_main.views.exit_materials'),                     
-
                    
     (r'^exit_materials/',   'wings_main.views.participant_exit_materials'),
 
@@ -41,12 +37,8 @@ urlpatterns = patterns('',
     (r'^test/$',   redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
     (r'^tests/$',  redirect_to,  {'url': settings.SELENIUM_TESTS_URL}),
     
-
-    
     (r'^selenium/(?P<task>\w+)/$',               'wings_main.views.selenium'),
-
-        
-
+    
     #standard django stuff:
     ('^accounts/',include('djangowind.urls')),
     (r'^admin/pagetree/section/move/(?P<section_id>\d+)/$', 'pagetree.views.move_section', {}, 'move-section'),
@@ -55,8 +47,8 @@ urlpatterns = patterns('',
 
     # Note: this is nonstandard, but the standard is incredibly confusing to mere mortals.
     # I'm sorry, but for this site, urls in "site_media"  will reference directory "site_media".
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.SITE_MEDIA_ROOT }),
-    (r'^uploads/(?P<path>.*)$','django.views.static.serve',{'document_root' : settings.UPLOADS_ROOT}),
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':  settings.SITE_MEDIA_ROOT }),
+    (r'^uploads/(?P<path>.*)$',    'django.views.static.serve', {'document_root' : settings.UPLOADS_ROOT    }),
 
     #from forest:
     #Put this after the static files, otherwise it will try to serve them.
