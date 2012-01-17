@@ -42,7 +42,6 @@
             <hr />
             <h3>Part One: Strategies for Safety During a Violent Incident</h3>
                     {%for section in safety_plan_part_1_node_list %}
-                        <div>
                             {% for block in section.pageblock_set.all %}
                             {% if not block.block.is_help_block and not block.block.is_audio_block %}
                                 {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
@@ -51,10 +50,12 @@
                                 BLOCK ID {{block.id}}
                                 </div>
                                 -->
-                                {% render block %}
+                                
+                                <div class = "exit_materials_block block_{{block.id}}" >
+                                        {% render block %}
+                                </div>
                             {%endif %}
                             {% endfor %}
-                        </div>
                     {%endfor %}
                 
             
