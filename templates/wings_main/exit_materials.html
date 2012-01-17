@@ -8,31 +8,21 @@
     {% renderjs ssnm_tree_node %}
     {% renderjs resources_node %}
     <script language ="javascript">
-function turn_into_a_div (thing) {
-    console.log (thing);
-}
-
-
-tmp1 = jQuery (".exit_materials_main_content_div  input[type='text']");
-tmp2 = jQuery (".exit_materials_main_content_div  textarea");
-
-jQuery.each( tmp1, function(index, inp) {
-  v = inp.value
-  $(inp).after ('<div>' + v + '</div>')
-  //console.log (v);
-  //turn_into_a_div(  value); 
-});
-
-
-
-jQuery.each( tmp2, function(index, txta) {
-  v = txta.innerHTML
-  $(txta).after ('<div>' + v + '</div>')
-  console.log(v)
-  //turn_into_a_div(  value); 
-});
-
-
+        function turn_into_a_div (thing, contents) {
+            $(thing).after ('<div class="exit_materials_replacement_div">' + contents + '</div>');
+            $(thing).remove();
+        }
+        function setup_exit_materials () {
+            tmp1 = jQuery (".exit_materials_main_content_div  input[type='text']");
+            tmp2 = jQuery (".exit_materials_main_content_div  textarea");
+            jQuery.each( tmp1, function(index, inp) {
+                turn_into_a_div( inp, inp.value); 
+            });
+            jQuery.each( tmp2, function(index, txta) {
+                turn_into_a_div( txta, txta.innerHTML); 
+            });
+        }
+        jQuery(setup_exit_materials);
     </script>
     
 {%endblock %}

@@ -1243,9 +1243,32 @@ ul.answer_summary li div.past_question_answer_div.user_added {
 .exit_materials_main_content_div .exit_materials_block.block_239 {
     display: none;
 }
-/*
-.exit_materials_main_content_div  input[type="text"], .exit_materials_main_content_div textarea{
-    color: red;
+
+
+.exit_materials_main_content_div .exit_materials_replacement_div {
+    background-color: white;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    min-width: 300px;
+    min-height: 30px;
+    padding: 10px;
+    margin: 10px;
+    border: black solid 1px;
 }
-*/
+/* special case for ssnm replacement divs */
+.exit_materials_main_content_div .exit_materials_ssnm_tree .exit_materials_replacement_div {
+    position: absolute;
+    min-width: 0px;
+    min-height: 0px;
+    left: 55px !important;
+    top: 44px !important;
+    width: 70px !important;
+    height: 14px !important;
+    font-size: .8em !important;
+    opacity:0.8;
+    filter:alpha(opacity=0.8); /* For IE8 and earlier */
+    border-radius: 10px;
+    padding: 0 5px !important;
+}
 
