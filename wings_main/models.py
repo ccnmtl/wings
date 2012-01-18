@@ -13,16 +13,19 @@ def section_rank (section):
 
 class Participant(models.Model):
 
-    id_string = models.IntegerField(unique=True)
-    user =  models.ForeignKey(User,blank=True,null=True)
+    id_string =       models.IntegerField(unique=True)
+    created_on =      models.DateTimeField(auto_now_add=True, null=False)
+    user =            models.ForeignKey(User,blank=True,null=True)
     current_section = models.ForeignKey(Section,blank= True,null=True)
-
-    def label(self):
-        return self.__unicode__()
-
+    
     def __unicode__(self):
         return "P%s" % self.id_string
-    __unicode__.admin_order_field = 'id_string'
+    
+    #i think if we wrap this in a function the sorting will suddenly work
+    def label (self):
+        return self.__unicode__()
+    label.admin_order_field = 'id_string'
+    label.short_description = 'Participant ID'
 
     def has_user(self):
         return self.user != None
@@ -34,6 +37,11 @@ class Participant(models.Model):
     def current_url ( self):
         return self.current_section.get_absolute_url()
 
+    def created_on_string (self):
+        return self.created_on.strftime("%a, %B %d,  %Y, %I:%M %p")
+    created_on_string.admin_order_field = 'created_on'
+    created_on_string.short_description = 'Date created'
+    
     def all_unlocked (self, section, request):
         """for Wings, don't allow participant users to go forward until every block on the current page says they're done."""
         user = self.user
