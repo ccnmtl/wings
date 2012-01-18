@@ -6,6 +6,8 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from wings_main.models import Participant, traverse_tree, section_rank
 from pagetree.models import Section, Hierarchy, PageBlock
+from django.db import transaction
+
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -157,7 +159,7 @@ def first(request):
     first_url = Hierarchy.objects.all()[0].get_root().get_first_child().get_absolute_url()
     return HttpResponseRedirect(first_url)
     
-    
+@transaction.commit_on_success
 def make_and_login_participant(id_string, request):
     """ If there is a participant with this id_string, log them in. If not, create one and log them in.
     See: http://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
@@ -187,8 +189,13 @@ def launch_participant(request, id_string):
     if not request.user.is_staff:
         messages.info(request, "Sorry, you can't launch participants.")
         return HttpResponseRedirect('/first/')
+    
+    try:
+        participant = make_and_login_participant(id_string, request)
+    except:
+        messages.error(request, "There was a database error; and we could not launch user P%s " % id_string);
+        return HttpResponseRedirect('/');
         
-    participant = make_and_login_participant(id_string, request)
     
     if not participant.current_section_id:
         return HttpResponseRedirect('/first/')
