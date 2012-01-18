@@ -1,4 +1,12 @@
-<script>
-
-
+<script language="javascript">
+    function hide_empties() {
+        jQuery('.hide_this_one_if_empty').each(
+            function (id, thing) {
+                if (jQuery.trim(thing.innerHTML) == '') {
+                    jQuery(thing).hide();
+                }
+            }
+        );
+    }
+    jQuery (hide_empties);
 </script>

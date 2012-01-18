@@ -2,5 +2,57 @@
 {% load pastquizanswers %}
 
 <div>
-    {%interpolate_previous_answers user block%}
+    <h2>You answered that relationship conflict gives you these feelings and concerns:</h2>
+
+            <ul class="answer_summary"><h5>It makes you feel...</h5>
+
+                    {%comment %}
+                        the recipe for test_answer is:
+                            {%test_answer question_id value_to_match output_if_match output_if_no_match %}
+                    {%endcomment %}
+
+                    {%test_answer user 210 "yes"   '<li class ="past_question_question_div">sad or depressed.</li>' '' %}
+                    {%test_answer user 210 "maybe" '<li class ="past_question_question_div">sad or depressed.</li>' '' %}
+                   
+                    {%test_answer user 211 "yes"   '<li class ="past_question_question_div">anxious, stressed out, or on edge.</li>' '' %}
+                    {%test_answer user 211 "maybe" '<li class ="past_question_question_div">anxious, stressed out, or on edge.</li>' '' %} 
+
+                    {%test_answer user 212 "yes"   '<li class ="past_question_question_div">isolated from your friends and family.</li>' '' %}
+                    {%test_answer user 212 "maybe" '<li class ="past_question_question_div">isolated from your friends and family.</li>' '' %}
+                    
+                    {%test_answer user 213 "yes"   '<li class ="past_question_question_div">like using drugs or alcohol.</li>' '' %}
+                    {%test_answer user 213 "maybe" '<li class ="past_question_question_div">like using drugs or alcohol.</li>' '' %}
+                    
+                    {%test_answer user 221 "yes"   '<li class ="past_question_question_div">hopeless or helpless about your future.</li>' '' %}
+                    {%test_answer user 221 "maybe" '<li class ="past_question_question_div">hopeless or helpless about your future.</li>' '' %}
+                    
+                    {%test_answer user 243 "yes"   '<li class ="past_question_question_div">bad about yourself.</li>' '' %}
+                    {%test_answer user 243 "maybe" '<li class ="past_question_question_div">bad about yourself.</li>' '' %}
+            </ul>
+
+            <ul class="answer_summary">
+                    <h5>You are concerned...</h5>
+
+                    {%test_answer user 215 "yes"   '<li class ="past_question_question_div">that it is negatively affecting your children.</li>' '' %}
+                    {%test_answer user 215 "maybe" '<li class ="past_question_question_div">that it is negatively affecting your children.</li>' '' %}
+
+                    {%test_answer user 216 "yes"   '<li class ="past_question_question_div">that you may end up fighting back or hurting your partner and risk getting charged with assault.</li>' '' %}
+                    {%test_answer user 216 "maybe" '<li class ="past_question_question_div">that you may end up fighting back or hurting your partner and risk getting charged with assault.</li>' '' %}
+                        
+                    {%test_answer user 217 "yes"   '<li class ="past_question_question_div">it is contributing towards physical problems that you are experiencing.</li>' '' %}
+                    {%test_answer user 217 "maybe" '<li class ="past_question_question_div">it is contributing towards physical problems that you are experiencing.</li>' '' %}
+
+                    {%test_answer user 218 "yes"   '<li class ="past_question_question_div">that you may be injured in a fight.</li>' '' %}
+                    {%test_answer user 218 "maybe" '<li class ="past_question_question_div">that you may be injured in a fight.</li>' '' %}
+
+                    {%test_answer user 219 "yes"   '<li class ="past_question_question_div">that you may be exposed to HIV or sexually transmitted infections because of unsafe sex.</li>' '' %}
+                    {%test_answer user 219 "maybe" '<li class ="past_question_question_div">that you may be exposed to HIV or sexually transmitted infections because of unsafe sex.</li>' '' %}
+
+                    {%test_answer user 220 "yes"   '<li class ="past_question_question_div">about becoming pregnant.</li>' '' %}
+                    {%test_answer user 220 "maybe" '<li class ="past_question_question_div">about becoming pregnant.</li>' '' %}
+                    
+                    <!-- Other concerns:  (see javascript -- this gets hidden if it's empty.-->
+                    <li class ="past_question_question_div hide_this_one_if_empty">{%interpolate_previous_answer user 222 %}</li>
+ 
+            </ul>
 </div>
