@@ -1,23 +1,14 @@
 {% load smartif %}
 {% load get_name %}
-<div class = "error_text">
-    {{block.error_copy}}
-</div>
 <form id="submit_to_self_form" method="post" action=".">
     <div id="{{block.id}}-ssnm" class="ssnm_tree_block">
         {%for box in block.boxes.all %}
             <div class = "ssnm_tree_box_div box_{{box.id}} {%list_of_support_types_for box user block %}">
-            
-            
                 <input
                     type="text"
                     name="pageblock-{{block.pageblock.id}}-{{box.id}}"
                     value="{% get_name_for_box box user %}"
-                    class="ssnm_tree_box_input {{box.label}}" />
-                    
-                    
-                
-                
+                    class="ssnm_tree_box_input e{{box.label}}" />
                 {%for type in block.visible_support_types.all %}
                     <div id =".box_{{box.id}}.type_{{type.id}}"
                     class="heart box_{{box.id}}  type_{{type.id}}" title="{{type.label}}"></div>
