@@ -37,6 +37,7 @@ def user_chose_any_of (user, answers):
                         return True
     return False    
 
+
 def risk_score (user):
     """Here is the score recipe. It is not a matter of adding up answers to reach a threshold, rather it is a list of indicators. Any high risk indicator trumps a 'some' risk indicator. You only need one indicator to fall into a some or high risk category. The indicators are as follows:
        
@@ -51,7 +52,6 @@ def risk_score (user):
     
 
 def risk_copy (block, user):
-    #document()
     tmp = risk_score (user)
     if   tmp ==  'no_risk':
         return block.no_risk_copy
@@ -71,7 +71,7 @@ class RiskBlock(models.Model):
     css_template_file = "riskblock/riskblock_css.html"
 
     display_name = "Risk Block"
-
+   
     def pageblock(self):
         return self.pageblocks.all()[0]
 

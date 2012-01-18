@@ -1118,8 +1118,12 @@ background-color: #e3d8e0;
         width: 100px;
         height: 60px;
         padding: 5px
-    border: none;
-
+        border: none;
+    }
+    /* on the risk page, move the audio button back to where it should be. */
+    .audioblock_div.special_risk_audio_div {
+        position:relative;
+        left: -322px;
     }
 
     .audioblock-container .audio_controls, .audioblock-container .jp-stop-li {
