@@ -1016,7 +1016,8 @@ width: 960px;
 #header {
     
 width: 960px;
-background: url("http://ccnmtl.columbia.edu/draft/lizday/wings/wings_placeholder_banner.png") no-repeat scroll left top transparent;
+background: url('/site_media/img/site_banner.png') no-repeat scroll left top transparent;
+background-color: #E3D8E0;
 
 }
 
@@ -1243,6 +1244,11 @@ ul.answer_summary li div.past_question_answer_div.user_added {
 
 .exit_materials_main_content_div {
     font-size: 90%;
+}
+
+#content .exit_materials_main_content_div {
+
+    margin-left: -7em;
 }
 
 .exit_materials_main_content_div .exit_materials_block.block_239 {
