@@ -5,6 +5,7 @@ from django.contrib.contenttypes import generic
 from django import forms
 from datetime import datetime
 from django.core.urlresolvers import reverse
+from django.conf import settings
 
 class Quiz(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
@@ -54,7 +55,9 @@ class Quiz(models.Model):
         return True
     
     def user_answered_all_questions(self,user):
-        for question in self.question_set.all():
+        #TODO check for mandatory
+        mandatory_questions = [q for q in self.question_set.all() if q.mandatory()]
+        for question in mandatory_questions:
             #print "QUESTION:"
             #print question.id
             #print question.answer_set.all()
@@ -231,6 +234,8 @@ class Question(models.Model):
         submission = Submission.objects.filter(user=user,quiz=self.quiz).order_by("-submitted")[0]
         return Response.objects.filter(question=self,submission=submission)
 
+    def mandatory (self):
+        return self.id not in settings.OPTIONAL_QUESTIONS
 
     def as_dict(self):
         return dict(
