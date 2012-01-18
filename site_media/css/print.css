@@ -14,6 +14,78 @@ body
 
 }
 
+div.cases
+{
+	margin: 0 0 1em;
+	padding: 0;
+	border: 1px solid #999;
+    width: 100%;
+
+}
+
+
+#content.image_on_right div.cases
+{
+	float: left;
+	width: 395px;
+}
+
+#content.image_on_left div.cases
+{
+	float: right;
+	width: 395px;
+}
+
+.casetitle
+{
+    background-color: #e3d8e0;
+	margin: 0;
+	padding: 5px 10px;
+	border: 0;
+	font-weight: bold;
+	display:none; /* sorry; not showing these... */
+	
+	.casequestion p
+{
+    background-color: #e3d8e0;
+	margin: 0 0 10px 0;
+	padding: 5px 10px;
+	border: 0;
+	font-weight: bold;
+
+}
+
+
+.casecontent
+{
+	margin: 10px;
+	padding: 0;
+	border: 0;
+}
+
+.casequestion
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.cases li
+{
+	margin: 2px 0 4px;
+}
+
+.casesanswerdisplay
+{
+	margin: 0;
+	padding: 5px;
+	border: 1px solid #999;
+	line-height: 18px;
+}
+
+
+}
+
 /* adjustments to exit materials */
 
 .exit_materials_main_content_div {
@@ -78,6 +150,8 @@ body
     border: 1px solid #999;
     padding: 0 15px 15px 15px;
     margin-bottom: 25px;
+
+
 }
 
 .exit_materials_content h5 {
@@ -94,10 +168,15 @@ body
 }
 
 .exit_materials_content .casequestion p {
-    line-height: 1em;
-    font-size: .95em;
+    
+    font-size: .85em;
     color: #000;
     margin: 0;
+    line-height: 140%;
+    background-color: #E3D8E0;
+    border: 0 none;
+    font-weight: bold;
+    padding: 5px 10px;
 }
 
 .exit_materials_content div.cases {
@@ -114,6 +193,6 @@ body
 	display: block;
 }
 
-#logo_ccnmtl {
+#logo_ccnmtl, #footer {
     display: none;
 }
