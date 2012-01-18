@@ -3,7 +3,7 @@ function hide_next () {
 }
 
 function show_next() {
-    jQuery('div.content-nav a#next').show();
+    jQuery('div.content-nav a#next').fadeIn();
 }
 
 function hide_then_show_next() {
