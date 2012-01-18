@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 451, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 474, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 135, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 140, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 239, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 244, true);
 
 
 --
@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 1548, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 1859, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 1586, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 1869, true);
 
 
 --
@@ -1788,7 +1788,7 @@ ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_na
 -- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 14, true);
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 17, true);
 
 
 --
@@ -2128,7 +2128,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 75, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 100, true);
 
 
 --
@@ -2165,7 +2165,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 60, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 72, true);
 
 
 --
@@ -2315,7 +2315,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 76, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 81, true);
 
 
 --
@@ -2914,9 +2914,7 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 
 COPY auth_message (id, user_id, message) FROM stdin;
 438	13	Logged in!
-439	132	Welcome back!
-442	5	Logged in!
-450	8	Logged in!
+474	5	Logged in!
 432	109	Logged in!
 \.
 
@@ -3105,17 +3103,13 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 1	anp8	Anders	Pearson	anp8@columbia.edu	!	t	t	t	2011-10-24 11:37:17.52734-04	2011-05-18 15:57:36.886786-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
-132	80808				!	f	t	f	2012-01-17 15:35:30.632374-05	2012-01-17 13:02:45.362035-05
 114	344656756				!	f	t	f	2011-12-16 09:45:05.469537-05	2011-12-15 16:18:49.852391-05
 113	23				!	f	t	f	2011-12-16 10:46:12.342067-05	2011-12-15 13:47:09.128831-05
 124	casi				sha1$92c83$216ed4e0c9a87d9d46f583a6763f11470a8cd2f5	t	t	t	2012-01-05 16:49:45.475507-05	2012-01-05 16:44:20-05
 127	33489576				!	f	t	f	2012-01-12 15:54:22.029489-05	2012-01-11 10:21:24.301561-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-17 19:01:05.698701-05	2011-06-02 15:22:04-04
 123	444444				!	f	t	f	2012-01-12 15:54:45.324032-05	2012-01-05 15:19:52.12015-05
 116	256789				!	f	t	f	2011-12-16 15:31:42.921599-05	2011-12-16 15:31:42.914867-05
-8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-18 10:46:14.943197-05	2011-06-02 15:22:48.818126-04
 125	99996				!	f	t	f	2012-01-09 10:15:22.392936-05	2012-01-06 14:50:51.600377-05
-135	9999999				!	f	t	f	2012-01-18 10:46:17.206355-05	2012-01-17 19:24:39.838028-05
 120	357159				!	f	t	f	2012-01-05 11:05:26.298471-05	2012-01-04 10:20:25.965136-05
 121	159753				!	f	t	f	2012-01-05 15:04:37.379841-05	2012-01-05 15:04:37.367552-05
 130	474747				!	f	t	f	2012-01-17 11:33:26.683187-05	2012-01-13 11:16:11.099991-05
@@ -3125,6 +3119,11 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 122	143680				!	f	t	f	2012-01-05 16:00:38.351839-05	2012-01-05 15:13:07.416884-05
 109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-17 14:13:43.215702-05	2011-12-09 15:38:04-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
+136	2				!	f	t	f	2012-01-18 12:49:18.593255-05	2012-01-18 11:12:47.828919-05
+132	80808				!	f	t	f	2012-01-18 12:49:54.461206-05	2012-01-17 13:02:45.362035-05
+8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-18 13:03:25.301888-05	2011-06-02 15:22:48.818126-04
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-18 16:11:07.30665-05	2011-06-02 15:22:04-04
+140	9999999				!	f	t	f	2012-01-18 16:13:33.162921-05	2012-01-18 16:13:33.151961-05
 \.
 
 
@@ -3654,6 +3653,11 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 237	2012-01-17 13:51:24.94326-05	5	42	74	P9999999	1	
 238	2012-01-17 14:13:59.212302-05	109	42	75	P9999999	1	
 239	2012-01-17 19:24:39.611884-05	5	42	76	P9999999	1	
+240	2012-01-18 11:12:24.097521-05	5	42	77	P2	1	
+241	2012-01-18 13:18:17.864484-05	5	42	78	P9999999	1	
+242	2012-01-18 15:59:28.774809-05	5	42	79	P9999999	1	
+243	2012-01-18 16:11:13.562902-05	5	42	80	P9999999	1	
+244	2012-01-18 16:13:32.759183-05	5	42	81	P9999999	1	
 \.
 
 
@@ -3740,12 +3744,19 @@ COPY django_flatpage_sites (id, flatpage_id, site_id) FROM stdin;
 --
 
 COPY django_session (session_key, session_data, expire_date) FROM stdin;
-a16d80deb1004c054c54918ab82e2ab4	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVQ1fYXV0aF91c2VyX2lkcQSKAocAVRJfYXV0\naF91c2VyX2JhY2tlbmRxBVUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tl\nbmRxBnUuNDc3MjY0NGMyNmRlZmYxYzE1NGNiZGVkMDJlNzU1MTc=\n	2012-01-31 19:28:09.985163-05
-0fbe8d61e407fbb4fbe7f62400ace475	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVRJfYXV0aF91c2VyX2JhY2tlbmRxBFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxBVUNX2F1dGhfdXNlcl9pZHEG\nS4Z1LjZjYjk0NmE1YmI0NTYwMTc2MDU2YTE0MmU4M2Q1NzVk\n	2012-01-31 20:14:48.547389-05
+18ba1a8ea1b1f1fcd01456f7a2e389ec	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 14:16:12.673985-05
+1a690242ed0a21ba3e8b228aed92ce51	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 15:46:48.172039-05
 a9a7eecdb4ef1e4d55c1586e98485e6e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 05:23:23.564495-05
 10637c972289c60d680b0a2a86f9d2c6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 09:03:15.437752-05
 e4c428e86db805bf1dd55a03f88b349e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 10:31:28.107628-05
+8b14762b7eeb6a4c3def489572e1027d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKKAHUuY2YyZTQwMTFjZTc2NGQyNGJk\nOTk0ZjYwNmYzZDQxMDA=\n	2012-02-01 15:59:29.01451-05
+713e7cc2fb7b992ba133b7d8fac71da6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-01 11:07:15.14714-05
+ec00b594470fc6158d8efe4e730633c6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 13:03:25.312098-05
+7cc537a35b5e3730f1b80c72367318fa	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKLAHUuMzU1NjkzYmI0ZWJiZGFhNjA3\nMzIwNmUwYTA5OWIyM2E=\n	2012-02-01 16:11:13.916682-05
+8dd1cdccef506dbfaa0cba3541c44d72	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 13:07:18.15695-05
+2b98af5a66033f28ab46638e861695de	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKMAHUuN2QyMWViMDAzNmRkZWUzODVj\nY2U2ZDkzZGU2NTllNDI=\n	2012-02-01 16:13:33.177184-05
 21510b144baf661667470aac3526fb56	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4d1LmJjODRjZWU5NGM3NTQ0MmE5ZTc2\nYzFiMzQxMzE3ZWU3\n	2012-02-01 10:46:17.238026-05
+9bd0758a0a1cbb2b346b8e156a9901df	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 12:50:16.745078-05
 \.
 
 
@@ -4270,6 +4281,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 344	190	3		43	55
 290	219	2		46	1
 350	192	3		43	58
+309	201	1		54	1
 352	193	3		43	59
 257	147	1		26	128
 384	121	3		43	84
@@ -4327,7 +4339,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 400	218	2		43	99
 219	195	2		26	113
 356	195	3		43	61
-309	201	1		54	1
 261	211	2		17	28
 256	220	1		16	80
 255	219	1		16	79
@@ -4465,7 +4476,7 @@ COPY pagetree_section (id, path, depth, numchild, label, slug, hierarchy_id) FRO
 --
 
 COPY pastquizanswersblock_pastquizanswersblock (id, description, copy) FROM stdin;
-1	First draft of the summary is here.	<h2>You answered that relationship conflict gives you these feelings and concerns:\r\n</h2>\r\n\r\n<ul class="answer_summary"><h5>It makes you feel...</h5>\r\n\r\n<li class ="past_question_question_div">sad or depressed.\r\n<div class ="past_question_answer_div">\r\n[[[210]]]</div></li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">anxious, stressed out, or on edge.\r\n<div class ="past_question_answer_div">[[[211]]]</div></li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">isolated from your friends and family.\r\n<div class ="past_question_answer_div">[[[212]]]</div></li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">like using drugs or alcohol.\r\n<div class ="past_question_answer_div">[[[213]]]</div></li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">hopeless or helpless about your future.\r\n<div class ="past_question_answer_div">[[[221]]]</div>\r\n</li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">bad about yourself.\r\n<div class ="past_question_answer_div">[[[243]]]</div>\r\n</li>\r\n</ul>\r\n\r\n<ul class="answer_summary">\r\n<h5>You are concerned...</h5>\r\n\r\n<li class ="past_question_question_div">that it is negatively affecting your children.\r\n<div class ="past_question_answer_div">[[[215]]]</div>\r\n</li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">that you may end up fighting back or hurting your partner and risk getting charged with assault.\r\n<div class ="past_question_answer_div">[[[216]]]</div>\r\n</li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">it is contributing towards physical problems that you are experiencing.\r\n<div class ="past_question_answer_div">[[[217]]]</div>\r\n</li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">that you may be injured in a fight.\r\n<div class ="past_question_answer_div">[[[218]]]</div>\r\n</li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">that you may be exposed to HIV or sexually transmitted infections because of unsafe sex.\r\n<div class ="past_question_answer_div">[[[219]]]</div>\r\n</li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">about becoming pregnant.\r\n<div class ="past_question_answer_div">[[[220]]]</div>\r\n</li>\r\n<br/>\r\n\r\n<li class ="past_question_question_div">\r\n<div class ="past_question_answer_div user_added">[[[222]]]</li>\r\n</ul>
+1	First draft of the summary is here.	Moved all this to a template. This copy field isn't being used any more.
 \.
 
 
@@ -6021,6 +6032,7 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 968	208	1127	0
 969	209	1128	0
 970	185	1129	1
+1685	184	1700	1
 1052	240	1199	
 1053	239	1199	1
 1054	239	1199	2
@@ -6266,116 +6278,75 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 1436	239	1500	4
 1437	239	1500	7
 1438	239	1500	11
-1439	184	1501	2
-1440	185	1502	2
-1441	186	1503	2
-1442	187	1504	2
-1443	188	1505	2
-1444	189	1506	2
-1445	190	1507	2
-1446	191	1508	2
-1447	192	1509	2
-1448	193	1510	2
-1449	194	1511	2
-1450	195	1512	2
-1451	196	1513	2
-1452	197	1514	2
-1453	198	1515	2
-1454	199	1516	2
-1455	200	1517	2
-1456	202	1519	1
-1457	203	1520	1
-1458	204	1521	1
-1459	205	1522	1
-1460	206	1523	1
-1461	207	1524	1
-1462	208	1525	1
-1463	209	1526	1
-1464	210	1527	2
-1465	211	1528	2
-1466	212	1529	2
-1467	213	1530	2
-1468	221	1531	2
-1469	243	1532	2
-1470	215	1533	2
-1471	216	1534	2
-1472	217	1535	2
-1473	218	1536	2
-1474	219	1537	2
-1475	220	1538	2
-1476	222	1539	Lorem ipsum
-1477	223	1540	2
-1478	230	1541	2
-1479	231	1542	2
-1480	232	1543	2
-1481	233	1544	2
-1482	234	1545	2
-1483	235	1546	other reasons
-1484	148	1547	name
-1485	150	1548	exits
-1486	151	1549	id
-1487	153	1550	person
-1488	151	1551	id
-1489	153	1552	person
-1490	154	1553	person 2
-1491	155	1554	code word
-1492	156	1555	go to
-1493	157	1556	other go to
-1494	158	1557	low risk space
-1495	159	1558	extra keys
-1496	160	1559	docs
-1497	161	1560	savings acct
-1498	162	1561	independence
-1499	163	1562	support
-1500	164	1563	clothes
-1501	165	1564	review
-1502	166	1565	review2
-1503	236	1566	step 1
-1504	237	1566	step 2
-1505	168	1567	desired outcomes
-1506	167	1567	1
-1507	167	1567	4
-1508	240	1568	other issues
-1509	239	1568	3
-1510	239	1568	6
-1511	239	1568	7
-1512	239	1568	11
-1513	242	1569	
-1514	241	1570	2
-1515	241	1570	5
-1516	241	1570	10
-1517	242	1570	
-1518	241	1571	2
-1519	241	1571	5
-1520	241	1571	10
-1521	242	1571	other services
-1522	245	1572	take time
-1523	244	1572	action plan
-1524	245	1573	take time
-1525	244	1573	action plan
-1526	241	1574	2
-1527	241	1574	5
-1528	241	1574	10
-1529	242	1574	other services
-1530	240	1575	other issues
-1531	239	1575	3
-1532	239	1575	6
-1533	239	1575	7
-1534	239	1575	11
-1535	168	1576	desired outcomes
-1536	167	1576	1
-1537	167	1576	4
-1538	236	1577	step 1
-1539	237	1577	step 2
-1540	166	1578	review2
-1541	165	1579	review
-1542	164	1580	clothes
-1543	163	1581	support
-1544	162	1582	John ThackaraA single charge lasts up to one month with wireless off based upon a half-hour of daily reading time. Keep wireless always on and it lasts for up to 3 weeks. Battery life will vary based on wireless usage, such as shopping the Kindle Store, web browsing, and downloading content.\r\nCharge Time\tFully charges in approximately 3 hours via the included USB 2.0 cable connected to a computer. U.S. power adapter sold separately.\r\nWi-Fi Connectivity\tSupports public and private Wi-Fi networks or hotspots that use the 802.11b, 802.11g, or 802.11n standard with support for WEP, WPA and WPA2 security using password authentication or Wi-Fi Protected Setup (WPS); does not connect to WPA and WPA2 secured networks using 802.1X authentication methods; does not support connecting to ad-hoc (or peer-to-peer) Wi-Fi networks.\r\nUSB Port\tUSB 2.0 (micro-B connector)\r\nContent Formats Supported\tKindle (AZW), TXT, PDF, unprotected MOBI, PRC natively; HTML, DOC, DOCX, JPEG, GIF, PNG, BMP through conversion.
-1545	163	1583	support
-1546	164	1584	clothes
-1547	165	1585	review
-1548	166	1586	review2
+1797	185	1808	2
+1799	187	1810	2
+1801	189	1812	2
+1803	191	1814	2
+1805	193	1816	2
+1807	195	1818	2
+1809	197	1820	2
+1811	199	1822	2
+1813	202	1824	1
+1815	204	1826	1
+1817	206	1828	1
+1819	208	1830	1
+1821	210	1832	2
+1823	212	1834	2
+1825	221	1836	2
+1827	215	1838	2
+1829	217	1840	2
+1831	219	1842	2
+1833	222	1844	Lorem ipsum
+1835	230	1846	2
+1837	232	1848	2
+1839	234	1850	2
+1841	148	1852	name
+1843	151	1854	id
+1845	154	1856	person 2
+1847	156	1858	go to
+1848	157	1859	other go to
+1850	159	1861	extra keys
+1852	161	1863	savings acct
+1854	163	1865	support
+1856	165	1867	review
+1858	236	1869	 
+1859	237	1869	 
+1693	198	1709	2
+1796	184	1807	2
+1798	186	1809	2
+1800	188	1811	2
+1802	190	1813	2
+1804	192	1815	2
+1806	194	1817	2
+1808	196	1819	2
+1810	198	1821	2
+1812	200	1823	2
+1814	203	1825	1
+1565	222	1592	sdf
+1566	222	1593	sdf
+1567	220	1594	1
+1568	222	1595	sdf
+1816	205	1827	1
+1818	207	1829	1
+1820	209	1831	1
+1822	211	1833	2
+1824	213	1835	2
+1826	243	1837	2
+1828	216	1839	2
+1830	218	1841	2
+1832	220	1843	2
+1834	223	1845	2
+1836	231	1847	2
+1838	233	1849	2
+1840	235	1851	other reasons
+1842	150	1853	exits
+1844	153	1855	person
+1846	155	1857	code word
+1849	158	1860	low risk space
+1851	160	1862	docs
+1853	162	1864	independence
+1855	164	1866	clothes
+1857	166	1868	review2
 \.
 
 
@@ -6467,9 +6438,9 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 787	95	117	2011-12-20 14:50:27.384122-05
 789	97	117	2011-12-20 14:50:41.039239-05
 791	99	117	2011-12-20 14:50:59.263262-05
-1501	80	135	2012-01-17 19:25:27.435006-05
-1506	85	135	2012-01-17 19:25:40.822234-05
-1511	90	135	2012-01-17 19:25:54.39541-05
+1808	81	140	2012-01-18 16:13:53.578058-05
+1814	87	140	2012-01-18 16:14:10.029541-05
+1820	93	140	2012-01-18 16:14:26.076474-05
 120	74	5	2011-11-28 13:59:53.861876-05
 121	75	5	2011-11-28 13:59:53.868288-05
 122	76	5	2011-11-28 13:59:53.87375-05
@@ -6613,11 +6584,11 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 786	95	117	2011-12-20 14:49:42.208384-05
 788	96	117	2011-12-20 14:50:34.266994-05
 790	98	117	2011-12-20 14:50:47.709392-05
-1502	81	135	2012-01-17 19:25:30.253633-05
-1507	86	135	2012-01-17 19:25:43.435703-05
-1512	91	135	2012-01-17 19:25:57.004567-05
-1516	95	135	2012-01-17 19:26:07.829723-05
-1520	98	135	2012-01-17 19:26:16.746363-05
+1809	82	140	2012-01-18 16:13:56.114148-05
+1815	88	140	2012-01-18 16:14:13.279048-05
+1821	94	140	2012-01-18 16:14:28.523201-05
+1826	99	140	2012-01-18 16:14:44.899283-05
+1831	104	140	2012-01-18 16:14:57.69087-05
 864	125	5	2011-12-21 11:03:47.342337-05
 866	126	5	2011-12-21 11:03:54.546465-05
 868	125	5	2011-12-21 11:09:40.125299-05
@@ -7157,23 +7128,23 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1127	103	123	2012-01-12 15:57:40.005299-05
 1128	104	123	2012-01-12 15:57:43.529427-05
 1129	81	13	2012-01-12 16:06:29.075367-05
-1503	82	135	2012-01-17 19:25:32.758331-05
-1508	87	135	2012-01-17 19:25:45.972539-05
-1513	92	135	2012-01-17 19:25:59.831414-05
-1517	96	135	2012-01-17 19:26:10.488739-05
-1521	99	135	2012-01-17 19:26:19.452023-05
-1504	83	135	2012-01-17 19:25:35.341164-05
-1509	88	135	2012-01-17 19:25:48.527834-05
-1514	93	135	2012-01-17 19:26:02.607794-05
-1518	97	135	2012-01-17 19:26:11.260378-05
-1522	100	135	2012-01-17 19:26:22.289168-05
-1524	102	135	2012-01-17 19:26:27.502791-05
-1526	104	135	2012-01-17 19:26:33.617095-05
-1528	106	135	2012-01-17 19:26:46.865681-05
-1530	108	135	2012-01-17 19:26:52.275128-05
-1532	127	135	2012-01-17 19:26:57.421191-05
-1534	111	135	2012-01-17 19:27:02.981902-05
-1536	113	135	2012-01-17 19:27:08.389138-05
+1810	83	140	2012-01-18 16:13:59.559367-05
+1816	89	140	2012-01-18 16:14:15.800027-05
+1822	95	140	2012-01-18 16:14:31.083007-05
+1827	100	140	2012-01-18 16:14:47.427288-05
+1832	105	140	2012-01-18 16:15:08.988601-05
+1811	84	140	2012-01-18 16:14:02.133185-05
+1817	90	140	2012-01-18 16:14:18.340351-05
+1823	96	140	2012-01-18 16:14:34.544055-05
+1828	101	140	2012-01-18 16:14:49.982414-05
+1833	106	140	2012-01-18 16:15:11.617699-05
+1836	109	140	2012-01-18 16:15:19.532168-05
+1839	111	140	2012-01-18 16:15:28.077622-05
+1842	114	140	2012-01-18 16:15:35.773719-05
+1845	117	140	2012-01-18 16:15:49.342956-05
+1848	120	140	2012-01-18 16:15:57.55414-05
+1851	123	140	2012-01-18 16:16:04.036764-05
+1854	49	140	2012-01-18 16:16:09.632059-05
 1199	125	5	2012-01-12 18:24:39.237124-05
 1200	125	5	2012-01-12 18:24:44.107191-05
 1201	126	5	2012-01-12 18:24:47.331764-05
@@ -7334,68 +7305,53 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1368	125	132	2012-01-17 13:11:04.504675-05
 1369	126	132	2012-01-17 13:11:17.771663-05
 1370	126	132	2012-01-17 13:11:28.439979-05
-1505	84	135	2012-01-17 19:25:38.125432-05
-1510	89	135	2012-01-17 19:25:51.784981-05
-1515	94	135	2012-01-17 19:26:05.115381-05
-1519	97	135	2012-01-17 19:26:14.13537-05
-1523	101	135	2012-01-17 19:26:24.922042-05
-1525	103	135	2012-01-17 19:26:30.875529-05
-1527	105	135	2012-01-17 19:26:44.286367-05
-1529	107	135	2012-01-17 19:26:49.541138-05
-1531	109	135	2012-01-17 19:26:54.924554-05
-1533	110	135	2012-01-17 19:27:00.196133-05
-1535	112	135	2012-01-17 19:27:05.66914-05
-1537	114	135	2012-01-17 19:27:11.329431-05
-1538	115	135	2012-01-17 19:27:14.081903-05
-1539	116	135	2012-01-17 19:27:16.592938-05
-1540	117	135	2012-01-17 19:27:22.42539-05
-1541	118	135	2012-01-17 19:27:24.960522-05
-1542	119	135	2012-01-17 19:27:27.390596-05
-1543	120	135	2012-01-17 19:27:29.815465-05
-1544	121	135	2012-01-17 19:27:32.340337-05
-1545	122	135	2012-01-17 19:27:34.860202-05
-1546	123	135	2012-01-17 19:27:35.430286-05
-1547	47	135	2012-01-17 19:27:38.24682-05
-1548	48	135	2012-01-17 19:27:38.969485-05
-1549	49	135	2012-01-17 19:27:39.575159-05
-1550	50	135	2012-01-17 19:27:40.314088-05
-1551	49	135	2012-01-17 19:27:40.929277-05
-1552	50	135	2012-01-17 19:27:41.59039-05
-1553	51	135	2012-01-17 19:27:42.467145-05
-1554	52	135	2012-01-17 19:27:43.953102-05
-1555	53	135	2012-01-17 19:27:44.919789-05
-1556	54	135	2012-01-17 19:27:44.926029-05
-1557	55	135	2012-01-17 19:27:46.323566-05
-1558	56	135	2012-01-17 19:27:48.784318-05
-1559	57	135	2012-01-17 19:27:49.395081-05
-1560	58	135	2012-01-17 19:27:50.346653-05
-1561	59	135	2012-01-17 19:27:51.070558-05
-1562	60	135	2012-01-17 19:27:53.229224-05
-1563	61	135	2012-01-17 19:27:54.148218-05
-1564	62	135	2012-01-17 19:27:54.985744-05
-1565	63	135	2012-01-17 19:27:55.950023-05
-1566	124	135	2012-01-17 19:28:01.112237-05
-1567	64	135	2012-01-17 19:28:02.084819-05
-1568	125	135	2012-01-17 19:28:03.72197-05
-1569	126	135	2012-01-17 19:28:04.478492-05
-1570	126	135	2012-01-17 19:28:05.454237-05
-1571	126	135	2012-01-17 19:28:06.342498-05
-1572	128	135	2012-01-17 19:28:09.05377-05
-1573	128	135	2012-01-18 10:46:24.252506-05
-1574	126	135	2012-01-18 10:46:29.984568-05
-1575	125	135	2012-01-18 10:46:32.635651-05
-1576	64	135	2012-01-18 10:46:37.26388-05
-1577	124	135	2012-01-18 10:46:39.766672-05
-1578	63	135	2012-01-18 10:46:48.911178-05
-1579	62	135	2012-01-18 10:46:49.972713-05
-1580	61	135	2012-01-18 10:46:50.984216-05
-1581	60	135	2012-01-18 10:46:52.274507-05
-1582	59	135	2012-01-18 10:47:40.003839-05
-1583	60	135	2012-01-18 10:47:44.962219-05
-1584	61	135	2012-01-18 10:47:46.043771-05
-1585	62	135	2012-01-18 10:47:47.07189-05
-1586	63	135	2012-01-18 10:47:47.9466-05
+1812	85	140	2012-01-18 16:14:04.969667-05
+1818	91	140	2012-01-18 16:14:21.023511-05
+1824	97	140	2012-01-18 16:14:39.117044-05
+1829	102	140	2012-01-18 16:14:52.611302-05
+1834	107	140	2012-01-18 16:15:14.277041-05
+1837	127	140	2012-01-18 16:15:22.942304-05
+1840	112	140	2012-01-18 16:15:30.667406-05
+1843	115	140	2012-01-18 16:15:39.027699-05
+1846	118	140	2012-01-18 16:15:51.804605-05
+1849	121	140	2012-01-18 16:16:00.046634-05
+1852	47	140	2012-01-18 16:16:07.557586-05
+1855	50	140	2012-01-18 16:16:11.363415-05
+1857	52	140	2012-01-18 16:16:13.594382-05
+1860	55	140	2012-01-18 16:16:15.946819-05
+1862	57	140	2012-01-18 16:16:20.726835-05
+1864	59	140	2012-01-18 16:16:22.284563-05
+1866	61	140	2012-01-18 16:16:26.086453-05
+1868	63	140	2012-01-18 16:16:27.628804-05
+1592	116	5	2012-01-18 13:00:23.463191-05
+1593	116	5	2012-01-18 13:00:31.600329-05
+1594	115	5	2012-01-18 13:00:36.651808-05
+1595	116	5	2012-01-18 13:00:39.784202-05
 1500	125	17	2012-01-17 15:30:53.034735-05
+1813	86	140	2012-01-18 16:14:07.499946-05
+1819	92	140	2012-01-18 16:14:23.549715-05
+1825	98	140	2012-01-18 16:14:41.989997-05
+1830	103	140	2012-01-18 16:14:55.148941-05
+1835	108	140	2012-01-18 16:15:16.96426-05
+1838	110	140	2012-01-18 16:15:25.527711-05
+1841	113	140	2012-01-18 16:15:33.234812-05
+1844	116	140	2012-01-18 16:15:41.586752-05
+1847	119	140	2012-01-18 16:15:55.08404-05
+1850	122	140	2012-01-18 16:16:03.379795-05
+1853	48	140	2012-01-18 16:16:08.461882-05
+1856	51	140	2012-01-18 16:16:12.116843-05
+1858	53	140	2012-01-18 16:16:14.475521-05
+1859	54	140	2012-01-18 16:16:14.48178-05
+1861	56	140	2012-01-18 16:16:19.817178-05
+1863	58	140	2012-01-18 16:16:21.543208-05
+1865	60	140	2012-01-18 16:16:25.356099-05
+1867	62	140	2012-01-18 16:16:26.828224-05
+1869	124	140	2012-01-18 16:16:34.43188-05
+1700	80	5	2012-01-18 16:01:48.31777-05
+1703	81	5	2012-01-18 16:01:54.16193-05
+1709	94	5	2012-01-18 16:02:06.233941-05
+1710	95	5	2012-01-18 16:02:11.283797-05
+1807	80	140	2012-01-18 16:13:50.920702-05
 \.
 
 
@@ -7413,15 +7369,15 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 --
 
 COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
-1	5	647	241
-5	13	\N	241
-11	8	\N	241
 12	132	645	241
+5	13	\N	241
+1	5	647	241
+11	8	\N	241
 2	17	644	241
 3	124	\N	241
-14	135	644	241
 8	115	\N	241
 7	130	645	241
+15	136	\N	241
 \.
 
 
@@ -7577,11 +7533,16 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 20	17	5	c
 6	13	1	jane
 7	13	2	Helen
+76	136	1	
+77	136	2	
+78	136	3	
 8	13	3	this
 11	109	1	asdf
+79	136	4	
 12	109	2	
 9	13	4	is
 13	109	3	asdfas
+80	136	5	
 14	109	4	asdf
 10	13	5	a
 15	109	5	
@@ -7595,20 +7556,20 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 38	115	3	
 39	115	4	
 40	115	5	
+96	140	1	
+97	140	2	person 3
+98	140	3	person 1
+99	140	4	person 2
+100	140	5	
 31	130	1	Tina
 32	130	2	James
 33	130	3	Alison
 34	130	4	Andrea
 35	130	5	liz
-71	135	1	
 56	132	1	gerry
-72	135	2	person 3
 57	132	2	
-73	135	3	person 1
 58	132	3	
-74	135	4	person 2
 59	132	4	
-75	135	5	
 60	132	5	jen
 2	5	1	
 1	5	2	
@@ -7643,10 +7604,10 @@ COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtree
 46	56	2
 47	56	1
 48	60	1
-57	72	2
-58	73	2
-59	73	1
-60	74	1
+69	97	2
+70	98	2
+71	98	1
+72	99	1
 \.
 
 
@@ -7683,15 +7644,16 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 COPY wings_main_participant (id, id_string, user_id, current_section_id) FROM stdin;
 63	159753	121	62
 65	444444	123	186
+77	2	136	152
 59	1444444	117	181
 56	344656756	114	62
 64	143680	122	63
 58	4	115	198
 66	99996	125	52
+81	9999999	140	57
 68	33489576	127	201
 73	80808	132	220
 62	357159	120	111
-76	9999999	135	222
 \.
 
 
