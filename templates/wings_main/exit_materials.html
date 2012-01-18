@@ -2,6 +2,8 @@
 {% load render %}
 {% load smartif %}
 
+
+
 {% block title %}Exit Materials{%endblock%}
 
 {% block js %}
@@ -35,30 +37,25 @@
 
 
 
+	
     <div class="exit_materials_main_content_div">
 
-            <hr />
-            <div>
-                <a class="exit_materials_print_button" href="print"  onclick="javascript:print()">Print exit materials</a>
+            <h1> Exit Materials</h1>
+            <div class="exit_actions">
+                <a class="bigbutton exit_materials_print_button" href="print"  onclick="javascript:print()">PRINT</a>
+                <a class="bigbutton exit_materials_logout_button" href="/logout/">Log Out</a>
             </div>
-            <hr />
-            
-            <div>
-                <a class="exit_materials_logout_button" href="/logout/"  >Done -- log out.</a>
-            </div>
-            <hr />
             
             
-            <div>
-                <h1>Social Support Network Tree</h1>
-                <div class="exit_materials_ssnm_tree">
+             <div class="exit_materials_content ssnm_tree">
+                <h5>Social Support Network Tree</h5>
+               
                     {%render ssnm_tree_node %}
-                </div>
-            </div>
+                    <br clear="all" />
+             </div>
             
-            <br clear="all" />
-            <hr />
-            <h3>Part One: Strategies for Safety During a Violent Incident</h3>
+           <div class="exit_materials_content safety_strategies">
+            <h5>Strategies for Safety During a Violent Incident</h5>
                     {%for section in safety_plan_part_1_node_list %}
                             {% for block in section.pageblock_set.all %}
                             {% if not block.block.is_help_block and not block.block.is_audio_block %}
@@ -75,10 +72,9 @@
                             {%endif %}
                             {% endfor %}
                     {%endfor %}
-                
-            
-            <hr />
-            <h3>Part Two: Preparing to Leave</h3>
+                </div>
+            <div class="exit_materials_content leaving">      
+            <h5>Preparing to Leave</h5>
                 {%for section in safety_plan_part_2_node_list %}
                     <div>
                         {% for block in section.pageblock_set.all %}
@@ -95,9 +91,10 @@
                     </div>
                 {%endfor %}
 
+            </div>
             
-            <hr />
-            <h1>Goal Setting</h1>
+            <div class="exit_materials_content goal_setting">
+            <h5>Goal Setting</h5>
             {%for section in goal_setting_node_list %}
                 <div>
                     {% for block in section.pageblock_set.all %}
@@ -114,31 +111,28 @@
                 </div>
             {%endfor %}
 
+            </div>
 
-
-
-            <hr />
-            <h1>Services</h1>
+            <div class="exit_materials_content services">
+            <h5>Services</h5>
             <div class="exit_materials_services">
                 {%render resources_node %}
             </div>
             
                         
-            <hr />
-            <h1>Action Plan</h1>
+            </div>
+            
+             <div class="exit_materials_content action_plan">
+            <h5>Action Plan</h5>
             <div class="exit_materials_action_plan">
                 {%render action_plan_node %}
             </div>
 
             
-            <hr />
-            <div>
-                <a class="exit_materials_print_button" href="print"  onclick="javascript:print()">Print exit materials</a>
             </div>
-            <hr />
-            <div>
-                <a class="exit_materials_logout_button" href="/logout/"  >Done -- log out.</a>
+             <div class="exit_actions">
+                <a class="bigbutton exit_materials_print_button" href="print"  onclick="javascript:print()">PRINT</a>
+                <a class="bigbutton exit_materials_logout_button" href="/logout/">Log Out</a>
             </div>
-            <hr />
     </div>        
 {%endblock%}

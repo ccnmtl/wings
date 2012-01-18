@@ -1240,29 +1240,33 @@ ul.answer_summary li div.past_question_answer_div.user_added {
 }
 
 /* adjustments to exit materials */
+
+.exit_materials_main_content_div {
+    font-size: 90%;
+}
+
 .exit_materials_main_content_div .exit_materials_block.block_239 {
     display: none;
 }
 
 
 .exit_materials_main_content_div .exit_materials_replacement_div {
-    background-color: white;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+
     min-width: 300px;
-    min-height: 30px;
-    padding: 10px;
+    padding: 0 10px;
     margin: 10px;
-    border: black solid 1px;
+    line-height: 1.5em;
+
 }
+
+    
 /* special case for ssnm replacement divs */
-.exit_materials_main_content_div .exit_materials_ssnm_tree .exit_materials_replacement_div {
+.exit_materials_main_content_div .exit_materials_content.ssnm_tree .exit_materials_replacement_div {
     position: absolute;
     min-width: 0px;
     min-height: 0px;
-    left: 55px !important;
-    top: 44px !important;
+    left: 47px !important;
+    top: 34px !important;
     width: 70px !important;
     height: 14px !important;
     font-size: .8em !important;
@@ -1270,5 +1274,63 @@ ul.answer_summary li div.past_question_answer_div.user_added {
     filter:alpha(opacity=0.8); /* For IE8 and earlier */
     border-radius: 10px;
     padding: 0 5px !important;
+    background-color: white;
 }
 
+.exit_actions {
+
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #dedede;
+    margin-bottom: 30px;
+}
+
+.exit_actions a.exit_materials_print_button {
+
+    display: block;
+    width: 100px;
+    float: left;
+}
+
+.exit_actions a.exit_materials_logout_button {
+
+    display: block;
+    width: 100px;
+    float: right;
+}
+
+.exit_materials_content {
+
+    border: 1px solid #999;
+    padding: 0 15px 15px 15px;
+    margin-bottom: 25px;
+}
+
+.exit_materials_content h5 {
+
+    color: #391C4D;
+    margin-bottom: 1.5em;
+}
+
+.exit_materials_content p {
+    line-height: 1.5em;
+    font-size: .9em;
+    color: #666;
+    margin: 1em 0 2em;
+}
+
+.exit_materials_content .casequestion p {
+    line-height: 1em;
+    font-size: .95em;
+    color: #000;
+    margin: 0;
+}
+
+.exit_materials_content div.cases {
+    background-color: #E3D8E0;
+    border: none;
+    padding: 2px 0 10px;
+    margin: 1em;
+    width: auto;
+}
