@@ -22,17 +22,7 @@
 	{% endif %}
 </head>
 <body class="one_column {% block widthtype %}fixed{% endblock %}">
-{% comment %}
-###### FOR WIDTH TYPE--
-   fixed : fixed width, doesn't change with browser resize
-   fluid : variable width, changes with browser resize
-   You can move this to base template if you don't want to deal with it
-   all time in flatpages templates
-{% endcomment %}
-
 <div id="container">
-
-
 {% block masthead %}
 	<!-- ###### Site banner ###### -->
 	<div id="header">
@@ -73,7 +63,7 @@
     <div id="usernav">{% if request.user.is_anonymous %}
         <a href="/accounts/login/?next=/">login</a>
     {% else %}
-        {% if user.part%}P{%endif%}{{request.user}}
+        <span id="user_name_span">{% if user.part%}P{%endif%}{{request.user}}</span>
         {% if not user.part%}
              [<a href="/logout/">logout</a>]
          {%endif%}

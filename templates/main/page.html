@@ -13,19 +13,17 @@
     {%endif %}
 
     {% if needs_submit %}
-    <script language = "javascript">
-        function submit_and_next() {
-            jQuery ('#destination')[0].value = 'next';
-            jQuery('#submit_to_self_form').submit();
-        }
-        function submit_and_prev() {
-            jQuery ('#destination')[0].value = 'previous';
-            jQuery('#submit_to_self_form').submit();
-        }
-    </script>
-         
-{%endif%}
-
+        <script language = "javascript">
+            function submit_and_next() {
+                jQuery ('#destination')[0].value = 'next';
+                jQuery('#submit_to_self_form').submit();
+            }
+            function submit_and_prev() {
+                jQuery ('#destination')[0].value = 'previous';
+                jQuery('#submit_to_self_form').submit();
+            }
+        </script>
+    {%endif%}
 {% endblock %}
 
 {% block css %}
@@ -33,9 +31,6 @@
 {% rendercss block %}
 {% endfor %}
 {% endblock %}
-
-
-{% block title %}{% endblock %}
 
 {% block sidenav %}
         <!-- ###### Secondary Navigation ###### -->
