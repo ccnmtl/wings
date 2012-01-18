@@ -9,7 +9,7 @@ register = template.Library()
 
 
 def print_if_testing (a):
-    if True:
+    if False:
         print a
 
 def match_against_string (response, string_to_match):
