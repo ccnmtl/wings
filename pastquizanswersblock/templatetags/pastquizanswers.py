@@ -41,6 +41,8 @@ def to_text (response):
 	    print_if_testing (tmp)  
 	    return tmp
 
+
+
 @register.simple_tag
 def interpolate_previous_answer(user, question_id):
     que = Question.objects.get (id=question_id)
@@ -55,8 +57,8 @@ def interpolate_previous_answer(user, question_id):
     else:
         return ''
     
-    
-    
+
+
 @register.simple_tag
 def test_answer (user, question_id, value_to_match, output_if_match, output_if_no_match):
     print_if_testing ('testing %d' % question_id)
@@ -75,3 +77,35 @@ def test_answer (user, question_id, value_to_match, output_if_match, output_if_n
         return output_if_match
     return output_if_no_match
     
+#These are used on the stats page (/all_answers/)
+#TODO: a bit of refactoring. this is just a quick version.
+def use_title(shown, hover):
+    return "<span class='stats_page_stat' title = '%s'>%s</span>" % (hover, shown)
+    
+def to_number (response):
+    if response.question.is_multiple_choice():
+	    return use_title('n/a', 'multiple_choice')
+    if response.question.is_short_text() or response.question.is_long_text():
+        return use_title('str', response.value)
+    if response.question.is_single_choice() or  response.question.is_single_choice_dropdown():
+	    answer_set = response.question.answer_set.all()
+	    if not answer_set:
+	        return use_title('n/a', 'no_answers2')
+	    tmp = dict((r.value, r.label) for r in answer_set)[response.value]   
+	    print_if_testing ('found an answer to ' + response.__unicode__())
+	    print_if_testing (tmp)  
+	    return use_title(response.value, tmp)
+    
+@register.simple_tag
+def answer_code_for_stats(user, question_id):
+    que = Question.objects.get (id=question_id)
+    quiz = que.quiz
+    sub = Submission.objects.filter(quiz=quiz,user=user).order_by("-submitted")
+    if sub.count() == 0:
+        return use_title('n/a', 'no_submission')
+    submission = sub[0]
+    res = Response.objects.filter(question=que,submission=submission)
+    if res.count() > 0:
+        return to_number(res[0])
+    else:
+        return  use_title('n/a', 'no_answer')

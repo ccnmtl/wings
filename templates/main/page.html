@@ -9,20 +9,20 @@
     {%if request.user.part %}
          {% if request.user.part.current_section == section  and request.user.part.label != "P9999999" %}
              <script type="text/javascript" >
-             function hide_next () {
-                jQuery('div.content-nav a#next').hide();
-            }
+                function hide_next () {
+                    jQuery('div.content-nav a#next').hide();
+                }
 
-            function show_next() {
-                jQuery('div.content-nav a#next').fadeIn();
-            }
+                function show_next() {
+                    jQuery('div.content-nav a#next').fadeIn();
+                }
 
-            function hide_then_show_next() {
-                hide_next();
-                setTimeout (show_next, 2000);
-            }
+                function hide_then_show_next() {
+                    hide_next();
+                    setTimeout (show_next, 2000);
+                }
 
-            jQuery (hide_then_show_next);
+                jQuery (hide_then_show_next);
              </script> 
          {%endif %}
     {%endif %}

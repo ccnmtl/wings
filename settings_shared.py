@@ -43,8 +43,9 @@ SITE_MEDIA_URL = '/site_media'
 #path relative to SITE_MEDIA_URL of decoration images used in the intervention:
 DECORATION_IMAGE_PATH =  '/img/decoration_images/'
 
-#SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html?test=..%2Ftests%2FTestSuite.html&resultsUrl=..%2FpostResults'
-SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html'
+SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html?test=..%2Ftests%2FTestSuite.html&resultsUrl=..%2FpostResults'
+#SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html'
+
 
 APPEND_SLASH = False
 

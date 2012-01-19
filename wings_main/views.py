@@ -3,11 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, Http404
 from wings_main.models import Participant, traverse_tree, section_rank
 from pagetree.models import Section, Hierarchy, PageBlock
 from django.db import transaction
-
+from functools import wraps
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -20,6 +20,8 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from restclient import GET,POST
 from simplejson import loads, dumps
 from django.db.models import Q
+
+from quizblock.models import Question
 
 class rendered_with(object):
     def __init__(self, template_name):
@@ -34,6 +36,22 @@ class rendered_with(object):
                 return items
 
         return rendered_func
+
+def staff_or_404(view_func):
+    """
+    Decorator for views that checks that the user is logged in and is a staff
+    member, raising a 404 if necessary.
+    http://djangosnippets.org/snippets/2599/
+    """
+    def _checklogin(request, *args, **kwargs):
+        if request.user.is_active and request.user.is_staff:
+            # The user is valid. Continue to the admin page.
+            return view_func(request, *args, **kwargs)
+        else:   
+            raise Http404
+    return wraps(view_func)(_checklogin)
+
+
 
 """ Wings-specific helper functions called by forest_main page view method. This is view code so it goes here."""
 if True:
@@ -118,22 +136,43 @@ if True:
 
 def selenium_teardown():
     """ axe responses, visits. families."""
+    
+    
     users_to_delete, participants_to_delete = [],[]
-    #import pdb
-    #pdb.set_trace()
-    #Participant.objects.get(id_string='9999999')
+    submissions_to_delete, responses_to_delete = [],[]
+    ssnm_persons_to_delete, narrowed_down_answers_to_delete,  = [],[]
     participants_to_delete.extend( Participant.objects.filter(id_string='9999999'))
     users_to_delete.extend (p.user for p in participants_to_delete)
     
-    #import pdb
-    #pdb.set_trace()
+    ssnm_persons_to_delete.extend(u.ssnmtreeperson_set.all() for u in users_to_delete)
+    
+    
+    
+    narrowed_down_answers_to_delete.extend(u.narroweddownanswer_set.all() for u in users_to_delete)
+    
     
     for u in users_to_delete:
-        u.delete()
-    for p in participants_to_delete:
-        p.delete()
-            
-            
+        for s in u.submission_set.all():
+            submissions_to_delete.append (s)
+    
+    
+    responses_to_delete.extend ( s.response_set.all() for s in submissions_to_delete)
+    
+    for x in ssnm_persons_to_delete:
+        x.delete()    
+    for x in narrowed_down_answers_to_delete:
+        x.delete()
+    for x in responses_to_delete:
+        x.delete()
+    for x in submissions_to_delete:
+        x.delete()
+    for x in participants_to_delete:
+        x.delete()
+    for x in users_to_delete:
+        x.delete()
+
+
+
 @login_required
 @rendered_with('wings_main/selenium.html')
 def selenium(request,task):
@@ -207,8 +246,8 @@ def launch_participant(request, id_string):
 @login_required
 @rendered_with('wings_main/exit_materials.html')
 def participant_exit_materials(request):
+    """TODO: this function is misnamed. rename it currently_logged_in_user_exit_materials."""
     return exit_materials_nodes()
-
 
 @login_required
 @rendered_with('wings_main/exit_materials.html')
@@ -218,31 +257,20 @@ def exit_materials(request, id_string):
     """
     if request.user.is_staff:
         user = make_and_login_participant(id_string, request)
-    else:
-        user = request.user
     return exit_materials_nodes()
     
-
 def exit_materials_nodes ():
     safety_plan_part_1_node_list = []
     traverse_tree(PageBlock.objects.get(id=127).section, safety_plan_part_1_node_list)
-
     safety_plan_part_2_node_list = []
     traverse_tree(PageBlock.objects.get(id=135).section, safety_plan_part_2_node_list)
-
     goal_setting_node_list = []
     traverse_tree(Section.objects.get(id=57), goal_setting_node_list)
-
     
     ssnm_tree_node    = PageBlock.objects.get(id=254)
     resources_node    = PageBlock.objects.get(id=291)
-    
-    
     action_plan_node = PageBlock.objects.get(id=257)
-    
-    #import pdb
-    #pdb.set_trace()
-    
+
     return {
         'safety_plan_part_1_node_list' : safety_plan_part_1_node_list,
         'safety_plan_part_2_node_list' : safety_plan_part_2_node_list,
@@ -252,11 +280,20 @@ def exit_materials_nodes ():
         'action_plan_node'             : action_plan_node,
     }
 
-
-
-@login_required
+@staff_or_404
 @rendered_with('wings_main/summary.html')
 def summary(request):
     node_list = []
     traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
     return {'tree': node_list}
+    
+    
+@staff_or_404
+@rendered_with('wings_main/all_answers.html')
+def all_answers(request):
+    """ all answers for all users in a giant table"""
+    node_list = []
+    return {
+        'users':     [ u for u in User.objects.all() if u.part()],
+        'questions': [ q for q in Question.objects.all()],   
+    }

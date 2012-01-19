@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 491, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 557, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 143, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 148, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 262, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 299, true);
 
 
 --
@@ -1557,7 +1557,7 @@ ALTER SEQUENCE quizblock_answer_id_seq OWNED BY quizblock_answer.id;
 -- Name: quizblock_answer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_answer_id_seq', 655, true);
+SELECT pg_catalog.setval('quizblock_answer_id_seq', 656, true);
 
 
 --
@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 2005, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 2400, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 2006, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 2367, true);
 
 
 --
@@ -1788,7 +1788,7 @@ ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_na
 -- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 18, true);
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 20, true);
 
 
 --
@@ -1829,7 +1829,7 @@ ALTER SEQUENCE servicesblock_serviceprovider_id_seq OWNED BY servicesblock_servi
 -- Name: servicesblock_serviceprovider_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_serviceprovider_id_seq', 4, true);
+SELECT pg_catalog.setval('servicesblock_serviceprovider_id_seq', 34, true);
 
 
 --
@@ -2128,7 +2128,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 110, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 135, true);
 
 
 --
@@ -2165,7 +2165,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 76, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 93, true);
 
 
 --
@@ -2316,7 +2316,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 84, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 89, true);
 
 
 --
@@ -2914,9 +2914,7 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
-438	13	Logged in!
-491	5	Logged in!
-432	109	Logged in!
+544	109	Logged in!
 \.
 
 
@@ -3104,13 +3102,16 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 1	anp8	Anders	Pearson	anp8@columbia.edu	!	t	t	t	2011-10-24 11:37:17.52734-04	2011-05-18 15:57:36.886786-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-19 14:17:57.385463-05	2011-12-09 15:38:04-05
 124	casi				sha1$92c83$216ed4e0c9a87d9d46f583a6763f11470a8cd2f5	t	t	t	2012-01-05 16:49:45.475507-05	2012-01-05 16:44:20-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-17 13:03:40.938379-05	2011-10-11 11:39:54-04
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-17 14:13:43.215702-05	2011-12-09 15:38:04-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-19 16:14:11.683985-05	2011-10-11 11:39:54-04
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-18 13:03:25.301888-05	2011-06-02 15:22:48.818126-04
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-18 18:13:27.784244-05	2011-06-02 15:22:04-04
-143	123				!	f	t	f	2012-01-18 18:15:33.086673-05	2012-01-18 18:15:33.078081-05
+143	123				!	f	t	f	2012-01-18 18:58:23.148606-05	2012-01-18 18:15:33.078081-05
+146	9999999				!	f	t	f	2012-01-19 14:18:15.366248-05	2012-01-19 14:18:15.353716-05
+147	777666				!	f	t	f	2012-01-19 15:19:27.943056-05	2012-01-19 14:30:15.79484-05
+148	555555				!	f	t	f	2012-01-19 15:25:18.659632-05	2012-01-19 15:25:18.650894-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-19 16:32:06.434513-05	2011-06-02 15:22:04-04
 \.
 
 
@@ -3663,6 +3664,43 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 260	2012-01-18 18:15:14.491278-05	5	3	132	80808	3	
 261	2012-01-18 18:15:14.492265-05	5	3	125	99996	3	
 262	2012-01-18 18:15:14.493242-05	5	3	142	9999999	3	
+263	2012-01-18 19:00:49.544806-05	5	42	85	P9999999	1	
+264	2012-01-18 19:04:55.855423-05	5	42	86	P9999999	1	
+265	2012-01-19 11:04:36.897886-05	13	53	5	ServiceProvider object	1	
+266	2012-01-19 11:05:09.991782-05	13	53	6	ServiceProvider object	1	
+267	2012-01-19 11:05:40.793536-05	13	53	7	ServiceProvider object	1	
+268	2012-01-19 11:06:05.66962-05	13	53	8	ServiceProvider object	1	
+269	2012-01-19 11:07:43.783026-05	13	53	9	ServiceProvider object	1	
+270	2012-01-19 11:08:34.968264-05	13	53	10	ServiceProvider object	1	
+271	2012-01-19 11:09:18.803886-05	13	53	11	ServiceProvider object	1	
+272	2012-01-19 11:09:50.446428-05	13	53	12	ServiceProvider object	1	
+273	2012-01-19 11:11:13.870604-05	13	53	13	ServiceProvider object	1	
+274	2012-01-19 11:11:36.802718-05	13	53	14	ServiceProvider object	1	
+275	2012-01-19 11:12:27.632366-05	13	53	15	ServiceProvider object	1	
+276	2012-01-19 11:13:08.79185-05	13	53	16	ServiceProvider object	1	
+277	2012-01-19 11:13:31.997927-05	13	53	17	ServiceProvider object	1	
+278	2012-01-19 11:14:46.195653-05	13	53	18	ServiceProvider object	1	
+279	2012-01-19 14:05:38.88766-05	13	53	19	ServiceProvider object	1	
+280	2012-01-19 14:06:12.058022-05	13	53	20	ServiceProvider object	1	
+281	2012-01-19 14:06:48.3418-05	13	53	21	ServiceProvider object	1	
+282	2012-01-19 14:07:28.917016-05	13	53	22	ServiceProvider object	1	
+283	2012-01-19 14:08:02.534471-05	13	53	23	ServiceProvider object	1	
+284	2012-01-19 14:08:41.409598-05	13	53	24	ServiceProvider object	1	
+285	2012-01-19 14:09:46.170634-05	13	53	25	ServiceProvider object	1	
+286	2012-01-19 14:10:14.288081-05	13	53	26	ServiceProvider object	1	
+287	2012-01-19 14:10:36.141472-05	13	53	27	ServiceProvider object	1	
+288	2012-01-19 14:11:40.565568-05	13	53	28	ServiceProvider object	1	
+289	2012-01-19 14:12:05.602502-05	13	53	29	ServiceProvider object	1	
+290	2012-01-19 14:12:33.247926-05	13	53	30	ServiceProvider object	1	
+291	2012-01-19 14:13:40.880551-05	13	53	31	ServiceProvider object	1	
+292	2012-01-19 14:14:19.06866-05	13	53	32	ServiceProvider object	1	
+293	2012-01-19 14:14:38.746724-05	13	53	33	ServiceProvider object	1	
+294	2012-01-19 14:14:52.191166-05	13	53	3	ServiceProvider object	3	
+295	2012-01-19 14:14:59.408542-05	13	53	4	ServiceProvider object	3	
+296	2012-01-19 14:16:27.992175-05	13	53	34	ServiceProvider object	1	
+297	2012-01-19 14:18:15.129399-05	109	42	87	P9999999	1	
+298	2012-01-19 14:30:13.548512-05	13	42	88	P777666	1	
+299	2012-01-19 15:25:16.439495-05	13	42	89	P555555	1	
 \.
 
 
@@ -3749,19 +3787,24 @@ COPY django_flatpage_sites (id, flatpage_id, site_id) FROM stdin;
 --
 
 COPY django_session (session_key, session_data, expire_date) FROM stdin;
+6d1ab2b4488cecbe935c99517a7cc4d1	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-02 13:54:04.918973-05
 18ba1a8ea1b1f1fcd01456f7a2e389ec	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 14:16:12.673985-05
 1a690242ed0a21ba3e8b228aed92ce51	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 15:46:48.172039-05
 a9a7eecdb4ef1e4d55c1586e98485e6e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 05:23:23.564495-05
 10637c972289c60d680b0a2a86f9d2c6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 09:03:15.437752-05
 e4c428e86db805bf1dd55a03f88b349e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 10:31:28.107628-05
 8b14762b7eeb6a4c3def489572e1027d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKKAHUuY2YyZTQwMTFjZTc2NGQyNGJk\nOTk0ZjYwNmYzZDQxMDA=\n	2012-02-01 15:59:29.01451-05
+35f2393bb1f19e600af24ac4b64e75e9	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-02 14:32:21.043642-05
+06976173f51475d2c3b0df00c61d5270	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-02 16:12:43.168559-05
+62ddb3b63a5af6a3a97f935adaa8f85a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-02 16:32:06.44427-05
 38165a56bd4c16fbf71ece8f675c9ef4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKNAHUuZGQ3NDFlMDc0MDViNTY4OGMw\nNjY4MGY4ZTA5ZjYwOWE=\n	2012-02-01 17:17:02.394192-05
 713e7cc2fb7b992ba133b7d8fac71da6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-01 11:07:15.14714-05
-d8f72e3a6570a04ef74f7409bda28075	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKPAHUuZGI5MGQ5N2FhZWFkZTYxMTQ2\nYzE2YjdjYzA3M2JkOWI=\n	2012-02-01 18:15:33.09699-05
 ec00b594470fc6158d8efe4e730633c6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 13:03:25.312098-05
 8dd1cdccef506dbfaa0cba3541c44d72	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 13:07:18.15695-05
+af7c8d008747dba2089c298da706cbcb	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-02 16:14:11.69376-05
 21510b144baf661667470aac3526fb56	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4d1LmJjODRjZWU5NGM3NTQ0MmE5ZTc2\nYzFiMzQxMzE3ZWU3\n	2012-02-01 10:46:17.238026-05
 ea4aece7f970c140239e5c0bb81f63b9	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKOAHUuNmJjMjUyZjZiZjBhMGFhZDBl\nMDBjOWJmOWZjODhiYTY=\n	2012-02-01 17:20:33.428689-05
+e462f9a5d0f461662a353030315ce933	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKUAHUuZTJiY2U5ZWZhZjQ5MTc5OTFl\nZTZhYjFkOTYzN2YxMTk=\n	2012-02-02 15:25:18.669859-05
 9bd0758a0a1cbb2b346b8e156a9901df	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 12:50:16.745078-05
 \.
 
@@ -4491,249 +4534,9 @@ COPY pastquizanswersblock_pastquizanswersblock (id, description, copy) FROM stdi
 --
 
 COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdin;
-1	2	yes	Yes	f	0
-2	2	no	No	f	1
-3	2	constantly	Constantly	t	2
-4	3	yes	Yes	f	0
-5	3	no	No	f	1
-6	3	constantly	Constantly	t	2
-7	4	a	True	f	0
-84	41	Louisiana State University School of Dentistry	Louisiana State University School of Dentistry	f	14
-8	4	b	False	t	1
-9	5	a	True	f	0
-10	5	b	False	t	1
-11	6	a	True	f	0
-12	6	b	False	t	1
-13	7	a	True	f	0
-14	7	b	False	t	1
-15	8	a	True	f	0
-16	8	b	False	t	1
-25	19	a	Yes	f	0
-26	19	b	No	f	1
-27	21	a	At the hospital	f	0
-28	21	b	At your practice	f	1
-29	23	a	Natasha	f	0
-30	23	b	Joyce	f	1
-31	31	Male	Male	f	0
-32	31	Female	Female	f	1
-33	32	White	White	f	0
-34	32	Black or African American	Black or African American	f	1
-35	32	American Indian and Alaska Native	American Indian and Alaska Native	f	2
-36	32	Asian	Asian	f	3
-37	32	Native Hawaiian or Other Pacific Islander	Native Hawaiian or Other Pacific Islander	f	4
-38	32	Two or more races	Two or more races	f	5
-39	33	Hispanic	Hispanic	f	0
-40	33	Non-Hispanic	Non-Hispanic	f	1
-41	36	Yes	Yes	f	0
-42	36	No	No	f	1
-43	38	Some high school	Some high school	f	0
-44	38	High school graduate	High school graduate	f	1
-45	38	Some college	Some college	f	2
-46	38	Associate/2 year degree	Associate/2 year degree	f	3
-47	38	College graduate/ 4 year degree	College graduate/ 4 year degree	f	4
-48	38	Some graduate school	Some graduate school	f	5
-49	38	Masters/Professional degree	Masters/Professional degree	f	6
-50	38	Other	Other	f	7
-51	39	Some high school	Some high school	f	0
-52	39	High school graduate	High school graduate	f	1
-53	39	Some college	Some college	f	2
-54	39	Associate/2 year degree	Associate/2 year degree	f	3
-55	39	College graduate/ 4 year degree	College graduate/ 4 year degree	f	4
-56	39	Some graduate school	Some graduate school	f	5
-57	39	Masters/Professional degree	Masters/Professional degree	f	6
-58	39	Other	Other	f	7
-59	40	Master of Art, please specify field of study	Master of Art, please specify field of study	f	0
-60	40	Master of Science, please specify field of study	Master of Science, please specify field of study	f	1
-61	40	Master of Public Health, please specify concentration	Master of Public Health, please specify concentration	f	2
-62	40	Other Masters degree, please specify	Other Masters degree, please specify	f	3
-63	40	Juris Doctor	Juris Doctor	f	4
-64	40	Medical Doctor, please specify specialty	Medical Doctor, please specify specialty	f	5
-65	40	Doctor of Philosophy, please specify specialty	Doctor of Philosophy, please specify specialty	f	6
-66	40	Doctor of Education, please specify concentration	Doctor of Education, please specify concentration	f	7
-67	40	Doctor of Psychology, please specify concentration	Doctor of Psychology, please specify concentration	f	8
-68	40	Doctor of Public Health, please specify concentration	Doctor of Public Health, please specify concentration	f	9
-69	40	Other Doctoral degree, please specify	Other Doctoral degree, please specify	f	10
-70	41	A.T. Still University Arizona School of Dentistry and Oral Health	A.T. Still University Arizona School of Dentistry and Oral Health	f	0
-71	41	Baylor College of Dentistry Component of Texas A & M Health Sci Ctr	Baylor College of Dentistry Component of Texas A & M Health Sci Ctr	f	1
-72	41	Boston University Goldman School of Dental Medicine	Boston University Goldman School of Dental Medicine	f	2
-73	41	Case Western Reserve Univ. School of Dental Medicine	Case Western Reserve Univ. School of Dental Medicine	f	3
-74	41	Columbia University College of Dental Medicine	Columbia University College of Dental Medicine	f	4
-75	41	Creighton University School of Dentistry	Creighton University School of Dentistry	f	5
-76	41	East Carolina University School of Dental Medicine	East Carolina University School of Dental Medicine	f	6
-77	41	Georgia Health Sciences University School of Dentistry	Georgia Health Sciences University School of Dentistry	f	7
-78	41	Harvard University School of Dental Medicine	Harvard University School of Dental Medicine	f	8
-79	41	Herman Ostrow School of Dentistry of USC	Herman Ostrow School of Dentistry of USC	f	9
-80	41	Howard University College of Dentistry	Howard University College of Dentistry	f	10
-81	41	Indiana University School of Dentistry	Indiana University School of Dentistry	f	11
-82	41	LECOM College of Dental Medicine	LECOM College of Dental Medicine	f	12
-83	41	Loma Linda University School of Dentistry	Loma Linda University School of Dentistry	f	13
-85	41	Marquette University School of Dentistry	Marquette University School of Dentistry	f	15
-86	41	Medical University of South Carolina James B. Edwards College of Dental Medicine	Medical University of South Carolina James B. Edwards College of Dental Medicine	f	16
-87	41	Meharry Medical College School of Dentistry	Meharry Medical College School of Dentistry	f	17
-88	41	Midwestern University College of Dental Medicine- Arizona	Midwestern University College of Dental Medicine- Arizona	f	18
-89	41	Midwestern University College of Dental Medicine- Illinois	Midwestern University College of Dental Medicine- Illinois	f	19
-90	41	New York University College of Dentistry	New York University College of Dentistry	f	20
-91	41	Nova Southeastern University College of Dental Medicine	Nova Southeastern University College of Dental Medicine	f	21
 370	113	1	yes	f	0
 371	113	2	no	f	1
-92	41	Ohio State University College of Dentistry	Ohio State University College of Dentistry	f	22
-93	41	Oregon Health and Science University School of Dentistry	Oregon Health and Science University School of Dentistry	f	23
-94	41	Southern Illinois University School of Dental Medicine	Southern Illinois University School of Dental Medicine	f	24
-95	41	State University of New York at Buffalo School of Dental Medicine	State University of New York at Buffalo School of Dental Medicine	f	25
-96	41	State University of New York at Stony Brook School of Dental Medicine	State University of New York at Stony Brook School of Dental Medicine	f	26
-97	41	Temple University The Maurice H. Kornberg School of Dentistry	Temple University The Maurice H. Kornberg School of Dentistry	f	27
-98	41	The University of Texas School of Dentistry at Houston	The University of Texas School of Dentistry at Houston	f	28
-99	41	Tufts University School of Dental Medicine	Tufts University School of Dental Medicine	f	29
-100	41	University of Alabama School of Dentistry at UAB	University of Alabama School of Dentistry at UAB	f	30
-101	41	University of California at Los Angeles School of Dentistry	University of California at Los Angeles School of Dentistry	f	31
-102	41	University of California at San Francisco School of Dentistry	University of California at San Francisco School of Dentistry	f	32
-103	41	University of Colorado Denver	University of Colorado Denver	f	33
-104	41	University of Connecticut School of Dental Medicine	University of Connecticut School of Dental Medicine	f	34
-105	41	University of Detroit Mercy School of Dentistry	University of Detroit Mercy School of Dentistry	f	35
-106	41	University of Florida College of Dentistry	University of Florida College of Dentistry	f	36
-107	41	University of Illinois at Chicago College of Dentistry	University of Illinois at Chicago College of Dentistry	f	37
-108	41	University of Iowa College of Dentistry	University of Iowa College of Dentistry	f	38
-109	41	University of Kentucky College of Dentistry	University of Kentucky College of Dentistry	f	39
-110	41	University of Louisville School of Dentistry	University of Louisville School of Dentistry	f	40
-111	41	University of Maryland Baltimore College of Dental Surgery	University of Maryland Baltimore College of Dental Surgery	f	41
-112	41	University of Medicine & Dentistry of New Jersey New Jersey Dental School	University of Medicine & Dentistry of New Jersey New Jersey Dental\r\nSchool	f	42
-113	41	University of Michigan School of Dentistry	University of Michigan School of Dentistry	f	43
-114	41	University of Minnesota School of Dentistry	University of Minnesota School of Dentistry	f	44
-115	41	University of Mississippi School of Dentistry	University of Mississippi School of Dentistry	f	45
-116	41	University of Missouri-Kansas City School of Dentistry	University of Missouri-Kansas City School of Dentistry	f	46
-117	41	University of Nebraska Medical Center College of Dentistry	University of Nebraska Medical Center College of Dentistry	f	47
-118	41	University of Nevada Las Vegas School of Dental Medicine	University of Nevada Las Vegas School of Dental Medicine	f	48
-119	41	University of North Carolina School of Dentistry	University of North Carolina School of Dentistry	f	49
-120	41	University of Oklahoma College of Dentistry	University of Oklahoma College of Dentistry	f	50
-121	41	University of Pennsylvania School of Dental Medicine	University of Pennsylvania School of Dental Medicine	f	51
-122	41	University of Pittsburgh School of Dental Medicine	University of Pittsburgh School of Dental Medicine	f	52
-123	41	University of Puerto Rico School of Dental Medicine	University of Puerto Rico School of Dental Medicine	f	53
-124	41	University of Tennessee College of Dentistry	University of Tennessee College of Dentistry	f	54
-125	41	University of Texas Hlth Science Cnt-San Antonio Dental School	University of Texas Hlth Science Cnt-San Antonio Dental School	f	55
-126	41	University of the Pacific Arthur A. Dugoni School of Dentistry	University of the Pacific Arthur A. Dugoni School of Dentistry	f	56
-127	41	University of Washington-Health Sciences School of Dentistry	University of Washington-Health Sciences School of Dentistry	f	57
-128	41	Virginia Commonwealth University School of Dentistry	Virginia Commonwealth University School of Dentistry	f	58
-129	41	West Virginia University School of Dentistry	West Virginia University School of Dentistry	f	59
-130	41	Western University of Health Sciences College of Dental Medicine	Western University of Health Sciences College of Dental Medicine	f	60
-131	41	Other	Other	f	61
-132	44	Male	Male	f	0
-133	44	Female	Female	f	1
-134	45	White	White	f	0
-135	45	Black or African American	Black or African American	f	1
-136	45	American Indian and Alaska Native	American Indian and Alaska Native	f	2
-137	45	Asian	Asian	f	3
-138	45	Native Hawaiian or Other Pacific Islander	Native Hawaiian or Other Pacific Islander	f	4
-139	45	Two or more races	Two or more races	f	5
-140	46	Hispanic	Hispanic	f	0
-141	46	Non-Hispanic	Non-Hispanic	f	1
-142	49	Yes	Yes	f	0
-143	49	No	No	f	1
-144	51	Some high school	Some high school	f	0
-145	51	High school graduate	High school graduate	f	1
-146	51	Some college	Some college	f	2
-147	51	Associate/2 year degree	Associate/2 year degree	f	3
-148	51	College graduate/ 4 year degree	College graduate/ 4 year degree	f	4
-149	51	Some graduate school	Some graduate school	f	5
-150	51	Masters/Professional degree	Masters/Professional degree	f	6
-151	51	Other	Other	f	7
-152	52	Some high school	Some high school	f	0
-153	52	High school graduate	High school graduate	f	1
-154	52	Some college	Some college	f	2
-155	52	Associate/2 year degree	Associate/2 year degree	f	3
-156	52	College graduate/ 4 year degree	College graduate/ 4 year degree	f	4
-157	52	Some graduate school	Some graduate school	f	5
-158	52	Masters/Professional degree	Masters/Professional degree	f	6
-159	52	Other	Other	f	7
-160	53	Master of Art, please specify field of study	Master of Art, please specify field of study	f	0
-161	53	Master of Science, please specify field of study	Master of Science, please specify field of study	f	1
-162	53	Master of Public Health, please specify concentration	Master of Public Health, please specify concentration	f	2
-163	53	Other Masters degree, please specify	Other Masters degree, please specify	f	3
-164	53	Juris Doctor	Juris Doctor	f	4
-165	53	Medical Doctor, please specify specialty	Medical Doctor, please specify specialty	f	5
-166	53	Doctor of Philosophy, please specify specialty	Doctor of Philosophy, please specify specialty	f	6
-167	53	Doctor of Education, please specify concentration	Doctor of Education, please specify concentration	f	7
-168	53	Doctor of Psychology, please specify concentration	Doctor of Psychology, please specify concentration	f	8
-169	53	Doctor of Public Health, please specify concentration	Doctor of Public Health, please specify concentration	f	9
-170	53	Other Doctoral degree, please specify	Other Doctoral degree, please specify	f	10
-171	54	A.T. Still University Arizona School of Dentistry and Oral Health	A.T. Still University Arizona School of Dentistry and Oral Health	f	0
-172	54	Baylor College of Dentistry Component of Texas A & M Health Sci Ctr	Baylor College of Dentistry Component of Texas A & M Health Sci Ctr	f	1
-173	54	Boston University Goldman School of Dental Medicine	Boston University Goldman School of Dental Medicine	f	2
-174	54	Case Western Reserve Univ. School of Dental Medicine	Case Western Reserve Univ. School of Dental Medicine	f	3
-175	54	Columbia University College of Dental Medicine	Columbia University College of Dental Medicine	f	4
-176	54	Creighton University School of Dentistry	Creighton University School of Dentistry	f	5
-177	54	East Carolina University School of Dental Medicine	East Carolina University School of Dental Medicine	f	6
-178	54	Georgia Health Sciences University School of Dentistry	Georgia Health Sciences University School of Dentistry	f	7
-179	54	Harvard University School of Dental Medicine	Harvard University School of Dental Medicine	f	8
-180	54	Herman Ostrow School of Dentistry of USC	Herman Ostrow School of Dentistry of USC	f	9
-181	54	Howard University College of Dentistry	Howard University College of Dentistry	f	10
-182	54	Indiana University School of Dentistry	Indiana University School of Dentistry	f	11
-183	54	LECOM College of Dental Medicine	LECOM College of Dental Medicine	f	12
-184	54	Loma Linda University School of Dentistry	Loma Linda University School of Dentistry	f	13
-185	54	Louisiana State University School of Dentistry	Louisiana State University School of Dentistry	f	14
-186	54	Marquette University School of Dentistry	Marquette University School of Dentistry	f	15
-187	54	Medical University of South Carolina James B. Edwards College of Dental Medicine	Medical University of South Carolina James B. Edwards College of Dental Medicine	f	16
-188	54	Meharry Medical College School of Dentistry	Meharry Medical College School of Dentistry	f	17
-189	54	Midwestern University College of Dental Medicine- Arizona	Midwestern University College of Dental Medicine- Arizona	f	18
-190	54	Midwestern University College of Dental Medicine- Illinois	Midwestern University College of Dental Medicine- Illinois	f	19
-191	54	New York University College of Dentistry	New York University College of Dentistry	f	20
-192	54	Nova Southeastern University College of Dental Medicine	Nova Southeastern University College of Dental Medicine	f	21
-193	54	Ohio State University College of Dentistry	Ohio State University College of Dentistry	f	22
-194	54	Oregon Health and Science University School of Dentistry	Oregon Health and Science University School of Dentistry	f	23
-195	54	Southern Illinois University School of Dental Medicine	Southern Illinois University School of Dental Medicine	f	24
-196	54	State University of New York at Buffalo School of Dental Medicine	State University of New York at Buffalo School of Dental Medicine	f	25
-197	54	State University of New York at Stony Brook School of Dental Medicine	State University of New York at Stony Brook School of Dental Medicine	f	26
-198	54	Temple University The Maurice H. Kornberg School of Dentistry	Temple University The Maurice H. Kornberg School of Dentistry	f	27
-199	54	The University of Texas School of Dentistry at Houston	The University of Texas School of Dentistry at Houston	f	28
-200	54	Tufts University School of Dental Medicine	Tufts University School of Dental Medicine	f	29
-201	54	University of Alabama School of Dentistry at UAB	University of Alabama School of Dentistry at UAB	f	30
-202	54	University of California at Los Angeles School of Dentistry	University of California at Los Angeles School of Dentistry	f	31
-203	54	University of California at San Francisco School of Dentistry	University of California at San Francisco School of Dentistry	f	32
-204	54	University of Colorado Denver	University of Colorado Denver	f	33
-205	54	University of Connecticut School of Dental Medicine	University of Connecticut School of Dental Medicine	f	34
-206	54	University of Detroit Mercy School of Dentistry	University of Detroit Mercy School of Dentistry	f	35
-207	54	University of Florida College of Dentistry	University of Florida College of Dentistry	f	36
-208	54	University of Illinois at Chicago College of Dentistry	University of Illinois at Chicago College of Dentistry	f	37
-209	54	University of Iowa College of Dentistry	University of Iowa College of Dentistry	f	38
-210	54	University of Kentucky College of Dentistry	University of Kentucky College of Dentistry	f	39
-211	54	University of Louisville School of Dentistry	University of Louisville School of Dentistry	f	40
-212	54	University of Maryland Baltimore College of Dental Surgery	University of Maryland Baltimore College of Dental Surgery	f	41
-213	54	University of Medicine & Dentistry of New Jersey New Jersey Dental School	University of Medicine & Dentistry of New Jersey New Jersey Dental\r\nSchool	f	42
-214	54	University of Michigan School of Dentistry	University of Michigan School of Dentistry	f	43
-215	54	University of Minnesota School of Dentistry	University of Minnesota School of Dentistry	f	44
 372	113	3	maybe	f	2
-216	54	University of Mississippi School of Dentistry	University of Mississippi School of Dentistry	f	45
-217	54	University of Missouri-Kansas City School of Dentistry	University of Missouri-Kansas City School of Dentistry	f	46
-218	54	University of Nebraska Medical Center College of Dentistry	University of Nebraska Medical Center College of Dentistry	f	47
-219	54	University of Nevada Las Vegas School of Dental Medicine	University of Nevada Las Vegas School of Dental Medicine	f	48
-220	54	University of North Carolina School of Dentistry	University of North Carolina School of Dentistry	f	49
-221	54	University of Oklahoma College of Dentistry	University of Oklahoma College of Dentistry	f	50
-222	54	University of Pennsylvania School of Dental Medicine	University of Pennsylvania School of Dental Medicine	f	51
-223	54	University of Pittsburgh School of Dental Medicine	University of Pittsburgh School of Dental Medicine	f	52
-224	54	University of Puerto Rico School of Dental Medicine	University of Puerto Rico School of Dental Medicine	f	53
-225	54	University of Tennessee College of Dentistry	University of Tennessee College of Dentistry	f	54
-226	54	University of Texas Hlth Science Cnt-San Antonio Dental School	University of Texas Hlth Science Cnt-San Antonio Dental School	f	55
-227	54	University of the Pacific Arthur A. Dugoni School of Dentistry	University of the Pacific Arthur A. Dugoni School of Dentistry	f	56
-228	54	University of Washington-Health Sciences School of Dentistry	University of Washington-Health Sciences School of Dentistry	f	57
-229	54	Virginia Commonwealth University School of Dentistry	Virginia Commonwealth University School of Dentistry	f	58
-230	54	West Virginia University School of Dentistry	West Virginia University School of Dentistry	f	59
-231	54	Western University of Health Sciences College of Dental Medicine	Western University of Health Sciences College of Dental Medicine	f	60
-232	54	Other	Other	f	61
-233	60	a	Yes	f	0
-234	60	b	No	f	1
-235	62	a	At the hospital	f	0
-236	62	b	At your practice	f	1
-237	64	a	Natasha	f	0
-238	64	b	Joyce	f	1
-239	55	a	True	f	0
-240	55	b	False	t	1
-241	56	a	True	f	0
-242	56	b	False	t	1
-243	57	a	True	f	0
-244	57	b	False	t	1
-245	58	a	True	f	0
-246	58	b	False	t	1
-247	59	a	True	f	0
-248	59	b	False	t	1
 261	72	1	Strongly Agree	f	0
 262	72	2	Agree Somewhat	f	1
 263	72	3	Agree a little	f	2
@@ -5021,18 +4824,9 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 637	239	10	My mental health issues or problem managing anger	f	9
 638	239	11	My legal problems 	f	10
 639	239	12	Housing problems	f	11
+656	241		Job training for self or partner	f	0
 641	241	2	Help Getting Housing	f	1
-642	241	3	Education/Go back to School/GED	f	2
-643	241	4	Recreation/Social Activities	f	3
-644	241	5	Safety day care for children	f	4
-645	241	6	Mental Health Counseling for self or partner	f	5
-646	241	7	Alcohol Drug Abuse Counseling for self or partner	f	6
-647	241	8	Anger management or batterer’s treatment program for Partner or Self	f	7
-648	241	9	Counseling or Group Support to deal with Partner abuse	f	8
-649	241	10	Emergency Domestic Violence Shelter or Residential Program	f	9
-650	241	11	Legal assistance (i.e. assistance getting restraining order, divorce or child custody)	f	10
-651	241	11	Counseling from a religious organization (pastor, priest, rabbi)	f	11
-652	241	12	Couples/Marital counseling	f	12
+650	241	11	Legal assistance (i.e. assistance getting restraining order, divorce or child custody)	f	2
 653	243	1	yes	f	0
 654	243	2	no	f	1
 655	243	3	maybe	f	2
@@ -5041,6 +4835,16 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 548	205	2	once a month	f	2
 549	205	3	once a week	f	3
 550	205	4	daily	f	4
+651	241	11	Counseling from a religious organization (pastor, priest, rabbi)	f	3
+652	241	12	Couples/Marital counseling	f	4
+642	241	3	Education/Go back to School/GED	f	5
+643	241	4	Recreation/Social Activities	f	6
+644	241	5	Safety day care for children	f	7
+645	241	6	Mental Health Counseling for self or partner	f	8
+646	241	7	Alcohol Drug Abuse Counseling for self or partner	f	9
+647	241	8	Anger management or batterer’s treatment program for Partner or Self	f	10
+648	241	9	Counseling or Group Support to deal with Partner abuse	f	11
+649	241	10	Emergency Domestic Violence Shelter or Residential Program	f	12
 \.
 
 
@@ -5049,64 +4853,6 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 --
 
 COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_text, _order) FROM stdin;
-2	1	Drink?	single choice			0
-3	2	Drink?	single choice			0
-23	5	If and when Joe goes to the dentist, who signs consent for Joe’s treatment?	single choice			4
-24	5	How do you help the two “mothers” come to an agreement about diet and its role in dental disease?	long text			5
-4	3	All social service volunteers, employees, caseworkers and managers are social workers.	single choice	A social worker is a trained professional who’s gone through extensive training to receive a bachelor’s degree, master’s degree or a doctorate in social work. Social workers are licensed by the state after receiving their degree – a social service employee or volunteer may, indeed, be a social worker, but only if they have a degree and a license.		0
-5	3	Most social workers deal with welfare recipients or child protective services.	single choice	One of biggest misconceptions: social workers serve in a number of areas, including mental health centers, schools, hospitals, the court system, police departments, child advocacy centers, foster care and adoption agencies, private practices, shelters and family counseling centers. Most state and federal employees who administer welfare and other social service aren’t professional social workers.		1
-6	3	Most social workers work in government agencies.	single choice	Although many people believe that most social workers are employed at local, state, or federal government agencies, NASW survey data show otherwise. Almost three-quarters of all social workers work in private organizations.		2
-7	3	Social Workers work primarily with the poor.	single choice	Social Work has a strong commitment to work with the poor and the vulnerable and to advancing social and economic justice. Social workers also work with people from various socioeconomic groups in a diverse range of settings including school settings, child and family service agencies, early intervention programs, mental health agencies, prevention programs, community-based health agencies and hospitals, nursing homes and rehabilitation settings, advocacy agencies, community development organizations, and private practice groups.		3
-8	3	To provide mental health services you need a degree in psychology.	single choice	Over 60 percent of mental health services and psychotherapy is provided by master’s level social workers. Social workers are the clinicians of choice because they view clients within their environment, taking into account personal and significant relationships, economic and social conditions, and physical health. Social workers build on strengths and assist clients in working on constraints that impinge on their well-being.		4
-25	5	How do you help Joyce understand the role of bacteria in dental disease and that her dental care is as important as the others in the family?	long text			6
-26	5	Do you help the family find a dentist that can care for all members of the family so they do not have to have one dentist for the children and one for the adults?	long text			7
-27	5	How do you get the family to the dentist?	long text			8
-28	5	How could a social worker facilitate this family’s navigation of the dental system?	long text			9
-29	6	Name	short text			0
-30	6	Email Address	short text			1
-31	6	Gender	single choice			2
-32	6	Race (US Census)	single choice			3
-33	6	Ethnicity	single choice			4
-36	6	Born in the U.S.?	single choice			7
-37	6	Year of graduation	short text			8
-38	6	Please indicate the highest level of education your mother/guardian completed:	single choice			9
-19	5	Would you convince Natasha and Joyce that Joe needs dental care?	single choice			0
-20	5	If yes, how would try to convince Natasha?	long text			1
-21	5	Where would you do this?	multiple choice			2
-22	5	How can you ensure that Natasha returns to your office for restorative care?	long text			3
-39	6	Please indicate the highest level of education your father/guardian completed:	single choice			10
-40	6	Affiliated degrees	multiple choice			11
-41	6	Where did you attend dental school?	single choice			12
-34	6	Age (month of birth)	short text			5
-35	6	Age (year of birth)	short text			6
-42	7	Name	short text			0
-43	7	Email Address	short text			1
-44	7	Gender	single choice			2
-45	7	Race (US Census)	single choice			3
-46	7	Ethnicity	single choice			4
-47	7	Age (month of birth)	short text			5
-48	7	Age (year of birth)	short text			6
-49	7	Born in the U.S.?	single choice			7
-50	7	Year of graduation	short text			8
-51	7	Please indicate the highest level of education your mother/guardian completed:	single choice			9
-52	7	Please indicate the highest level of education your father/guardian completed:	single choice			10
-53	7	Affiliated degrees	multiple choice			11
-54	7	Where did you attend dental school?	single choice			12
-55	8	All social service volunteers, employees, caseworkers and managers are social workers.	single choice	A social worker is a trained professional who’s gone through extensive training to receive a bachelor’s degree, master’s degree or a doctorate in social work. Social workers are licensed by the state after receiving their degree – a social service employee or volunteer may, indeed, be a social worker, but only if they have a degree and a license.		0
-56	8	Most social workers deal with welfare recipients or child protective services.	single choice	One of biggest misconceptions: social workers serve in a number of areas, including mental health centers, schools, hospitals, the court system, police departments, child advocacy centers, foster care and adoption agencies, private practices, shelters and family counseling centers. Most state and federal employees who administer welfare and other social service aren’t professional social workers.		1
-57	8	Most social workers work in government agencies.	single choice	Although many people believe that most social workers are employed at local, state, or federal government agencies, NASW survey data show otherwise. Almost three-quarters of all social workers work in private organizations.		2
-58	8	Social Workers work primarily with the poor.	single choice	Social Work has a strong commitment to work with the poor and the vulnerable and to advancing social and economic justice. Social workers also work with people from various socioeconomic groups in a diverse range of settings including school settings, child and family service agencies, early intervention programs, mental health agencies, prevention programs, community-based health agencies and hospitals, nursing homes and rehabilitation settings, advocacy agencies, community development organizations, and private practice groups.		3
-59	8	To provide mental health services you need a degree in psychology.	single choice	Over 60 percent of mental health services and psychotherapy is provided by master’s level social workers. Social workers are the clinicians of choice because they view clients within their environment, taking into account personal and significant relationships, economic and social conditions, and physical health. Social workers build on strengths and assist clients in working on constraints that impinge on their well-being.		4
-60	9	Would you convince Natasha and Joyce that Joe needs dental care?	single choice			0
-62	9	Where would you do this?	single choice			2
-63	9	How can you ensure that Natasha returns to your office for restorative care?	long text			3
-61	9	If yes, how would try to convince Natasha?	long text			1
-64	9	If and when Joe goes to the dentist, who signs consent for Joe’s treatment?	single choice			4
-65	9	How do you help the two “mothers” come to an agreement about diet and its role in dental disease?	long text			5
-66	9	How do you help Joyce understand the role of bacteria in dental disease and that her dental care is as important as the others in the family?	long text			6
-67	9	Do you help the family find a dentist that can care for all members of the family so they do not have to have one dentist for the children and one for the adults?	long text			7
-68	9	How do you get the family to the dentist?	long text			8
-69	9	How could a social worker facilitate this family’s navigation of the dental system?	long text			9
 72	12	My partner makes me feel unsafe, even in my own home.	single choice			0
 73	13	I feel ashamed of the things my partner does to me.	single choice			0
 74	14	I try not to rock the boat because I am afraid of what my partner might do.	single choice			0
@@ -5205,13 +4951,13 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 237	124	In the next week, I can also do the following to strengthen my support:	short text			1
 239	125	What are the main issues that may trigger relationship conflict or abuse? 	multiple choice			0
 240	125	Other issues that trigger relationship problems or abuse:	long text			1
-241	126	What services might help you work towards these goals with your partner?	multiple choice			0
 242	126	Other services that might help you:	long text			1
 196	92	In the past year, has your partner(s) insisted you have sex even though you didn’t want to? 	single choice			0
 197	93	In the past year, has your partner(s) forced you to have sex without a condom?	single choice			0
 198	94	In the past year, has your partner(s) threatened or forced (like hitting, holding down, or using a weapon) you to have sex?	single choice			0
 219	114	that I may be exposed to HIV or sexually transmitted infections because of unsafe sex	single choice			0
 220	115	about becoming pregnant	single choice			0
+241	126	What services might help you work towards these goals with your partner?	multiple choice			0
 205	100	In the past year, My partner tried to keep me from seeing or talking to my family or friends. . .	single choice			0
 155	52	My code word will be:	short text		 	0
 215	110	is negatively affecting my children	single choice			0
@@ -5345,12 +5091,6 @@ COPY quizblock_quiz (id, description, rhetorical, allow_redo) FROM stdin;
 --
 
 COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
-1	2	1	constantly
-9	5	5	a
-10	4	5	a
-11	7	5	a
-12	6	5	a
-13	8	5	a
 16	119	9	1
 17	118	9	3
 18	113	9	1
@@ -5370,7 +5110,45 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 434	165	646	
 437	162	649	
 440	159	652	
+2006	184	2008	2
 41	72	21	2
+2013	191	2016	2
+2160	184	2152	2
+2167	191	2159	2
+2174	198	2166	2
+2181	206	2174	1
+2188	213	2181	2
+2195	219	2188	2
+2202	233	2195	2
+2209	151	2202	id
+2217	160	2210	docs
+2224	236	2217	 
+2225	237	2217	 
+2226	184	2218	1
+2233	191	2225	1
+2240	198	2232	1
+2247	206	2239	2
+2254	213	2246	2
+2261	219	2253	2
+2268	233	2260	1
+2275	154	2267	 asdf
+2282	161	2274	 sdf
+2288	236	2280	 tfrger
+2289	237	2280	 fgrew
+2304	241	2286	11
+2305	241	2286	11
+2306	241	2286	6
+2307	242	2286	
+2331	188	2296	2
+2337	194	2302	2
+2343	200	2308	1
+2349	207	2314	0
+2355	213	2320	2
+2361	218	2326	2
+2367	231	2332	1
+2373	150	2338	
+2379	151	2344	 
+2385	156	2350	 
 98	179	120	
 99	180	121	Ex-Wife
 100	179	124	
@@ -5385,6 +5163,9 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 109	158	140	
 110	159	141	
 111	165	142	
+2386	157	2351	 
+2392	163	2357	
+2399	168	2363	
 649	240	864	
 653	240	867	
 655	242	869	
@@ -5444,6 +5225,8 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 432	237	644	
 435	164	647	
 438	161	650	
+2007	185	2009	2
+2014	192	2017	2
 474	236	686	
 475	237	686	
 227	170	319	a
@@ -5601,6 +5384,22 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 379	170	579	aaaaaaa
 380	172	580	1
 381	174	582	1
+2161	185	2153	2
+2168	192	2160	2
+2175	199	2167	2
+2182	207	2175	1
+2189	221	2182	2
+2196	220	2189	2
+2203	234	2196	2
+2210	153	2203	person
+2218	161	2211	savings acct
+2227	185	2219	2
+2234	192	2226	2
+2241	199	2233	2
+2248	207	2240	2
+2255	221	2247	2
+2262	220	2254	2
+2269	234	2261	3
 382	170	583	aaaaaaaa
 383	172	584	1
 384	174	586	1
@@ -5649,7 +5448,43 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 433	166	645	
 436	163	648	
 439	160	651	
+2008	186	2010	1
 476	210	687	2
+2162	186	2154	2
+2169	193	2161	2
+2176	200	2168	2
+2183	208	2176	1
+2190	243	2183	2
+2197	222	2190	Lorem ipsum
+2204	235	2197	other reasons
+2211	154	2204	person 2
+2219	162	2212	independence
+2228	186	2220	2
+2235	193	2227	1
+2242	200	2234	1
+2249	208	2241	3
+2256	243	2248	2
+2263	222	2255	
+2270	235	2262	
+2276	155	2268	 sdaf
+2283	162	2275	sdf
+2290	168	2281	
+2308	240	2287	
+2309	239	2287	1
+2310	239	2287	2
+2311	239	2287	3
+2312	239	2287	5
+2332	189	2297	2
+2338	195	2303	2
+2344	202	2309	0
+2350	208	2315	0
+2356	221	2321	2
+2362	219	2327	2
+2368	232	2333	1
+2374	148	2339	 dfe
+2380	153	2345	 
+2387	158	2352	 
+2393	163	2358	ok
 648	242	863	
 650	239	865	2
 651	239	865	3
@@ -5729,14 +5564,51 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 846	242	1012	
 847	245	1013	
 848	244	1013	
+2009	187	2011	2
+2163	187	2155	2
+2170	194	2162	2
+2177	202	2170	1
+2184	209	2177	1
+2191	215	2184	2
+2198	223	2191	2
+2205	148	2198	name
+2212	155	2205	code word
+2220	163	2213	support
+2229	187	2221	1
+2236	194	2228	1
+2243	202	2235	1
+2250	209	2242	2
+2257	215	2249	2
+2264	223	2256	2
+2271	148	2263	 sadf
+2277	156	2269	 sadf
+2278	157	2270	dsfg
+2284	163	2276	qwe
+2291	240	2282	
 891	240	1060	
 892	239	1060	4
 893	239	1060	7
 894	239	1060	11
+2292	239	2282	1
+2293	239	2282	2
+2294	239	2282	3
+2295	239	2282	5
+2313	168	2288	
+2314	167	2288	2
+2315	167	2288	3
+2327	184	2292	1
+2333	190	2298	2
+2339	196	2304	2
+2345	203	2310	0
+2351	209	2316	0
 907	168	1073	
 908	236	1074	
 909	237	1074	
 910	168	1075	
+2357	243	2322	2
+2363	220	2328	2
+2369	233	2334	1
+2375	150	2340	
 915	156	1080	
 916	157	1081	
 917	168	1082	
@@ -5766,8 +5638,43 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 941	158	1100	
 942	236	1101	
 943	237	1101	
+2381	151	2346	 dfe
+2388	159	2353	 
+2394	164	2359	 
+2400	186	2366	1
 970	185	1129	1
 1685	184	1700	1
+2010	188	2013	1
+2164	188	2156	2
+2171	195	2163	2
+2178	203	2171	1
+2185	210	2178	2
+2192	216	2185	2
+2199	230	2192	2
+2206	150	2199	exits
+2213	156	2206	go to
+2214	157	2207	other go to
+2221	164	2214	clothes
+2230	188	2222	2
+2237	195	2229	1
+2244	203	2236	2
+2251	210	2243	1
+2258	216	2250	2
+2265	230	2257	1
+2272	150	2264	asdf
+2279	158	2271	qwe
+2285	164	2277	 qwe
+2296	241	2283	11
+2297	241	2283	11
+2298	241	2283	6
+2299	242	2283	
+2316	240	2289	
+2317	239	2289	1
+2318	239	2289	2
+2319	239	2289	3
+2320	239	2289	5
+2328	185	2293	1
+2334	191	2299	2
 1052	240	1199	
 1053	239	1199	1
 1054	239	1199	2
@@ -5835,12 +5742,95 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 1116	241	1210	9
 1117	242	1210	
 1118	168	1211	
+2340	197	2305	2
+2346	204	2311	0
+2352	210	2317	2
+2358	215	2323	2
+2364	222	2329	
+2370	234	2335	1
+2376	150	2341	dfe
+2382	153	2347	 
+2389	160	2354	 
+2395	165	2360	 
 1212	168	1293	
+2011	189	2014	2
+2165	189	2157	2
+2172	196	2164	2
+2179	204	2172	1
+2186	211	2179	2
+2193	217	2186	2
+2200	231	2193	2
+2207	151	2200	id
+2215	158	2208	low risk space
+2222	165	2215	review
+2231	189	2223	1
+2238	196	2230	1
+2245	204	2237	2
+2252	211	2244	2
+2259	217	2251	2
+2266	231	2258	3
+2273	151	2265	 asdf
+2280	159	2272	 sdf
+2286	165	2278	 qwe
+2300	245	2284	erf
+2301	244	2284	fds
+2321	241	2290	11
+2322	241	2290	11
+2323	241	2290	6
+2324	242	2290	
+2329	186	2294	2
+2335	192	2300	1
+2341	198	2306	2
+2347	205	2312	0
+2353	211	2318	2
+2359	216	2324	2
+2365	223	2330	1
+2371	235	2336	
+2377	151	2342	 
+2383	154	2348	 
+2390	161	2355	 
+2396	166	2361	 
 1435	240	1500	
 1436	239	1500	4
 1437	239	1500	7
 1438	239	1500	11
+2012	190	2015	1
 1693	198	1709	2
+2166	190	2158	2
+2173	197	2165	2
+2180	205	2173	1
+2187	212	2180	2
+2194	218	2187	2
+2201	232	2194	2
+2208	153	2201	person
+2216	159	2209	extra keys
+2223	166	2216	review2
+2232	190	2224	2
+2239	197	2231	2
+2246	205	2238	2
+2253	212	2245	2
+2260	218	2252	2
+2267	232	2259	2
+2274	153	2266	 asdf
+2281	160	2273	 sdf
+2287	166	2279	 qwe
+2302	245	2285	erf
+2303	244	2285	fds
+2325	245	2291	erf
+2326	244	2291	fds
+2330	187	2295	2
+2336	193	2301	1
+2342	199	2307	1
+2348	206	2313	0
+2354	212	2319	2
+2360	217	2325	2
+2366	230	2331	1
+2372	148	2337	 
+2378	153	2343	 
+2384	155	2349	 
+2391	162	2356	
+2397	236	2362	 
+2398	237	2362	 
 1565	222	1592	sdf
 1566	222	1593	sdf
 1567	220	1594	1
@@ -5866,9 +5856,50 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 21	12	13	2011-11-10 09:29:04.058432-05
 650	58	13	2011-12-16 12:38:33.448871-05
 652	56	13	2011-12-16 12:38:38.036868-05
+2007	80	143	2012-01-18 18:59:16.708164-05
+2013	84	143	2012-01-18 18:59:50.520701-05
 686	124	109	2011-12-16 14:10:10.472467-05
 688	106	5	2011-12-16 14:20:20.160972-05
 690	108	5	2011-12-16 14:20:28.564892-05
+2152	80	146	2012-01-19 14:18:28.105836-05
+2158	86	146	2012-01-19 14:18:32.52782-05
+2164	92	146	2012-01-19 14:18:36.9454-05
+2170	97	146	2012-01-19 14:18:41.623971-05
+2176	103	146	2012-01-19 14:18:46.169499-05
+2182	109	146	2012-01-19 14:18:53.233759-05
+2188	114	146	2012-01-19 14:18:57.971761-05
+2194	120	146	2012-01-19 14:19:02.923892-05
+2200	49	146	2012-01-19 14:19:08.895671-05
+2206	53	146	2012-01-19 14:19:14.614502-05
+2207	54	146	2012-01-19 14:19:14.620927-05
+2213	60	146	2012-01-19 14:19:23.102844-05
+2218	80	147	2012-01-19 14:59:21.675003-05
+2224	86	147	2012-01-19 15:00:26.506041-05
+2230	92	147	2012-01-19 15:00:46.849276-05
+2236	98	147	2012-01-19 15:01:07.636607-05
+2242	104	147	2012-01-19 15:01:28.571231-05
+2248	127	147	2012-01-19 15:03:01.43518-05
+2254	115	147	2012-01-19 15:03:25.899736-05
+2260	121	147	2012-01-19 15:09:50.626921-05
+2266	50	147	2012-01-19 15:10:29.565998-05
+2273	57	147	2012-01-19 15:11:41.055608-05
+2279	63	147	2012-01-19 15:12:38.189004-05
+2285	128	147	2012-01-19 15:19:34.72688-05
+2291	128	147	2012-01-19 15:20:43.393296-05
+2292	80	148	2012-01-19 15:36:32.532215-05
+2298	86	148	2012-01-19 15:37:14.436977-05
+2304	92	148	2012-01-19 15:37:48.912682-05
+2310	98	148	2012-01-19 15:38:14.092971-05
+2316	104	148	2012-01-19 15:38:43.332242-05
+2322	127	148	2012-01-19 15:39:45.339331-05
+2328	115	148	2012-01-19 15:40:07.774162-05
+2334	121	148	2012-01-19 15:40:40.15489-05
+2340	48	148	2012-01-19 15:43:14.159656-05
+2346	49	148	2012-01-19 15:43:38.413362-05
+2353	56	148	2012-01-19 15:46:12.914347-05
+2359	61	148	2012-01-19 15:46:46.198129-05
+2364	84	13	2012-01-19 16:12:15.227916-05
+2366	82	13	2012-01-19 16:16:18.008871-05
 120	74	5	2011-11-28 13:59:53.861876-05
 121	75	5	2011-11-28 13:59:53.868288-05
 122	76	5	2011-11-28 13:59:53.87375-05
@@ -5915,8 +5946,47 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 647	61	13	2011-12-16 12:38:23.047075-05
 649	59	13	2011-12-16 12:38:30.956519-05
 651	57	13	2011-12-16 12:38:35.673998-05
+2008	80	143	2012-01-18 18:59:22.028607-05
+2014	85	143	2012-01-18 18:59:53.975269-05
 687	105	5	2011-12-16 14:20:17.733631-05
 689	107	5	2011-12-16 14:20:25.029581-05
+2153	81	146	2012-01-19 14:18:28.722952-05
+2159	87	146	2012-01-19 14:18:33.238774-05
+2165	93	146	2012-01-19 14:18:37.566017-05
+2171	98	146	2012-01-19 14:18:42.280489-05
+2177	104	146	2012-01-19 14:18:46.90817-05
+2183	127	146	2012-01-19 14:18:54.049735-05
+2189	115	146	2012-01-19 14:18:58.649695-05
+2195	121	146	2012-01-19 14:19:03.395737-05
+2201	50	146	2012-01-19 14:19:09.649641-05
+2208	55	146	2012-01-19 14:19:16.17309-05
+2214	61	146	2012-01-19 14:19:23.736437-05
+2219	81	147	2012-01-19 15:00:09.583836-05
+2225	87	147	2012-01-19 15:00:30.094393-05
+2231	93	147	2012-01-19 15:00:50.245468-05
+2237	99	147	2012-01-19 15:01:10.738969-05
+2243	105	147	2012-01-19 15:02:43.530861-05
+2249	110	147	2012-01-19 15:03:04.588027-05
+2255	116	147	2012-01-19 15:03:34.988989-05
+2261	122	147	2012-01-19 15:09:54.034539-05
+2267	51	147	2012-01-19 15:10:33.825528-05
+2274	58	147	2012-01-19 15:11:44.623114-05
+2280	124	147	2012-01-19 15:14:40.577683-05
+2286	126	147	2012-01-19 15:19:44.320678-05
+2293	81	148	2012-01-19 15:36:36.944748-05
+2299	87	148	2012-01-19 15:37:18.441035-05
+2305	93	148	2012-01-19 15:37:52.80761-05
+2311	99	148	2012-01-19 15:38:17.978848-05
+2317	105	148	2012-01-19 15:39:04.162078-05
+2323	110	148	2012-01-19 15:39:49.227146-05
+2329	116	148	2012-01-19 15:40:12.140867-05
+2335	122	148	2012-01-19 15:40:43.81319-05
+2341	48	148	2012-01-19 15:43:21.535012-05
+2347	50	148	2012-01-19 15:43:41.674392-05
+2354	57	148	2012-01-19 15:46:16.543179-05
+2360	62	148	2012-01-19 15:46:49.521319-05
+2365	83	13	2012-01-19 16:12:19.922481-05
+2367	83	13	2012-01-19 16:16:22.422087-05
 864	125	5	2011-12-21 11:03:47.342337-05
 866	126	5	2011-12-21 11:03:54.546465-05
 868	125	5	2011-12-21 11:09:40.125299-05
@@ -6262,6 +6332,8 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 637	68	5	2011-12-09 19:04:34.282963-05
 638	69	5	2011-12-09 19:04:34.285642-05
 639	124	5	2011-12-12 11:01:24.04068-05
+2009	81	143	2012-01-18 18:59:26.388707-05
+2015	86	143	2012-01-18 18:59:58.040341-05
 982	80	5	2012-01-06 10:22:15.69988-05
 983	81	5	2012-01-06 10:22:32.437242-05
 984	63	5	2012-01-06 10:24:57.626168-05
@@ -6294,7 +6366,42 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1011	125	13	2012-01-11 14:12:27.945758-05
 1012	126	13	2012-01-11 14:12:31.74877-05
 1013	128	13	2012-01-11 14:13:12.271013-05
+2154	82	146	2012-01-19 14:18:29.368489-05
+2160	88	146	2012-01-19 14:18:33.937017-05
+2166	94	146	2012-01-19 14:18:38.327555-05
+2172	99	146	2012-01-19 14:18:43.031849-05
+2178	105	146	2012-01-19 14:18:50.062987-05
+2184	110	146	2012-01-19 14:18:54.870155-05
+2190	116	146	2012-01-19 14:18:59.300508-05
+2196	122	146	2012-01-19 14:19:03.923698-05
+2202	49	146	2012-01-19 14:19:10.39606-05
+2209	56	146	2012-01-19 14:19:18.652136-05
+2215	62	146	2012-01-19 14:19:24.405356-05
+2220	82	147	2012-01-19 15:00:12.897693-05
+2226	88	147	2012-01-19 15:00:33.788596-05
+2232	94	147	2012-01-19 15:00:53.66994-05
+2238	100	147	2012-01-19 15:01:14.872676-05
+2244	106	147	2012-01-19 15:02:47.542046-05
+2250	111	147	2012-01-19 15:03:08.159665-05
+2256	117	147	2012-01-19 15:09:37.478167-05
+2262	123	147	2012-01-19 15:09:57.091409-05
+2268	52	147	2012-01-19 15:10:43.761142-05
+2275	59	147	2012-01-19 15:11:47.926952-05
+2281	64	147	2012-01-19 15:15:28.574056-05
+2287	125	147	2012-01-19 15:19:51.827703-05
+2294	82	148	2012-01-19 15:36:41.015457-05
 1060	125	17	2012-01-11 14:44:21.674748-05
+2300	88	148	2012-01-19 15:37:24.064057-05
+2306	94	148	2012-01-19 15:37:57.561408-05
+2312	100	148	2012-01-19 15:38:25.618037-05
+2318	106	148	2012-01-19 15:39:07.360029-05
+2324	111	148	2012-01-19 15:39:52.708734-05
+2330	117	148	2012-01-19 15:40:26.387516-05
+2336	123	148	2012-01-19 15:40:47.010885-05
+2342	49	148	2012-01-19 15:43:25.0384-05
+2348	51	148	2012-01-19 15:43:45.073478-05
+2355	58	148	2012-01-19 15:46:19.932406-05
+2361	63	148	2012-01-19 15:46:52.897498-05
 1073	64	13	2012-01-11 15:30:21.078953-05
 1074	124	13	2012-01-11 15:30:23.90214-05
 1075	64	13	2012-01-11 15:30:26.227094-05
@@ -6321,6 +6428,44 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1100	55	13	2012-01-12 12:10:31.750988-05
 1101	124	5	2012-01-12 14:06:02.142107-05
 1129	81	13	2012-01-12 16:06:29.075367-05
+2010	82	143	2012-01-18 18:59:31.023861-05
+2016	87	143	2012-01-18 19:00:06.35753-05
+2155	83	146	2012-01-19 14:18:30.115262-05
+2161	89	146	2012-01-19 14:18:34.713549-05
+2167	95	146	2012-01-19 14:18:39.01787-05
+2173	100	146	2012-01-19 14:18:43.776283-05
+2179	106	146	2012-01-19 14:18:50.912764-05
+2185	111	146	2012-01-19 14:18:55.651172-05
+2191	117	146	2012-01-19 14:19:01.312657-05
+2197	123	146	2012-01-19 14:19:04.493617-05
+2203	50	146	2012-01-19 14:19:11.000879-05
+2210	57	146	2012-01-19 14:19:19.59557-05
+2216	63	146	2012-01-19 14:19:25.490107-05
+2221	83	147	2012-01-19 15:00:16.411166-05
+2227	89	147	2012-01-19 15:00:36.932372-05
+2233	95	147	2012-01-19 15:00:57.047697-05
+2239	101	147	2012-01-19 15:01:18.050634-05
+2245	107	147	2012-01-19 15:02:50.650407-05
+2251	112	147	2012-01-19 15:03:12.381829-05
+2257	118	147	2012-01-19 15:09:40.655379-05
+2263	47	147	2012-01-19 15:10:19.176898-05
+2269	53	147	2012-01-19 15:11:11.572464-05
+2270	54	147	2012-01-19 15:11:11.578777-05
+2276	60	147	2012-01-19 15:12:26.815811-05
+2282	125	147	2012-01-19 15:16:28.574596-05
+2288	64	147	2012-01-19 15:20:22.577132-05
+2295	83	148	2012-01-19 15:36:50.530585-05
+2301	89	148	2012-01-19 15:37:32.533977-05
+2307	95	148	2012-01-19 15:38:01.58929-05
+2313	101	148	2012-01-19 15:38:29.210157-05
+2319	107	148	2012-01-19 15:39:10.718858-05
+2325	112	148	2012-01-19 15:39:56.153603-05
+2331	118	148	2012-01-19 15:40:30.308215-05
+2337	47	148	2012-01-19 15:41:07.640035-05
+2343	50	148	2012-01-19 15:43:28.394376-05
+2349	52	148	2012-01-19 15:45:47.725824-05
+2356	59	148	2012-01-19 15:46:23.323923-05
+2362	124	148	2012-01-19 15:47:39.553338-05
 1199	125	5	2012-01-12 18:24:39.237124-05
 1200	125	5	2012-01-12 18:24:44.107191-05
 1201	126	5	2012-01-12 18:24:47.331764-05
@@ -6335,15 +6480,87 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1210	126	5	2012-01-12 18:26:05.76105-05
 1211	64	13	2012-01-13 11:06:15.982025-05
 1293	64	17	2012-01-17 10:50:03.126474-05
+2011	83	143	2012-01-18 18:59:36.019518-05
+2017	88	143	2012-01-18 19:00:11.194099-05
+2156	84	146	2012-01-19 14:18:30.884642-05
+2162	90	146	2012-01-19 14:18:35.382296-05
+2168	96	146	2012-01-19 14:18:39.748476-05
+2174	101	146	2012-01-19 14:18:44.427284-05
+2180	107	146	2012-01-19 14:18:51.724911-05
+2186	112	146	2012-01-19 14:18:56.342739-05
+2192	118	146	2012-01-19 14:19:01.916166-05
+2198	47	146	2012-01-19 14:19:07.084691-05
+2204	51	146	2012-01-19 14:19:11.657828-05
+2211	58	146	2012-01-19 14:19:20.446593-05
+2217	124	146	2012-01-19 14:19:30.864357-05
+2222	84	147	2012-01-19 15:00:19.713975-05
+2228	90	147	2012-01-19 15:00:40.064664-05
+2234	96	147	2012-01-19 15:01:00.457117-05
+2240	102	147	2012-01-19 15:01:21.520224-05
+2246	108	147	2012-01-19 15:02:54.028875-05
+2252	113	147	2012-01-19 15:03:19.538905-05
+2258	119	147	2012-01-19 15:09:43.861266-05
+2264	48	147	2012-01-19 15:10:22.481234-05
+2271	55	147	2012-01-19 15:11:21.522676-05
+2277	61	147	2012-01-19 15:12:30.496227-05
+2283	126	147	2012-01-19 15:16:50.583075-05
+2289	125	147	2012-01-19 15:20:29.236131-05
+2296	84	148	2012-01-19 15:37:06.254378-05
+2302	90	148	2012-01-19 15:37:37.544145-05
+2308	96	148	2012-01-19 15:38:05.787495-05
+2314	102	148	2012-01-19 15:38:34.266205-05
+2320	108	148	2012-01-19 15:39:14.687447-05
+2326	113	148	2012-01-19 15:39:59.639514-05
+2332	119	148	2012-01-19 15:40:33.863484-05
+2338	48	148	2012-01-19 15:41:11.635508-05
+2344	49	148	2012-01-19 15:43:32.16511-05
+2350	53	148	2012-01-19 15:45:52.12223-05
+2351	54	148	2012-01-19 15:45:52.128289-05
+2357	60	148	2012-01-19 15:46:34.273094-05
+2363	64	148	2012-01-19 15:47:43.741242-05
 1592	116	5	2012-01-18 13:00:23.463191-05
 1593	116	5	2012-01-18 13:00:31.600329-05
 1594	115	5	2012-01-18 13:00:36.651808-05
 1595	116	5	2012-01-18 13:00:39.784202-05
 1500	125	17	2012-01-17 15:30:53.034735-05
+2012	84	143	2012-01-18 18:59:45.249474-05
+2157	85	146	2012-01-19 14:18:31.655579-05
+2163	91	146	2012-01-19 14:18:36.185137-05
+2169	97	146	2012-01-19 14:18:40.723374-05
+2175	102	146	2012-01-19 14:18:45.367943-05
+2181	108	146	2012-01-19 14:18:52.441646-05
+2187	113	146	2012-01-19 14:18:57.198183-05
+2193	119	146	2012-01-19 14:19:02.444393-05
+2199	48	146	2012-01-19 14:19:08.039763-05
+2205	52	146	2012-01-19 14:19:13.033055-05
+2212	59	146	2012-01-19 14:19:21.118637-05
+2223	85	147	2012-01-19 15:00:22.989681-05
+2229	91	147	2012-01-19 15:00:43.369326-05
+2235	97	147	2012-01-19 15:01:04.171791-05
+2241	103	147	2012-01-19 15:01:24.962327-05
+2247	109	147	2012-01-19 15:02:57.681687-05
 1700	80	5	2012-01-18 16:01:48.31777-05
+2253	114	147	2012-01-19 15:03:22.64075-05
+2259	120	147	2012-01-19 15:09:47.220775-05
 1703	81	5	2012-01-18 16:01:54.16193-05
+2265	49	147	2012-01-19 15:10:25.933554-05
+2272	56	147	2012-01-19 15:11:37.476767-05
+2278	62	147	2012-01-19 15:12:34.590115-05
+2284	128	147	2012-01-19 15:18:15.478578-05
+2290	126	147	2012-01-19 15:20:32.934333-05
 1709	94	5	2012-01-18 16:02:06.233941-05
 1710	95	5	2012-01-18 16:02:11.283797-05
+2297	85	148	2012-01-19 15:37:10.793056-05
+2303	91	148	2012-01-19 15:37:43.530594-05
+2309	97	148	2012-01-19 15:38:09.410702-05
+2315	103	148	2012-01-19 15:38:38.010873-05
+2321	109	148	2012-01-19 15:39:41.5816-05
+2327	114	148	2012-01-19 15:40:04.16114-05
+2333	120	148	2012-01-19 15:40:36.879171-05
+2339	47	148	2012-01-19 15:43:10.594454-05
+2345	50	148	2012-01-19 15:43:34.903439-05
+2352	55	148	2012-01-19 15:45:58.696167-05
+2358	60	148	2012-01-19 15:46:42.532688-05
 \.
 
 
@@ -6366,6 +6583,7 @@ COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM
 11	8	\N	241
 2	17	644	241
 3	124	\N	241
+20	147	645	241
 \.
 
 
@@ -6374,9 +6592,37 @@ COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM
 --
 
 COPY servicesblock_serviceprovider (id, issue_id, name, phone, url, address, map_image) FROM stdin;
-3	642	columbia university	646 319 8145	tiur.ccnmtl.columbia.edu	114th street 	images/2011-09-04_19.09.44.jpg
 2	641	housing help	housing help	housing help	housing help	images/columbiamap.jpg
-4	642	College Name	456-678-9472	http://college.edu	555 Someplace Ave, Brooklyn, NY 24356	images/columbiamap_1.jpg
+5	648	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/counseling--support-groups-56.html		
+6	648	Sanctuary for Families	(212)-349-6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221		
+7	648	STEPS to End Family Violence	(646)-315-7623 Clinical Supervisor	http://www.egscf.org/services/steps/clinical-services/		
+8	648	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
+9	649	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/domestic-violence-53.html#domestic_violence_shelters		
+10	649	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=34&Itemid=63		
+11	650	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/get-help-8/for-legal-services-15.html		
+12	650	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist 	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=140&Itemid=163		
+13	650	STEPS to End Family Violence	(646)-315-7605 or (646)-315-7637 for Legal Services	http://www.egscf.org/services/steps/legal-services/		
+14	650	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
+15	647	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Parenting.htm		
+16	647	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150		
+17	647	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74		
+18	647	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/		
+19	656	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Business.htm		
+20	656	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
+21	656	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/employment-services/		
+22	641	Coalition for the Homeless	(212)-776-2012	http://www.coalitionforthehomeless.org/programs/crisis-intervention		
+23	641	Catholic Charities	1-888-744-7900 Hotline	http://www.catholiccharitiesny.org/what-we-do/feeding-the-hungry-and-sheltering-the-homeless/feeding-more-information/#emergency_shelters		
+24	642	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
+25	643	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/support_groups.htm		
+26	645	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/safe-horizon-counseling-center-66.html		
+27	645	Sanctuary for Families	(212) 349 - 6009 x. 221	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221		
+28	646	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150		
+29	646	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74		
+30	646	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
+31	646	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/substance-abuse-treatment/		
+32	652	Ackerman Institute	(212)-879-4900 extension 122 Intake Office	http://www.ackerman.org/posts/view/107-couples-and-family-therapy---treatment		
+33	652	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/		
+34	651	Reverend Herbert Daughter, The House of the Lord Church	718-596-1991			
 \.
 
 
@@ -6531,10 +6777,25 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 10	13	5	a
 15	109	5	
 51	8	1	Name 1
+121	146	1	
 52	8	2	
 53	8	3	
+122	146	2	person 3
 54	8	4	Name 2
 55	8	5	Name 3
+123	146	3	person 1
+124	146	4	person 2
+125	146	5	
+131	148	1	
+132	148	2	
+133	148	3	ok
+134	148	4	dokey
+135	148	5	
+126	147	1	
+127	147	2	freda
+128	147	3	
+129	147	4	jon
+130	147	5	
 2	5	1	
 1	5	2	
 3	5	3	
@@ -6548,11 +6809,20 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 --
 
 COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtreesupporttype_id) FROM stdin;
+85	122	2
+86	123	2
+87	123	1
 12	10	1
 13	6	2
+88	124	1
 15	17	2
 16	19	2
 17	19	1
+89	127	2
+90	129	2
+91	127	1
+92	134	2
+93	133	1
 26	7	2
 27	8	1
 35	4	1
@@ -6595,7 +6865,10 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 --
 
 COPY wings_main_participant (id, id_string, user_id, current_section_id, created_on) FROM stdin;
-84	123	143	52	2012-01-18 18:13:52.42092-05
+84	123	143	170	2012-01-18 18:13:52.42092-05
+89	555555	148	58	2012-01-19 15:25:16.437965-05
+87	9999999	146	57	2012-01-19 14:18:15.126042-05
+88	777666	147	222	2012-01-19 14:30:13.546904-05
 \.
 
 

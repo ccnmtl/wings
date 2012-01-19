@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+{% load render %}
+{% load smartif %}
+{% load pastquizanswers %}
+
+
+{% block css %}
+<style type="text/css">
+    span.stats_page_stat {
+        cursor: default;
+    }
+    
+    
+    th {
+        cursor: default;
+    
+    }
+    
+    
+    div#container ,div#primarynav , div#header {
+        width: 5000px;
+    }
+    
+        
+    div#primarynav, .visualclear, #footer {
+        display:none;
+    }
+    
+    div.stats_table {
+        position: relative;
+        left : -160px;
+        top :  -30px;
+    }
+    
+</style>
+
+{%endblock %}
+
+{% block content %}
+
+<div class = "stats_table">
+    <table border ="1px">
+        <tr>
+           <th >&nbsp;</th>
+            {% for qu in questions %}
+                <th title="{{qu.text}}">{{ qu.id}}</th>
+            {%endfor%}
+        </tr>
+
+        
+       {% for u in users %}
+         <tr>
+            <td> {{u.part.label}}</td>
+           {% for qu in questions %}
+               <td>
+                    {%answer_code_for_stats u qu.id%}
+                </td>
+            {%endfor %}
+            </tr>
+         {%endfor %}
+
+
+    {%endblock%}
+    </table>
+</div>
+{%comment %}
+
+{% spaceless %}
+
+<!--
+<div id = "task">
+  {{task}}
+</div>
+-->
+
+<table border ="1px">
+
+  <tr>
+    <td colspan = "11">
+    </td>
+        {% for question_id_string, question in questions_in_order %}
+        <th >{{ question_id_string}}
+        </th>
+        {%endfor%}
+  </tr>
+  <tr>
+    <td colspan = "11">
+    </td>
+        {% for question_id_string, question in questions_in_order %}
+        <th > {{question.quiz.label}}
+        </th>
+        {%endfor%}
+  </tr>
+
+  <tr>
+  
+  <th>
+    uni
+  </th>  
+  <th>
+    first_name
+  </th>  
+  <th>
+    last_name
+  </th>  
+  <th>
+    semester
+  </th>  
+  
+  <th>
+    year
+  </th>  
+  
+  <th>
+    section
+  </th>  
+  
+  <th>
+    completed_training
+  </th>  
+  <th>
+    taking_action
+  </th>  
+  <th>
+    abuse_or_accient
+  </th>  
+  
+  <th>
+    pre-test
+  </th>
+  
+  <th>
+    post-test_initial
+  </th>
+  {% for question_id_string, question in questions_in_order %}
+  <th >{{question.short_text}}...</th>
+  {%endfor%}
+  </tr>  
+{%for row in stats.values %}
+  <tr>
+  
+  <td>
+  {{row.user_object.username}}
+   </td>
+  <td>
+  {{row.user_object.first_name}}
+   </td>
+  <td>
+  {{row.user_object.last_name}}
+   </td>
+  <td>
+  {%for c in row.user_object.classes_i_take%}
+    {%ifequal c.4 '6010'%}
+      {{c.0}}
+    {%endifequal%}
+  {%endfor %}
+   </td>
+  <td>
+  {%for c in row.user_object.classes_i_take%}
+    {%ifequal c.4 '6010'%}
+      {{c.1}} 
+    {%endifequal%}
+  {%endfor %}
+   </td>
+  <td>
+  {%for c in row.user_object.classes_i_take%}
+    {%ifequal c.4 '6010'%}
+      {{c.2}}
+    {%endifequal%}
+  {%endfor %}
+   </td>
+
+  <td>
+     {% get_scores for 'post-test' in row.quizzes as post_test_scores %}
+        {%if post_test_scores.all_correct and post_test_scores.all_correct == "t" %}
+            complete
+        {% else %}
+            incomplete
+        {%endif %}
+  </td>
+
+  <td>
+      {%ifequal row.taking_action 'completed_form' %}
+          Completed activity & filled out form
+      {%endifequal%}
+      {%ifequal row.taking_action 'clicked_through' %}
+          Completed activity
+      {%endifequal%}
+      {%ifequal row.taking_action 'no_data' %}
+          Did not complete activity
+      {%endifequal%}
+   </td>
+
+  <td>
+  	 {%if row.bruise_recon %}{{row.bruise_recon}}{%else%}n/a{%endif%}
+  </td>
+
+  <td >
+    {% get_scores for 'pre-test' in row.quizzes as score %}
+    {% if score.answer_count %}
+       {{score.score}} / {{score.answer_count}}
+    {% else %}
+        n/a
+    {%endif %}
+  </td/>
+  
+  <td>
+  
+      {% if post_test_scores.initial_score.quiz_score %}
+      {{post_test_scores.initial_score.quiz_score}} /  {{post_test_scores.initial_score.quiz_max_score}}
+      {% else %}
+          n/a
+      {%endif %}
+  </td>
+      
+  {%for answer in row.answers_in_order %}
+      <td>
+          {{answer}}
+      </td>
+  {%endfor %}
+
+   </tr>
+{%endfor %}
+
+</table>
+</div>
+{% endspaceless %}
+
+
+
+{%endcomment %}
