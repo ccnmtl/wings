@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load render %}
 {% load smartif %}
+{%block title %}{{section}}{%endblock%}
+
 {% block js %}
     {% for block in section.pageblock_set.all %}
     {% renderjs block %}
