@@ -1180,6 +1180,7 @@ li a.jp-rewind,
   #content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-rewind
 {
         background-image: url('/site_media/img/rewind_audio_button_bg.png');
+	display: none ; /* initially*/
     }
 
 
