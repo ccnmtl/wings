@@ -11,10 +11,10 @@
      var text_input_mode = false;
      function focus_on_first_textarea_or_text_input () {
 	/* note -- this will not do exactly what we want if there are *both* textareas and inputs on the page. but that doesn't happen in wings.*/
-         if (jQuery('textarea').length > 0  && jQuery('textarea')[0].value.length == 0) {
+         if (jQuery('textarea').length > 0  && jQuery.trim (jQuery('textarea')[0].value).length == 0) {
              jQuery('textarea')[0].focus();
          }
-         if (jQuery('input[type=text]').length > 0 && jQuery('input[type=text]')[0].value.length == 0) {
+         if (jQuery('input[type=text]').length > 0 && jQuery.trim (jQuery('input[type=text]')[0].value).length == 0) {
              jQuery('input[type=text]')[0].focus();
          }
      }
@@ -54,7 +54,8 @@
     jQuery (focus_on_first_textarea_or_text_input);
 </script>
     {%if request.user.part %}
-         {% if request.user.part.current_section == section  and request.user.part.label != "P9999999" %}
+         {% if request.user.part.current_section.id == section.id  %}
+		{%if request.user.part.label != "P9999999" %}
              <script type="text/javascript" >
                 function hide_next () {
                     jQuery('div.content-nav a#next').hide();
@@ -73,7 +74,7 @@
              </script> 
          {%endif %}
     {%endif %}
-
+    {%endif%}
     {% if needs_submit %}
         <script language = "javascript">
             function submit_and_next() {
@@ -140,8 +141,6 @@
     <img class="decoration_image"  src = '{{decoration_info.image}}' />
 </div>
 {% endif %}
-
-
 
 
 {% if needs_submit %}
