@@ -10,14 +10,20 @@
 <script language = "javascript">
      var text_input_mode = false;
      function focus_on_first_textarea_or_text_input () {
-	/* note -- this will not do exactly what we want if there are *both* textareas and inputs on the page. but that doesn't happen in wings.*/
-         if (jQuery('textarea').length > 0  && jQuery.trim (jQuery('textarea')[0].value).length == 0) {
-             jQuery('textarea')[0].focus();
-         }
-         if (jQuery('input[type=text]').length > 0 && jQuery.trim (jQuery('input[type=text]')[0].value).length == 0) {
-             jQuery('input[type=text]')[0].focus();
-         }
+	arr = jQuery(jQuery('.cases')[0]).find ('textarea');
+        //console.log (arr)
+	if (arr.length > 0  && jQuery.trim (arr[0].value).length == 0) {
+            //console.log ('first quiz block is a textarea; focusing it.');
+	    arr[0].focus();
+	}
+	arr = jQuery(jQuery('.cases')[0]).find ('input[type=text]');
+        //console.log (arr)
+	if (arr.length > 0  && jQuery.trim (arr[0].value).length == 0) {
+            //console.log ('first quiz block is a text input; focusing it.');
+	    arr[0].focus();
+	}
      }
+
     function setup_key_shortcuts() {
 	$(document).keyup(function (e) {
 		if (e.which == 78) {// if user types the letter n
