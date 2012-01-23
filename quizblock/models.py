@@ -57,13 +57,16 @@ class Quiz(models.Model):
     def user_answered_all_questions(self,user):
         #TODO check for mandatory
         mandatory_questions = [q for q in self.question_set.all() if q.mandatory()]
+        #print 'mandatory_questions',  mandatory_questions
         for question in mandatory_questions:
             #print "QUESTION:"
             #print question.id
             #print question.answer_set.all()
             #print question.user_responses(user)
+            #import pdb
+            #pdb.set_trace()
             if question.is_short_text() == True or question.is_long_text() == True:
-                #print "short_text"
+                #print "short_text or long_text"
                 #print question
                 if len (question.user_responses(user)) == 0:
                     #print "no response found to short text"
@@ -72,9 +75,16 @@ class Quiz(models.Model):
                     #print "found response from this user, to wit:"
                     #print question.user_responses(user)
                     #print question.user_responses(user)[0].value
-                    if len (question.user_responses(user)[0].value) == 0:
-                        #not allowing zero-length short - text answers any more:
+                    if len (question.user_responses(user)[0].value.strip()) == 0:
+                        #print "not allowing blank text answers any more:"
                         return False
+                        
+                    else:
+                        pass
+                        #print "length of"
+                        #print question.user_responses(user)[0].value
+                        #print "is"
+                        #print len (question.user_responses(user)[0].value)
             if question.is_single_choice() == True:
                 #print "single_choice"
                 #print question
@@ -85,6 +95,7 @@ class Quiz(models.Model):
                 else:
                     pass
                     #print "question was empty"
+        #print "made it to end of the loop of answered all questions and returning true."
         return True
 
     def unlocked(self,user):
@@ -92,9 +103,12 @@ class Quiz(models.Model):
         # not that they can access this one. careful.
         #this is the default for forest.
         #return Submission.objects.filter(quiz=self,user=user).count() > 0
+        #import pdb
+        #pdb.set_trace()
         
         # for wings, we want all questions with > 0 answers to be answered.
         if not self.user_answered_all_questions( user):
+            #print "user didn't answer all questions."
             return False
     
     

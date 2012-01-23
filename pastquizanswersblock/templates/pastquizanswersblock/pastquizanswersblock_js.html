@@ -1,5 +1,6 @@
 <script language="javascript">
     function hide_empties() {
+        var no_concerns_string = "You did not enter any concerns about relationship conflict.";
         jQuery('.hide_this_one_if_empty').each(
             function (id, thing) {
                 if (jQuery.trim(thing.innerHTML) == '') {
@@ -7,6 +8,15 @@
                 }
             }
         );
+        if (jQuery(jQuery('.answer_summary')[0]).find ('li.past_question_question_div').filter(':visible').length == 0) {
+            jQuery(jQuery('.answer_summary')[0]).hide();
+        }
+        if (jQuery(jQuery('.answer_summary')[1]).find ('li.past_question_question_div').filter(':visible').length == 0) {
+            jQuery(jQuery('.answer_summary')[1]).hide();
+        }
+        if (jQuery('.answer_summary').filter(':visible').length  == 0) {
+            jQuery('h2')[0].innerHTML = no_concerns_string;
+        }
     }
     jQuery (hide_empties);
 </script>

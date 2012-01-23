@@ -56,7 +56,7 @@ ALTER SEQUENCE audioblock_audioblock_id_seq OWNED BY audioblock_audioblock.id;
 -- Name: audioblock_audioblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('audioblock_audioblock_id_seq', 99, true);
+SELECT pg_catalog.setval('audioblock_audioblock_id_seq', 109, true);
 
 
 --
@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 557, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 585, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 148, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 152, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 299, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 303, true);
 
 
 --
@@ -1174,7 +1174,7 @@ ALTER SEQUENCE pageblocks_htmlblock_id_seq OWNED BY pageblocks_htmlblock.id;
 -- Name: pageblocks_htmlblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 36, true);
+SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 37, true);
 
 
 --
@@ -1437,7 +1437,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 403, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 414, true);
 
 
 --
@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 2400, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 2717, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 2367, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 2704, true);
 
 
 --
@@ -1788,7 +1788,7 @@ ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_na
 -- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 20, true);
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 22, true);
 
 
 --
@@ -2128,7 +2128,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 135, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 150, true);
 
 
 --
@@ -2165,7 +2165,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 93, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 105, true);
 
 
 --
@@ -2316,7 +2316,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 89, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 93, true);
 
 
 --
@@ -2832,13 +2832,22 @@ COPY audioblock_audioblock (id, description, audio_file) FROM stdin;
 90		audio_file/2012/01/12/tree_state_3.mp3
 91		audio_file/2012/01/12/steps_to_increase_support.mp3
 92		audio_file/2012/01/12/goal_setting.mp3
-94		
 93		audio_file/2012/01/12/issues_that_trigger_conflict.mp3
 95		
 96		
 97		
 98		
 99		
+100		
+101		
+102		
+103		
+104		
+105		
+106		
+108		audio_file/2012/01/23/reasons_to_reduce_conflict_wrapup.mp3
+107		audio_file/2012/01/23/intro_to_events_over_past_year.mp3
+94		audio_file/2012/01/23/resources_to_help_you_towards_your_goals.mp3
 \.
 
 
@@ -2914,7 +2923,8 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
-544	109	Logged in!
+561	5	Logged in!
+578	109	Logged in!
 \.
 
 
@@ -3090,7 +3100,6 @@ COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_superuser, last_login, date_joined) FROM stdin;
-17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2012-01-17 15:30:00.937757-05	2011-10-18 11:54:07-04
 4	zm4	Zarina	Mustapha	zm4@columbia.edu	!	f	t	f	2011-06-02 15:21:46.02636-04	2011-06-02 15:21:46.026372-04
 6	amm8	A.	Matiz	amm8@columbia.edu	!	f	t	f	2011-06-02 15:22:30.926288-04	2011-06-02 15:22:30.926301-04
 9	mar227	Marc	Raymond	mar227@columbia.edu	!	f	t	f	2011-06-02 15:23:00.029295-04	2011-06-02 15:23:00.029307-04
@@ -3102,16 +3111,18 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 1	anp8	Anders	Pearson	anp8@columbia.edu	!	t	t	t	2011-10-24 11:37:17.52734-04	2011-05-18 15:57:36.886786-04
 14	lg123	Louisa	Gilbert	lg123@columbia.edu	sha1$44f3d$42703ef0a554b17379ff82a5702533b8c6e675dd	f	t	f	2011-10-17 11:43:30.561116-04	2011-10-17 11:43:30.561128-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-19 14:17:57.385463-05	2011-12-09 15:38:04-05
 124	casi				sha1$92c83$216ed4e0c9a87d9d46f583a6763f11470a8cd2f5	t	t	t	2012-01-05 16:49:45.475507-05	2012-01-05 16:44:20-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-19 16:14:11.683985-05	2011-10-11 11:39:54-04
+17	wanda	Wanda	Wingsworker		sha1$ab793$a4ed33b4cbfe35ca9b796bbec8334f2834651d29	t	t	f	2012-01-20 11:09:26.792774-05	2011-10-18 11:54:07-04
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-23 11:00:13.653387-05	2011-10-11 11:39:54-04
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-23 11:10:53.294858-05	2011-12-09 15:38:04-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-18 13:03:25.301888-05	2011-06-02 15:22:48.818126-04
 143	123				!	f	t	f	2012-01-18 18:58:23.148606-05	2012-01-18 18:15:33.078081-05
-146	9999999				!	f	t	f	2012-01-19 14:18:15.366248-05	2012-01-19 14:18:15.353716-05
 147	777666				!	f	t	f	2012-01-19 15:19:27.943056-05	2012-01-19 14:30:15.79484-05
-148	555555				!	f	t	f	2012-01-19 15:25:18.659632-05	2012-01-19 15:25:18.650894-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-19 16:32:06.434513-05	2011-06-02 15:22:04-04
+148	555555				!	f	t	f	2012-01-20 19:06:28.799662-05	2012-01-19 15:25:18.650894-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-20 20:22:51.271023-05	2011-06-02 15:22:04-04
+150	98909				!	f	t	f	2012-01-23 11:00:24.379534-05	2012-01-23 11:00:24.350951-05
+152	9999999				!	f	t	f	2012-01-23 11:11:12.861615-05	2012-01-23 11:11:12.853251-05
 \.
 
 
@@ -3701,6 +3712,10 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 297	2012-01-19 14:18:15.129399-05	109	42	87	P9999999	1	
 298	2012-01-19 14:30:13.548512-05	13	42	88	P777666	1	
 299	2012-01-19 15:25:16.439495-05	13	42	89	P555555	1	
+300	2012-01-20 20:23:15.316931-05	5	42	90	P9999999	1	
+301	2012-01-23 11:00:21.194783-05	13	42	91	P98909	1	
+302	2012-01-23 11:08:28.490281-05	109	42	92	P9999999	1	
+303	2012-01-23 11:11:12.657201-05	109	42	93	P9999999	1	
 \.
 
 
@@ -3788,6 +3803,7 @@ COPY django_flatpage_sites (id, flatpage_id, site_id) FROM stdin;
 
 COPY django_session (session_key, session_data, expire_date) FROM stdin;
 6d1ab2b4488cecbe935c99517a7cc4d1	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-02 13:54:04.918973-05
+cd5b63cc70b49c6b6f96515e48730042	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-06 11:10:20.121247-05
 18ba1a8ea1b1f1fcd01456f7a2e389ec	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 14:16:12.673985-05
 1a690242ed0a21ba3e8b228aed92ce51	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 15:46:48.172039-05
 a9a7eecdb4ef1e4d55c1586e98485e6e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 05:23:23.564495-05
@@ -3797,14 +3813,18 @@ e4c428e86db805bf1dd55a03f88b349e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc
 35f2393bb1f19e600af24ac4b64e75e9	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-02 14:32:21.043642-05
 06976173f51475d2c3b0df00c61d5270	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-02 16:12:43.168559-05
 62ddb3b63a5af6a3a97f935adaa8f85a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-02 16:32:06.44427-05
+dd7c12fc78bebc9bd32de75656fd161b	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-05 00:19:29.994525-05
+0e2f87682ba885aa4a7b425460f7f1f4	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-05 20:24:17.716761-05
 38165a56bd4c16fbf71ece8f675c9ef4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKNAHUuZGQ3NDFlMDc0MDViNTY4OGMw\nNjY4MGY4ZTA5ZjYwOWE=\n	2012-02-01 17:17:02.394192-05
 713e7cc2fb7b992ba133b7d8fac71da6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-01 11:07:15.14714-05
 ec00b594470fc6158d8efe4e730633c6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 13:03:25.312098-05
+a9abff31346d7f0954692dd4c8718c14	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-02-03 11:09:26.803495-05
+064606c07841fce83c66915b48139c00	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKVAHUuYTM2MDExYWQxNTg2YmIyMjBi\nMjdlOWNiYjg1ZjY2YjQ=\n	2012-02-03 20:23:16.602213-05
 8dd1cdccef506dbfaa0cba3541c44d72	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 13:07:18.15695-05
 af7c8d008747dba2089c298da706cbcb	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-02 16:14:11.69376-05
+077042b18baa1c85df0c3dc30eb25b6b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKYAHUuMjg5YWI1NWVjNDhjYzNlZGU5\nYWVhYzgwYzIwZWI3NTI=\n	2012-02-06 11:11:12.871649-05
 21510b144baf661667470aac3526fb56	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4d1LmJjODRjZWU5NGM3NTQ0MmE5ZTc2\nYzFiMzQxMzE3ZWU3\n	2012-02-01 10:46:17.238026-05
 ea4aece7f970c140239e5c0bb81f63b9	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKOAHUuNmJjMjUyZjZiZjBhMGFhZDBl\nMDBjOWJmOWZjODhiYTY=\n	2012-02-01 17:20:33.428689-05
-e462f9a5d0f461662a353030315ce933	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKUAHUuZTJiY2U5ZWZhZjQ5MTc5OTFl\nZTZhYjFkOTYzN2YxMTk=\n	2012-02-02 15:25:18.669859-05
 9bd0758a0a1cbb2b346b8e156a9901df	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 12:50:16.745078-05
 \.
 
@@ -4017,6 +4037,7 @@ COPY pageblocks_htmlblock (id, html) FROM stdin;
 32	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_proud_of_what_i_am_now.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_proud_of_what_i_am_now.jpg&protection=d5ee5608050004ea8d07ebc153fc26f5856da89f" ></iframe>\r\n
 35	<!-- just adding this to turn off the image -->
 36	<div class="image_on_left">\r\n<div id="decoration_image_container">\r\n<img class="decoration_image" src="/site_media/img/cycleofviolence-small.jpg">\r\n</div>\r\n<p>This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells while others may feel like it's never going to happen again.</p>\r\n</div>
+37	<div class="image_on_left">\r\n<div id="decoration_image_container">\r\n<img class="decoration_image" src="/site_media/img/powerandcontrol-small.jpg">\r\n</div>\r\n<p>Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.</p>\r\n</div>
 \.
 
 
@@ -4039,7 +4060,6 @@ COPY pageblocks_imageblock (id, image, caption, alt) FROM stdin;
 6	images/2011/10/14/cycleofviolence.jpg	This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells around the partner.  	cycle of violence diagram
 15	images/2012/01/09/powerandcontrol-drug.jpg		
 10	images/2011/11/23/powerandcontrol-phys.jpg		
-11	images/2011/11/23/powerandcontrol.jpg		
 12	images/2011/11/23/powerandcontrol-emot.jpg		
 13	images/2011/11/23/powerandcontrol-sexu.jpg		
 14	images/2011/11/23/powerandcontrol-econ.jpg		
@@ -4101,7 +4121,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 37	After considering the different negative ways that relationship conflict may be affecting your life and your family, what are some reasons why it would be important for you to reduce conflict? Please answer the following questions.
 46	Call 311 and ask for the NYC Domestic Violence Hotline (800-621-4673 or 866-604-5350) if you need counseling, legal assistance or emergency housing.  If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.
 47	Keep change for phone calls on you at all times. If you use your cell phone, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your calls confidential, you must either use coins at a pay phone or use a calling card for a limited time when you first leave. 
-60	Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.
 57	[/safety-plan/during-a-violent-incident/plan-part-1/]'s Safety Plan\r\n\r\nPart One: Strategies for Safety During a Violent Incident\r\n\r\nIf I decide to leave, I will: [/safety-plan/during-a-violent-incident/plan-part-2/]\r\n\r\nIn order to leave quickly, I can keep my purse, identification, and metro card (or bus/train fare) ready and put them: [/safety-plan/during-a-violent-incident/plan-part-3/]\r\n\r\nI can tell a person that I trust about the violence and request they call the police if they hear suspicious noises coming from my apartment. One person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-4/]\r\n\r\nAnother person I can tell is: [/safety-plan/during-a-violent-incident/plan-part-5/]\r\n\r\nI can teach my children how to use the telephone and dial 911 to contact the police and the fire department. \r\n\r\nI can use a code word with my children or my friends so they can call for help. (CODE WORDS should not evoke suspicion from partner, but should not also be “every day” language that might confuse helping person. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“. Code words for children need to be appropriate for their age. For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”. For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out whether your child can be entrusted with this task)\r\n\r\nMy code word will be: [/safety-plan/during-a-violent-incident/plan-part-7/]\r\n\r\nIf I have to leave my home I will go to: [/safety-plan/during-a-violent-incident/plan-part-8/]\r\n\r\nIf I cannot go to the location above I will go: [/safety-plan/during-a-violent-incident/plan-part-9/]\r\n\r\nI can also teach these strategies to some or all of my children.\r\n\r\nWhen I expect we are going to have an argument, I will try to move to a space that is lowest risk, such as: [/safety-plan/during-a-violent-incident/plan-part-11/]\r\n\r\nI will use my judgment and intuition. If the situation is very serious, I can give my partner what he/she wants to calm him/her down. I have to protect myself until I/we are out of danger.\r\n\r\nPart Two: Preparing to Leave\r\n\r\nSo that I can leave quickly, I will leave money and an extra set of keys with: [/safety-plan/preparing-to-leave/plan-part-1/]\r\n\r\nI will keep copies of important documents (social security cards, birth certificates, shot records – see step 8) or keys at :[/safety-plan/preparing-to-leave/plan-part-2/]\r\n\r\nTo increase my independence, I will open a savings account by: [/safety-plan/preparing-to-leave/plan-part-3/]\r\n\r\nOther things I can do to increase my independence include: [/safety-plan/preparing-to-leave/plan-part-4/]\r\n\r\nCall 311 and ask for the NYC Domestic Violence Hotline (800-621-4673; TDD 866-604-5350) if you need counseling, legal assistance or emergency housing. If you are feeling threatened by your partner or in more immediate danger, call 911 for the police.\r\n\r\nKeep change for phone calls on you at all times. If you use your telephone credit card, the following month the telephone bill will tell your partner those numbers that you called after you left. To keep your telephone communications confidential, you must either use coins at a pay phone or get a friend to let you use their telephone credit card for a limited time when you first leave.\r\n\r\nI will check with the following people to see if I can stay with them or borrow money:[/safety-plan/preparing-to-leave/plan-part-7/]\r\n\r\nI can leave extra clothes with:[/safety-plan/preparing-to-leave/plan-part-8/]\r\n\r\nIn order to plan the safest way to leave the residence, I will sit down and review my safety plan every:[/safety-plan/preparing-to-leave/plan-part-9/]\r\n\r\n[safety-plan/preparing-to-leave/plan-part-10/] will help me review my safety plan.\r\n\r\nI will rehearse my escape plan and, as appropriate, practice it with my children.\r\n\r\n
 38	Thinking through your relationship with your partner(s), when conflict or abuse occurs what are some negative consequences that you experience or are concerned about? Please answer the following questions.
 41	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies. You can use some or all of the following strategies to stay safe.
@@ -4131,21 +4150,10 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 91	It is a good idea to practice how to get out of your house or apartment safely.  What doors, windows, elevators, stairwells, or fire escapes would you use?  Consider which exits are safest.  Below, write down how you would get out.
 92	I can use a code word with my children or my friends so they can call for help. (CODE WORDS should not raise suspicion from partner, but should not also be “every day” language that might confuse people. Some examples of code words are “Aunt _ _ _ has not returned my phone call today“.   Code words for children need to be appropriate for their age.  For example, a code word for a 13 year old girl may be “Your cousin _ _ _ called you today and wants you to call her back today”.  For a younger child “Your grandmother called today and wanted to talk with you about something.”(Most children under the age of 5 will be too young to understand how to operate under code language, you will need to figure out who you can trust with this task)
 93	Try to avoid arguments in the bathroom, and kitchens, near weapons or in rooms without access to an outside door.
-94	I am concerned that relationship conflict . . .
-95	I am concerned that relationship conflict . . .
-96	I am concerned that relationship conflict . . .
-97	I am concerned that relationship conflict . . .
-98	I am concerned that relationship conflict . . .
-99	I am concerned that relationship conflict . . .
-100	I am concerned that relationship conflict . . .
-101	I am concerned . . .
-102	I am concerned . . .
 104	I am concerned . . .
-105	I am concerned . . .
 106	It is important to find people who will let you stay with them or lend you some money. 
 108	I can use some or all of the following safety strategies:
 109	It's important to become financially independent.  To get help with becoming financially independent from your partner call 1-800-873-2227.
-103	I am concerned . . .
 107	Ask a trusted friend or advocate to help you review your plan. 
 \.
 
@@ -4168,9 +4176,10 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 242	212	2		16	74
 304	53	2		43	30
 311	167	2		43	32
-341	189	1		16	96
+214	190	1		26	108
 262	59	2		43	2
-211	187	2		26	105
+212	188	1		26	106
+211	187	1		26	105
 295	52	1		17	29
 296	149	1		17	30
 142	121	2		26	60
@@ -4204,22 +4213,23 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 287	164	2		43	27
 230	63	1		19	10
 247	145	1		26	125
+213	189	1		26	107
 326	218	1		17	33
-213	189	2		26	107
-345	191	1		16	98
+215	191	1		26	109
+216	192	1		26	110
+217	193	1		26	111
+218	194	1		26	112
 198	176	1		26	95
 199	177	1		26	96
 200	178	1		26	97
 201	179	1		26	98
 58	53	1		16	17
+221	197	1		26	115
 298	221	1		17	32
 121	56	1	Taking steps to increase relationship safety 	16	40
-215	191	2		26	109
 69	70	1		16	28
 313	169	2		43	34
-347	200	1		16	99
 317	173	2		43	38
-337	187	1		16	94
 303	223	1		16	88
 79	76	1		16	33
 265	63	2		43	5
@@ -4248,27 +4258,21 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 234	65	1		19	13
 267	65	2		43	7
 235	151	1		19	14
-231	62	2		19	11
-212	188	2		26	106
 222	198	1		26	116
-339	188	1		16	95
 226	204	1		26	119
 307	224	2		19	15
 224	202	1		26	117
 225	203	1		26	118
 57	59	1		16	16
 227	205	1		26	120
-214	190	2		26	108
 164	152	1		16	63
 228	206	1		26	121
 236	207	1		26	122
-161	62	1		16	60
 237	208	1		26	123
 289	166	2		43	29
 320	175	2		43	41
 239	210	1		16	71
 245	215	2		26	124
-343	190	1		16	97
 147	57	1		16	49
 148	57	2		26	64
 165	153	1		16	64
@@ -4288,34 +4292,26 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 333	105	1		16	91
 123	105	2		26	48
 129	110	2		26	52
-216	192	2		26	110
-349	192	1		16	100
 133	113	2		26	55
-351	193	1		16	101
-217	193	2		26	111
-218	194	2		26	112
-353	194	1		16	102
 357	196	1		16	104
 358	196	3		43	62
-221	197	2		26	115
 145	125	2		26	63
 132	112	1		16	43
 136	115	2		26	56
 138	117	2		26	58
 283	212	3		43	23
-355	195	1		16	103
 263	150	2		43	3
 251	186	1		47	1
+219	195	1		26	113
 381	118	2		43	81
-338	187	3		43	52
+356	195	2		43	61
 382	119	2		43	82
-342	189	3		43	54
+360	197	2		43	63
 383	120	2		43	83
-346	191	3		43	56
-250	200	2		26	127
+413	223	2		43	108
+412	76	2		43	107
 403	150	1		17	36
-264	62	3		43	4
-348	200	3		43	57
+401	146	1		17	35
 270	70	2		43	10
 272	152	2		43	12
 274	154	2		43	14
@@ -4326,23 +4322,18 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 284	58	2		43	24
 286	163	2		43	26
 288	165	2		43	28
-340	188	3		43	53
-344	190	3		43	55
+249	146	2		26	126
 290	219	2		46	1
-350	192	3		43	58
+395	146	3		43	94
 309	201	1		54	1
-352	193	3		43	59
 257	147	1		26	128
 384	121	3		43	84
-354	194	3		43	60
 266	74	2		43	6
 268	151	2		43	8
 220	196	2		26	114
 306	224	1		43	31
 385	123	2		43	85
 312	168	2		43	33
-359	197	1		16	105
-360	197	3		43	63
 361	198	2		43	64
 314	170	2		43	35
 316	172	2		43	37
@@ -4358,6 +4349,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 297	155	1		17	31
 387	124	2		43	86
 363	121	1		16	106
+264	62	2		43	4
 388	125	3		43	87
 389	126	2		43	88
 390	211	3		43	89
@@ -4379,6 +4371,11 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 377	115	1		16	108
 378	115	3		43	78
 379	116	2		43	79
+404	62	1		17	37
+405	202	2		43	100
+406	203	2		43	101
+407	204	2		43	102
+408	205	2		43	103
 396	219	3		43	95
 380	117	3		43	80
 386	117	1		16	109
@@ -4386,18 +4383,26 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 398	147	2		43	97
 399	222	2		43	98
 400	218	2		43	99
-219	195	2		26	113
-356	195	3		43	61
+409	206	2		43	104
 261	211	2		17	28
+410	207	2		43	105
 256	220	1		16	80
 255	219	1		16	79
 253	212	1		45	2
 254	213	1		45	3
 252	211	1		45	1
-401	146	1		17	35
-249	146	2		26	126
-395	146	3		43	94
+411	208	2		43	106
+338	187	2		43	52
 364	125	1		16	107
+340	188	2		43	53
+342	189	2		43	54
+344	190	2		43	55
+346	191	2		43	56
+250	200	1		26	127
+348	200	2		43	57
+350	192	2		43	58
+352	193	2		43	59
+354	194	2		43	60
 \.
 
 
@@ -4726,6 +4731,7 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 526	199	2	no	f	1
 527	200	1	yes	f	0
 528	200	2	no	f	1
+650	241	11	Legal assistance (i.e. assistance getting restraining order, divorce or child custody)	f	6
 531	202	0	never	f	0
 532	202	1	only once	f	1
 533	202	2	once a month	f	2
@@ -4812,6 +4818,8 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 620	234	1	yes	f	0
 621	234	2	maybe	f	1
 622	234	3	no	f	2
+656	241		Job training for self or partner	f	0
+641	241	2	Help Getting Housing	f	1
 628	239	1	Partner’s mental health issues or problem	f	0
 629	239	2	Partner’s unemployment	f	1
 630	239	3	Partner’s drug or alcohol issue 	f	2
@@ -4824,9 +4832,6 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 637	239	10	My mental health issues or problem managing anger	f	9
 638	239	11	My legal problems 	f	10
 639	239	12	Housing problems	f	11
-656	241		Job training for self or partner	f	0
-641	241	2	Help Getting Housing	f	1
-650	241	11	Legal assistance (i.e. assistance getting restraining order, divorce or child custody)	f	2
 653	243	1	yes	f	0
 654	243	2	no	f	1
 655	243	3	maybe	f	2
@@ -4835,16 +4840,16 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 548	205	2	once a month	f	2
 549	205	3	once a week	f	3
 550	205	4	daily	f	4
-651	241	11	Counseling from a religious organization (pastor, priest, rabbi)	f	3
-652	241	12	Couples/Marital counseling	f	4
+647	241	8	Anger management or batterer’s treatment program for Partner or Self	f	2
+648	241	9	Counseling or Group Support to deal with Partner abuse	f	3
+649	241	10	Emergency Domestic Violence Shelter or Residential Program	f	4
 642	241	3	Education/Go back to School/GED	f	5
-643	241	4	Recreation/Social Activities	f	6
-644	241	5	Safety day care for children	f	7
-645	241	6	Mental Health Counseling for self or partner	f	8
-646	241	7	Alcohol Drug Abuse Counseling for self or partner	f	9
-647	241	8	Anger management or batterer’s treatment program for Partner or Self	f	10
-648	241	9	Counseling or Group Support to deal with Partner abuse	f	11
-649	241	10	Emergency Domestic Violence Shelter or Residential Program	f	12
+651	241	11	Counseling from a religious organization (pastor, priest, rabbi)	f	7
+652	241	12	Couples/Marital counseling	f	8
+643	241	4	Recreation/Social Activities	f	9
+644	241	5	Safety day care for children	f	10
+645	241	6	Mental Health Counseling for self or partner	f	11
+646	241	7	Alcohol Drug Abuse Counseling for self or partner	f	12
 \.
 
 
@@ -4926,10 +4931,12 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 167	64	If you could choose the best outcome (s) for you and your partner, what would it be?  (select all that apply)	multiple choice			0
 194	90	In the past year, has your partner(s) choked you?	single choice			0
 195	91	In the past year, has your partner(s) punched or hit you with something that could hurt or used or threatened to use a knife or gun on you?	single choice			0
-217	112	that it is contributing towards physical problems that I am experiencing like headaches, stomach problems, body pains, feminine problems	single choice			0
-218	113	that I may be injured in a fight	single choice			0
+219	114	I am concerned that I may be exposed to HIV or sexually transmitted infections because of unsafe sex	single choice			0
+220	115	I am concerned about becoming pregnant	single choice			0
+210	105	I am concerned that relationship conflict makes me feel sad or depressed	single choice			0
 199	95	In the past year, has your partner(s) showed you that s/he cared even though you disagreed? 	single choice			0
 200	96	In the past year, has your partner(s) said s/he was sure you could work out a problem together?	single choice			0
+211	106	I am concerned that relationship conflict makes me feel anxious, stressed out, or on edge	single choice			0
 203	98	In the past year, My partner followed me. . .	single choice			0
 202	97	In the past year, My partner has told me that I wasn’t good enough. . .	single choice			0
 204	99	In the past year, My partner tried to turn my family, friends, and children against me. . .	single choice			0
@@ -4938,8 +4945,16 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 207	102	In the past year, My partner harassed me over the phone or through texts . . .	single choice			0
 208	103	In the past year, My partner told me that no one would ever want me. . .	single choice			0
 209	104	In the past year, My partner tried to convince my friends, family, or children that I was crazy. . .	single choice			0
+212	107	I am concerned that relationship conflict makes me feel isolated from my friends and family	single choice			0
+213	108	I am concerned that relationship conflict makes me feel like using drugs or alcohol	single choice			0
 222	116	Other concerns that I have (list):	long text			0
 223	117	I want to feel better about myself and my future	single choice			0
+221	109	I am concerned that relationship conflict makes me feel hopeless or helpless about my future	single choice			0
+243	127	I am concerned that relationship conflict makes me feel bad about myself	single choice			0
+215	110	I am concerned that relationship conflict is negatively affecting my children	single choice			0
+216	111	I am concerned that I may end up fighting back or hurting my partner and risk getting charged with assault	single choice			0
+217	112	I am concerned that it is contributing towards physical problems that I am experiencing like headaches, stomach problems, body pains, feminine problems	single choice			0
+218	113	I am concerned that I may be injured in a fight	single choice			0
 230	118	I want to feel less isolated from my family or friends	single choice			0
 231	119	I want to improve the quality of life for my kids or other family members who are affected by the relationship conflict	single choice			0
 232	120	I don’t want to feel scared or anxious when I am around my partner	single choice			0
@@ -4952,22 +4967,12 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 239	125	What are the main issues that may trigger relationship conflict or abuse? 	multiple choice			0
 240	125	Other issues that trigger relationship problems or abuse:	long text			1
 242	126	Other services that might help you:	long text			1
+241	126	What services might help you work towards these goals with your partner?	multiple choice			0
 196	92	In the past year, has your partner(s) insisted you have sex even though you didn’t want to? 	single choice			0
 197	93	In the past year, has your partner(s) forced you to have sex without a condom?	single choice			0
 198	94	In the past year, has your partner(s) threatened or forced (like hitting, holding down, or using a weapon) you to have sex?	single choice			0
-219	114	that I may be exposed to HIV or sexually transmitted infections because of unsafe sex	single choice			0
-220	115	about becoming pregnant	single choice			0
-241	126	What services might help you work towards these goals with your partner?	multiple choice			0
 205	100	In the past year, My partner tried to keep me from seeing or talking to my family or friends. . .	single choice			0
 155	52	My code word will be:	short text		 	0
-215	110	is negatively affecting my children	single choice			0
-210	105	makes me feel sad or depressed	single choice			0
-211	106	makes me feel anxious, stressed out, or on edge	single choice			0
-212	107	makes me feel isolated from my friends and family	single choice			0
-213	108	makes me feel like using drugs or alcohol	single choice			0
-221	109	makes me feel hopeless or helpless about my future	single choice			0
-243	127	makes me feel bad about myself	single choice			0
-216	111	that I may end up fighting back or hurting my partner and risk getting charged with assault	single choice			0
 \.
 
 
@@ -5113,17 +5118,20 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2006	184	2008	2
 41	72	21	2
 2013	191	2016	2
-2160	184	2152	2
-2167	191	2159	2
-2174	198	2166	2
-2181	206	2174	1
-2188	213	2181	2
-2195	219	2188	2
-2202	233	2195	2
-2209	151	2202	id
-2217	160	2210	docs
-2224	236	2217	 
-2225	237	2217	 
+2525	185	2521	1
+2531	191	2527	1
+2537	197	2533	1
+2543	204	2539	2
+2549	210	2546	1
+2555	215	2552	2
+2561	222	2558	
+2567	234	2564	2
+2638	185	2635	2
+2644	191	2641	2
+2650	197	2647	2
+2656	204	2654	1
+2662	210	2660	2
+2668	215	2666	2
 2226	184	2218	1
 2233	191	2225	1
 2240	198	2232	1
@@ -5166,6 +5174,20 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2386	157	2351	 
 2392	163	2357	
 2399	168	2363	
+2406	153	2420	 
+2413	159	2427	
+2419	165	2433	
+2440	245	2446	
+2441	244	2446	
+2674	222	2672	
+2680	233	2678	2
+2686	153	2684	person
+2693	158	2691	low risk space
+2699	164	2697	clothes
+2712	241	2703	2
+2713	241	2703	5
+2714	241	2703	10
+2715	242	2703	
 649	240	864	
 653	240	867	
 655	242	869	
@@ -5384,15 +5406,6 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 379	170	579	aaaaaaa
 380	172	580	1
 381	174	582	1
-2161	185	2153	2
-2168	192	2160	2
-2175	199	2167	2
-2182	207	2175	1
-2189	221	2182	2
-2196	220	2189	2
-2203	234	2196	2
-2210	153	2203	person
-2218	161	2211	savings acct
 2227	185	2219	2
 2234	192	2226	2
 2241	199	2233	2
@@ -5450,15 +5463,14 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 439	160	651	
 2008	186	2010	1
 476	210	687	2
-2162	186	2154	2
-2169	193	2161	2
-2176	200	2168	2
-2183	208	2176	1
-2190	243	2183	2
-2197	222	2190	Lorem ipsum
-2204	235	2197	other reasons
-2211	154	2204	person 2
-2219	162	2212	independence
+2526	186	2522	1
+2532	192	2528	1
+2538	198	2534	1
+2544	205	2540	2
+2550	211	2547	2
+2556	216	2553	2
+2562	223	2559	2
+2568	235	2565	
 2228	186	2220	2
 2235	193	2227	1
 2242	200	2234	1
@@ -5485,6 +5497,22 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2380	153	2345	 
 2387	158	2352	 
 2393	163	2358	ok
+2407	154	2421	 
+2414	160	2428	 
+2420	166	2434	 
+2639	186	2636	2
+2645	192	2642	2
+2651	198	2648	2
+2657	205	2655	1
+2663	211	2661	2
+2669	216	2667	2
+2675	222	2673	this question is optional.
+2681	234	2679	2
+2687	151	2685	id
+2694	159	2692	extra keys
+2700	165	2698	review
+2716	245	2704	take time
+2717	244	2704	action plan
 648	242	863	
 650	239	865	2
 651	239	865	3
@@ -5565,15 +5593,14 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 847	245	1013	
 848	244	1013	
 2009	187	2011	2
-2163	187	2155	2
-2170	194	2162	2
-2177	202	2170	1
-2184	209	2177	1
-2191	215	2184	2
-2198	223	2191	2
-2205	148	2198	name
-2212	155	2205	code word
-2220	163	2213	support
+2527	187	2523	1
+2533	193	2529	1
+2539	199	2535	1
+2545	206	2541	2
+2551	212	2548	2
+2557	217	2554	2
+2563	230	2560	2
+2569	148	2566	 
 2229	187	2221	1
 2236	194	2228	1
 2243	202	2235	1
@@ -5642,19 +5669,41 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2388	159	2353	 
 2394	164	2359	 
 2400	186	2366	1
+2401	222	2409	
+2402	235	2416	
+2408	155	2422	 
+2415	161	2429	 
+2421	236	2435	 
+2422	237	2435	 
+2423	168	2436	
+2424	240	2437	
+2431	148	2441	 
+2432	236	2442	 
+2433	237	2442	 
+2442	148	2447	
+2640	187	2637	2
+2646	193	2643	2
+2652	199	2649	2
+2658	206	2656	1
+2664	212	2662	2
+2670	217	2668	2
+2676	223	2674	2
 970	185	1129	1
+2682	235	2680	other reasons
+2688	153	2686	person
+2695	160	2693	docs
+2701	166	2699	review2
 1685	184	1700	1
 2010	188	2013	1
-2164	188	2156	2
-2171	195	2163	2
-2178	203	2171	1
-2185	210	2178	2
-2192	216	2185	2
-2199	230	2192	2
-2206	150	2199	exits
-2213	156	2206	go to
-2214	157	2207	other go to
-2221	164	2214	clothes
+2528	188	2524	1
+2534	194	2530	1
+2540	200	2536	1
+2546	207	2542	2
+2552	213	2549	1
+2558	218	2555	2
+2564	231	2561	2
+2570	150	2567	
+2641	188	2638	2
 2230	188	2222	2
 2237	195	2229	1
 2244	203	2236	2
@@ -5752,17 +5801,37 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2382	153	2347	 
 2389	160	2354	 
 2395	165	2360	 
+2403	148	2417	 
+2409	156	2423	
+2410	157	2424	
+2416	162	2430	
+2425	241	2438	5
+2426	241	2438	7
+2427	241	2438	9
+2428	242	2438	
+2434	168	2443	
+2647	194	2644	2
+2653	200	2650	2
+2659	207	2657	1
+2665	213	2663	2
+2671	218	2669	2
+2677	230	2675	2
+2683	148	2681	name
+2689	154	2687	person 2
+2696	161	2694	savings acct
+2702	236	2700	step 1
+2703	237	2700	step 2
 1212	168	1293	
 2011	189	2014	2
-2165	189	2157	2
-2172	196	2164	2
-2179	204	2172	1
-2186	211	2179	2
-2193	217	2186	2
-2200	231	2193	2
-2207	151	2200	id
-2215	158	2208	low risk space
-2222	165	2215	review
+2529	189	2525	1
+2535	195	2531	1
+2541	202	2537	2
+2547	208	2543	2
+2553	221	2550	1
+2559	219	2556	2
+2565	232	2562	2
+2642	189	2639	2
+2648	195	2645	2
 2231	189	2223	1
 2238	196	2230	1
 2245	204	2237	2
@@ -5790,21 +5859,39 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2383	154	2348	 
 2390	161	2355	 
 2396	166	2361	 
+2404	150	2418	
+2411	158	2425	
+2417	163	2431	
+2429	245	2439	
+2430	244	2439	
+2435	240	2444	
+2654	202	2652	1
+2660	208	2658	1
+2666	221	2664	2
+2672	219	2670	2
+2678	231	2676	2
+2684	150	2682	exits
+2690	155	2688	code word
+2697	162	2695	independence
+2704	168	2701	desired outcomes
+2705	167	2701	1
+2706	167	2701	4
 1435	240	1500	
 1436	239	1500	4
 1437	239	1500	7
 1438	239	1500	11
 2012	190	2015	1
 1693	198	1709	2
-2166	190	2158	2
-2173	197	2165	2
-2180	205	2173	1
-2187	212	2180	2
-2194	218	2187	2
-2201	232	2194	2
-2208	153	2201	person
-2216	159	2209	extra keys
-2223	166	2216	review2
+2524	184	2520	1
+2530	190	2526	1
+2536	196	2532	1
+2542	203	2538	2
+2548	209	2544	2
+2554	243	2551	1
+2560	220	2557	2
+2566	233	2563	2
+2637	184	2634	2
+2643	190	2640	2
 2232	190	2224	2
 2239	197	2231	2
 2246	205	2238	2
@@ -5831,10 +5918,32 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2391	162	2356	
 2397	236	2362	 
 2398	237	2362	 
+2405	151	2419	
+2412	158	2426	
+2418	164	2432	 
+2436	241	2445	5
+2437	241	2445	7
 1565	222	1592	sdf
 1566	222	1593	sdf
 1567	220	1594	1
 1568	222	1595	sdf
+2438	241	2445	9
+2439	242	2445	
+2649	196	2646	2
+2655	203	2653	1
+2661	209	2659	1
+2667	243	2665	2
+2673	220	2671	2
+2679	232	2677	2
+2685	151	2683	id
+2691	156	2689	go to
+2692	157	2690	other go to
+2698	163	2696	support
+2707	240	2702	other issues
+2708	239	2702	3
+2709	239	2702	6
+2710	239	2702	7
+2711	239	2702	11
 \.
 
 
@@ -5858,21 +5967,20 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 652	56	13	2011-12-16 12:38:38.036868-05
 2007	80	143	2012-01-18 18:59:16.708164-05
 2013	84	143	2012-01-18 18:59:50.520701-05
+2638	84	152	2012-01-23 11:11:30.242699-05
+2644	90	152	2012-01-23 11:11:34.940142-05
+2650	96	152	2012-01-23 11:11:40.542011-05
+2656	101	152	2012-01-23 11:11:45.451107-05
+2662	107	152	2012-01-23 11:11:51.812099-05
+2668	112	152	2012-01-23 11:11:56.758552-05
 686	124	109	2011-12-16 14:10:10.472467-05
 688	106	5	2011-12-16 14:20:20.160972-05
 690	108	5	2011-12-16 14:20:28.564892-05
-2152	80	146	2012-01-19 14:18:28.105836-05
-2158	86	146	2012-01-19 14:18:32.52782-05
-2164	92	146	2012-01-19 14:18:36.9454-05
-2170	97	146	2012-01-19 14:18:41.623971-05
-2176	103	146	2012-01-19 14:18:46.169499-05
-2182	109	146	2012-01-19 14:18:53.233759-05
-2188	114	146	2012-01-19 14:18:57.971761-05
-2194	120	146	2012-01-19 14:19:02.923892-05
-2200	49	146	2012-01-19 14:19:08.895671-05
-2206	53	146	2012-01-19 14:19:14.614502-05
-2207	54	146	2012-01-19 14:19:14.620927-05
-2213	60	146	2012-01-19 14:19:23.102844-05
+2674	117	152	2012-01-23 11:12:03.976638-05
+2680	123	152	2012-01-23 11:12:07.26588-05
+2686	50	152	2012-01-23 11:12:14.040862-05
+2693	57	152	2012-01-23 11:12:22.034914-05
+2699	63	152	2012-01-23 11:12:28.897572-05
 2218	80	147	2012-01-19 14:59:21.675003-05
 2224	86	147	2012-01-19 15:00:26.506041-05
 2230	92	147	2012-01-19 15:00:46.849276-05
@@ -5900,6 +6008,26 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2359	61	148	2012-01-19 15:46:46.198129-05
 2364	84	13	2012-01-19 16:12:15.227916-05
 2366	82	13	2012-01-19 16:16:18.008871-05
+2368	80	17	2012-01-20 11:30:34.764877-05
+2374	86	17	2012-01-20 11:32:41.079936-05
+2380	92	17	2012-01-20 11:34:14.864905-05
+2386	98	17	2012-01-20 11:36:06.073832-05
+2392	102	17	2012-01-20 11:37:39.324602-05
+2395	105	17	2012-01-20 11:41:12.269585-05
+2396	106	17	2012-01-20 11:46:58.39901-05
+2402	127	17	2012-01-20 11:49:36.666446-05
+2408	115	17	2012-01-20 11:51:32.363737-05
+2414	121	17	2012-01-20 11:59:45.57502-05
+2416	123	17	2012-01-20 12:00:11.288799-05
+2422	52	17	2012-01-20 12:05:04.61897-05
+2429	58	17	2012-01-20 12:08:46.790838-05
+2435	124	17	2012-01-20 12:14:41.696362-05
+2436	64	17	2012-01-20 12:15:31.817422-05
+2437	125	17	2012-01-20 12:17:37.145953-05
+2440	80	17	2012-01-20 16:37:35.30781-05
+2441	47	17	2012-01-20 16:45:23.973911-05
+2442	124	17	2012-01-20 16:53:31.916468-05
+2447	47	148	2012-01-20 19:06:57.222665-05
 120	74	5	2011-11-28 13:59:53.861876-05
 121	75	5	2011-11-28 13:59:53.868288-05
 122	76	5	2011-11-28 13:59:53.87375-05
@@ -5923,6 +6051,13 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 140	55	17	2011-12-02 15:09:40.324027-05
 141	56	17	2011-12-02 15:11:44.855558-05
 142	62	17	2011-12-02 15:19:02.686698-05
+2519	80	150	2012-01-23 11:01:30.60538-05
+2525	85	150	2012-01-23 11:01:53.320958-05
+2531	91	150	2012-01-23 11:02:15.622782-05
+2537	97	150	2012-01-23 11:02:36.202564-05
+2543	103	150	2012-01-23 11:02:55.25828-05
+2549	108	150	2012-01-23 11:03:22.581065-05
+2555	113	150	2012-01-23 11:03:38.501712-05
 863	126	5	2011-12-21 11:03:44.894575-05
 865	125	5	2011-12-21 11:03:52.759875-05
 867	125	5	2011-12-21 11:09:22.198634-05
@@ -5936,6 +6071,8 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 882	126	5	2011-12-21 12:00:58.022628-05
 884	125	5	2011-12-21 14:32:29.016306-05
 886	125	13	2012-01-04 10:05:20.122227-05
+2561	119	150	2012-01-23 11:04:02.86661-05
+2567	48	150	2012-01-23 11:06:13.68773-05
 899	126	5	2012-01-04 10:28:35.821809-05
 901	125	5	2012-01-04 10:29:05.024048-05
 903	125	5	2012-01-04 10:32:06.468792-05
@@ -5948,19 +6085,19 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 651	57	13	2011-12-16 12:38:35.673998-05
 2008	80	143	2012-01-18 18:59:22.028607-05
 2014	85	143	2012-01-18 18:59:53.975269-05
+2639	85	152	2012-01-23 11:11:30.960312-05
+2645	91	152	2012-01-23 11:11:35.797763-05
+2651	97	152	2012-01-23 11:11:41.186657-05
+2657	102	152	2012-01-23 11:11:46.060726-05
+2663	108	152	2012-01-23 11:11:52.70745-05
+2669	113	152	2012-01-23 11:11:57.562019-05
+2675	118	152	2012-01-23 11:12:04.474264-05
 687	105	5	2011-12-16 14:20:17.733631-05
 689	107	5	2011-12-16 14:20:25.029581-05
-2153	81	146	2012-01-19 14:18:28.722952-05
-2159	87	146	2012-01-19 14:18:33.238774-05
-2165	93	146	2012-01-19 14:18:37.566017-05
-2171	98	146	2012-01-19 14:18:42.280489-05
-2177	104	146	2012-01-19 14:18:46.90817-05
-2183	127	146	2012-01-19 14:18:54.049735-05
-2189	115	146	2012-01-19 14:18:58.649695-05
-2195	121	146	2012-01-19 14:19:03.395737-05
-2201	50	146	2012-01-19 14:19:09.649641-05
-2208	55	146	2012-01-19 14:19:16.17309-05
-2214	61	146	2012-01-19 14:19:23.736437-05
+2681	47	152	2012-01-23 11:12:10.409616-05
+2687	51	152	2012-01-23 11:12:14.874059-05
+2694	58	152	2012-01-23 11:12:23.019159-05
+2700	124	152	2012-01-23 11:12:35.673814-05
 2219	81	147	2012-01-19 15:00:09.583836-05
 2225	87	147	2012-01-19 15:00:30.094393-05
 2231	93	147	2012-01-19 15:00:50.245468-05
@@ -5987,6 +6124,29 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2360	62	148	2012-01-19 15:46:49.521319-05
 2365	83	13	2012-01-19 16:12:19.922481-05
 2367	83	13	2012-01-19 16:16:22.422087-05
+2369	81	17	2012-01-20 11:31:03.985323-05
+2375	87	17	2012-01-20 11:32:55.000404-05
+2381	93	17	2012-01-20 11:34:37.620946-05
+2387	99	17	2012-01-20 11:36:16.283306-05
+2393	103	17	2012-01-20 11:38:03.155611-05
+2397	105	17	2012-01-20 11:48:20.514795-05
+2403	110	17	2012-01-20 11:49:53.195238-05
+2409	116	17	2012-01-20 11:52:09.286815-05
+2415	122	17	2012-01-20 11:59:59.409849-05
+2417	47	17	2012-01-20 12:02:28.220659-05
+2423	53	17	2012-01-20 12:05:21.091319-05
+2424	54	17	2012-01-20 12:05:21.098411-05
+2430	59	17	2012-01-20 12:08:57.711878-05
+2438	126	17	2012-01-20 12:18:23.994665-05
+2443	64	17	2012-01-20 16:54:40.419477-05
+2520	80	150	2012-01-23 11:01:35.286307-05
+2526	86	150	2012-01-23 11:01:56.982144-05
+2532	92	150	2012-01-23 11:02:19.041081-05
+2538	98	150	2012-01-23 11:02:41.552166-05
+2544	104	150	2012-01-23 11:02:57.580174-05
+2550	109	150	2012-01-23 11:03:24.919014-05
+2556	114	150	2012-01-23 11:03:40.408084-05
+2562	120	150	2012-01-23 11:04:05.194437-05
 864	125	5	2011-12-21 11:03:47.342337-05
 866	126	5	2011-12-21 11:03:54.546465-05
 868	125	5	2011-12-21 11:09:40.125299-05
@@ -6366,17 +6526,18 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1011	125	13	2012-01-11 14:12:27.945758-05
 1012	126	13	2012-01-11 14:12:31.74877-05
 1013	128	13	2012-01-11 14:13:12.271013-05
-2154	82	146	2012-01-19 14:18:29.368489-05
-2160	88	146	2012-01-19 14:18:33.937017-05
-2166	94	146	2012-01-19 14:18:38.327555-05
-2172	99	146	2012-01-19 14:18:43.031849-05
-2178	105	146	2012-01-19 14:18:50.062987-05
-2184	110	146	2012-01-19 14:18:54.870155-05
-2190	116	146	2012-01-19 14:18:59.300508-05
-2196	122	146	2012-01-19 14:19:03.923698-05
-2202	49	146	2012-01-19 14:19:10.39606-05
-2209	56	146	2012-01-19 14:19:18.652136-05
-2215	62	146	2012-01-19 14:19:24.405356-05
+2634	80	152	2012-01-23 11:11:26.632794-05
+2640	86	152	2012-01-23 11:11:32.237385-05
+2646	92	152	2012-01-23 11:11:36.639178-05
+2652	97	152	2012-01-23 11:11:42.214432-05
+2658	103	152	2012-01-23 11:11:46.691119-05
+2664	109	152	2012-01-23 11:11:53.41217-05
+2670	114	152	2012-01-23 11:11:58.376479-05
+2676	119	152	2012-01-23 11:12:05.026751-05
+2682	48	152	2012-01-23 11:12:11.178482-05
+2688	52	152	2012-01-23 11:12:16.144089-05
+2695	59	152	2012-01-23 11:12:23.92677-05
+2701	64	152	2012-01-23 11:12:36.49181-05
 2220	82	147	2012-01-19 15:00:12.897693-05
 2226	88	147	2012-01-19 15:00:33.788596-05
 2232	94	147	2012-01-19 15:00:53.66994-05
@@ -6402,9 +6563,14 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2348	51	148	2012-01-19 15:43:45.073478-05
 2355	58	148	2012-01-19 15:46:19.932406-05
 2361	63	148	2012-01-19 15:46:52.897498-05
+2370	82	17	2012-01-20 11:31:33.407247-05
 1073	64	13	2012-01-11 15:30:21.078953-05
 1074	124	13	2012-01-11 15:30:23.90214-05
 1075	64	13	2012-01-11 15:30:26.227094-05
+2376	88	17	2012-01-20 11:33:10.781309-05
+2382	94	17	2012-01-20 11:34:57.327375-05
+2388	100	17	2012-01-20 11:36:27.924756-05
+2394	104	17	2012-01-20 11:38:19.888788-05
 1080	53	17	2012-01-12 10:23:41.00557-05
 1081	54	17	2012-01-12 10:23:41.029634-05
 1082	64	17	2012-01-12 10:24:37.949087-05
@@ -6427,20 +6593,38 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1099	49	13	2012-01-12 12:05:56.056142-05
 1100	55	13	2012-01-12 12:10:31.750988-05
 1101	124	5	2012-01-12 14:06:02.142107-05
+2398	106	17	2012-01-20 11:48:25.072151-05
+2404	111	17	2012-01-20 11:50:10.422222-05
+2410	117	17	2012-01-20 11:54:29.189372-05
+2418	48	17	2012-01-20 12:03:01.755983-05
+2425	55	17	2012-01-20 12:05:40.221-05
+2431	60	17	2012-01-20 12:09:44.252443-05
+2439	128	17	2012-01-20 12:19:51.226286-05
+2444	125	17	2012-01-20 16:55:28.923436-05
+2521	81	150	2012-01-23 11:01:38.708747-05
+2527	87	150	2012-01-23 11:02:01.354003-05
+2533	93	150	2012-01-23 11:02:22.744465-05
+2539	99	150	2012-01-23 11:02:45.499038-05
+2545	105	150	2012-01-23 11:03:10.383406-05
+2551	127	150	2012-01-23 11:03:27.14884-05
+2557	115	150	2012-01-23 11:03:43.158266-05
 1129	81	13	2012-01-12 16:06:29.075367-05
+2563	121	150	2012-01-23 11:04:07.224074-05
 2010	82	143	2012-01-18 18:59:31.023861-05
 2016	87	143	2012-01-18 19:00:06.35753-05
-2155	83	146	2012-01-19 14:18:30.115262-05
-2161	89	146	2012-01-19 14:18:34.713549-05
-2167	95	146	2012-01-19 14:18:39.01787-05
-2173	100	146	2012-01-19 14:18:43.776283-05
-2179	106	146	2012-01-19 14:18:50.912764-05
-2185	111	146	2012-01-19 14:18:55.651172-05
-2191	117	146	2012-01-19 14:19:01.312657-05
-2197	123	146	2012-01-19 14:19:04.493617-05
-2203	50	146	2012-01-19 14:19:11.000879-05
-2210	57	146	2012-01-19 14:19:19.59557-05
-2216	63	146	2012-01-19 14:19:25.490107-05
+2635	81	152	2012-01-23 11:11:27.427448-05
+2641	87	152	2012-01-23 11:11:32.947253-05
+2647	93	152	2012-01-23 11:11:37.974525-05
+2653	98	152	2012-01-23 11:11:43.014366-05
+2659	104	152	2012-01-23 11:11:47.372942-05
+2665	127	152	2012-01-23 11:11:54.174132-05
+2671	115	152	2012-01-23 11:11:59.189306-05
+2677	120	152	2012-01-23 11:12:05.628856-05
+2683	49	152	2012-01-23 11:12:11.929826-05
+2689	53	152	2012-01-23 11:12:17.008407-05
+2690	54	152	2012-01-23 11:12:17.014797-05
+2696	60	152	2012-01-23 11:12:26.480653-05
+2702	125	152	2012-01-23 11:12:37.880342-05
 2221	83	147	2012-01-19 15:00:16.411166-05
 2227	89	147	2012-01-19 15:00:36.932372-05
 2233	95	147	2012-01-19 15:00:57.047697-05
@@ -6466,6 +6650,10 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2349	52	148	2012-01-19 15:45:47.725824-05
 2356	59	148	2012-01-19 15:46:23.323923-05
 2362	124	148	2012-01-19 15:47:39.553338-05
+2371	83	17	2012-01-20 11:31:52.104146-05
+2377	89	17	2012-01-20 11:33:27.935061-05
+2383	95	17	2012-01-20 11:35:15.843925-05
+2389	99	17	2012-01-20 11:36:47.093048-05
 1199	125	5	2012-01-12 18:24:39.237124-05
 1200	125	5	2012-01-12 18:24:44.107191-05
 1201	126	5	2012-01-12 18:24:47.331764-05
@@ -6479,20 +6667,36 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1209	125	5	2012-01-12 18:25:58.656254-05
 1210	126	5	2012-01-12 18:26:05.76105-05
 1211	64	13	2012-01-13 11:06:15.982025-05
+2399	107	17	2012-01-20 11:48:47.361476-05
+2405	112	17	2012-01-20 11:50:34.610962-05
+2411	118	17	2012-01-20 11:54:48.388209-05
+2419	49	17	2012-01-20 12:03:37.084093-05
+2426	55	17	2012-01-20 12:06:14.479343-05
+2432	61	17	2012-01-20 12:09:54.034325-05
+2445	126	17	2012-01-20 16:55:32.094379-05
+2522	82	150	2012-01-23 11:01:42.663154-05
+2528	88	150	2012-01-23 11:02:05.305243-05
+2534	94	150	2012-01-23 11:02:26.021774-05
+2540	100	150	2012-01-23 11:02:47.939031-05
+2546	105	150	2012-01-23 11:03:13.165761-05
+2552	110	150	2012-01-23 11:03:30.82217-05
+2558	116	150	2012-01-23 11:03:47.953816-05
+2564	122	150	2012-01-23 11:04:09.405351-05
 1293	64	17	2012-01-17 10:50:03.126474-05
 2011	83	143	2012-01-18 18:59:36.019518-05
 2017	88	143	2012-01-18 19:00:11.194099-05
-2156	84	146	2012-01-19 14:18:30.884642-05
-2162	90	146	2012-01-19 14:18:35.382296-05
-2168	96	146	2012-01-19 14:18:39.748476-05
-2174	101	146	2012-01-19 14:18:44.427284-05
-2180	107	146	2012-01-19 14:18:51.724911-05
-2186	112	146	2012-01-19 14:18:56.342739-05
-2192	118	146	2012-01-19 14:19:01.916166-05
-2198	47	146	2012-01-19 14:19:07.084691-05
-2204	51	146	2012-01-19 14:19:11.657828-05
-2211	58	146	2012-01-19 14:19:20.446593-05
-2217	124	146	2012-01-19 14:19:30.864357-05
+2636	82	152	2012-01-23 11:11:28.063023-05
+2642	88	152	2012-01-23 11:11:33.603877-05
+2648	94	152	2012-01-23 11:11:38.826174-05
+2654	99	152	2012-01-23 11:11:43.974908-05
+2660	105	152	2012-01-23 11:11:50.188625-05
+2666	110	152	2012-01-23 11:11:55.051617-05
+2672	116	152	2012-01-23 11:11:59.825744-05
+2678	121	152	2012-01-23 11:12:06.136089-05
+2684	50	152	2012-01-23 11:12:12.643565-05
+2691	55	152	2012-01-23 11:12:18.620707-05
+2697	61	152	2012-01-23 11:12:27.280286-05
+2703	126	152	2012-01-23 11:12:38.855167-05
 2222	84	147	2012-01-19 15:00:19.713975-05
 2228	90	147	2012-01-19 15:00:40.064664-05
 2234	96	147	2012-01-19 15:01:00.457117-05
@@ -6518,22 +6722,43 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2351	54	148	2012-01-19 15:45:52.128289-05
 2357	60	148	2012-01-19 15:46:34.273094-05
 2363	64	148	2012-01-19 15:47:43.741242-05
+2372	84	17	2012-01-20 11:32:08.067415-05
+2378	90	17	2012-01-20 11:33:42.970976-05
+2384	96	17	2012-01-20 11:35:30.531914-05
+2390	100	17	2012-01-20 11:37:05.648029-05
+2400	108	17	2012-01-20 11:49:04.293532-05
+2406	113	17	2012-01-20 11:50:48.539821-05
+2412	119	17	2012-01-20 11:55:00.427011-05
+2420	50	17	2012-01-20 12:04:03.9755-05
+2427	56	17	2012-01-20 12:08:06.252401-05
+2433	62	17	2012-01-20 12:10:03.798626-05
+2446	128	17	2012-01-20 16:55:39.112348-05
+2523	83	150	2012-01-23 11:01:46.299189-05
+2529	89	150	2012-01-23 11:02:08.815517-05
+2535	95	150	2012-01-23 11:02:29.502724-05
+2541	101	150	2012-01-23 11:02:50.805055-05
 1592	116	5	2012-01-18 13:00:23.463191-05
 1593	116	5	2012-01-18 13:00:31.600329-05
 1594	115	5	2012-01-18 13:00:36.651808-05
 1595	116	5	2012-01-18 13:00:39.784202-05
+2547	106	150	2012-01-23 11:03:16.761245-05
+2553	111	150	2012-01-23 11:03:33.504372-05
+2559	117	150	2012-01-23 11:03:58.557616-05
+2565	123	150	2012-01-23 11:04:12.906493-05
 1500	125	17	2012-01-17 15:30:53.034735-05
 2012	84	143	2012-01-18 18:59:45.249474-05
-2157	85	146	2012-01-19 14:18:31.655579-05
-2163	91	146	2012-01-19 14:18:36.185137-05
-2169	97	146	2012-01-19 14:18:40.723374-05
-2175	102	146	2012-01-19 14:18:45.367943-05
-2181	108	146	2012-01-19 14:18:52.441646-05
-2187	113	146	2012-01-19 14:18:57.198183-05
-2193	119	146	2012-01-19 14:19:02.444393-05
-2199	48	146	2012-01-19 14:19:08.039763-05
-2205	52	146	2012-01-19 14:19:13.033055-05
-2212	59	146	2012-01-19 14:19:21.118637-05
+2637	83	152	2012-01-23 11:11:29.352018-05
+2643	89	152	2012-01-23 11:11:34.311266-05
+2649	95	152	2012-01-23 11:11:39.604584-05
+2655	100	152	2012-01-23 11:11:44.70721-05
+2661	106	152	2012-01-23 11:11:51.005982-05
+2667	111	152	2012-01-23 11:11:55.947933-05
+2673	116	152	2012-01-23 11:12:01.53222-05
+2679	122	152	2012-01-23 11:12:06.653052-05
+2685	49	152	2012-01-23 11:12:13.402576-05
+2692	56	152	2012-01-23 11:12:21.064808-05
+2698	62	152	2012-01-23 11:12:27.956661-05
+2704	128	152	2012-01-23 11:12:41.609248-05
 2223	85	147	2012-01-19 15:00:22.989681-05
 2229	91	147	2012-01-19 15:00:43.369326-05
 2235	97	147	2012-01-19 15:01:04.171791-05
@@ -6561,6 +6786,24 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2345	50	148	2012-01-19 15:43:34.903439-05
 2352	55	148	2012-01-19 15:45:58.696167-05
 2358	60	148	2012-01-19 15:46:42.532688-05
+2373	85	17	2012-01-20 11:32:24.259156-05
+2379	91	17	2012-01-20 11:33:58.759868-05
+2385	97	17	2012-01-20 11:35:46.848781-05
+2391	101	17	2012-01-20 11:37:21.383869-05
+2401	109	17	2012-01-20 11:49:19.63044-05
+2407	114	17	2012-01-20 11:51:15.092646-05
+2413	120	17	2012-01-20 11:55:13.497497-05
+2421	51	17	2012-01-20 12:04:35.676977-05
+2428	57	17	2012-01-20 12:08:12.644802-05
+2434	63	17	2012-01-20 12:10:14.472533-05
+2524	84	150	2012-01-23 11:01:49.936425-05
+2530	90	150	2012-01-23 11:02:12.317153-05
+2536	96	150	2012-01-23 11:02:32.932429-05
+2542	102	150	2012-01-23 11:02:52.998907-05
+2548	107	150	2012-01-23 11:03:19.415397-05
+2554	112	150	2012-01-23 11:03:35.973483-05
+2560	118	150	2012-01-23 11:04:00.778526-05
+2566	47	150	2012-01-23 11:04:23.967037-05
 \.
 
 
@@ -6582,6 +6825,7 @@ COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM
 1	5	647	241
 11	8	\N	241
 2	17	644	241
+22	152	644	241
 3	124	\N	241
 20	147	645	241
 \.
@@ -6761,11 +7005,6 @@ COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FR
 --
 
 COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
-16	17	1	b
-17	17	2	bob
-18	17	3	a
-19	17	4	alice
-20	17	5	c
 6	13	1	jane
 7	13	2	Helen
 8	13	3	this
@@ -6777,25 +7016,30 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 10	13	5	a
 15	109	5	
 51	8	1	Name 1
-121	146	1	
 52	8	2	
 53	8	3	
-122	146	2	person 3
 54	8	4	Name 2
 55	8	5	Name 3
-123	146	3	person 1
-124	146	4	person 2
-125	146	5	
+146	152	1	
+147	152	2	person 3
+148	152	3	person 1
 131	148	1	
 132	148	2	
+149	152	4	person 2
 133	148	3	ok
 134	148	4	dokey
+150	152	5	
 135	148	5	
 126	147	1	
 127	147	2	freda
 128	147	3	
 129	147	4	jon
 130	147	5	
+16	17	1	b
+17	17	2	bob
+18	17	3	a
+19	17	4	alice
+20	17	5	c
 2	5	1	
 1	5	2	
 3	5	3	
@@ -6809,12 +7053,8 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 --
 
 COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtreesupporttype_id) FROM stdin;
-85	122	2
-86	123	2
-87	123	1
 12	10	1
 13	6	2
-88	124	1
 15	17	2
 16	19	2
 17	19	1
@@ -6825,8 +7065,12 @@ COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtree
 93	133	1
 26	7	2
 27	8	1
+102	147	2
+103	148	2
 35	4	1
 36	4	2
+104	148	1
+105	149	1
 42	54	2
 43	54	1
 44	55	1
@@ -6866,9 +7110,10 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 
 COPY wings_main_participant (id, id_string, user_id, current_section_id, created_on) FROM stdin;
 84	123	143	170	2012-01-18 18:13:52.42092-05
+91	98909	150	105	2012-01-23 11:00:21.149128-05
 89	555555	148	58	2012-01-19 15:25:16.437965-05
-87	9999999	146	57	2012-01-19 14:18:15.126042-05
 88	777666	147	222	2012-01-19 14:30:13.546904-05
+93	9999999	152	222	2012-01-23 11:11:12.655703-05
 \.
 
 

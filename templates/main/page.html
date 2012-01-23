@@ -8,27 +8,29 @@
     {% renderjs block %}
     {% endfor %}
 <script language = "javascript">
-     var text_input_mode = false;
-     function focus_on_first_textarea_or_text_input () {
-	arr = jQuery(jQuery('.cases')[0]).find ('textarea');
+    var text_input_mode = false;
+    function focus_on_first_textarea_or_text_input () {
+        arr = jQuery(jQuery('.cases')[0]).find ('textarea');
         //console.log (arr)
-	if (arr.length > 0  && jQuery.trim (arr[0].value).length == 0) {
+        if (arr.length > 0  && jQuery.trim (arr[0].value).length == 0) {
             //console.log ('first quiz block is a textarea; focusing it.');
-	    arr[0].focus();
-	}
-	arr = jQuery(jQuery('.cases')[0]).find ('input[type=text]');
+            arr[0].focus();
+        }
+        arr = jQuery(jQuery('.cases')[0]).find ('input[type=text]');
         //console.log (arr)
-	if (arr.length > 0  && jQuery.trim (arr[0].value).length == 0) {
+        if (arr.length > 0  && jQuery.trim (arr[0].value).length == 0) {
             //console.log ('first quiz block is a text input; focusing it.');
-	    arr[0].focus();
-	}
-     }
+            arr[0].focus();
+        }
+    }
 
     function setup_key_shortcuts() {
 	$(document).keyup(function (e) {
 		if (e.which == 78) {// if user types the letter n
 			if (!text_input_mode) {
-	 			jQuery ('#next')[0].click();
+			    if ( jQuery ('#next').filter(":visible").length > 0  ) {
+	 			    jQuery ('#next')[0].click();
+			    }
 			}
 		}
 		if (e.which == 66) { // if user types the letter b

@@ -48,12 +48,14 @@ class Participant(models.Model):
         for p in section.pageblock_set.all():
            if hasattr(p.block(),'unlocked'):
                  if p.block().unlocked(user) == False:
+                    #print "user didn't answer all questions"
                     #give the block a chance to add an error message to display to the user:
                     if hasattr(p.block(),'unlocked_error_message'):
                         the_message = p.block().unlocked_error_message(user)
                         if the_message:
                             messages.warning(request, the_message)
                     return False
+        #print "user answered all questions."
         return True
 
     def log_visit (self, new_section, request):#TODO pass in the request
