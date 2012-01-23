@@ -7,8 +7,34 @@
     {% for block in section.pageblock_set.all %}
     {% renderjs block %}
     {% endfor %}
-<script language = "javascript">
-     var text_input_mode = false;
+
+<script language="javascript" src="/site_media/js/jscal/jscal2.js" ></script>
+<script language="javascript" src="/site_media/js/jscal/lang/en.js"></script>
+  
+
+<script type="text/javascript" >
+
+  var text_input_mode = false;
+  // set up a calendar
+  function dateChanged(calendar) {
+    if (calendar.dateClicked) {
+      var y = calendar.date.getFullYear();
+      var m = calendar.date.getMonth();     // integer, 0..11
+      var d = calendar.date.getDate();      // integer, 1..31
+      alert ( "/" + y + "/" + m + "/" + d );
+    }
+  };
+
+
+  function set_up_calendar() {
+    Calendar.setup(
+      {
+        flat         : "calendar-container", // ID of the parent element
+        flatCallback : dateChanged           // our callback function
+      }
+    );
+  }
+
      function focus_on_first_textarea_or_text_input () {
 	arr = jQuery(jQuery('.cases')[0]).find ('textarea');
         //console.log (arr)
@@ -58,6 +84,7 @@
     }
     jQuery (setup_key_shortcuts);
     jQuery (focus_on_first_textarea_or_text_input);
+    jQuery (set_up_calendar);
 </script>
     {%if request.user.part %}
          {% if request.user.part.current_section.id == section.id  %}
@@ -96,6 +123,8 @@
 {% endblock %}
 
 {% block css %}
+
+<link rel="stylesheet" href="/site_media/css/jscal/jscal2.css"/>
 {% for block in section.pageblock_set.all %}
 {% rendercss block %}
 {% endfor %}
@@ -121,12 +150,6 @@
 
 {% block content %}
 <h3>{{section.label}}</h3>
-<!--
-    section id is:        {{section.id}}
--->
-
-
-
 {% for block in section.pageblock_set.all %}
     {% if block.block.is_audio_block %}
         {% render block %}
@@ -200,6 +223,9 @@
         {% render block %}
     {%endif %}
 {% endfor %}
+
+<div>goat </div>
+<div style="float: right; margin-left: 1em; margin-bottom: 1em;" id="calendar-container"></div>
 
 </div><!-- div id="content-nav" -->
 {% endblock %}
