@@ -1119,8 +1119,12 @@ background-color: #e3d8e0;
         width: 100px;
         height: 60px;
         padding: 5px
-    border: none;
-
+        border: none;
+    }
+    /* on the risk page, move the audio button back to where it should be. */
+    .audioblock_div.special_risk_audio_div {
+        position:relative;
+        left: -322px;
     }
 
     .audioblock-container .audio_controls, .audioblock-container .jp-stop-li {
@@ -1176,6 +1180,7 @@ li a.jp-rewind,
   #content .content-nav .helpblock-container.audioblock_div .audioblock-container li a.jp-rewind
 {
         background-image: url('/site_media/img/rewind_audio_button_bg.png');
+	display: none ; /* initially*/
     }
 
 

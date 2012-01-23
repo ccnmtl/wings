@@ -23,6 +23,11 @@ urlpatterns = patterns('',
     #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),
 
+    #giant table of all answers from all participants 
+    ('^all_answers/$', 'wings_main.views.all_answers'),
+    
+    
+
     (r'^participant/(?P<id_string>\d+)/launch/',           'wings_main.views.launch_participant'),                     
     (r'^participant/(?P<id_string>\d+)/exit_materials/',   'wings_main.views.exit_materials'),                     
                    

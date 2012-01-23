@@ -818,10 +818,26 @@
 	<td>id=next</td>
 	<td></td>
 </tr>
+<!--this question is optional.-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>How Relationship Conflict Makes You Feel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=previous</td>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>name=pageblock-222-question222</td>
-	<td>Lorem ipsum</td>
+	<td>this question is optional.</td>
 </tr>
 <tr>
 	<td>waitForVisible</td>
@@ -831,6 +847,11 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>this question is optional</td>
 	<td></td>
 </tr>
 <tr>
@@ -1190,66 +1211,6 @@
 	<td>review2</td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-145-question166</td>
-	<td>review2</td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
 	<td></td>
@@ -1279,6 +1240,11 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>id=previous</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
 	<td></td>
 </tr>
 <!--ok now start for real-->
@@ -1332,6 +1298,7 @@
 	<td>id=next</td>
 	<td></td>
 </tr>
+<!--STEPS TO INCREASE SUPPORT-->
 <tr>
 	<td>type</td>
 	<td>name=pageblock-245-question236</td>
@@ -1347,6 +1314,7 @@
 	<td>id=next</td>
 	<td></td>
 </tr>
+<!--GOAL SETTING-->
 <tr>
 	<td>click</td>
 	<td>name=pageblock-148-question167</td>
@@ -1357,14 +1325,14 @@
 	<td>//input[@name='pageblock-148-question167' and @value='4']</td>
 	<td></td>
 </tr>
-<!--SERVICES PAGE-->
 <tr>
 	<td>type</td>
 	<td>name=pageblock-148-question168</td>
 	<td>desired outcomes</td>
 </tr>
+<!--SERVICES PAGE-->
 <tr>
-	<td>clickAndWait</td>
+	<td>waitForVisible</td>
 	<td>id=next</td>
 	<td></td>
 </tr>
@@ -1373,6 +1341,17 @@
 	<td>id=next</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<!--ISSUES THAT CAN TRIGGER CONFLICT-->
 <tr>
 	<td>click</td>
 	<td>//input[@name='pageblock-247-question239' and @value='3']</td>
@@ -1399,21 +1378,16 @@
 	<td>other issues</td>
 </tr>
 <tr>
+	<td>waitForVisible</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
 	<td></td>
 </tr>
 <!--Resources to help you (first page, just a regular quiz)-->
-<tr>
-	<td>clickAndWait</td>
-	<td>id=next</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTextPresent</td>
-	<td>Please finish this page</td>
-	<td></td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>//input[@name='pageblock-249-question241' and @value='10']</td>
@@ -1430,27 +1404,32 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>waitForVisible</td>
 	<td>id=next</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyTextPresent</td>
-	<td>Please finish this page</td>
+	<td>clickAndWait</td>
+	<td>id=next</td>
 	<td></td>
 </tr>
-<tr>
-	<td>type</td>
-	<td>name=pageblock-249-question242</td>
-	<td>other services</td>
-</tr>
 <!--Resource Prioritization -- page_1-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
 	<td></td>
 </tr>
 <!--Try to advance. Should fail-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
@@ -1467,13 +1446,28 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>waitForVisible</td>
 	<td>id=next</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=pageblock-257-question244</td>
 	<td></td>
 </tr>
 <tr>
@@ -1487,19 +1481,29 @@
 	<td>take time</td>
 </tr>
 <tr>
+	<td>waitForVisible</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
 	<td></td>
 </tr>
 <!--EXIT MATERIALS-->
 <tr>
+	<td>waitForVisible</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
 	<td>id=next</td>
 	<td></td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>/admin/wings_main/participant/</td>
+	<td>clickAndWait</td>
+	<td>link=Print Now</td>
 	<td></td>
 </tr>
 </tbody></table>

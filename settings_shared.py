@@ -43,8 +43,8 @@ SITE_MEDIA_URL = '/site_media'
 #path relative to SITE_MEDIA_URL of decoration images used in the intervention:
 DECORATION_IMAGE_PATH =  '/img/decoration_images/'
 
-#SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html?test=..%2Ftests%2FTestSuite.html&resultsUrl=..%2FpostResults'
 SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html'
+
 
 APPEND_SLASH = False
 
@@ -108,12 +108,16 @@ INSTALLED_APPS = (
     'riskblock',
     'pastquizanswersblock',
     #kill sentry
-    'sentry.client',
     'wings_main',
     'paging',
     'indexer',
     'south',
 )
+
+if not DEBUG:
+    tmp = list (INSTALLED_APPS)
+    tmp.append ('sentry.client')
+    INSTALLED_APPS = tuple (tmp)
 
 PAGEBLOCKS = ['pageblocks.TextBlock',
               'pageblocks.HTMLBlock',
@@ -132,8 +136,9 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               
 BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block', 'Past Quiz Answers Block', 'HTML Block']
 
+OPTIONAL_QUESTIONS = [222, 235, 162, 168, 240, 242]
 
-if 1 == 1:
+if 'sentry.client' in INSTALLED_APPS:
     import logging
     logger = logging.getLogger()
     from sentry.client.handlers import SentryHandler
@@ -151,14 +156,3 @@ THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[wings] "
 EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "wings@ccnmtl.columbia.edu"
-
-# WIND settings
-
-#Todo: kill all these. We don't want wind.
-AUTHENTICATION_BACKENDS = ('djangowind.auth.WindAuthBackend','django.contrib.auth.backends.ModelBackend',)
-WIND_BASE = "https://wind.columbia.edu/"
-WIND_SERVICE = "cnmtl_full_np"
-WIND_PROFILE_HANDLERS = ['djangowind.auth.CDAPProfileHandler']
-WIND_AFFIL_HANDLERS = ['djangowind.auth.AffilGroupMapper','djangowind.auth.StaffMapper','djangowind.auth.SuperuserMapper']
-WIND_STAFF_MAPPER_GROUPS = ['tlc.cunix.local:columbia.edu']
-WIND_SUPERUSER_MAPPER_GROUPS = ['anp8','jb2410','zm4','sbd12','egr2107','kmh2124','sld2131','amm8','mar227','ed2198', 'ej2223']
