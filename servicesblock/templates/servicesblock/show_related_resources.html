@@ -4,29 +4,23 @@
                Name
             </th>
             <th>
-               URL
-            </th>
-            <th>
-                Street address
-            </th>
-            <th>
                 Tel
+            </th>
+            <th>
+               URL
             </th>
         </tr>
 
     {% for resource in resources%}
         <tr>
-            <td>
+            <td class ="resource_name">
                 {{resource.name}}
             </td>
-            <td>
-                {{resource.url}}
-            </td>
-            <td>
-                {{resource.address}}
-            </td>
-            <td>
+            <td class ="resource_phone">
                 {{resource.phone}}
+            </td>
+            <td class ="resource_url">
+                {{resource.url}}
             </td>
         </tr>
     {%endfor%}
