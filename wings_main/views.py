@@ -2,7 +2,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.shortcuts import render_to_response, get_object_or_404
-from django.template import RequestContext
+from django.template import RequestContext, loader
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, Http404
 from wings_main.models import Participant, traverse_tree, section_rank
 from pagetree.models import Section, Hierarchy, PageBlock
@@ -22,6 +22,23 @@ from simplejson import loads, dumps
 from django.db.models import Q
 
 from quizblock.models import Question
+
+
+def background(request,  content_to_show):
+    """ the pagetree page view breaks flatpages, so this is a simple workaround."""
+    file_names = {
+        'about'   : 'about.html',
+        'credits' : 'credits.html',
+        'contact' : 'contact.html',
+        'help'    : 'help.html',
+    } 
+
+    if content_to_show not in file_names.keys():
+        return HttpResponseRedirect('/accounts/login/?next=%s' % request.path)
+    file_name = file_names [content_to_show]
+    t = loader.get_template('wings_main/standard_elements/%s' % file_name)
+    c = RequestContext(request, {})
+    return HttpResponse(t.render(c))    
 
 class rendered_with(object):
     def __init__(self, template_name):

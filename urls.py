@@ -12,10 +12,19 @@ urlpatterns = patterns('',
     #TODO use a proper reverse:
     ('^$', redirect_to, {'url': '/admin/wings_main/participant/'}),
     
+    
     ('^admin/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
     ('^accounts/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
     ('^login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
     ('^logout/$', redirect_to, {'url': '/admin/logout/'}), 
+    
+    ('^about/$',   'wings_main.views.background',  {'content_to_show': 'about'  }),
+    ('^help/$',   'wings_main.views.background',   {'content_to_show': 'help'  }),
+    ('^contact/$', 'wings_main.views.background',  {'content_to_show': 'contact'}),
+    ('^credits/$', 'wings_main.views.background',  {'content_to_show': 'credits'}),
+
+
+
     
     #shortcut to first page 
     ('^first/$', 'wings_main.views.first'),
