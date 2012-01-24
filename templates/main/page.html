@@ -3,6 +3,15 @@
 {% load smartif %}
 {%block title %}{{section}}{%endblock%}
 
+
+{% block misc_head %}
+<!--
+    <LINK rel="prev" href="{{section.get_next.get_absolute_url}}">
+    <LINK rel="next" href="{{section.get_previous.get_absolute_url}}">
+-->
+{% endblock%}
+
+
 {% block js %}
     {% for block in section.pageblock_set.all %}
     {% renderjs block %}
@@ -25,38 +34,37 @@
     }
 
     function setup_key_shortcuts() {
-	$(document).keyup(function (e) {
-		if (e.which == 78) {// if user types the letter n
-			if (!text_input_mode) {
-			    if ( jQuery ('#next').filter(":visible").length > 0  ) {
-	 			    jQuery ('#next')[0].click();
+	    $(document).keyup(function (e) {
+		    if (e.which == 78 || e.which == 39) {// if user types the letter n
+			    if (!text_input_mode) {
+			        if ( jQuery ('#next').filter(":visible").length > 0  ) {
+	     			    jQuery ('#next')[0].click();
+			        }
 			    }
-			}
-		}
-		if (e.which == 66) { // if user types the letter b
-			if (!text_input_mode) {
-				jQuery ('#previous')[0].click();
-			}
-		}
-		return false;
-	});
-		 
-	$("input[type=text]").focus(function(){
-	   text_input_mode = true;
-	});
+		    }
+		    if (e.which == 66  || e.which == 37) { // if user types the letter b
+			    if (!text_input_mode) {
+				    jQuery ('#previous')[0].click();
+			    }
+		    }
+		    return false;
+	    });
+		     
+	    $("input[type=text]").focus(function(){
+	       text_input_mode = true;
+	    });
 
-	$("input[type=text]").blur(function(){
-	   text_input_mode = false;
-	});
+	    $("input[type=text]").blur(function(){
+	       text_input_mode = false;
+	    });
 
-	$("textarea").focus(function(){
-	   text_input_mode = true;
-	});
+	    $("textarea").focus(function(){
+	       text_input_mode = true;
+	    });
 
-	$("textarea").blur(function(){
-	   text_input_mode = false;
-	});
-
+	    $("textarea").blur(function(){
+	       text_input_mode = false;
+	    });
     }
     jQuery (setup_key_shortcuts);
     jQuery (focus_on_first_textarea_or_text_input);
