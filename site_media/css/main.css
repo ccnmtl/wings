@@ -657,6 +657,7 @@ div.cases
 }
 
 
+
 #content.image_on_right div.cases
 {
 	float: left;
@@ -776,6 +777,7 @@ div#tabber [type="submit"] {
 .cases li
 {
 	margin: 2px 0 4px;
+	font-weight: bold;
 }
 
 .casesanswerdisplay
@@ -941,11 +943,24 @@ body#poctools a#poctools
 #footer
 {
 	min-width: 912px;
-	width: 912px;
 	height: 40px;
 	margin: 0;
 	padding: 0;
-	border: 0;
+	
+}
+#footer ul {
+   
+    list-style: none;
+    width : 100%;
+	text-align: center;
+	margin: 0;
+	padding:: 0;
+    
+}
+#footer ul li {
+    display: inline;
+    list-style-type: none;
+    margin: 10px;
 }
 
 .block-edit {
