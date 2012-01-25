@@ -16,6 +16,34 @@
                             <p>{{ field.contents }}</p>
                         {% else %}
                             {{ field.field }}
+                            
+                            
+                            {%comment %} SPECIAL ADDITION FOR WINGS {%endcomment %}
+                                {%ifequal opts.verbose_name 'participant'%}
+                                    {% ifequal  field.field.name 'id_string' %}
+                                    <br/>
+                                        <label class="required" for="id_id_string">Retype ID string please:</label>
+                                        {{ field.field }}
+                                    <script language="javascript">
+                                        django.jQuery('#participant_form').submit(function() {
+                                                //django.jQuery('input.vIntegerField')[1].id = 'id_id_string_2'
+                                                django.jQuery(django.jQuery('input.vIntegerField')[1]).attr('id' ,'id_id_string_2');
+                                                if ( django.jQuery('#id_id_string')[0].value ==
+                                                     django.jQuery('#id_id_string_2')[0].value) {
+                                                    return true;
+                                                }
+                                                alert ('Please make sure to type an identical number into both ID string boxes.');
+                                            return false;
+                                            }
+                                        );
+                                    </script>
+                            
+                            
+                                    {%endifequal %}
+                                 {%endifequal%}
+                            {%comment %} SPECIAL ADDITION FOR WINGS {%endcomment %}
+                            
+                            
                         {% endif %}
                     {% endif %}
                     {% if field.field.field.help_text %}

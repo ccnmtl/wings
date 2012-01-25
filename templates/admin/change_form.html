@@ -48,11 +48,9 @@
     </p>
     {{ adminform.form.non_field_errors }}
 {% endif %}
-
 {% for fieldset in adminform %}
   {% include "admin/includes/fieldset.html" %}
 {% endfor %}
-
 {% block after_field_sets %}{% endblock %}
 
 {% for inline_admin_formset in inline_admin_formsets %}
