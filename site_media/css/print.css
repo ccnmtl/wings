@@ -93,8 +93,15 @@ div.cases
 
 /* adjustments to exit materials */
 
+
+
 .exit_materials_main_content_div {
     font-size: 90%;
+}
+
+
+.exit_materials_content ssnm_tree {
+    page-break-after:always;
 }
 
 .exit_materials_main_content_div .exit_materials_block.block_239 {

@@ -283,18 +283,23 @@ def exit_materials_nodes ():
     traverse_tree(PageBlock.objects.get(id=135).section, safety_plan_part_2_node_list)
     goal_setting_node_list = []
     traverse_tree(Section.objects.get(id=57), goal_setting_node_list)
+    steps_to_increase_support_node_list = []
+    traverse_tree(Section.objects.get(id=215), steps_to_increase_support_node_list)
+
+
     
     ssnm_tree_node    = PageBlock.objects.get(id=254)
     resources_node    = PageBlock.objects.get(id=291)
     action_plan_node = PageBlock.objects.get(id=257)
 
     return {
-        'safety_plan_part_1_node_list' : safety_plan_part_1_node_list,
-        'safety_plan_part_2_node_list' : safety_plan_part_2_node_list,
-        'goal_setting_node_list'       : goal_setting_node_list,
-        'ssnm_tree_node'               : ssnm_tree_node,
-        'resources_node'               : resources_node,
-        'action_plan_node'             : action_plan_node,
+        'safety_plan_part_1_node_list'              : safety_plan_part_1_node_list,
+        'safety_plan_part_2_node_list'              : safety_plan_part_2_node_list,
+        'goal_setting_node_list'                    : goal_setting_node_list,
+        'steps_to_increase_support_node_list'       : steps_to_increase_support_node_list,
+        'ssnm_tree_node'                            : ssnm_tree_node,
+        'resources_node'                            : resources_node,
+        'action_plan_node'                          : action_plan_node,
     }
 
 @staff_or_404

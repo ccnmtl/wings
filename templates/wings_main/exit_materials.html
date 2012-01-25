@@ -41,18 +41,45 @@
     <div class="exit_materials_main_content_div">
 
             <h1> Exit Materials</h1>
+            
+            
+            
             <div class="exit_actions">
                 <a class="bigbutton exit_materials_print_button" href="print"  onclick="javascript:print()">PRINT</a>
                 <a class="bigbutton exit_materials_logout_button" href="/logout/">Log Out</a>
             </div>
             
             
-             <div class="exit_materials_content ssnm_tree">
+            <div class="exit_materials_content ssnm_tree">
                 <h5>Social Support Network Tree</h5>
                
                     {%render ssnm_tree_node %}
                     <br clear="all" />
              </div>
+            <!-- page break here -->
+            
+            
+            <div class = "exit_materials_content">      
+            <h5>Steps to Increase Support</h5>
+                {%for section in steps_to_increase_support_node_list %}
+                    <div>
+                        {% for block in section.pageblock_set.all %}
+                        {% if not block.block.is_help_block and not block.block.is_audio_block %}
+                            {% if block.label %}<h3>{{block.label}}</h3>{% endif %}
+                            <!--
+                            <div>
+                            BLOCK ID {{block.id}}
+                            </div>
+                            -->
+                            {% render block %}
+                        {%endif %}
+                        {% endfor %}
+                    </div>
+                {%endfor %}
+
+            </div>
+            
+            
             
            <div class="exit_materials_content safety_strategies">
             <h5>Strategies for Safety During a Violent Incident</h5>
@@ -94,6 +121,8 @@
                 {%endfor %}
 
             </div>
+            
+            
             
             <div class="exit_materials_content goal_setting">
             <h5>Goal Setting</h5>
