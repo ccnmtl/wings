@@ -107,7 +107,7 @@ if True:
                 the_rank = section_rank (section)
                 result = {
                     'rank'  :           the_rank,
-                    'image' :           pick_decoration_image    (the_rank),
+                    'image' :           pick_decoration_image (the_rank),
                     'decoration_side' : pick_decoration_side (the_rank),
                     'really_depressing' : really_depressing_content,
                     'hide_title' :        is_descendent_of (section, hide_title_sections),
@@ -115,11 +115,9 @@ if True:
                 
                 if not whether_to_show_decorations (section):
                     result ['decoration_side'] = '';
+                    
                 if really_depressing_content:
-                    result ['decoration_side'] = 'image_on_right';
-                
-                if really_depressing_content:
-                    result ['decoration_side'] = 'image_on_right';
+                    result ['decoration_side'] = 'image_on_right'; #we have a special image for this case.
                 
                 if any(s.block().display_name == 'Image Pullquote' for s in section.pageblock_set.all()):
                     result ['decoration_side'] = 'image_on_right';
