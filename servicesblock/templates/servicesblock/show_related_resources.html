@@ -1,13 +1,16 @@
 <table class ="show_related_resources">
         <tr>
-            <th>
+            <th class="resource_name">
                Name
             </th>
-            <th>
+            <th class ="resource_phone">
                 Tel
             </th>
-            <th>
+            <th class = "resource_url">
                URL
+            </th>
+            <th class = "resource_description">
+               Description
             </th>
         </tr>
 
@@ -21,6 +24,9 @@
             </td>
             <td class ="resource_url">
                 {{resource.url}}
+            </td>
+            <td class ="resource_description">
+                {% firstof resource.description %}
             </td>
         </tr>
     {%endfor%}

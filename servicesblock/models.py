@@ -110,11 +110,12 @@ class NarrowedDownAnswer (models.Model):
         return dir(self)
 
 class ServiceProvider(models.Model):
-    issue = models.ForeignKey     (Answer,     null=True, limit_choices_to = {'question__id': 241})
-    name = models.TextField       (blank=True, null=True)
-    phone = models.TextField      (blank=True, null=True)
-    url = models.TextField        (blank=True, null=True)
-    address = models.TextField    (blank=True, null=True)
+    issue = models.ForeignKey         (Answer,     null=True, limit_choices_to = {'question__id': 241})
+    name = models.TextField           (blank=True, null=True)
+    phone = models.TextField          (blank=True, null=True)
+    url = models.TextField            (blank=True, null=True)
+    address = models.TextField        (blank=True, null=True)
+    description = models.TextField    (blank=True, null=True, help_text = "One-sentence description of the service")
     map_image = models.ImageField(upload_to="images/", blank=True, null=True)
     
     
