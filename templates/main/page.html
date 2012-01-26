@@ -3,6 +3,10 @@
 {% load smartif %}
 {%block title %}{{section}}{%endblock%}
 
+{%block header_logo_link%}{%if request.user.is_staff %}/admin/wings_main/participant/{%else%}./{%endif%}{%endblock%}
+
+
+
 
 {% block misc_head %}
 <!--
@@ -43,6 +47,13 @@
 				    jQuery ('#previous')[0].click();
 			    }
 		    }
+		    if (e.which == 32) { // if user types the letter b
+			    if (!text_input_mode) {
+				    jQuery ('#secondary_navigation').toggle();
+				    jQuery ('.globalnav').toggle();
+			    }
+		    }
+		    
 		    return false;
 	    });
 		     
@@ -126,7 +137,9 @@
 
 
 {% block content %}
+{% if not decoration_info.hide_title %}
 <h3>{{section.label}}</h3>
+{%endif %}
 <!--
     section id is:        {{section.id}}
 -->
@@ -145,14 +158,20 @@
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
-
 {% endif %}
 
-{% if show_decorations %}
-<div id="decoration_image_container">
-    <img class="decoration_image"  src = '{{decoration_info.image}}' />
-</div>
-{% endif %}
+
+{% if decoration_info.really_depressing %}
+    <div id="decoration_image_container" class="depressing">
+        <img class="decoration_image"  src = '/site_media/img/decoration_images/plant-sidewalk2.jpg' />
+    </div>
+{%else %}
+    {% if show_decorations %}
+    <div id="decoration_image_container">
+        <img class="decoration_image"  src = '{{decoration_info.image}}' />
+    </div>
+    {% endif %}
+{%endif %}
 
 
 {% if needs_submit %}

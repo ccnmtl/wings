@@ -638,12 +638,21 @@ border-radius: 10px;
 
 }
 
+#decoration_image_container.depressing{
+
+    float: right;
+    margin: 0 0px 0 20px;
+
+}
+
+
 img.decoration_image {
 
     width: 300px;
     height: auto;
 
 }
+
 
 
 /* Case quizzes */

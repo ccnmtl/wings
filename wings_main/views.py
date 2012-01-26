@@ -97,24 +97,55 @@ if True:
 
             def decoration_info(section):
                 """Generate some info that the section can use to decorate itself."""
+                
+                really_depressing_sections = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
+                hide_title_sections        = [Section.objects.get(id = 97), Section.objects.get(id = 53), Section.objects.get(id = 53)]
+                
+                really_depressing_content =  is_descendent_of (section, really_depressing_sections)
+                
+                
                 the_rank = section_rank (section)
                 result = {
                     'rank'  :           the_rank,
                     'image' :           pick_decoration_image    (the_rank),
-                    'decoration_side' : pick_decoration_side (the_rank)
+                    'decoration_side' : pick_decoration_side (the_rank),
+                    'really_depressing' : really_depressing_content,
+                    'hide_title' :        is_descendent_of (section, hide_title_sections),
                 }
+                
                 if not whether_to_show_decorations (section):
                     result ['decoration_side'] = '';
+                if really_depressing_content:
+                    result ['decoration_side'] = 'image_on_right';
+                
                 return result
                 
                 
+            def is_descendent_of (section, set_of_parents):
+                for a in range (10):
+                    if section in set_of_parents:
+                        return True
+                    section = section.get_parent()
+                    if section.is_root():
+                        return False
+
+                    
+                    
             def whether_to_show_decorations (section):
                 """ Our decorations are annoying and/or counterproductive on some pages.
-                Don't show them on sections that contain certain kinds of blocks."""
+                Don't show them on sections that contain certain kinds of blocks.
+                Also, the content on the first couple of sections (screening for ipv and empowerment)
+                is incompatible with cheerful imagery.
+                """
                 
                 block_types_that_hide_decorations = settings.BLOCK_TYPES_THAT_HIDE_DECORATIONS
                 myblocks = section.pageblock_set.all()
                 result = not any(b.block().display_name in block_types_that_hide_decorations for b in myblocks)
+                really_depressing_sections = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
+                
+                if is_descendent_of (section, really_depressing_sections):
+                    return False
+                
                 return result
 
 
