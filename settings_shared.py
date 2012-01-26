@@ -134,7 +134,7 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               ]
               
               
-BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block', 'Past Quiz Answers Block', 'HTML Block']
+BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block', 'Past Quiz Answers Block', 'HTML Block', 'Image Pullquote']
 
 OPTIONAL_QUESTIONS = [222, 235, 162, 168, 240, 242]
 

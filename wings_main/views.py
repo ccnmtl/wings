@@ -99,7 +99,7 @@ if True:
                 """Generate some info that the section can use to decorate itself."""
                 
                 really_depressing_sections = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
-                hide_title_sections        = [Section.objects.get(id = 97), Section.objects.get(id = 53), Section.objects.get(id = 53)]
+                hide_title_sections        = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
                 
                 really_depressing_content =  is_descendent_of (section, really_depressing_sections)
                 
@@ -116,6 +116,12 @@ if True:
                 if not whether_to_show_decorations (section):
                     result ['decoration_side'] = '';
                 if really_depressing_content:
+                    result ['decoration_side'] = 'image_on_right';
+                
+                if really_depressing_content:
+                    result ['decoration_side'] = 'image_on_right';
+                
+                if any(s.block().display_name == 'Image Pullquote' for s in section.pageblock_set.all()):
                     result ['decoration_side'] = 'image_on_right';
                 
                 return result

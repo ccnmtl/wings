@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 672, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 675, true);
 
 
 --
@@ -910,7 +910,7 @@ ALTER SEQUENCE helpblock_helpblock_id_seq OWNED BY helpblock_helpblock.id;
 -- Name: helpblock_helpblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('helpblock_helpblock_id_seq', 1, true);
+SELECT pg_catalog.setval('helpblock_helpblock_id_seq', 82, true);
 
 
 --
@@ -1174,7 +1174,7 @@ ALTER SEQUENCE pageblocks_htmlblock_id_seq OWNED BY pageblocks_htmlblock.id;
 -- Name: pageblocks_htmlblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 37, true);
+SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 39, true);
 
 
 --
@@ -1286,7 +1286,7 @@ ALTER SEQUENCE pageblocks_imagepullquoteblock_id_seq OWNED BY pageblocks_imagepu
 -- Name: pageblocks_imagepullquoteblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_imagepullquoteblock_id_seq', 1, false);
+SELECT pg_catalog.setval('pageblocks_imagepullquoteblock_id_seq', 1, true);
 
 
 --
@@ -1437,7 +1437,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 417, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 501, true);
 
 
 --
@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 3151, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 3166, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 3117, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 3131, true);
 
 
 --
@@ -1802,7 +1802,8 @@ CREATE TABLE servicesblock_serviceprovider (
     phone text,
     url text,
     address text,
-    map_image character varying(100)
+    map_image character varying(100),
+    description text
 );
 
 
@@ -1904,7 +1905,7 @@ ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
 -- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('south_migrationhistory_id_seq', 34, true);
+SELECT pg_catalog.setval('south_migrationhistory_id_seq', 35, true);
 
 
 --
@@ -3074,13 +3075,13 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-23 11:10:53.294858-05	2011-12-09 15:38:04-05
 158	362611				!	f	t	f	2012-01-24 16:13:18.097537-05	2012-01-24 16:13:18.080986-05
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-24 17:04:40.076714-05	2011-06-02 15:22:48.818126-04
-159	222222				!	f	t	f	2012-01-25 16:04:50.777536-05	2012-01-25 16:04:50.765316-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-25 16:26:29.545151-05	2011-10-11 11:39:54-04
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-26 11:19:26.453442-05	2011-10-11 11:39:54-04
+159	222222				!	f	t	f	2012-01-26 13:34:48.902106-05	2012-01-25 16:04:50.765316-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
 150	98909				!	f	t	f	2012-01-23 12:46:17.624886-05	2012-01-23 11:00:24.350951-05
 143	123				!	f	t	f	2012-01-18 18:58:23.148606-05	2012-01-18 18:15:33.078081-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-25 14:02:19.618104-05	2011-06-02 15:22:04-04
 147	777666				!	f	t	f	2012-01-19 15:19:27.943056-05	2012-01-19 14:30:15.79484-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-26 13:35:29.780678-05	2011-06-02 15:22:04-04
 148	555555				!	f	t	f	2012-01-20 19:06:28.799662-05	2012-01-19 15:25:18.650894-05
 \.
 
@@ -3762,6 +3763,7 @@ a9a7eecdb4ef1e4d55c1586e98485e6e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc
 10637c972289c60d680b0a2a86f9d2c6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 09:03:15.437752-05
 e4c428e86db805bf1dd55a03f88b349e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 10:31:28.107628-05
 8b14762b7eeb6a4c3def489572e1027d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKKAHUuY2YyZTQwMTFjZTc2NGQyNGJk\nOTk0ZjYwNmYzZDQxMDA=\n	2012-02-01 15:59:29.01451-05
+be281d66ddf3682144e3b573f7cab9f3	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-09 13:35:29.790928-05
 35f2393bb1f19e600af24ac4b64e75e9	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-02 14:32:21.043642-05
 06976173f51475d2c3b0df00c61d5270	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-02 16:12:43.168559-05
 5553e5a86fd4eac58d7f8bdc7adced3e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-07 11:23:07.029008-05
@@ -3774,13 +3776,15 @@ dfc9edd211458fc746dc223db072c64e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 ec00b594470fc6158d8efe4e730633c6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 13:03:25.312098-05
 a9abff31346d7f0954692dd4c8718c14	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-02-03 11:09:26.803495-05
 064606c07841fce83c66915b48139c00	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKVAHUuYTM2MDExYWQxNTg2YmIyMjBi\nMjdlOWNiYjg1ZjY2YjQ=\n	2012-02-03 20:23:16.602213-05
-8683a1c2fe37b90671f3d27617faeec6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKbAHUuM2RhNzM3Y2Y2Y2Y0ZjRiMTg4\nMDNmMjAyMjg3MTZiOTc=\n	2012-02-07 10:55:09.112832-05
 59985e4e9ffed239d736159c12ed2df0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-07 11:12:10.558204-05
+37c4709c511e44017a55941194042312	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-09 11:23:05.19476-05
 8dd1cdccef506dbfaa0cba3541c44d72	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 13:07:18.15695-05
 12a49e9bd4a7f89f0e60bcd440357868	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-07 17:01:37.753212-05
+bc023590e2a05067eed092a6a5e471d7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-08 17:23:56.522932-05
+480dde54ebff66a892b0c30f6124713f	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-08 18:22:25.521939-05
 077042b18baa1c85df0c3dc30eb25b6b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKYAHUuMjg5YWI1NWVjNDhjYzNlZGU5\nYWVhYzgwYzIwZWI3NTI=\n	2012-02-06 11:11:12.871649-05
-4075e8e40543cb3656991d795368afc7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-08 14:02:19.628005-05
 8b8d49e04d14b5ab3bc0ad15835bc9e3	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-08 16:26:29.554817-05
+64a85d1df4793312f88558311d6b4bf0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-09 11:19:26.464011-05
 21510b144baf661667470aac3526fb56	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4d1LmJjODRjZWU5NGM3NTQ0MmE5ZTc2\nYzFiMzQxMzE3ZWU3\n	2012-02-01 10:46:17.238026-05
 3b07b8928532ad6c956bc186d928cd6e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-07 17:04:40.08696-05
 9bd0758a0a1cbb2b346b8e156a9901df	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 12:50:16.745078-05
@@ -3862,6 +3866,87 @@ COPY fridgeblock_session (id, fridgeblock_id, user_id, saved) FROM stdin;
 --
 
 COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
+16	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+17	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+18	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+2	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+3	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+4	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+5	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+6	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+7	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+8	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+9	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+10	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+11	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+12	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+13	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+14	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+15	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+19	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+20	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+21	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+22	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+23	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+24	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+25	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+26	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+27	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+28	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+29	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+30	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+32	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+33	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+34	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+35	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+36	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+37	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+38	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+39	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+40	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+41	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+42	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+43	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+44	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+45	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+46	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+47	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+48	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+49	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+50	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+51	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+52	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+53	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+54	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+55	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+56	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+57	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+58	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+59	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+60	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+61	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+62	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+63	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+64	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+65	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+66	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+67	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+68	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+69	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+70	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+71	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+72	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+73	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+74	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+75	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+76	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+77	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+78	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+79	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+80	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+81	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+82	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+31	Stuck on This Screen?\r\n\r\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 \.
 
 
@@ -4017,7 +4102,6 @@ COPY pageblocks_imageblock (id, image, caption, alt) FROM stdin;
 3	images/2011/06/28/pageblocks1-04.jpg	Look! you can upload pictures!	\N
 6	images/2011/10/14/cycleofviolence.jpg	This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells around the partner.  	cycle of violence diagram
 15	images/2012/01/09/powerandcontrol-drug.jpg		
-17	images/2012/01/25/purse-metrocard.jpg		
 10	images/2011/11/23/powerandcontrol-phys.jpg		
 12	images/2011/11/23/powerandcontrol-emot.jpg		
 13	images/2011/11/23/powerandcontrol-sexu.jpg		
@@ -4030,6 +4114,7 @@ COPY pageblocks_imageblock (id, image, caption, alt) FROM stdin;
 --
 
 COPY pageblocks_imagepullquoteblock (id, image, caption, alt) FROM stdin;
+1	images/2012/01/26/purse-metrocard_jpg_.jpg	test	test
 \.
 
 
@@ -4143,7 +4228,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 142	121	2		26	60
 271	72	2		43	11
 273	153	2		43	13
-275	161	2		43	15
+124	106	2		26	49
 243	213	2		16	75
 113	100	1		16	38
 100	99	1		16	37
@@ -4187,13 +4272,12 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 358	196	2		43	62
 69	70	1		16	28
 313	169	2		43	34
-124	106	2		26	49
 317	173	2		43	38
+183	161	1		26	80
 303	223	1		16	88
 79	76	1		16	33
 265	63	2		43	5
 232	74	1		19	12
-183	161	1		26	80
 184	162	1		26	81
 185	163	1		26	82
 186	164	1		26	83
@@ -4217,6 +4301,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 234	65	1		19	13
 267	65	2		43	7
 235	151	1		19	14
+275	161	3		43	15
 222	198	1		26	116
 226	204	1		26	119
 307	224	2		19	15
@@ -4283,6 +4368,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 290	219	2		46	1
 395	146	3		43	94
 309	201	1		54	1
+423	165	1	help_block	44	7
 257	147	1		26	128
 384	121	3		43	84
 220	196	1		26	114
@@ -4317,6 +4403,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 373	113	3		43	74
 365	104	2		43	66
 366	105	3		43	67
+424	166	1	help_block	44	8
 368	107	2		43	69
 369	108	2		43	70
 370	109	2		43	71
@@ -4351,9 +4438,13 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 252	211	1		45	1
 411	208	2		43	106
 338	187	2		43	52
+425	167	1	help_block	44	9
+426	168	1	help_block	44	10
 364	125	1		16	107
-367	106	3		43	68
-417	106	1		19	17
+450	106	1	help_block	44	34
+418	76	1	help_block	44	2
+420	162	1	help_block	44	4
+421	163	1	help_block	44	5
 340	188	2		43	53
 342	189	2		43	54
 344	190	2		43	55
@@ -4363,6 +4454,81 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 350	192	2		43	58
 352	193	2		43	59
 354	194	2		43	60
+422	164	1	help_block	44	6
+427	169	1	help_block	44	11
+428	170	1	help_block	44	12
+429	171	1	help_block	44	13
+430	172	1	help_block	44	14
+431	173	1	help_block	44	15
+432	174	1	help_block	44	16
+433	175	1	help_block	44	17
+434	176	1	help_block	44	18
+435	177	1	help_block	44	19
+436	178	1	help_block	44	20
+437	179	1	help_block	44	21
+438	180	1	help_block	44	22
+439	181	1	help_block	44	23
+440	182	1	help_block	44	24
+441	183	1	help_block	44	25
+442	184	1	help_block	44	26
+443	185	1	help_block	44	27
+444	186	1	help_block	44	28
+445	99	1	help_block	44	29
+446	56	1	help_block	44	30
+419	161	2	help_block	44	3
+448	104	1	help_block	44	32
+449	105	1	help_block	44	33
+451	107	1	help_block	44	35
+452	108	1	help_block	44	36
+447	102	1	help_block	44	31
+453	109	1	help_block	44	37
+454	110	1	help_block	44	38
+455	111	1	help_block	44	39
+456	112	1	help_block	44	40
+457	113	1	help_block	44	41
+458	114	1	help_block	44	42
+459	210	1	help_block	44	43
+460	103	1	help_block	44	44
+461	103	1	help_block	44	45
+462	115	1	help_block	44	46
+463	116	1	help_block	44	47
+464	117	1	help_block	44	48
+465	118	1	help_block	44	49
+466	119	1	help_block	44	50
+467	120	1	help_block	44	51
+468	121	1	help_block	44	52
+469	123	1	help_block	44	53
+470	124	1	help_block	44	54
+471	125	1	help_block	44	55
+472	126	1	help_block	44	56
+473	62	1	help_block	44	57
+474	53	1	help_block	44	58
+475	100	1	help_block	44	59
+476	187	1	help_block	44	60
+477	188	1	help_block	44	61
+478	189	1	help_block	44	62
+479	190	1	help_block	44	63
+480	191	1	help_block	44	64
+481	200	1	help_block	44	65
+482	192	1	help_block	44	66
+483	193	1	help_block	44	67
+484	194	1	help_block	44	68
+485	195	1	help_block	44	69
+486	196	1	help_block	44	70
+487	197	1	help_block	44	71
+488	198	1	help_block	44	72
+489	201	1	help_block	44	73
+490	99	1	help_block	44	74
+491	202	1	help_block	44	75
+492	203	1	help_block	44	76
+493	204	1	help_block	44	77
+494	205	1	help_block	44	78
+495	206	1	help_block	44	79
+496	207	1	help_block	44	80
+497	208	1	help_block	44	81
+498	223	1	help_block	44	82
+367	106	3		43	68
+501	106	4	test	20	1
 \.
 
 
@@ -5161,6 +5327,12 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2720	150	2707	
 2726	150	2713	
 3151	184	3116	1
+3152	236	3118	
+3153	237	3118	
+3157	184	3120	1
+3158	210	3121	2
+3163	151	3128	  
+3165	151	3130	   
 649	240	864	
 653	240	867	
 655	242	869	
@@ -5501,6 +5673,12 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3133	168	3108	
 3134	167	3108	2
 3135	167	3108	3
+3154	168	3119	
+3155	167	3119	4
+3156	167	3119	5
+3159	185	3123	1
+3164	150	3129	 
+3166	153	3131	 
 648	242	863	
 650	239	865	2
 651	239	865	3
@@ -5665,6 +5843,7 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3137	239	3109	1
 3138	239	3109	2
 3139	239	3109	9
+3160	185	3125	1
 2442	148	2447	
 2875	160	2877	n
 2881	165	2883	
@@ -5808,6 +5987,7 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3141	241	3110	4
 3142	241	3110	6
 3143	242	3110	
+3161	184	3126	1
 2723	150	2710	
 2011	189	2014	2
 2784	222	2776	
@@ -5875,6 +6055,7 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3128	166	3105	ASDF 
 3144	245	3111	
 3145	244	3111	
+3162	185	3127	1
 2012	190	2015	1
 1693	198	1709	2
 2785	222	2777	fghn
@@ -6033,6 +6214,11 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3107	124	158	2012-01-24 16:37:51.579612-05
 3113	64	5	2012-01-25 15:29:59.333699-05
 3114	80	159	2012-01-25 16:05:54.605027-05
+3118	124	5	2012-01-25 18:11:01.036587-05
+3120	80	5	2012-01-25 18:22:50.622164-05
+3121	105	5	2012-01-26 13:34:42.086917-05
+3127	81	159	2012-01-26 13:35:07.047888-05
+3128	49	5	2012-01-26 13:44:06.705261-05
 2447	47	148	2012-01-20 19:06:57.222665-05
 2854	84	5	2012-01-23 15:30:46.795877-05
 2860	88	5	2012-01-23 15:31:01.687934-05
@@ -6046,6 +6232,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 126	76	5	2011-11-28 13:59:54.516922-05
 127	77	5	2011-11-28 13:59:54.52029-05
 128	124	13	2011-11-30 10:56:51.831516-05
+3130	49	5	2012-01-26 13:45:14.077943-05
 2519	80	150	2012-01-23 11:01:30.60538-05
 2525	85	150	2012-01-23 11:01:53.320958-05
 2531	91	150	2012-01-23 11:02:15.622782-05
@@ -6143,6 +6330,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2861	89	5	2012-01-23 15:31:03.226538-05
 2867	95	5	2012-01-23 15:31:13.31601-05
 3115	80	159	2012-01-25 16:06:15.476354-05
+3119	64	5	2012-01-25 18:11:03.164223-05
 2520	80	150	2012-01-23 11:01:35.286307-05
 2526	86	150	2012-01-23 11:01:56.982144-05
 2532	92	150	2012-01-23 11:02:19.041081-05
@@ -6151,6 +6339,9 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2550	109	150	2012-01-23 11:03:24.919014-05
 2556	114	150	2012-01-23 11:03:40.408084-05
 2562	120	150	2012-01-23 11:04:05.194437-05
+3122	81	159	2012-01-26 13:34:55.619034-05
+3129	48	5	2012-01-26 13:44:16.918658-05
+3131	50	5	2012-01-26 13:45:23.38799-05
 864	125	5	2011-12-21 11:03:47.342337-05
 866	126	5	2011-12-21 11:03:54.546465-05
 868	125	5	2011-12-21 11:09:40.125299-05
@@ -6588,6 +6779,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3103	61	158	2012-01-24 16:33:22.216059-05
 3109	125	158	2012-01-24 16:38:41.188493-05
 3116	80	159	2012-01-25 16:06:23.677577-05
+3123	81	159	2012-01-26 13:35:01.394733-05
 1085	105	13	2012-01-12 11:00:50.135506-05
 1086	106	13	2012-01-12 11:00:55.940749-05
 1087	107	13	2012-01-12 11:01:02.007054-05
@@ -6698,6 +6890,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2552	110	150	2012-01-23 11:03:30.82217-05
 2558	116	150	2012-01-23 11:03:47.953816-05
 2564	122	150	2012-01-23 11:04:09.405351-05
+3124	82	159	2012-01-26 13:35:02.128636-05
 2851	81	5	2012-01-23 15:30:42.266947-05
 2857	85	5	2012-01-23 15:30:52.838704-05
 2863	91	5	2012-01-23 15:31:06.613342-05
@@ -6758,6 +6951,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3099	57	158	2012-01-24 16:33:01.19413-05
 3105	63	158	2012-01-24 16:33:30.36718-05
 3111	128	158	2012-01-24 16:43:12.334572-05
+3125	81	159	2012-01-26 13:35:03.939957-05
 2852	82	5	2012-01-23 15:30:43.832313-05
 2523	83	150	2012-01-23 11:01:46.299189-05
 2529	89	150	2012-01-23 11:02:08.815517-05
@@ -6830,6 +7024,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3100	58	158	2012-01-24 16:33:04.391029-05
 3106	124	158	2012-01-24 16:37:33.738088-05
 3112	128	158	2012-01-24 16:43:20.479789-05
+3126	80	159	2012-01-26 13:35:05.482696-05
 2524	84	150	2012-01-23 11:01:49.936425-05
 2530	90	150	2012-01-23 11:02:12.317153-05
 2536	96	150	2012-01-23 11:02:32.932429-05
@@ -6859,10 +7054,10 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 --
 
 COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
-1	5	647	241
 11	8	\N	241
 25	156	644	241
 26	158	645	241
+1	5	647	241
 3	124	\N	241
 5	13	\N	241
 20	147	645	241
@@ -6873,38 +7068,38 @@ COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM
 -- Data for Name: servicesblock_serviceprovider; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY servicesblock_serviceprovider (id, issue_id, name, phone, url, address, map_image) FROM stdin;
-2	641	housing help	housing help	housing help	housing help	images/columbiamap.jpg
-5	648	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/counseling--support-groups-56.html		
-6	648	Sanctuary for Families	(212)-349-6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221		
-7	648	STEPS to End Family Violence	(646)-315-7623 Clinical Supervisor	http://www.egscf.org/services/steps/clinical-services/		
-8	648	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
-9	649	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/domestic-violence-53.html#domestic_violence_shelters		
-10	649	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=34&Itemid=63		
-11	650	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/get-help-8/for-legal-services-15.html		
-12	650	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist 	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=140&Itemid=163		
-13	650	STEPS to End Family Violence	(646)-315-7605 or (646)-315-7637 for Legal Services	http://www.egscf.org/services/steps/legal-services/		
-14	650	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
-15	647	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Parenting.htm		
-16	647	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150		
-17	647	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74		
-18	647	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/		
-19	656	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Business.htm		
-20	656	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
-21	656	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/employment-services/		
-22	641	Coalition for the Homeless	(212)-776-2012	http://www.coalitionforthehomeless.org/programs/crisis-intervention		
-23	641	Catholic Charities	1-888-744-7900 Hotline	http://www.catholiccharitiesny.org/what-we-do/feeding-the-hungry-and-sheltering-the-homeless/feeding-more-information/#emergency_shelters		
-24	642	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
-25	643	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/support_groups.htm		
-26	645	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/safe-horizon-counseling-center-66.html		
-27	645	Sanctuary for Families	(212) 349 - 6009 x. 221	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221		
-28	646	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150		
-29	646	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74		
-30	646	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml		
-31	646	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/substance-abuse-treatment/		
-32	652	Ackerman Institute	(212)-879-4900 extension 122 Intake Office	http://www.ackerman.org/posts/view/107-couples-and-family-therapy---treatment		
-33	652	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/		
-34	651	Reverend Herbert Daughter, The House of the Lord Church	718-596-1991			
+COPY servicesblock_serviceprovider (id, issue_id, name, phone, url, address, map_image, description) FROM stdin;
+2	641	housing help	housing help	housing help	housing help	images/columbiamap.jpg	\N
+5	648	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/counseling--support-groups-56.html			\N
+6	648	Sanctuary for Families	(212)-349-6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221			\N
+7	648	STEPS to End Family Violence	(646)-315-7623 Clinical Supervisor	http://www.egscf.org/services/steps/clinical-services/			\N
+8	648	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
+9	649	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/domestic-violence-53.html#domestic_violence_shelters			\N
+10	649	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=34&Itemid=63			\N
+11	650	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/get-help-8/for-legal-services-15.html			\N
+12	650	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist 	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=140&Itemid=163			\N
+13	650	STEPS to End Family Violence	(646)-315-7605 or (646)-315-7637 for Legal Services	http://www.egscf.org/services/steps/legal-services/			\N
+14	650	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
+15	647	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Parenting.htm			\N
+16	647	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150			\N
+17	647	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74			\N
+18	647	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/			\N
+19	656	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Business.htm			\N
+20	656	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
+21	656	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/employment-services/			\N
+22	641	Coalition for the Homeless	(212)-776-2012	http://www.coalitionforthehomeless.org/programs/crisis-intervention			\N
+23	641	Catholic Charities	1-888-744-7900 Hotline	http://www.catholiccharitiesny.org/what-we-do/feeding-the-hungry-and-sheltering-the-homeless/feeding-more-information/#emergency_shelters			\N
+24	642	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
+25	643	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/support_groups.htm			\N
+26	645	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/safe-horizon-counseling-center-66.html			\N
+27	645	Sanctuary for Families	(212) 349 - 6009 x. 221	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221			\N
+28	646	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150			\N
+29	646	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74			\N
+30	646	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
+31	646	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/substance-abuse-treatment/			\N
+32	652	Ackerman Institute	(212)-879-4900 extension 122 Intake Office	http://www.ackerman.org/posts/view/107-couples-and-family-therapy---treatment			\N
+33	652	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/			\N
+34	651	Reverend Herbert Daughter, The House of the Lord Church	718-596-1991				\N
 \.
 
 
@@ -6958,6 +7153,7 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 32	pastquizanswersblock	0001_initial	2012-01-11 17:23:50.174589-05
 33	pastquizanswersblock	0002_initial	2012-01-11 17:23:50.197406-05
 34	wings_main	0003_auto__add_field_participant_created_on	2012-01-18 23:12:53.500895-05
+35	servicesblock	0008_auto__add_field_serviceprovider_description	2012-01-26 16:08:05.409607-05
 \.
 
 
@@ -7153,7 +7349,7 @@ COPY wings_main_participant (id, id_string, user_id, current_section_id, created
 98	232323	157	62	2012-01-24 15:20:48.219658-05
 99	362611	158	222	2012-01-24 16:12:52.754312-05
 91	98909	150	105	2012-01-23 11:00:21.149128-05
-100	222222	159	162	2012-01-25 16:04:47.509009-05
+100	222222	159	163	2012-01-25 16:04:47.509009-05
 89	555555	148	58	2012-01-19 15:25:16.437965-05
 88	777666	147	222	2012-01-19 14:30:13.546904-05
 97	9999999	156	222	2012-01-24 13:51:54.534303-05
