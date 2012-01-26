@@ -28,7 +28,7 @@
 {% block masthead %}
 	<!-- ###### Site banner ###### -->
 	<div id="header">
-		<!-- Project title/logo --><h1 id="logo_project"><a href="./" title="{{stand.title}}"><span>{{stand.title}}</span></a></h1>	
+		<!-- Project title/logo --><h1 id="logo_project"><a href="{%block header_logo_link%}./{%endblock%}" title="{{stand.title}}"><span>{{stand.title}}</span></a></h1>	
 		{% block standardnav %}
 		<ul id="standardnav">
 

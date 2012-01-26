@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 
+
+{%block header_logo_link%}/login/{%endblock%}
+
 {% block css %}
+    <link rel="stylesheet" type="text/css" href="/media/css/base.css" />
+
 <style type="text/css">
-    /* meh. */
+    /*
+    undo all properties of base.css line 612*/
+
+    #primarynav {
+        position: relative;
+        top: -35px;
+        border: none;
+        height: 30px;
+        margin-top: 0px;
+        padding: 0px;
+    }
 </style>
 
 {%endblock %}
@@ -14,7 +29,8 @@
     </div>
 {%endblock %}
 
-
 {% block footer %}
-<div>footer for standard elements</div>
-{%endblock %}
+    {%include 'wings_main/standard_elements/standard_elements_footer.html' %}
+{% endblock %}
+
+
