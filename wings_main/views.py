@@ -123,9 +123,6 @@ if True:
                 if any(s.block().display_name == 'Image Pullquote' for s in section.pageblock_set.all()):
                     result ['decoration_side'] = 'image_on_right';
                 
-                print [s.block().display_name for s in section.pageblock_set.all()]
-                
-                
                 #this is just working around some inconsistent content in the DB at the last minute in QA.
                 if is_descendent_of (section, hide_title_sections):
                     if any(s.block().display_name == 'Quiz' for s in section.pageblock_set.all()):
