@@ -1369,3 +1369,6 @@ ul.answer_summary li div.past_question_answer_div.user_added {
     margin: 1em;
     width: auto;
 }
+
+
+iframe {border: 0px !important;}
