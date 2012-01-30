@@ -70,7 +70,8 @@ def staff_or_404(view_func):
 
 
 
-""" Wings-specific helper functions called by forest_main page view method. This is view code so it goes here."""
+""" Wings-specific helper functions called by forest_main page view method. This is view code so it goes here. Some of this code is last-minute ad-hoc patches for some some inconsistent content in the DB. """
+
 if True:
 
             def is_image_file(filename):
@@ -110,7 +111,7 @@ if True:
                     'image' :           pick_decoration_image (the_rank),
                     'decoration_side' : pick_decoration_side (the_rank),
                     'really_depressing' : really_depressing_content,
-                    'hide_title' :        is_descendent_of (section, hide_title_sections),
+                    'hide_title' : False,
                 }
                 
                 if not whether_to_show_decorations (section):
@@ -121,6 +122,11 @@ if True:
                 
                 if any(s.block().display_name == 'Image Pullquote' for s in section.pageblock_set.all()):
                     result ['decoration_side'] = 'image_on_right';
+                
+                #this is just working around some inconsistent content in the DB at the last minute in QA.
+                if is_descendent_of (section, hide_title_sections):
+                    if any(s.block().display_name == 'Quiz' for s in section.pageblock_set.all()):
+                        result ['hide_title'] = True;
                 
                 return result
                 
