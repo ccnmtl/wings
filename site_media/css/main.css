@@ -1202,6 +1202,10 @@ ul.answer_summary li div.past_question_answer_div.user_added {
 }
 
 
+.exit_materials_main_content_div div#decoration_image_container {
+    display: none;
+}
+
 .exit_materials_main_content_div .exit_materials_replacement_div {
 
     min-width: 300px;
