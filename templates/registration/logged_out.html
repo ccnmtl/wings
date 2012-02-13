@@ -1,7 +1,15 @@
 {% extends "admin/base_site.html" %}
 {% load i18n %}
 
-{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/wings_main/participant/">{% trans 'Home' %}</a></div>{% endblock %}
+{% block extrahead %}
+  {{ block.super }}
+    <script type="text/javascript">
+        clear_no_admin();
+    </script>
+{%endblock%}
+
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/wings_main/participant/">{% trans 'Log back in' %}</a></div>{% endblock %}
 
 {% block content %}
 

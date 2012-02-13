@@ -15,6 +15,13 @@
 	{% block misc_head %}{% endblock %}
 	{% block css %}{% endblock %}
 	{% block js %}{% endblock %}
+	
+    <script type="text/javascript">
+        window.onpopstate = function(event) {  
+          //alert("(admin)  location: " + document.location + ", state: " + JSON.stringify(event.state));  
+        };  
+    </script>
+	
 	{% block feeds %}{% endblock %}
 	{% if stand %}
 	{% if stand.css %}
