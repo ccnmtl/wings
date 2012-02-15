@@ -1,7 +1,5 @@
 {% extends "admin/base_site.html" %}
 {% load i18n %}
-
-
 {% block extrahead %}
   {{ block.super }}
     <script type="text/javascript">
@@ -29,6 +27,7 @@
                 <tr>
 
                     <td>
+
                                {% if error_message %}
                                     <p class="errornote">{{ error_message }}</p>
                                 {% endif %}
