@@ -13,7 +13,7 @@ def section_rank (section):
 
 class Participant(models.Model):
 
-    id_string =       models.BigIntegerField(unique=True)
+    id_string =       models.BigIntegerField(unique=True, max_length=12,  help_text = 'ID string should contain exactly 12 digits.')
     created_on =      models.DateTimeField(auto_now_add=True, null=False)
     user =            models.ForeignKey(User,blank=True,null=True)
     current_section = models.ForeignKey(Section,blank= True,null=True)
@@ -62,7 +62,7 @@ class Participant(models.Model):
         """" return true if it's ok for a participant to see this page.
         set the current section, also,         """
         
-        #this is really helpful. maybe pass this to the template just in case:
+        #this is really  helpful. maybe pass this to the template just in case:
         #print "OK JUST FOR DEBUGGING:"
         #print new_section.get_absolute_url()
         #print "ALL UNLOCKED IS"

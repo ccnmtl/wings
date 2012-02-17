@@ -1,0 +1,31 @@
+{%ifequal opts.verbose_name 'participant'%}
+    {% ifequal  field.field.name 'id_string' %}
+    <br/>
+        <label class="required" for="id_id_string">Retype ID string please:</label>
+        {{ field.field }}
+    <script language="javascript">
+        django.jQuery('#participant_form').submit(function() {
+                // set the ID of the second text box;
+                django.jQuery(django.jQuery('input.vIntegerField')[1]).attr('id' ,'id_id_string_2');
+                // are the ID strings identical?
+                if ( django.jQuery('#id_id_string')[0].value !==
+                     django.jQuery('#id_id_string_2')[0].value)  {
+                        // ID strings are not identical.
+                        alert ('Please make sure to type identical 12-digit numbers into the two ID string boxes.');
+                        return false;
+                }
+                id_string = django.jQuery('#id_id_string')[0].value;
+                // OK. Values in both fields are identical. Are they exactly 12 digits?
+                if ( ! ( /^[1-9]{12}$/.test(id_string) ) ) {
+                    alert ('Sorry, the ID strings must be identical and contain exactly 12 digits.');
+                    return false;
+                }
+                // identical 12-digit strings. Good.
+                return true;
+            }
+        );
+    </script>
+
+
+    {%endifequal %}
+ {%endifequal%}
