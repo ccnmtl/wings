@@ -13,13 +13,13 @@ def section_rank (section):
 
 class Participant(models.Model):
 
-    id_string =       models.IntegerField(unique=True)
+    id_string =       models.BigIntegerField(unique=True)
     created_on =      models.DateTimeField(auto_now_add=True, null=False)
     user =            models.ForeignKey(User,blank=True,null=True)
     current_section = models.ForeignKey(Section,blank= True,null=True)
     
     def __unicode__(self):
-        return "P%s" % self.id_string
+        return "%s" % self.id_string
     
     #i think if we wrap this in a function the sorting will suddenly work
     def label (self):

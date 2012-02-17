@@ -77,7 +77,7 @@
     <div id="usernav">{% if request.user.is_anonymous %}
         <a href="/accounts/login/?next=/">login</a>
     {% else %}
-        <span id="user_name_span">{% if user.part%}P{%endif%}{{request.user}}</span>
+        <span id="user_name_span">{{request.user}}</span>
         {% if not user.part%}
              [<a href="/logout/">logout</a>]
          {%endif%}

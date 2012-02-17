@@ -648,7 +648,7 @@ border-radius: 10px;
 
 img.decoration_image {
 
-    width: 300px;
+    max-width: 300px;
     height: auto;
 
 }
