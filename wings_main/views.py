@@ -193,26 +193,18 @@ if True:
 
 
 def selenium_teardown():
-    """ axe responses, visits. families."""
-    
-    
+    """ axe everything to do with the test user."""
     users_to_delete, participants_to_delete = [],[]
     submissions_to_delete, responses_to_delete = [],[]
     ssnm_persons_to_delete, narrowed_down_answers_to_delete,  = [],[]
-    participants_to_delete.extend( Participant.objects.filter(id_string='9999999'))
+    
+    participants_to_delete.extend( Participant.objects.filter(id_string=settings.SELENIUM_TEST_USER_ID))
     users_to_delete.extend (p.user for p in participants_to_delete)
-    
     ssnm_persons_to_delete.extend(u.ssnmtreeperson_set.all() for u in users_to_delete)
-    
-    
-    
     narrowed_down_answers_to_delete.extend(u.narroweddownanswer_set.all() for u in users_to_delete)
-    
-    
     for u in users_to_delete:
         for s in u.submission_set.all():
             submissions_to_delete.append (s)
-    
     
     responses_to_delete.extend ( s.response_set.all() for s in submissions_to_delete)
     
@@ -229,8 +221,6 @@ def selenium_teardown():
     for x in users_to_delete:
         x.delete()
 
-
-
 @login_required
 @rendered_with('wings_main/selenium.html')
 def selenium(request,task):
@@ -244,7 +234,7 @@ def selenium(request,task):
     if task =='teardown':
         sel_message = "success"
     
-    return { 'task':task, 'sel_message':sel_message}
+    return { 'task':task, 'sel_message':sel_message, 'selenium_test_user_id':settings.SELENIUM_TEST_USER_ID}
 
 
 

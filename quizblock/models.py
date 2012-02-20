@@ -63,6 +63,11 @@ class Quiz(models.Model):
             #print question.id
             #print question.answer_set.all()
             #print question.user_responses(user)
+            #print question.is_multiple_choice()
+            if question.is_multiple_choice():
+                #print "multiple choice."
+                if len (question.user_responses(user)) == 0:
+                    return False
             #import pdb
             #pdb.set_trace()
             if question.is_short_text() == True or question.is_long_text() == True:

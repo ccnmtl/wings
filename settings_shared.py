@@ -136,7 +136,11 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               
 BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block', 'Past Quiz Answers Block', 'HTML Block', 'Image Pullquote']
 
+#question_id's for questions that don't require an answer for the user to progress to the next page:
 OPTIONAL_QUESTIONS = [222, 235, 162, 168, 240, 242]
+
+#Fake user for the Selenium tests:
+SELENIUM_TEST_USER_ID = 999999999999
 
 if 'sentry.client' in INSTALLED_APPS:
     import logging
