@@ -108,6 +108,10 @@ div.cases
     display: none;
 }
 
+.exit_materials_main_content_div div#decoration_image_container {
+    display: none;
+}
+
 
 .exit_materials_main_content_div .exit_materials_replacement_div {
 

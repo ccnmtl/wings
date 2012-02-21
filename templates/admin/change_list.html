@@ -22,9 +22,26 @@
 {% block extrahead %}
 {{ block.super }}
 {{ media.js }}
+
+<script type="text/javascript">
+    function set_no_admin_and_go(url1, url2) {
+        set_no_admin();
+        window.history.replaceState({'page': url1}, "Launching participant.", url1);
+        window.location = url2;
+    }
+    if (allowed_in_admin() === true ) {
+        //alert ("allowed in admin.")
+    }
+    else {
+        window.location = ('/logout/');
+    }
+</script>
+
+
 {% if action_form %}{% if actions_on_top or actions_on_bottom %}
 <script type="text/javascript">
 (function($) {
+
     $(document).ready(function($) {
         $("tr input.action-select").actions();
     });

@@ -1,5 +1,29 @@
 {% extends "admin/base.html" %}
 {% load i18n %}
+{% block extrahead %}
+    <script type="text/javascript">
+        window.onpopstate = function(event) {  
+          //alert("(admin) location: " + document.location + ", state: " + JSON.stringify(event.state));  
+        };  
+        
+         var no_admin_key = 'no_admin';
+         var no_admin_obj = {'no_admin':'no_admin'};
+         function allowed_in_admin() {
+            if (localStorage [no_admin_key] === null || typeof (localStorage [no_admin_key] ) ==="undefined") {
+                return true;
+            } else {
+                return false;
+            }   
+         }
+         
+         function set_no_admin() {
+            localStorage.setItem(no_admin_key, no_admin_obj);
+         }
+         function clear_no_admin() {
+            localStorage.clear();
+         }
+    </script>
+{%endblock%}
 
 {% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
 

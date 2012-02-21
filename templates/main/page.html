@@ -77,8 +77,10 @@
     jQuery (focus_on_first_textarea_or_text_input);
 </script>
     {%if request.user.part %}
-         {% if request.user.part.current_section.id == section.id  %}
-		{%if request.user.part.label != "P9999999" %}
+        {%if request.user.part.current_section.id == section.id  %}
+        
+        {{request.user.part.is_test}}
+		{%if not request.user.part.is_test %}
              <script type="text/javascript" >
                 function hide_next () {
                     jQuery('div.content-nav a#next').hide();

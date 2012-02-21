@@ -1,45 +1,84 @@
-<style type="text/css">   
-    /* Help: */
+<style type="text/css">
+div#secondary_navigation {
+    display: none;
+}
 
-    .helpblock-container ul {
-        list-style-type:none;
-    }
+.helpblock-container .audio_controls,
+.helpblock-container .jp-stop-li {
+    display:none;
+}
+.helpblock-container ul  {
+    list-style-type:none;
+    margin: 0;
+}
+.helpblock-container {
+    position: relative;
+    width: 100px;
+    height: 60px;
+    padding: 5px;
+    border: none;
+}
 
-    div.help_block_box {
-         background-color: #5e446c;
-         float: right;        
-        -webkit-border-radius: 7px;
-        -moz-border-radius: 7px;
-        border-radius: 7px;
-        width: 100%;     
-        margin: 0;
-        padding: 10px;
-        color: #fff;
-    }
-  
-   #content .content-nav a.show_help_link, #content .content-nav a.hide_help_link {
-        background-position: -9px -2px !important;
-        color: transparent !important;
-        float: right !important;
-        width: 54px !important;
-        margin: 0 10px !important;
-    }
-    #content .content-nav a.show_help_link {
-        background-image: url('/site_media/img/help_button_bg.png') !important; 
-    }
-    #content .content-nav a.hide_help_link {
-        background-image: url('/site_media/img/close_help_button_bg.png') !important;
-        height: 57px;
-        border-radius: 10px 10px 0 0;
-    }
-    
-      .helpblock-container.audioblock_div {
-        margin: -10px 10px 0 0;
-        float: left;
-        width: 100px;
-        height: 60px;
-        padding: 5px
-         border: none;
-    }
-    
+#content .content-nav .helpblock-container li a.jp-play, 
+#content .content-nav .helpblock-container li a.jp-pause,  
+#content .content-nav .helpblock-container li a.jp-rewind
+{
+    color: transparent;
+    background-position: 0px 0px;
+    width: 44px;
+    height: 45px;
+    float: right;
+    margin-left: 5px;
+}
+
+#content .content-nav .helpblock-container  li a.jp-play {
+    background-image: url('/site_media/img/audio_button_bg.png');
+}
+
+#content .content-nav .helpblock-container li a.jp-pause {
+    background-image: url('/site_media/img/pause_audio_button_bg.png');
+}
+
+#content .content-nav .helpblock-container li a.jp-rewind {
+    background-image: url('/site_media/img/rewind_audio_button_bg.png');
+    display: none ;
+}
+
+#content .content-nav a.show_help_link, #content .content-nav a.hide_help_link {
+    background-position: -9px -2px !important;
+    color: transparent !important;
+    float: right !important;
+    width: 54px !important;
+    margin: 0 10px !important;
+}
+
+#content .content-nav a.show_help_link {
+    background-image: url('/site_media/img/help_button_bg.png') !important; 
+}
+
+#content .content-nav a.hide_help_link {
+    background-image: url('/site_media/img/close_help_button_bg.png') !important;
+    height: 57px;
+    border-radius: 10px 10px 0 0;
+}
+
+div.help_block_box {
+     background-color: #5e446c;
+     float: right;        
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    width: 100%;     
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+}
+
+div.help_block_transcript_div {
+    position: relative;
+    width: 550px;
+    top : -60px;
+    left: 120px;
+
+}
 </style>

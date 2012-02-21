@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 709, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 773, true);
 
 
 --
@@ -260,7 +260,7 @@ ALTER SEQUENCE auth_user_groups_id_seq OWNED BY auth_user_groups.id;
 -- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_groups_id_seq', 93, true);
+SELECT pg_catalog.setval('auth_user_groups_id_seq', 94, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 163, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 167, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 372, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 410, true);
 
 
 --
@@ -910,7 +910,7 @@ ALTER SEQUENCE helpblock_helpblock_id_seq OWNED BY helpblock_helpblock.id;
 -- Name: helpblock_helpblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('helpblock_helpblock_id_seq', 82, true);
+SELECT pg_catalog.setval('helpblock_helpblock_id_seq', 90, true);
 
 
 --
@@ -1174,7 +1174,7 @@ ALTER SEQUENCE pageblocks_htmlblock_id_seq OWNED BY pageblocks_htmlblock.id;
 -- Name: pageblocks_htmlblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 39, true);
+SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 44, true);
 
 
 --
@@ -1286,7 +1286,7 @@ ALTER SEQUENCE pageblocks_imagepullquoteblock_id_seq OWNED BY pageblocks_imagepu
 -- Name: pageblocks_imagepullquoteblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_imagepullquoteblock_id_seq', 1, true);
+SELECT pg_catalog.setval('pageblocks_imagepullquoteblock_id_seq', 7, true);
 
 
 --
@@ -1437,7 +1437,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 501, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 520, true);
 
 
 --
@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 3320, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 3428, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 3272, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 3375, true);
 
 
 --
@@ -1788,7 +1788,7 @@ ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_na
 -- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 28, true);
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 32, true);
 
 
 --
@@ -1830,7 +1830,7 @@ ALTER SEQUENCE servicesblock_serviceprovider_id_seq OWNED BY servicesblock_servi
 -- Name: servicesblock_serviceprovider_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_serviceprovider_id_seq', 34, true);
+SELECT pg_catalog.setval('servicesblock_serviceprovider_id_seq', 35, true);
 
 
 --
@@ -2129,7 +2129,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 185, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 200, true);
 
 
 --
@@ -2166,7 +2166,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 130, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 140, true);
 
 
 --
@@ -2317,7 +2317,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 103, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 108, true);
 
 
 --
@@ -2834,23 +2834,23 @@ COPY audioblock_audioblock (id, description, audio_file) FROM stdin;
 91		audio_file/2012/01/12/steps_to_increase_support.mp3
 92		audio_file/2012/01/12/goal_setting.mp3
 93		audio_file/2012/01/12/issues_that_trigger_conflict.mp3
-95		
-96		
-97		
-98		
-99		
-100		
-101		
-102		
-103		
-104		
-105		
-106		
 108		audio_file/2012/01/23/reasons_to_reduce_conflict_wrapup.mp3
 107		audio_file/2012/01/23/intro_to_events_over_past_year.mp3
 94		audio_file/2012/01/23/resources_to_help_you_towards_your_goals.mp3
 110		audio_file/2012/01/24/strategies_during_a_violent_incident-9_5.mp3
 111		audio_file/2012/01/24/reasons_to_reduce_conflict_intro.mp3
+95		audio_file/2012/02/13/drill_down_one.mp3
+96		audio_file/2012/02/13/drill_down_two.mp3
+98		audio_file/2012/02/15/getting_a_copy.mp3
+97		audio_file/2012/02/15/action_plan.mp3
+99		audio_file/2012/02/15/wrap_up_and_goodbye.mp3
+100		audio_file/2012/02/15/reasons_to_reduce_conflict_1.mp3
+101		audio_file/2012/02/15/reasons_to_reduce_conflict_2.mp3
+102		audio_file/2012/02/15/reasons_to_reduce_conflict_3.mp3
+103		audio_file/2012/02/15/reasons_to_reduce_conflict_4.mp3
+104		audio_file/2012/02/15/reasons_to_reduce_conflict_5.mp3
+105		audio_file/2012/02/15/reasons_to_reduce_conflict_6.mp3
+106		audio_file/2012/02/15/reasons_to_reduce_conflict_7.mp3
 \.
 
 
@@ -2882,8 +2882,8 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY auth_message (id, user_id, message) FROM stdin;
-703	162	Logged in!
-578	109	Logged in!
+771	124	Logged in!
+728	162	Logged in!
 \.
 
 
@@ -3069,23 +3069,27 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 2	jb2410	Jonah	Bossewitch	jb2410@columbia.edu	!	t	t	t	2011-09-15 17:53:14.469942-04	2011-06-01 14:35:19.53697-04
 1	anp8	Anders	Pearson	anp8@columbia.edu	!	t	t	t	2011-10-24 11:37:17.52734-04	2011-05-18 15:57:36.886786-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
-15	sas2268	Stacey	Shaw	sas2268@columbia.edu	sha1$49b01$88dd6a0e4ea581a0130900aeea2c2f4d314c9b55	t	t	f	2012-01-27 11:31:49.297771-05	2011-10-17 11:43:47-04
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-27 16:30:47.692487-05	2011-06-02 15:22:48.818126-04
-124	casi				sha1$92c83$216ed4e0c9a87d9d46f583a6763f11470a8cd2f5	t	t	t	2012-01-05 16:49:45.475507-05	2012-01-05 16:44:20-05
-161	2223334				!	f	t	f	2012-01-30 10:31:53.52278-05	2012-01-27 16:21:39.64441-05
-157	232323				!	f	t	f	2012-01-24 15:20:50.722742-05	2012-01-24 15:20:50.714261-05
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-01-23 11:10:53.294858-05	2011-12-09 15:38:04-05
+166	1234				!	f	t	f	2012-02-13 15:52:01.255877-05	2012-02-13 15:41:15.793467-05
+15	sas2268	Stacey	Shaw	sas2268@columbia.edu	sha1$49b01$88dd6a0e4ea581a0130900aeea2c2f4d314c9b55	t	t	f	2012-02-14 12:32:18.418388-05	2011-10-17 11:43:47-04
 158	362611				!	f	t	f	2012-01-24 16:13:18.097537-05	2012-01-24 16:13:18.080986-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-01-30 10:36:43.863728-05	2011-10-11 11:39:54-04
-162	marc				sha1$7f052$028ed2e00d03389beb5e1891263f17a158995237	t	t	t	2012-01-30 10:39:04.168271-05	2012-01-30 10:16:57-05
-163	90210				!	f	t	f	2012-01-30 10:39:07.956349-05	2012-01-30 10:34:58.057376-05
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-02-15 11:26:07.829497-05	2011-12-09 15:38:04-05
+167	363636				!	f	t	f	2012-02-15 12:44:25.155707-05	2012-02-15 11:39:28.871317-05
 159	222222				!	f	t	f	2012-01-26 13:34:48.902106-05	2012-01-25 16:04:50.765316-05
+124	casi				sha1$92c83$216ed4e0c9a87d9d46f583a6763f11470a8cd2f5	t	t	f	2012-02-15 11:11:20-05	2012-01-05 16:44:20-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-02-15 15:56:36.855523-05	2011-10-11 11:39:54-04
 160	9999999				!	f	t	f	2012-01-26 18:43:12.736437-05	2012-01-26 18:43:12.722902-05
+164	1236547				!	f	t	f	2012-02-01 12:09:28.266541-05	2012-02-01 12:09:28.247205-05
+163	90210				!	f	t	f	2012-02-01 12:09:55.39891-05	2012-01-30 10:34:58.057376-05
+162	marc				sha1$7f052$028ed2e00d03389beb5e1891263f17a158995237	t	t	t	2012-02-02 10:28:25.869758-05	2012-01-30 10:16:57-05
+165	123456789				!	f	t	f	2012-02-02 14:06:41.820228-05	2012-02-01 15:06:19.655634-05
+161	2223334				!	f	t	f	2012-02-09 14:58:47.508533-05	2012-01-27 16:21:39.64441-05
+157	232323				!	f	t	f	2012-02-09 14:59:14.950181-05	2012-01-24 15:20:50.714261-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
 150	98909				!	f	t	f	2012-01-23 12:46:17.624886-05	2012-01-23 11:00:24.350951-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-02-17 11:05:36.311566-05	2011-06-02 15:22:04-04
 143	123				!	f	t	f	2012-01-18 18:58:23.148606-05	2012-01-18 18:15:33.078081-05
 147	777666				!	f	t	f	2012-01-19 15:19:27.943056-05	2012-01-19 14:30:15.79484-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-01-26 17:52:43.198188-05	2011-06-02 15:22:04-04
 148	555555				!	f	t	f	2012-01-20 19:06:28.799662-05	2012-01-19 15:25:18.650894-05
 \.
 
@@ -3105,6 +3109,7 @@ COPY auth_user_groups (id, user_id, group_id) FROM stdin;
 91	14	49
 92	16	49
 93	15	49
+94	124	49
 34	2	4
 38	11	2
 44	11	4
@@ -3674,6 +3679,44 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 370	2012-01-30 10:16:57.260514-05	13	3	162	marc	1	
 371	2012-01-30 10:17:16.01183-05	13	3	162	marc	2	Changed is_staff and is_superuser.
 372	2012-01-30 10:33:07.465472-05	162	42	103	P90210	1	
+373	2012-01-30 15:19:45.144084-05	15	42	103	P90210	2	No fields changed.
+374	2012-02-01 12:05:53.866161-05	13	42	104	P1236547	1	
+375	2012-02-01 15:06:10.736634-05	5	42	105	P123456789	1	
+376	2012-02-13 09:59:10.541789-05	13	53	5	ServiceProvider object	2	Changed description.
+377	2012-02-13 09:59:30.779333-05	13	53	6	ServiceProvider object	2	Changed description.
+378	2012-02-13 09:59:44.129401-05	13	53	7	ServiceProvider object	2	Changed description.
+379	2012-02-13 09:59:56.64972-05	13	53	8	ServiceProvider object	2	Changed description.
+380	2012-02-13 10:00:17.787746-05	13	53	9	ServiceProvider object	2	Changed description.
+381	2012-02-13 10:00:36.519737-05	13	53	10	ServiceProvider object	2	Changed description.
+382	2012-02-13 10:00:57.709726-05	13	53	13	ServiceProvider object	2	Changed description.
+383	2012-02-13 10:01:26.139123-05	13	53	11	ServiceProvider object	2	Changed description.
+384	2012-02-13 10:01:47.709755-05	13	53	12	ServiceProvider object	2	Changed description.
+385	2012-02-13 10:02:12.971227-05	13	53	14	ServiceProvider object	2	Changed description.
+386	2012-02-13 10:02:29.239911-05	13	53	15	ServiceProvider object	2	Changed description.
+387	2012-02-13 10:04:46.561251-05	13	53	16	ServiceProvider object	2	Changed description.
+388	2012-02-13 10:05:14.245419-05	13	53	17	ServiceProvider object	2	Changed description.
+389	2012-02-13 10:05:30.810867-05	13	53	18	ServiceProvider object	2	Changed description.
+390	2012-02-13 10:06:02.907769-05	13	53	34	ServiceProvider object	2	Changed address.
+391	2012-02-13 10:06:23.081759-05	13	53	19	ServiceProvider object	2	Changed description.
+392	2012-02-13 10:06:43.211987-05	13	53	20	ServiceProvider object	2	Changed description.
+393	2012-02-13 10:07:02.112579-05	13	53	21	ServiceProvider object	2	Changed description.
+394	2012-02-13 10:07:29.372377-05	13	53	22	ServiceProvider object	2	Changed description.
+395	2012-02-13 10:07:44.772853-05	13	53	23	ServiceProvider object	2	Changed description.
+396	2012-02-13 10:08:04.813397-05	13	53	24	ServiceProvider object	2	Changed description.
+397	2012-02-13 10:08:16.182142-05	13	53	25	ServiceProvider object	2	Changed description.
+398	2012-02-13 10:09:12.786747-05	13	53	35	ServiceProvider object	1	
+399	2012-02-13 10:10:28.323175-05	13	53	26	ServiceProvider object	2	Changed name, phone and description.
+400	2012-02-13 10:10:48.213251-05	13	53	27	ServiceProvider object	2	Changed description.
+401	2012-02-13 10:11:15.655493-05	13	53	28	ServiceProvider object	2	Changed description.
+402	2012-02-13 10:11:37.205786-05	13	53	29	ServiceProvider object	2	Changed description.
+403	2012-02-13 10:11:51.674792-05	13	53	30	ServiceProvider object	2	Changed description.
+404	2012-02-13 10:12:07.434788-05	13	53	31	ServiceProvider object	2	Changed description.
+405	2012-02-13 10:12:23.554131-05	13	53	32	ServiceProvider object	2	Changed description.
+406	2012-02-13 10:12:36.124373-05	13	53	33	ServiceProvider object	2	Changed description.
+407	2012-02-13 15:41:13.084466-05	5	42	106	P1234	1	
+408	2012-02-15 10:30:57.116491-05	109	42	107	P88999777	1	
+409	2012-02-15 11:39:25.260404-05	13	42	108	P363636	1	
+410	2012-02-15 15:41:52.836743-05	109	3	124	casi	2	Changed is_superuser and groups.
 \.
 
 
@@ -3773,32 +3816,57 @@ a9a7eecdb4ef1e4d55c1586e98485e6e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc
 10637c972289c60d680b0a2a86f9d2c6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 09:03:15.437752-05
 e4c428e86db805bf1dd55a03f88b349e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 10:31:28.107628-05
 8b14762b7eeb6a4c3def489572e1027d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKKAHUuY2YyZTQwMTFjZTc2NGQyNGJk\nOTk0ZjYwNmYzZDQxMDA=\n	2012-02-01 15:59:29.01451-05
+4dcd05c998cc190b60651cc1289d1402	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-15 21:05:30.175356-05
 35f2393bb1f19e600af24ac4b64e75e9	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-02 14:32:21.043642-05
 06976173f51475d2c3b0df00c61d5270	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-02 16:12:43.168559-05
+9105cb876c4cebfde9420197ab59eb0b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw91LmYxMWJiMTMyM2ZiNzdlYjkwM2Qx\nNGU2MTdkZmE2MmNh\n	2012-02-16 10:56:18.456393-05
 5553e5a86fd4eac58d7f8bdc7adced3e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-07 11:23:07.029008-05
+bee7bbd7f550cd7be5403adad95f4994	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-16 13:20:45.688529-05
 57b013a823cb7528b9a0deac196cd9d9	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES5t1LmRjZjAyZDBmYTk3NWM2MGI5Y2U4\nMmU0YWYwYTNkYmZk\n	2012-02-07 13:40:52.646435-05
+fac235bae5367f6bf298279cdaf2eea2	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES6V1Ljc3Y2FhNzdhNzY5YTVkZTE5MzI4\nM2MwMzM0ZGY4ZTc5\n	2012-02-16 14:06:41.849888-05
 dd7c12fc78bebc9bd32de75656fd161b	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-05 00:19:29.994525-05
 0e2f87682ba885aa4a7b425460f7f1f4	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-05 20:24:17.716761-05
-dfc9edd211458fc746dc223db072c64e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-07 13:53:28.449711-05
+b2c3db7607a8449a991e184ad4007dbf	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-17 10:04:53.142559-05
 3dc52afa9eeec65b9ff9a4c7200fea82	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKgAHUuMGNmYWE1ZjEyZTRhODQwZDQz\nMmI3NGY1YmJiYTcyNDg=\n	2012-02-09 18:43:12.746502-05
 5dd078296b4d669ccebba4f1b5222420	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw91LmYxMWJiMTMyM2ZiNzdlYjkwM2Qx\nNGU2MTdkZmE2MmNh\n	2012-02-10 11:31:49.325585-05
+452298d6870c6059044b6afad581f71c	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-18 11:23:26.214182-05
+1c0ddb55b023d76021f16c5eb502da1a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-19 19:03:03.721673-05
+5ed201ed78a5dbebc2cdd12f1754d084	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-20 04:51:52.552319-05
+e8c36822be21de3852e3e764ccdf7d73	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-02-29 11:26:07.84265-05
+1b4344198f333ba2145c3676e79bc455	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-23 16:46:21.619408-05
+b06bea18267d0cfb2936d5e3e65d36e6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-25 17:33:44.353218-05
+685afaf76989b08bbaaf62d62a400ae3	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-26 02:57:00.393425-05
+8763153ea10507f3f62df51432acaea6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-29 11:50:44.972028-05
 45b17204f63c67ff1301bcdf28dfeb0f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-09 16:30:23.417829-05
 38165a56bd4c16fbf71ece8f675c9ef4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKNAHUuZGQ3NDFlMDc0MDViNTY4OGMw\nNjY4MGY4ZTA5ZjYwOWE=\n	2012-02-01 17:17:02.394192-05
 713e7cc2fb7b992ba133b7d8fac71da6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-01 11:07:15.14714-05
+16d7bbac21f48c909ec2f88730da5e56	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES6J1LjQzZWUwMzg0YTk2ZWQwZGE5ODkz\nYzMzMmMyNTdkZTUz\n	2012-02-16 10:28:25.882499-05
 0a6992a3cb3157c7a5d5e691b40ad3d1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-10 16:30:47.702863-05
 ec00b594470fc6158d8efe4e730633c6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 13:03:25.312098-05
-a9abff31346d7f0954692dd4c8718c14	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESxF1LmRmNDAzMzgyNDQyYjg2ODhiZGY1\nOGJhMzVjNjFmMjYy\n	2012-02-03 11:09:26.803495-05
-6a0e97772c88d33598876772ab37ebc3	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES6N1LjYwNzg1M2FhYjFlNWIxMTY4NDRm\nMmIzNTA0YjE5NTZk\n	2012-02-13 10:39:07.978693-05
+5baa57f303ec50132c303d7e293f473f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-02-29 10:30:22.436297-05
 064606c07841fce83c66915b48139c00	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKVAHUuYTM2MDExYWQxNTg2YmIyMjBi\nMjdlOWNiYjg1ZjY2YjQ=\n	2012-02-03 20:23:16.602213-05
+83672c362e857ff1c4f3a39bce16a150	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-29 11:13:20.344915-05
+64cef11cdac956179a0e43b0c6cfcb3a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES6d1Ljk3YzkyZmQ0MDM0MTI1YzU3Y2E2\nNzBjMWRjMzc0YjAy\n	2012-02-29 12:44:25.181275-05
 59985e4e9ffed239d736159c12ed2df0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-07 11:12:10.558204-05
+357738b8a952bfccdfe1f7f0270842c6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-17 10:04:54.225013-05
 8dd1cdccef506dbfaa0cba3541c44d72	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 13:07:18.15695-05
 12a49e9bd4a7f89f0e60bcd440357868	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-07 17:01:37.753212-05
+b11c083d26437f40f48f055a06023958	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-27 19:08:45.314108-05
+dccfbed2bbb6dc39dc932b771669d622	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3x1LjA0ZGRiM2ZmZWMxYTE3YThjYWJi\nNmJhZWZiMjZiYmNl\n	2012-02-28 12:22:06.038051-05
 480dde54ebff66a892b0c30f6124713f	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-08 18:22:25.521939-05
-077042b18baa1c85df0c3dc30eb25b6b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKYAHUuMjg5YWI1NWVjNDhjYzNlZGU5\nYWVhYzgwYzIwZWI3NTI=\n	2012-02-06 11:11:12.871649-05
+ec5bed3bb6697450769d475313d9ee9c	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-14 13:50:00.98055-05
+c7176b97b2effccfde77d8729af95f5d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw91LmYxMWJiMTMyM2ZiNzdlYjkwM2Qx\nNGU2MTdkZmE2MmNh\n	2012-02-28 12:32:18.43301-05
+ca73f0920b48d97da9bfd546efc945e7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-29 15:56:36.867229-05
+6b691a9b0e2c6e8331997254d9503dd3	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-03-02 11:05:36.322068-05
+34aacb45d7a7e78d8e08b8b615b7c840	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-15 14:28:54.10541-05
+44bee5ced1621983de4595b4594b30c4	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVRJfYXV0aF91c2VyX2JhY2tlbmRxBFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxBVUNX2F1dGhfdXNlcl9pZHEG\nS6F1Ljg0YzYxYTAyMGJkOTFhOGE0NTA4ZDczNTg3YWJjOWI0\n	2012-02-13 12:18:05.937247-05
+9d47f93a2b4b367d7b4d0b7c8cf7a7dc	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-13 14:38:06.398184-05
+86ec943fe2802b1dfcfffdccaa007227	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-13 15:38:28.278832-05
+62348158f013a745e91b3523adaa4403	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-13 17:12:06.736015-05
+4793492561904ed4ab67381f7c69531b	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-14 11:03:53.525542-05
 21510b144baf661667470aac3526fb56	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4d1LmJjODRjZWU5NGM3NTQ0MmE5ZTc2\nYzFiMzQxMzE3ZWU3\n	2012-02-01 10:46:17.238026-05
-720122752b2e20ebafdbf29e53de1192	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-09 17:52:43.209454-05
+ee3d82bf04c8eff6f06a729b48ff2f66	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-02-29 10:28:53.837786-05
 9bd0758a0a1cbb2b346b8e156a9901df	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 12:50:16.745078-05
-252e51b8663e9ef15dccb43abb3ae905	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-13 10:36:43.873088-05
 \.
 
 
@@ -3880,7 +3948,6 @@ COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
 16	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 17	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 18	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-2	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 3	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 4	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 5	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
@@ -3903,10 +3970,9 @@ COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
 25	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 26	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 27	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-28	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-29	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-30	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+89	Can't Play the Video?\r\n\r\nTo play: click on the image. \r\nTo stop: click the pause button in the lower left area of the video\r\nplayer.	audio_file/2012/02/15/video_help.mp3
 32	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+90	Can't Play the Video?\r\n\r\nTo play: click on the image. \r\nTo stop: click the pause button in the lower left area of the video\r\nplayer.	audio_file/2012/02/15/video_help.mp3
 33	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 34	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 35	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
@@ -3916,10 +3982,6 @@ COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
 39	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 40	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 41	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-42	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-43	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-44	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-45	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 46	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 47	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 48	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
@@ -3930,10 +3992,7 @@ COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
 53	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 54	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 55	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-56	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 57	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-58	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-59	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 60	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 61	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 62	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
@@ -3947,8 +4006,6 @@ COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
 70	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 71	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 72	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-73	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-74	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 75	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 76	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 77	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
@@ -3956,8 +4013,13 @@ COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
 79	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 80	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 81	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-82	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 31	Stuck on This Screen?\r\n\r\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
+83	Can't Add Names to the Tree?\r\n\r\nTo write the names on the tree, click in the white oval and then use the keyboard to type.	audio_file/2012/02/13/tree_page_1_help.mp3
+84	What Are These Hearts?\r\n\r\nClick on a bird to either add or remove a heart. Adding a pink heart shows that the person whose name is on the bird can provide you with practical support.	audio_file/2012/02/13/tree_page_2_help.mp3
+85	What Are These Hearts?\r\n\r\nClick on a bird to either add or remove a heart.  Adding a blue heart shows that the person whose name is on the bird can provide you with emotional support.	audio_file/2012/02/13/tree_page_3_help.mp3
+86	Stuck on This Screen?\r\n\r\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/02/13/stuck_on_screen_help.mp3
+87	Can't Play the Video?\r\n\r\nTo play: click on the image. \r\nTo stop: click the pause button in the lower left area of the video\r\nplayer.	audio_file/2012/02/15/video_help.mp3
+88	Can't Play the Video?\r\n\r\nTo play: click on the image. \r\nTo stop: click the pause button in the lower left area of the video\r\nplayer.	audio_file/2012/02/15/video_help.mp3
 \.
 
 
@@ -4087,11 +4149,14 @@ COPY pageblocks_htmlblock (id, html) FROM stdin;
 30	<div class="video"><iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_intro_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_intro_stories.jpg&protection=5096ae1f9761051284497ef50a506e5e30926f07" ></iframe></div>
 31	<div class="video"><iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_hearing_other_stories.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_hearing_other_stories.jpg&protection=b95a7cb4c12126cc6d355ae0d0c36231e5e6d204" ></iframe></div>\r\n
 28	<div class="tree-instructions">\r\n<h3>Instructions: Add People</h3>\r\n<p>\r\nwrite the names of one to five people you trust onto the birds on this tree.\r\n</p>\r\n</div>
-33	<p>Thank you so much for meeting with us today and taking the time to discuss this important issue that affects many women. We hope that the information we have shared will be helpful for you and for other women you know who face relationship challenges.</p>\r\n<p>Ending the cycle of violence is not easy. Sometimes partners can work together to make changes and ensure their relationship will be respectful and safe. Sometimes one partner needs to end the relationship in order to keep herself or her children safe. This is a personal decision, but having support can help women spread their wings and choose safety.</p>\r\n<p>We hope you can find support and power within yourself, and also be a support to others.</p>\r\n<p>Thank you again for your time and your participation. Please check in with the caseworker on the way out so you can pick up any documents you want to take home, or provide an address where these documents can be sent to you.</p>\r\n\r\n<p>If you are done, click the button below.</p>\r\n<br />\r\n<div class="video"><a class="bigbutton" href="/service-referrals/getting-a-copy-of-your-plan/" >Done</a></div>
+33	<p>Thank you so much for meeting with us today and taking the time to discuss this important issue that affects many women. We hope that the information we have shared will be helpful for you and for other women you know who face relationship challenges.</p>\r\n<p>Reducing conflict is not easy. Sometimes partners can work together to make changes and ensure their relationship will be respectful and safe. Sometimes one partner needs to end the relationship in order to keep herself or her children safe. This is a personal decision, but having support can help women spread their wings and choose safety.</p>\r\n<p>We hope you can find support and power within yourself, and also be a support to others.</p>\r\n<p>Thank you again for your time and your participation. Please check in with the caseworker on the way out so you can pick up any documents you want to take home, or provide an address where these documents can be sent to you.</p>\r\n\r\n<p>If you are done, click the button below.</p>\r\n<br />\r\n<div class="video"><a class="bigbutton" href="/service-referrals/getting-a-copy-of-your-plan/" >Done</a></div>
 32	<iframe width="480" height="296" src="https://surelink.ccnmtl.columbia.edu/video/?player=v4&file=secure/courses/wings_proud_of_what_i_am_now.flv&width=480&height=272&poster=http://ccnmtl.columbia.edu/broadcast/posters/secure/courses/wings_proud_of_what_i_am_now.jpg&protection=d5ee5608050004ea8d07ebc153fc26f5856da89f" ></iframe>\r\n
 35	<!-- just adding this to turn off the image -->
 36	<div class="image_on_left">\r\n<div id="decoration_image_container">\r\n<img class="decoration_image" src="/site_media/img/cycleofviolence-small.jpg">\r\n</div>\r\n<p>This chart shows what many women experience when in abusive relationships. First, tension builds and the partner becomes more controlling. Then, the partner may feel he or she loses control and an abusive incident occurs. Afterward, the partner apologizes and promises to change. Often in a situation like this the woman has mixed feelings, and may feel that she is walking on eggshells while others may feel like it's never going to happen again.</p>\r\n</div>
 37	<div class="image_on_left">\r\n<div id="decoration_image_container">\r\n<img class="decoration_image" src="/site_media/img/powerandcontrol-small.jpg">\r\n</div>\r\n<p>Intimate partners may hurt each other in different ways. All of these types of violence or abuse are often related to power and control. Such violence can occur from intimate partners who are female or male, and within relationships that are long-term or casual.</p>\r\n</div>
+40	<!-- just adding this to turn off the image -->
+42	<!-- just adding this to turn off the image -->
+43	<!-- just adding this to turn off the image -->
 \.
 
 
@@ -4126,6 +4191,12 @@ COPY pageblocks_imageblock (id, image, caption, alt) FROM stdin;
 
 COPY pageblocks_imagepullquoteblock (id, image, caption, alt) FROM stdin;
 1	images/2012/01/26/purse-metrocard_jpg_.jpg		Just use an Image Pull Quote block and everything should now work nicely.
+2	images/2012/02/13/charleneandjoy.jpg		
+3	images/2012/02/17/bird-screen.jpg		
+4	images/2012/02/17/bird-screen.jpg		
+5	images/2012/02/17/bird-screen.jpg		
+6	images/2012/02/17/bird-screen.jpg		
+7	images/2012/02/17/911small.jpg		
 \.
 
 
@@ -4156,6 +4227,7 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 11	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non mollis enim. Vestibulum est massa, gravida ut bibendum eget, porttitor vitae odio. Pellentesque mattis facilisis enim nec consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam in erat justo, eu varius velit. Nullam nec risus eget arcu mattis pulvinar eget sed augue. Cras hendrerit dolor ut magna iaculis ac accumsan diam pulvinar. Morbi hendrerit ligula ac ligula tempus vulputate. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque dictum sollicitudin libero, sed venenatis dolor condimentum ut. Vestibulum lobortis nibh id libero eleifend non blandit ipsum mattis.\r\n\r\nFusce ut velit scelerisque est elementum viverra eget id lectus. Etiam lacinia pretium quam id semper. In tempor laoreet justo sed tincidunt. Ut blandit lobortis scelerisque. Donec viverra mattis lacus a tristique. Integer eu lorem eget libero adipiscing ornare. Vivamus suscipit lacinia auctor. Sed in quam massa. Cras venenatis venenatis nibh porta consequat. Vivamus ac mauris felis. Morbi gravida purus quis ante iaculis malesuada. Proin mollis enim ac nulla dignissim aliquam sed sed purus. Nullam quis dapibus quam. Duis arcu risus, rutrum quis tristique sed, imperdiet et mi.\r\n\r\nVestibulum lobortis adipiscing semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur placerat nisi a dolor porttitor malesuada. Quisque commodo consectetur augue, sit amet vulputate dui scelerisque sit amet. Nulla facilisi. Vestibulum risus mi, aliquet vitae vestibulum eu, gravida eget est. Mauris id consequat nunc. Nunc cursus facilisis dolor sed aliquet. Duis in mauris arcu, non rhoncus diam. Fusce blandit sollicitudin sodales. Ut quis ullamcorper nulla. Aenean sagittis pharetra ante, sed dignissim nibh facilisis ut. Praesent viverra feugiat accumsan. Duis id arcu vel lectus commodo feugiat nec eget elit. Sed convallis porttitor mauris, eu pellentesque enim rhoncus ac. Sed vitae ante non arcu elementum consequat ut a velit. Nam mollis nunc a enim volutpat tincidunt sed vel libero. Cras et ipsum eu justo euismod posuere. Nullam ac congue diam. Proin vitae orci sit amet diam pellentesque dapibus vitae sit amet neque.\r\n\r\nMorbi vel mi nec tortor sollicitudin laoreet vitae vitae arcu. Quisque fermentum, massa in euismod posuere, magna purus molestie risus, quis commodo lorem nunc vitae orci. In nec orci eget mauris pretium cursus. Integer nisl sapien, pellentesque vitae sollicitudin eu, semper at eros. Sed in sem sem, quis sodales ligula. Phasellus ac ligula ante, et aliquet sem. Nam justo nunc, fermentum a interdum in, placerat non magna. Vestibulum ullamcorper, nulla eu iaculis varius, enim lorem suscipit metus, at pretium elit ipsum mattis elit. Vivamus consequat ligula a augue volutpat semper. Curabitur nec euismod nunc. Maecenas vel orci enim. Phasellus vel urna sed nisi suscipit adipiscing in at libero. Aliquam sed nibh urna. Aliquam id dolor lorem, quis lobortis enim.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur pretium cursus pellentesque. In auctor tempor viverra. Nulla facilisi. Duis elit nibh, eleifend a tempor id, suscipit sit amet felis. Pellentesque augue nisi, ultricies sodales viverra nec, ornare sed lectus. Donec non quam fermentum elit lobortis venenatis. Ut molestie, nulla sed rutrum eleifend, arcu orci imperdiet augue, id venenatis arcu leo sit amet leo. In hac habitasse platea dictumst. Phasellus fermentum commodo magna. Nulla facilisi.\r\n
 12	Early childhood caries are a serious public oral health problem affected by various socioeconomic and cultural factors. This module aims to enhance dentists’ understanding of the social work profession to provide an option.................
 13	<em>NOTE to cindy: content seems incomplete from the document I used - make sure to go back and revise.</em><br><br>\r\n<strong>1. Patient Recruitment via Community Awareness</strong>\r\n<p>Social workers often visit community centers, soup kitchens, schools, gyms, etc. to present information in an interactive and engaging manner. They can provide psychoeducational workshops to parents and children in the community to explain the importance of oral health and maintaining good dental hygiene. By modeling healthy oral health practices with parents and children, families are more likely to develop self-efficacy and continue healthy behavior.</p>\r\n \r\n<p>Interfacing with a social worker to conduct psychoeducational groups can provide valuable patient referrals from underserved, high-need communities.</p>\r\n<strong>2. Better Patient Health Outcomes</strong>\r\n<p>Social workers can identify any additional services families may need and work with them to access these services, as well as make follow-up phone calls to monitor treatment progress and general well-being.</p>\r\n<p>Social workers identify and ameliorate potential psychosocial and practical barriers to treatment such as issues of transportation, childcare, cultural values, sentiment of distrust or shame/embarrassment to going to dentist, or mental health issues such as depression, anxiety, drug/alcohol addiction etc., in the family.</p>\r\n<p>Work with patient family to explore barriers and prioritize oral health through open conversations with parents. Assist clients to apply, re-apply, or renew Medicaid or other government benefits such as food stamps, or WIC: to encourage healthy nutrition to prevent caries.</p>\r\n<p>Provide support and expertise in challenging situations, such as in suspected cases of child abuse or neglect, or domestic violence and working with family to draw up a safety plan. \r\n</p>\r\n<strong>3. Help take on challenging new cases</strong>\r\n<p>Social workers can reduce fear and anxiety, enhance cooperation, and effect treatment when working with anxious or very young children or children with special needs. Their knowledge and training of mental health disorders allows them to recognize characteristics of behavior and work with family to calm a child.</p>\r\n<strong>4. Early intervention, removing barriers,..........</strong>\r\n<p> where did the content go?</p>\r\n<strong>5. Managing challenging patient situations in office</strong>\r\n<p>Social workers are trained to respect and remain open to various cultural attitudes and practice sensitivity towards this. Additionally, many have competency in a second language.</p>\r\n<p>Work appropriately with patients or families who are living with mentally, physically disabled and/or developmentally delayed conditions</p>\r\n<p>Trained to work with families of these patients and remain open and sensitive to the unique challenges to returning for visits that these families may face</p>\r\n<strong>6. Staff capacity building </strong>\r\n<p>Cultural sensitivity training, PDD and autism training, challenging situations management training, etc. </p>\r\n<strong>7. Patient Retention</strong>\r\n<p>All these ways in which social work can benefit dental practices as well better patient outcomes contribute to patient loyalty, satisfaction and rate of return.</p>\r\n<p>Engage parents in waiting room to discuss importance of oral health to improve patient retention and set up an individualized treatment plan for every child that identifies strengths and challenges to dental care.</p>
+29	Women who experience abuse by their partners may develop sleep disturbances, sexual dysfunction, depression, anxiety, posttraumatic stress disorder, eating disorders, female problems, become isolated, feel an intense loss of social connections, and may attempt suicide. Such abuse may also make it difficult for women to negotiate condom use with their partners and protect themselves against HIV and other sexually transmitted infections.  
 15	[image suggestions: logo or illustration that refers to flying]
 22	[image suggestions: someone shouting, other suggestions needed]
 24	TBD\r\n\r\n[image suggestions needed]
@@ -4165,7 +4237,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 27	Encouraging a woman to be dependent on drugs, or preventing her from getting drug treatment, is also a form of abuse that can occur in intimate relationships. Pressuring women to sell sex for money or drugs is also a form of abuse.
 17	We'll be talking about recognizing relationship conflict and different types of abuse now. What we talk about might be upsetting to you, especially if it touches on something that's going on in your life. Please remember that we're here to help.\r\n
 28	Approximately 1 in 4 women will experience domestic abuse in her lifetime. Each year there are approximately 16,800 homicides and over 2 million medically treated injuries related to intimate partner violence.  Among women on probation or parole in New York City, the rate of experiencing physical or sexual violence is very high – over one third of women have gone to the emergency room for injuries resulting from a fight with a partner.\r\n\r\nBecause so many women experience violence in relationships, we are introducing this WINGS program.
-29	Women who experience abuse by their partners may develop sleep disturbances, sexual dysfunction, depression, anxiety, posttraumatic stress disorder, eating disorders, feminine problems, become isolated, feel an intense loss of social connections, and may attempt suicide. Such abuse may also make it difficult for women to negotiate condom use with their partners and protect themselves against HIV and other sexually transmitted infections.  
 35	Relationship conflicts with partners – which may include emotional, physical, or sexual abuse – are common triggers for using drugs and alcohol to cope with the emotional and sometimes physical pain. Violence often causes women in recovery to relapse and drop out of treatment. 
 36	Thinking through your relationship with your partner(s) now or in the past, when you experience conflict or if you are being hurt by your partner, what are some negative consequences that you have experienced or have concerns about?
 42	I can teach my children how to use the telephone and dial 911 to contact the police and the fire department. 
@@ -4228,7 +4299,8 @@ COPY pagetree_hierarchy (id, name, base_url) FROM stdin;
 COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, object_id) FROM stdin;
 301	222	1		16	87
 242	212	2		16	74
-304	53	2		43	30
+146	126	1		16	48
+503	211	4	help_block	44	83
 311	167	2		43	32
 214	190	1		26	108
 262	59	2		43	2
@@ -4237,56 +4309,51 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 295	52	1		17	29
 296	149	1		17	30
 142	121	2		26	60
+505	213	4	help_block	44	85
 271	72	2		43	11
 273	153	2		43	13
 124	106	2		26	49
 243	213	2		16	75
-113	100	1		16	38
-100	99	1		16	37
-127	102	1		16	41
+506	215	4	help_block	44	86
+304	53	2		43	30
 244	215	1		16	76
-279	102	2		43	19
-135	103	1		16	45
-281	103	2		43	21
 97	97	1		16	35
-240	55	1		16	72
 291	220	2		46	2
 248	58	1		16	78
-134	114	1		16	44
 137	116	1		26	57
 139	118	1		26	59
 143	123	1		26	61
 144	124	1		26	62
-146	126	1		16	48
 285	162	2		43	25
-122	104	1		26	47
-125	107	1		26	50
-126	108	1		26	51
-128	109	1		16	42
 287	164	2		43	27
+510	55	1		20	2
 230	63	1		19	10
 247	145	1		26	125
 213	189	1		26	107
-326	218	1		17	33
+240	55	2		16	72
 215	191	1		26	109
 216	192	1		26	110
 217	193	1		26	111
 218	194	1		26	112
+400	218	2		43	99
 198	176	1		26	95
 199	177	1		26	96
 200	178	1		26	97
 201	179	1		26	98
-58	53	1		16	17
+70	72	1		16	29
+326	218	1		17	33
 221	197	1		26	115
+405	202	2		43	100
 298	221	1		17	32
-121	56	1	Taking steps to increase relationship safety 	16	40
+303	223	1		16	88
+413	223	2		43	108
 358	196	2		43	62
 69	70	1		16	28
 313	169	2		43	34
+79	76	1		16	33
 317	173	2		43	38
 183	161	1		26	80
-303	223	1		16	88
-79	76	1		16	33
+408	205	2		43	103
 265	63	2		43	5
 232	74	1		19	12
 184	162	1		26	81
@@ -4314,6 +4381,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 235	151	1		19	14
 275	161	3		43	15
 222	198	1		26	116
+113	100	1		16	38
 226	204	1		26	119
 307	224	2		19	15
 224	202	1		26	117
@@ -4323,62 +4391,63 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 164	152	1		16	63
 228	206	1		26	121
 236	207	1		26	122
+58	53	1		16	17
 237	208	1		26	123
 289	166	2		43	29
 320	175	2		43	41
-239	210	1		16	71
 245	215	2		26	124
+100	99	1		16	37
 147	57	1		16	49
 148	57	2		26	64
 165	153	1		16	64
-70	72	1		16	29
 140	119	1		16	46
 141	120	1		16	47
 315	171	2		43	36
 322	177	2		43	43
 324	179	2		43	45
 166	154	1		16	65
+121	56	1	Taking steps to increase relationship safety 	16	40
 327	181	2		43	47
 328	182	2		43	48
 330	184	2		43	50
 130	111	2		26	53
 131	111	3		26	54
 332	111	1		16	90
-333	105	1		16	91
-123	105	2		26	48
 129	110	2		26	52
+134	114	1		16	44
+239	210	1		16	71
 133	113	2		26	55
+135	103	1		16	45
+281	103	2		43	21
 145	125	2		26	63
 132	112	1		16	43
 136	115	2		26	56
 138	117	2		26	58
 283	212	3		43	23
 263	150	2		43	3
-251	186	1		47	1
 219	195	1		26	113
 381	118	2		43	81
 356	195	2		43	61
 382	119	2		43	82
 360	197	2		43	63
 383	120	2		43	83
-413	223	2		43	108
-412	76	2		43	107
+389	126	2		43	88
 403	150	1		17	36
 401	146	1		17	35
 270	70	2		43	10
 272	152	2		43	12
 274	154	2		43	14
-276	100	2		43	16
+504	212	4	help_block	44	84
 278	97	2		43	18
-280	56	2		43	20
-282	55	2		43	22
+508	215	5		17	42
 284	58	2		43	24
 286	163	2		43	26
 288	165	2		43	28
 249	146	2		26	126
 290	219	2		46	1
+396	219	3		43	95
 395	146	3		43	94
-309	201	1		54	1
+397	220	3		43	96
 423	165	1	help_block	44	7
 257	147	1		26	128
 384	121	3		43	84
@@ -4391,6 +4460,7 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 312	168	2		43	33
 361	198	2		43	64
 314	170	2		43	35
+282	55	3		43	22
 316	172	2		43	37
 318	174	2		43	39
 321	176	2		43	42
@@ -4399,61 +4469,41 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 329	183	2		43	49
 331	185	2		43	51
 334	110	1		16	92
-416	99	2		43	111
+412	76	2		43	107
+399	222	2		43	98
 336	113	1		16	93
-362	201	2		43	65
 297	155	1		17	31
 387	124	2		43	86
 363	121	1		16	106
 264	62	2		43	4
 388	125	3		43	87
-389	126	2		43	88
+398	147	2		43	97
 390	211	3		43	89
 391	213	3		43	90
 392	215	3		43	91
 373	113	3		43	74
-365	104	2		43	66
-366	105	3		43	67
 424	166	1	help_block	44	8
-368	107	2		43	69
-369	108	2		43	70
-370	109	2		43	71
 371	110	3		43	72
 372	111	4		43	73
 393	57	3		43	92
-374	114	2		43	75
-375	210	2		43	76
 394	145	2		43	93
 377	115	1		16	108
 378	115	3		43	78
 379	116	2		43	79
 404	62	1		17	37
-405	202	2		43	100
-406	203	2		43	101
-407	204	2		43	102
-408	205	2		43	103
-396	219	3		43	95
 380	117	3		43	80
 386	117	1		16	109
-397	220	3		43	96
-398	147	2		43	97
-399	222	2		43	98
-400	218	2		43	99
-409	206	2		43	104
 261	211	2		17	28
-410	207	2		43	105
 256	220	1		16	80
 255	219	1		16	79
 253	212	1		45	2
 254	213	1		45	3
 252	211	1		45	1
-411	208	2		43	106
 338	187	2		43	52
 425	167	1	help_block	44	9
 426	168	1	help_block	44	10
 364	125	1		16	107
 450	106	1	help_block	44	34
-418	76	1	help_block	44	2
 420	162	1	help_block	44	4
 421	163	1	help_block	44	5
 340	188	2		43	53
@@ -4483,24 +4533,19 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 441	183	1	help_block	44	25
 442	184	1	help_block	44	26
 443	185	1	help_block	44	27
-444	186	1	help_block	44	28
-445	99	1	help_block	44	29
-446	56	1	help_block	44	30
+251	186	1		47	1
 419	161	2	help_block	44	3
-448	104	1	help_block	44	32
-449	105	1	help_block	44	33
-451	107	1	help_block	44	35
-452	108	1	help_block	44	36
-447	102	1	help_block	44	31
-453	109	1	help_block	44	37
+276	100	2		43	16
 454	110	1	help_block	44	38
 455	111	1	help_block	44	39
 456	112	1	help_block	44	40
 457	113	1	help_block	44	41
-458	114	1	help_block	44	42
-459	210	1	help_block	44	43
-460	103	1	help_block	44	44
-461	103	1	help_block	44	45
+509	57	4		17	43
+406	203	2		43	101
+407	204	2		43	102
+409	206	2		43	104
+410	207	2		43	105
+411	208	2		43	106
 462	115	1	help_block	44	46
 463	116	1	help_block	44	47
 464	117	1	help_block	44	48
@@ -4511,10 +4556,9 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 469	123	1	help_block	44	53
 470	124	1	help_block	44	54
 471	125	1	help_block	44	55
-472	126	1	help_block	44	56
 473	62	1	help_block	44	57
-474	53	1	help_block	44	58
-475	100	1	help_block	44	59
+511	221	2		44	87
+512	52	2		44	88
 476	187	1	help_block	44	60
 477	188	1	help_block	44	61
 478	189	1	help_block	44	62
@@ -4528,8 +4572,8 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 486	196	1	help_block	44	70
 487	197	1	help_block	44	71
 488	198	1	help_block	44	72
-489	201	1	help_block	44	73
-490	99	1	help_block	44	74
+513	149	2		44	89
+514	155	2		44	90
 491	202	1	help_block	44	75
 492	203	1	help_block	44	76
 493	204	1	help_block	44	77
@@ -4537,9 +4581,39 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 495	206	1	help_block	44	79
 496	207	1	help_block	44	80
 497	208	1	help_block	44	81
-498	223	1	help_block	44	82
+127	102	1		16	41
+447	102	2	help_block	44	31
+279	102	3		43	19
 367	106	3		43	68
 501	106	4		20	1
+502	145	3		17	40
+309	201	1		54	1
+362	201	2		43	65
+416	99	2		43	111
+280	56	2		43	20
+374	114	2		43	75
+375	210	2		43	76
+122	104	2		26	47
+448	104	3	help_block	44	32
+365	104	4		43	66
+516	104	1		20	3
+333	105	2		16	91
+449	105	3	help_block	44	33
+123	105	4		26	48
+366	105	5		43	67
+517	105	1		20	4
+125	107	2		26	50
+451	107	3	help_block	44	35
+368	107	4		43	69
+518	107	1		20	5
+126	108	2		26	51
+452	108	3	help_block	44	36
+369	108	4		43	70
+519	108	1		20	6
+128	109	2		16	42
+453	109	3	help_block	44	37
+370	109	4		43	71
+520	109	1		20	7
 \.
 
 
@@ -4868,6 +4942,7 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 526	199	2	no	f	1
 527	200	1	yes	f	0
 528	200	2	no	f	1
+610	231	1	yes	f	0
 650	241	11	Legal assistance (i.e. assistance getting restraining order, divorce or child custody)	f	10
 531	202	0	never	f	0
 532	202	1	only once	f	1
@@ -4938,23 +5013,9 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 602	221	2	no	f	1
 603	221	3	maybe	f	2
 604	223	1	yes	f	0
-605	223	2	maybe	f	1
-606	223	3	no	f	2
+606	223	3	no	f	1
+605	223	2	maybe	f	2
 607	230	1	yes	f	0
-608	230	2	maybe	f	1
-609	230	3	no	f	2
-610	231	1	yes	f	0
-611	231	2	maybe	f	1
-612	231	3	no	f	2
-613	232	1	yes	f	0
-614	232	2	maybe	f	1
-615	232	3	no	f	2
-616	233	1	yes	f	0
-617	233	2	maybe	f	1
-618	233	3	no	f	2
-620	234	1	yes	f	0
-621	234	2	maybe	f	1
-622	234	3	no	f	2
 656	241		Job training for self or partner	f	0
 641	241	2	Help Getting Housing	f	1
 628	239	1	Partner’s mental health issues or problem	f	0
@@ -4969,6 +5030,19 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 637	239	10	My mental health issues or problem managing anger	f	9
 638	239	11	My legal problems 	f	10
 639	239	12	Housing problems	f	11
+609	230	3	no	f	1
+608	230	2	maybe	f	2
+612	231	3	no	f	1
+611	231	2	maybe	f	2
+613	232	1	yes	f	0
+615	232	3	no	f	1
+614	232	2	maybe	f	2
+616	233	1	yes	f	0
+618	233	3	no	f	1
+617	233	2	maybe	f	2
+620	234	1	yes	f	0
+622	234	3	no	f	1
+621	234	2	maybe	f	2
 653	243	1	yes	f	0
 654	243	2	no	f	1
 655	243	3	maybe	f	2
@@ -5085,31 +5159,31 @@ COPY quizblock_question (id, quiz_id, text, question_type, explanation, intro_te
 212	107	I am concerned that relationship conflict makes me feel isolated from my friends and family	single choice			0
 213	108	I am concerned that relationship conflict makes me feel like using drugs or alcohol	single choice			0
 222	116	Other concerns that I have (list):	long text			0
-223	117	I want to feel better about myself and my future	single choice			0
 221	109	I am concerned that relationship conflict makes me feel hopeless or helpless about my future	single choice			0
 243	127	I am concerned that relationship conflict makes me feel bad about myself	single choice			0
 215	110	I am concerned that relationship conflict is negatively affecting my children	single choice			0
 216	111	I am concerned that I may end up fighting back or hurting my partner and risk getting charged with assault	single choice			0
-217	112	I am concerned that it is contributing towards physical problems that I am experiencing like headaches, stomach problems, body pains, feminine problems	single choice			0
 218	113	I am concerned that I may be injured in a fight	single choice			0
-230	118	I want to feel less isolated from my family or friends	single choice			0
-231	119	I want to improve the quality of life for my kids or other family members who are affected by the relationship conflict	single choice			0
-232	120	I don’t want to feel scared or anxious when I am around my partner	single choice			0
 245	128	What are you going to do in the next week to take time for yourself?  Some ideas including going for a walk, writing, taking a bubble bath, creating art, or going to a nail salon.	long text			1
-233	121	I want to improve the relationship I have with my partner 	single choice			0
-234	122	I don't want to feel trapped in the relationship	single choice			0
 235	123	Other reasons to reduce relationship conflict:	long text			0
 236	124	In the next week, I can do the following to strengthen my support:	short text			0
 237	124	In the next week, I can also do the following to strengthen my support:	short text			1
-239	125	What are the main issues that may trigger relationship conflict or abuse? 	multiple choice			0
+241	126	What services might help you work towards these goals with your partner? (Select all that apply.)	multiple choice			0
 240	125	Other issues that trigger relationship problems or abuse:	long text			1
 242	126	Other services that might help you:	long text			1
+239	125	What are the main issues that may trigger relationship conflict or abuse? (Select all that apply.)	multiple choice			0
 196	92	In the past year, has your partner(s) insisted you have sex even though you didn’t want to? 	single choice			0
 197	93	In the past year, has your partner(s) forced you to have sex without a condom?	single choice			0
-198	94	In the past year, has your partner(s) threatened or forced (like hitting, holding down, or using a weapon) you to have sex?	single choice			0
+223	117	I want to feel better about myself and my future	single choice			0
+230	118	I want to feel less isolated from my family or friends	single choice			0
+231	119	I want to improve the quality of life for my kids or other family members who are affected by the relationship conflict	single choice			0
 205	100	In the past year, My partner tried to keep me from seeing or talking to my family or friends. . .	single choice			0
 155	52	My code word will be:	short text		 	0
-241	126	What services might help you work towards these goals with your partner?	multiple choice			0
+232	120	I don’t want to feel scared or anxious when I am around my partner	single choice			0
+198	94	In the past year, has your partner(s) threatened or forced you to have sex (like hitting, holding down, or using a weapon) ?	single choice			0
+217	112	I am concerned that it is contributing towards physical problems that I am experiencing like headaches, stomach problems, body pains, female problems	single choice			0
+233	121	I want to improve the relationship I have with my partner 	single choice			0
+234	122	I don't want to feel trapped in the relationship	single choice			0
 \.
 
 
@@ -5372,6 +5446,7 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3308	234	3260	1
 3313	153	3265	 my dad
 3319	159	3271	 
+3324	161	3276	 werwe
 750	241	958	3
 751	241	958	4
 752	241	958	8
@@ -5901,6 +5976,30 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3309	235	3261	
 3314	154	3266	 my mom
 3320	159	3272	 
+3325	162	3277	werw
+3329	166	3281	 7r67i
+3342	241	3285	11
+3343	241	3285	12
+3344	242	3285	
+3351	151	3297	   
+3359	153	3310	 
+3364	158	3315	n
+3368	162	3319	n\r\n\r\n\r\n\r\n
+3372	166	3323	
+3375	148	3326	 
+3379	154	3330	 
+3384	159	3335	n
+3388	163	3339	n\r\nn
+3392	240	3343	
+3399	150	3347	
+3407	212	3353	2
+3411	215	3357	2
+3415	219	3361	2
+3422	241	3365	2
+3423	241	3365	5
+3424	241	3365	7
+3425	241	3365	10
+3426	242	3365	
 2010	188	2013	1
 2783	220	2775	2
 2528	188	2524	1
@@ -6052,6 +6151,26 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3305	231	3257	1
 3310	148	3262	 Marcy
 3315	155	3267	 redrobin
+3321	159	3273	 
+3326	163	3278	sreyrq
+3330	236	3282	 faFDsf
+3331	237	3282	 sadfsdf
+3345	245	3286	sdf
+3346	244	3286	dssdfa
+3352	153	3298	 
+3360	154	3311	 
+3365	159	3316	n
+3369	163	3320	n\r\nn
+3376	150	3327	
+3380	155	3331	 
+3385	160	3336	n
+3389	164	3340	
+3393	241	3344	2
+3394	241	3344	3
+3395	242	3344	
+3408	213	3354	2
+3412	216	3358	2
+3416	220	3362	2
 2011	189	2014	2
 2784	222	2776	
 2529	189	2525	1
@@ -6130,6 +6249,43 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3311	150	3263	go to a hotel
 3316	156	3268	 hotel
 3317	157	3269	work
+3322	159	3274	wefef 
+3327	164	3279	 8967ir6
+3332	168	3283	
+3333	167	3283	1
+3334	167	3283	2
+3335	167	3283	3
+3336	167	3283	4
+3337	167	3283	5
+3338	167	3283	6
+3347	240	3287	
+3348	235	3294	
+3349	148	3295	
+3353	154	3299	 
+3354	148	3305	  
+3355	148	3306	 
+3357	150	3308	
+3361	155	3312	 
+3366	160	3317	n
+3370	164	3321	
+3373	148	3324	 
+3377	151	3328	
+3381	156	3332	 
+3382	157	3333	 
+3386	161	3337	n
+3390	165	3341	
+3396	245	3345	
+3397	244	3345	 
+3400	153	3348	 
+3401	245	3349	
+3402	244	3349	 
+3403	245	3350	
+3404	244	3350	 
+3405	210	3351	2
+3409	221	3355	2
+3413	217	3359	2
+3417	222	3363	
+3427	151	3374	
 2012	190	2015	1
 1693	198	1709	2
 2785	222	2777	fghn
@@ -6214,6 +6370,32 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3307	233	3259	1
 3312	151	3264	 in my pocket
 3318	158	3270	 qwe
+3323	160	3275	 werwr
+3328	165	3280	 ukyk
+3339	240	3284	
+3340	239	3284	6
+3341	239	3284	7
+3350	150	3296	 
+3356	150	3307	  
+3358	151	3309	
+3362	156	3313	 
+3363	157	3314	 
+3367	161	3318	n
+3371	165	3322	
+3374	150	3325	
+3378	153	3329	 
+3383	158	3334	n
+3387	162	3338	n\r\n\r\n\r\n\r\n
+3391	166	3342	
+3398	148	3346	 
+3406	211	3352	2
+3410	243	3356	2
+3414	218	3360	2
+3418	240	3364	
+3419	239	3364	2
+3420	239	3364	8
+3421	239	3364	11
+3428	153	3375	 
 \.
 
 
@@ -6321,6 +6503,13 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3127	81	159	2012-01-26 13:35:07.047888-05
 3128	49	5	2012-01-26 13:44:06.705261-05
 2447	47	148	2012-01-20 19:06:57.222665-05
+3275	57	163	2012-01-30 10:57:54.376213-05
+3281	63	163	2012-01-30 10:58:27.01881-05
+3287	125	13	2012-01-30 14:51:37.731293-05
+3288	117	5	2012-01-30 15:39:49.65644-05
+3294	123	5	2012-01-30 15:40:05.506354-05
+3300	80	162	2012-02-01 12:19:51.858697-05
+3306	47	13	2012-02-01 12:21:34.543891-05
 2854	84	5	2012-01-23 15:30:46.795877-05
 2860	88	5	2012-01-23 15:31:01.687934-05
 2866	94	5	2012-01-23 15:31:11.548271-05
@@ -6334,6 +6523,15 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 127	77	5	2011-11-28 13:59:54.52029-05
 128	124	13	2011-11-30 10:56:51.831516-05
 3130	49	5	2012-01-26 13:45:14.077943-05
+3308	48	13	2012-02-13 10:17:29.504046-05
+3315	55	13	2012-02-13 10:18:01.19762-05
+3321	61	13	2012-02-13 10:20:02.46749-05
+3324	47	13	2012-02-13 10:51:44.089789-05
+3330	51	13	2012-02-13 10:53:01.947331-05
+3337	58	13	2012-02-13 10:53:45.278917-05
+3343	125	13	2012-02-13 10:55:52.060705-05
+3348	50	13	2012-02-13 11:00:32.360036-05
+3349	128	13	2012-02-13 11:09:29.892158-05
 2519	80	150	2012-01-23 11:01:30.60538-05
 2525	85	150	2012-01-23 11:01:53.320958-05
 2531	91	150	2012-01-23 11:02:15.622782-05
@@ -6400,6 +6598,9 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3257	119	163	2012-01-30 10:52:32.252941-05
 3263	48	163	2012-01-30 10:53:33.910362-05
 3270	55	163	2012-01-30 10:54:43.19426-05
+3276	58	163	2012-01-30 10:58:03.501372-05
+3282	124	163	2012-01-30 10:59:35.018942-05
+3289	118	5	2012-01-30 15:39:51.547795-05
 2219	81	147	2012-01-19 15:00:09.583836-05
 2225	87	147	2012-01-19 15:00:30.094393-05
 2231	93	147	2012-01-19 15:00:50.245468-05
@@ -6426,6 +6627,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2360	62	148	2012-01-19 15:46:49.521319-05
 2365	83	13	2012-01-19 16:12:19.922481-05
 2367	83	13	2012-01-19 16:16:22.422087-05
+3295	47	5	2012-01-30 15:40:44.302155-05
 3035	81	158	2012-01-24 16:20:03.744073-05
 3041	84	158	2012-01-24 16:20:43.462201-05
 3047	90	158	2012-01-24 16:21:41.508997-05
@@ -6440,6 +6642,14 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3096	54	158	2012-01-24 16:32:29.544137-05
 3102	60	158	2012-01-24 16:33:18.18016-05
 3108	64	158	2012-01-24 16:38:23.102205-05
+3301	81	162	2012-02-01 12:19:56.591977-05
+3307	48	162	2012-02-01 12:21:43.065038-05
+3309	49	13	2012-02-13 10:17:32.658999-05
+3316	56	13	2012-02-13 10:19:42.770995-05
+3322	62	13	2012-02-13 10:20:04.744481-05
+3325	48	13	2012-02-13 10:51:46.221412-05
+3331	52	13	2012-02-13 10:53:10.447383-05
+3338	59	13	2012-02-13 10:53:48.073828-05
 2855	85	5	2012-01-23 15:30:48.410069-05
 2861	89	5	2012-01-23 15:31:03.226538-05
 2867	95	5	2012-01-23 15:31:13.31601-05
@@ -6456,6 +6666,9 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3122	81	159	2012-01-26 13:34:55.619034-05
 3129	48	5	2012-01-26 13:44:16.918658-05
 3131	50	5	2012-01-26 13:45:23.38799-05
+3344	126	13	2012-02-13 10:55:55.729985-05
+3350	128	13	2012-02-13 11:11:44.402537-05
+3355	109	13	2012-02-15 11:20:20.724089-05
 864	125	5	2011-12-21 11:03:47.342337-05
 866	126	5	2011-12-21 11:03:54.546465-05
 868	125	5	2011-12-21 11:09:40.125299-05
@@ -6467,6 +6680,9 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 881	125	5	2011-12-21 12:00:49.665442-05
 883	126	5	2011-12-21 12:01:01.669391-05
 885	126	5	2011-12-21 14:32:31.001534-05
+3360	113	13	2012-02-15 11:20:36.31691-05
+3365	126	13	2012-02-15 11:25:02.997678-05
+3372	119	13	2012-02-15 14:31:19.060869-05
 898	125	5	2012-01-04 10:28:30.390943-05
 900	125	5	2012-01-04 10:29:01.499703-05
 902	126	5	2012-01-04 10:29:09.060846-05
@@ -6860,6 +7076,8 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3258	120	163	2012-01-30 10:52:37.277244-05
 3264	49	163	2012-01-30 10:53:42.388583-05
 3271	56	163	2012-01-30 10:55:10.562228-05
+3277	59	163	2012-01-30 10:58:06.716424-05
+3283	64	163	2012-01-30 10:59:56.068727-05
 3036	82	158	2012-01-24 16:20:09.001058-05
 3042	85	158	2012-01-24 16:21:00.69196-05
 3048	91	158	2012-01-24 16:21:45.219857-05
@@ -6905,6 +7123,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3109	125	158	2012-01-24 16:38:41.188493-05
 3116	80	159	2012-01-25 16:06:23.677577-05
 3123	81	159	2012-01-26 13:35:01.394733-05
+3290	119	5	2012-01-30 15:39:53.680042-05
 1085	105	13	2012-01-12 11:00:50.135506-05
 1086	106	13	2012-01-12 11:00:55.940749-05
 1087	107	13	2012-01-12 11:01:02.007054-05
@@ -6922,6 +7141,23 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1099	49	13	2012-01-12 12:05:56.056142-05
 1100	55	13	2012-01-12 12:10:31.750988-05
 1101	124	5	2012-01-12 14:06:02.142107-05
+3296	48	5	2012-01-30 15:41:10.37085-05
+3302	82	162	2012-02-01 12:20:00.530311-05
+3310	50	13	2012-02-13 10:17:34.825615-05
+3317	57	13	2012-02-13 10:19:48.960837-05
+3323	63	13	2012-02-13 10:20:07.858954-05
+3326	47	13	2012-02-13 10:52:48.913845-05
+3332	53	13	2012-02-13 10:53:15.884772-05
+3333	54	13	2012-02-13 10:53:15.890696-05
+3339	60	13	2012-02-13 10:53:59.140222-05
+3345	128	13	2012-02-13 10:56:13.560965-05
+3351	105	13	2012-02-15 11:20:08.780248-05
+3356	127	13	2012-02-15 11:20:23.783386-05
+3361	114	13	2012-02-15 11:20:39.332539-05
+3366	117	13	2012-02-15 14:24:52.372183-05
+3368	117	13	2012-02-15 14:31:04.644664-05
+3373	117	13	2012-02-15 14:31:36.177427-05
+3374	49	13	2012-02-15 16:14:37.527044-05
 2521	81	150	2012-01-23 11:01:38.708747-05
 2527	87	150	2012-01-23 11:02:01.354003-05
 2533	93	150	2012-01-23 11:02:22.744465-05
@@ -6965,6 +7201,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3259	121	163	2012-01-30 10:52:40.476187-05
 3265	50	163	2012-01-30 10:53:56.32823-05
 3272	56	163	2012-01-30 10:55:16.929393-05
+3278	60	163	2012-01-30 10:58:17.072171-05
 3037	83	158	2012-01-24 16:20:13.044815-05
 3043	86	158	2012-01-24 16:21:07.345613-05
 3049	92	158	2012-01-24 16:21:48.47235-05
@@ -7018,6 +7255,18 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3104	62	158	2012-01-24 16:33:25.67668-05
 3110	126	158	2012-01-24 16:38:53.355084-05
 3117	81	159	2012-01-25 16:06:27.110424-05
+3284	125	163	2012-01-30 11:00:04.122314-05
+3291	120	5	2012-01-30 15:39:57.354725-05
+3297	49	5	2012-01-30 15:41:34.212454-05
+3303	83	162	2012-02-01 12:20:03.207533-05
+3311	51	13	2012-02-13 10:17:36.988769-05
+3318	58	13	2012-02-13 10:19:51.135881-05
+3327	48	13	2012-02-13 10:52:51.746836-05
+3334	55	13	2012-02-13 10:53:22.012227-05
+3340	61	13	2012-02-13 10:54:01.500471-05
+3346	47	13	2012-02-13 10:57:52.752949-05
+3352	106	13	2012-02-15 11:20:11.845262-05
+3357	110	13	2012-02-15 11:20:26.268334-05
 2522	82	150	2012-01-23 11:01:42.663154-05
 2528	88	150	2012-01-23 11:02:05.305243-05
 2534	94	150	2012-01-23 11:02:26.021774-05
@@ -7027,6 +7276,10 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2558	116	150	2012-01-23 11:03:47.953816-05
 2564	122	150	2012-01-23 11:04:09.405351-05
 3124	82	159	2012-01-26 13:35:02.128636-05
+3362	115	13	2012-02-15 11:20:42.892711-05
+3367	118	13	2012-02-15 14:24:54.105751-05
+3369	118	13	2012-02-15 14:31:07.43291-05
+3375	50	13	2012-02-15 16:15:04.522123-05
 2851	81	5	2012-01-23 15:30:42.266947-05
 2857	85	5	2012-01-23 15:30:52.838704-05
 2863	91	5	2012-01-23 15:31:06.613342-05
@@ -7057,11 +7310,15 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3254	117	163	2012-01-30 10:52:20.578273-05
 3260	122	163	2012-01-30 10:52:43.929131-05
 3266	51	163	2012-01-30 10:54:00.666349-05
+3273	56	163	2012-01-30 10:57:45.777207-05
+3279	61	163	2012-01-30 10:58:20.281896-05
 3038	83	158	2012-01-24 16:20:19.080319-05
 3044	87	158	2012-01-24 16:21:10.91707-05
 3050	93	158	2012-01-24 16:21:51.845891-05
 3056	98	158	2012-01-24 16:23:07.98405-05
 2776	116	5	2012-01-23 14:37:07.821298-05
+3285	126	163	2012-01-30 11:00:08.218347-05
+3292	121	5	2012-01-30 15:39:59.143327-05
 2222	84	147	2012-01-19 15:00:19.713975-05
 2228	90	147	2012-01-19 15:00:40.064664-05
 2234	96	147	2012-01-19 15:01:00.457117-05
@@ -7097,6 +7354,17 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3105	63	158	2012-01-24 16:33:30.36718-05
 3111	128	158	2012-01-24 16:43:12.334572-05
 3125	81	159	2012-01-26 13:35:03.939957-05
+3298	50	5	2012-01-30 15:41:51.373747-05
+3304	80	13	2012-02-01 12:20:49.305897-05
+3312	52	13	2012-02-13 10:17:46.760518-05
+3319	59	13	2012-02-13 10:19:53.161441-05
+3328	49	13	2012-02-13 10:52:54.294772-05
+3335	56	13	2012-02-13 10:53:39.927497-05
+3341	62	13	2012-02-13 10:54:03.979185-05
+3347	48	13	2012-02-13 10:57:54.690723-05
+3353	107	13	2012-02-15 11:20:14.933825-05
+3358	111	13	2012-02-15 11:20:29.242355-05
+3363	116	13	2012-02-15 11:20:48.743022-05
 2852	82	5	2012-01-23 15:30:43.832313-05
 2523	83	150	2012-01-23 11:01:46.299189-05
 2529	89	150	2012-01-23 11:02:08.815517-05
@@ -7110,6 +7378,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2553	111	150	2012-01-23 11:03:33.504372-05
 2559	117	150	2012-01-23 11:03:58.557616-05
 2565	123	150	2012-01-23 11:04:12.906493-05
+3370	119	13	2012-02-15 14:31:09.418542-05
 2858	86	5	2012-01-23 15:30:56.070036-05
 2864	92	5	2012-01-23 15:31:08.308542-05
 2870	96	5	2012-01-23 15:31:24.804083-05
@@ -7137,12 +7406,15 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3255	117	163	2012-01-30 10:52:23.984757-05
 3261	123	163	2012-01-30 10:52:47.065941-05
 3267	52	163	2012-01-30 10:54:15.960578-05
+3274	56	163	2012-01-30 10:57:49.33845-05
+3280	62	163	2012-01-30 10:58:23.537996-05
 3039	84	158	2012-01-24 16:20:35.025293-05
 3045	88	158	2012-01-24 16:21:33.495531-05
 3051	94	158	2012-01-24 16:22:31.175191-05
 3057	99	158	2012-01-24 16:23:11.720621-05
 3063	105	158	2012-01-24 16:25:17.495884-05
 2777	116	5	2012-01-23 14:39:17.703705-05
+3286	128	163	2012-01-30 11:00:19.394178-05
 2223	85	147	2012-01-19 15:00:22.989681-05
 2229	91	147	2012-01-19 15:00:43.369326-05
 2235	97	147	2012-01-19 15:01:04.171791-05
@@ -7179,6 +7451,18 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3106	124	158	2012-01-24 16:37:33.738088-05
 3112	128	158	2012-01-24 16:43:20.479789-05
 3126	80	159	2012-01-26 13:35:05.482696-05
+3293	122	5	2012-01-30 15:40:00.726661-05
+3299	51	5	2012-01-30 15:41:57.816544-05
+3305	47	162	2012-02-01 12:21:25.681645-05
+3313	53	13	2012-02-13 10:17:53.678737-05
+3314	54	13	2012-02-13 10:17:53.68482-05
+3320	60	13	2012-02-13 10:20:00.207727-05
+3329	50	13	2012-02-13 10:52:59.426464-05
+3336	57	13	2012-02-13 10:53:42.601273-05
+3342	63	13	2012-02-13 10:54:08.618077-05
+3354	108	13	2012-02-15 11:20:18.092072-05
+3359	112	13	2012-02-15 11:20:32.605435-05
+3364	125	13	2012-02-15 11:24:47.69803-05
 2524	84	150	2012-01-23 11:01:49.936425-05
 2530	90	150	2012-01-23 11:02:12.317153-05
 2536	96	150	2012-01-23 11:02:32.932429-05
@@ -7187,6 +7471,7 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2554	112	150	2012-01-23 11:03:35.973483-05
 2560	118	150	2012-01-23 11:04:00.778526-05
 2566	47	150	2012-01-23 11:04:23.967037-05
+3371	120	13	2012-02-15 14:31:17.366614-05
 2853	83	5	2012-01-23 15:30:45.318407-05
 2859	87	5	2012-01-23 15:30:59.782769-05
 2865	93	5	2012-01-23 15:31:09.878466-05
@@ -7208,13 +7493,17 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 --
 
 COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
+30	15	\N	241
+29	163	652	241
+31	162	\N	241
 26	158	645	241
 1	5	647	241
 27	160	644	241
+32	166	\N	241
 11	8	642	241
 3	124	\N	241
 28	161	\N	241
-5	13	\N	241
+5	13	649	241
 20	147	645	241
 \.
 
@@ -7225,36 +7514,37 @@ COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM
 
 COPY servicesblock_serviceprovider (id, issue_id, name, phone, url, address, map_image, description) FROM stdin;
 2	641	housing help	housing help	housing help	housing help	images/columbiamap.jpg	\N
-5	648	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/counseling--support-groups-56.html			\N
-6	648	Sanctuary for Families	(212)-349-6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221			\N
-7	648	STEPS to End Family Violence	(646)-315-7623 Clinical Supervisor	http://www.egscf.org/services/steps/clinical-services/			\N
-8	648	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
-9	649	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/domestic-violence-53.html#domestic_violence_shelters			\N
-10	649	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=34&Itemid=63			\N
-11	650	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/get-help-8/for-legal-services-15.html			\N
-12	650	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist 	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=140&Itemid=163			\N
-13	650	STEPS to End Family Violence	(646)-315-7605 or (646)-315-7637 for Legal Services	http://www.egscf.org/services/steps/legal-services/			\N
-14	650	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
-15	647	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Parenting.htm			\N
-16	647	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150			\N
-17	647	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74			\N
-18	647	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/			\N
-19	656	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Business.htm			\N
-20	656	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
-21	656	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/employment-services/			\N
-22	641	Coalition for the Homeless	(212)-776-2012	http://www.coalitionforthehomeless.org/programs/crisis-intervention			\N
-23	641	Catholic Charities	1-888-744-7900 Hotline	http://www.catholiccharitiesny.org/what-we-do/feeding-the-hungry-and-sheltering-the-homeless/feeding-more-information/#emergency_shelters			\N
-24	642	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
-25	643	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/support_groups.htm			\N
-26	645	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/safe-horizon-counseling-center-66.html			\N
-27	645	Sanctuary for Families	(212) 349 - 6009 x. 221	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221			\N
-28	646	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150			\N
-29	646	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74			\N
-30	646	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			\N
-31	646	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/substance-abuse-treatment/			\N
-32	652	Ackerman Institute	(212)-879-4900 extension 122 Intake Office	http://www.ackerman.org/posts/view/107-couples-and-family-therapy---treatment			\N
-33	652	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/			\N
-34	651	Reverend Herbert Daughter, The House of the Lord Church	718-596-1991				\N
+5	648	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/counseling--support-groups-56.html			Safe Horizon offers free individual or group counseling for women who are at least 13 years old. Couples counseling is not available. 
+6	648	Sanctuary for Families	(212)-349-6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221			Individual and group counseling sessions are offered.
+7	648	STEPS to End Family Violence	(646)-315-7623 Clinical Supervisor	http://www.egscf.org/services/steps/clinical-services/			Taking STEPS provides individual and group services depending on need. Crisis counseling and safety planning are also available. 
+8	648	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			Greenhope’s programs provide individual counseling around the issues of domestic violence, and an on-going domestic violence group facilitated by a social worker. 
+9	649	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/what-we-do-2/domestic-violence-53.html#domestic_violence_shelters			Safe Horizon is New York City’s largest provider of domestic violence residences for battered women and men, with more than 700 beds available throughout the five boroughs. 
+10	649	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=34&Itemid=63			Sanctuary runs several small shelters in the outer boroughs of New York City for domestic violence survivors and their children who no longer have a safe place to stay free from violence. Clinical, legal, and advocacy services are offered on-site.
+13	650	STEPS to End Family Violence	(646)-315-7605 or (646)-315-7637 for Legal Services	http://www.egscf.org/services/steps/legal-services/			Provides education about court processes, help with representing yourself in court, and direct legal representation are provided by STEPS staff. STEPS has expertise working with women who have a criminal justice or substance use history.
+11	650	Safe Horizon	1-800-621-HOPE (4673) Domestic Violence hotline 	http://www.safehorizon.org/index/get-help-8/for-legal-services-15.html			Services provide free legal information and advice to domestic violence victims with family and immigration law-related matters and direct legal representation.
+12	650	Sanctuary for Families	(212)-349–6009 extension 221 Receptionist 	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=140&Itemid=163			Legal staff can provide help in getting orders of protection in family court and by providing legal representation or consultation.
+15	647	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Parenting.htm			Provides anger management and parenting classes. 
+14	650	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			Provides support services and education about legal rights and negotiating systems such as parole, probation, and family and drug treatment courts. 
+16	647	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150			Groups are available on topics of healthy relationships and substance use recovery, anger management, parenting, and many other topics. 
+17	647	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74			Groups are available on topics of healthy relationships and substance use recovery, anger management, parenting, and many other topics. 
+18	647	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/			Fortune’s Family Services clients learn to build healthy relationships with loved ones through participation in intensive programs, services, and workshops. 
+34	651	Reverend Herbert Daughter, The House of the Lord Church	718-596-1991		415 Atlantic Ave; Brooklyn NY 11217		
+19	656	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/Business.htm			Mercy Center offers multiple skill-building classes including introductory keyboarding, word processing, Excel, and office training to help in gaining employment. 
+20	656	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			Provides individual employment counseling and job training groups. 
+21	656	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/employment-services/			The Employment Services program is designed to meet the needs of job seekers with criminal records. 
+22	641	Coalition for the Homeless	(212)-776-2012	http://www.coalitionforthehomeless.org/programs/crisis-intervention			The Crisis Intervention Program provides case management services on a first come, first serve basis, including assistance with government benefits, housing applications, and mental health and addiction treatment referrals, as well as one time grants for food, subway fare, diapers, baby formula, school supplies, identification, medication, and work uniforms. 
+23	641	Catholic Charities	1-888-744-7900 Hotline	http://www.catholiccharitiesny.org/what-we-do/feeding-the-hungry-and-sheltering-the-homeless/feeding-more-information/#emergency_shelters			Eviction Prevention and shelter services are supplied to those who meet eligibility criteria.  
+24	642	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			Provides on and off-site academic training for GED preparation and other educational and vocational training. 
+25	643	Mercy Center	(718)-993-2789	http://www.mercycenterbronx.org/support_groups.htm			Groups are available for spirituality; yoga; salsa, swing, and meringue dancing; movie discussions; meditation; and Capacitor method of stress management. 
+35	644	New York Foundling	1-888-435-7553				Operates a nursery where women can take their children aged 0-10 any day or time to stay temporarily when in a state of crisis. Also operates a hotline where parents receive crisis counseling, parenting support, and referrals as needed.
+26	645	Safe Horizon Counseling Center	(347)-328-8110 	http://www.safehorizon.org/index/what-we-do-2/safe-horizon-counseling-center-66.html			Safe Horizon offers a long-term therapy service that runs on a sliding-fee scale based on the participant’s income and this clinic also accepts most types of insurance. 
+27	645	Sanctuary for Families	(212) 349 - 6009 x. 221	http://www.sanctuaryforfamilies.org/index.php?option=com_content&task=view&id=189&Itemid=221			Individual and group counseling sessions are offered.
+28	646	Palladia Inc.	(646) 401-9700 Comprehensive Treatment Institute – Bronx 	http://www.palladiainc.org/Public/Default.aspx?Housing=150			The Day, Evening and Aftercare program provides intensive outpatient and services which consist of alcohol/drug education, individual counseling, recreational activities, vocational assistance, medical referral services, HIV/AIDS Education, snacks, and carfare. Groups are also available for a variety of topics.
+29	646	Palladia Inc.	(212)-360-7116 Comprehensive Treatment Institute – Harlem 	http://www.palladiainc.org/Public/Default.aspx?Housing=74			Provides relapse prevention counseling; early recovery; crisis intervention; driving while intoxicated (DWI) screening, assessments and education groups; men's only and women's only groups; anger management; vocational guidance; medical referrals; HIV/AIDS Education; childcare; wellness information; spirituality; snacks; and carfare. 
+30	646	Greenhope	(212)-996-8633	http://www.greenhope.org/programs/program_services.shtml			Greenhope provides services to residential and day treatment/outpatient clients. Substance abuse counseling is offered in individual and group settings. 
+31	646	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/substance-abuse-treatment/			Fortune Society offers outpatient substance abuse treatment that has a holistic approach geared towards the overall improvement of each client’s mental, emotional, and physical well-being. Clients receive assessment and orientation, intensive individual and group counseling, and lifetime aftercare. 
+32	652	Ackerman Institute	(212)-879-4900 extension 122 Intake Office	http://www.ackerman.org/posts/view/107-couples-and-family-therapy---treatment			The Ackerman Institute Treatment Center helps couples and families with problems including, but not limited to, substance abuse, school difficulties, child and adolescent problems, marital issues, divorce, death, learning disabilities, family violence, child abuse and incest, and chronic medical illness including AIDS. 
+33	652	Fortune Society	(212)-691-7554	http://fortunesociety.org/get-help/family-services/			Fortune Society provides individual and couples counseling as well as many other family services including programs and workshops on healthy relationships, parenting skills, mediation and conflict resolution, and more. 
 \.
 
 
@@ -7394,15 +7684,10 @@ COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FR
 --
 
 COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
-6	13	1	jane
-7	13	2	Helen
-8	13	3	this
 11	109	1	asdf
 12	109	2	
-9	13	4	is
 13	109	3	asdfas
 14	109	4	asdf
-10	13	5	a
 15	109	5	
 51	8	1	Name 1
 52	8	2	
@@ -7414,6 +7699,11 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 183	161	3	
 184	161	4	
 185	161	5	
+6	13	1	Gina
+7	13	2	Helen
+8	13	3	Tom
+9	13	4	Janet
+10	13	5	Marge
 171	160	1	
 172	160	2	person 3
 173	160	3	person 1
@@ -7424,24 +7714,39 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 134	148	4	dokey
 175	160	5	
 135	148	5	
+186	163	1	Donna
+187	163	2	Andy
+188	163	3	Mom
+126	147	1	
+127	147	2	freda
+189	163	4	Dad
+128	147	3	
+129	147	4	jon
+190	163	5	Fr. Duffell
+130	147	5	
+191	162	1	
+192	162	2	
+193	162	3	
+194	162	4	
+195	162	5	
 176	15	1	
 177	15	2	
 178	15	3	
-179	15	4	
-180	15	5	
-126	147	1	
-127	147	2	freda
-128	147	3	
-129	147	4	jon
-130	147	5	
 166	158	1	
 167	158	2	sadf
+179	15	4	
 168	158	3	sadf
 169	158	4	jane
+180	15	5	
 170	158	5	
+196	166	1	
+197	166	2	
+198	166	3	
 2	5	1	
 1	5	2	
+199	166	4	
 3	5	3	
+200	166	5	
 4	5	4	i
 5	5	5	
 \.
@@ -7476,6 +7781,16 @@ COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtree
 127	51	2
 129	51	1
 130	53	1
+131	186	2
+132	188	2
+133	189	2
+134	190	2
+135	186	1
+136	187	1
+137	188	1
+138	189	1
+139	190	1
+140	7	1
 \.
 
 
@@ -7514,12 +7829,17 @@ COPY wings_main_participant (id, id_string, user_id, current_section_id, created
 98	232323	157	62	2012-01-24 15:20:48.219658-05
 99	362611	158	222	2012-01-24 16:12:52.754312-05
 101	9999999	160	222	2012-01-26 18:43:11.964356-05
-102	2223334	161	63	2012-01-27 16:21:04.114769-05
+102	2223334	161	65	2012-01-27 16:21:04.114769-05
+103	90210	163	222	2012-01-30 10:33:07.459339-05
+104	1236547	164	52	2012-02-01 12:05:53.856085-05
 91	98909	150	105	2012-01-23 11:00:21.149128-05
 100	222222	159	163	2012-01-25 16:04:47.509009-05
+105	123456789	165	74	2012-02-01 15:06:10.734946-05
 89	555555	148	58	2012-01-19 15:25:16.437965-05
+106	1234	166	149	2012-02-13 15:41:13.076918-05
 88	777666	147	222	2012-01-19 14:30:13.546904-05
-103	90210	163	115	2012-01-30 10:33:07.459339-05
+107	88999777	\N	\N	2012-02-15 10:30:57.10743-05
+108	363636	167	150	2012-02-15 11:39:25.258742-05
 \.
 
 

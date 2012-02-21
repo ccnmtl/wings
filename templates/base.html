@@ -15,6 +15,13 @@
 	{% block misc_head %}{% endblock %}
 	{% block css %}{% endblock %}
 	{% block js %}{% endblock %}
+	
+    <script type="text/javascript">
+        window.onpopstate = function(event) {  
+          //alert("(admin)  location: " + document.location + ", state: " + JSON.stringify(event.state));  
+        };  
+    </script>
+	
 	{% block feeds %}{% endblock %}
 	{% if stand %}
 	{% if stand.css %}
@@ -34,8 +41,7 @@
 		<ul id="standardnav">
 
 		</ul>
-		{% endblock %}
-		<!-- CCNMTL title/logo --><h4 id="logo_ccnmtl"><a href="http://ccnmtl.columbia.edu" target="_blank" title="Columbia Center for New Media Teaching and Learning"><span>Produced by the Columbia Center for New Media Teaching and Learning</span></a></h4>
+		{% endblock %}<h4 id="logo_ccnmtl"></h4>
 	</div><!-- id="header" -->
 	
 		<div class="printonly">
@@ -70,7 +76,7 @@
     <div id="usernav">{% if request.user.is_anonymous %}
         <a href="/accounts/login/?next=/">login</a>
     {% else %}
-        <span id="user_name_span">{% if user.part%}P{%endif%}{{request.user}}</span>
+        <span id="user_name_span">{{request.user}}</span>
         {% if not user.part%}
              [<a href="/logout/">logout</a>]
          {%endif%}

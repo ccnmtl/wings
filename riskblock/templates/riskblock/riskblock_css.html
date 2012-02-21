@@ -1,0 +1,58 @@
+<style type="text/css">
+.audioblock-container .audio_controls, .audioblock-container .jp-stop-li {
+    display:none;
+}
+.audioblock-container {
+    position: absolute;
+    left: 0px;
+    top:  0px;
+    width: 100px;
+    height: 60px;
+    padding: 5px;
+    border: none;
+}
+.audioblock-container ul  {
+    list-style-type:none;
+    margin: 0;
+}
+
+.audioblock-container li a {
+    display: block;
+    width: auto;
+    background: #bea5b4; 
+    background: -moz-linear-gradient(top,  #bea5b4 0%, #9b7a95 100%); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bea5b4), color-stop(100%,#9b7a95)); 
+    background: -webkit-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); 
+    background: -o-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); 
+    background: -ms-linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); 
+    background: linear-gradient(top,  #bea5b4 0%,#9b7a95 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bea5b4', endColorstr='#9b7a95',GradientType=0 ); 
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    height: 45px;
+}
+
+.audioblock-container  li a.jp-play,
+.audioblock-container  li a.jp-pause,  
+.audioblock-container li a.jp-rewind  {
+    color: transparent;
+    background-position: 0px 0px;
+    width: 44px;
+    height: 45px;
+    float: right;
+    margin-left: 5px;
+}
+
+.audioblock-container li a.jp-play  {
+    background-image: url('/site_media/img/audio_button_bg.png');
+}
+.audioblock-container li a.jp-pause {
+    background-image: url('/site_media/img/pause_audio_button_bg.png');
+}
+.audioblock-container li a.jp-rewind {
+    background-image: url('/site_media/img/rewind_audio_button_bg.png');
+    display: none ; 
+}
+
+</style>

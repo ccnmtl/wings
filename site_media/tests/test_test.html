@@ -18,6 +18,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>storeText</td>
+	<td>selenium_test_user_id</td>
+	<td>selenium_test_user_id</td>
+</tr>
+<tr>
 	<td>open</td>
 	<td>/admin/wings_main/participant/</td>
 	<td></td>
@@ -30,12 +35,12 @@
 <tr>
 	<td>type</td>
 	<td>//form[@id='participant_form']/div[2]/fieldset/div/div/input[1]</td>
-	<td>9999999</td>
+	<td>${selenium_test_user_id}</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>//form[@id='participant_form']/div[2]/fieldset/div/div/input[2]</td>
-	<td>9999999</td>
+	<td>${selenium_test_user_id}</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -1314,6 +1319,17 @@
 	<td>id=next</td>
 	<td></td>
 </tr>
+<!--test that goal setting requires at least one answer-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Please finish this page</td>
+	<td></td>
+</tr>
 <!--GOAL SETTING-->
 <tr>
 	<td>click</td>
@@ -1352,6 +1368,17 @@
 	<td></td>
 </tr>
 <!--ISSUES THAT CAN TRIGGER CONFLICT-->
+<!--test that issues page requires an answer-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Please finish this page</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>//input[@name='pageblock-247-question239' and @value='3']</td>
