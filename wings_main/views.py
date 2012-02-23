@@ -348,3 +348,15 @@ def all_answers(request):
         'users':     [ u for u in User.objects.all() if u.part()],
         'questions': [ q for q in Question.objects.all()],   
     }
+    
+    
+    
+    
+@staff_or_404
+@rendered_with('wings_main/all_answers_key.html')
+def all_answers_key(request):
+    """ key for the above"""
+    node_list = []
+    return {
+        'questions': [ q for q in Question.objects.all()],   
+    }

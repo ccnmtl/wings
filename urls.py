@@ -9,37 +9,35 @@ import staticmedia
 
 urlpatterns = patterns('',
     
-    #TODO use a proper reverse:
-    ('^$', redirect_to, {'url': '/admin/wings_main/participant/'}),
+    ('^$',                redirect_to, {'url': '/admin/wings_main/participant/'}),
+    ('^admin/login/$',    redirect_to, {'url': '/admin/wings_main/participant/'}),   
+    ('^accounts/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),
+    ('^login/$',          redirect_to, {'url': '/admin/wings_main/participant/'}),   
     
-    
-    ('^admin/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
-    ('^accounts/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
-    ('^login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
-    ('^logout/$', redirect_to, {'url': '/admin/logout/'}), 
     
     ('^about/$',   'wings_main.views.background',  {'content_to_show': 'about'  }),
-    ('^help/$',   'wings_main.views.background',   {'content_to_show': 'help'  }),
+    ('^help/$',    'wings_main.views.background',  {'content_to_show': 'help'   }),
     ('^contact/$', 'wings_main.views.background',  {'content_to_show': 'contact'}),
     ('^credits/$', 'wings_main.views.background',  {'content_to_show': 'credits'}),
-
-
-
+    ('^logout/$',   redirect_to,                   {'url': '/admin/logout/'     }), 
     
-    #shortcut to first page 
+    #shortcut to first page of the 
     ('^first/$', 'wings_main.views.first'),
-
+    
+    #giant table of all answers from all participants 
+    ('^all_answers/$',     'wings_main.views.all_answers'),
+    ('^all_answers_key/$', 'wings_main.views.all_answers_key'),
+    
     #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),
-
-    #giant table of all answers from all participants 
-    ('^all_answers/$', 'wings_main.views.all_answers'),
     
-    
-
+    #start the participant off:
     (r'^participant/(?P<id_string>\d+)/launch/',           'wings_main.views.launch_participant'),                     
+    
+    #exit materials for a particular participant (meant to be accessed by the facilitator from the list of participants)
     (r'^participant/(?P<id_string>\d+)/exit_materials/',   'wings_main.views.exit_materials'),                     
-                   
+    
+    #exit materials for the logged in user:
     (r'^exit_materials/',   'wings_main.views.participant_exit_materials'),
 
     (r'^pagetree/',include('pagetree.urls')),
@@ -59,7 +57,7 @@ urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
     (r'^munin/',include('munin.urls')),
 
-    # Note: this is nonstandard, but the standard is incredibly confusing to mere mortals.
+    # This is nonstandard, but the standard is confusing.
     # I'm sorry, but for this site, urls in "site_media"  will reference directory "site_media".
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':  settings.SITE_MEDIA_ROOT }),
     (r'^uploads/(?P<path>.*)$',    'django.views.static.serve', {'document_root' : settings.UPLOADS_ROOT    }),

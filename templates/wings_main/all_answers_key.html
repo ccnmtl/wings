@@ -1,0 +1,33 @@
+{% extends 'wings_main/stats.html' %}
+{% load pastquizanswers %}
+
+{%block title%}Key to answer summary{%endblock%}
+
+{% block table %}
+    <h1>"Radio button" (multiple choice, single answer) questions:</h1>
+    {% for qu in questions %}
+        {% if qu.is_single_choice %}
+        <p>{{ qu.id}}: {{qu.text}}:
+        </p>
+           
+            <ul>
+                 {% for aa in qu.answer_set.all %}
+                    <li>{{aa.value}} = {{aa}}</li>
+                {%endfor%}
+            </ul>
+        {%endif %}
+    {%endfor%}
+    
+    <h1>Remaining questions (checkboxes and text fields)</h1>
+    {% for qu in questions %}
+        {% if not qu.is_single_choice %}
+        <ul><li>{{ qu.id}}: {{qu.text}}</li></ul>
+        {%endif %}
+    {%endfor%}
+{% endblock %}
+
+{%block below_table%}
+    <div>
+        <a href ="javascript:self.close();" >Close this tab</a>
+    </div>
+{%endblock%}
