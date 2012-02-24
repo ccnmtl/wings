@@ -79,7 +79,6 @@
     {%if request.user.part %}
         {%if request.user.part.current_section.id == section.id  %}
         
-        {{request.user.part.is_test}}
 		{%if not request.user.part.is_test %}
              <script type="text/javascript" >
                 function hide_next () {
