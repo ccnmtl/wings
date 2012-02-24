@@ -8,9 +8,8 @@
     {% for qu in questions %}
         {% if qu.is_single_choice %}
         <p>
-        <a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}: {{qu.text}}</a>
+            <a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}: {{qu.text}}</a>
         </p>
-           
             <ul>
                  {% for aa in qu.answer_set.all %}
                     <li>
