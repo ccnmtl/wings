@@ -35,19 +35,19 @@
 
     function setup_key_shortcuts() {
 	    $(document).keyup(function (e) {
-		    if (e.which == 78 || e.which == 39) {// if user types the letter n
+		    if (e.which == 78 ) {// if user types the letter n
 			    if (!text_input_mode) {
 			        if ( jQuery ('#next').filter(":visible").length > 0  ) {
 	     			    jQuery ('#next')[0].click();
 			        }
 			    }
 		    }
-		    if (e.which == 66  || e.which == 37) { // if user types the letter b
+		    if (e.which == 66 ) { // if user types the letter b
 			    if (!text_input_mode) {
 				    jQuery ('#previous')[0].click();
 			    }
 		    }
-		    if (e.which == 32) { // if user types the letter b
+		    if (e.which == 32 ) { // if user types a space
 			    if (!text_input_mode) {
 				    jQuery ('#secondary_navigation').toggle();
 				    jQuery ('.globalnav').toggle();
@@ -201,7 +201,6 @@
 {% block content-nav %}
 
 <div class="content-nav">
-    <!-- Django messages go here-- e.g. "Please finish all quiz answers before continuing."-->
 {% if section.get_previous %}
     {% if needs_submit %}
         <a href="#" id="previous" onclick ="javascript:submit_and_prev()">{{section.get_previous.label}} »</a>
