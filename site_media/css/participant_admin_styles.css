@@ -1,9 +1,5 @@
 
 
-table#result_list tr {
-    height: 60px;
-}
-
 div.breadcrumbs {
     display:none;
 }
@@ -39,6 +35,15 @@ table#result_list th.action-checkbox-column {
 
 table#result_list  tbody tr td:first-child {
     display:none;
+}
+
+table#result_list tr {
+    height: 60px;
+}
+
+table#result_list th, table#result_list td {
+    text-align: center;
+    vertical-align: middle;
 }
 
 
