@@ -613,7 +613,7 @@ table#change-history tbody th {
     margin-top: 117px;
     border: none;
     padding: 5px 15px;
-    height: 20px;
+    height: 24px;
 }
 
 #branding h1 {
@@ -676,7 +676,6 @@ table#change-history tbody th {
     float: left;
     display: block;
     width: 500px;
-    background-color: #dedede;
     padding: 0 15px 15px 15px;
     margin: 0 30px 15px 0;
 }
@@ -684,6 +683,7 @@ table#change-history tbody th {
 table#login td {
 
     padding: 10px;
+	background-color: #dedede;
 }
 
 .loginbox
