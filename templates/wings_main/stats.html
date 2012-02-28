@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load smartif %}
+
+{% block css %}
+<style type="text/css">
+    body {
+        width:1226px;
+        margin-left: 40px;
+    }
+    span.stats_page_stat, th {
+        cursor: default;
+    }
+    div#container ,div#primarynav , div#header {
+        width: 5000px;
+    }
+    div#primarynav,  #footer , #logo_project, #standardnav, #logo_ccnmtl, .visualclear{
+        display:none;
+    }
+    div.stats_table {
+        position: relative;
+        left : -160px;
+        top :  -30px;
+    }
+</style>
+{%endblock %}
+
+
+{% block content %}
+    <div class = "stats_table">
+            {% block table %}{% endblock %}
+    </div>
+
+
+{%block below_table%}{%endblock%}
+
+{%endblock%}

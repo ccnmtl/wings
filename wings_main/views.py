@@ -97,15 +97,13 @@ if True:
                     return 'image_on_right'
 
             def decoration_info(section):
-                """Generate some info that the section can use to decorate itself."""
+                """Generate some info that the section can use to decorate itself."""                
                 
-                really_depressing_sections = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
-                hide_title_sections        = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
-                
+                really_depressing_sections = [Section.objects.get(id = 100), Section.objects.get(id = 53)]
                 really_depressing_content =  is_descendent_of (section, really_depressing_sections)
-                
-                
+                hide_title_sections        = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
                 the_rank = section_rank (section)
+                
                 result = {
                     'rank'  :           the_rank,
                     'image' :           pick_decoration_image (the_rank),
@@ -348,5 +346,17 @@ def all_answers(request):
     node_list = []
     return {
         'users':     [ u for u in User.objects.all() if u.part()],
+        'questions': [ q for q in Question.objects.all()],   
+    }
+    
+    
+    
+    
+@staff_or_404
+@rendered_with('wings_main/all_answers_key.html')
+def all_answers_key(request):
+    """ key for the above"""
+    node_list = []
+    return {
         'questions': [ q for q in Question.objects.all()],   
     }
