@@ -3,7 +3,28 @@
     <br/>
         <label class="required" for="id_id_string">Retype ID string please:</label>
         {{ field.field }}
+        
+        <div style="color:green" id ="date_suggestion">date</div><br/>
+        
+        
     <script language="javascript">
+        function figure_out_date() {
+            var dat = new Date() ;
+
+            var curr_date  =   dat.getDate();
+            var curr_month =   dat.getMonth() + 1; //months are zero based
+            var curr_year  =   dat.getFullYear().toString().substring (2,4);
+            var curr_hour  =   dat.getHours();
+            var curr_minutes = dat.getMinutes();
+            
+            if (curr_month < 10)  { curr_month  = '0' + curr_month; }
+            if (curr_hour  < 10)  { curr_hour   = '0' + curr_hour;  }
+            
+            var dmy = curr_year + "" + curr_month + "" + curr_date ;
+            date_suggestion = dmy + "" + curr_hour + "" + curr_minutes.toString().substring(0, 1) +"XYZ";
+            django.jQuery('#date_suggestion')[0].innerHTML = "(Hint: " + date_suggestion + ")";
+        }
+        django.jQuery(figure_out_date);
         django.jQuery('#participant_form').submit(function() {
                 // set the ID of the second text box;
                 django.jQuery(django.jQuery('input.vIntegerField')[1]).attr('id' ,'id_id_string_2');

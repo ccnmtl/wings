@@ -203,18 +203,18 @@
 <div class="content-nav">
 {% if section.get_previous %}
     {% if needs_submit %}
-        <a href="#" id="previous" onclick ="javascript:submit_and_prev()">{{section.get_previous.label}} »</a>
+        <a href="#" id="previous" onclick ="javascript:submit_and_prev()"></a>
     {%else %}
-        <a href="{{section.get_previous.get_absolute_url}}" id="previous">« {{section.get_previous.label}}</a>
+        <a href="{{section.get_previous.get_absolute_url}}" id="previous"></a>
     {%endif %}      
 {% endif %}
 
 {% if section.get_next %}
     {% with section.get_next as next_section %}
         {% if needs_submit %}
-            <a href="#" id="next" onclick ="javascript:submit_and_next()">{{section.get_next.label}} »</a>
+            <a href="#" id="next" onclick ="javascript:submit_and_next()"></a>
         {%else %}    
-            <a href="{{section.get_next.get_absolute_url}}" id="next">{{section.get_next.label}} »</a>
+            <a href="{{section.get_next.get_absolute_url}}" id="next"></a>
         {%endif%}
     {% endwith %}
 {% endif %}
