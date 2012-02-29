@@ -166,7 +166,7 @@ ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
 -- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_message_id_seq', 803, true);
+SELECT pg_catalog.setval('auth_message_id_seq', 880, true);
 
 
 --
@@ -260,7 +260,7 @@ ALTER SEQUENCE auth_user_groups_id_seq OWNED BY auth_user_groups.id;
 -- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_groups_id_seq', 94, true);
+SELECT pg_catalog.setval('auth_user_groups_id_seq', 99, true);
 
 
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 172, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 184, true);
 
 
 --
@@ -519,7 +519,7 @@ ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 432, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 453, true);
 
 
 --
@@ -1174,7 +1174,7 @@ ALTER SEQUENCE pageblocks_htmlblock_id_seq OWNED BY pageblocks_htmlblock.id;
 -- Name: pageblocks_htmlblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 45, true);
+SELECT pg_catalog.setval('pageblocks_htmlblock_id_seq', 46, true);
 
 
 --
@@ -1437,7 +1437,7 @@ ALTER SEQUENCE pagetree_pageblock_id_seq OWNED BY pagetree_pageblock.id;
 -- Name: pagetree_pageblock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 535, true);
+SELECT pg_catalog.setval('pagetree_pageblock_id_seq', 536, true);
 
 
 --
@@ -1674,7 +1674,7 @@ ALTER SEQUENCE quizblock_response_id_seq OWNED BY quizblock_response.id;
 -- Name: quizblock_response_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_response_id_seq', 3670, true);
+SELECT pg_catalog.setval('quizblock_response_id_seq', 4064, true);
 
 
 --
@@ -1712,7 +1712,7 @@ ALTER SEQUENCE quizblock_submission_id_seq OWNED BY quizblock_submission.id;
 -- Name: quizblock_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('quizblock_submission_id_seq', 3578, true);
+SELECT pg_catalog.setval('quizblock_submission_id_seq', 3938, true);
 
 
 --
@@ -1788,7 +1788,7 @@ ALTER SEQUENCE servicesblock_narroweddownanswer_id_seq OWNED BY servicesblock_na
 -- Name: servicesblock_narroweddownanswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 35, true);
+SELECT pg_catalog.setval('servicesblock_narroweddownanswer_id_seq', 40, true);
 
 
 --
@@ -2129,7 +2129,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_id_seq OWNED BY ssnmtreeblock_ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 215, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_id_seq', 240, true);
 
 
 --
@@ -2166,7 +2166,7 @@ ALTER SEQUENCE ssnmtreeblock_ssnmtreeperson_support_types_id_seq OWNED BY ssnmtr
 -- Name: ssnmtreeblock_ssnmtreeperson_support_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 149, true);
+SELECT pg_catalog.setval('ssnmtreeblock_ssnmtreeperson_support_types_id_seq', 186, true);
 
 
 --
@@ -2317,7 +2317,7 @@ ALTER SEQUENCE wings_main_participant_id_seq OWNED BY wings_main_participant.id;
 -- Name: wings_main_participant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('wings_main_participant_id_seq', 112, true);
+SELECT pg_catalog.setval('wings_main_participant_id_seq', 122, true);
 
 
 --
@@ -2844,13 +2844,13 @@ COPY audioblock_audioblock (id, description, audio_file) FROM stdin;
 98		audio_file/2012/02/15/getting_a_copy.mp3
 97		audio_file/2012/02/15/action_plan.mp3
 99		audio_file/2012/02/15/wrap_up_and_goodbye.mp3
-100		audio_file/2012/02/15/reasons_to_reduce_conflict_1.mp3
-101		audio_file/2012/02/15/reasons_to_reduce_conflict_2.mp3
-102		audio_file/2012/02/15/reasons_to_reduce_conflict_3.mp3
-103		audio_file/2012/02/15/reasons_to_reduce_conflict_4.mp3
-104		audio_file/2012/02/15/reasons_to_reduce_conflict_5.mp3
-105		audio_file/2012/02/15/reasons_to_reduce_conflict_6.mp3
 106		audio_file/2012/02/15/reasons_to_reduce_conflict_7.mp3
+100		audio_file/2012/02/23/reasons_to_reduce_conflict_1.mp3
+101		audio_file/2012/02/23/reasons_to_reduce_conflict_2.mp3
+102		audio_file/2012/02/23/reasons_to_reduce_conflict_3.mp3
+103		audio_file/2012/02/23/reasons_to_reduce_conflict_4.mp3
+104		audio_file/2012/02/23/reasons_to_reduce_conflict_5.mp3
+105		audio_file/2012/02/23/reasons_to_reduce_conflict_6.mp3
 \.
 
 
@@ -2883,7 +2883,9 @@ COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
 
 COPY auth_message (id, user_id, message) FROM stdin;
 800	124	Logged in!
-728	162	Logged in!
+862	176	Logged in!
+824	174	Logged in!
+849	173	Logged in!
 \.
 
 
@@ -3069,16 +3071,28 @@ COPY auth_user (id, username, first_name, last_name, email, password, is_staff, 
 2	jb2410	Jonah	Bossewitch	jb2410@columbia.edu	!	t	t	t	2011-09-15 17:53:14.469942-04	2011-06-01 14:35:19.53697-04
 1	anp8	Anders	Pearson	anp8@columbia.edu	!	t	t	t	2011-10-24 11:37:17.52734-04	2011-05-18 15:57:36.886786-04
 12	jl3562	June	Levine	jl3562@columbia.edu	sha1$af08e$f226be5974f594bbe22a4cf35a8a064a406dd4e6	f	t	f	2011-07-20 15:04:51.859021-04	2011-07-20 15:04:51.831345-04
+172	121212121212				!	f	t	f	2012-02-24 12:55:46.543746-05	2012-02-21 10:03:46.879003-05
 8	ed2198	Elizabeth	Day	ed2198@columbia.edu	sha1$79a42$f540acf3140449844ab34c4ea8f4316ac9fb71e0	t	t	t	2012-01-27 16:30:47.692487-05	2011-06-02 15:22:48.818126-04
-15	sas2268	Stacey	Shaw	sas2268@columbia.edu	sha1$49b01$88dd6a0e4ea581a0130900aeea2c2f4d314c9b55	t	t	f	2012-02-14 12:32:18.418388-05	2011-10-17 11:43:47-04
+173	simone				sha1$8bb62$6047a2ca056c3268097855eda196ce6d3b21c3c1	t	t	f	2012-02-24 13:15:46.03539-05	2012-02-24 12:03:12-05
+177	248248248248				!	f	t	f	2012-02-24 13:15:55.567899-05	2012-02-24 12:46:05.179717-05
 171	999999999999				!	f	t	f	2012-02-20 16:43:39.34772-05	2012-02-20 14:03:42.792225-05
 124	casi				sha1$92c83$216ed4e0c9a87d9d46f583a6763f11470a8cd2f5	t	t	f	2012-02-20 16:52:44.220477-05	2012-01-05 16:44:20-05
-172	121212121212				!	f	t	f	2012-02-22 12:07:47.445434-05	2012-02-21 10:03:46.879003-05
-13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-02-22 12:51:48.734929-05	2011-10-11 11:39:54-04
-109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-02-15 11:26:07.829497-05	2011-12-09 15:38:04-05
-162	marc				sha1$7f052$028ed2e00d03389beb5e1891263f17a158995237	t	t	t	2012-02-02 10:28:25.869758-05	2012-01-30 10:16:57-05
+180	122224124115				!	f	t	f	2012-02-27 12:22:58.831365-05	2012-02-24 12:47:58.471026-05
+175	stacey				sha1$22b1e$dbbcd855fe8c4254706e7464702c86948c0e745e	f	t	f	2012-02-24 12:03:49.85688-05	2012-02-24 12:03:49.856896-05
+162	marc				sha1$b235f$17e295bad3044fc7261fcd372a53c5f986b7627e	t	t	t	2012-02-28 16:36:58.142916-05	2012-01-30 10:16:57-05
+109	ccnmtl				sha1$39038$3319c0dad839fcbabecd0f37add7dd8aef2b816e	t	t	t	2012-02-28 16:51:53.189649-05	2011-12-09 15:38:04-05
+13	jr2502	Jessica	Rowe	jr2502@columbia.edu	sha1$156db$0309acb8024af5d8281e01e6c209e806921a0435	t	t	t	2012-02-29 13:58:57.531649-05	2011-10-11 11:39:54-04
+15	sas2268	Stacey	Shaw	sas2268@columbia.edu	sha1$8383f$c78ba31d659db8e6286366fe2c7e47dc678c5407	t	t	f	2012-02-24 12:22:39.48181-05	2011-10-17 11:43:47-04
+179	127224124597				!	f	t	f	2012-02-24 12:46:07.125922-05	2012-02-24 12:46:07.117693-05
 81	jesstest				sha1$57671$5b8c7dbe93ccf1a55d8fb03c0ec096f20354bb4a	t	t	f	2011-11-11 13:11:11.975745-05	2011-11-11 13:07:30-05
-5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$e26a0$df0db8b3077e90a88ec832c9f6c141409fb25008	t	t	t	2012-02-22 12:08:28.738593-05	2011-06-02 15:22:04-04
+176	brittany				sha1$7bf0b$a398a506907b4314b983ee1c138d09e8dcf71a48	t	t	f	2012-02-27 11:45:47.937444-05	2012-02-24 12:05:15-05
+182	sdreher				sha1$23bfa$21281c327af1a40b0881bf1347136a620e166f92	t	t	t	2012-02-28 08:15:15.040863-05	2012-02-27 09:19:13-05
+181	989898989898				!	f	t	f	2012-02-28 10:20:16.303927-05	2012-02-24 14:32:12.103822-05
+183	123123123122				!	f	t	f	2012-02-28 16:37:10.062143-05	2012-02-28 10:43:24.035853-05
+174	denise				sha1$7a3b7$1d34f81473d576cad552c9ae2b34498d51488adf	t	t	f	2012-02-24 12:23:21.426257-05	2012-02-24 12:03:31-05
+5	eddie	Edward	Rubeiz	egr2107@columbia.edu	sha1$fb341$7dcb9403cb4e538d1bfefd33a87891bf4b7b72b4	t	t	t	2012-02-29 12:05:57.517646-05	2011-06-02 15:22:04-04
+184	454545454545				!	f	t	f	2012-02-29 13:52:08.277517-05	2012-02-29 13:52:08.208866-05
+178	343434343434				!	f	t	f	2012-02-24 12:46:05.552373-05	2012-02-24 12:46:05.541937-05
 \.
 
 
@@ -3098,6 +3112,10 @@ COPY auth_user_groups (id, user_id, group_id) FROM stdin;
 92	16	49
 93	15	49
 94	124	49
+95	174	49
+96	173	49
+98	176	49
+99	182	49
 34	2	4
 38	11	2
 44	11	4
@@ -3727,6 +3745,27 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 430	2012-02-22 11:24:06.324382-05	5	3	169	12584584	3	
 431	2012-02-22 11:24:06.325523-05	5	3	168	88999777	3	
 432	2012-02-22 11:33:32.057553-05	13	42	112	123456789123	1	
+433	2012-02-24 12:03:12.232942-05	5	3	173	simone	1	
+434	2012-02-24 12:03:31.391669-05	5	3	174	denise	1	
+435	2012-02-24 12:03:49.897162-05	5	3	175	stacey	1	
+436	2012-02-24 12:05:15.792475-05	5	3	176	britney	1	
+437	2012-02-24 12:07:05.757213-05	5	3	174	denise	2	Changed is_staff and groups.
+438	2012-02-24 12:07:37.380664-05	5	3	173	simone	2	Changed is_staff and groups.
+439	2012-02-24 12:08:38.795979-05	5	3	176	britney	2	Changed is_staff and groups.
+440	2012-02-24 12:22:50.303929-05	5	3	176	brittany	2	Changed username.
+441	2012-02-24 12:44:49.580684-05	13	42	113	123456789124	1	
+442	2012-02-24 12:45:09.451519-05	5	42	114	111111111111	1	
+443	2012-02-24 12:45:22.490701-05	15	42	115	343434343434	1	
+444	2012-02-24 12:45:24.586033-05	13	42	116	123456789125	1	
+445	2012-02-24 12:45:44.853297-05	173	42	117	248248248248	1	
+446	2012-02-24 12:46:00.22049-05	176	42	118	127224124597	1	
+447	2012-02-24 12:47:29.806819-05	174	42	119	122224124115	1	
+448	2012-02-24 12:47:58.906293-05	5	42	120	989898989898	1	
+449	2012-02-24 12:52:50.760793-05	5	42	121	454545454545	1	
+450	2012-02-24 14:30:25.323755-05	5	42	122	111	1	
+451	2012-02-24 14:46:03.2557-05	5	42	122	123123123122	2	Changed id_string.
+452	2012-02-27 09:19:13.769589-05	13	3	182	sdreher	1	
+453	2012-02-27 09:20:16.224206-05	13	3	182	sdreher	2	Changed is_staff, is_superuser and groups.
 \.
 
 
@@ -3820,6 +3859,7 @@ COPY django_session (session_key, session_data, expire_date) FROM stdin;
 6d1ab2b4488cecbe935c99517a7cc4d1	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-02 13:54:04.918973-05
 cd5b63cc70b49c6b6f96515e48730042	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-06 11:10:20.121247-05
 18ba1a8ea1b1f1fcd01456f7a2e389ec	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 14:16:12.673985-05
+f2597cac4e797b82e3452779033c06a5	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-14 13:23:41.3808-04
 072f598bdc16569960d7371953b1abcf	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-13 01:28:56.684472-05
 1a690242ed0a21ba3e8b228aed92ce51	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 15:46:48.172039-05
 a9a7eecdb4ef1e4d55c1586e98485e6e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 05:23:23.564495-05
@@ -3846,11 +3886,13 @@ b2c3db7607a8449a991e184ad4007dbf	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc
 1c0ddb55b023d76021f16c5eb502da1a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-19 19:03:03.721673-05
 5ed201ed78a5dbebc2cdd12f1754d084	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-20 04:51:52.552319-05
 e8c36822be21de3852e3e764ccdf7d73	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-02-29 11:26:07.84265-05
+16a49659a65e8a0140b48c8f09b4dc00	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES7R1LjFiMTA1MmRlMDc1NTg4MGEwZjlj\nYjk1YzQ4ZTdiN2Ey\n	2012-03-12 12:22:58.895826-04
 1b4344198f333ba2145c3676e79bc455	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-23 16:46:21.619408-05
 b06bea18267d0cfb2936d5e3e65d36e6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-25 17:33:44.353218-05
 685afaf76989b08bbaaf62d62a400ae3	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-26 02:57:00.393425-05
 41d879f945cebfe97793324cd1c9de27	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKsAHUuNjNhMTZjYzMxOTgzYzdkYjlh\nNWYzYjdlZjExOTMyMDg=\n	2012-03-06 10:03:46.91376-05
 3f9677e20c131cb98b42ca70db5b2b7a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-06 20:19:00.825236-05
+4487da1c3169caa7a92e267c814f146a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-03-09 12:35:45.147053-05
 45b17204f63c67ff1301bcdf28dfeb0f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-09 16:30:23.417829-05
 38165a56bd4c16fbf71ece8f675c9ef4	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKNAHUuZGQ3NDFlMDc0MDViNTY4OGMw\nNjY4MGY4ZTA5ZjYwOWE=\n	2012-02-01 17:17:02.394192-05
 713e7cc2fb7b992ba133b7d8fac71da6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-02-01 11:07:15.14714-05
@@ -3863,20 +3905,29 @@ ec00b594470fc6158d8efe4e730633c6	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 064606c07841fce83c66915b48139c00	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKVAHUuYTM2MDExYWQxNTg2YmIyMjBi\nMjdlOWNiYjg1ZjY2YjQ=\n	2012-02-03 20:23:16.602213-05
 59985e4e9ffed239d736159c12ed2df0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-07 11:12:10.558204-05
 357738b8a952bfccdfe1f7f0270842c6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-17 10:04:54.225013-05
+fede06e67b21e52d5725abcf533cd20e	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-03-14 13:58:57.54626-04
+36bce78e74bac5ba6c9d9bc6976bb9c1	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES7Z1LjUyMjA5OWZjYzY1MmQ0YmJmMDRh\nMzcyN2E0NWUzOGY2\n	2012-03-13 08:15:15.056182-04
+785ca8f15d79f186d824afa0ad8c0fca	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES6x1LmM0NTM4NzlhM2VmNmYxMGIyYjk5\nNDQ3YTgzMmE0OTdk\n	2012-03-09 12:55:48.11312-05
 42e1e84f38f61a133f6ff15f0a2db95b	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES3x1LjA0ZGRiM2ZmZWMxYTE3YThjYWJi\nNmJhZWZiMjZiYmNl\n	2012-03-05 16:52:44.230025-05
-d9952e24b1f7781d921ccff2e081ea0e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-07 10:54:43.818513-05
-a78a2d6bc541a936a1d307deaa1f0016	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigKrAHUuZWM3ODIwMDU2YzE3YWMxYTI5\nMGQ4ZmI5YmI3YjYzNTg=\n	2012-03-05 14:03:42.815656-05
+2df051d6f61a13939c04ffcbd0e89534	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigK3AHUuZTk3YmQxNzhhOGI0OTUwYWE5\nMjNmYTQxNmMwNDgzMTc=\n	2012-03-13 10:43:24.068854-04
+d66517d6bb04e8d0ecbc0ec855eba546	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-03-09 13:19:41.202632-05
+36b9a4e995b40d70fc4d9f77a7396e1e	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-09 13:21:13.954873-05
+8c673d0a909fb206e3938179f95e8e69	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-03-09 15:53:58.578008-05
+fe582a7bccb1b2da8a5ca21008c8636a	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-10 12:38:16.025674-05
 8dd1cdccef506dbfaa0cba3541c44d72	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-01 13:07:18.15695-05
 12a49e9bd4a7f89f0e60bcd440357868	gAJ9cQEuMTVkOGZjNmI2MzFmYjBiYTA4Yjc5ZTE4ZDBiYWU5MmQ=\n	2012-02-07 17:01:37.753212-05
+8c70b4bcf8b3e57054ca4c44b5dca898	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-12 09:21:25.732171-04
 e0e93f0ccb7fa899ae6e01617a06d463	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-03-07 11:47:57.528804-05
 b11c083d26437f40f48f055a06023958	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-27 19:08:45.314108-05
 480dde54ebff66a892b0c30f6124713f	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-08 18:22:25.521939-05
 ec5bed3bb6697450769d475313d9ee9c	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-14 13:50:00.98055-05
 c7176b97b2effccfde77d8729af95f5d	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw91LmYxMWJiMTMyM2ZiNzdlYjkwM2Qx\nNGU2MTdkZmE2MmNh\n	2012-02-28 12:32:18.43301-05
-beffcba48baad7230a063febfcb3ef6a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-03-07 12:08:28.756551-05
 ca73f0920b48d97da9bfd546efc945e7	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-29 15:56:36.867229-05
 a0b8e3fc0323029e5887ead7eb89a02f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-03-07 12:51:48.817048-05
+c6b981c4775d4fed18d084137537af59	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-03-08 14:18:22.200466-05
+cf99532398337f0f561ca6ab914c0e77	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-09 13:16:43.66714-05
 34aacb45d7a7e78d8e08b8b615b7c840	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-02-15 14:28:54.10541-05
+77f3c77b1c0ada914d260b3fd21dfc43	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESw11LmIwOGIwOGU1MjlhNjEwOWI0YmJl\nMjkxOWQwY2Q0YjZh\n	2012-03-09 14:59:55.841325-05
 44bee5ced1621983de4595b4594b30c4	gAJ9cQEoVQp0ZXN0Y29va2llcQJVBndvcmtlZHEDVRJfYXV0aF91c2VyX2JhY2tlbmRxBFUpZGph\nbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxBVUNX2F1dGhfdXNlcl9pZHEG\nS6F1Ljg0YzYxYTAyMGJkOTFhOGE0NTA4ZDczNTg3YWJjOWI0\n	2012-02-13 12:18:05.937247-05
 9d47f93a2b4b367d7b4d0b7c8cf7a7dc	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-13 14:38:06.398184-05
 86ec943fe2802b1dfcfffdccaa007227	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-13 15:38:28.278832-05
@@ -3884,7 +3935,15 @@ a0b8e3fc0323029e5887ead7eb89a02f	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmd
 4793492561904ed4ab67381f7c69531b	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-02-14 11:03:53.525542-05
 21510b144baf661667470aac3526fb56	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES4d1LmJjODRjZWU5NGM3NTQ0MmE5ZTc2\nYzFiMzQxMzE3ZWU3\n	2012-02-01 10:46:17.238026-05
 ee3d82bf04c8eff6f06a729b48ff2f66	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-02-29 10:28:53.837786-05
+a4aad454ec76c8617b03c746a8f81d29	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-13 13:12:14.001725-04
+9dd4a2eec3108fc18d585538f560c5a0	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-13 17:12:49.216167-04
+16a8cfd4ea206a52531bc65c3303e2c6	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-13 18:26:45.638141-04
+924fd1404c986e0a6b0a3395358418ba	gAJ9cQFVCnRlc3Rjb29raWVxAlUGd29ya2VkcQNzLjA1ODc3ZjdmNzljMDU4MjIwZDcyNzA3ZTUw\nNjUxYTVm\n	2012-03-14 10:26:18.464723-04
 9bd0758a0a1cbb2b346b8e156a9901df	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwh1LmNlZDhiNWU4MGVjNWRiNGUzZDYw\nYjE2Y2RhNDMxMGQ4\n	2012-02-01 12:50:16.745078-05
+e3f447455da11b6928b02230dd0aeea0	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEEigK0AHUuM2IxYTIwNmFmNDNmNTU2ZDQ5\nMmRjMDM3ZGJhNDNkMDM=\n	2012-03-09 12:47:58.961015-05
+769aefccaa960012c440a464bf502813	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES6J1LjQzZWUwMzg0YTk2ZWQwZGE5ODkz\nYzMzMmMyNTdkZTUz\n	2012-03-13 16:25:55.779262-04
+95712df13ccc4fa875a4aecd960d869a	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEES211LjEyNzQ1NDI5YmFmZWNiZDMzZDQx\nNjRjNTdkZjg0OTZk\n	2012-03-13 16:51:53.216328-04
+a70b09480fb47788908b1b404ab691eb	gAJ9cQEoVRJfYXV0aF91c2VyX2JhY2tlbmRxAlUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmRxA1UNX2F1dGhfdXNlcl9pZHEESwV1LjhiMmZkYWFkNjI1NGNlOTVhZThh\nYmNmNTI3Y2RkM2Yw\n	2012-03-14 12:05:57.533829-04
 \.
 
 
@@ -4010,7 +4069,6 @@ COPY helpblock_helpblock (id, description, audio_file) FROM stdin;
 53	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 54	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 55	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
-57	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 60	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 61	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
 62	Stuck on This Screen?\n\nYou must complete all questions on the page before moving on. To answer a question, click in the empty white box and type your answer.	audio_file/2012/01/25/stuck_on_screen_help.mp3
@@ -4176,6 +4234,7 @@ COPY pageblocks_htmlblock (id, html) FROM stdin;
 42	<!-- just adding this to turn off the image -->
 43	<!-- just adding this to turn off the image -->
 45	
+46	
 \.
 
 
@@ -4286,6 +4345,7 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 45	A woman may have to leave the residence she shares with her partner, who is out of control. Leaving must be done with a careful plan in order to increase safety.  A violent partner often strikes back if he or she believes that the woman is leaving a relationship.
 16	Most relationships have good times and bad times. Intimate relationships can be an important source of support, love, and purpose in life. Conflict can arise when partners have different needs or expectations or when difficult things happen that are outside of both partners’ control. While all relationships may have positives and negatives, we’d like to spend some time today talking about conflict and abuse, which sometimes occurs in intimate relationships.\r\n   
 49	Let's identify the goals you most want to pursue.
+87	Would you like to receive a printed copy of the safety plan and items we've talk about today, or would you prefer to have this sent by email, mailed to you, or mailed to another address? If you don't take it with you today, please talk to the caseworker to give her the address where it should be sent.\r\n<br /><br />\r\n<div class="video">\r\n<a class="bigbutton" href="/exit_materials/" >Print Now</a>\r\n<br />\r\n<br />\r\n<br />\r\n <a class="bigbutton exit_materials_logout_button" href="/logout/">Log Out</a>\r\n</div>
 75	<div class="tree-instructions practical">\r\n<h3>Instructions: Practical Support</h3>\r\n<p>Now click on the names of people who can give you practical support, like giving you a place to stay, watching your pets, or lending you money.\r\n</p>\r\n</div>
 70	Women cannot always avoid violent incidents. In order to increase safety, women may use a variety of strategies.  You can use some or all the strategies on the following pages to stay safe.
 71	You will be given or mailed a copy of this safety plan.  Do you have a safe place to keep the safety plan at home or with a friend?\r\n\r\nYou will also get a list called 'Items to Remember' that provides a suggested list of things to take with you if you have to leave.  Where can you keep this list?\r\n\r\nDo you have a safe place to keep the 24-hour hotline number and other important numbers?
@@ -4300,7 +4360,6 @@ COPY pageblocks_textblock (id, body) FROM stdin;
 80	<h5>Here is a list of organizations that provide the service you just selected as the most important to you.</h5>\r\n\r\n<p>At the end of this session you'll be given or mailed a booklet that includes these as well as other service organizations.</p>
 83	In this next section I will be asking you a number of questions about your relationship(s) with all the partners you have had during the past year, and whether you have had any conflicts with any of them during the past year. 
 79	<div class="cases">\r\n<div class="casecontent">\r\n<div class="casequestion">\r\n<p>Out of these services, which one is the most important, or addresses your most immediate or life-threatening issues?</p></div>
-87	Would you like to receive a printed copy of the safety plan and items we've talk about today, or would you prefer to have this sent by email, mailed to you, or mailed to another address? If you don't take it with you today, please talk to the caseworker to give her the address where it should be sent.\r\n<br /><br />\r\n<div class="video"><a class="bigbutton" href="/exit_materials/" >Print Now</a></div>
 72	In addition to coming up with a safety plan, it may also help for you to be able to reach out family and friends who you can turn to for help, advice, and emotional support if you are feeling afraid that your partner might hurt you. There may also be times when it is safer for you to stay with a friend or family member. Your friends or family may also help you out by taking care of your children or pets or helping you financially if you need to leave.\r\n\r\nDifferent people may be able to help you in different ways. For example, it may be easier to talk with a friend about your relationship problems but ask your aunt for place to stay. Can you name between 1 to 5 people who you trust that may be able to support you?
 63	Exposure to violence can also have lasting consequences for children. Kids who see or hear violence often experience grief, fear, and anxiety. Boys who witness violence between their parents are ten times more likely to abuse their partners when they become adults. Girls who witness parental violence are much more likely to be abused by their partners when they grow up.
 84	Let's put some intro copy here.
@@ -4330,7 +4389,6 @@ COPY pagetree_hierarchy (id, name, base_url) FROM stdin;
 --
 
 COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, object_id) FROM stdin;
-301	222	1		16	87
 242	212	2		16	74
 503	211	4	help_block	44	83
 311	167	2		43	32
@@ -4351,9 +4409,12 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 244	215	1		16	76
 534	125	1		20	20
 146	126	2		16	48
+405	202	2		43	100
 97	97	1		16	35
+408	205	2		43	103
 291	220	2		46	2
 248	58	1		16	78
+301	222	1		16	87
 285	162	2		43	25
 287	164	2		43	27
 510	55	1		20	2
@@ -4373,7 +4434,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 70	72	1		16	29
 326	218	1		17	33
 221	197	1		26	115
-405	202	2		43	100
 298	221	1		17	32
 303	223	1		16	88
 413	223	2		43	108
@@ -4383,7 +4443,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 79	76	1		16	33
 317	173	2		43	38
 183	161	1		26	80
-408	205	2		43	103
 265	63	2		43	5
 232	74	1		19	12
 184	162	1		26	81
@@ -4474,8 +4533,10 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 397	220	3		43	96
 423	165	1	help_block	44	7
 257	147	1		26	128
+404	62	1		17	37
 220	196	1		26	114
 415	112	2		43	110
+264	62	2		43	4
 266	74	2		43	6
 268	151	2		43	8
 306	224	1		43	31
@@ -4495,7 +4556,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 399	222	2		43	98
 336	113	1		16	93
 297	155	1		17	31
-264	62	2		43	4
 398	147	2		43	97
 390	211	3		43	89
 391	213	3		43	90
@@ -4507,7 +4567,6 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 394	145	2		43	93
 377	115	1		16	108
 378	115	3		43	78
-404	62	1		17	37
 261	211	2		17	28
 256	220	1		16	80
 255	219	1		16	79
@@ -4555,14 +4614,14 @@ COPY pagetree_pageblock (id, section_id, ordinality, label, content_type_id, obj
 456	112	1	help_block	44	40
 457	113	1	help_block	44	41
 509	57	4		17	43
+411	208	2		43	106
+536	147	3		17	46
+462	115	1	help_block	44	46
 406	203	2		43	101
 407	204	2		43	102
 409	206	2		43	104
 410	207	2		43	105
-411	208	2		43	106
-462	115	1	help_block	44	46
 467	120	1	help_block	44	51
-473	62	1	help_block	44	57
 511	221	2		44	87
 512	52	2		44	88
 476	187	1	help_block	44	60
@@ -4798,13 +4857,13 @@ COPY pastquizanswersblock_pastquizanswersblock (id, description, copy) FROM stdi
 --
 
 COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdin;
-659	223		not applicable	f	3
+659	223	4	not applicable	f	3
 370	113	1	yes	f	0
 371	113	2	no	f	1
-660	230		not applicable	f	3
-661	231		not applicable	f	3
+660	230	4	not applicable	f	3
+661	231	4	not applicable	f	3
 372	113	3	maybe	f	2
-662	232		not applicable	f	3
+662	232	4	not applicable	f	3
 261	72	1	Strongly Agree	f	0
 262	72	2	Agree Somewhat	f	1
 263	72	3	Agree a little	f	2
@@ -4908,7 +4967,10 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 394	121	1	yes	f	0
 395	121	2	no	f	1
 396	121	3	maybe	f	2
-663	233		not applicable	f	3
+455	172	8	Ex-Wife	f	7
+468	176	8	Ex-Wife	f	7
+483	180	8	Ex-Wife	f	7
+663	233	4	not applicable	f	3
 434	167	1	My partner and I stay together, with no change	f	0
 435	167	2	My partner and I stay together.  Stop emotional abuse.	f	1
 436	167	3	My partner and I stay together.  Stop physical abuse.	f	2
@@ -4922,7 +4984,6 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 452	172	5	Husband	f	4
 453	172	6	Wife	f	5
 454	172	7	Ex-Husband	f	6
-455	172	Ex-Wife	Ex-Wife	f	7
 456	172	9	Common-law Husband	f	8
 457	172	10	Common-law Wife	f	9
 458	172	11	Lover	f	10
@@ -4935,7 +4996,6 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 465	176	5	Husband	f	4
 466	176	6	Wife	f	5
 467	176	7	Ex-Husband	f	6
-468	176	Ex-Wife	Ex-Wife	f	7
 469	176	9	Common-law Husband	f	8
 470	176	10	Common-law Wife	f	9
 471	176	11	Lover	f	10
@@ -4950,7 +5010,6 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 480	180	5	Husband	f	4
 481	180	6	Wife	f	5
 482	180	7	Ex-Husband	f	6
-483	180	Ex-Wife	Ex-Wife	f	7
 484	180	9	Common-law Husband	f	8
 485	180	10	Common-law Wife	f	9
 486	180	11	Lover	f	10
@@ -5069,7 +5128,6 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 606	223	3	no	f	1
 605	223	2	maybe	f	2
 607	230	1	yes	f	0
-656	241		Job training for self or partner	f	0
 641	241	2	Help Getting Housing	f	1
 628	239	1	Partner’s mental health issues or problem	f	0
 629	239	2	Partner’s unemployment	f	1
@@ -5096,7 +5154,6 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 620	234	1	yes	f	0
 622	234	3	no	f	1
 621	234	2	maybe	f	2
-664	234		not applicable	f	3
 653	243	1	yes	f	0
 654	243	2	no	f	1
 655	243	3	maybe	f	2
@@ -5105,6 +5162,8 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 548	205	2	once a month	f	2
 549	205	3	once a week	f	3
 550	205	4	daily	f	4
+664	234	4	not applicable	f	3
+656	241	1	Job training for self or partner	f	0
 642	241	3	Education/Go back to School/GED	f	2
 643	241	4	Recreation/Social Activities	f	3
 644	241	5	Safety day care for children	f	4
@@ -5113,8 +5172,8 @@ COPY quizblock_answer (id, question_id, value, label, correct, _order) FROM stdi
 647	241	8	Anger management or batterer’s treatment program for Partner or Self	f	7
 648	241	9	Counseling or Group Support to deal with Partner abuse	f	8
 649	241	10	Emergency Domestic Violence Shelter or Residential Program	f	9
-651	241	11	Counseling from a religious organization (pastor, priest, rabbi)	f	11
-652	241	12	Couples/Marital counseling	f	12
+651	241	12	Counseling from a religious organization (pastor, priest, rabbi)	f	11
+652	241	13	Couples/Marital counseling	f	12
 \.
 
 
@@ -5411,12 +5470,54 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3628	156	3551	 
 3629	157	3552	 
 3662	168	3568	
+3691	187	3587	1
+3697	190	3593	1
+3703	189	3599	2
+3709	188	3605	2
+3715	192	3612	2
+3721	189	3619	2
+3727	200	3625	1
+3733	191	3633	2
+3739	196	3642	2
+3745	192	3650	2
+3751	199	3656	1
+3757	202	3662	1
+3763	211	3670	1
+3769	188	3676	2
+3775	206	3682	3
+3781	206	3688	4
+3787	215	3694	1
+3793	215	3702	3
+3799	208	3714	2
+3805	217	3720	1
 98	179	120	
 99	180	121	Ex-Wife
 100	179	124	
 101	180	125	Ex-Wife
 102	236	128	
 103	237	128	
+3811	196	3727	2
+3817	211	3733	1
+3823	215	3739	1
+3829	217	3746	3
+3835	232	3753	1
+3841	234	3760	1
+3847	235	3766	
+3853	231	3772	1
+3859	148	3778	bob 
+3865	151	3784	 by the door
+3871	220	3790	2
+3877	150	3796	go down the stairsbnnnbbn
+3883	151	3802	in the closet 
+3890	153	3809	Denise 
+3896	158	3815	 foyer
+3902	156	3821	3280 
+3903	157	3822	 CUSSW
+3909	222	3828	not having a place to live, having my vehicle taken away by him if I don't do what he says\r\n
+3915	159	3834	 Jess
+3921	161	3840	9/22/ 
+3926	231	3845	1
+3931	164	3850	brittany 
 3148	168	3113	
 3149	167	3113	4
 3150	167	3113	5
@@ -5716,10 +5817,48 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3621	155	3544	 
 3630	158	3553	n
 3663	168	3569	
+3692	185	3588	1
+3698	184	3594	2
+3704	192	3600	1
+3710	187	3607	2
+3716	197	3613	1
+3722	199	3620	1
+3728	190	3626	2
+3734	204	3634	3
+3740	191	3643	2
+3746	191	3651	2
+3752	193	3657	1
+3758	196	3663	1
+3764	187	3671	2
+3770	213	3677	1
+3776	204	3683	0
+3782	190	3689	2
+3788	215	3696	2
+3794	215	3703	1
+3800	216	3715	1
+3806	194	3721	2
+3812	222	3728	getting arrested
+3818	212	3734	2
+3824	200	3740	2
+3830	218	3747	1
+3836	203	3754	4
+3842	211	3761	2
+3848	213	3767	1
+3854	232	3773	
 2874	160	2876	n
 2880	164	2882	
 2888	245	2888	
 2889	244	2888	
+3860	209	3779	4
+3866	153	3785	my mom 
+3872	222	3791	
+3878	223	3797	
+3884	232	3803	1
+3891	235	3810	pie
+3897	216	3816	1
+3904	219	3823	1
+3910	151	3829	closet 
+3916	160	3835	jess 
 3154	168	3119	
 3155	167	3119	4
 3156	167	3119	5
@@ -5841,10 +5980,40 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3667	241	3570	9
 3668	242	3570	
 3670	242	3578	
+3671	241	3579	2
+3672	241	3579	5
+3673	241	3579	7
+3674	241	3579	10
+3675	242	3579	
+3676	245	3580	
+3677	244	3580	   
+3678	240	3581	
+3679	239	3581	2
+3680	239	3581	8
+3681	239	3581	11
+3687	184	3583	1
+3693	186	3589	1
+3699	188	3595	1
+3705	187	3601	2
 907	168	1073	
 908	236	1074	
 909	237	1074	
 910	168	1075	
+3711	195	3608	1
+3717	189	3614	2
+3723	193	3621	2
+3729	202	3628	2
+3735	205	3637	1
+3741	207	3645	4
+3747	209	3652	3
+3753	194	3658	1
+3759	197	3666	1
+3765	204	3672	0
+3771	205	3678	2
+3777	243	3684	1
+3783	208	3690	2
+3789	215	3698	3
+3795	191	3704	1
 926	210	1085	1
 927	211	1086	1
 928	212	1087	1
@@ -5863,9 +6032,30 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 941	158	1100	
 942	236	1101	
 943	237	1101	
+3801	209	3716	3
+3807	218	3722	1
+3813	209	3729	2
 2400	186	2366	1
+3819	213	3735	3
+3825	223	3741	2
+3831	219	3748	1
+3837	222	3755	fighting
+3843	235	3762	
+3849	223	3768	
+3855	233	3774	3
+3861	243	3780	2
+3867	217	3786	2
+3873	210	3792	1
+3879	230	3798	3
+3885	233	3804	3
+3892	243	3811	1
+3898	217	3817	1
 2875	160	2877	n
 2881	165	2883	
+3905	220	3824	2
+3911	158	3830	the hallway 
+3917	160	3836	Eddie 
+3922	230	3841	
 3254	241	3206	2
 3255	241	3206	3
 970	185	1129	1
@@ -5924,6 +6114,13 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3655	242	3563	
 3659	168	3565	
 3669	168	3571	
+3682	241	3582	2
+3683	241	3582	5
+3684	241	3582	7
+3685	241	3582	10
+3686	242	3582	
+3688	185	3584	1
+3694	188	3590	1
 1052	240	1199	
 1053	239	1199	1
 1054	239	1199	2
@@ -5991,6 +6188,46 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 1116	241	1210	9
 1117	242	1210	
 1118	168	1211	
+3700	185	3596	1
+3706	193	3602	1
+3712	191	3609	1
+3718	198	3616	1
+3724	188	3622	2
+3730	190	3629	2
+3736	195	3638	1
+3742	185	3647	1
+3748	198	3653	2
+3754	200	3659	1
+3760	203	3667	1
+3766	199	3673	1
+3772	202	3679	1
+3778	189	3685	2
+3784	215	3691	2
+3790	215	3699	3
+3796	207	3705	4
+3802	208	3717	2
+3808	195	3724	1
+3814	197	3730	1
+3820	199	3736	2
+3826	202	3743	4
+3832	203	3749	4
+3838	204	3757	0
+3844	205	3763	0
+3850	221	3769	3
+3856	234	3775	2
+3862	215	3781	1
+3868	218	3787	1
+3874	211	3793	1
+3880	213	3799	1
+3886	221	3805	1
+3893	153	3812	Denise 
+3899	155	3818	 WINGS
+3906	148	3825	 
+3912	153	3831	jim 
+3918	155	3837	martin 
+3923	162	3842	moving into Denise
+3927	156	3846	denise 
+3928	157	3847	 stacey
 3258	245	3207	
 3259	244	3207	
 3352	153	3298	 
@@ -6034,6 +6271,79 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3643	241	3560	10
 3644	242	3560	
 3660	168	3566	
+3689	186	3585	1
+3695	189	3591	2
+3701	191	3597	1
+3707	190	3603	1
+3713	196	3610	1
+3719	189	3617	2
+3725	189	3623	2
+3731	203	3630	4
+3737	206	3639	3
+3743	197	3648	2
+3749	192	3654	2
+3755	195	3660	1
+3761	210	3668	1
+3767	212	3674	1
+3773	221	3680	1
+3779	207	3686	2
+3785	215	3692	2
+3791	215	3700	1
+3797	192	3711	2
+3803	193	3718	2
+3809	219	3725	1
+3815	198	3731	2
+3821	221	3737	2
+3827	216	3744	2
+3833	231	3750	1
+3839	233	3758	1
+3845	212	3764	3
+3851	207	3770	4
+3857	235	3776	
+3863	150	3782	use the fire escape
+3869	219	3788	3
+3875	154	3794	brittany 
+3881	231	3800	
+3887	234	3806	1
+3894	215	3813	3
+3900	218	3819	3
+3907	148	3826	bob 
+3913	154	3832	wes 
+3919	223	3838	1
+3924	162	3843	
+3929	163	3848	jess
+3932	232	3851	1
+3934	163	3853	djdj
+3936	158	3855	hallway 
+3938	165	3857	3.14 days a week 
+3940	166	3859	dawn 
+3942	234	3861	3
+3944	166	3863	 djd
+3946	161	3865	tomorrow 
+3948	236	3867	contact mom 
+3949	237	3867	 call stacey
+3951	148	3869	 
+3954	168	3871	we get clean
+3955	167	3871	3
+3957	148	3873	 
+3959	168	3875	
+3960	167	3875	1
+3962	240	3877	
+3963	239	3877	1
+3965	239	3877	2
+3966	239	3877	3
+3967	239	3877	4
+3968	239	3877	5
+3969	239	3877	6
+3970	239	3877	7
+3971	239	3877	8
+3972	239	3877	9
+3973	239	3877	10
+3974	239	3877	11
+3975	239	3877	12
+3976	242	3879	
+3978	240	3881	
+3979	239	3881	8
 3347	240	3287	
 3348	235	3294	
 3349	148	3295	
@@ -6062,6 +6372,38 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3413	217	3359	2
 3417	222	3363	
 3427	151	3374	
+3980	239	3881	9
+3981	239	3881	10
+3985	242	3883	
+3998	150	3885	The front door
+4001	245	3887	create art
+4002	244	3887	call palladia
+4009	151	3889	in the cabnet by the door 
+4011	154	3891	Gertrude 
+4014	236	3893	h 
+4015	237	3893	h
+4018	245	3895	ride the subway
+4019	244	3895	go home
+4021	240	3897	hi
+4022	239	3897	3
+4025	156	3899	Gertrude 
+4026	157	3900	Tina
+4029	245	3902	bye
+4030	244	3902	hi
+4032	159	3904	 
+4034	160	3906	Gertrude home 
+4036	162	3908	taking charge of my life
+4038	163	3910	Tina or Gertrude
+4040	165	3912	 daily
+4044	168	3915	
+4045	167	3915	4
+4048	242	3917	
+4051	245	3919	
+4052	244	3919	contact them
+4056	185	3925	1
+4059	185	3932	1
+4061	187	3934	2
+4063	150	3936	
 1693	198	1709	2
 2785	222	2777	fghn
 3523	190	3466	2
@@ -6084,11 +6426,86 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 2872	159	2874	n
 2878	162	2880	\r\nn\r\n\r\n\r\n\r\n
 3661	168	3567	
+3690	184	3586	2
+3696	187	3592	2
+3702	186	3598	2
+3708	194	3604	1
+3714	188	3611	2
+3720	188	3618	2
+3726	194	3624	2
+3732	190	3632	2
+3738	184	3640	2
+3744	208	3649	4
+3750	186	3655	1
+3756	187	3661	1
+3762	198	3669	1
+3768	200	3675	1
+3774	203	3681	3
+3780	205	3687	0
+3786	215	3693	2
+3792	215	3701	2
+3798	208	3713	2
+3804	209	3719	3
+3810	220	3726	1
+3816	210	3732	1
+3822	243	3738	1
+3828	230	3745	1
+3834	220	3751	2
+3840	210	3759	1
+3846	206	3765	4
+3852	230	3771	3
+3858	208	3777	4
+3864	216	3783	2
 1565	222	1592	sdf
 1566	222	1593	sdf
 1567	220	1594	1
 1568	222	1595	sdf
+3870	148	3789	Stacey 
+3876	212	3795	2
 2884	240	2886	
+3882	155	3801	Aunt flo 
+3888	156	3807	 brittany's house
+3889	157	3808	 mom's
+3895	154	3814	Simone 
+3901	148	3820	 
+3908	150	3827	go to simones
+3914	159	3833	stacey 
+3920	161	3839	 5/7/12
+3925	162	3844	
+3930	164	3849	brittany 
+3933	233	3852	2
+3935	158	3854	hallway 
+3937	164	3856	Denise 
+3939	164	3858	Denise 
+3941	165	3860	 3
+3943	159	3862	betty 
+3945	160	3864	simone 
+3947	235	3866	To feel better about myself and move on with my life.
+3950	162	3868	getting a cat
+3952	236	3870	 go to school
+3953	237	3870	 go to work
+3956	163	3872	n
+3958	164	3874	a 
+3961	165	3876	 a
+3964	166	3878	d 
+3977	148	3880	Denise 
+3982	241	3882	
+3983	241	3882	2
+3984	241	3882	3
+3986	241	3882	4
+3987	241	3882	5
+3988	241	3882	6
+3989	241	3882	7
+3990	241	3882	8
+3991	241	3882	9
+3992	241	3882	10
+3993	241	3882	11
+3994	242	3882	
+3995	240	3884	
+3996	239	3884	8
+3997	239	3884	10
+3999	236	3886	 
+4000	237	3886	 
 3350	150	3296	 
 3356	150	3307	  
 3358	151	3309	
@@ -6110,6 +6527,42 @@ COPY quizblock_response (id, question_id, submission_id, value) FROM stdin;
 3420	239	3364	8
 3421	239	3364	11
 3428	153	3375	 
+4003	241	3888	9
+4004	241	3888	10
+4005	241	3888	11
+4006	241	3888	11
+4007	241	3888	12
+4008	242	3888	having fun
+4010	153	3890	Tina 
+4012	245	3892	
+4013	244	3892	
+4016	168	3894	hep
+4017	167	3894	1
+4020	155	3896	Tina 
+4023	241	3898	10
+4024	242	3898	
+4027	245	3901	
+4028	244	3901	
+4031	158	3903	along the hallway towards the front door
+4033	159	3905	extra keys
+4035	161	3907	next week 
+4037	163	3909	
+4039	164	3911	 Gertrude
+4041	166	3913	Gertrude 
+4042	236	3914	contact my friends 
+4043	237	3914	 visit my support network
+4046	240	3916	
+4047	239	3916	1
+4049	241	3918	4
+4050	242	3918	
+4053	245	3920	services 
+4054	244	3920	contact them
+4055	184	3924	1
+4057	186	3927	2
+4058	184	3931	1
+4060	186	3933	2
+4062	148	3935	 
+4064	185	3938	1
 \.
 
 
@@ -6173,13 +6626,39 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3570	126	5	2012-02-22 12:09:23.33554-05
 3572	117	13	2012-02-22 12:52:08.792788-05
 3578	126	5	2012-02-22 12:57:46.68717-05
+3579	126	13	2012-02-23 10:24:53.484402-05
+3580	128	13	2012-02-23 10:26:22.534369-05
+3581	125	13	2012-02-24 12:32:55.15225-05
+3583	80	177	2012-02-24 12:52:10.009878-05
+3589	82	179	2012-02-24 12:52:52.461917-05
+3595	84	179	2012-02-24 12:53:15.062154-05
+3601	83	178	2012-02-24 12:53:21.32972-05
+3607	83	178	2012-02-24 12:53:32.299927-05
+3613	93	177	2012-02-24 12:53:46.282798-05
 2364	84	13	2012-01-19 16:12:15.227916-05
 2366	82	13	2012-01-19 16:16:18.008871-05
+3619	85	178	2012-02-24 12:53:54.258795-05
+3625	96	177	2012-02-24 12:54:06.955689-05
+3631	87	178	2012-02-24 12:54:29.301903-05
+3637	100	177	2012-02-24 12:54:56.415817-05
+3643	87	178	2012-02-24 12:55:11.620683-05
+3649	103	177	2012-02-24 12:55:22.000173-05
+3655	82	180	2012-02-24 12:55:32.212801-05
+3661	83	180	2012-02-24 12:55:46.323272-05
+3667	98	179	2012-02-24 12:55:52.175052-05
+3673	95	178	2012-02-24 12:56:01.783599-05
+3679	97	178	2012-02-24 12:56:12.671937-05
+3685	85	180	2012-02-24 12:56:22.623401-05
 3113	64	5	2012-01-25 15:29:59.333699-05
+3691	110	177	2012-02-24 12:56:37.428893-05
 3118	124	5	2012-01-25 18:11:01.036587-05
 3120	80	5	2012-01-25 18:22:50.622164-05
 3121	105	5	2012-01-26 13:34:42.086917-05
+3697	104	179	2012-02-24 12:56:40.173906-05
 3128	49	5	2012-01-26 13:44:06.705261-05
+3703	110	177	2012-02-24 12:56:41.619888-05
+3709	103	178	2012-02-24 12:56:51.532738-05
+3715	111	177	2012-02-24 12:56:57.566355-05
 3287	125	13	2012-01-30 14:51:37.731293-05
 3288	117	5	2012-01-30 15:39:49.65644-05
 3294	123	5	2012-01-30 15:40:05.506354-05
@@ -6207,6 +6686,15 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3343	125	13	2012-02-13 10:55:52.060705-05
 3348	50	13	2012-02-13 11:00:32.360036-05
 3349	128	13	2012-02-13 11:09:29.892158-05
+3721	90	180	2012-02-24 12:57:12.715453-05
+3727	92	180	2012-02-24 12:57:37.048188-05
+3733	106	178	2012-02-24 12:58:14.488964-05
+3739	110	178	2012-02-24 12:58:37.630135-05
+3745	118	177	2012-02-24 12:58:58.405429-05
+3751	115	178	2012-02-24 12:59:15.005198-05
+3757	99	180	2012-02-24 12:59:31.945391-05
+3763	100	180	2012-02-24 12:59:44.047935-05
+3769	109	179	2012-02-24 13:00:05.452357-05
 863	126	5	2011-12-21 11:03:44.894575-05
 865	125	5	2011-12-21 11:03:52.759875-05
 867	125	5	2011-12-21 11:09:22.198634-05
@@ -6263,9 +6751,38 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3565	64	5	2012-02-22 12:08:45.303909-05
 3571	64	5	2012-02-22 12:09:41.065537-05
 3573	118	13	2012-02-22 12:52:11.76605-05
+3582	126	13	2012-02-24 12:33:03.353818-05
+3584	81	177	2012-02-24 12:52:16.676931-05
+3590	84	177	2012-02-24 12:52:53.1913-05
+3596	81	178	2012-02-24 12:53:15.404105-05
+3602	89	177	2012-02-24 12:53:25.054059-05
+3608	91	177	2012-02-24 12:53:35.357423-05
+3614	85	178	2012-02-24 12:53:46.837503-05
+3620	95	177	2012-02-24 12:53:54.755488-05
+3626	86	178	2012-02-24 12:54:12.383957-05
+3632	86	178	2012-02-24 12:54:34.775989-05
+3638	91	179	2012-02-24 12:54:59.011775-05
+3644	93	179	2012-02-24 12:55:15.577875-05
+3650	88	178	2012-02-24 12:55:22.49866-05
+3656	95	179	2012-02-24 12:55:34.127696-05
+3662	97	179	2012-02-24 12:55:46.328486-05
 2365	83	13	2012-01-19 16:12:19.922481-05
 2367	83	13	2012-01-19 16:16:22.422087-05
 3295	47	5	2012-01-30 15:40:44.302155-05
+3668	105	177	2012-02-24 12:55:53.191982-05
+3674	107	177	2012-02-24 12:56:04.547212-05
+3680	109	177	2012-02-24 12:56:15.74661-05
+3686	102	179	2012-02-24 12:56:25.804176-05
+3692	110	177	2012-02-24 12:56:38.367779-05
+3698	110	177	2012-02-24 12:56:40.196514-05
+3704	87	180	2012-02-24 12:56:44.408013-05
+3710	104	179	2012-02-24 12:56:51.853277-05
+3716	104	178	2012-02-24 12:56:58.828719-05
+3722	113	177	2012-02-24 12:57:16.699342-05
+3728	116	177	2012-02-24 12:57:47.128559-05
+3734	107	178	2012-02-24 12:58:21.233701-05
+3740	96	180	2012-02-24 12:58:38.945034-05
+3746	112	178	2012-02-24 12:58:59.604387-05
 3301	81	162	2012-02-01 12:19:56.591977-05
 3307	48	162	2012-02-01 12:21:43.065038-05
 3309	49	13	2012-02-13 10:17:32.658999-05
@@ -6277,7 +6794,17 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2855	85	5	2012-01-23 15:30:48.410069-05
 2861	89	5	2012-01-23 15:31:03.226538-05
 2867	95	5	2012-01-23 15:31:13.31601-05
+3752	99	180	2012-02-24 12:59:16.563883-05
 3119	64	5	2012-01-25 18:11:03.164223-05
+3758	121	177	2012-02-24 12:59:32.26475-05
+3764	107	179	2012-02-24 12:59:50.285557-05
+3770	102	180	2012-02-24 13:00:06.276349-05
+3775	122	178	2012-02-24 13:00:34.619716-05
+3780	127	179	2012-02-24 13:00:50.977712-05
+3785	50	177	2012-02-24 13:01:17.282996-05
+3790	115	179	2012-02-24 13:01:39.505245-05
+3795	107	180	2012-02-24 13:02:27.20415-05
+3800	119	179	2012-02-24 13:02:58.558155-05
 3129	48	5	2012-01-26 13:44:16.918658-05
 3131	50	5	2012-01-26 13:45:23.38799-05
 3344	126	13	2012-02-13 10:55:55.729985-05
@@ -6297,10 +6824,18 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3360	113	13	2012-02-15 11:20:36.31691-05
 3365	126	13	2012-02-15 11:25:02.997678-05
 3372	119	13	2012-02-15 14:31:19.060869-05
+3805	109	180	2012-02-24 13:03:15.790605-05
+3811	127	180	2012-02-24 13:03:33.111432-05
 898	125	5	2012-01-04 10:28:30.390943-05
 900	125	5	2012-01-04 10:29:01.499703-05
 902	126	5	2012-01-04 10:29:09.060846-05
 904	126	5	2012-01-04 10:32:10.011096-05
+3816	111	180	2012-02-24 13:03:55.550732-05
+3821	53	178	2012-02-24 13:04:34.738693-05
+3822	54	178	2012-02-24 13:04:34.744724-05
+3827	48	179	2012-02-24 13:05:54.331331-05
+3832	51	179	2012-02-24 13:07:00.285614-05
+3837	52	179	2012-02-24 13:07:38.164518-05
 319	66	5	2011-12-09 16:16:49.59296-05
 320	67	5	2011-12-09 16:16:49.599501-05
 321	68	5	2011-12-09 16:16:49.60216-05
@@ -6683,12 +7218,48 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3560	126	13	2012-02-22 10:54:06.39013-05
 3566	64	5	2012-02-22 12:08:51.494584-05
 3574	119	13	2012-02-22 12:52:15.585333-05
+3585	82	177	2012-02-24 12:52:23.800412-05
+3591	85	177	2012-02-24 12:53:02.267962-05
 2773	64	5	2012-01-23 14:36:29.270239-05
 2774	116	5	2012-01-23 14:36:54.054506-05
 2778	116	5	2012-01-23 14:49:21.303197-05
+3597	87	177	2012-02-24 12:53:15.773932-05
+3603	86	179	2012-02-24 12:53:25.454628-05
+3609	87	179	2012-02-24 12:53:37.504508-05
+3615	86	178	2012-02-24 12:53:48.22159-05
+3621	89	179	2012-02-24 12:53:55.205557-05
+3627	87	178	2012-02-24 12:54:15.265003-05
+3633	87	178	2012-02-24 12:54:42.106722-05
+3639	101	177	2012-02-24 12:55:05.772417-05
+3645	102	177	2012-02-24 12:55:16.050198-05
+3651	87	178	2012-02-24 12:55:25.85119-05
+3657	89	178	2012-02-24 12:55:34.75979-05
+3663	92	178	2012-02-24 12:55:47.120311-05
+3669	94	178	2012-02-24 12:55:56.853252-05
+3675	96	178	2012-02-24 12:56:08.032131-05
+3681	98	178	2012-02-24 12:56:16.481172-05
+3687	100	178	2012-02-24 12:56:26.123411-05
+3693	110	177	2012-02-24 12:56:38.948082-05
+3699	110	177	2012-02-24 12:56:40.559256-05
+3705	102	178	2012-02-24 12:56:46.05344-05
+3711	88	180	2012-02-24 12:56:53.183404-05
+3717	103	178	2012-02-24 12:57:00.869708-05
+3723	114	177	2012-02-24 12:57:22.879856-05
+3729	104	179	2012-02-24 12:57:49.154846-05
+3735	108	178	2012-02-24 12:58:24.980227-05
+3741	117	177	2012-02-24 12:58:49.10145-05
+3747	113	178	2012-02-24 12:59:04.936532-05
 1073	64	13	2012-01-11 15:30:21.078953-05
 1074	124	13	2012-01-11 15:30:23.90214-05
 1075	64	13	2012-01-11 15:30:26.227094-05
+3753	120	177	2012-02-24 12:59:20.354178-05
+3759	105	179	2012-02-24 12:59:36.273175-05
+3765	101	180	2012-02-24 12:59:56.488209-05
+3771	118	178	2012-02-24 13:00:10.664118-05
+3776	123	178	2012-02-24 13:00:38.801941-05
+3781	110	179	2012-02-24 13:00:57.780616-05
+3786	112	179	2012-02-24 13:01:22.313145-05
+3791	116	179	2012-02-24 13:01:45.580504-05
 3290	119	5	2012-01-30 15:39:53.680042-05
 1085	105	13	2012-01-12 11:00:50.135506-05
 1086	106	13	2012-01-12 11:00:55.940749-05
@@ -6724,6 +7295,16 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3368	117	13	2012-02-15 14:31:04.644664-05
 3373	117	13	2012-02-15 14:31:36.177427-05
 3374	49	13	2012-02-15 16:14:37.527044-05
+3796	48	178	2012-02-24 13:02:27.590525-05
+3801	52	177	2012-02-24 13:03:03.669179-05
+3806	122	179	2012-02-24 13:03:20.212373-05
+3812	50	178	2012-02-24 13:03:38.024939-05
+3817	112	180	2012-02-24 13:04:08.944996-05
+3823	114	180	2012-02-24 13:04:38.324907-05
+3828	116	180	2012-02-24 13:06:07.910217-05
+3833	56	177	2012-02-24 13:07:21.747377-05
+3838	117	180	2012-02-24 13:07:38.735185-05
+3842	59	177	2012-02-24 13:07:51.13553-05
 1129	81	13	2012-01-12 16:06:29.075367-05
 2850	80	5	2012-01-23 15:30:40.628318-05
 2856	86	5	2012-01-23 15:30:51.048171-05
@@ -6753,6 +7334,34 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3567	64	5	2012-02-22 12:08:57.871936-05
 2775	115	5	2012-01-23 14:37:03.347043-05
 3575	120	13	2012-02-22 12:52:19.425532-05
+3586	80	179	2012-02-24 12:52:33.378294-05
+3592	83	179	2012-02-24 12:53:07.175685-05
+3598	82	178	2012-02-24 12:53:18.190655-05
+3604	90	177	2012-02-24 12:53:29.472977-05
+3610	92	177	2012-02-24 12:53:40.409336-05
+3616	94	177	2012-02-24 12:53:50.427001-05
+3622	84	178	2012-02-24 12:53:55.670263-05
+3628	97	177	2012-02-24 12:54:21.934791-05
+3634	99	177	2012-02-24 12:54:42.768047-05
+3640	80	180	2012-02-24 12:55:07.061193-05
+3646	88	178	2012-02-24 12:55:16.155286-05
+3652	104	177	2012-02-24 12:55:27.405224-05
+3658	90	178	2012-02-24 12:55:38.929059-05
+3664	105	177	2012-02-24 12:55:48.932259-05
+3670	106	177	2012-02-24 12:55:58.103457-05
+3676	84	180	2012-02-24 12:56:08.810752-05
+3682	101	179	2012-02-24 12:56:17.339366-05
+3688	101	178	2012-02-24 12:56:29.978123-05
+3694	110	177	2012-02-24 12:56:39.2784-05
+3700	110	177	2012-02-24 12:56:40.842435-05
+3706	104	179	2012-02-24 12:56:49.018084-05
+3712	104	179	2012-02-24 12:56:54.003118-05
+3718	89	180	2012-02-24 12:57:02.609906-05
+3724	91	180	2012-02-24 12:57:27.078197-05
+3730	93	180	2012-02-24 12:57:49.801223-05
+3736	95	180	2012-02-24 12:58:25.202791-05
+3742	111	178	2012-02-24 12:58:50.474821-05
+3748	114	178	2012-02-24 12:59:09.925964-05
 1199	125	5	2012-01-12 18:24:39.237124-05
 1200	125	5	2012-01-12 18:24:44.107191-05
 1201	126	5	2012-01-12 18:24:47.331764-05
@@ -6766,6 +7375,14 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 1209	125	5	2012-01-12 18:25:58.656254-05
 1210	126	5	2012-01-12 18:26:05.76105-05
 1211	64	13	2012-01-13 11:06:15.982025-05
+3754	98	180	2012-02-24 12:59:22.351399-05
+3760	122	177	2012-02-24 12:59:39.167726-05
+3766	123	177	2012-02-24 12:59:58.671706-05
+3772	119	178	2012-02-24 13:00:14.760825-05
+3777	103	180	2012-02-24 13:00:40.233551-05
+3782	48	177	2012-02-24 13:01:02.229073-05
+3787	113	179	2012-02-24 13:01:26.94061-05
+3792	105	180	2012-02-24 13:02:01.897562-05
 3291	120	5	2012-01-30 15:39:57.354725-05
 3297	49	5	2012-01-30 15:41:34.212454-05
 3303	83	162	2012-02-01 12:20:03.207533-05
@@ -6777,6 +7394,15 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3346	47	13	2012-02-13 10:57:52.752949-05
 3352	106	13	2012-02-15 11:20:11.845262-05
 3357	110	13	2012-02-15 11:20:26.268334-05
+3797	117	179	2012-02-24 13:02:34.446197-05
+3802	49	178	2012-02-24 13:03:04.761226-05
+3807	53	177	2012-02-24 13:03:22.843404-05
+3808	54	177	2012-02-24 13:03:22.849522-05
+3813	110	180	2012-02-24 13:03:45.331658-05
+3818	52	178	2012-02-24 13:04:21.27656-05
+3824	115	180	2012-02-24 13:04:52.154517-05
+3829	49	179	2012-02-24 13:06:27.770117-05
+3834	56	178	2012-02-24 13:07:23.411241-05
 3362	115	13	2012-02-15 11:20:42.892711-05
 3367	118	13	2012-02-15 14:24:54.105751-05
 3369	118	13	2012-02-15 14:31:07.43291-05
@@ -6785,6 +7411,35 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2857	85	5	2012-01-23 15:30:52.838704-05
 2863	91	5	2012-01-23 15:31:06.613342-05
 2869	95	5	2012-01-23 15:31:22.201709-05
+3839	58	177	2012-02-24 13:07:41.159972-05
+3843	59	178	2012-02-24 13:07:52.891549-05
+3846	53	179	2012-02-24 13:08:14.000261-05
+3847	54	179	2012-02-24 13:08:14.006535-05
+3850	61	177	2012-02-24 13:08:28.947989-05
+3853	60	178	2012-02-24 13:09:02.407188-05
+3856	61	178	2012-02-24 13:09:06.432602-05
+3859	63	177	2012-02-24 13:09:15.20802-05
+3862	56	179	2012-02-24 13:10:26.736104-05
+3865	58	179	2012-02-24 13:10:56.710482-05
+3868	59	179	2012-02-24 13:12:12.57957-05
+3871	64	177	2012-02-24 13:12:25.72122-05
+3874	61	179	2012-02-24 13:12:36.455234-05
+3877	125	177	2012-02-24 13:12:57.75131-05
+3880	47	180	2012-02-24 13:13:08.686964-05
+3883	126	178	2012-02-24 13:13:28.062676-05
+3886	124	179	2012-02-24 13:14:11.26597-05
+3889	49	180	2012-02-24 13:14:33.493095-05
+3892	128	178	2012-02-24 13:15:01.330762-05
+3895	128	178	2012-02-24 13:15:56.73191-05
+3898	126	179	2012-02-24 13:16:25.636479-05
+3902	128	179	2012-02-24 13:17:07.295876-05
+3905	56	180	2012-02-24 13:18:23.357577-05
+3908	59	180	2012-02-24 13:19:20.983715-05
+3911	61	180	2012-02-24 13:20:08.991381-05
+3918	126	180	2012-02-24 13:26:54.337146-05
+3923	80	183	2012-02-28 15:01:40.064106-05
+3926	82	183	2012-02-28 15:03:04.441716-05
+3933	82	183	2012-02-28 15:12:37.171511-05
 3383	120	13	2012-02-17 12:20:48.914678-05
 2876	57	13	2012-01-23 16:13:16.533468-05
 2882	61	13	2012-01-23 16:14:01.111463-05
@@ -6808,6 +7463,41 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 2776	116	5	2012-01-23 14:37:07.821298-05
 3576	121	13	2012-02-22 12:52:23.103437-05
 3292	121	5	2012-01-30 15:39:59.143327-05
+3587	83	177	2012-02-24 12:52:35.728632-05
+3593	86	177	2012-02-24 12:53:09.37117-05
+3599	85	179	2012-02-24 12:53:19.86126-05
+3605	84	178	2012-02-24 12:53:29.551511-05
+3611	84	178	2012-02-24 12:53:42.151262-05
+3617	85	178	2012-02-24 12:53:50.526465-05
+3623	85	178	2012-02-24 12:53:57.483655-05
+3629	86	178	2012-02-24 12:54:25.499337-05
+3635	88	178	2012-02-24 12:54:45.329173-05
+3641	102	177	2012-02-24 12:55:11.364521-05
+3647	81	180	2012-02-24 12:55:19.608462-05
+3653	94	179	2012-02-24 12:55:28.42997-05
+3659	96	179	2012-02-24 12:55:40.9961-05
+3665	84	180	2012-02-24 12:55:51.301459-05
+3671	83	180	2012-02-24 12:55:58.559215-05
+3677	108	177	2012-02-24 12:56:10.767299-05
+3683	99	178	2012-02-24 12:56:20.438571-05
+3689	86	180	2012-02-24 12:56:32.592524-05
+3695	104	179	2012-02-24 12:56:39.293768-05
+3701	110	177	2012-02-24 12:56:41.122142-05
+3707	111	177	2012-02-24 12:56:50.109465-05
+3713	103	178	2012-02-24 12:56:56.145913-05
+3719	104	178	2012-02-24 12:57:05.349687-05
+3725	114	177	2012-02-24 12:57:27.727522-05
+3731	94	180	2012-02-24 12:58:03.032004-05
+3737	109	178	2012-02-24 12:58:29.028764-05
+3743	97	180	2012-02-24 12:58:52.768209-05
+3749	98	180	2012-02-24 12:59:09.926577-05
+3755	116	178	2012-02-24 12:59:23.386711-05
+3761	106	179	2012-02-24 12:59:43.456465-05
+3767	108	179	2012-02-24 13:00:00.217545-05
+3773	120	178	2012-02-24 13:00:19.756573-05
+3778	47	177	2012-02-24 13:00:49.393487-05
+3783	111	179	2012-02-24 13:01:04.622092-05
+3788	114	179	2012-02-24 13:01:31.684977-05
 3298	50	5	2012-01-30 15:41:51.373747-05
 3304	80	13	2012-02-01 12:20:49.305897-05
 3312	52	13	2012-02-13 10:17:46.760518-05
@@ -6820,14 +7510,60 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3358	111	13	2012-02-15 11:20:29.242355-05
 3363	116	13	2012-02-15 11:20:48.743022-05
 2852	82	5	2012-01-23 15:30:43.832313-05
+3793	106	180	2012-02-24 13:02:14.653827-05
+3798	118	179	2012-02-24 13:02:45.925347-05
+3803	120	179	2012-02-24 13:03:05.569472-05
+3809	50	178	2012-02-24 13:03:32.45511-05
 1592	116	5	2012-01-18 13:00:23.463191-05
 1593	116	5	2012-01-18 13:00:31.600329-05
 1594	115	5	2012-01-18 13:00:36.651808-05
 1595	116	5	2012-01-18 13:00:39.784202-05
+3814	51	178	2012-02-24 13:03:45.335207-05
+3819	113	180	2012-02-24 13:04:23.61305-05
+3825	47	179	2012-02-24 13:05:26.637196-05
+3830	55	178	2012-02-24 13:06:37.219219-05
 3370	119	13	2012-02-15 14:31:09.418542-05
+3835	57	177	2012-02-24 13:07:27.281648-05
+3840	58	178	2012-02-24 13:07:43.228697-05
 2858	86	5	2012-01-23 15:30:56.070036-05
 2864	92	5	2012-01-23 15:31:08.308542-05
 2870	96	5	2012-01-23 15:31:24.804083-05
+3844	59	178	2012-02-24 13:08:10.618803-05
+3848	60	177	2012-02-24 13:08:15.533753-05
+3851	120	180	2012-02-24 13:08:37.452964-05
+3854	55	179	2012-02-24 13:09:05.179073-05
+3857	62	177	2012-02-24 13:09:07.236296-05
+3860	62	178	2012-02-24 13:10:01.957497-05
+3863	63	178	2012-02-24 13:10:36.356873-05
+3866	123	180	2012-02-24 13:11:06.356913-05
+3869	47	180	2012-02-24 13:12:13.73781-05
+3872	60	179	2012-02-24 13:12:29.635486-05
+3875	64	178	2012-02-24 13:12:43.150755-05
+3878	63	179	2012-02-24 13:12:57.914247-05
+3881	125	178	2012-02-24 13:13:08.737974-05
+3884	125	178	2012-02-24 13:13:39.901334-05
+3887	128	177	2012-02-24 13:14:13.030123-05
+3890	50	180	2012-02-24 13:14:46.644687-05
+3893	124	179	2012-02-24 13:15:12.041183-05
+3896	52	180	2012-02-24 13:16:15.097559-05
+3899	53	180	2012-02-24 13:16:43.148523-05
+3900	54	180	2012-02-24 13:16:43.154881-05
+3903	55	180	2012-02-24 13:17:23.961791-05
+3906	57	180	2012-02-24 13:18:47.770205-05
+3909	60	180	2012-02-24 13:19:40.570904-05
+3912	62	180	2012-02-24 13:20:19.27268-05
+3914	124	180	2012-02-24 13:23:12.598679-05
+3916	125	180	2012-02-24 13:26:18.384212-05
+3919	128	180	2012-02-24 13:27:31.070228-05
+3921	80	183	2012-02-28 15:01:32.444233-05
+3924	80	183	2012-02-28 15:01:45.895007-05
+3927	82	183	2012-02-28 15:03:57.64076-05
+3928	83	183	2012-02-28 15:05:43.823497-05
+3930	83	183	2012-02-28 15:10:05.362107-05
+3931	80	183	2012-02-28 15:12:29.306442-05
+3934	83	183	2012-02-28 15:12:43.452141-05
+3935	47	13	2012-02-29 14:13:14.543992-05
+3937	80	13	2012-02-29 14:17:01.846335-05
 3384	121	13	2012-02-17 12:20:50.961399-05
 2877	57	13	2012-01-23 16:13:19.161009-05
 2883	62	13	2012-01-23 16:14:03.931352-05
@@ -6848,10 +7584,43 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3569	64	5	2012-02-22 12:09:11.646036-05
 3577	122	13	2012-02-22 12:52:26.442146-05
 2777	116	5	2012-01-23 14:39:17.703705-05
+3588	81	179	2012-02-24 12:52:40.578059-05
+3594	80	178	2012-02-24 12:53:10.946806-05
+3600	88	177	2012-02-24 12:53:20.32146-05
+3606	87	179	2012-02-24 12:53:31.021499-05
+3612	88	179	2012-02-24 12:53:44.140292-05
+3618	84	178	2012-02-24 12:53:52.49705-05
 1700	80	5	2012-01-18 16:01:48.31777-05
+3624	90	179	2012-02-24 12:54:01.059453-05
+3630	98	177	2012-02-24 12:54:27.604605-05
 1703	81	5	2012-01-18 16:01:54.16193-05
+3636	100	177	2012-02-24 12:54:47.35324-05
+3642	92	179	2012-02-24 12:55:11.417367-05
+3648	93	179	2012-02-24 12:55:21.775291-05
+3654	88	178	2012-02-24 12:55:30.949812-05
+3660	91	178	2012-02-24 12:55:42.653657-05
 1709	94	5	2012-01-18 16:02:06.233941-05
 1710	95	5	2012-01-18 16:02:11.283797-05
+3666	93	178	2012-02-24 12:55:51.566301-05
+3672	99	179	2012-02-24 12:55:59.528481-05
+3678	100	179	2012-02-24 12:56:11.330774-05
+3684	127	177	2012-02-24 12:56:20.760642-05
+3690	103	179	2012-02-24 12:56:35.220586-05
+3696	110	177	2012-02-24 12:56:39.531132-05
+3702	110	177	2012-02-24 12:56:41.385508-05
+3708	104	179	2012-02-24 12:56:50.328999-05
+3714	103	179	2012-02-24 12:56:57.003744-05
+3720	112	177	2012-02-24 12:57:09.117025-05
+3726	115	177	2012-02-24 12:57:32.770524-05
+3732	105	178	2012-02-24 12:58:10.819155-05
+3738	127	178	2012-02-24 12:58:32.714883-05
+3744	111	178	2012-02-24 12:58:55.108689-05
+3750	119	177	2012-02-24 12:59:10.450659-05
+3756	121	177	2012-02-24 12:59:24.090794-05
+3762	123	177	2012-02-24 12:59:43.572148-05
+3768	117	178	2012-02-24 13:00:04.923787-05
+3774	121	178	2012-02-24 13:00:28.115721-05
+3779	104	180	2012-02-24 13:00:50.76726-05
 3293	122	5	2012-01-30 15:40:00.726661-05
 3299	51	5	2012-01-30 15:41:57.816544-05
 3305	47	162	2012-02-01 12:21:25.681645-05
@@ -6864,11 +7633,55 @@ COPY quizblock_submission (id, quiz_id, user_id, submitted) FROM stdin;
 3354	108	13	2012-02-15 11:20:18.092072-05
 3359	112	13	2012-02-15 11:20:32.605435-05
 3364	125	13	2012-02-15 11:24:47.69803-05
+3784	49	177	2012-02-24 13:01:10.522959-05
+3789	47	178	2012-02-24 13:01:38.969448-05
+3794	51	177	2012-02-24 13:02:17.005106-05
+3799	108	180	2012-02-24 13:02:49.861336-05
+3804	121	179	2012-02-24 13:03:11.073163-05
+3810	123	179	2012-02-24 13:03:32.860908-05
+3815	55	177	2012-02-24 13:03:50.730587-05
+3820	47	179	2012-02-24 13:04:26.257386-05
 3371	120	13	2012-02-15 14:31:17.366614-05
+3826	47	179	2012-02-24 13:05:34.677195-05
+3831	50	179	2012-02-24 13:06:50.758145-05
 2853	83	5	2012-01-23 15:30:45.318407-05
 2859	87	5	2012-01-23 15:30:59.782769-05
 2865	93	5	2012-01-23 15:31:09.878466-05
 2871	97	5	2012-01-23 15:31:27.310539-05
+3836	57	178	2012-02-24 13:07:33.682448-05
+3841	118	180	2012-02-24 13:07:47.671063-05
+3845	119	180	2012-02-24 13:08:12.81663-05
+3849	61	177	2012-02-24 13:08:28.408971-05
+3852	121	180	2012-02-24 13:08:55.747796-05
+3855	55	179	2012-02-24 13:09:05.421982-05
+3858	61	178	2012-02-24 13:09:10.362731-05
+3861	122	180	2012-02-24 13:10:11.96088-05
+3864	57	179	2012-02-24 13:10:45.786629-05
+3867	124	177	2012-02-24 13:12:03.695115-05
+3870	124	178	2012-02-24 13:12:19.077364-05
+3873	47	180	2012-02-24 13:12:36.454618-05
+3876	62	179	2012-02-24 13:12:51.064036-05
+3879	126	177	2012-02-24 13:13:06.23155-05
+3882	126	177	2012-02-24 13:13:28.062046-05
+3885	48	180	2012-02-24 13:14:07.545165-05
+3888	126	178	2012-02-24 13:14:15.444936-05
+3891	51	180	2012-02-24 13:14:59.731932-05
+3894	64	179	2012-02-24 13:15:38.378391-05
+3897	125	179	2012-02-24 13:16:18.170139-05
+3901	128	179	2012-02-24 13:16:58.0238-05
+3904	56	180	2012-02-24 13:18:01.255431-05
+3907	58	180	2012-02-24 13:18:59.062661-05
+3910	60	180	2012-02-24 13:19:55.580533-05
+3913	63	180	2012-02-24 13:20:30.569608-05
+3915	64	180	2012-02-24 13:23:39.844734-05
+3917	126	180	2012-02-24 13:26:32.985188-05
+3920	128	180	2012-02-24 13:28:15.084923-05
+3922	80	183	2012-02-28 15:01:36.746538-05
+3925	81	183	2012-02-28 15:01:51.31803-05
+3929	83	183	2012-02-28 15:05:47.492317-05
+3932	81	183	2012-02-28 15:12:31.466443-05
+3936	48	13	2012-02-29 14:13:18.188842-05
+3938	81	13	2012-02-29 14:17:03.94298-05
 \.
 
 
@@ -6886,14 +7699,19 @@ COPY riskblock_riskblock (id, no_risk_copy, some_risk_copy, severe_risk_copy) FR
 --
 
 COPY servicesblock_narroweddownanswer (id, user_id, answer_id, question_id) FROM stdin;
+5	13	649	241
 30	15	\N	241
+35	172	\N	241
 31	162	\N	241
 34	171	644	241
+36	177	646	241
+37	178	652	241
+38	179	649	241
 11	8	642	241
 3	124	\N	241
-5	13	649	241
-35	172	\N	241
+39	180	643	241
 1	5	647	241
+40	109	\N	241
 \.
 
 
@@ -7074,15 +7892,20 @@ COPY ssnmtreeblock_ssnmtreebox (id, pixels_from_top, pixels_from_left, label) FR
 --
 
 COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
-6	13	1	Gina
-7	13	2	Helen
-8	13	3	Tom
+221	178	1	Brittany
+222	178	2	Jess
+223	178	3	Simone
+224	178	4	Denise
+225	178	5	Eddie
+236	182	1	Winnie
 11	109	1	asdf
+237	182	2	Dad
 12	109	2	
-9	13	4	Janet
+238	182	3	Gregg
 13	109	3	asdfas
+239	182	4	
 14	109	4	asdf
-10	13	5	Marge
+240	182	5	Sam
 15	109	5	
 211	172	1	
 51	8	1	Name 1
@@ -7094,19 +7917,34 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 54	8	4	Name 2
 215	172	5	
 55	8	5	Name 3
+6	13	1	Gina
+7	13	2	Helen
+8	13	3	Tom
+231	180	1	Augustine
+232	180	2	Danica
+9	13	4	Janet
+233	180	3	Gertrude
+234	180	4	Tina
+10	13	5	Marge
+235	180	5	Andre
 191	162	1	
 192	162	2	
 193	162	3	
 194	162	4	
 195	162	5	
+216	177	1	dawn
+217	177	2	brittany
+218	177	3	denise
 176	15	1	
 206	171	1	
 177	15	2	
 178	15	3	
 207	171	2	person 3
+219	177	4	jess
 208	171	3	person 1
 179	15	4	
 209	171	4	person 2
+220	177	5	stacey
 180	15	5	
 210	171	5	
 2	5	1	
@@ -7114,6 +7952,11 @@ COPY ssnmtreeblock_ssnmtreeperson (id, user_id, tree_box_id, name) FROM stdin;
 3	5	3	
 4	5	4	i
 5	5	5	
+226	179	1	
+227	179	2	Mom
+228	179	3	
+229	179	4	Denise
+230	179	5	
 \.
 
 
@@ -7126,13 +7969,48 @@ COPY ssnmtreeblock_ssnmtreeperson_support_types (id, ssnmtreeperson_id, ssnmtree
 147	208	2
 148	208	1
 149	209	1
+150	9	2
+151	216	2
 12	10	1
 13	6	2
+152	217	2
+153	218	2
+154	219	2
+155	220	2
+156	216	1
+157	217	1
+158	218	1
+159	219	1
+160	220	1
+161	221	2
+162	222	2
+163	223	2
 26	7	2
 27	8	1
+164	221	1
+165	222	1
+166	224	1
+167	225	1
+168	227	2
+169	229	2
+170	229	1
 35	4	1
 36	4	2
+171	232	2
+172	233	2
+173	235	2
+174	231	1
+175	232	1
+176	233	1
+177	234	1
 44	55	1
+178	236	2
+179	237	2
+182	236	1
+183	237	1
+184	238	1
+185	239	1
+186	238	2
 127	51	2
 129	51	1
 130	53	1
@@ -7171,9 +8049,19 @@ COPY tagging_taggeditem (id, tag_id, content_type_id, object_id) FROM stdin;
 --
 
 COPY wings_main_participant (id, id_string, user_id, current_section_id, created_on) FROM stdin;
+122	123123123122	183	165	2012-02-24 14:30:25.305772-05
+118	127224124597	179	222	2012-02-24 12:46:00.219071-05
 111	121212121212	172	150	2012-02-21 10:03:06.021687-05
 112	123456789123	\N	\N	2012-02-22 11:33:32.053789-05
+113	123456789124	\N	\N	2012-02-24 12:44:49.46585-05
+114	111111111111	\N	\N	2012-02-24 12:45:09.449992-05
+116	123456789125	\N	\N	2012-02-24 12:45:24.584669-05
+121	454545454545	184	161	2012-02-24 12:52:50.759434-05
+120	989898989898	181	52	2012-02-24 12:47:58.475451-05
+119	122224124115	180	222	2012-02-24 12:47:29.774845-05
+117	248248248248	177	222	2012-02-24 12:45:44.851891-05
 110	999999999999	171	222	2012-02-20 14:03:42.445361-05
+115	343434343434	178	222	2012-02-24 12:45:22.489268-05
 \.
 
 
