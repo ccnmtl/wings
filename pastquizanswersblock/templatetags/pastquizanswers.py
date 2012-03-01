@@ -68,7 +68,7 @@ def test_answer (user, question_id, value_to_match, output_if_match, output_if_n
     res = Response.objects.filter(question=que,submission=submission)
     if res.count() > 0 and match_against_string (res[0], value_to_match):
         return output_if_match
-    return output_if_no_matchval
+    return output_if_no_match
 
 #These are used on the stats page (/all_answers/)
 #TODO: a bit of refactoring. this is just a quick version.

@@ -197,7 +197,9 @@ def selenium_teardown():
     ssnm_persons_to_delete, narrowed_down_answers_to_delete,  = [],[]
     
     participants_to_delete.extend( Participant.objects.filter(id_string=settings.SELENIUM_TEST_USER_ID))
-    users_to_delete.extend (p.user for p in participants_to_delete)
+    users_to_delete.extend (p.user for p in participants_to_delete if p.user != None)
+    #print users_to_delete
+    
     ssnm_persons_to_delete.extend(u.ssnmtreeperson_set.all() for u in users_to_delete)
     narrowed_down_answers_to_delete.extend(u.narroweddownanswer_set.all() for u in users_to_delete)
     for u in users_to_delete:
@@ -218,6 +220,11 @@ def selenium_teardown():
         x.delete()
     for x in users_to_delete:
         x.delete()
+        
+        
+    #assert there is no user with id settings.SELENIUM_TEST_USER_ID
+    
+    assert len (Participant.objects.filter(id_string=settings.SELENIUM_TEST_USER_ID)) == 0
 
 @login_required
 @rendered_with('wings_main/selenium.html')
@@ -271,6 +278,11 @@ def make_and_login_participant(id_string, request):
 #@rendered_with('wings_main/launch_participant.html')
 def launch_participant(request, id_string):
     """Create a new user with a pointer to the participant object. Redirect them to the first page of the intervention. """
+    
+    #import pdb
+    #pdb.set_trace()
+    
+    
     if not request.user.is_staff:
         messages.info(request, "Sorry, you can't launch participants.")
         return HttpResponseRedirect('/first/')
@@ -281,7 +293,6 @@ def launch_participant(request, id_string):
         messages.error(request, "There was a database error; and we could not launch user P%s " % id_string);
         return HttpResponseRedirect('/');
         
-    
     if not participant.current_section_id:
         return HttpResponseRedirect('/first/')
     else:
