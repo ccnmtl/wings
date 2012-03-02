@@ -278,11 +278,6 @@ def make_and_login_participant(id_string, request):
 #@rendered_with('wings_main/launch_participant.html')
 def launch_participant(request, id_string):
     """Create a new user with a pointer to the participant object. Redirect them to the first page of the intervention. """
-    
-    #import pdb
-    #pdb.set_trace()
-    
-    
     if not request.user.is_staff:
         messages.info(request, "Sorry, you can't launch participants.")
         return HttpResponseRedirect('/first/')
@@ -350,24 +345,37 @@ def summary(request):
     return {'tree': node_list}
     
     
+def all_questions_in_order ():
+    """All the questions that are actually asked during the intervention, in the order they are actually asked during the intervention."""
+    
+    node_list = []
+    traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
+    
+    the_questions_in_order = []
+    for s in node_list:
+        for pb in s.pageblock_set.all():
+            if pb.content_type.name == 'quiz':
+                the_questions_in_order.extend (pb.block().question_set.all())
+                
+    return the_questions_in_order
+    
+    
 @staff_or_404
 @rendered_with('wings_main/all_answers.html')
 def all_answers(request):
     """ all answers for all users in a giant table"""
     node_list = []
+    traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
     return {
         'users':     [ u for u in User.objects.all() if u.part()],
-        'questions': [ q for q in Question.objects.all()],   
+        'questions': all_questions_in_order(),
     }
-    
-    
-    
-    
+
 @staff_or_404
 @rendered_with('wings_main/all_answers_key.html')
 def all_answers_key(request):
     """ key for the above"""
     node_list = []
     return {
-        'questions': [ q for q in Question.objects.all()],   
+        'questions': all_questions_in_order(),
     }
