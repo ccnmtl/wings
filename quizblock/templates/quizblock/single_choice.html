@@ -6,7 +6,7 @@
     {% else %}
       <li>     
     <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}" id="answer_radiobutton_{{answer.id}}"
-           value="{{answer.value}}" type="radio" {% if response %}{% ifequal response.value answer.value %}checked="checked"{% endifequal %}{% endif %} /><a href="javascript:javascript:void(0)" onclick="jQuery('#answer_radiobutton_{{answer.id}}')[0].checked = true;">{{answer.label}}</a>
+           value="{{answer.value}}" type="radio" {% if response %}{% ifequal response.value answer.value %}checked="checked"{% endifequal %}{% endif %} /><a href="javascript:void(0)" onclick="jQuery('#answer_radiobutton_{{answer.id}}')[0].checked = true;">{{answer.label}}</a>
       </li>
     {% endif %}
   {% endfor %}

@@ -5,17 +5,34 @@
     {% if block.rhetorical %}
                   <li><input name="question{{question.id}}" value="{{answer.label}}" type="checkbox" />{{answer.label}}</li>
     {% else %}
-                  <li>
-                    {% if response %}
-                                  {% ifanswerin response answer  %}
-                                        <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}" checked="checked" value="{{answer.value}}" type="checkbox" />{{answer.label}}
-                                  {% else %}
-                                        <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}" value="{{answer.value}}" type="checkbox" />{{answer.label}}
-                                  {% endifanswerin %}
-                    {% else %}
-                        <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}" value="{{answer.value}}" type="checkbox" />{{answer.label}}
-                    {% endif %}
-                  </li>
+  
+  
+  
+  <li>
+  
+  
+    
+    {% if response %}
+      {% ifanswerin response answer  %}
+        <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}" id="answer_checkbox_{{answer.id}}" checked="checked" value="{{answer.value}}" type="checkbox" />
+        <a href="javascript:void(0)" onclick="jQuery('#answer_checkbox_{{answer.id}}')[0].click();" >{{answer.label}}</a>
+      {% else %}
+        <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}" id="answer_checkbox_{{answer.id}}" value="{{answer.value}}" type="checkbox" />
+        <a href="javascript:void(0)" onclick="jQuery('#answer_checkbox_{{answer.id}}')[0].click();" >{{answer.label}}</a>
+      {% endifanswerin %}
+    
+    
+    {% else %}
+        <input name="pageblock-{{block.pageblock.id}}-question{{question.id}}"  id="answer_checkbox_{{answer.id}}" value="{{answer.value}}" type="checkbox" />
+        <a href="javascript:void(0)" onclick="jQuery('#answer_checkbox_{{answer.id}}')[0].click();" >{{answer.label}}</a>
+    {% endif %}
+  
+  
+  
+  </li>
+  
+  
+  
     {% endif %}
   {% endfor %}
 </ol>
