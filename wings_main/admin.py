@@ -32,8 +32,8 @@ class ParticipantAdmin (admin.ModelAdmin):
         css = {
             "all": ("/site_media/css/participant_admin_styles.css",)
         }
+        
     list_display = ( 'label', 'created_on_string', 'status', 'created_by', 'forest_url_field',)
-    
     fields = ('id_string', 'created_by', )
      
 admin.site.register(Participant, ParticipantAdmin)

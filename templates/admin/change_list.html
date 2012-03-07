@@ -71,9 +71,13 @@
 {% block coltype %}flex{% endblock %}
 
 {% block content %}
+
+{%ifequal cl.opts.verbose_name 'participant' %}
     <div id="top">
-         <a href ="/first/" class = "overview">View Intervention</a>
+         <a href ="/first/" >View Intervention as Facilitator</a>
    </div>
+{%endifequal %}
+
   <div id="content-main">
     {% block object-tools %}
       {% if has_add_permission %}

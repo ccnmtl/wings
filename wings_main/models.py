@@ -23,31 +23,25 @@ class Participant(models.Model):
     def __unicode__(self):
         return "%s" % self.id_string
     
-    #i think if we wrap this in a function the sorting will suddenly work
     def label (self):
         return self.__unicode__()
     label.admin_order_field = 'id_string'
     label.short_description = 'Participant ID'
 
     def status (self):
+        """ a string to give a sense of how far along each participant is from the participant list:"""
         if self.current_section == None:
             return "Not started"
-        
         if self.current_section.get_previous() == None:
             return "First page"
-
         if self.current_section.get_next() == None:
             return "Done"
-        
-        print section_rank (self.current_section)
-        
         s = self.current_section
-
         for a in range (10):
             if s.get_parent().is_root():
                 return s
             s = s.get_parent()
-        #this should basically never happen unless there are 10 deep nested sections
+        #this should basically never happen unless sections are nested 10 deep.
         return s
 
 

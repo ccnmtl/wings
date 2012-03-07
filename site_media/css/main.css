@@ -939,6 +939,10 @@ body
 	width: 960px;
 }
 
+body.viewing_intervention_as_facilitator {
+	background-color: #aaa;
+}
+
 #container { width: 960px; }
 
 #header
