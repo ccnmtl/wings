@@ -24,7 +24,18 @@
             date_suggestion = dmy + "" + curr_hour + "" + curr_minutes.toString().substring(0, 1) +"XYZ";
             django.jQuery('#date_suggestion')[0].innerHTML = "(Hint: " + date_suggestion + ")";
         }
+        
+        function set_default_created_by_user () {
+            // In the dropdown to select the "created by" user, set, by default, the currently logged-in user.
+            var currently_logged_in_user = '{{user.id}}'; // this is set at render time.
+            django.jQuery('#id_created_by').val (currently_logged_in_user);
+        }
+        
+        
         django.jQuery(figure_out_date);
+        
+        django.jQuery(set_default_created_by_user);
+        
         django.jQuery('#participant_form').submit(function() {
                 // set the ID of the second text box;
                 django.jQuery(django.jQuery('input.vIntegerField')[1]).attr('id' ,'id_id_string_2');

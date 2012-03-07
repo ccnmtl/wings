@@ -15,6 +15,7 @@ class Participant(models.Model):
 
     id_string =       models.BigIntegerField(unique=True, max_length=12,  help_text = 'ID string should contain exactly 12 digits.')
     created_on =      models.DateTimeField(auto_now_add=True, null=False)
+    created_by =      models.ForeignKey(User,blank=True,null=True, related_name = 'participants_created')
     user =            models.ForeignKey(User,blank=True,null=True)
     current_section = models.ForeignKey(Section,blank= True,null=True)
     
@@ -27,6 +28,28 @@ class Participant(models.Model):
         return self.__unicode__()
     label.admin_order_field = 'id_string'
     label.short_description = 'Participant ID'
+
+    def status (self):
+        if self.current_section == None:
+            return "Not started"
+        
+        if self.current_section.get_previous() == None:
+            return "First page"
+
+        if self.current_section.get_next() == None:
+            return "Done"
+        
+        print section_rank (self.current_section)
+        
+        s = self.current_section
+
+        for a in range (10):
+            if s.get_parent().is_root():
+                return s
+            s = s.get_parent()
+        #this should basically never happen unless there are 10 deep nested sections
+        return s
+
 
     def has_user(self):
         return self.user != None
