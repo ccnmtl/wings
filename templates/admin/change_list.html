@@ -26,7 +26,9 @@
 <script type="text/javascript">
     function set_no_admin_and_go(url1, url2) {
         set_no_admin();
-        window.history.replaceState({'page': url1}, "Launching participant.", url1);
+        if ( typeof(window.history.replaceState) !== 'undefined') {
+            window.history.replaceState({'page': url1}, "Launching participant.", url1);
+        }
         window.location = url2;
     }
     if (allowed_in_admin() === true ) {
