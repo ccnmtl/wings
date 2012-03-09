@@ -1,7 +1,9 @@
 from models import Participant
 from pagetree.models import Section
 from django.contrib import admin
+
 class ParticipantAdmin (admin.ModelAdmin):
+
 
     def forest_url_field(self, participant):
         ids = participant.id_string
@@ -30,6 +32,8 @@ class ParticipantAdmin (admin.ModelAdmin):
         css = {
             "all": ("/site_media/css/participant_admin_styles.css",)
         }
-    list_display = ( 'label', 'created_on_string',  'has_started_intervention', 'forest_url_field',)
-    fields = ('id_string', ) 
+        
+    list_display = ( 'label', 'created_on_string', 'status', 'created_by', 'forest_url_field',)
+    fields = ('id_string', 'created_by', )
+     
 admin.site.register(Participant, ParticipantAdmin)

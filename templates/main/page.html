@@ -7,6 +7,7 @@
 
 
 
+{% block extra_body_class %}{%if not request.user.part %}viewing_intervention_as_facilitator{%endif%}{%endblock%}
 
 {% block misc_head %}
 <!--
@@ -138,14 +139,10 @@
 
 
 {% block content %}
-{%comment %}removing this nbsp breaks the placement of the audio button.{%endcomment %}
 <h3>{% if not decoration_info.hide_title %}{{section.label}}{%endif %}</h3>
-
 <!--
     section id is:        {{section.id}}
 -->
-
-
 
 {% for block in section.pageblock_set.all %}
     {% if block.block.is_audio_block %}
