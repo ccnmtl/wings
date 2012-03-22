@@ -25,12 +25,29 @@
             django.jQuery('#date_suggestion')[0].innerHTML = "(Hint: " + date_suggestion + ")";
         }
         
+        function add_leading_zeros_to_id_string () {
+            var len = django.jQuery('#id_id_string')[0].value.length
+            if (len === 0) {
+                return
+            }
+            if (django.jQuery('input.vIntegerField')[0].value === django.jQuery('input.vIntegerField')[1].value) {
+                var id_string_with_leading_zeros = new Array( 12  + 1 - len ).join( '0' ) + django.jQuery('input.vIntegerField')[0].value
+                console.log (id_string_with_leading_zeros);
+                
+                
+             django.jQuery('input.vIntegerField')[0].value = id_string_with_leading_zeros;
+             django.jQuery('input.vIntegerField')[1].value = id_string_with_leading_zeros;
+            }
+        }
+        
         function set_default_created_by_user () {
             // In the dropdown to select the "created by" user, set, by default, the currently logged-in user.
             var currently_logged_in_user = '{{user.id}}'; // this is set at render time.
             django.jQuery('#id_created_by').val (currently_logged_in_user);
         }
         
+        
+        django.jQuery(add_leading_zeros_to_id_string);   
         
         django.jQuery(figure_out_date);
         

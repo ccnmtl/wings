@@ -21,7 +21,7 @@ class Participant(models.Model):
     
     
     def __unicode__(self):
-        return "%s" % self.id_string
+        return "%012d" % self.id_string
     
     def label (self):
         return self.__unicode__()
