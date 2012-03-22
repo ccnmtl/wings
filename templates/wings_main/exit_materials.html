@@ -10,22 +10,16 @@
     {% renderjs ssnm_tree_node %}
     {% renderjs resources_node %}
     <script language ="javascript">
-	
-	function replace_background (thing) {
-		image_src = jQuery(thing).css('background-image');
-		//console.log (image_src);		
-		image_src = image_src.replace(/^url\(/, '');
-		image_src = image_src.replace(/\)$/, '');
-		//console.log (image_src);
-		//jQuery(thing).css('background-image', 'url()');
-		//jQuery(thing).css('background', 'url()');
-		jQuery(thing).prepend('<img src = "' + image_src  + '"></img>');
-
-
-	}
-
-
-	function turn_into_a_div (thing, contents) {
+        function replace_background (thing) {
+	        // since css background images don't print reliably, just add an actual image tag 
+	        image_src = jQuery(thing).css('background-image');
+	        if (image_src !== 'none') {
+	            // remove leading url("  and trailing "):
+	            img_tag = '<img src = "' + image_src.replace(/^url\(\"/, '').replace(/\"\)$/, '')  + '"></img>';
+	            jQuery(thing).prepend(img_tag);
+            }
+        }
+        function turn_into_a_div (thing, contents) {
             $(thing).after ('<div class="exit_materials_replacement_div">' + contents + '</div>');
             $(thing).remove();
         }
