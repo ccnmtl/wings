@@ -112,10 +112,10 @@ def answer_code_for_stats(user, question_id):
     quiz = que.quiz
     sub = Submission.objects.filter(quiz=quiz,user=user).order_by("-submitted")
     if sub.count() == 0:
-        return use_title('n/a', 'no_submission')
+        return use_title('-9', 'no_submission') # SPSS convention: -9 means "no data."
     submission = sub[0]
     res = Response.objects.filter(question=que,submission=submission)
     if res.count() > 0:
         return to_number(res[0])
     else:
-        return  use_title('n/a', 'no_answer')
+        return  use_title('-9', 'no_answer')
