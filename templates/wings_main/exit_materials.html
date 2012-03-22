@@ -10,7 +10,22 @@
     {% renderjs ssnm_tree_node %}
     {% renderjs resources_node %}
     <script language ="javascript">
-        function turn_into_a_div (thing, contents) {
+	
+	function replace_background (thing) {
+		image_src = jQuery(thing).css('background-image');
+		//console.log (image_src);		
+		image_src = image_src.replace(/^url\(/, '');
+		image_src = image_src.replace(/\)$/, '');
+		//console.log (image_src);
+		//jQuery(thing).css('background-image', 'url()');
+		//jQuery(thing).css('background', 'url()');
+		jQuery(thing).prepend('<img src = "' + image_src  + '"></img>');
+
+
+	}
+
+
+	function turn_into_a_div (thing, contents) {
             $(thing).after ('<div class="exit_materials_replacement_div">' + contents + '</div>');
             $(thing).remove();
         }
@@ -22,6 +37,18 @@
             });
             jQuery.each( tmp2, function(index, txta) {
                 turn_into_a_div( txta, txta.innerHTML); 
+            });
+
+            jQuery.each( jQuery('.ssnm_tree_block'), function(index, div) {
+            	replace_background ( div); 
+            });
+	
+            jQuery.each( jQuery('.ssnm_tree_box_div'), function(index, div) {
+                replace_background ( div); 
+            });
+
+            jQuery.each( jQuery('.heart'), function(index, div) {
+                replace_background ( div); 
             });
         }
         jQuery(setup_exit_materials);
