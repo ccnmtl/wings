@@ -28,15 +28,14 @@
         function add_leading_zeros_to_id_string () {
             var len = django.jQuery('#id_id_string')[0].value.length
             if (len === 0) {
-                return
+                /// this is the create participant form.
+                return;
             }
             if (django.jQuery('input.vIntegerField')[0].value === django.jQuery('input.vIntegerField')[1].value) {
-                var id_string_with_leading_zeros = new Array( 12  + 1 - len ).join( '0' ) + django.jQuery('input.vIntegerField')[0].value
-                console.log (id_string_with_leading_zeros);
-                
-                
-             django.jQuery('input.vIntegerField')[0].value = id_string_with_leading_zeros;
-             django.jQuery('input.vIntegerField')[1].value = id_string_with_leading_zeros;
+                var zero_padding = new Array( 12  + 1 - len ).join( '0' );
+                var id_string_with_leading_zeros = zero_padding + django.jQuery('input.vIntegerField')[0].value;
+                django.jQuery('input.vIntegerField')[0].value = id_string_with_leading_zeros;
+                django.jQuery('input.vIntegerField')[1].value = id_string_with_leading_zeros;
             }
         }
         

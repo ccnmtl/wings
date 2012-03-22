@@ -275,7 +275,6 @@ def make_and_login_participant(id_string, request):
 
 
 @login_required
-#@rendered_with('wings_main/launch_participant.html')
 def launch_participant(request, id_string):
     """Create a new user with a pointer to the participant object. Redirect them to the first page of the intervention. """
     if not request.user.is_staff:
@@ -294,11 +293,14 @@ def launch_participant(request, id_string):
         messages.info(request, "Welcome back!")
         return HttpResponseRedirect(Section.objects.get(id=participant.current_section_id).get_absolute_url())
 
-
 @login_required
 @rendered_with('wings_main/exit_materials.html')
 def participant_exit_materials(request):
-    """TODO: this function is misnamed. rename it currently_logged_in_user_exit_materials."""
+    """
+    Show the exit materials for the logged in user (mostly this will be participants.)
+    (r'^exit_materials/',   'wings_main.views.participant_exit_materials'),
+    
+    """
     return exit_materials_nodes()
 
 @login_required
@@ -306,10 +308,16 @@ def participant_exit_materials(request):
 def exit_materials(request, id_string):
     """   
     logout user (if necessary), log in as a participant, and then show exit materials
+    #exit materials for a particular participant (meant to be accessed by the facilitator
+        from the list of participants)
+        
+    (r'^participant/(?P<id_string>\d+)/exit_materials/',   'wings_main.views.exit_materials'),                     
     """
     if request.user.is_staff:
-        user = make_and_login_participant(id_string, request)
-    return exit_materials_nodes()
+        user = make_and_login_participant(id_string, request)    
+        return exit_materials_nodes()
+    else:
+        return HttpResponseRedirect('/logout/');
     
 def exit_materials_nodes ():
     safety_plan_part_1_node_list = []
