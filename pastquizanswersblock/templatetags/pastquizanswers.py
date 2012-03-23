@@ -1,6 +1,6 @@
 from django import template
 from django.utils.html import escape
-from quizblock.models import Question, Response, Submission
+from quizblock.models import Question, Response, Submission, Answer
 from servicesblock.models import NarrowedDownAnswer, ServiceProvider
 import re
 register = template.Library()
@@ -119,3 +119,16 @@ def answer_code_for_stats(user, question_id):
         return to_number(res[0])
     else:
         return  use_title('-9', 'no_answer')
+
+
+@register.simple_tag
+def user_checked_this_answer(user, answer_id):
+    answer = Answer.objects.get(id=answer_id)
+    quiz = answer.question.quiz
+    sub = Submission.objects.filter(quiz=quiz,user=user).order_by("-submitted")
+    if sub.count() == 0:
+        return use_title('-9', 'no_submission') # SPSS convention: -9 means "no data."
+    if sub[0].contains_answer(  answer):
+        return use_title ('1', 'checked')
+    else:
+        return use_title ('0', 'not checked')

@@ -2,34 +2,90 @@
 {% load pastquizanswers %}
 {%block title%}Answer summary{%endblock%}
 
-
 {% block table %}
-<table border ="1px">
-    <tr>
-       <th >&nbsp;</th>
-        {% for qu in questions %}
-            <th title="{{qu.text}}">{{ qu.id}}</th>
-        {%endfor%}
-    </tr>
-    {% for u in users %}
-     <tr>
-        <td> {{u.part.label}}</td>
-       {% for qu in questions %}
-           <td>
-                {%answer_code_for_stats u qu.id%}
-            </td>
-        {%endfor %}
+    <h5>Non-text questions:</h5>
+    <table border ="1px">
+        <tr>
+           <th >Question ID</th>
+            {% for qu in questions %}
+                {% if qu.is_single_choice %}
+                    <th title="{{qu.text}}">{{ qu.id}}</th>
+                {%else%}
+                    {%if  qu.is_multiple_choice%}
+                        {% for answer in qu.answer_set.all %}
+                            <th title="{{qu.text}}">{{ qu.id}}</th>
+                        {%endfor%}
+                    {%endif %}
+                {%endif %}
+            {%endfor%}
         </tr>
-     {%endfor %}
-</table>
+        
+        <tr>
+           <th >Answer ID</th>
+            {% for qu in questions %}
+                {% if qu.is_single_choice %}
+                    <th>&nbsp;</th>
+                {%else%}
+                    {%if  qu.is_multiple_choice%}
+                        {% for answer in qu.answer_set.all %}
+                            <th title="{{answer.label}}">
+                                {{ answer.id}}
+                            </th>
+                        {%endfor%}
+                    {%endif %}
+                {%endif %}
+            {%endfor%}
+        </tr>
+        {% for u in users %}
+         <tr>
+            <td> {{u.part.label}}</td>
+           {% for qu in questions %}
+                {% if qu.is_single_choice %}
+                    <td>
+                        {%answer_code_for_stats u qu.id%}
+                    </td>
+                {%else %}
+                    {%if  qu.is_multiple_choice%}
+                        {% for answer in qu.answer_set.all %}
+                            <td title="{{answer.label}}">
+                                {%user_checked_this_answer u answer.id%}
+                            </td>
+                        {%endfor%}
+                    {%endif %}
+                {%endif %}
+            {%endfor %}
+            </tr>
+         {%endfor %}
+    </table>
+    
+    <h5>Text questions:</h5>
+    <table border ="1px">
+        <tr>
+           <th >Question ID</th>
+            {% for qu in questions %}
+                {% if qu.is_short_text or qu.is_long_text %}
+                    <th title="{{qu.text}}">{{ qu.id}}</th>
+                {%endif %}
+            {%endfor%}
+        </tr>
+        {% for u in users %}
+         <tr>
+           <td>{{u.part.label}}</td>
+           {% for qu in questions %}
+                {% if qu.is_short_text or qu.is_long_text %}
+                    <td>
+                        {%answer_code_for_stats u qu.id%}
+                    </td>
+                {%endif %}
+            {%endfor %}
+            </tr>
+         {%endfor %}
+    </table>
 {% endblock %}
-
-
 {%block below_table%}
     <div>
         <a href ="/all_answers_key/" target = "_blank">Click here for a key to answer codes</a>
     </div>
-    
     <div>
         <a href ="/" >Go back to list of participants</a>
     </div>

@@ -292,8 +292,13 @@ class Submission(models.Model):
 
     def __unicode__(self):
         return "quiz %d submission by %s at %s" % (self.quiz.id,unicode(self.user),self.submitted)
-        
-
+    
+    def contains_answer (self, answer):
+        responses = Response.objects.filter(question=answer.question,submission=self)    
+        for r in responses:
+            if r.corresponds_to_answer(answer):
+                return True
+        return False
 
 class Response(models.Model):
     question = models.ForeignKey(Question)
@@ -308,6 +313,9 @@ class Response(models.Model):
 
     def is_correct(self):
         return self.value in self.question.correct_answer_values()
+        
+    def corresponds_to_answer (self, answer):
+        return answer.question == self.question and  answer.value == self.value
 
 class QuestionForm(forms.ModelForm):
     class Meta:
