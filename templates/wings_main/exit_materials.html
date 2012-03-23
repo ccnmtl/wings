@@ -14,8 +14,10 @@
 	        // since css background images don't print reliably, just add an actual image tag 
 	        image_src = jQuery(thing).css('background-image');
 	        if (image_src !== 'none') {
+	            //console.log (image_src);
 	            // remove leading url("  and trailing "):
-	            img_tag = '<img src = "' + image_src.replace(/^url\(\"/, '').replace(/\"\)$/, '')  + '"></img>';
+	            img_tag = '<img src = "' + image_src.replace(/^url\(\"*/, '').replace(/\"*\)$/, '')  + '"></img>';
+	            //console.log (img_tag);
 	            jQuery(thing).prepend(img_tag);
             }
         }
@@ -36,7 +38,7 @@
             jQuery.each( jQuery('.ssnm_tree_block'), function(index, div) {
             	replace_background ( div); 
             });
-	
+            
             jQuery.each( jQuery('.ssnm_tree_box_div'), function(index, div) {
                 replace_background ( div); 
             });
@@ -44,6 +46,7 @@
             jQuery.each( jQuery('.heart'), function(index, div) {
                 replace_background ( div); 
             });
+            
         }
         jQuery(setup_exit_materials);
     </script>
@@ -76,6 +79,13 @@
                
                     {%render ssnm_tree_node %}
                     <br clear="all" />
+                    <p>
+                       <img src="/site_media/img/emotional_icon.png"></img>pink hearts = practical support
+                    </p>
+                    <p>
+                       <img src="/site_media/img/practical_icon.png"></img> blue hearts = emotional support
+                    </p>
+                    
              </div>
             <!-- page break here -->
             

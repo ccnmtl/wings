@@ -314,10 +314,13 @@ def exit_materials(request, id_string):
     (r'^participant/(?P<id_string>\d+)/exit_materials/',   'wings_main.views.exit_materials'),                     
     """
     if request.user.is_staff:
-        user = make_and_login_participant(id_string, request)    
+        user = make_and_login_participant(id_string, request)
         return exit_materials_nodes()
-    else:
-        return HttpResponseRedirect('/logout/');
+    
+    if request.user.part() != None and request.user.part().id_string == long(id_string):
+        return exit_materials_nodes()
+    
+    return HttpResponseRedirect('/logout/');
     
 def exit_materials_nodes ():
     safety_plan_part_1_node_list = []
