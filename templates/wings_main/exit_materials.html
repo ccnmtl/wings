@@ -14,15 +14,9 @@
 	        // since css background images don't print reliably, just add an actual image tag 
 	        image_src = jQuery(thing).css('background-image');
 	        if (image_src !== 'none') {
-	            //console.log (image_src);
-	            // remove leading url("  and trailing "):
 	            img_tag = '<img class="exit_materials_replacement_image" src = "' + image_src.replace(/^url\(\"*/, '').replace(/\"*\)$/, '')  + '"></img>';
 	            //console.log (img_tag);
 	            jQuery(thing).prepend(img_tag);
-	            // and then set it to "none":
-                    //jQuery(thing).css('background-image', "");
-                    //jQuery(thing).css('background', "");
-	            //alert ('hi');
             }
         }
         function turn_into_a_div (thing, contents) {
@@ -51,10 +45,6 @@
                 replace_background ( div); 
             });
             
-	    //jQuery (".ssnm_tree_block").css("background", "");
-	    //jQuery (".ssnm_tree_block").css("background-image", "");
-	    
-	    
         }
         jQuery(setup_exit_materials);
     </script>
