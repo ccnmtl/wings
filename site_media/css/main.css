@@ -1107,17 +1107,27 @@ ul.answer_summary li div.past_question_answer_div.user_added { display: block; }
 	min-width: 0px;
 	min-height: 0px;
 	left: 47px !important;
-	top: 34px !important;
+	top: 34px !important; /*34*/
 	width: 70px !important;
 	height: 14px !important;
 	font-size: .8em !important;
-	opacity: 0.8;
-	filter: alpha(opacity=0.8);
+	/*opacity: 0.8;
+	filter: alpha(opacity=0.8);*/
 	/* For IE8 and earlier */
 	border-radius: 10px;
 	padding: 0 5px !important;
 	background-color: white;
+	z-index: 500;
+
 }
+
+
+/*
+.exit_materials_replacement_image {
+    display:none;
+}
+*/
+
 
 .exit_actions
 {
