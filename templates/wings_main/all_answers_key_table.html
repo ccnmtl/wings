@@ -1,0 +1,50 @@
+{% extends 'wings_main/stats.html' %}
+{% load pastquizanswers %}
+
+{%block title%}Key to answer summary{%endblock%}
+
+{% block table %}
+
+    <h1>"Radio button" (multiple choice, single answer) questions:</h1>
+    <table>
+        {% for qu in questions %}
+            {% if qu.is_single_choice %}
+                <tr>
+                    <td>
+                        <a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}</a>
+                    </td>
+                    <td>
+                        {{qu.text}}
+                    </td>
+                     {% for aa in qu.answer_set.all %}
+                        <td>
+                            <a href="/_quiz/edit_answer/{{aa.id}}/">
+                                {{aa.numeric_value}}
+                            </a>
+                        </td>
+                        <td class="color:green;">
+                            {{aa}}
+                        </td>
+                        
+                    {%endfor%}
+
+                </tr>
+            {% endif %}
+        {%endfor%}
+    </table>
+
+    <h1>Remaining questions (checkboxes and text fields)</h1>
+    <table>
+        {% for qu in questions %}
+            {% if not qu.is_single_choice %}
+            <tr><td><a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}</td><td> {{qu.text}}</a></td></tr>
+            {%endif %}
+        {%endfor%}
+    </table>
+{% endblock %}
+
+{%block below_table%}
+    <div>
+        <a href ="javascript:self.close();" >Close this tab</a>
+    </div>
+{%endblock%}

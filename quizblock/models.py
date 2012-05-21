@@ -267,8 +267,16 @@ class Question(models.Model):
 
 class Answer(models.Model):
     question = models.ForeignKey(Question)
+    
+    #this should be immutable once people start entering data.
     value = models.CharField(max_length=256,blank=True)
+    
+    #this can be edited at any time.
+    numeric_value = models.IntegerField(null=True, blank=True)
+    
     label = models.TextField(blank=True)
+   
+    #not used in Wings.
     correct = models.BooleanField(default=False)
 
     class Meta:
@@ -303,6 +311,7 @@ class Submission(models.Model):
 class Response(models.Model):
     question = models.ForeignKey(Question)
     submission = models.ForeignKey(Submission)
+    
     value = models.TextField(blank=True)
 
     class Meta:
@@ -315,7 +324,18 @@ class Response(models.Model):
         return self.value in self.question.correct_answer_values()
         
     def corresponds_to_answer (self, answer):
-        return answer.question == self.question and  answer.value == self.value
+        """ This is a boolean"""
+        #return answer.question == self.question and  answer.value == self.value
+        return self.corresponding_answer() == answer
+
+    def corresponding_answer(self):
+        possible_answers = self.question.answer_set.all()
+        
+        for a in possible_answers:
+            if a.value == self.value:
+                return a
+        
+        return None
 
 class QuestionForm(forms.ModelForm):
     class Meta:
@@ -326,5 +346,5 @@ class QuestionForm(forms.ModelForm):
 class AnswerForm(forms.ModelForm):
     class Meta:
         model = Answer
-        exclude = ("question",)
+        exclude = ("question","value",)
 

@@ -26,7 +26,9 @@ urlpatterns = patterns('',
     
     #giant table of all answers from all participants 
     ('^all_answers/$',     'wings_main.views.all_answers'),
+    ('^text_answers/$',    'wings_main.views.text_answers'),
     ('^all_answers_key/$', 'wings_main.views.all_answers_key'),
+    ('^all_answers_key_table/$', 'wings_main.views.all_answers_key_table'),
     
     #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),

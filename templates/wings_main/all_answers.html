@@ -3,7 +3,7 @@
 {%block title%}Answer summary{%endblock%}
 
 {% block table %}
-    <h5>Non-text questions:</h5>
+    <h5>Non-text answers:</h5>
     <table border ="1px">
         <tr>
            <th >Question ID</th>
@@ -52,30 +52,6 @@
                             </td>
                         {%endfor%}
                     {%endif %}
-                {%endif %}
-            {%endfor %}
-            </tr>
-         {%endfor %}
-    </table>
-    
-    <h5>Text questions:</h5>
-    <table border ="1px">
-        <tr>
-           <th >Question ID</th>
-            {% for qu in questions %}
-                {% if qu.is_short_text or qu.is_long_text %}
-                    <th title="{{qu.text}}">{{ qu.id}}</th>
-                {%endif %}
-            {%endfor%}
-        </tr>
-        {% for u in users %}
-         <tr>
-           <td>{{u.part.label}}</td>
-           {% for qu in questions %}
-                {% if qu.is_short_text or qu.is_long_text %}
-                    <td>
-                        {%answer_code_for_stats u qu.id%}
-                    </td>
                 {%endif %}
             {%endfor %}
             </tr>

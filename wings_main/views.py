@@ -374,7 +374,18 @@ def all_questions_in_order ():
 @staff_or_404
 @rendered_with('wings_main/all_answers.html')
 def all_answers(request):
-    """ all answers for all users in a giant table"""
+    """ all numerical answers for all users in a giant table"""
+    node_list = []
+    traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
+    return {
+        'users':     [ u for u in User.objects.all() if u.part()],
+        'questions': all_questions_in_order(),
+    }
+
+@staff_or_404
+@rendered_with('wings_main/text_answers.html')
+def text_answers(request):
+    """ all text answers for all users in a giant table"""
     node_list = []
     traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
     return {
@@ -386,7 +397,15 @@ def all_answers(request):
 @rendered_with('wings_main/all_answers_key.html')
 def all_answers_key(request):
     """ key for the above"""
-    node_list = []
+    return {
+        'questions': all_questions_in_order(),
+    }
+    
+
+@staff_or_404
+@rendered_with('wings_main/all_answers_key_table.html')
+def all_answers_key_table(request):
+    """ An easy-to-import-into-EXCEL tabular version of all_answers_key above."""
     return {
         'questions': all_questions_in_order(),
     }

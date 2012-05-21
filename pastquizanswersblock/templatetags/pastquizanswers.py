@@ -116,7 +116,11 @@ def answer_code_for_stats(user, question_id):
     submission = sub[0]
     res = Response.objects.filter(question=que,submission=submission)
     if res.count() > 0:
-        return to_number(res[0])
+        the_answer = res[0].corresponding_answer()
+        if que.is_single_choice():        
+            return use_title(the_answer.numeric_value, the_answer.label)
+        else:
+            return res[0].value
     else:
         return  use_title('-9', 'no_answer')
 
