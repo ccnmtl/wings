@@ -4,32 +4,31 @@
 {%block title%}Key to answer summary{%endblock%}
 
 {% block table %}
-    <h1>"Radio button" (multiple choice, single answer) questions:</h1>
-    {% for qu in questions %}
-        {% if qu.is_single_choice %}
-        <p>
-            <a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}: {{qu.text}}</a>
-        </p>
-            <ul>
-                 {% for aa in qu.answer_set.all %}
-                    <li>
-                        <a href = "/_quiz/edit_answer/{{aa.id}}/">
-                            {{aa.numeric_value}} = {{aa}}
-                        </a>
-                    </li>
-                {%endfor%}
-            </ul>
-        {%endif %}
-    {%endfor%}
+    <h1>Text questions:</h1>
+
+       <table border ="1px">
+           <tr>
+              <th >Question ID</th>
+               {% for qu in questions %}
+                   {% if qu.is_short_text or qu.is_long_text %}
+                       <th title="{{qu.text}}">{{ qu.id}}</th>
+                   {%endif %}
+               {%endfor%}
+           </tr>
+           {% for u in users %}
+            <tr>
+              <td>{{u.part.label}}</td>
+              {% for qu in questions %}
+                   {% if qu.is_short_text or qu.is_long_text %}
+                       <td>
+                           {%answer_code_for_stats u qu.id%}
+                       </td>
+                   {%endif %}
+               {%endfor %}
+               </tr>
+            {%endfor %}
+       </table>
     
-    <h1>Remaining questions (checkboxes and text fields)</h1>
-    <ul>
-        {% for qu in questions %}
-            {% if not qu.is_single_choice %}
-            <li><a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}: {{qu.text}}</a></li>
-            {%endif %}
-        {%endfor%}
-    </ul>
 {% endblock %}
 
 {%block below_table%}
