@@ -26,7 +26,13 @@
     <ul>
         {% for qu in questions %}
             {% if not qu.is_single_choice %}
-            <li><a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}: {{qu.text}}</a></li>
+            <li><a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}: {{qu.text}}</a>
+                <ul>
+                     {% for ans in qu.answer_set.all %}
+                        <li>{{ans.numeric_value}}: {{ans}}</li>
+                    {%endfor%}
+                </ul>
+            </li>
             {%endif %}
         {%endfor%}
     </ul>

@@ -37,7 +37,25 @@
     <table>
         {% for qu in questions %}
             {% if not qu.is_single_choice %}
-            <tr><td><a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}</td><td> {{qu.text}}</a></td></tr>
+            <tr><td ><a href="/_quiz/edit_question/{{qu.id}}/">{{ qu.id}}</td>
+            
+            <td {% if not qu.answer_set.all %} colspan = "27"{%endif %}> {{qu.text}}</a>
+            
+            
+            </td>
+                {% if qu.answer_set.all %}
+                    
+                         {% for ans in qu.answer_set.all %}
+                            <td bgcolor ="lightgreen">{{qu.id}}({{ans.numeric_value}})</td><td>{{ans}}</td>
+                        {%endfor%}
+                    
+                    {%endif%}
+            
+            
+            
+            </tr>
+            
+                
             {%endif %}
         {%endfor%}
     </table>
