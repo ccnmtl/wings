@@ -46,7 +46,7 @@
                 {% if qu.answer_set.all %}
                     
                          {% for ans in qu.answer_set.all %}
-                            <td bgcolor ="lightgreen">{{qu.id}}({{ans.numeric_value}})</td><td>{{ans}}</td>
+                            <td bgcolor ="lightgreen">{{ans.id}}</td><td>{{ans}}</td>
                         {%endfor%}
                     
                     {%endif%}
