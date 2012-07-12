@@ -16,4 +16,4 @@ class rendered_with(object):
                 return items
 
         return rendered_func
-
+    
