@@ -1,0 +1,25 @@
+<!-- starting analytics js -->
+<script type="text/javascript" src="/site_media/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+    function event_id (event_slug) {
+        return JSON.parse(jQuery ('#action_type_summary')[0].innerHTML) [event_slug]
+    }
+    function log_analytics_event (event_slug) {
+        // this assumes that the JS of your app passes a slug that corresponds to the label of an existing
+        // actiontype.
+        
+        // /admin/analytics/actiontype/
+        
+        
+        //console.log (event_slug);
+        url = '/log_action/' + event_id (event_slug) + '/on_section/' + {{section.id}} + '/';
+        $.ajax({
+            type : 'GET', url  :url,
+            success: function(data){
+                //console.log (data);
+            }
+        });
+    }
+</script>
+
+

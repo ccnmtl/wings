@@ -70,7 +70,7 @@ def staff_or_404(view_func):
 
 
 
-""" Wings-specific helper functions called by forest_main page view method. This is view code so it goes here. Some of this code is last-minute ad-hoc patches for some some inconsistent content in the DB. """
+""" Wings-specific helper functions called by forest_main page view method. This is view code so it goes here. Some of this code is last-minute ad-hoc patches to work around inconsistent content in the DB; honi soit qui mal y pense. """
 
 if True:
 
@@ -149,11 +149,6 @@ if True:
                 block_types_that_hide_decorations = settings.BLOCK_TYPES_THAT_HIDE_DECORATIONS
                 myblocks = section.pageblock_set.all()
                 result = not any(b.block().display_name in block_types_that_hide_decorations for b in myblocks)
-                #really_depressing_sections = [Section.objects.get(id = 97), Section.objects.get(id = 53)]
-                # 
-                #if is_descendent_of (section, really_depressing_sections):
-                #    return False
-                
                 return result
 
 

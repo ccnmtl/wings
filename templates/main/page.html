@@ -112,6 +112,8 @@
             }
         </script>
     {%endif%}
+    {% include "analytics/analytics_js.html" %}
+    
 {% endblock %}
 
 {% block css %}
@@ -223,5 +225,6 @@
     {%endif %}
 {% endfor %}
 
+{%include 'analytics/analytics.html' %}
 </div><!-- div id="content-nav" -->
 {% endblock %}

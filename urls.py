@@ -53,6 +53,9 @@ urlpatterns = patterns('',
     
     (r'^selenium/(?P<task>\w+)/$',               'wings_main.views.selenium'),
     
+    #Logging clicks on UI elements via AJAX:
+    (r'^log_action/(?P<action_id>\d+)/on_section/(?P<section_id>\d+)/$', 'analytics.views.log_action'),
+    
     #standard django stuff:
     ('^accounts/',include('djangowind.urls')),
     (r'^admin/pagetree/section/move/(?P<section_id>\d+)/$', 'pagetree.views.move_section', {}, 'move-section'),

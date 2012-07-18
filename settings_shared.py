@@ -107,6 +107,7 @@ INSTALLED_APPS = (
     'servicesblock',
     'riskblock',
     'pastquizanswersblock',
+    'analytics',
     #kill sentry
     'wings_main',
     'paging',

@@ -1,100 +1,55 @@
 from django.db import models
-from pagetree.models import PageBlock
+from pagetree.models import Section
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django import forms
 from datetime import datetime
 from django.core.urlresolvers import reverse
-from django.template.defaultfilters import slugify
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.utils import simplejson
+from django.http import HttpResponse, HttpResponseRedirect
+from django.template.defaultfilters import slugify
+
 
 import os, json
 
+class ActionType (models.Model):    
+    def __unicode__(self):
+        return self.label
+    label =  models.CharField(blank=True, null=True, max_length = 64)
+
+    def slug(self):
+        return slugify (self.label)
+    
+    @classmethod
+    def summary(self):
+        result = dict((action_type.slug(), action_type.id) for action_type in ActionType.objects.all())
+        return simplejson.dumps(result)
+
+    
 
 
-if 1 == 0:
-            class AudioBlock(models.Model):
-                pageblocks = generic.GenericRelation(PageBlock)
-                description = models.TextField(blank=True)
-                audio_file = models.FileField(upload_to='audio_block', blank=True, null=True)
+class ActionTaken (models.Model):
+    """An entry in an analytics-type log. Records who took an action, the time it happened, and the page it happened on."""
+    user =  models.ForeignKey(User, help_text="User who took the action")
+    action = models.ForeignKey(ActionType, help_text="Description of the action logged. First word should be a verb in the past tense, third person.")
+    section =  models.ForeignKey(Section, help_text="On what page?", verbose_name = "Where?", blank = True, null=True)
+    when = models.DateTimeField(auto_now_add=True, null=False, verbose_name = 'When?')
 
-                template_file     = "audioblock/audioblock.html"
-                js_template_file  = "audioblock/audioblock_js.html"
-                css_template_file = "audioblock/audioblock_css.html"
-                display_name = "Audio Block"
-                
-                def is_audio_block(self):
-                    return True
-                
-                def pageblock(self):
-                    return self.pageblocks.all()[0]
+    class Meta:
+        ordering = ['user', 'section', '-when']
+        verbose_name_plural = "Actions taken"
 
-                def __unicode__(self):
-                    return unicode(self.pageblock())
-                
-                def edit_form(self ):
-                    class EditForm(forms.Form):
-                        description = forms.CharField(initial=self.description, widget=forms.widgets.Textarea(), label="Audio Block Transcript")
-                        audio_file = forms.FileField(label="Replace audio file:")
-                        if False:
-                            current_path = settings.MEDIA_ROOT + "/"  + self.audio_file
-                            alt_text = "<strong>Current audio file:</strong>  <a href = \"%s\">%s</a>" % (current_path, current_path)
-                        current_path =    self.audio_file
-                        alt_text = "<strong>Current audio file:</strong>  %s" % ( current_path)
-                    return EditForm()
+    @classmethod
+    def log(self, action, section, user):
+        new_point = ActionTaken()
+        new_point.action = action
+        new_point.section = section
+        new_point.user = user
+        new_point.save()
+        return new_point
 
-                def edit(self,vals,files=None):
-                    self.description = vals.get('description','')
-                    if files.has_key('audio_file'):
-                        self.save_audio_file (files['audio_file'])
-                    self.save()
-                    
-                def dir(self):
-                    return dir(self)
-
-                @classmethod
-                def add_form(self):
-                    class AddForm(forms.Form):
-                        description = forms.CharField(widget=forms.widgets.Textarea())
-                        audio_file = forms.FileField(label="Replace audio file:")
-                    return AddForm()
-
-                @classmethod
-                def create(self,request):
-                    return AudioBlock.objects.create(description=request.POST.get('description', ''))
-
-                def submit(self,user,data):
-                    pass
-
-                def redirect_to_self_on_submit(self):
-                    return True
-
-                def unlocked(self,user):
-                    return True
-
-
-                def save_audio_file(self,f):
-                    ext = f.name.split(".")[-1].lower()
-                    basename = slugify(f.name.split(".")[-2].lower())[:40]
-                    if ext not in ['mp3']:
-                        # unsupported image format
-                        return None
-                    now = datetime.now()
-                    path = "audio_file/%04d/%02d/%02d/" % (now.year,now.month,now.day)
-
-
-                    try:
-                        os.makedirs(settings.MEDIA_ROOT + "/" + path)
-                    except:
-                        pass
-                    full_filename = path + "%s.%s" % (basename,ext)
-                    fd = open(settings.MEDIA_ROOT + "/" + full_filename,'wb')
-                    for chunk in f.chunks():
-                        fd.write(chunk)
-                    fd.close()
-                    self.audio_file = full_filename
-                    self.save()
 
 
 

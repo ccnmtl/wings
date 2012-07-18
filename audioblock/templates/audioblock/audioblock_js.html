@@ -1,11 +1,9 @@
 <!-- starting audioblock js -->
 <script type="text/javascript" src="/site_media/js/jquery.jplayer.min.js"></script>
-<script type="text/javascript">
-    //<![CDATA[
-    
+<script type="text/javascript">    
     function init_audio_block_audio_player() {
 	    // Local copy of jQuery selectors, for performance.
-	    var	my_jPlayer = $("#audioblock_jquery_jplayer"),
+	    var	my_jPlayer   = $("#audioblock_jquery_jplayer"),
 		    my_trackName = $("#audioblock_jp_container .track-name"),
 		    my_playState = $("#audioblock_jp_container .play-state"),
 		    my_extraPlayInfo = $("#audioblock_jp_container .extra-play-info");
@@ -44,14 +42,17 @@
 		    play: function(event) {
 			    my_playState.text(opt_text_playing);
 			    jQuery("#audioblock_jp_container .jp-rewind").show();
+			    log_analytics_event ('started-audio');
 		    },
 		    pause: function(event) {
 			    my_playState.text(opt_text_selected);
 			    jQuery("#audioblock_jp_container .jp-rewind").hide();
+			    log_analytics_event ('stopped-audio');
 		    },
 		    ended: function(event) {
 			    my_playState.text(opt_text_selected);
 			    jQuery("#audioblock_jp_container .jp-rewind").hide();
+			    log_analytics_event ('reached-end-of-audio');
 		    },
 		    swfPath: "/site_media/swf/",
 		    cssSelectorAncestor: "#audioblock_jp_container",
@@ -74,8 +75,10 @@
 		        return false;
 	        });
 	        
+	        //Start playing track again from  the beginning if the user hits rewind.
 	        jQuery("#audioblock_jp_container .jp-rewind").click(function(e) {
 			    my_jPlayer.jPlayer("play", 0);
+			    log_analytics_event ('rewound-audio');
 		        jQuery(this).blur();
 		        return false;
 	        });

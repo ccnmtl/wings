@@ -1,3 +1,4 @@
+<!-- starting helpblock js -->
 <script type="text/javascript" src="/site_media/js/jquery.jplayer.min.js"></script>
 <script type="text/javascript">
     function init_help_block_audio_player() {
@@ -41,14 +42,17 @@
 		    play: function(event) {
 			    my_playState.text(opt_text_playing);
 			    jQuery("#helpblock_jp_container .jp-rewind").show();
+			    log_analytics_event ('started-help');
 		    },
 		    pause: function(event) {
 			    my_playState.text(opt_text_selected);
 			    jQuery("#helpblock_jp_container .jp-rewind").hide();
+			    log_analytics_event ('stopped-help');
 		    },
 		    ended: function(event) {
 			    my_playState.text(opt_text_selected);
 			    jQuery("#helpblock_jp_container .jp-rewind").hide();
+			    log_analytics_event ('reached-end-of-help');
 		    },
 		    swfPath: "/site_media/swf/",
 		    cssSelectorAncestor: "#helpblock_jp_container",
@@ -70,11 +74,10 @@
 		    return false;
 	    });            
 	    
-	    
-	    
 	    jQuery("#helpblock_jp_container .jp-rewind").click(function(e) {
 			    my_jPlayer.jPlayer("play", 0);
 		    jQuery(this).blur();
+		    log_analytics_event ('rewound-help');
 		    return false;
 	    });            
 	    

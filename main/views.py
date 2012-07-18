@@ -14,6 +14,8 @@ from pagetree.models import Section
 from pagetree_export.exportimport import export_zip, import_zip
 from pageblocks.exportimport import *
 from quizblock.exportimport import *
+from analytics.models import ActionType
+
 
 from wings_main.views import decoration_info, whether_to_show_decorations, check_next_page, destination_on_check_next_page_fail
 
@@ -119,8 +121,8 @@ def page(request,path):
                 return HttpResponseRedirect(destination_on_check_next_page_fail (request))
             show_decorations = whether_to_show_decorations (section)
             the_decoration_info = decoration_info(section)
-        
-        
+            action_type_summary = ActionType.summary()
+            
         return dict(section=section,
             module=module,
             needs_submit=needs_submit(section),
@@ -132,8 +134,11 @@ def page(request,path):
             can_admin=can_admin,
             instructor_link=instructor_link,
             show_decorations=show_decorations,
-            decoration_info=the_decoration_info
+            decoration_info=the_decoration_info,
+            action_type_summary=action_type_summary
             )
+            
+            
 @login_required
 @rendered_with("main/instructor_page.html")
 @stand()
