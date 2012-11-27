@@ -10,25 +10,18 @@ from django.core.files.storage import FileSystemStorage
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.defaultfilters import slugify
-
-
 import os, json
 
 class ActionType (models.Model):    
     def __unicode__(self):
         return self.label
     label =  models.CharField(blank=True, null=True, max_length = 64)
-
     def slug(self):
         return slugify (self.label)
-    
     @classmethod
     def summary(self):
         result = dict((action_type.slug(), action_type.id) for action_type in ActionType.objects.all())
         return simplejson.dumps(result)
-
-    
-
 
 class ActionTaken (models.Model):
     """An entry in an analytics-type log. Records who took an action, the time it happened, and the page it happened on."""
@@ -38,7 +31,7 @@ class ActionTaken (models.Model):
     when = models.DateTimeField(auto_now_add=True, null=False, verbose_name = 'When?')
 
     class Meta:
-        ordering = ['user', 'section', '-when']
+        ordering = ['user', '-when']
         verbose_name_plural = "Actions taken"
 
     @classmethod

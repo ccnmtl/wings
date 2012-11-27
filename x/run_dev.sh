@@ -1,3 +1,3 @@
 cd /home/eddie/sandbox/wings/
-echo 'STARTING DEV SERVER on http://tiur.ccnmtl.columbia.edu:12345'
-/home/eddie/sandbox/wings/manage.py runserver tiur.ccnmtl.columbia.edu:12345
+echo 'STARTING DEV SERVER on localhost:12345'
+/home/eddie/sandbox/wings/manage.py runserver localhost:12345
