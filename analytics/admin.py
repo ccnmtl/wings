@@ -10,4 +10,6 @@ admin.site.register(ActionType, ActionTypeAdmin)
 class ActionTakenAdmin (admin.ModelAdmin):
     list_display = (  'user','action','section', 'when')
     fields       = (  'user','action','section')
+    list_per_page = 2000
+    actions = None
 admin.site.register(ActionTaken, ActionTakenAdmin)
