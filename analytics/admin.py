@@ -12,4 +12,11 @@ class ActionTakenAdmin (admin.ModelAdmin):
     fields       = (  'user','action','section')
     list_per_page = 2000
     actions = None
+    
+    # don't show the links to the user in the list display
+    def __init__(self, *args, **kwargs):
+        super(ActionTakenAdmin, self).__init__(*args, **kwargs)
+        self.list_display_links = (None, )
+
+
 admin.site.register(ActionTaken, ActionTakenAdmin)
