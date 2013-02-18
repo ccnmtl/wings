@@ -1,5 +1,6 @@
 # Django settings for wings project.
 import os.path
+import sys
 
 DEBUG = True
 TESTMODE = False
@@ -15,6 +16,17 @@ DATABASE_USER = ''
 DATABASE_PASSWORD = ''
 DATABASE_HOST = ''
 DATABASE_PORT = ''
+
+if 'test' in sys.argv:
+    DATABASE_ENGINE = 'sqlite3'
+    DATABASE_NAME = ':memory:'
+
+SOUTH_TESTS_MIGRATE = False
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = [
+    'django_nose',
+    '--cover-package=audioblock,helpblock,main,quizblock,riskblock,servicesblock,ssnmtreeblock,wings_main',
+]
 
 TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
@@ -113,6 +125,7 @@ INSTALLED_APPS = (
     'paging',
     'indexer',
     'south',
+    'django_nose',
 )
 
 if not DEBUG:
