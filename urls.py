@@ -9,10 +9,11 @@ import staticmedia
 
 urlpatterns = patterns('',
     
-    ('^$',                redirect_to, {'url': '/admin/wings_main/participant/'}),
-    ('^admin/login/$',    redirect_to, {'url': '/admin/wings_main/participant/'}),   
-    ('^accounts/login/$', redirect_to, {'url': '/admin/wings_main/participant/'}),
-    ('^login/$',          redirect_to, {'url': '/admin/wings_main/participant/'}),   
+    ('^$',                redirect_to,   {'url': '/admin/wings_main/participant/'}),
+    ('^admin/login/$',    redirect_to,   {'url': '/admin/wings_main/participant/'}),   
+    ('^accounts/login/$', redirect_to,   {'url': '/admin/wings_main/participant/'}),
+    ('^login/$',          redirect_to,   {'url': '/admin/wings_main/participant/'}),   
+    ('^accounts/profile/$', redirect_to, {'url': '/admin/wings_main/participant/'}),   
     
     
     ('^about/$',   'wings_main.views.background',  {'content_to_show': 'about'  }),
