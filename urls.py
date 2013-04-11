@@ -59,7 +59,9 @@ urlpatterns = patterns('',
     #standard django stuff:
     ('^accounts/',include('djangowind.urls')),
     (r'^admin/pagetree/section/move/(?P<section_id>\d+)/$', 'pagetree.views.move_section', {}, 'move-section'),
-    (r'^admin/(.*)', admin.site.root),
+    
+    
+    url(r'^admin/', include(admin.site.urls)),
     (r'^munin/',include('munin.urls')),
 
     # This is nonstandard, but the standard is confusing.
