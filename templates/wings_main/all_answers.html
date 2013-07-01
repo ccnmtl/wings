@@ -7,6 +7,7 @@
     <table border ="1px">
         <tr>
            <th >Question ID</th>
+           <th >Duration (min.)</th>
             {% for qu in questions %}
                 {% if qu.is_single_choice %}
                     <th title="{{qu.text}}">{{ qu.id}}</th>
@@ -22,6 +23,7 @@
         
         <tr>
            <th >Answer ID</th>
+           <th >&nbsp;</th>
             {% for qu in questions %}
                 {% if qu.is_single_choice %}
                     <th>&nbsp;</th>
@@ -39,6 +41,7 @@
         {% for u in users %}
          <tr>
             <td> {{u.part.label}}</td>
+           <td >{{u.how_long|floatformat:"1"}}</td>
            {% for qu in questions %}
                 {% if qu.is_single_choice %}
                     <td>

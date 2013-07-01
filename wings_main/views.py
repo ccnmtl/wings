@@ -21,7 +21,7 @@ from restclient import GET,POST
 from simplejson import loads, dumps
 from django.db.models import Q
 
-from quizblock.models import Question
+from quizblock.models import Question, Submission
 
 
 def background(request,  content_to_show):
@@ -366,14 +366,59 @@ def all_questions_in_order ():
     return the_questions_in_order
     
     
+def estimate_intervention_duration_for_all_participants():
+    all_submission_dates = {}
+    users = [ u for u in User.objects.all() if u.part()]
+
+    for u in users:
+        all_submission_dates [u.id ]= set()
+
+    all_submissions = Submission.objects.all()
+    for s in all_submissions:
+        try:
+            all_submission_dates[s.user.id].add (s.submitted)
+        except KeyError:
+            pass
+    
+    consider_date_joined = True
+    if consider_date_joined:
+        #also consider the date the user was created.
+        for u in users:
+             all_submission_dates[u.id].add (u.date_joined)
+    
+    intervals = {}
+    for user_id, the_dates in all_submission_dates.iteritems():
+        try:
+            timedelta = max(the_dates) - min(the_dates)
+            seconds  = timedelta.seconds
+            minutes = seconds / 60.0
+            intervals[user_id] = minutes
+        except:
+            intervals[user_id] = -9
+    
+    return intervals
+
+
+
 @staff_or_404
 @rendered_with('wings_main/all_answers.html')
 def all_answers(request):
     """ all numerical answers for all users in a giant table"""
     node_list = []
     traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
+    intervention_Length_dict = estimate_intervention_duration_for_all_participants()
+
+
+    users = [ u for u in User.objects.all() if u.part()]
+
+    for u in users:
+        try:
+            u.how_long = intervention_Length_dict[u.id]
+        except KeyError:
+            u.how_long = -9
+
     return {
-        'users':     [ u for u in User.objects.all() if u.part()],
+        'users':     users,
         'questions': all_questions_in_order(),
     }
 
