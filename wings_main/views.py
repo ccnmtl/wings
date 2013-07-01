@@ -400,6 +400,93 @@ def estimate_intervention_duration_for_all_participants():
 
 
 
+def estimate_intervention_duration_for_all_participants():
+    all_submission_dates = {}
+    users = [ u for u in User.objects.all() if u.part()]
+
+    for u in users:
+        all_submission_dates [u.id ]= set()
+
+    all_submissions = Submission.objects.all()
+    for s in all_submissions:
+        try:
+            all_submission_dates[s.user.id].add (s.submitted)
+        except KeyError:
+            pass
+    
+    consider_date_joined = True
+    if consider_date_joined:
+        #also consider the date the user was created.
+        for u in users:
+             all_submission_dates[u.id].add (u.date_joined)
+    
+    intervals = {}
+    for user_id, the_dates in all_submission_dates.iteritems():
+        try:
+            timedelta = max(the_dates) - min(the_dates)
+            seconds  = timedelta.seconds
+            minutes = seconds / 60.0
+            intervals[user_id] = minutes
+        except:
+            intervals[user_id] = -9
+    
+    return intervals
+
+
+
+@staff_or_404
+@rendered_with('wings_main/timestamps.html')
+def timestamps(request):
+    """when the user was signed up, and when they answered all the questions."""
+
+
+    #sample = (234, 239, 237, 233, 232, 235, 225, 231, 227, 230)
+    #sample = (234, 239, 237)
+    #and u.id in sample
+    all_submission_dates = {}
+    users = [ u for u in User.objects.all() if u.part() ]
+
+    for u in users:
+        all_submission_dates [u.id ]= set()
+
+    the_table = []
+
+    all_submissions = Submission.objects.all()
+    for s in all_submissions:
+        for q in s.quiz.question_set.all():
+            the_table.append ( {'qid': q.id, 'uid': s.user.id, 'date':s.submitted } )
+        try:
+            all_submission_dates[s.user.id].add (s.submitted)
+        except KeyError:
+            pass
+    
+    
+    intervals = {}
+    for user_id, the_dates in all_submission_dates.iteritems():
+        try:
+            timedelta = max(the_dates) - min(the_dates)
+            seconds  = timedelta.seconds
+            minutes = seconds / 60.0
+            intervals[user_id] = minutes
+        except:
+            intervals[user_id] = -9
+
+    all_the_questions = all_questions_in_order()
+
+    for u in users:
+        u.dates = []
+        u.how_long = intervals[u.id]
+        for q in all_the_questions:
+            dates_for_this_question = [ (q.id, t['date']) for t in the_table if ( t['qid'] == q.id and t['uid']== u.id)]
+            u.dates.append (dates_for_this_question)
+
+
+    return {
+        'users':     users,
+        'questions': all_questions_in_order(),
+    }
+
+
 @staff_or_404
 @rendered_with('wings_main/all_answers.html')
 def all_answers(request):

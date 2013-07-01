@@ -1,0 +1,43 @@
+{% extends 'wings_main/stats.html' %}
+{% load pastquizanswers %}
+{%block title%}Answer summary{%endblock%}
+
+{% block table %}
+    <h5>Timestamps:</h5>
+    <table border ="1px">
+        <tr>
+           <th >Question ID</th>
+           <th >Duration (min.)</th>
+           <th >user created</th>
+            {% for qu in questions %}
+                <th title="{{qu.text}}">{{ qu.id}}</th>
+            {%endfor%}
+        </tr>
+        
+        {% for u in users %}
+         <tr>
+            <td> {{u.part.label}}</td>
+           <td >{{u.how_long|floatformat:"1"}}</td>
+           <td >{{u.date_joined|date:"m/d/y H:i"}}</td>
+
+
+           {% for dat in u.dates%}
+               <td >{% for  qid, d in dat %}{{d|date:"m/d/y H:i"}} {%endfor %}</td>
+           {%endfor%}
+           
+            </tr>
+         {%endfor %}
+    </table>
+{% endblock %}
+{%block below_table%}
+    <div>
+        <a href ="/all_answers_key_table/" target = "_blank">Key to answer codes</a>
+    </div>
+    <div>
+        <a href ="/text_answers/" target = "_blank">Text answers</a>
+    </div>
+    <div>
+        <a href ="/" >Back to list of participants</a>
+    </div>
+{%endblock%}
+

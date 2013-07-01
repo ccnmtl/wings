@@ -30,6 +30,7 @@ urlpatterns = patterns('',
     ('^text_answers/$',    'wings_main.views.text_answers'),
     ('^all_answers_key/$', 'wings_main.views.all_answers_key'),
     ('^all_answers_key_table/$', 'wings_main.views.all_answers_key_table'),
+    ('^timestamps/$',     'wings_main.views.timestamps'),
     
     #summary of all pages 
     ('^summary/$', 'wings_main.views.summary'),
