@@ -8,7 +8,8 @@
         <tr>
            <th >Question ID</th>
            <th >Duration (min.)</th>
-           <th >user created</th>
+           <th >participant created</th>
+           <th >user launched</th>
             {% for qu in questions %}
                 <th title="{{qu.text}}">{{ qu.id}}</th>
             {%endfor%}
@@ -16,8 +17,9 @@
         
         {% for u in users %}
          <tr>
-            <td> {{u.part.label}}</td>
+           <td> {{u.part.label}}</td>
            <td >{{u.how_long|floatformat:"1"}}</td>
+           <td >{{u.part.created_on|date:"m/d/y H:i"}}</td>
            <td >{{u.date_joined|date:"m/d/y H:i"}}</td>
 
 

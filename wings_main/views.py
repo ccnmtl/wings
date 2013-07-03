@@ -444,10 +444,12 @@ def timestamps(request):
     #sample = (234, 239, 237)
     #and u.id in sample
     all_submission_dates = {}
-    users = [ u for u in User.objects.all() if u.part() ]
+    users = [ u for u in User.objects.all() if u.part()  ]
 
     for u in users:
         all_submission_dates [u.id ]= set()
+
+    launch_timestamps = dict((u.id,  u.part().created_on) for u in users)
 
     the_table = []
 
@@ -464,7 +466,7 @@ def timestamps(request):
     intervals = {}
     for user_id, the_dates in all_submission_dates.iteritems():
         try:
-            timedelta = max(the_dates) - min(the_dates)
+            timedelta = max(the_dates) -  launch_timestamps[user_id]
             seconds  = timedelta.seconds
             minutes = seconds / 60.0
             intervals[user_id] = minutes
