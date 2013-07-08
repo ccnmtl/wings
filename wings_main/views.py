@@ -1,4 +1,3 @@
-# Create your views here.
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.shortcuts import render_to_response, get_object_or_404

@@ -1,5 +1,8 @@
 from django.db import models
 from pagetree.models import Section
+from wings_main.models import  section_rank
+from wings_main.views import is_descendent_of
+
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django import forms
@@ -43,6 +46,14 @@ class ActionTaken (models.Model):
         new_point.save()
         return new_point
 
+    def page_type(self):
+        """Added in latter days to help Jess with some research on the use of audio by the participants"""
+        safety_plan = Section.objects.get(id = 56)
+        if is_descendent_of (self.section, [safety_plan]):
+            return "safety plan"
+        if any(s.block().display_name == 'Quiz' for s in self.section.pageblock_set.all()):
+            return "quiz"
+        return "long text"
 
-
-
+    def page_rank(self):
+        return section_rank (self.section)
