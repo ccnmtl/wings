@@ -397,7 +397,7 @@ def estimate_intervention_duration_for_all_participants():
         if len(the_dates) > 0:
             gaps = sum_of_gaps_longer_than_x_minutes (70, list(the_dates))
             timedelta = max(the_dates) - min(the_dates)
-            seconds  = timedelta.total_seconds()
+            seconds  = my_total_seconds(timedelta)
             minutes = seconds / 60.0
             intervals[user_id] = minutes - gaps
         else:    
@@ -440,12 +440,15 @@ def sum_of_gaps_longer_than_x_minutes (x, list_of_timestamps):
     start_times = list_of_timestamps [  :-1]
     end_times   = list_of_timestamps [ 1:  ]
     gaps_longer_than_x_in_seconds = [
-        (b - a).total_seconds()
+        my_total_seconds(b - a)
         for a, b in zip (start_times, end_times)
         if (b -a > threshold)]
     return sum(gaps_longer_than_x_in_seconds) / 60
 
 
+def my_total_seconds(td):
+    """Python's timedelta did not have a 'total_seconds' method before python 2.7. I just."""
+    return (td.microseconds + (td.seconds + td.days * 24.0 * 3600.0) * 10.0**6.0) / 10.0**6.0
 
 
 @staff_or_404
@@ -507,7 +510,7 @@ def timestamps(request):
 
                 #estimate how long the user spent on the intervention. This includes the launch timestamp.
                 timedelta = max (the_dates) - start_time
-                seconds  = timedelta.total_seconds()
+                seconds  = my_total_seconds(timedelta)
                 minutes = seconds / 60.0
                 intervals[user_id] = minutes - user_gaps [user_id]
 
@@ -517,7 +520,7 @@ def timestamps(request):
                 if len (the_dates_in_the_first_24_hours) > 0:
                     modified_timedelta = max (the_dates_in_the_first_24_hours) - start_time
                     the_gaps = sum_of_gaps_longer_than_x_minutes (70, the_dates_in_the_first_24_hours)
-                    seconds_2  = modified_timedelta.total_seconds()
+                    seconds_2  = my_total_seconds(modified_timedelta)
                     minutes_2 = seconds_2 / 60.0
                     intervals_first_24_hrs[user_id] = minutes_2 - the_gaps
                 else:
