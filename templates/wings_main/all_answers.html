@@ -7,7 +7,7 @@
     <table border ="1px">
         <tr>
            <th >Question ID</th>
-           <th >Duration (min.)</th>
+           <th >Duration (min.)<br/> Does not consider launch.</th>
             {% for qu in questions %}
                 {% if qu.is_single_choice %}
                     <th title="{{qu.text}}">{{ qu.id}}</th>

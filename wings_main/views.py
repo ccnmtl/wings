@@ -365,139 +365,56 @@ def all_questions_in_order ():
     return the_questions_in_order
     
     
-def estimate_intervention_duration_for_all_participants():
-    all_submission_dates = {}
-    users = [ u for u in User.objects.all() if u.part()]
-
-    for u in users:
-        all_submission_dates [u.id ]= set()
-
-    all_submissions = Submission.objects.all()
-    for s in all_submissions:
-        try:
-            all_submission_dates[s.user.id].add (s.submitted)
-        except KeyError:
-            pass
-    
-    consider_date_joined = True
-    if consider_date_joined:
-        #also consider the date the user was created.
-        for u in users:
-             all_submission_dates[u.id].add (u.date_joined)
-    
-    intervals = {}
-    for user_id, the_dates in all_submission_dates.iteritems():
-        try:
-            timedelta = max(the_dates) - min(the_dates)
-            seconds  = timedelta.seconds
-            minutes = seconds / 60.0
-            intervals[user_id] = minutes
-        except:
-            intervals[user_id] = -9
-    
-    return intervals
 
 
 
 def estimate_intervention_duration_for_all_participants():
     all_submission_dates = {}
-    users = [ u for u in User.objects.all() if u.part()]
+
+    users = [ u for u in User.objects.all() if u.part() ]
 
     for u in users:
         all_submission_dates [u.id ]= set()
 
+
     all_submissions = Submission.objects.all()
+    #all_submissions = Submission.objects.filter(user__in = test_users)
     for s in all_submissions:
         try:
             all_submission_dates[s.user.id].add (s.submitted)
         except KeyError:
             pass
     
-    consider_date_joined = True
+    consider_date_joined = False
     if consider_date_joined:
-        #also consider the date the user was created.
+        # also consider the date the user was created -- aka "launch"
+        # note -- the PARTICIPANTS are created before the users.
         for u in users:
              all_submission_dates[u.id].add (u.date_joined)
-    
+
     intervals = {}
     for user_id, the_dates in all_submission_dates.iteritems():
-        try:
+        if len(the_dates) > 0:
+            gaps = sum_of_gaps_longer_than_x_minutes (70, list(the_dates))
             timedelta = max(the_dates) - min(the_dates)
-            seconds  = timedelta.seconds
+            seconds  = timedelta.total_seconds()
             minutes = seconds / 60.0
-            intervals[user_id] = minutes
-        except:
+            intervals[user_id] = minutes - gaps
+        else:    
             intervals[user_id] = -9
-    
+
     return intervals
-
-
-
-@staff_or_404
-@rendered_with('wings_main/timestamps.html')
-def timestamps(request):
-    """when the user was signed up, and when they answered all the questions."""
-
-
-    #sample = (234, 239, 237, 233, 232, 235, 225, 231, 227, 230)
-    #sample = (234, 239, 237)
-    #and u.id in sample
-    all_submission_dates = {}
-    users = [ u for u in User.objects.all() if u.part()  ]
-
-    for u in users:
-        all_submission_dates [u.id ]= set()
-
-    launch_timestamps = dict((u.id,  u.part().created_on) for u in users)
-
-    the_table = []
-
-    all_submissions = Submission.objects.all()
-    for s in all_submissions:
-        for q in s.quiz.question_set.all():
-            the_table.append ( {'qid': q.id, 'uid': s.user.id, 'date':s.submitted } )
-        try:
-            all_submission_dates[s.user.id].add (s.submitted)
-        except KeyError:
-            pass
-    
-    
-    intervals = {}
-    for user_id, the_dates in all_submission_dates.iteritems():
-        try:
-            timedelta = max(the_dates) -  launch_timestamps[user_id]
-            seconds  = timedelta.seconds
-            minutes = seconds / 60.0
-            intervals[user_id] = minutes
-        except:
-            intervals[user_id] = -9
-
-    all_the_questions = all_questions_in_order()
-
-    for u in users:
-        u.dates = []
-        u.how_long = intervals[u.id]
-        for q in all_the_questions:
-            dates_for_this_question = [ (q.id, t['date']) for t in the_table if ( t['qid'] == q.id and t['uid']== u.id)]
-            u.dates.append (dates_for_this_question)
-
-
-    return {
-        'users':     users,
-        'questions': all_questions_in_order(),
-    }
-
 
 @staff_or_404
 @rendered_with('wings_main/all_answers.html')
 def all_answers(request):
-    """ all numerical answers for all users in a giant table"""
+    """ all numerical answers for all users in a giant table. Also contains intervention length estimate"""
     node_list = []
     traverse_tree( Hierarchy.objects.all()[0].get_root(), node_list)
     intervention_Length_dict = estimate_intervention_duration_for_all_participants()
 
 
-    users = [ u for u in User.objects.all() if u.part()]
+    users = [ u for u in User.objects.all() if u.part() ]
 
     for u in users:
         try:
@@ -509,6 +426,123 @@ def all_answers(request):
         'users':     users,
         'questions': all_questions_in_order(),
     }
+
+
+def sum_of_gaps_longer_than_x_minutes (x, list_of_timestamps):
+    """ as described in bug http://pmt.ccnmtl.columbia.edu/item/87836/
+    basically if there are gaps that are longer than x, we assume the user was not doing the activity.
+    so in that case we don't count that toward the total duration of the activity for them.
+    """
+    threshold =  datetime.timedelta(minutes = x)
+    if len(list_of_timestamps) < 2:
+        return 0
+    list_of_timestamps.sort()
+    start_times = list_of_timestamps [  :-1]
+    end_times   = list_of_timestamps [ 1:  ]
+    gaps_longer_than_x_in_seconds = [
+        (b - a).total_seconds()
+        for a, b in zip (start_times, end_times)
+        if (b -a > threshold)]
+    return sum(gaps_longer_than_x_in_seconds) / 60
+
+
+
+
+@staff_or_404
+@rendered_with('wings_main/timestamps.html')
+def timestamps(request):
+    """when the user was signed up, and when they answered all the questions.
+
+    Disclaimer:
+    this code is a report; it will be run few times by few users.
+    It's basically a manage.py command with a pretty front end.
+    It's not meant to be pretty or fast, and is in fact neither.
+    We don't make mayonnaise here (tm). """
+
+    #and u.id in sample
+    #SPECIAL_NUMBER = 306
+
+    #get some data structures ready
+    all_the_questions = all_questions_in_order()
+    all_submission_dates = {}
+    #users = [ u for u in User.objects.all() if u.part() and u.id  == SPECIAL_NUMBER  ]#and u.part().label == '101513580054'
+    users = [ u for u in User.objects.all() if u.part() ]
+    for u in users:
+        all_submission_dates [u.id ]= set()
+
+
+    launch_timestamps = dict((u.id,  u.part().created_on) for u in users)
+    all_submissions = Submission.objects.all()
+    #all_submissions = Submission.objects.filter(user__id = SPECIAL_NUMBER)
+
+
+    # Put all the submission stuff into a table in memory
+    the_table = []
+    for s in all_submissions:
+        for q in s.quiz.question_set.all():
+            the_table.append ( {'qid': q.id, 'uid': s.user.id, 'date':s.submitted } )
+        try:
+            all_submission_dates[s.user.id].add (s.submitted)
+        except KeyError:
+            pass
+
+    # figure out gaps now
+    user_gaps = {}
+    for the_user in users:
+        the_dates_for_this_user = [x['date'] for x in the_table if x['uid'] == the_user.id]
+        user_gaps [the_user.id] = sum_of_gaps_longer_than_x_minutes (70, the_dates_for_this_user)
+
+    intervals = {}
+    intervals_first_24_hrs = {}
+
+    start_from_launch = True #include the launch timestamp in our estimates
+    for user_id, the_dates in all_submission_dates.iteritems():
+        #if user_id == SPECIAL_NUMBER:
+        if 1 == 1:
+            if len(the_dates) > 0:
+                if start_from_launch:
+                    start_time = launch_timestamps[user_id]
+                else:
+                    start_time  = min(the_dates) # when the user answered the first quiz.
+
+                #estimate how long the user spent on the intervention. This includes the launch timestamp.
+                timedelta = max (the_dates) - start_time
+                seconds  = timedelta.total_seconds()
+                minutes = seconds / 60.0
+                intervals[user_id] = minutes - user_gaps [user_id]
+
+                #what if we only consider the first 24 hours after the launch timestamp?
+                a_day_later = start_time + datetime.timedelta(days = 1)
+                the_dates_in_the_first_24_hours = [d for d in the_dates if d < a_day_later]
+                if len (the_dates_in_the_first_24_hours) > 0:
+                    modified_timedelta = max (the_dates_in_the_first_24_hours) - start_time
+                    the_gaps = sum_of_gaps_longer_than_x_minutes (70, the_dates_in_the_first_24_hours)
+                    seconds_2  = modified_timedelta.total_seconds()
+                    minutes_2 = seconds_2 / 60.0
+                    intervals_first_24_hrs[user_id] = minutes_2 - the_gaps
+                else:
+                    intervals_first_24_hrs[user_id] = 0
+            else:
+                intervals[user_id] = -9
+                intervals_first_24_hrs[user_id] = -9
+            
+    #get the view table ready:
+    for u in users:
+        u.dates = []
+        u.how_long   = intervals             [u.id]
+        u.how_long_2 = intervals_first_24_hrs[u.id]
+        for q in all_the_questions:
+            #dates_for_this_question = [ (q.id, t['date']) for t in the_table if ( u.id == SPECIAL_NUMBER and  t['qid'] == q.id and t['uid']== u.id)]
+            dates_for_this_question = [ (q.id, t['date']) for t in the_table if ( t['qid'] == q.id and t['uid']== u.id)]
+            u.dates.append (dates_for_this_question)
+
+
+    return {
+        'users':     users,
+        'questions': all_the_questions,
+    }
+
+
 
 @staff_or_404
 @rendered_with('wings_main/text_answers.html')

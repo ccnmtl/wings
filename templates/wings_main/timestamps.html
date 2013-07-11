@@ -6,8 +6,15 @@
     <h5>Timestamps:</h5>
     <table border ="1px">
         <tr>
-           <th >Question ID</th>
-           <th >Duration (min.)</th>
+           <th >Participant ID</th>
+           <!-- <th >User ID</th>  -->
+           <th >Duration (min.)
+            <br/>from launch to last timestamp</th>
+
+           <th >Duration (min.)
+            <br/>from launch to last timestamp
+            <br/>of first 24 hours</th>
+
            <th >participant created</th>
            <th >user launched</th>
             {% for qu in questions %}
@@ -18,7 +25,9 @@
         {% for u in users %}
          <tr>
            <td> {{u.part.label}}</td>
+           <!-- <td> {{u.id}}</td> -->
            <td >{{u.how_long|floatformat:"1"}}</td>
+           <td >{{u.how_long_2|floatformat:"1"}}</td>
            <td >{{u.part.created_on|date:"m/d/y H:i"}}</td>
            <td >{{u.date_joined|date:"m/d/y H:i"}}</td>
 
