@@ -460,10 +460,13 @@ def timestamps(request):
     this code is a report; it will be run few times by few users.
     It's basically a manage.py command with a pretty front end.
     It's not meant to be pretty or fast, and is in fact neither.
-    We don't make mayonnaise here (tm). """
+    """
 
     #and u.id in sample
     #SPECIAL_NUMBER = 306
+    #SPECIAL_NUMBER = 292
+    #SPECIAL_NUMBER = 255
+    #
 
     #get some data structures ready
     all_the_questions = all_questions_in_order()
@@ -474,7 +477,9 @@ def timestamps(request):
         all_submission_dates [u.id ]= set()
 
 
-    launch_timestamps = dict((u.id,  u.part().created_on) for u in users)
+    #part_creation_timestamps = dict((u.id,  u.part().created_on) for u in users)
+    launch_timestamps = dict( (u.id, u.date_joined) for u in users)
+    
     all_submissions = Submission.objects.all()
     #all_submissions = Submission.objects.filter(user__id = SPECIAL_NUMBER)
 
@@ -507,7 +512,10 @@ def timestamps(request):
                     start_time = launch_timestamps[user_id]
                 else:
                     start_time  = min(the_dates) # when the user answered the first quiz.
-
+                #print 'start time is',
+                #print start_time
+                #print 'end time is',
+                #print max(the_dates)
                 #estimate how long the user spent on the intervention. This includes the launch timestamp.
                 timedelta = max (the_dates) - start_time
                 seconds  = my_total_seconds(timedelta)
