@@ -126,7 +126,7 @@ TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), "templates"),
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -160,7 +160,7 @@ INSTALLED_APPS = (
     'django_statsd',
     'django_jenkins',
     'smoketest',
-)
+]
 
 STATSD_CLIENT = 'statsd.client'
 STATSD_PATCHES = ['django_statsd.patches.db', ]
