@@ -7,7 +7,7 @@
         <div id="audioblock_jquery_jplayer"></div>
         <div id="audioblock_jp_container" class="audioblock-container">
             <div class = "audio_controls">
-                <span href="/site_media/audio/{% get_risk_score user %}.mp3" class="track track-default">/site_media/audio/{% get_risk_score user %}.mp3</span>
+                <span href="{{STATIC_URL}}audio/{% get_risk_score user %}.mp3" class="track track-default">{{STATIC_URL}}audio/{% get_risk_score user %}.mp3</span>
                 ( at <span class="jp-current-time"></span>
                 of <span class="jp-duration"></span> )
             </div>

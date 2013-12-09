@@ -29,6 +29,9 @@ TEMPLATE_DEBUG = DEBUG
 SENTRY_SITE = 'wings'
 SENTRY_SERVERS = ['http://sentry.ccnmtl.columbia.edu/sentry/store/']
 
+STATIC_ROOT = os.path.join(os.path.dirname(__file__), "../media")
+STATICFILES_DIRS = ()
+
 if 'migrate' not in sys.argv:
     INSTALLED_APPS.append('raven.contrib.django')
 

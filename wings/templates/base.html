@@ -3,15 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" href="/site_media/favicon.ico" />
+	<link rel="shortcut icon" href="{{STATIC_URL}}favicon.ico" />
 	<title>WINGS | {% block title %}{% endblock %}</title>
-	<link rel="stylesheet" href="/site_media/css/main.css?site=forest" media="screen" />
-	<link rel="stylesheet" href="/site_media/css/print.css?site=forest" media="print" />
-	<script src="/site_media/js/jquery-1.4.2.min.js" type="text/javascript" ></script> 
+	<link rel="stylesheet" href="{{STATIC_URL}}css/main.css?site=forest" media="screen" />
+	<link rel="stylesheet" href="{{STATIC_URL}}css/print.css?site=forest" media="print" />
+	<script src="{{STATIC_URL}}js/jquery-1.4.2.min.js" type="text/javascript" ></script> 
 	<!--[if IE 6]>
-	<link rel="stylesheet" href="/site_media/css/main_ie6_1col.css?site=forest" media="screen" />
+	<link rel="stylesheet" href="{{STATIC_URL}}css/main_ie6_1col.css?site=forest" media="screen" />
 	<![endif]-->
-	<link rel="shortcut icon" href="/site_media/img/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
 	{% block misc_head %}{% endblock %}
 	{% block css %}{% endblock %}
 	{% block js %}{% endblock %}
@@ -45,7 +45,7 @@
 	</div><!-- id="header" -->
 	
 		<div class="printonly">
-		<img src="/site_media/img/site_banner.png" /><br /><br />
+		<img src="{{STATIC_URL}}img/site_banner.png" /><br /><br />
 	</div>	
 {% endblock %}
 
@@ -130,7 +130,7 @@
 {% block footer %}
 	<!-- ###### Footer ###### -->
 	<div id="footer">
-	<p class="printonly"><br /><img src="/site_media/img/logo_ccnmtl_sidebar.gif" class="printonly" /></p>
+	<p class="printonly"><br /><img src="{{STATIC_URL}}img/logo_ccnmtl_sidebar.gif" class="printonly" /></p>
 	</div><!-- id="footer" -->
 {% endblock %}
 

@@ -68,7 +68,7 @@ USE_I18N = False
 
 
 # WHERE ARE THE NON-UPLOADED STATIC FILES?
-SITE_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), "../site_media")
+SITE_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), "../media/")
 
 # WHERE DO UPLOADED STATIC FILES GO ON THE FILESYSTEM?
 UPLOADS_ROOT = "/var/www/wings/uploads/"
@@ -82,13 +82,13 @@ MEDIA_URL = '/uploads/'
 # this is set to 'media' by default.
 
 # URL of non-uploaded static files:
-SITE_MEDIA_URL = '/site_media'
+SITE_MEDIA_URL = '/media/'
 
 # path relative to SITE_MEDIA_URL of decoration images used in the
 # intervention:
 DECORATION_IMAGE_PATH = '/img/decoration_images/'
 
-SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html'
+SELENIUM_TESTS_URL = '/media/selenium/TestRunner.html'
 
 
 APPEND_SLASH = False
@@ -108,6 +108,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.contrib.messages.context_processors.messages",
+    'django.core.context_processors.static',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -134,7 +135,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'django.contrib.markup',
     'django.contrib.admin',
-    'staticmedia',
+    'django.contrib.staticfiles',
     'sorl.thumbnail',
     'tagging',
     'smartif',
@@ -161,6 +162,11 @@ INSTALLED_APPS = [
     'django_jenkins',
     'smoketest',
 ]
+STATIC_URL = "/media/"
+STATIC_ROOT = ""
+STATICFILES_DIRS = (
+    os.path.join(os.path.dirname(__file__), "../media"),
+)
 
 STATSD_CLIENT = 'statsd.client'
 STATSD_PATCHES = ['django_statsd.patches.db', ]

@@ -921,8 +921,8 @@ body#poctools a#poctools
 .hs-hide { display: none; }
 .hs-show { display: block; }
 li.hs-control-hide, li.hs-control-show { margin-top: 10px !important; }
-li.hs-control-hide { background: url(/site_media/img/bullet_open.gif) no-repeat scroll left 4px transparent !important; }
-li.hs-control-show { background: url(/site_media/img/bullet_close.gif) no-repeat scroll left 4px transparent !important; }
+li.hs-control-hide { background: url(/media/img/bullet_open.gif) no-repeat scroll left 4px transparent !important; }
+li.hs-control-show { background: url(/media/img/bullet_close.gif) no-repeat scroll left 4px transparent !important; }
 
 p.warning
 {
@@ -948,7 +948,7 @@ body.viewing_intervention_as_facilitator {
 #header
 {
 	width: 960px;
-	background: url('/site_media/img/site_banner.png') no-repeat scroll left top transparent;
+	background: url('/media/img/site_banner.png') no-repeat scroll left top transparent;
 	background-color: #E3D8E0;
 }
 

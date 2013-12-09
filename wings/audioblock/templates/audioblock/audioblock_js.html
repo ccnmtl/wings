@@ -1,5 +1,5 @@
 <!-- starting audioblock js -->
-<script type="text/javascript" src="/site_media/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.jplayer.min.js"></script>
 <script type="text/javascript">    
     function init_audio_block_audio_player() {
 	    // Local copy of jQuery selectors, for performance.
@@ -54,7 +54,7 @@
 			    jQuery("#audioblock_jp_container .jp-rewind").hide();
 			    log_analytics_event ('reached-end-of-audio');
 		    },
-		    swfPath: "/site_media/swf/",
+		    swfPath: "{{STATIC_URL}}swf/",
 		    cssSelectorAncestor: "#audioblock_jp_container",
 		    supplied: "mp3",
 		    wmode: "window"

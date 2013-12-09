@@ -4,7 +4,7 @@
     width  :    475px;
     height :    420px;
     position:   relative;
-    background: url('/site_media/img/ssnm_tree.jpg') no-repeat scroll left top;
+    background: url('{{STATIC_URL}}img/ssnm_tree.jpg') no-repeat scroll left top;
     float: left;
 }
 
@@ -36,11 +36,11 @@
     position: absolute;
     width: 163px !important;
     height: 77px !important;
-    background: url('/site_media/img/bird_initial.png') no-repeat scroll left top;
+    background: url('{{STATIC_URL}}img/bird_initial.png') no-repeat scroll left top;
 }
 
 .ssnm_tree_box_div.contains_name {
-    background: url('/site_media/img/bird_selected.png') no-repeat scroll left top;
+    background: url('{{STATIC_URL}}img/bird_selected.png') no-repeat scroll left top;
 }
 
 /*  this positions each of the divs according to the left and top info found at:
@@ -82,14 +82,14 @@
 /* show the heart div if the person selects the ssnm_tree_box_div. */
 .ssnm_tree_box_div.offers_support_type_1 .heart.type_1 {
     display: block !important;
-    background: url('/site_media/img/emotional_icon.png') no-repeat scroll left top;
+    background: url('{{STATIC_URL}}img/emotional_icon.png') no-repeat scroll left top;
         left: 80px !important;
 
 }
 
 .ssnm_tree_box_div.offers_support_type_2 .heart.type_2 {
     display: block !important;
-    background: url('/site_media/img/practical_icon.png') no-repeat scroll left top;
+    background: url('{{STATIC_URL}}img/practical_icon.png') no-repeat scroll left top;
         left: 102px !important;
 }
 

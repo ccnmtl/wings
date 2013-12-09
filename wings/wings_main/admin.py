@@ -45,7 +45,7 @@ class ParticipantAdmin (admin.ModelAdmin):
 
     class Media:
         css = {
-            "all": ("/site_media/css/participant_admin_styles.css",)
+            "all": ("/media/css/participant_admin_styles.css",)
         }
 
     list_display = (

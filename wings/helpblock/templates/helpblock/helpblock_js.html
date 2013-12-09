@@ -1,5 +1,5 @@
 <!-- starting helpblock js -->
-<script type="text/javascript" src="/site_media/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.jplayer.min.js"></script>
 <script type="text/javascript">
     function init_help_block_audio_player() {
 
@@ -54,7 +54,7 @@
 			    jQuery("#helpblock_jp_container .jp-rewind").hide();
 			    log_analytics_event ('reached-end-of-help');
 		    },
-		    swfPath: "/site_media/swf/",
+		    swfPath: "{{STATIC_URL}}swf/",
 		    cssSelectorAncestor: "#helpblock_jp_container",
 		    supplied: "mp3",
 		    wmode: "window"
