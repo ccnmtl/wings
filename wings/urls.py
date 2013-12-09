@@ -2,9 +2,11 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 from django.views.generic.simple import redirect_to
+import os.path
 
 admin.autodiscover()
 import staticmedia
+site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 
 urlpatterns = patterns(
     '',
@@ -91,11 +93,8 @@ urlpatterns = patterns(
 
     ('^smoketest/$', include('smoketest.urls')),
 
-    # This is nonstandard, but the standard is confusing.
-    # I'm sorry, but for this site, urls in "site_media"  will reference
-    # directory "site_media".
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-     {'document_root': settings.SITE_MEDIA_ROOT}),
+     {'document_root': site_media_root}),
     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve',
      {'document_root': settings.UPLOADS_ROOT}),
 
