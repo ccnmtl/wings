@@ -168,11 +168,6 @@ STATSD_PREFIX = 'wings'
 STATSD_HOST = 'localhost'
 STATSD_PORT = 8125
 
-if not DEBUG:
-    tmp = list(INSTALLED_APPS)
-    tmp.append('sentry.client')
-    INSTALLED_APPS = tuple(tmp)
-
 PAGEBLOCKS = ['pageblocks.TextBlock',
               'pageblocks.HTMLBlock',
               'pageblocks.PullQuoteBlock',
@@ -203,21 +198,6 @@ OPTIONAL_QUESTIONS = [222, 235, 162, 168, 240, 242]
 
 # Fake user for the Selenium tests:
 SELENIUM_TEST_USER_ID = 999999999999
-
-if 'sentry.client' in INSTALLED_APPS:
-    import logging
-    logger = logging.getLogger()
-    from sentry.client.handlers import SentryHandler
-    if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
-        logger.addHandler(SentryHandler())
-        logger = logging.getLogger('sentry.errors')
-        logger.propagate = False
-        logger.addHandler(logging.StreamHandler())
-
-        SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
-        # overwritten in settings_production.py.
-        SENTRY_KEY = 'NOT_USED_IN_DEV'
-        SENTRY_SITE = 'wings'
 
 THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[wings] "
