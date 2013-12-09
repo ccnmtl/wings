@@ -55,3 +55,4 @@ django-pagetree_export==0.3
 django-nose==1.2
 django-jenkins==0.14.0
 South==0.8.1
+django-smoketest==0.1.3
