@@ -1,6 +1,6 @@
 from django.db import models
 from pagetree.models import PageBlock
-from quizblock.models import Answer, Question
+from wings.quizblock.models import Answer, Question
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django import forms

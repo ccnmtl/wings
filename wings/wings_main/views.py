@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext, loader
 from django.http import HttpResponseRedirect, HttpResponse, Http404
-from wings_main.models import Participant, traverse_tree, section_rank
+from .models import Participant, traverse_tree, section_rank
 from pagetree.models import Section, Hierarchy, PageBlock
 from django.db import transaction
 from functools import wraps
@@ -15,7 +15,7 @@ import os
 import datetime
 from django.conf import settings
 
-from quizblock.models import Submission
+from wings.quizblock.models import Submission
 
 
 def background(request, content_to_show):

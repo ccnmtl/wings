@@ -2,7 +2,7 @@ from django.db import models
 from pagetree.models import PageBlock
 from django.contrib.contenttypes import generic
 from django import forms
-from quizblock.models import Answer, Submission, Response
+from wings.quizblock.models import Answer, Submission, Response
 
 severe_risk_answers = [515, 517, 523, 538, 539, 540, 552, 553, 554, 555]
 

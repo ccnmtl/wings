@@ -6,7 +6,7 @@ DEBUG = True
 TESTMODE = False
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = ( )
+ADMINS = ()
 
 MANAGERS = ADMINS
 
@@ -25,7 +25,7 @@ SOUTH_TESTS_MIGRATE = False
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     'django_nose',
-    '--cover-package=audioblock,helpblock,main,quizblock,riskblock,servicesblock,ssnmtreeblock,wings_main',
+    '--cover-package=wings',
 ]
 
 TIME_ZONE = 'America/New_York'
@@ -34,26 +34,26 @@ SITE_ID = 1
 USE_I18N = False
 
 
+# WHERE ARE THE NON-UPLOADED STATIC FILES?
+SITE_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), "../site_media")
 
-#WHERE ARE THE NON-UPLOADED STATIC FILES?
-SITE_MEDIA_ROOT = os.path.join(os.path.dirname(__file__),"site_media")
-
-#WHERE DO UPLOADED STATIC FILES GO ON THE FILESYSTEM?
+# WHERE DO UPLOADED STATIC FILES GO ON THE FILESYSTEM?
 UPLOADS_ROOT = "/var/www/wings/uploads/"
 MEDIA_ROOT = UPLOADS_ROOT
 
 
-#HOW DO I REFER TO UPLOADED STATIC FILES FROM A TEMPLATE?
+# HOW DO I REFER TO UPLOADED STATIC FILES FROM A TEMPLATE?
 MEDIA_URL = '/uploads/'
 
 #ADMIN_MEDIA_PREFIX = '/media/'
-#this is set to 'media' by default.
+# this is set to 'media' by default.
 
-#URL of non-uploaded static files:
+# URL of non-uploaded static files:
 SITE_MEDIA_URL = '/site_media'
 
-#path relative to SITE_MEDIA_URL of decoration images used in the intervention:
-DECORATION_IMAGE_PATH =  '/img/decoration_images/'
+# path relative to SITE_MEDIA_URL of decoration images used in the
+# intervention:
+DECORATION_IMAGE_PATH = '/img/decoration_images/'
 
 SELENIUM_TESTS_URL = '/site_media/selenium/TestRunner.html'
 
@@ -72,7 +72,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
-    )
+)
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -85,12 +85,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'wings.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    # Put application templates before these fallback ones:
-    "/var/www/wings/templates/",
-    os.path.join(os.path.dirname(__file__),"templates"),
+    os.path.join(os.path.dirname(__file__), "templates"),
 )
 
 INSTALLED_APPS = (
@@ -110,18 +105,16 @@ INSTALLED_APPS = (
     'munin',
     'pagetree',
     'pageblocks',
-    'main', #this is actually forest main
-    'quizblock',
-    #these are new for this project:
-    'audioblock',
-    'helpblock',
-    'ssnmtreeblock',
-    'servicesblock',
-    'riskblock',
-    'pastquizanswersblock',
-    'analytics',
-    #kill sentry
-    'wings_main',
+    'wings.main',  # this is actually forest main
+    'wings.quizblock',
+    'wings.audioblock',
+    'wings.helpblock',
+    'wings.ssnmtreeblock',
+    'wings.servicesblock',
+    'wings.riskblock',
+    'wings.pastquizanswersblock',
+    'wings.analytics',
+    'wings.wings_main',
     'paging',
     'indexer',
     'south',
@@ -129,31 +122,39 @@ INSTALLED_APPS = (
 )
 
 if not DEBUG:
-    tmp = list (INSTALLED_APPS)
-    tmp.append ('sentry.client')
-    INSTALLED_APPS = tuple (tmp)
+    tmp = list(INSTALLED_APPS)
+    tmp.append('sentry.client')
+    INSTALLED_APPS = tuple(tmp)
 
 PAGEBLOCKS = ['pageblocks.TextBlock',
               'pageblocks.HTMLBlock',
               'pageblocks.PullQuoteBlock',
               'pageblocks.ImageBlock',
               'pageblocks.ImagePullQuoteBlock',
-              'quizblock.Quiz',
-              'audioblock.AudioBlock',
-              'helpblock.HelpBlock',
-              'ssnmtreeblock.SsnmTreeBlock',
-              'servicesblock.ServicesBlock',
-              'riskblock.RiskBlock',
-              'pastquizanswersblock.PastQuizAnswersBlock',
+              'wings.quizblock.Quiz',
+              'wings.audioblock.AudioBlock',
+              'wings.helpblock.HelpBlock',
+              'wings.ssnmtreeblock.SsnmTreeBlock',
+              'wings.servicesblock.ServicesBlock',
+              'wings.riskblock.RiskBlock',
+              'wings.pastquizanswersblock.PastQuizAnswersBlock',
               ]
-              
-              
-BLOCK_TYPES_THAT_HIDE_DECORATIONS = ['Image Block', 'Video Block', 'Social Support Network Tree Block','Services Block', 'Past Quiz Answers Block', 'HTML Block', 'Image Pullquote']
 
-#question_id's for questions that don't require an answer for the user to progress to the next page:
+
+BLOCK_TYPES_THAT_HIDE_DECORATIONS = [
+    'Image Block',
+    'Video Block',
+    'Social Support Network Tree Block',
+    'Services Block',
+    'Past Quiz Answers Block',
+    'HTML Block',
+    'Image Pullquote']
+
+# question_id's for questions that don't require an answer for the user to
+# progress to the next page:
 OPTIONAL_QUESTIONS = [222, 235, 162, 168, 240, 242]
 
-#Fake user for the Selenium tests:
+# Fake user for the Selenium tests:
 SELENIUM_TEST_USER_ID = 999999999999
 
 if 'sentry.client' in INSTALLED_APPS:
@@ -165,9 +166,10 @@ if 'sentry.client' in INSTALLED_APPS:
         logger = logging.getLogger('sentry.errors')
         logger.propagate = False
         logger.addHandler(logging.StreamHandler())
-        
+
         SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
-        SENTRY_KEY = 'NOT_USED_IN_DEV' #overwritten in settings_production.py.
+        # overwritten in settings_production.py.
+        SENTRY_KEY = 'NOT_USED_IN_DEV'
         SENTRY_SITE = 'wings'
 
 THUMBNAIL_SUBDIR = "thumbs"

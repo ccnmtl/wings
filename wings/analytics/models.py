@@ -1,7 +1,7 @@
 from django.db import models
 from pagetree.models import Section
-from wings_main.models import section_rank
-from wings_main.views import is_descendent_of
+from wings.wings_main.models import section_rank
+from wings.wings_main.views import is_descendent_of
 
 from django.contrib.auth.models import User
 from django.utils import simplejson
