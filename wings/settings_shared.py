@@ -41,6 +41,26 @@ NOSE_ARGS = [
     '--cover-package=wings',
 ]
 
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pylint',
+    'django_jenkins.tasks.with_coverage',
+    'django_jenkins.tasks.django_tests',
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+)
+PROJECT_APPS = [
+    'wings.main',
+    'wings.analytics',
+    'wings.audioblock',
+    'wings.helpblock',
+    'wings.pastquizanswersblock',
+    'wings.quizblock',
+    'wings.riskblock',
+    'wings.servicesblock',
+    'wings.ssnmtreeblock',
+    'wings.wings_main',
+]
+
 TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
@@ -138,6 +158,7 @@ INSTALLED_APPS = (
     'south',
     'django_nose',
     'django_statsd',
+    'django_jenkins',
 )
 
 STATSD_CLIENT = 'statsd.client'
