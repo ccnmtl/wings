@@ -29,9 +29,7 @@ class AnswerInlineAdmin(admin.TabularInline):
             'is_iframe': '_iframe' in request.REQUEST
         }
         return (
-            super(
-                AnswerInlineAdmin,
-                self).change_view(
+            super(AnswerInlineAdmin, self).change_view(
                 request,
                 object_id,
                 extra_context=my_context)

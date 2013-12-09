@@ -40,8 +40,10 @@ class AudioBlock(models.Model):
             audio_file = forms.FileField(label="Replace audio file:")
             if False:
                 current_path = settings.MEDIA_ROOT + "/" + self.audio_file
-                alt_text = ("<strong>Current audio file:</strong>  "
-                            "<a href = \"%s\">%s</a>") % (
+                alt_text = (
+                    "<strong>Current audio file:</strong>  "
+                    "<a href = \"%s\">%s</a>"
+                ) % (
                     current_path,
                     current_path)
             current_path = self.audio_file

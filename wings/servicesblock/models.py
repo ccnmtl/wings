@@ -82,7 +82,7 @@ class ServicesBlock(models.Model):
                 the_answer = Answer.objects.get(id=a_id)
                 (narrowed_down_answer,
                  created) = NarrowedDownAnswer.objects.get_or_create(
-                    question=the_question, user=user)
+                     question=the_question, user=user)
                 narrowed_down_answer.answer = the_answer
                 narrowed_down_answer.save()
 

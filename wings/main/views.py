@@ -91,11 +91,8 @@ def has_responses(section):
         p.block(
         ) for p in section.pageblock_set.all(
         ) if hasattr(
-            p.block(
-            ),
-            'needs_submit') and p.block(
-        ).needs_submit(
-        )]
+            p.block(),
+            'needs_submit') and p.block().needs_submit()]
     return quizzes != []
 
 
@@ -177,11 +174,8 @@ def instructor_page(request, path):
         p.block(
         ) for p in section.pageblock_set.all(
         ) if hasattr(
-            p.block(
-            ),
-            'needs_submit') and p.block(
-        ).needs_submit(
-        )]
+            p.block(),
+            'needs_submit') and p.block().needs_submit()]
     return dict(section=section,
                 quizzes=quizzes,
                 module=get_module(section),
@@ -517,7 +511,7 @@ def cloner(request):
                 stand=old_stand).exclude(user=request.user):
             StandUser.objects.create(
                 stand=stand, user=standuser.user, access=standuser.access
-                ).save()
+            ).save()
 
     for old_sapb in old_stand.standavailablepageblock_set.all():
         StandAvailablePageBlock.objects.create(

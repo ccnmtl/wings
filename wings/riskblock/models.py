@@ -64,8 +64,7 @@ def user_chose_any_of(user, answers):
             quiz = que.quiz
             sub = Submission.objects.filter(
                 quiz=quiz,
-                user=user).order_by(
-                "-submitted")
+                user=user).order_by("-submitted")
             if sub.count() > 0:  # user answered this question.
                 res = Response.objects.filter(question=que, submission=sub[0])
                 if res.count() > 0:

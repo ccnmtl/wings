@@ -22,8 +22,7 @@ def narrow_down(context):
     }
 register.inclusion_tag(
     'servicesblock/narrow_down.html',
-    takes_context=True)(
-    narrow_down)
+    takes_context=True)(narrow_down)
 
 
 def show_narrowed_down_answer(context):
@@ -34,8 +33,7 @@ def show_narrowed_down_answer(context):
     return {'narrowed_down_answer': nda}
 register.inclusion_tag(
     'servicesblock/show_narrowed_down_answer.html',
-    takes_context=True)(
-    show_narrowed_down_answer)
+    takes_context=True)(show_narrowed_down_answer)
 
 
 def show_related_resources(context):
@@ -48,5 +46,4 @@ def show_related_resources(context):
     }
 register.inclusion_tag(
     'servicesblock/show_related_resources.html',
-    takes_context=True)(
-    show_related_resources)
+    takes_context=True)(show_related_resources)

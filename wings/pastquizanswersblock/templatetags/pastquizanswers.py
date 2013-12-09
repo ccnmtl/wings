@@ -47,8 +47,7 @@ def interpolate_previous_answer(user, question_id):
     quiz = que.quiz
     sub = Submission.objects.filter(
         quiz=quiz,
-        user=user).order_by(
-        "-submitted")
+        user=user).order_by("-submitted")
     if sub.count() == 0:
         return ''
     submission = sub[0]
@@ -71,8 +70,7 @@ def test_answer(user, question_id, value_to_match,
     quiz = que.quiz
     sub = Submission.objects.filter(
         quiz=quiz,
-        user=user).order_by(
-        "-submitted")
+        user=user).order_by("-submitted")
     if sub.count() == 0:
         return output_if_no_match
     submission = sub[0]
@@ -127,8 +125,7 @@ def answer_code_for_stats(user, question_id):
     quiz = que.quiz
     sub = Submission.objects.filter(
         quiz=quiz,
-        user=user).order_by(
-        "-submitted")
+        user=user).order_by("-submitted")
     if sub.count() == 0:
         return (
             # SPSS convention: -9 means "no data."
@@ -152,8 +149,7 @@ def user_checked_this_answer(user, answer_id):
     quiz = answer.question.quiz
     sub = Submission.objects.filter(
         quiz=quiz,
-        user=user).order_by(
-        "-submitted")
+        user=user).order_by("-submitted")
     if sub.count() == 0:
         return (
             # SPSS convention: -9 means "no data."

@@ -91,9 +91,7 @@ def pick_decoration_image(rank):
     path = settings.DECORATION_IMAGE_PATH
     images_location = os.path.realpath(settings.SITE_MEDIA_ROOT + path)
     usable_images = [
-        f for f in os.listdir(
-            images_location) if is_image_file(
-            f)]
+        f for f in os.listdir(images_location) if is_image_file(f)]
     # just cycle through them one at a time
     which_image = rank % len(usable_images)
     image_to_use = usable_images[which_image]
@@ -339,7 +337,7 @@ def launch_participant(request, id_string):
             HttpResponseRedirect(
                 Section.objects.get(
                     id=participant.current_section_id).get_absolute_url(
-                ))
+                    ))
         )
 
 

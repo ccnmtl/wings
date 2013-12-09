@@ -13,8 +13,7 @@ class ParticipantAdmin (admin.ModelAdmin):
                 and participant.current_section_id is not None):
             # RELAUNCH:
             push_state_url = Section.objects.get(
-                id=participant.current_section_id).get_absolute_url(
-            )
+                id=participant.current_section_id).get_absolute_url()
             relaunch_js_href = (
                 "javascript:set_no_admin_and_go (\'%s\',  \'%s\')" % (
                     push_state_url,
