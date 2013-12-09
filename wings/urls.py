@@ -89,6 +89,8 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     (r'^munin/', include('munin.urls')),
 
+    ('^smoketest/$', include('smoketest.urls')),
+
     # This is nonstandard, but the standard is confusing.
     # I'm sorry, but for this site, urls in "site_media"  will reference
     # directory "site_media".

@@ -159,6 +159,7 @@ INSTALLED_APPS = (
     'django_nose',
     'django_statsd',
     'django_jenkins',
+    'smoketest',
 )
 
 STATSD_CLIENT = 'statsd.client'

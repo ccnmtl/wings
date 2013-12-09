@@ -28,6 +28,10 @@ class SimpleViewTest(TestCase):
         r = self.c.get("/first/")
         self.assertEqual(r.status_code, 302)
 
+    def test_smoketest(self):
+        r = self.c.get('/smoketest/')
+        self.assertEqual(r.status_code, 200)
+
 
 class StaffViewTest(TestCase):
     def setUp(self):
