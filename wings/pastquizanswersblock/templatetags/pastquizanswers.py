@@ -1,6 +1,6 @@
 from django import template
 from django.utils.html import escape
-from .quizblock.models import Question, Response, Submission, Answer
+from wings.quizblock.models import Question, Response, Submission, Answer
 register = template.Library()
 
 

@@ -1,6 +1,6 @@
 from django import template
-from .quizblock.models import Question
-from .servicesblock.models import NarrowedDownAnswer, ServiceProvider
+from wings.quizblock.models import Question
+from wings.servicesblock.models import NarrowedDownAnswer, ServiceProvider
 
 register = template.Library()
 

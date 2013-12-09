@@ -1,7 +1,7 @@
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from .analytics.models import ActionTaken, ActionType
+from .models import ActionTaken, ActionType
 from pagetree.models import Section
 
 

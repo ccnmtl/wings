@@ -17,11 +17,11 @@ from pagetree_export.exportimport import export_zip, import_zip
 from .models import get_stand, Stand, StandUser, StandAvailablePageBlock
 from .models import StandGroup
 
-from analytics.models import ActionType
+from wings.analytics.models import ActionType
 
-from wings_main.views import decoration_info, whether_to_show_decorations
-from wings_main.views import check_next_page
-from wings_main.views import destination_on_check_next_page_fail
+from wings.wings_main.views import decoration_info, whether_to_show_decorations
+from wings.wings_main.views import check_next_page
+from wings.wings_main.views import destination_on_check_next_page_fail
 
 import os
 

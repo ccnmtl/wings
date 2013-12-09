@@ -3,23 +3,36 @@ import os.path
 import sys
 
 DEBUG = True
-TESTMODE = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = ()
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'postgresql_psycopg2'
-DATABASE_NAME = 'wings'
-DATABASE_USER = ''
-DATABASE_PASSWORD = ''
-DATABASE_HOST = ''
-DATABASE_PORT = ''
+ALLOWED_HOSTS = ['.ccnmtl.columbia.edu', 'localhost']
 
-if 'test' in sys.argv:
-    DATABASE_ENGINE = 'sqlite3'
-    DATABASE_NAME = ':memory:'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wings',
+        'HOST': '',
+        'PORT': 5432,
+        'USER': '',
+        'PASSWORD': '',
+    }
+}
+
+if 'test' in sys.argv or 'jenkins' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+            'HOST': '',
+            'PORT': '',
+            'USER': '',
+            'PASSWORD': '',
+        }
+    }
 
 SOUTH_TESTS_MIGRATE = False
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
@@ -63,15 +76,18 @@ APPEND_SLASH = False
 
 SECRET_KEY = '^>C}WX)BP5Zs.+T0QW,)(wallaby!"6_t*sm[SIT'
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
 )
 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
-    'django.core.context_processors.debug',
     'django.core.context_processors.request',
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.contrib.messages.context_processors.messages",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,6 +96,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'django_statsd.middleware.GraphiteRequestTimingMiddleware',
+    'django_statsd.middleware.GraphiteMiddleware',
 )
 
 ROOT_URLCONF = 'wings.urls'
@@ -119,7 +137,14 @@ INSTALLED_APPS = (
     'indexer',
     'south',
     'django_nose',
+    'django_statsd',
 )
+
+STATSD_CLIENT = 'statsd.client'
+STATSD_PATCHES = ['django_statsd.patches.db', ]
+STATSD_PREFIX = 'wings'
+STATSD_HOST = 'localhost'
+STATSD_PORT = 8125
 
 if not DEBUG:
     tmp = list(INSTALLED_APPS)

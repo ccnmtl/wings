@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import patterns
 
 urlpatterns = patterns(
-    'quizblock.views',
+    'wings.quizblock.views',
     (r'^edit_quiz/(?P<id>\d+)/$',
      'edit_quiz', {}, 'edit-quiz'),
     (r'^edit_quiz/(?P<id>\d+)/add_question/$',
