@@ -114,6 +114,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
@@ -209,3 +210,19 @@ THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[wings] "
 EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "wings@ccnmtl.columbia.edu"
+
+# Hard Coded ids.
+#
+# These should not exist.
+#
+# getting them into the config here is at least an improvement over
+# having them hard-coded in the application and a step towards fixing
+# this problem. At least now they can be overridden for unit tests
+
+SAFETY_PLAN_PART_1_ID = 127
+SAFETY_PLAN_PART_2_ID = 135
+GOAL_SETTING_SECTION_ID = 57
+STEPS_TO_INCREASE_SUPPORT_SECTION_ID = 215
+SSNM_TREE_NODE_ID = 254
+RESOURCES_NODE_ID = 291
+ACTION_PLAN_NODE_ID = 257

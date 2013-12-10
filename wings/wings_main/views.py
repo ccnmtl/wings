@@ -358,22 +358,23 @@ def exit_materials(request, id_string):
 def exit_materials_nodes():
     safety_plan_part_1_node_list = []
     traverse_tree(
-        PageBlock.objects.get(id=127).section,
+        PageBlock.objects.get(id=settings.SAFETY_PLAN_PART_1_ID).section,
         safety_plan_part_1_node_list)
     safety_plan_part_2_node_list = []
     traverse_tree(
-        PageBlock.objects.get(id=135).section,
+        PageBlock.objects.get(id=settings.SAFETY_PLAN_PART_1_ID).section,
         safety_plan_part_2_node_list)
     goal_setting_node_list = []
-    traverse_tree(Section.objects.get(id=57), goal_setting_node_list)
+    traverse_tree(Section.objects.get(id=settings.GOAL_SETTING_SECTION_ID),
+                  goal_setting_node_list)
     steps_to_increase_support_node_list = []
     traverse_tree(
-        Section.objects.get(id=215),
+        Section.objects.get(id=settings.STEPS_TO_INCREASE_SUPPORT_SECTION_ID),
         steps_to_increase_support_node_list)
 
-    ssnm_tree_node = PageBlock.objects.get(id=254)
-    resources_node = PageBlock.objects.get(id=291)
-    action_plan_node = PageBlock.objects.get(id=257)
+    ssnm_tree_node = PageBlock.objects.get(id=settings.SSNM_TREE_NODE_ID)
+    resources_node = PageBlock.objects.get(id=settings.RESOURCES_NODE_ID)
+    action_plan_node = PageBlock.objects.get(id=settings.ACTION_PLAN_NODE_ID)
 
     return {
         'safety_plan_part_1_node_list': safety_plan_part_1_node_list,
