@@ -120,6 +120,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django_statsd.middleware.GraphiteRequestTimingMiddleware',
     'django_statsd.middleware.GraphiteMiddleware',
+    'waffle.middleware.WaffleMiddleware',
 )
 
 ROOT_URLCONF = 'wings.urls'
@@ -162,6 +163,7 @@ INSTALLED_APPS = [
     'django_statsd',
     'django_jenkins',
     'smoketest',
+    'waffle',
 ]
 STATIC_URL = "/media/"
 STATIC_ROOT = ""
