@@ -1,4 +1,4 @@
-from models import Quiz, Question, Answer
+from .models import Quiz, Question, Answer
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404

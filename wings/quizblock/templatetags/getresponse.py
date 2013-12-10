@@ -1,5 +1,5 @@
 from django import template
-from .quizblock.models import Response, Submission
+from wings.quizblock.models import Response, Submission
 
 register = template.Library()
 
