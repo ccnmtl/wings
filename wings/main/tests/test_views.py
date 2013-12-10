@@ -86,3 +86,10 @@ class ViewPageTests(TestCase):
             dict(action="reset", destination='next'),
             HTTP_HOST="test.example.com")
         self.assertEqual(response.status_code, 302)
+
+    def test_edit_page(self):
+        response = self.c.get(
+            "/edit/welcome/",
+            dict(),
+            HTTP_HOST="test.example.com")
+        self.assertEqual(response.status_code, 200)
