@@ -1,9 +1,15 @@
 /* LOGIN FORM */
 
-body.login {
-    background: #eee;
+
+
+.login #content-main {
+    width: 100%;
 }
 
+.login .login_page_info_div {
+    width: 300px;
+}
+/*
 .login #container {
     background: white;
     border: 1px solid #ccc;
@@ -51,7 +57,4 @@ body.login {
     clear: both;
     padding: 1em 0 0 9.4em;
 }
-
-.login .password-reset-link {
-    text-align: center;
-}
+*/

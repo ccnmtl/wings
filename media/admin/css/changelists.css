@@ -9,8 +9,6 @@
     width: 100%;
 }
 
-.change-list .hiddenfields { display:none; }
-
 .change-list .filtered table {
     border-right: 1px solid #ddd;
 }
@@ -20,10 +18,10 @@
 }
 
 .change-list .filtered {
-    background: white url(../img/changelist-bg.gif) top right repeat-y !important;
+    background: white url(../img/admin/changelist-bg.gif) top right repeat-y !important;
 }
 
-.change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
+.change-list .filtered table, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
     margin-right: 160px !important;
     width: auto !important;
 }
@@ -38,9 +36,8 @@
 
 #changelist .paginator {
     color: #666;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    background: white url(../img/nav-bg.gif) 0 180% repeat-x;
+    border: 1px solid #ccc;
+     background: white url(../img/admin/nav-bg.gif) 0 180% repeat-x;
     overflow: hidden;
 }
 
@@ -51,9 +48,9 @@
 /* CHANGELIST TABLES */
 
 #changelist table thead th {
-    padding: 0;
     white-space: nowrap;
     vertical-align: middle;
+     font-size: 100%;
 }
 
 #changelist table thead th.action-checkbox-column {
@@ -61,17 +58,20 @@
     text-align: center;
 }
 
-#changelist table tbody td, #changelist table tbody th {
+#changelist table tbody td {
     border-left: 1px solid #ddd;
 }
 
-#changelist table tbody td:first-child, #changelist table tbody th:first-child {
-    border-left: 0;
-    border-right: 1px solid #ddd;
+#changelist table tbody td a {
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-#changelist table tbody td.action-checkbox {
-    text-align:center;
+#changelist table tbody td:first-child {
+    border-left: 0;
+    border-right: 1px solid #ddd;
+    text-align: center;
 }
 
 #changelist table tfoot {
@@ -83,7 +83,7 @@
 #changelist #toolbar {
     padding: 3px;
     border-bottom: 1px solid #ddd;
-    background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
+    background: #e1e1e1 url(../img/admin/nav-bg.gif) top left repeat-x;
     color: #666;
 }
 
@@ -150,14 +150,14 @@
 }
 
 #changelist-filter li.selected a {
-    color: #5b80b2 !important;
+    color: #64436D !important;
 }
 
 /* DATE DRILLDOWN */
 
 .change-list ul.toplinks {
     display: block;
-    background: white url(../img/nav-bg-reverse.gif) 0 -10px repeat-x;
+    background: white url(../img/admin/nav-bg-reverse.gif) 0 -10px repeat-x;
     border-top: 1px solid white;
     float: left;
     padding: 0 !important;
@@ -166,10 +166,11 @@
 }
 
 .change-list ul.toplinks li {
+    float: left;
+    width: 9em;
     padding: 3px 6px;
     font-weight: bold;
     list-style-type: none;
-    display: inline-block;
 }
 
 .change-list ul.toplinks .date-back a {
@@ -188,8 +189,8 @@
     padding-bottom: 10px;
     line-height: 22px;
     margin: 0;
-    border-top: 1px solid #ddd;
-}
+
+ }
 
 .paginator a:link, .paginator a:visited {
     padding: 2px 6px;
@@ -222,7 +223,7 @@
 
 .paginator a:hover {
     color: white;
-    background: #5b80b2;
+    background: #64436D;
     border-color: #036;
 }
 
@@ -246,7 +247,7 @@
     padding: 3px;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #ddd;
-    background: white url(../img/nav-bg-reverse.gif) 0 -10px repeat-x;
+    background: white url(../img/admin/nav-bg-reverse.gif) 0 -10px repeat-x;
 }
 
 #changelist .actions.selected {
