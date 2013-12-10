@@ -1,6 +1,6 @@
 from annoying.decorators import render_to
 from django.http import HttpResponseRedirect, HttpResponse
-from pagetree.helpers import get_hierarchy, get_section_from_path, get_module
+from pagetree.helpers import get_section_from_path, get_module
 from pagetree.helpers import needs_submit, submitted
 from django.contrib.auth.decorators import login_required
 
@@ -29,16 +29,6 @@ class stand(object):
                 items['stand'] = stand
             return items
         return stand_func
-
-
-def has_responses(section):
-    quizzes = [
-        p.block(
-        ) for p in section.pageblock_set.all(
-        ) if hasattr(
-            p.block(),
-            'needs_submit') and p.block().needs_submit()]
-    return quizzes != []
 
 
 @login_required
@@ -78,8 +68,6 @@ def page(request, path):
             return HttpResponseRedirect(section.get_next().get_absolute_url())
 
     else:
-        instructor_link = has_responses(section)
-
         if True:
             # Wings-specific modifications:
             if not check_next_page(request, section):
@@ -100,32 +88,10 @@ def page(request, path):
                     root=section.hierarchy.get_root(),
                     can_edit=can_edit,
                     can_admin=can_admin,
-                    instructor_link=instructor_link,
                     show_decorations=show_decorations,
                     decoration_info=the_decoration_info,
                     action_type_summary=action_type_summary
                     )
-
-
-@login_required
-@render_to("main/instructor_page.html")
-@stand()
-def instructor_page(request, path):
-    h = get_hierarchy(request.get_host())
-    section = get_section_from_path(path, hierarchy=h)
-    root = section.hierarchy.get_root()
-
-    quizzes = [
-        p.block(
-        ) for p in section.pageblock_set.all(
-        ) if hasattr(
-            p.block(),
-            'needs_submit') and p.block().needs_submit()]
-    return dict(section=section,
-                quizzes=quizzes,
-                module=get_module(section),
-                modules=root.get_children(),
-                root=h.get_root())
 
 
 @login_required
