@@ -1,8 +1,7 @@
+from annoying.decorators import render_to
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render_to_response
 from pagetree.helpers import get_hierarchy, get_section_from_path, get_module
 from pagetree.helpers import needs_submit, submitted
-from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 
 from .models import get_stand
@@ -12,27 +11,6 @@ from wings.analytics.models import ActionType
 from wings.wings_main.views import decoration_info, whether_to_show_decorations
 from wings.wings_main.views import check_next_page
 from wings.wings_main.views import destination_on_check_next_page_fail
-
-
-class rendered_with(object):
-
-    def __init__(self, template_name):
-        self.template_name = template_name
-
-    def __call__(self, func):
-        def rendered_func(request, *args, **kwargs):
-            items = func(request, *args, **kwargs)
-            if isinstance(items, type({})):
-                return (
-                    render_to_response(
-                        self.template_name,
-                        items,
-                        context_instance=RequestContext(request))
-                )
-            else:
-                return items
-
-        return rendered_func
 
 
 class stand(object):
@@ -64,7 +42,7 @@ def has_responses(section):
 
 
 @login_required
-@rendered_with('main/page.html')
+@render_to('main/page.html')
 @stand()
 def page(request, path):
     hierarchy = request.get_host()
@@ -130,7 +108,7 @@ def page(request, path):
 
 
 @login_required
-@rendered_with("main/instructor_page.html")
+@render_to("main/instructor_page.html")
 @stand()
 def instructor_page(request, path):
     h = get_hierarchy(request.get_host())
@@ -151,7 +129,7 @@ def instructor_page(request, path):
 
 
 @login_required
-@rendered_with('main/edit_page.html')
+@render_to('main/edit_page.html')
 @stand()
 def edit_page(request, path):
     hierarchy = request.get_host()

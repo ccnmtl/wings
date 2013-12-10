@@ -1,6 +1,7 @@
+from annoying.decorators import render_to
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.template import RequestContext, loader
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from .models import Participant, traverse_tree, section_rank
@@ -34,27 +35,6 @@ def background(request, content_to_show):
     t = loader.get_template('wings_main/standard_elements/%s' % file_name)
     c = RequestContext(request, {})
     return HttpResponse(t.render(c))
-
-
-class rendered_with(object):
-
-    def __init__(self, template_name):
-        self.template_name = template_name
-
-    def __call__(self, func):
-        def rendered_func(request, *args, **kwargs):
-            items = func(request, *args, **kwargs)
-            if isinstance(items, type({})):
-                return (
-                    render_to_response(
-                        self.template_name,
-                        items,
-                        context_instance=RequestContext(request))
-                )
-            else:
-                return items
-
-        return rendered_func
 
 
 def staff_or_404(view_func):
@@ -256,7 +236,7 @@ def selenium_teardown():
 
 
 @login_required
-@rendered_with('wings_main/selenium.html')
+@render_to('wings_main/selenium.html')
 def selenium(request, task):
     if not request.user.is_staff:
         return HttpResponseRedirect("/first/")
@@ -342,7 +322,7 @@ def launch_participant(request, id_string):
 
 
 @login_required
-@rendered_with('wings_main/exit_materials.html')
+@render_to('wings_main/exit_materials.html')
 def participant_exit_materials(request):
     """
     Show the exit materials for the logged in user (mostly this will
@@ -354,7 +334,7 @@ def participant_exit_materials(request):
 
 
 @login_required
-@rendered_with('wings_main/exit_materials.html')
+@render_to('wings_main/exit_materials.html')
 def exit_materials(request, id_string):
     """
     logout user (if necessary), log in as a participant, and then show
@@ -408,7 +388,7 @@ def exit_materials_nodes():
 
 
 @staff_or_404
-@rendered_with('wings_main/summary.html')
+@render_to('wings_main/summary.html')
 def summary(request):
     node_list = []
     traverse_tree(Hierarchy.objects.all()[0].get_root(), node_list)
@@ -469,7 +449,7 @@ def estimate_intervention_duration_for_all_participants():
 
 
 @staff_or_404
-@rendered_with('wings_main/all_answers.html')
+@render_to('wings_main/all_answers.html')
 def all_answers(request):
     """ all numerical answers for all users in a giant table. Also
     contains intervention length estimate"""
@@ -521,7 +501,7 @@ def my_total_seconds(td):
 
 
 @staff_or_404
-@rendered_with('wings_main/timestamps.html')
+@render_to('wings_main/timestamps.html')
 def timestamps(request):
     """when the user was signed up, and when they answered all the questions.
 
@@ -632,7 +612,7 @@ def timestamps(request):
 
 
 @staff_or_404
-@rendered_with('wings_main/text_answers.html')
+@render_to('wings_main/text_answers.html')
 def text_answers(request):
     """ all text answers for all users in a giant table"""
     node_list = []
@@ -644,7 +624,7 @@ def text_answers(request):
 
 
 @staff_or_404
-@rendered_with('wings_main/all_answers_key.html')
+@render_to('wings_main/all_answers_key.html')
 def all_answers_key(request):
     """ key for the above"""
     return {
@@ -653,7 +633,7 @@ def all_answers_key(request):
 
 
 @staff_or_404
-@rendered_with('wings_main/all_answers_key_table.html')
+@render_to('wings_main/all_answers_key_table.html')
 def all_answers_key_table(request):
     """ An easy-to-import-into-EXCEL tabular version of
     all_answers_key above."""
