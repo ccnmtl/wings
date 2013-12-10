@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
-from django.views.generic.simple import redirect_to
+from django.views.generic import RedirectView
 
 admin.autodiscover()
 import staticmedia
@@ -9,16 +9,15 @@ import staticmedia
 urlpatterns = patterns(
     '',
 
-    ('^$', redirect_to,
-     {'url': '/admin/wings_main/participant/'}),
-    ('^admin/login/$', redirect_to,
-     {'url': '/admin/wings_main/participant/'}),
-    ('^accounts/login/$', redirect_to,
-     {'url': '/admin/wings_main/participant/'}),
-    ('^login/$', redirect_to,
-     {'url': '/admin/wings_main/participant/'}),
-    ('^accounts/profile/$', redirect_to,
-     {'url': '/admin/wings_main/participant/'}),
+    ('^$', RedirectView.as_view(url='/admin/wings_main/participant/')),
+    ('^admin/login/$',
+     RedirectView.as_view(url='/admin/wings_main/participant/')),
+    ('^accounts/login/$',
+     RedirectView.as_view(url='/admin/wings_main/participant/')),
+    ('^login/$',
+     RedirectView.as_view(url='/admin/wings_main/participant/')),
+    ('^accounts/profile/$',
+     RedirectView.as_view(url='/admin/wings_main/participant/')),
 
 
     ('^about/$', 'wings.wings_main.views.background',
@@ -29,8 +28,7 @@ urlpatterns = patterns(
      {'content_to_show': 'contact'}),
     ('^credits/$', 'wings.wings_main.views.background',
      {'content_to_show': 'credits'}),
-    ('^logout/$', redirect_to,
-     {'url': '/admin/logout/'}),
+    ('^logout/$', RedirectView.as_view(url='/admin/logout/')),
 
     # shortcut to first page of the
     ('^first/$', 'wings.wings_main.views.first'),
@@ -64,14 +62,10 @@ urlpatterns = patterns(
     (r'^_quiz/', include('wings.quizblock.urls')),
 
 
-    (r'^test$', redirect_to,
-     {'url': settings.SELENIUM_TESTS_URL}),
-    (r'^tests$', redirect_to,
-     {'url': settings.SELENIUM_TESTS_URL}),
-    (r'^test/$', redirect_to,
-     {'url': settings.SELENIUM_TESTS_URL}),
-    (r'^tests/$', redirect_to,
-     {'url': settings.SELENIUM_TESTS_URL}),
+    (r'^test$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
+    (r'^tests$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
+    (r'^test/$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
+    (r'^tests/$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
 
     (r'^selenium/(?P<task>\w+)/$',
      'wings.wings_main.views.selenium'),

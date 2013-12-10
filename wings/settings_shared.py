@@ -211,6 +211,11 @@ EMAIL_SUBJECT_PREFIX = "[wings] "
 EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "wings@ccnmtl.columbia.edu"
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+}
+
 # Hard Coded ids.
 #
 # These should not exist.
