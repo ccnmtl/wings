@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, Group
 import hashlib
 from django.db.models import get_model
 from django.conf import settings
+from pagetree.helpers import get_section_from_path
 
 from south.modelsinspector import add_introspection_rules
 
@@ -35,6 +36,11 @@ class Stand(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_root(self):
+        """ return the Root pagetree.Section for this Stand """
+        section = get_section_from_path("/", hierarchy=self.hostname)
+        return section.hierarchy.get_root()
 
     def css_hash(self):
         sha1 = hashlib.sha1()
