@@ -73,6 +73,15 @@ class ViewPageTests(TestCase):
         self.u.delete()
         self.stand.delete()
 
+    def test_view_page(self):
+        with self.settings(REALLY_DEPRESSING_SECTION_IDS=[],
+                           HIDE_TITLE_SECTION_IDS=[]):
+            response = self.c.get(
+                "/welcome/",
+                dict(),
+                HTTP_HOST="test.example.com")
+            self.assertEqual(response.status_code, 200)
+
     def test_post_to_page(self):
         response = self.c.post(
             "/welcome/",

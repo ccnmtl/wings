@@ -90,12 +90,14 @@ def decoration_info(section):
     """Generate some info that the section can use to decorate itself."""
 
     really_depressing_sections = [
-        Section.objects.get(id=100), Section.objects.get(id=53)]
+        Section.objects.get(id=x)
+        for x in settings.REALLY_DEPRESSING_SECTION_IDS]
     really_depressing_content = is_descendent_of(
         section,
         really_depressing_sections)
     hide_title_sections = [
-        Section.objects.get(id=97), Section.objects.get(id=53)]
+        Section.objects.get(id=x)
+        for x in settings.HIDE_TITLE_SECTION_IDS]
     the_rank = section_rank(section)
 
     result = {
@@ -511,12 +513,6 @@ def timestamps(request):
     It's basically a manage.py command with a pretty front end.
     It's not meant to be pretty or fast, and is in fact neither.
     """
-
-    # and u.id in sample
-    #SPECIAL_NUMBER = 306
-    #SPECIAL_NUMBER = 292
-    #SPECIAL_NUMBER = 255
-    #
 
     # get some data structures ready
     all_the_questions = all_questions_in_order()
