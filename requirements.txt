@@ -48,7 +48,7 @@ django-staticmedia==0.2
 django-indexer==0.2.1
 django-templatetag-sugar==0.1
 django-paging==0.2.2
-raven==0.7.0
+raven==4.0.3
 django-munin==0.1.1
 django-pagetree==0.13.2
 django-pageblocks==0.5.11
