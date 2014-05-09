@@ -61,52 +61,13 @@ class Quiz(models.Model):
             q for q in self.question_set.all(
             ) if q.mandatory(
             )]
-        # print 'mandatory_questions',  mandatory_questions
         for question in mandatory_questions:
-            # print "QUESTION:"
-            # print question.id
-            # print question.answer_set.all()
-            # print question.user_responses(user)
-            # print question.is_multiple_choice()
-            if question.is_multiple_choice():
-                # print "multiple choice."
-                if len(question.user_responses(user)) == 0:
-                    return False
-            #import pdb
-            # pdb.set_trace()
-            if question.is_short_text() or question.is_long_text():
-                # print "short_text or long_text"
-                # print question
-                if len(question.user_responses(user)) == 0:
-                    # print "no response found to short text"
-                    return False
-                else:
-                    # print "found response from this user, to wit:"
-                    # print question.user_responses(user)
-                    # print question.user_responses(user)[0].value
-                    if len(question.user_responses(user)
-                           [0].value.strip()) == 0:
-                        # print "not allowing blank text answers any more:"
-                        return False
-
-                    else:
-                        pass
-                        # print "length of"
-                        # print question.user_responses(user)[0].value
-                        # print "is"
-                        # print len (question.user_responses(user)[0].value)
-            if question.is_single_choice():
-                # print "single_choice"
-                # print question
-                if len(question.answer_set.all()) > 0:
-                    if len(question.user_responses(user)) == 0:
-                        # print "no answer found to single choice"
-                        return False
-                else:
-                    pass
-                    # print "question was empty"
-        # print "made it to end of the loop of answered all questions and
-        # returning true."
+            if question.is_unanswered_multiple_choice(user):
+                return False
+            if question.is_unanswered_text(user):
+                return False
+            if question.is_unanswered_single_choice(user):
+                return False
         return True
 
     def unlocked(self, user):
@@ -289,6 +250,23 @@ class Question(models.Model):
             intro_text=self.intro_text,
             answers=[a.as_dict() for a in self.answer_set.all()]
         )
+
+    def is_unanswered_multiple_choice(self, user):
+        return (self.is_multiple_choice()
+                and len(self.user_responses(user)) == 0)
+
+    def is_unanswered_single_choice(self, user):
+        return (self.is_single_choice()
+                and len(self.answer_set.all()) > 0
+                and len(self.user_responses(user)) == 0)
+
+    def is_unanswered_text(self, user):
+        if self.is_short_text() or self.is_long_text():
+            if len(self.user_responses(user)) == 0:
+                return True
+            if len(self.user_responses(user)[0].value.strip()) == 0:
+                return True
+        return False
 
 
 class Answer(models.Model):

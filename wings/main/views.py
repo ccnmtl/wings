@@ -31,6 +31,16 @@ class stand(object):
         return stand_func
 
 
+def root_page(section, root):
+    # trying to visit the root page
+    if section.get_next():
+        # just send them to the first child
+        return HttpResponseRedirect(section.get_next().get_absolute_url())
+    else:
+        # send them to the stand admin interface
+        return HttpResponseRedirect("/_stand/")
+
+
 @login_required
 @render_to('main/page.html')
 @stand()
@@ -45,13 +55,7 @@ def page(request, path):
     can_edit = request.stand.can_edit(request.user)
     can_admin = request.stand.can_admin(request.user)
     if section.id == root.id:
-        # trying to visit the root page
-        if section.get_next():
-            # just send them to the first child
-            return HttpResponseRedirect(section.get_next().get_absolute_url())
-        else:
-            # send them to the stand admin interface
-            return HttpResponseRedirect("/_stand/")
+        return root_page(section, root)
 
     if request.method == "POST":
         # user has submitted a form. deal with it
@@ -66,32 +70,29 @@ def page(request, path):
 
         if request.POST['destination'] == 'next':
             return HttpResponseRedirect(section.get_next().get_absolute_url())
+    # Wings-specific modifications:
+    if not check_next_page(request, section):
+        return (
+            HttpResponseRedirect(
+                destination_on_check_next_page_fail(request))
+        )
+    show_decorations = whether_to_show_decorations(section)
+    the_decoration_info = decoration_info(section)
+    action_type_summary = ActionType.summary()
 
-    else:
-        if True:
-            # Wings-specific modifications:
-            if not check_next_page(request, section):
-                return (
-                    HttpResponseRedirect(
-                        destination_on_check_next_page_fail(request))
+    return dict(section=section,
+                module=module,
+                needs_submit=needs_submit(section),
+                is_submitted=submitted(section, request.user),
+                stand=request.stand,
+                modules=root.get_children(),
+                root=section.hierarchy.get_root(),
+                can_edit=can_edit,
+                can_admin=can_admin,
+                show_decorations=show_decorations,
+                decoration_info=the_decoration_info,
+                action_type_summary=action_type_summary
                 )
-            show_decorations = whether_to_show_decorations(section)
-            the_decoration_info = decoration_info(section)
-            action_type_summary = ActionType.summary()
-
-        return dict(section=section,
-                    module=module,
-                    needs_submit=needs_submit(section),
-                    is_submitted=submitted(section, request.user),
-                    stand=request.stand,
-                    modules=root.get_children(),
-                    root=section.hierarchy.get_root(),
-                    can_edit=can_edit,
-                    can_admin=can_admin,
-                    show_decorations=show_decorations,
-                    decoration_info=the_decoration_info,
-                    action_type_summary=action_type_summary
-                    )
 
 
 @login_required

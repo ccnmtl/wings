@@ -205,7 +205,6 @@ def selenium_teardown():
             id_string=settings.SELENIUM_TEST_USER_ID))
     users_to_delete.extend(
         p.user for p in participants_to_delete if p.user is not None)
-    # print users_to_delete
 
     ssnm_persons_to_delete.extend(u.ssnmtreeperson_set.all()
                                   for u in users_to_delete)
@@ -218,17 +217,12 @@ def selenium_teardown():
     responses_to_delete.extend(s.response_set.all()
                                for s in submissions_to_delete)
 
-    for x in ssnm_persons_to_delete:
-        x.delete()
-    for x in narrowed_down_answers_to_delete:
-        x.delete()
-    for x in responses_to_delete:
-        x.delete()
-    for x in submissions_to_delete:
-        x.delete()
-    for x in participants_to_delete:
-        x.delete()
-    for x in users_to_delete:
+    for x in [ssnm_persons_to_delete +
+              narrowed_down_answers_to_delete +
+              responses_to_delete +
+              submissions_to_delete +
+              participants_to_delete +
+              users_to_delete]:
         x.delete()
 
     # assert there is no user with id settings.SELENIUM_TEST_USER_ID
@@ -503,6 +497,32 @@ def my_total_seconds(td):
     )
 
 
+def make_submissions_table(all_submissions, all_submission_dates):
+    the_table = []
+    for s in all_submissions:
+        for q in s.quiz.question_set.all():
+            the_table.append(
+                {'qid': q.id,
+                 'uid': s.user.id,
+                 'date': s.submitted})
+        try:
+            all_submission_dates[s.user.id].add(s.submitted)
+        except KeyError:
+            pass
+    return the_table, all_submission_dates
+
+
+def calculate_user_gaps(users, the_table):
+    user_gaps = {}
+    for the_user in users:
+        the_dates_for_this_user = [
+            x['date'] for x in the_table if x['uid'] == the_user.id]
+        user_gaps[the_user.id] = sum_of_gaps_longer_than_x_minutes(
+            70,
+            the_dates_for_this_user)
+    return user_gaps
+
+
 @staff_or_404
 @render_to('wings_main/timestamps.html')
 def timestamps(request):
@@ -526,26 +546,11 @@ def timestamps(request):
     all_submissions = Submission.objects.all()
 
     # Put all the submission stuff into a table in memory
-    the_table = []
-    for s in all_submissions:
-        for q in s.quiz.question_set.all():
-            the_table.append(
-                {'qid': q.id,
-                 'uid': s.user.id,
-                 'date': s.submitted})
-        try:
-            all_submission_dates[s.user.id].add(s.submitted)
-        except KeyError:
-            pass
+    the_table, all_submission_dates = make_submissions_table(
+        all_submissions, all_submission_dates)
 
     # figure out gaps now
-    user_gaps = {}
-    for the_user in users:
-        the_dates_for_this_user = [
-            x['date'] for x in the_table if x['uid'] == the_user.id]
-        user_gaps[the_user.id] = sum_of_gaps_longer_than_x_minutes(
-            70,
-            the_dates_for_this_user)
+    user_gaps = calculate_user_gaps(users, the_table)
 
     intervals = {}
     intervals_first_24_hrs = {}
@@ -553,43 +558,42 @@ def timestamps(request):
     start_from_launch = True  # include the launch timestamp in our estimates
     for user_id, the_dates in all_submission_dates.iteritems():
         # if user_id == SPECIAL_NUMBER:
-        if 1 == 1:
-            if len(the_dates) > 0:
-                if start_from_launch:
-                    start_time = launch_timestamps[user_id]
-                else:
-                    # when the user answered the first quiz.
-                    start_time = min(the_dates)
-                # print 'start time is',
-                # print start_time
-                # print 'end time is',
-                # print max(the_dates)
-                # estimate how long the user spent on the intervention. This
-                # includes the launch timestamp.
-                timedelta = max(the_dates) - start_time
-                seconds = my_total_seconds(timedelta)
-                minutes = seconds / 60.0
-                intervals[user_id] = minutes - user_gaps[user_id]
-
-                # what if we only consider the first 24 hours after the launch
-                # timestamp?
-                a_day_later = start_time + datetime.timedelta(days=1)
-                the_dates_in_the_first_24_hours = [
-                    d for d in the_dates if d < a_day_later]
-                if len(the_dates_in_the_first_24_hours) > 0:
-                    modified_timedelta = max(
-                        the_dates_in_the_first_24_hours) - start_time
-                    the_gaps = sum_of_gaps_longer_than_x_minutes(
-                        70,
-                        the_dates_in_the_first_24_hours)
-                    seconds_2 = my_total_seconds(modified_timedelta)
-                    minutes_2 = seconds_2 / 60.0
-                    intervals_first_24_hrs[user_id] = minutes_2 - the_gaps
-                else:
-                    intervals_first_24_hrs[user_id] = 0
+        if len(the_dates) > 0:
+            if start_from_launch:
+                start_time = launch_timestamps[user_id]
             else:
-                intervals[user_id] = -9
-                intervals_first_24_hrs[user_id] = -9
+                # when the user answered the first quiz.
+                start_time = min(the_dates)
+            # print 'start time is',
+            # print start_time
+            # print 'end time is',
+            # print max(the_dates)
+            # estimate how long the user spent on the intervention. This
+            # includes the launch timestamp.
+            timedelta = max(the_dates) - start_time
+            seconds = my_total_seconds(timedelta)
+            minutes = seconds / 60.0
+            intervals[user_id] = minutes - user_gaps[user_id]
+
+            # what if we only consider the first 24 hours after the launch
+            # timestamp?
+            a_day_later = start_time + datetime.timedelta(days=1)
+            the_dates_in_the_first_24_hours = [
+                d for d in the_dates if d < a_day_later]
+            if len(the_dates_in_the_first_24_hours) > 0:
+                modified_timedelta = max(
+                    the_dates_in_the_first_24_hours) - start_time
+                the_gaps = sum_of_gaps_longer_than_x_minutes(
+                    70,
+                    the_dates_in_the_first_24_hours)
+                seconds_2 = my_total_seconds(modified_timedelta)
+                minutes_2 = seconds_2 / 60.0
+                intervals_first_24_hrs[user_id] = minutes_2 - the_gaps
+            else:
+                intervals_first_24_hrs[user_id] = 0
+        else:
+            intervals[user_id] = -9
+            intervals_first_24_hrs[user_id] = -9
 
     # get the view table ready:
     for u in users:
