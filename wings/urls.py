@@ -1,10 +1,9 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 from django.views.generic import RedirectView
 
 admin.autodiscover()
-import staticmedia
 
 urlpatterns = patterns(
     '',
@@ -81,7 +80,6 @@ urlpatterns = patterns(
 
 
     url(r'^admin/', include(admin.site.urls)),
-    (r'^munin/', include('munin.urls')),
 
     ('^smoketest/$', include('smoketest.urls')),
 
@@ -96,4 +94,4 @@ urlpatterns = patterns(
     (r'^(?P<path>.*)$', 'wings.main.views.page'),
 
 
-) + staticmedia.serve()
+)

@@ -44,7 +44,6 @@ NOSE_ARGS = [
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pylint',
     'django_jenkins.tasks.with_coverage',
-    'django_jenkins.tasks.django_tests',
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
 )
@@ -135,7 +134,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'django.contrib.markup',
     'django.contrib.admin',
     'django.contrib.staticfiles',
     'sorl.thumbnail',
@@ -143,7 +141,6 @@ INSTALLED_APPS = [
     'smartif',
     'template_utils',
     'typogrify',
-    'munin',
     'pagetree',
     'pageblocks',
     'wings.main',  # this is actually forest main
@@ -164,6 +161,7 @@ INSTALLED_APPS = [
     'django_jenkins',
     'smoketest',
     'waffle',
+    'django_markwhat',
 ]
 STATIC_URL = "/media/"
 STATIC_ROOT = ""
@@ -172,7 +170,6 @@ STATICFILES_DIRS = (
 )
 
 STATSD_CLIENT = 'statsd.client'
-STATSD_PATCHES = ['django_statsd.patches.db', ]
 STATSD_PREFIX = 'wings'
 STATSD_HOST = 'localhost'
 STATSD_PORT = 8125
