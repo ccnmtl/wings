@@ -1,66 +1,58 @@
 # flake8: noqa
-# encoding: utf-8
-import datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
-class Migration(SchemaMigration):
-
-    def forwards(self, orm):
-        
-        # Adding model 'ServicesBlock'
-        db.create_table('servicesblock_servicesblock', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('description', self.gf('django.db.models.fields.TextField')(blank=True)),
-        ))
-        db.send_create_signal('servicesblock', ['ServicesBlock'])
+from django.db import models, migrations
+from django.conf import settings
 
 
-    def backwards(self, orm):
-        
-        # Deleting model 'ServicesBlock'
-        db.delete_table('servicesblock_servicesblock')
+class Migration(migrations.Migration):
 
+    dependencies = [
+        ('quizblock', '0001_initial'),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+    ]
 
-    models = {
-        'contenttypes.contenttype': {
-            'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
-            'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        'pagetree.hierarchy': {
-            'Meta': {'object_name': 'Hierarchy'},
-            'base_url': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '256'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '256'})
-        },
-        'pagetree.pageblock': {
-            'Meta': {'ordering': "('section', 'ordinality')", 'object_name': 'PageBlock'},
-            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'label': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'}),
-            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {}),
-            'ordinality': ('django.db.models.fields.PositiveIntegerField', [], {'default': '1'}),
-            'section': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['pagetree.Section']"})
-        },
-        'pagetree.section': {
-            'Meta': {'object_name': 'Section'},
-            'depth': ('django.db.models.fields.PositiveIntegerField', [], {}),
-            'hierarchy': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['pagetree.Hierarchy']"}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'label': ('django.db.models.fields.CharField', [], {'max_length': '256'}),
-            'numchild': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
-            'path': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '255'}),
-            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'})
-        },
-        'servicesblock.servicesblock': {
-            'Meta': {'object_name': 'ServicesBlock'},
-            'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
-        }
-    }
-
-    complete_apps = ['servicesblock']
+    operations = [
+        migrations.CreateModel(
+            name='NarrowedDownAnswer',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('answer', models.ForeignKey(to='quizblock.Answer', null=True)),
+                ('question', models.ForeignKey(default=None, to='quizblock.Question')),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+            ],
+            options={
+                'verbose_name': 'Services: Narrowed Down Answer',
+                'verbose_name_plural': 'Services: Narrowed Down Answers',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ServiceProvider',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.TextField(null=True, blank=True)),
+                ('phone', models.TextField(null=True, blank=True)),
+                ('url', models.TextField(null=True, blank=True)),
+                ('address', models.TextField(null=True, blank=True)),
+                ('description', models.TextField(help_text=b'One-sentence description of the service', null=True, blank=True)),
+                ('map_image', models.ImageField(null=True, upload_to=b'images/', blank=True)),
+                ('issue', models.ForeignKey(to='quizblock.Answer', null=True)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ServicesBlock',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('description', models.TextField(blank=True)),
+                ('page_type', models.TextField(default=b'page_1', choices=[('page_1', 'Drill down 1'), ('page_2', 'Drill down 2')])),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+    ]

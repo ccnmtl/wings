@@ -34,7 +34,6 @@ if 'test' in sys.argv or 'jenkins' in sys.argv:
         }
     }
 
-SOUTH_TESTS_MIGRATE = False
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     'django_nose',
@@ -136,7 +135,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.staticfiles',
     'sorl.thumbnail',
-    'tagging',
     'smartif',
     'template_utils',
     'typogrify',
@@ -154,7 +152,6 @@ INSTALLED_APPS = [
     'wings.wings_main',
     'paging',
     'indexer',
-    'south',
     'django_nose',
     'django_statsd',
     'django_jenkins',
@@ -178,13 +175,13 @@ PAGEBLOCKS = ['pageblocks.TextBlock',
               'pageblocks.PullQuoteBlock',
               'pageblocks.ImageBlock',
               'pageblocks.ImagePullQuoteBlock',
-              'wings.quizblock.Quiz',
-              'wings.audioblock.AudioBlock',
-              'wings.helpblock.HelpBlock',
-              'wings.ssnmtreeblock.SsnmTreeBlock',
-              'wings.servicesblock.ServicesBlock',
-              'wings.riskblock.RiskBlock',
-              'wings.pastquizanswersblock.PastQuizAnswersBlock',
+              'quizblock.Quiz',
+              'audioblock.AudioBlock',
+              'helpblock.HelpBlock',
+              'ssnmtreeblock.SsnmTreeBlock',
+              'servicesblock.ServicesBlock',
+              'riskblock.RiskBlock',
+              'pastquizanswersblock.PastQuizAnswersBlock',
               ]
 
 

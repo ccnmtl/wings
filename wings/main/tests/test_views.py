@@ -14,7 +14,7 @@ class SimpleViewTest(TestCase):
 
     def test_participant_admin(self):
         r = self.c.get('/admin/wings_main/participant/')
-        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.status_code, 302)
 
 
 def make_default_tree(stand):
