@@ -7,3 +7,5 @@ start_server.sh
 *liz_run_dev.sh
 nohup.out
 reports
+.project
+.pydevproject

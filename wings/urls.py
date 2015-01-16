@@ -9,8 +9,6 @@ urlpatterns = patterns(
     '',
 
     ('^$', RedirectView.as_view(url='/admin/wings_main/participant/')),
-    ('^admin/login/$',
-     RedirectView.as_view(url='/admin/wings_main/participant/')),
     ('^accounts/login/$',
      RedirectView.as_view(url='/admin/wings_main/participant/')),
     ('^login/$',
