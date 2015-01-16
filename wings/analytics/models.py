@@ -4,7 +4,7 @@ from wings.wings_main.models import section_rank
 from wings.wings_main.views import is_descendent_of
 
 from django.contrib.auth.models import User
-from django.utils import simplejson
+import json
 from django.template.defaultfilters import slugify
 
 
@@ -21,7 +21,7 @@ class ActionType (models.Model):
     def summary(self):
         result = dict((action_type.slug(), action_type.id)
                       for action_type in ActionType.objects.all())
-        return simplejson.dumps(result)
+        return json.dumps(result)
 
 
 class ActionTaken (models.Model):

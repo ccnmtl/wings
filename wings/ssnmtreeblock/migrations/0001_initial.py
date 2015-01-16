@@ -1,66 +1,103 @@
 # flake8: noqa
-# encoding: utf-8
-import datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
-class Migration(SchemaMigration):
-
-    def forwards(self, orm):
-        
-        # Adding model 'SsnmTreeBlock'
-        db.create_table('ssnmtreeblock_ssnmtreeblock', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('description', self.gf('django.db.models.fields.TextField')(blank=True)),
-        ))
-        db.send_create_signal('ssnmtreeblock', ['SsnmTreeBlock'])
+from django.db import models, migrations
+from django.conf import settings
 
 
-    def backwards(self, orm):
-        
-        # Deleting model 'SsnmTreeBlock'
-        db.delete_table('ssnmtreeblock_ssnmtreeblock')
+class Migration(migrations.Migration):
 
+    dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+    ]
 
-    models = {
-        'contenttypes.contenttype': {
-            'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
-            'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        'pagetree.hierarchy': {
-            'Meta': {'object_name': 'Hierarchy'},
-            'base_url': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '256'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '256'})
-        },
-        'pagetree.pageblock': {
-            'Meta': {'ordering': "('section', 'ordinality')", 'object_name': 'PageBlock'},
-            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'label': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'}),
-            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {}),
-            'ordinality': ('django.db.models.fields.PositiveIntegerField', [], {'default': '1'}),
-            'section': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['pagetree.Section']"})
-        },
-        'pagetree.section': {
-            'Meta': {'object_name': 'Section'},
-            'depth': ('django.db.models.fields.PositiveIntegerField', [], {}),
-            'hierarchy': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['pagetree.Hierarchy']"}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'label': ('django.db.models.fields.CharField', [], {'max_length': '256'}),
-            'numchild': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
-            'path': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '255'}),
-            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'})
-        },
-        'ssnmtreeblock.ssnmtreeblock': {
-            'Meta': {'object_name': 'SsnmTreeBlock'},
-            'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
-        }
-    }
-
-    complete_apps = ['ssnmtreeblock']
+    operations = [
+        migrations.CreateModel(
+            name='SsnmTreeBlock',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('error_copy', models.TextField(null=True, blank=True)),
+                ('page_type', models.TextField(default=b'page_1', choices=[('page_1', 'Choose names'), ('page_2', 'Emotional support'), ('page_3', 'Practical support'), ('page_e', 'Error page')])),
+            ],
+            options={
+                'verbose_name': 'SSNM Tree Block',
+                'verbose_name_plural': 'SSNM Tree Blocks',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='SsnmTreeBox',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('label', models.TextField(unique=True, null=True, blank=True)),
+                ('pixels_from_left', models.IntegerField(default=0)),
+                ('pixels_from_top', models.IntegerField(default=0)),
+            ],
+            options={
+                'verbose_name': 'SSNM Tree: Text Box',
+                'verbose_name_plural': 'SSNM Tree: Text Boxes',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='SsnmTreePerson',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.TextField(default=b'', null=True, blank=True)),
+            ],
+            options={
+                'verbose_name': 'SSNM Tree: People',
+                'verbose_name_plural': 'SSNM Tree: Person',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='SsnmTreeSupportType',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('label', models.TextField(unique=True, null=True, blank=True)),
+                ('description', models.TextField(null=True, blank=True)),
+            ],
+            options={
+                'verbose_name_plural': 'SSNM Tree: Types of Support',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.AddField(
+            model_name='ssnmtreeperson',
+            name='support_types',
+            field=models.ManyToManyField(to='ssnmtreeblock.SsnmTreeSupportType'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='ssnmtreeperson',
+            name='tree_box',
+            field=models.ForeignKey(to='ssnmtreeblock.SsnmTreeBox'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='ssnmtreeperson',
+            name='user',
+            field=models.ForeignKey(to=settings.AUTH_USER_MODEL),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='ssnmtreeblock',
+            name='boxes',
+            field=models.ManyToManyField(to='ssnmtreeblock.SsnmTreeBox'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='ssnmtreeblock',
+            name='editable_support_types',
+            field=models.ManyToManyField(help_text=b'Support Types you can *edit* on this page.', related_name='blocks_where_you_can_edit_this_support_type', null=True, to='ssnmtreeblock.SsnmTreeSupportType', blank=True),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='ssnmtreeblock',
+            name='visible_support_types',
+            field=models.ManyToManyField(help_text=b'Support Types you can *see* on this page.', related_name='blocks_where_you_can_see_this_support_type', null=True, to='ssnmtreeblock.SsnmTreeSupportType', blank=True),
+            preserve_default=True,
+        ),
+    ]

@@ -8,5 +8,7 @@ sys.path.append('/var/www/wings/wings/')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'wings.settings_staging'
 
 import django.core.handlers.wsgi
+import django
+django.setup()
 
 application = django.core.handlers.wsgi.WSGIHandler()

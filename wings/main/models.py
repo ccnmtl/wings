@@ -5,15 +5,6 @@ from django.db.models import get_model
 from django.conf import settings
 from pagetree.helpers import get_section_from_path
 
-from south.modelsinspector import add_introspection_rules
-
-add_introspection_rules(
-    [],
-    ["^django_extensions\.db\.fields\.CreationDateTimeField",
-     "django_extensions.db.fields.ModificationDateTimeField",
-     "sorl.thumbnail.fields.ImageWithThumbnailsField",
-     "django_extensions.db.fields.UUIDField"])
-
 
 class Stand(models.Model):
     title = models.CharField(
