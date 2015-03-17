@@ -30,7 +30,7 @@ testtools==0.9.35
 testscenarios==0.4
 python-subunit==0.0.18
 lettuce==0.2.19ccnmtl
-selenium==2.29.0
+selenium==2.45.0
 python-ldap==2.4.13
 lxml==3.2.3
 factory_boy==2.1.1
