@@ -34,7 +34,7 @@ selenium==2.29.0
 python-ldap==2.4.13
 lxml==3.2.3
 factory_boy==2.1.1
-statsd==2.0.2
+statsd==3.0.1
 
 django-treebeard==2.0b2
 django-statsd-mozilla==0.3.8.7
