@@ -37,7 +37,7 @@ factory_boy==2.1.1
 statsd==3.0.1
 
 django-treebeard==2.0b2
-django-statsd-mozilla==0.3.8.7
+django-statsd-mozilla==0.3.14
 django-annoying==0.8.0
 django-smartif==0.1
 django-markwhat==2014.9.20
