@@ -75,8 +75,6 @@ class Quiz(models.Model):
         # not that they can access this one. careful.
         # this is the default for forest.
         # return Submission.objects.filter(quiz=self,user=user).count() > 0
-        #import pdb
-        # pdb.set_trace()
 
         # for wings, we want all questions with > 0 answers to be answered.
         if not self.user_answered_all_questions(user):
