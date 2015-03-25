@@ -46,7 +46,6 @@ class ActionTaken (models.Model):
 
     class Meta:
         ordering = ['user', '-when']
-        #ordering = ['-when']
 
         verbose_name_plural = "Actions taken"
 

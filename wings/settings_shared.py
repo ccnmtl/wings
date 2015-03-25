@@ -74,9 +74,6 @@ MEDIA_ROOT = UPLOADS_ROOT
 # HOW DO I REFER TO UPLOADED STATIC FILES FROM A TEMPLATE?
 MEDIA_URL = '/uploads/'
 
-#ADMIN_MEDIA_PREFIX = '/media/'
-# this is set to 'media' by default.
-
 # URL of non-uploaded static files:
 SITE_MEDIA_URL = '/media/'
 
