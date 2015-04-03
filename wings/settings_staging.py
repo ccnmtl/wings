@@ -32,6 +32,12 @@ STATSD_PREFIX = 'wings-staging'
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), "../media")
 STATICFILES_DIRS = ()
 
+# we want smoketests to pass on staging without caring whether
+# these exact answers all actually exist
+SEVERE_RISK_NUMBERS = []
+SOME_RISK_ANSWERS = []
+
+
 if 'migrate' not in sys.argv:
     INSTALLED_APPS.append('raven.contrib.django.raven_compat')
 
