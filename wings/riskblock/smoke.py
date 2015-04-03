@@ -11,7 +11,7 @@ class MagicNumbers(SmokeTest):
                 all_there = False
         self.assertTrue(all_there)
 
-    def test_some_risk_numbers(self):
+    def test_some_risk_answers(self):
         all_there = True
         for id in settings.SOME_RISK_ANSWERS:
             if not Answer.objects.filter(id=id).exists():
