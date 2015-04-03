@@ -564,10 +564,6 @@ def timestamps(request):
             else:
                 # when the user answered the first quiz.
                 start_time = min(the_dates)
-            # print 'start time is',
-            # print start_time
-            # print 'end time is',
-            # print max(the_dates)
             # estimate how long the user spent on the intervention. This
             # includes the launch timestamp.
             timedelta = max(the_dates) - start_time

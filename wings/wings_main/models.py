@@ -76,7 +76,6 @@ class Participant(models.Model):
         for p in section.pageblock_set.all():
             if hasattr(p.block(), 'unlocked'):
                 if not p.block().unlocked(user):
-                    # print "user didn't answer all questions"
                     # give the block a chance to add an error message to
                     # display to the user:
                     if hasattr(p.block(), 'unlocked_error_message'):
@@ -84,20 +83,11 @@ class Participant(models.Model):
                         if the_message:
                             messages.warning(request, the_message)
                     return False
-        # print "user answered all questions."
         return True
 
     def log_visit(self, new_section, request):  # TODO pass in the request
         """" return true if it's ok for a participant to see this page.
         set the current section, also,         """
-
-        # this is really helpful. maybe pass this to the template just
-        # in case:
-        # print "OK JUST FOR DEBUGGING:"
-        # print new_section.get_absolute_url()
-        # print "ALL UNLOCKED IS"
-        # print self.all_unlocked (new_section)
-        # print "END DEBUGGING INFO"
 
         if self.current_section is None:
             self.current_section = new_section.hierarchy.get_root(
@@ -109,7 +99,6 @@ class Participant(models.Model):
         if old_current_section == new_section:
             return True
         if old_current_section.get_next() == new_section:
-            # print "old.next = new"
             # TODO pass in the request
             if not self.all_unlocked(old_current_section, request):
                 return (
