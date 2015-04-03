@@ -2,43 +2,8 @@ from django.db import models
 from pagetree.models import PageBlock
 from django.contrib.contenttypes import generic
 from django import forms
+from django.conf import settings
 from wings.quizblock.models import Answer, Submission, Response
-
-severe_risk_answers = [515, 517, 523, 538, 539, 540, 552, 553, 554, 555]
-
-some_risk_answers = [
-    499,
-    501,
-    503,
-    505,
-    507,
-    509,
-    519,
-    521,
-    532,
-    533,
-    534,
-    535,
-    542,
-    543,
-    544,
-    545,
-    547,
-    548,
-    549,
-    550,
-    557,
-    558,
-    559,
-    560,
-    562,
-    563,
-    564,
-    565,
-    567,
-    568,
-    569,
-    570]
 
 
 def list_answers(answers):
@@ -48,8 +13,8 @@ def list_answers(answers):
 
 
 def document():
-    for label, answers in [('severe', severe_risk_answers),
-                           ('some', some_risk_answers)]:
+    for label, answers in [('severe', settings.SEVERE_RISK_ANSWERS),
+                           ('some', settings.SOME_RISK_ANSWERS)]:
         print ''
         print ''
         print ''
@@ -81,9 +46,9 @@ def risk_score(user):
     risk category. The indicators are as follows:
 
     No risk: none of the above indicators"""
-    if user_chose_any_of(user, severe_risk_answers):
+    if user_chose_any_of(user, settings.SEVERE_RISK_ANSWERS):
         return 'severe_risk'
-    if user_chose_any_of(user, some_risk_answers):
+    if user_chose_any_of(user, settings.SOME_RISK_ANSWERS):
         return 'some_risk'
     return 'no_risk'
 
