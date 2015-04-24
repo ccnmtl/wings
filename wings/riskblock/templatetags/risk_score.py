@@ -1,5 +1,5 @@
 from django import template
-from .riskblock.models import risk_score, risk_copy
+from wings.riskblock.models import risk_score, risk_copy
 register = template.Library()
 
 

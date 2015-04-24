@@ -13,7 +13,7 @@ def list_answers(answers):
 
 
 def document():
-    for label, answers in [('severe', settings.SEVERE_RISK_ANSWERS),
+    for label, answers in [('severe', settings.SEVERE_RISK_NUMBERS),
                            ('some', settings.SOME_RISK_ANSWERS)]:
         print ''
         print ''
@@ -46,7 +46,7 @@ def risk_score(user):
     risk category. The indicators are as follows:
 
     No risk: none of the above indicators"""
-    if user_chose_any_of(user, settings.SEVERE_RISK_ANSWERS):
+    if user_chose_any_of(user, settings.SEVERE_RISK_NUMBERS):
         return 'severe_risk'
     if user_chose_any_of(user, settings.SOME_RISK_ANSWERS):
         return 'some_risk'

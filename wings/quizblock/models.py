@@ -77,9 +77,7 @@ class Quiz(models.Model):
         # return Submission.objects.filter(quiz=self,user=user).count() > 0
 
         # for wings, we want all questions with > 0 answers to be answered.
-        if not self.user_answered_all_questions(user):
-            # print "user didn't answer all questions."
-            return False
+        return self.user_answered_all_questions(user)
 
     def edit_form(self):
         class EditForm(forms.Form):
@@ -197,8 +195,8 @@ class Question(models.Model):
         return self.answer_set.filter(correct=True)[0]._order
 
     def correct_answer_letter(self):
-        if (self.question_type != "single choice"
-                or self.answer_set.count() == 0):
+        if (self.question_type != "single choice" or
+                self.answer_set.count() == 0):
             return None
         return chr(ord('A') + self.correct_answer_number())
 
@@ -250,13 +248,13 @@ class Question(models.Model):
         )
 
     def is_unanswered_multiple_choice(self, user):
-        return (self.is_multiple_choice()
-                and len(self.user_responses(user)) == 0)
+        return (self.is_multiple_choice() and
+                len(self.user_responses(user)) == 0)
 
     def is_unanswered_single_choice(self, user):
-        return (self.is_single_choice()
-                and len(self.answer_set.all()) > 0
-                and len(self.user_responses(user)) == 0)
+        return (self.is_single_choice() and
+                len(self.answer_set.all()) > 0 and
+                len(self.user_responses(user)) == 0)
 
     def is_unanswered_text(self, user):
         if self.is_short_text() or self.is_long_text():
