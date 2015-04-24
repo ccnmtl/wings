@@ -12,6 +12,8 @@ SERVICES_PAGE_TYPE_CHOICES = (
     (u'page_2', u'Drill down 2'),  # emotional support
 )
 
+DEFAULT_PAGE_TYPE_CHOICE = 'page_1'
+
 
 class ServicesBlock(models.Model):
     pageblocks = generic.GenericRelation(PageBlock)
@@ -23,7 +25,7 @@ class ServicesBlock(models.Model):
 
     page_type = models.TextField(
         choices=SERVICES_PAGE_TYPE_CHOICES,
-        default='page_1')
+        default=DEFAULT_PAGE_TYPE_CHOICE)
 
     display_name = "Services Block"
 
@@ -43,7 +45,7 @@ class ServicesBlock(models.Model):
                 widget=forms.widgets.Textarea())
             page_type = forms.ChoiceField(
                 required=True,
-                initial=self.page_type,
+                initial=DEFAULT_PAGE_TYPE_CHOICE,
                 widget=RadioSelect,
                 choices=SERVICES_PAGE_TYPE_CHOICES)
         return EditForm()
@@ -57,12 +59,12 @@ class ServicesBlock(models.Model):
         return dir(self)
 
     @classmethod
-    def add_form(self):
+    def add_form(cls):
         class AddForm(forms.Form):
             description = forms.CharField(widget=forms.widgets.Textarea())
             page_type = forms.ChoiceField(
                 required=True,
-                initial=self.page_type,
+                initial=DEFAULT_PAGE_TYPE_CHOICE,
                 widget=RadioSelect,
                 choices=SERVICES_PAGE_TYPE_CHOICES)
         return AddForm()
