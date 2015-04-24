@@ -1,7 +1,7 @@
 from django.test import TestCase
 from wings.quizblock.models import Quiz, Question, Answer, Submission
 from wings.quizblock.models import Response
-from django.contrib.auth.models import User
+from wings.analytics.tests.factories import UserFactory
 
 
 class FakeReq(object):
@@ -88,7 +88,7 @@ class TestBasics(TestCase):
 
 class UserTests(TestCase):
     def setUp(self):
-        self.u = User.objects.create(username="testuser")
+        self.u = UserFactory(username="testuser")
 
     def test_submit(self):
         q = Quiz.objects.create()
@@ -194,7 +194,7 @@ class QuestionTest(TestCase):
         self.assertEqual(d['question_type'], "long text")
 
     def test_user_responses(self):
-        user = User.objects.create(username="testuser")
+        user = UserFactory(username="testuser")
         quiz = Quiz.objects.create()
         q1 = Question.objects.create(quiz=quiz, text="question_one",
                                      question_type="single choice")
@@ -213,7 +213,7 @@ class QuestionTest(TestCase):
 class TestIsUserCorrect(TestCase):
 
     def setUp(self):
-        self.user = User.objects.create(username="testuser")
+        self.user = UserFactory(username="testuser")
         self.quiz = Quiz.objects.create()
 
     def test_short_text(self):
@@ -332,7 +332,7 @@ class AnswerTest(TestCase):
 class SubmissionTest(TestCase):
     def test_unicode(self):
         quiz = Quiz.objects.create()
-        user = User.objects.create(username="testuser")
+        user = UserFactory(username="testuser")
         s = Submission.objects.create(quiz=quiz, user=user)
         self.assertTrue(
             str(s).startswith("quiz %d submission by testuser" % quiz.id))
@@ -344,7 +344,7 @@ class ResponseTest(TestCase):
         question = Question.objects.create(
             quiz=quiz, text="foo", question_type="single choice")
         Answer.objects.create(question=question, label="an answer")
-        user = User.objects.create(username="testuser")
+        user = UserFactory(username="testuser")
         s = Submission.objects.create(quiz=quiz, user=user)
         response = Response.objects.create(
             question=question, submission=s, value="an answer")
@@ -355,7 +355,7 @@ class ResponseTest(TestCase):
         question = Question.objects.create(
             quiz=quiz, text="foo", question_type="single choice")
         Answer.objects.create(question=question, label="an answer")
-        user = User.objects.create(username="testuser")
+        user = UserFactory(username="testuser")
         s = Submission.objects.create(quiz=quiz, user=user)
         response = Response.objects.create(
             question=question, submission=s, value="an answer")
