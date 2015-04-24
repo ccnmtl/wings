@@ -15,7 +15,7 @@ from wings.wings_main.views import destination_on_check_next_page_fail
 
 class stand(object):
 
-    def __init__(*args, **kwargs):
+    def __init__(self, *args, **kwargs):
         pass
 
     def __call__(self, func):

@@ -91,12 +91,27 @@ class UserTests(TestCase):
         self.u = UserFactory(username="testuser")
 
     def test_submit(self):
-        q = Quiz.objects.create()
-        self.assertFalse(q.unlocked(self.u))
-        q.submit(self.u, dict(foo='bar'))
-        self.assertIsNone(q.unlocked(self.u))
-        q.clear_user_submissions(self.u)
-        self.assertFalse(q.unlocked(self.u))
+        quiz = Quiz.objects.create()
+
+        # no questions - automatically unlocked
+        self.assertTrue(quiz.unlocked(self.u))
+
+        # no mandatory questions - automatically unlocked
+        question = Question.objects.create(
+            quiz=quiz, text="foo", question_type="long text")
+        with self.settings(OPTIONAL_QUESTIONS=[question.id]):
+            self.assertTrue(quiz.unlocked(self.u))
+
+        # one mandatory question - no responses - locked
+        self.assertFalse(quiz.unlocked(self.u))
+
+        # one mandatory question, one response
+        key = 'question%s' % question.id
+        quiz.submit(self.u, {key: 'bar'})
+        self.assertTrue(quiz.unlocked(self.u))
+
+        quiz.clear_user_submissions(self.u)
+        self.assertFalse(quiz.unlocked(self.u))
 
 
 class QuestionTest(TestCase):
