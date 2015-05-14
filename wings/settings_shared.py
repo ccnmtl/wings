@@ -34,11 +34,7 @@ if 'test' in sys.argv or 'jenkins' in sys.argv:
         }
     }
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-NOSE_ARGS = [
-    'django_nose',
-    '--cover-package=wings',
-]
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
@@ -149,7 +145,6 @@ INSTALLED_APPS = [
     'wings.wings_main',
     'paging',
     'indexer',
-    'django_nose',
     'django_statsd',
     'django_jenkins',
     'smoketest',
