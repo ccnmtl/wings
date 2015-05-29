@@ -43,7 +43,6 @@ JENKINS_TASKS = (
 PROJECT_APPS = [
     'wings.main',
     'wings.analytics',
-    'wings.audioblock',
     'wings.helpblock',
     'wings.pastquizanswersblock',
     'wings.quizblock',
@@ -135,7 +134,7 @@ INSTALLED_APPS = [
     'pageblocks',
     'wings.main',  # this is actually forest main
     'wings.quizblock',
-    'wings.audioblock',
+    'audioblock',
     'wings.helpblock',
     'wings.ssnmtreeblock',
     'wings.servicesblock',
