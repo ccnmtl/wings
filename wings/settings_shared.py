@@ -129,7 +129,6 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'smartif',
     'template_utils',
-    'typogrify',
     'pagetree',
     'pageblocks',
     'wings.main',  # this is actually forest main
