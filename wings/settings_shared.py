@@ -128,7 +128,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sorl.thumbnail',
     'smartif',
-    'template_utils',
     'pagetree',
     'pageblocks',
     'wings.main',  # this is actually forest main
