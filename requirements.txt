@@ -26,7 +26,7 @@ testscenarios==0.5.0
 python-subunit==0.0.18
 lettuce==0.2.19ccnmtl
 selenium==2.45.0
-python-ldap==2.4.18
+python-ldap==2.4.19
 lxml==3.4.4
 factory_boy==2.4.1
 statsd==3.1
