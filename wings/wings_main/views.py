@@ -6,7 +6,6 @@ from django.template import RequestContext, loader
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from .models import Participant, traverse_tree, section_rank
 from pagetree.models import Section, Hierarchy, PageBlock
-from django.db import transaction
 from functools import wraps
 
 from django.contrib.auth.models import User
@@ -260,7 +259,6 @@ def first(request):
     return HttpResponseRedirect(first_url)
 
 
-@transaction.commit_on_success
 def make_and_login_participant(id_string, request):
     """ If there is a participant with this id_string, log them in. If
     not, create one and log them in.  See:
