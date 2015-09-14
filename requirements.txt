@@ -12,7 +12,7 @@ pep8==1.5.7
 mccabe==0.3.1
 flake8==2.2.5
 logilab-common==1.0.2
-logilab-astng==0.24.1
+logilab-astng==0.24.3
 pylint==1.4.1
 fuzzywuzzy==0.6.0
 sure==1.2.12
