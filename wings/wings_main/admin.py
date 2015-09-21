@@ -9,8 +9,8 @@ class ParticipantAdmin (admin.ModelAdmin):
         ids = participant.id_string
         launch_url = "/participant/%s/launch/" % ids
 
-        if (participant.has_started_intervention()
-                and participant.current_section_id is not None):
+        if (participant.has_started_intervention() and
+                participant.current_section_id is not None):
             # RELAUNCH:
             push_state_url = Section.objects.get(
                 id=participant.current_section_id).get_absolute_url()
