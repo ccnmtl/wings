@@ -14,8 +14,8 @@ def match_against_string(response, string_to_match):
         return response.value == string_to_match
     if response.question.is_multiple_choice():
         return False
-    if (response.question.is_single_choice()
-            or response.question.is_single_choice_dropdown()):
+    if (response.question.is_single_choice() or
+            response.question.is_single_choice_dropdown()):
         answer_set = response.question.answer_set.all()
         if not answer_set:
             return False
@@ -30,8 +30,8 @@ def to_text(response):
         return ''
     if response.question.is_short_text() or response.question.is_long_text():
         return response.value
-    if (response.question.is_single_choice()
-            or response.question.is_single_choice_dropdown()):
+    if (response.question.is_single_choice() or
+            response.question.is_single_choice_dropdown()):
         answer_set = response.question.answer_set.all()
         if not answer_set:
             return ''
@@ -94,8 +94,8 @@ def to_number(response):
         return use_title('n/a', 'multiple_choice')
     if response.question.is_short_text() or response.question.is_long_text():
         return use_title('str', response.value)
-    if (response.question.is_single_choice()
-            or response.question.is_single_choice_dropdown()):
+    if (response.question.is_single_choice() or
+            response.question.is_single_choice_dropdown()):
         answer_set = response.question.answer_set.all()
         if not answer_set:
             return use_title('n/a', 'no_answers2')

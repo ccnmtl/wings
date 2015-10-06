@@ -342,8 +342,8 @@ def exit_materials(request, id_string):
         make_and_login_participant(id_string, request)
         return exit_materials_nodes()
 
-    if (request.user.part() is not None
-            and request.user.part().id_string == long(id_string)):
+    if (request.user.part() is not None and
+            request.user.part().id_string == long(id_string)):
         return exit_materials_nodes()
 
     return HttpResponseRedirect('/logout/')
@@ -490,8 +490,8 @@ def my_total_seconds(td):
     """Python's timedelta did not have a 'total_seconds' method before
     python 2.7. I just."""
     return (
-        (td.microseconds + (td.seconds + td.days * 24.0 * 3600.0)
-         * 10.0 ** 6.0) / 10.0 ** 6.0
+        (td.microseconds + (td.seconds + td.days * 24.0 * 3600.0) *
+         10.0 ** 6.0) / 10.0 ** 6.0
     )
 
 
