@@ -3,5 +3,6 @@ import factory
 
 
 class ParticipantFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Participant
+    class Meta:
+        model = Participant
     id_string = factory.Sequence(lambda n: n)

@@ -4,17 +4,20 @@ from wings.analytics.models import ActionType, ActionTaken
 
 
 class ActionTypeFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = ActionType
+    class Meta:
+        model = ActionType
     label = "action type"
 
 
 class UserFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = User
+    class Meta:
+        model = User
     username = factory.Sequence(lambda n: "user%03d" % n)
     is_staff = True
 
 
 class ActionTakenFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = ActionTaken
+    class Meta:
+        model = ActionTaken
     user = factory.SubFactory(User)
     action = factory.SubFactory(ActionType)
