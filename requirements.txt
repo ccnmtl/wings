@@ -32,7 +32,7 @@ testscenarios==0.5.0
 python-subunit==1.1.0
 lettuce==0.2.19ccnmtl
 selenium==2.47.1
-python-ldap==2.4.20
+python-ldap==2.4.22
 lxml==3.4.4
 fake-factory==0.5.3
 factory_boy==2.6.0
