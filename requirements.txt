@@ -48,7 +48,7 @@ djangowind==0.14.1
 sorl==3.1
 django-indexer==0.3.0
 django-paging==0.2.5
-raven==5.2.0
+raven==5.8.1
 django-pagetree==1.1.7
 django-pageblocks==1.0.3
 django-audioblock==1.0.2
