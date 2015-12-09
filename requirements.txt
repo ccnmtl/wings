@@ -41,7 +41,7 @@ six==1.10.0
 
 django-treebeard==3.0
 django-statsd-mozilla==0.3.16
-django-annoying==0.8.3
+django-annoying==0.8.4
 django-smartif==0.1
 django-markwhat==1.4
 djangowind==0.14.1
