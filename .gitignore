@@ -10,3 +10,4 @@ reports
 .project
 .pydevproject
 uploads
+node_modules
