@@ -1,47 +1,11 @@
 # Django settings for wings project.
 import os.path
-import sys
+from ccnmtlsettings.shared import common
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+project = 'wings'
+base = os.path.dirname(__file__)
+locals().update(common(project=project, base=base))
 
-ADMINS = ()
-
-MANAGERS = ADMINS
-
-ALLOWED_HOSTS = ['.ccnmtl.columbia.edu', 'localhost']
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wings',
-        'HOST': '',
-        'PORT': 5432,
-        'USER': '',
-        'PASSWORD': '',
-        'ATOMIC_REQUESTS': True,
-    }
-}
-
-if 'test' in sys.argv or 'jenkins' in sys.argv:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': ':memory:',
-            'HOST': '',
-            'PORT': '',
-            'USER': '',
-            'PASSWORD': '',
-            'ATOMIC_REQUESTS': True,
-        }
-    }
-
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'
-
-JENKINS_TASKS = (
-    'django_jenkins.tasks.run_pep8',
-    'django_jenkins.tasks.run_pyflakes',
-)
 PROJECT_APPS = [
     'wings.main',
     'wings.analytics',
@@ -54,78 +18,15 @@ PROJECT_APPS = [
     'wings.wings_main',
 ]
 
-TIME_ZONE = 'America/New_York'
-LANGUAGE_CODE = 'en-us'
-SITE_ID = 1
-USE_I18N = False
-
-
-# WHERE ARE THE NON-UPLOADED STATIC FILES?
-SITE_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), "../media/")
-
-# WHERE DO UPLOADED STATIC FILES GO ON THE FILESYSTEM?
-UPLOADS_ROOT = "/var/www/wings/uploads/"
-MEDIA_ROOT = UPLOADS_ROOT
-
-
-# HOW DO I REFER TO UPLOADED STATIC FILES FROM A TEMPLATE?
-MEDIA_URL = '/uploads/'
-
-# URL of non-uploaded static files:
-SITE_MEDIA_URL = '/media/'
-
 # path relative to SITE_MEDIA_URL of decoration images used in the
 # intervention:
 DECORATION_IMAGE_PATH = '/img/decoration_images/'
 
 SELENIUM_TESTS_URL = '/media/selenium/TestRunner.html'
 
-
 APPEND_SLASH = False
 
-
-SECRET_KEY = '^>C}WX)BP5Zs.+T0QW,)(wallaby!"6_t*sm[SIT'
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.template.context_processors.debug',
-    'django.template.context_processors.request',
-    'django.template.context_processors.static',
-    'django.template.context_processors.media',
-    "django.contrib.auth.context_processors.auth",
-    "django.contrib.messages.context_processors.messages",
-    'djangowind.context.context_processor',
-)
-
-MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'django_statsd.middleware.GraphiteRequestTimingMiddleware',
-    'django_statsd.middleware.GraphiteMiddleware',
-    'waffle.middleware.WaffleMiddleware',
-)
-
-ROOT_URLCONF = 'wings.urls'
-
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), "templates"),
-)
-
-INSTALLED_APPS = [
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.flatpages',
-    'django.contrib.admin',
-    'django.contrib.staticfiles',
+INSTALLED_APPS += [  # noqa
     'sorl.thumbnail',
     'smartif',
     'pagetree',
@@ -142,37 +43,22 @@ INSTALLED_APPS = [
     'wings.wings_main',
     'paging',
     'indexer',
-    'django_statsd',
-    'django_jenkins',
-    'smoketest',
-    'waffle',
-    'django_markwhat',
 ]
-STATIC_URL = "/media/"
-STATIC_ROOT = ""
-STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__), "../media"),
-)
 
-STATSD_CLIENT = 'statsd.client'
-STATSD_PREFIX = 'wings'
-STATSD_HOST = 'localhost'
-STATSD_PORT = 8125
-
-PAGEBLOCKS = ['pageblocks.TextBlock',
-              'pageblocks.HTMLBlock',
-              'pageblocks.PullQuoteBlock',
-              'pageblocks.ImageBlock',
-              'pageblocks.ImagePullQuoteBlock',
-              'quizblock.Quiz',
-              'audioblock.AudioBlock',
-              'helpblock.HelpBlock',
-              'ssnmtreeblock.SsnmTreeBlock',
-              'servicesblock.ServicesBlock',
-              'riskblock.RiskBlock',
-              'pastquizanswersblock.PastQuizAnswersBlock',
-              ]
-
+PAGEBLOCKS = [
+    'pageblocks.TextBlock',
+    'pageblocks.HTMLBlock',
+    'pageblocks.PullQuoteBlock',
+    'pageblocks.ImageBlock',
+    'pageblocks.ImagePullQuoteBlock',
+    'quizblock.Quiz',
+    'audioblock.AudioBlock',
+    'helpblock.HelpBlock',
+    'ssnmtreeblock.SsnmTreeBlock',
+    'servicesblock.ServicesBlock',
+    'riskblock.RiskBlock',
+    'pastquizanswersblock.PastQuizAnswersBlock',
+]
 
 BLOCK_TYPES_THAT_HIDE_DECORATIONS = [
     'Image Block',
@@ -181,7 +67,13 @@ BLOCK_TYPES_THAT_HIDE_DECORATIONS = [
     'Services Block',
     'Past Quiz Answers Block',
     'HTML Block',
-    'Image Pullquote']
+    'Image Pullquote',
+]
+
+# urls.py really needs to be cleaned up to eliminate these:
+UPLOADS_ROOT = "/var/www/wings/uploads/"
+SITE_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), "../media/")
+SITE_MEDIA_URL = '/media/'
 
 # question_id's for questions that don't require an answer for the user to
 # progress to the next page:
@@ -191,14 +83,6 @@ OPTIONAL_QUESTIONS = [222, 235, 162, 168, 240, 242]
 SELENIUM_TEST_USER_ID = 999999999999
 
 THUMBNAIL_SUBDIR = "thumbs"
-EMAIL_SUBJECT_PREFIX = "[wings] "
-EMAIL_HOST = 'localhost'
-SERVER_EMAIL = "wings@ccnmtl.columbia.edu"
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-}
 
 # Hard Coded ids.
 #
@@ -253,4 +137,5 @@ SOME_RISK_ANSWERS = [
     567,
     568,
     569,
-    570]
+    570,
+]

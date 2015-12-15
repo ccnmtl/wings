@@ -1,45 +1,20 @@
 # flake8: noqa
 from settings_shared import *
+from ccnmtlsettings.staging import common
 
-TEMPLATE_DIRS = (
-    "/var/www/wings/wings/wings/templates",
-)
-
-MEDIA_ROOT = '/var/www/wings/uploads/'
-# put any static media here to override app served static media
-STATICMEDIA_MOUNTS = (
-    ('/sitemedia', '/var/www/wings/wings/sitemedia'),
-)
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wings',
-        'HOST': '',
-        'PORT': 6432,
-        'USER': '',
-        'PASSWORD': '',
-    }
-}
-
-COMPRESS_ROOT = "/var/www/wings/wings/media/"
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
-STAGING_ENV = True
-
-STATSD_PREFIX = 'wings-staging'
-
-STATIC_ROOT = os.path.join(os.path.dirname(__file__), "../media")
-STATICFILES_DIRS = ()
+locals().update(
+    common(
+        project=project,
+        base=base,
+        STATIC_ROOT=STATIC_ROOT,
+        INSTALLED_APPS=INSTALLED_APPS,
+        s3static=False,
+    ))
 
 # we want smoketests to pass on staging without caring whether
 # these exact answers all actually exist
 SEVERE_RISK_NUMBERS = []
 SOME_RISK_ANSWERS = []
-
-
-if 'migrate' not in sys.argv:
-    INSTALLED_APPS.append('raven.contrib.django.raven_compat')
 
 try:
     from local_settings import *
