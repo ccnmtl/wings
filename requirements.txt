@@ -35,7 +35,7 @@ python-subunit==1.2.0
 lettuce==0.2.19ccnmtl
 selenium==2.47.1
 python-ldap==2.4.22
-lxml==3.4.4
+lxml==3.5.0
 fake-factory==0.5.3
 factory_boy==2.6.0
 statsd==3.2.1
