@@ -41,6 +41,7 @@ factory_boy==2.6.0
 statsd==3.2.1
 six==1.10.0
 sqlparse==0.1.18
+contextlib2==0.5.1
 
 django-treebeard==3.0
 django-statsd-mozilla==0.3.16
@@ -51,7 +52,7 @@ djangowind==0.14.3
 sorl==3.1
 django-indexer==0.3.0
 django-paging==0.2.5
-raven==5.8.1
+raven==5.10.1
 django-pagetree==1.1.9
 django-pageblocks==1.0.3
 django-audioblock==1.0.2
