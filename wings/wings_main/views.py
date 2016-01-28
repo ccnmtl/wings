@@ -422,13 +422,6 @@ def estimate_intervention_duration_for_all_participants():
         except KeyError:
             pass
 
-    consider_date_joined = False
-    if consider_date_joined:
-        # also consider the date the user was created -- aka "launch"
-        # note -- the PARTICIPANTS are created before the users.
-        for u in users:
-            all_submission_dates[u.id].add(u.date_joined)
-
     return estimate_intervals(all_submission_dates)
 
 
