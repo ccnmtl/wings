@@ -13,7 +13,6 @@ class Participant(models.Model):
 
     id_string = models.BigIntegerField(
         unique=True,
-        max_length=12,
         help_text='ID string should contain exactly 12 digits.')
     created_on = models.DateTimeField(auto_now_add=True, null=False)
     created_by = models.ForeignKey(
