@@ -42,6 +42,8 @@ statsd==3.2.1
 six==1.10.0
 sqlparse==0.1.18
 contextlib2==0.5.1
+rcssmin==1.0.6
+rjsmin==1.0.12
 
 django-treebeard==3.0
 django-statsd-mozilla==0.3.16
@@ -65,7 +67,7 @@ django-stagingcontext==0.1.0
 django-ga-context==0.1.0
 django-debug-toolbar==1.4
 django-appconf==1.0.1
-django-compressor==1.6
+django-compressor==2.0
 gunicorn==19.3.0
 
 ccnmtlsettings==0.1.0
