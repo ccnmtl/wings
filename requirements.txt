@@ -70,4 +70,4 @@ django-appconf==1.0.1
 django-compressor==2.0
 gunicorn==19.3.0
 
-ccnmtlsettings==0.1.5
+ccnmtlsettings==0.1.6
