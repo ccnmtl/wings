@@ -1,15 +1,14 @@
-from annoying.decorators import render_to
 from .models import Quiz, Question, Answer
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.core.urlresolvers import reverse
 
 
-@render_to('quizblock/edit_quiz.html')
 def edit_quiz(request, id):
     quiz = get_object_or_404(Quiz, id=id)
     section = quiz.pageblock().section
-    return dict(quiz=quiz, section=section)
+    return render(request, 'quizblock/edit_quiz.html',
+                  dict(quiz=quiz, section=section))
 
 
 def delete_question(request, id):
@@ -70,7 +69,6 @@ def add_question_to_quiz(request, id):
     return HttpResponseRedirect(reverse("edit-quiz", args=[quiz.id]))
 
 
-@render_to('quizblock/edit_question.html')
 def edit_question(request, id):
     question = get_object_or_404(Question, id=id)
     if request.method == "POST":
@@ -80,7 +78,8 @@ def edit_question(request, id):
         return (
             HttpResponseRedirect(reverse("edit-question", args=[question.id]))
         )
-    return dict(question=question)
+    return render(request, 'quizblock/edit_question.html',
+                  dict(question=question))
 
 
 def add_answer_to_question(request, id):
@@ -95,7 +94,6 @@ def add_answer_to_question(request, id):
     return HttpResponseRedirect(reverse("edit-question", args=[question.id]))
 
 
-@render_to('quizblock/edit_answer.html')
 def edit_answer(request, id):
     answer = get_object_or_404(Answer, id=id)
     if request.method == "POST":
@@ -103,4 +101,4 @@ def edit_answer(request, id):
         answer = form.save(commit=False)
         answer.save()
         return HttpResponseRedirect(reverse("edit-answer", args=[answer.id]))
-    return dict(answer=answer)
+    return render(request, 'quizblock/edit_answer.html', dict(answer=answer))

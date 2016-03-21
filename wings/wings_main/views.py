@@ -1,7 +1,6 @@
-from annoying.decorators import render_to
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.template import RequestContext, loader
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from .models import Participant, traverse_tree, section_rank
@@ -231,7 +230,6 @@ def selenium_teardown():
 
 
 @login_required
-@render_to('wings_main/selenium.html')
 def selenium(request, task):
     if not request.user.is_staff:
         return HttpResponseRedirect("/first/")
@@ -243,11 +241,10 @@ def selenium(request, task):
     if task == 'teardown':
         sel_message = "success"
 
-    return (
-        {'task': task,
-         'sel_message': sel_message,
-         'selenium_test_user_id': settings.SELENIUM_TEST_USER_ID}
-    )
+    return render(request, 'wings_main/selenium.html',
+                  {'task': task,
+                   'sel_message': sel_message,
+                   'selenium_test_user_id': settings.SELENIUM_TEST_USER_ID})
 
 
 @login_required
@@ -316,7 +313,6 @@ def launch_participant(request, id_string):
 
 
 @login_required
-@render_to('wings_main/exit_materials.html')
 def participant_exit_materials(request):
     """
     Show the exit materials for the logged in user (mostly this will
@@ -324,11 +320,10 @@ def participant_exit_materials(request):
     (r'^exit_materials/', 'wings_main.views.participant_exit_materials'),
 
     """
-    return exit_materials_nodes()
+    return exit_materials_nodes(request)
 
 
 @login_required
-@render_to('wings_main/exit_materials.html')
 def exit_materials(request, id_string):
     """
     logout user (if necessary), log in as a participant, and then show
@@ -340,16 +335,16 @@ def exit_materials(request, id_string):
     """
     if request.user.is_staff:
         make_and_login_participant(id_string, request)
-        return exit_materials_nodes()
+        return exit_materials_nodes(request)
 
     if (request.user.part() is not None and
             request.user.part().id_string == long(id_string)):
-        return exit_materials_nodes()
+        return exit_materials_nodes(request)
 
     return HttpResponseRedirect('/logout/')
 
 
-def exit_materials_nodes():
+def exit_materials_nodes(request):
     safety_plan_part_1_node_list = []
     traverse_tree(
         PageBlock.objects.get(id=settings.SAFETY_PLAN_PART_1_ID).section,
@@ -370,7 +365,7 @@ def exit_materials_nodes():
     resources_node = PageBlock.objects.get(id=settings.RESOURCES_NODE_ID)
     action_plan_node = PageBlock.objects.get(id=settings.ACTION_PLAN_NODE_ID)
 
-    return {
+    return render(request, 'wings_main/exit_materials.html', {
         'safety_plan_part_1_node_list': safety_plan_part_1_node_list,
         'safety_plan_part_2_node_list': safety_plan_part_2_node_list,
         'goal_setting_node_list': goal_setting_node_list,
@@ -379,15 +374,14 @@ def exit_materials_nodes():
         'ssnm_tree_node': ssnm_tree_node,
         'resources_node': resources_node,
         'action_plan_node': action_plan_node,
-    }
+    })
 
 
 @staff_or_404
-@render_to('wings_main/summary.html')
 def summary(request):
     node_list = []
     traverse_tree(Hierarchy.objects.all()[0].get_root(), node_list)
-    return {'tree': node_list}
+    return render(request, 'wings_main/summary.html', {'tree': node_list})
 
 
 def all_questions_in_order():
@@ -441,7 +435,6 @@ def estimate_intervals(all_submission_dates):
 
 
 @staff_or_404
-@render_to('wings_main/all_answers.html')
 def all_answers(request):
     """ all numerical answers for all users in a giant table. Also
     contains intervention length estimate"""
@@ -458,10 +451,10 @@ def all_answers(request):
         except KeyError:
             u.how_long = -9
 
-    return {
+    return render(request, 'wings_main/all_answers.html', {
         'users': users,
         'questions': all_questions_in_order(),
-    }
+    })
 
 
 def sum_of_gaps_longer_than_x_minutes(x, list_of_timestamps):
@@ -519,7 +512,6 @@ def calculate_user_gaps(users, the_table):
 
 
 @staff_or_404
-@render_to('wings_main/timestamps.html')
 def timestamps(request):
     """when the user was signed up, and when they answered all the questions.
 
@@ -597,38 +589,35 @@ def timestamps(request):
                 for t in the_table if (t['qid'] == q.id and t['uid'] == u.id)]
             u.dates.append(dates_for_this_question)
 
-    return {
+    return render(request, 'wings_main/timestamps.html', {
         'users': users,
         'questions': all_the_questions,
-    }
+    })
 
 
 @staff_or_404
-@render_to('wings_main/text_answers.html')
 def text_answers(request):
     """ all text answers for all users in a giant table"""
     node_list = []
     traverse_tree(Hierarchy.objects.all()[0].get_root(), node_list)
-    return {
+    return render(request, 'wings_main/text_answers.html', {
         'users': [u for u in User.objects.all() if u.part()],
         'questions': all_questions_in_order(),
-    }
+    })
 
 
 @staff_or_404
-@render_to('wings_main/all_answers_key.html')
 def all_answers_key(request):
     """ key for the above"""
-    return {
+    return render(request, 'wings_main/all_answers_key.html', {
         'questions': all_questions_in_order(),
-    }
+    })
 
 
 @staff_or_404
-@render_to('wings_main/all_answers_key_table.html')
 def all_answers_key_table(request):
     """ An easy-to-import-into-EXCEL tabular version of
     all_answers_key above."""
-    return {
+    return render(request, 'wings_main/all_answers_key_table.html', {
         'questions': all_questions_in_order(),
-    }
+    })

@@ -1,5 +1,5 @@
-from annoying.decorators import render_to
 from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render
 from pagetree.helpers import get_section_from_path, get_module
 from pagetree.helpers import needs_submit, submitted
 from django.contrib.auth.decorators import login_required
@@ -42,7 +42,6 @@ def root_page(section, root):
 
 
 @login_required
-@render_to('main/page.html')
 @stand()
 def page(request, path):
     hierarchy = request.get_host()
@@ -80,23 +79,25 @@ def page(request, path):
     the_decoration_info = decoration_info(section)
     action_type_summary = ActionType.summary()
 
-    return dict(section=section,
-                module=module,
-                needs_submit=needs_submit(section),
-                is_submitted=submitted(section, request.user),
-                stand=request.stand,
-                modules=root.get_children(),
-                root=section.hierarchy.get_root(),
-                can_edit=can_edit,
-                can_admin=can_admin,
-                show_decorations=show_decorations,
-                decoration_info=the_decoration_info,
-                action_type_summary=action_type_summary
-                )
+    return render(
+        request, 'main/page.html',
+        dict(
+            section=section,
+            module=module,
+            needs_submit=needs_submit(section),
+            is_submitted=submitted(section, request.user),
+            stand=request.stand,
+            modules=root.get_children(),
+            root=section.hierarchy.get_root(),
+            can_edit=can_edit,
+            can_admin=can_admin,
+            show_decorations=show_decorations,
+            decoration_info=the_decoration_info,
+            action_type_summary=action_type_summary
+        ))
 
 
 @login_required
-@render_to('main/edit_page.html')
 @stand()
 def edit_page(request, path):
     hierarchy = request.get_host()
@@ -105,10 +106,12 @@ def edit_page(request, path):
         return HttpResponse("you do not have admin permission")
     can_admin = request.stand.can_admin(request.user)
     root = section.hierarchy.get_root()
-    return dict(section=section,
-                module=get_module(section),
-                modules=root.get_children(),
-                stand=request.stand,
-                can_admin=can_admin,
-                available_pageblocks=request.stand.available_pageblocks(),
-                root=section.hierarchy.get_root())
+    return render(
+        request, 'main/edit_page.html',
+        dict(section=section,
+             module=get_module(section),
+             modules=root.get_children(),
+             stand=request.stand,
+             can_admin=can_admin,
+             available_pageblocks=request.stand.available_pageblocks(),
+             root=section.hierarchy.get_root()))
