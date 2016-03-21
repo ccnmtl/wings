@@ -15,7 +15,7 @@ flake8==2.5.4
 logilab-common==1.1.0
 logilab-astng==0.24.3
 pylint==1.5.4
-fuzzywuzzy==0.8.0
+fuzzywuzzy==0.10.0
 sure==1.2.24
 traitlets==4.0.0
 ipython_genutils==0.1.0
