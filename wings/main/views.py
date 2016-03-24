@@ -57,7 +57,7 @@ def page(request, path):
     if request.method == "POST":
         # user has submitted a form. deal with it
         section.submit(request.POST, request.user)
-        next_path = path_from_destination(request)
+        next_path = path_from_destination(request, section)
         if next_path is not None:
             return HttpResponseRedirect(next_path)
     # Wings-specific modifications:
