@@ -57,16 +57,9 @@ def page(request, path):
     if request.method == "POST":
         # user has submitted a form. deal with it
         section.submit(request.POST, request.user)
-        if request.POST['destination'] == '':
-            return HttpResponseRedirect(section.get_absolute_url())
-
-        if request.POST['destination'] == 'previous':
-            return (
-                HttpResponseRedirect(section.get_previous().get_absolute_url())
-            )
-
-        if request.POST['destination'] == 'next':
-            return HttpResponseRedirect(section.get_next().get_absolute_url())
+        next_path = path_from_destination(request)
+        if next_path is not None:
+            return HttpResponseRedirect(next_path)
     # Wings-specific modifications:
     if not check_next_page(request, section):
         return (
@@ -93,6 +86,17 @@ def page(request, path):
             decoration_info=the_decoration_info,
             action_type_summary=action_type_summary
         ))
+
+
+def path_from_destination(request, section):
+    if request.POST['destination'] == '':
+        return section.get_absolute_url()
+
+    if request.POST['destination'] == 'previous':
+        return section.get_previous().get_absolute_url()
+
+    if request.POST['destination'] == 'next':
+        return section.get_next().get_absolute_url()
 
 
 @login_required
