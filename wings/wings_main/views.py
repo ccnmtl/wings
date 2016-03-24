@@ -578,7 +578,18 @@ def timestamps(request):
             intervals[user_id] = -9
             intervals_first_24_hrs[user_id] = -9
 
-    # get the view table ready:
+    users = get_the_view_table_ready(
+        users, intervals, intervals_first_24_hrs, all_the_questions,
+        the_table)
+
+    return render(request, 'wings_main/timestamps.html', {
+        'users': users,
+        'questions': all_the_questions,
+    })
+
+
+def get_the_view_table_ready(users, intervals, intervals_first_24_hrs,
+                             all_the_questions, the_table):
     for u in users:
         u.dates = []
         u.how_long = intervals[u.id]
@@ -588,11 +599,6 @@ def timestamps(request):
                 (q.id, t['date'])
                 for t in the_table if (t['qid'] == q.id and t['uid'] == u.id)]
             u.dates.append(dates_for_this_question)
-
-    return render(request, 'wings_main/timestamps.html', {
-        'users': users,
-        'questions': all_the_questions,
-    })
 
 
 @staff_or_404
