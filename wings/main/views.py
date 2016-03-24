@@ -51,8 +51,6 @@ def page(request, path):
 
     if not request.stand.can_view(request.user):
         return HttpResponse("you do not have permission")
-    can_edit = request.stand.can_edit(request.user)
-    can_admin = request.stand.can_admin(request.user)
     if section.id == root.id:
         return root_page(section, root)
 
@@ -89,8 +87,8 @@ def page(request, path):
             stand=request.stand,
             modules=root.get_children(),
             root=section.hierarchy.get_root(),
-            can_edit=can_edit,
-            can_admin=can_admin,
+            can_edit=request.stand.can_edit(request.user),
+            can_admin=request.stand.can_admin(request.user),
             show_decorations=show_decorations,
             decoration_info=the_decoration_info,
             action_type_summary=action_type_summary
