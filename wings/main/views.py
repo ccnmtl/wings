@@ -51,24 +51,15 @@ def page(request, path):
 
     if not request.stand.can_view(request.user):
         return HttpResponse("you do not have permission")
-    can_edit = request.stand.can_edit(request.user)
-    can_admin = request.stand.can_admin(request.user)
     if section.id == root.id:
         return root_page(section, root)
 
     if request.method == "POST":
         # user has submitted a form. deal with it
         section.submit(request.POST, request.user)
-        if request.POST['destination'] == '':
-            return HttpResponseRedirect(section.get_absolute_url())
-
-        if request.POST['destination'] == 'previous':
-            return (
-                HttpResponseRedirect(section.get_previous().get_absolute_url())
-            )
-
-        if request.POST['destination'] == 'next':
-            return HttpResponseRedirect(section.get_next().get_absolute_url())
+        next_path = path_from_destination(request, section)
+        if next_path is not None:
+            return HttpResponseRedirect(next_path)
     # Wings-specific modifications:
     if not check_next_page(request, section):
         return (
@@ -89,12 +80,23 @@ def page(request, path):
             stand=request.stand,
             modules=root.get_children(),
             root=section.hierarchy.get_root(),
-            can_edit=can_edit,
-            can_admin=can_admin,
+            can_edit=request.stand.can_edit(request.user),
+            can_admin=request.stand.can_admin(request.user),
             show_decorations=show_decorations,
             decoration_info=the_decoration_info,
             action_type_summary=action_type_summary
         ))
+
+
+def path_from_destination(request, section):
+    if request.POST['destination'] == '':
+        return section.get_absolute_url()
+
+    if request.POST['destination'] == 'previous':
+        return section.get_previous().get_absolute_url()
+
+    if request.POST['destination'] == 'next':
+        return section.get_next().get_absolute_url()
 
 
 @login_required
