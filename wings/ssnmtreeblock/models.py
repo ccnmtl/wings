@@ -28,14 +28,12 @@ class SsnmTreeBlock(models.Model):
     editable_support_types = models.ManyToManyField(
         'SsnmTreeSupportType',
         blank=True,
-        null=True,
         related_name='blocks_where_you_can_edit_this_support_type',
         help_text="Support Types you can *edit* on this page.")
 
     visible_support_types = models.ManyToManyField(
         'SsnmTreeSupportType',
         blank=True,
-        null=True,
         related_name='blocks_where_you_can_see_this_support_type',
         help_text="Support Types you can *see* on this page.")
 
