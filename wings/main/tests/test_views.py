@@ -10,7 +10,7 @@ class SimpleViewTest(TestCase):
 
     def test_index(self):
         r = self.c.get("/")
-        self.assertEqual(r.status_code, 301)
+        self.assertEqual(r.status_code, 302)
 
     def test_participant_admin(self):
         r = self.c.get('/admin/wings_main/participant/')

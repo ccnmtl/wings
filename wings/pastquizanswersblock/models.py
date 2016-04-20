@@ -1,11 +1,11 @@
 from django.db import models
 from pagetree.models import PageBlock
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericRelation
 from django import forms
 
 
 class PastQuizAnswersBlock(models.Model):
-    pageblocks = generic.GenericRelation(PageBlock)
+    pageblocks = GenericRelation(PageBlock)
     description = models.TextField(blank=True)
     copy = models.TextField(blank=True)
 

@@ -41,8 +41,6 @@ INSTALLED_APPS += [  # noqa
     'wings.pastquizanswersblock',
     'wings.analytics',
     'wings.wings_main',
-    'paging',
-    'indexer',
 ]
 
 PAGEBLOCKS = [
