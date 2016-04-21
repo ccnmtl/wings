@@ -1,6 +1,6 @@
 from django.db import models
 from pagetree.models import PageBlock
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericRelation
 from django import forms
 from django.conf import settings
 from wings.quizblock.models import Answer, Submission, Response
@@ -64,7 +64,7 @@ def risk_copy(block, user):
 
 
 class RiskBlock(models.Model):
-    pageblocks = generic.GenericRelation(PageBlock)
+    pageblocks = GenericRelation(PageBlock)
     no_risk_copy = models.TextField(blank=True)
     some_risk_copy = models.TextField(blank=True)
     severe_risk_copy = models.TextField(blank=True)

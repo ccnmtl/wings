@@ -2,7 +2,7 @@ from django.db import models
 from pagetree.models import PageBlock
 from wings.quizblock.models import Answer, Question
 from django.contrib.auth.models import User
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericRelation
 from django import forms
 from django.forms.widgets import RadioSelect
 
@@ -16,7 +16,7 @@ DEFAULT_PAGE_TYPE_CHOICE = 'page_1'
 
 
 class ServicesBlock(models.Model):
-    pageblocks = generic.GenericRelation(PageBlock)
+    pageblocks = GenericRelation(PageBlock)
     description = models.TextField(blank=True)
 
     template_file = "servicesblock/servicesblock.html"

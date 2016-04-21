@@ -19,7 +19,7 @@ class ActionTakenAdmin(admin.ModelAdmin):
     # don't show the links to the user in the list display
     def __init__(self, *args, **kwargs):
         super(ActionTakenAdmin, self).__init__(*args, **kwargs)
-        self.list_display_links = (None, )
+        self.list_display_links = ()
 
     def get_changelist(self, request, **kwargs):
         return SpecialOrderingChangeList

@@ -1,7 +1,7 @@
 from django.db import models
 from pagetree.models import PageBlock
 from django.contrib.auth.models import User
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericRelation
 from django import forms
 from datetime import datetime
 from django.core.urlresolvers import reverse
@@ -9,7 +9,7 @@ from django.conf import settings
 
 
 class Quiz(models.Model):
-    pageblocks = generic.GenericRelation(PageBlock)
+    pageblocks = GenericRelation(PageBlock)
     description = models.TextField(blank=True)
     rhetorical = models.BooleanField(default=False)
     allow_redo = models.BooleanField(default=True)
@@ -171,7 +171,6 @@ class Question(models.Model):
     intro_text = models.TextField(blank=True)
 
     class Meta:
-        ordering = ('quiz',)
         order_with_respect_to = 'quiz'
 
     def __unicode__(self):
@@ -280,7 +279,6 @@ class Answer(models.Model):
     correct = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ('question',)
         order_with_respect_to = 'question'
 
     def __unicode__(self):

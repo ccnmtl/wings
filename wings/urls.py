@@ -79,7 +79,7 @@ urlpatterns = patterns(
 
     url(r'^admin/', include(admin.site.urls)),
 
-    ('^smoketest/$', include('smoketest.urls')),
+    ('^smoketest/', include('smoketest.urls')),
 
     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve',
      {'document_root': settings.UPLOADS_ROOT}),

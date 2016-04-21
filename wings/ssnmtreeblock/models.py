@@ -1,7 +1,7 @@
 from django.db import models
 from pagetree.models import PageBlock
 from django.contrib.auth.models import User
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericRelation
 from django import forms
 
 from django.forms.widgets import RadioSelect
@@ -16,7 +16,7 @@ SSNM_PAGE_TYPE_CHOICES = (
 
 
 class SsnmTreeBlock(models.Model):
-    pageblocks = generic.GenericRelation(PageBlock)
+    pageblocks = GenericRelation(PageBlock)
     error_copy = models.TextField(blank=True, null=True)
     page_type = models.TextField(
         choices=SSNM_PAGE_TYPE_CHOICES,
