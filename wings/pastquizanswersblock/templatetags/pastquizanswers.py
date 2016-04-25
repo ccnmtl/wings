@@ -4,11 +4,6 @@ from wings.quizblock.models import Question, Response, Submission, Answer
 register = template.Library()
 
 
-def print_if_testing(a):
-    if False:
-        print a
-
-
 def match_against_string(response, string_to_match):
     if response.question.is_short_text() or response.question.is_long_text():
         return response.value == string_to_match
@@ -20,8 +15,6 @@ def match_against_string(response, string_to_match):
         if not answer_set:
             return False
         tmp = dict((r.value, r.label) for r in answer_set)[response.value]
-        print_if_testing('found an answer to ' + response.__unicode__())
-        print_if_testing(tmp)
         return tmp == string_to_match
 
 
@@ -36,8 +29,6 @@ def to_text(response):
         if not answer_set:
             return ''
         tmp = dict((r.value, r.label) for r in answer_set)[response.value]
-        print_if_testing('found an answer to ' + response.__unicode__())
-        print_if_testing(tmp)
         return tmp
 
 
@@ -61,7 +52,6 @@ def interpolate_previous_answer(user, question_id):
 @register.simple_tag
 def test_answer(user, question_id, value_to_match,
                 output_if_match, output_if_no_match):
-    print_if_testing('testing %d' % question_id)
 
     que = Question.objects.get(id=question_id)
     if not que:
@@ -114,8 +104,6 @@ def to_number(response):
             # print ' response.value is ', response.value
             return use_title('???', '???')
 
-        print_if_testing('found an answer to ' + response.__unicode__())
-        print_if_testing(tmp)
         return use_title(response.value, tmp)
 
 
