@@ -22,8 +22,6 @@ PROJECT_APPS = [
 # intervention:
 DECORATION_IMAGE_PATH = '/img/decoration_images/'
 
-SELENIUM_TESTS_URL = '/media/selenium/TestRunner.html'
-
 APPEND_SLASH = False
 
 INSTALLED_APPS += [  # noqa
@@ -76,9 +74,6 @@ SITE_MEDIA_URL = '/media/'
 # question_id's for questions that don't require an answer for the user to
 # progress to the next page:
 OPTIONAL_QUESTIONS = [222, 235, 162, 168, 240, 242]
-
-# Fake user for the Selenium tests:
-SELENIUM_TEST_USER_ID = 999999999999
 
 THUMBNAIL_SUBDIR = "thumbs"
 

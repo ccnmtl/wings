@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from pagetree.models import Section
-from django.conf import settings
 from django.contrib import messages
 
 
@@ -63,10 +62,6 @@ class Participant(models.Model):
         return self.created_on.strftime("%a, %B %d,  %Y, %I:%M %p")
     created_on_string.admin_order_field = 'created_on'
     created_on_string.short_description = 'Date created'
-
-    def is_test(self):
-        """ the interface behaves slightly differently for the test user."""
-        return self.id_string == settings.SELENIUM_TEST_USER_ID
 
     def all_unlocked(self, section, request):
         """for Wings, don't allow participant users to go forward
