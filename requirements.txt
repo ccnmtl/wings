@@ -32,8 +32,6 @@ python-mimeparse==0.1.4
 testtools==1.8.0
 testscenarios==0.5.0
 python-subunit==1.2.0
-lettuce==0.2.19ccnmtl
-selenium==2.48.0
 python-ldap==2.4.22
 lxml==3.6.0
 fake-factory==0.5.3

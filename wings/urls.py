@@ -58,15 +58,6 @@ urlpatterns = patterns(
     (r'^pagetree/', include('pagetree.urls')),
     (r'^_quiz/', include('wings.quizblock.urls')),
 
-
-    (r'^test$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
-    (r'^tests$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
-    (r'^test/$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
-    (r'^tests/$', RedirectView.as_view(url=settings.SELENIUM_TESTS_URL)),
-
-    (r'^selenium/(?P<task>\w+)/$',
-     'wings.wings_main.views.selenium'),
-
     # Logging clicks on UI elements via AJAX:
     (r'^log_action/(?P<action_id>\d+)/on_section/(?P<section_id>\d+)/$',
      'wings.analytics.views.log_action'),

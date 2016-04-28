@@ -192,61 +192,6 @@ def destination_on_check_next_page_fail(request):
     return user_participant.current_url()
 
 
-def selenium_teardown():
-    """ axe everything to do with the test user."""
-    users_to_delete, participants_to_delete = [], []
-    submissions_to_delete, responses_to_delete = [], []
-    ssnm_persons_to_delete, narrowed_down_answers_to_delete, = [], []
-
-    participants_to_delete.extend(
-        Participant.objects.filter(
-            id_string=settings.SELENIUM_TEST_USER_ID))
-    users_to_delete.extend(
-        p.user for p in participants_to_delete if p.user is not None)
-
-    ssnm_persons_to_delete.extend(u.ssnmtreeperson_set.all()
-                                  for u in users_to_delete)
-    narrowed_down_answers_to_delete.extend(u.narroweddownanswer_set.all()
-                                           for u in users_to_delete)
-    for u in users_to_delete:
-        for s in u.submission_set.all():
-            submissions_to_delete.append(s)
-
-    responses_to_delete.extend(s.response_set.all()
-                               for s in submissions_to_delete)
-
-    for x in [ssnm_persons_to_delete +
-              narrowed_down_answers_to_delete +
-              responses_to_delete +
-              submissions_to_delete +
-              participants_to_delete +
-              users_to_delete]:
-        x.delete()
-
-    # assert there is no user with id settings.SELENIUM_TEST_USER_ID
-    assert len(
-        Participant.objects.filter(
-            id_string=settings.SELENIUM_TEST_USER_ID)) == 0
-
-
-@login_required
-def selenium(request, task):
-    if not request.user.is_staff:
-        return HttpResponseRedirect("/first/")
-
-    selenium_teardown()
-    if task == 'setup':
-        sel_message = "proceed"
-
-    if task == 'teardown':
-        sel_message = "success"
-
-    return render(request, 'wings_main/selenium.html',
-                  {'task': task,
-                   'sel_message': sel_message,
-                   'selenium_test_user_id': settings.SELENIUM_TEST_USER_ID})
-
-
 @login_required
 def first(request):
     """ Just a convenience URL that points at whichever section
