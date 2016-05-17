@@ -65,6 +65,6 @@ django-ga-context==0.1.0
 django-debug-toolbar==1.4
 django-appconf==1.0.2
 django-compressor==2.0
-gunicorn==19.4.5
+gunicorn==19.5.0
 
 ccnmtlsettings==0.2.0
