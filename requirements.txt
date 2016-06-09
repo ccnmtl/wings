@@ -54,7 +54,7 @@ django-markwhat==1.5
 djangowind==0.15.0
 sorl==3.1
 django-pagetree==1.1.15
-raven==5.19.0
+raven==5.20.0
 django-pageblocks==1.0.4
 django-audioblock==1.1.0
 django-pagetree_export==0.4
