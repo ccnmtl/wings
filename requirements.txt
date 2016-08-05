@@ -57,7 +57,7 @@ django-markwhat==1.5
 django-bootstrap3==7.0.1
 djangowind==0.15.0
 sorl==3.1
-django-pagetree==1.2.1
+django-pagetree==1.2.2
 raven==5.23.0
 django-pageblocks==1.0.4
 django-audioblock==1.1.0
