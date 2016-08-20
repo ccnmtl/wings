@@ -5,7 +5,7 @@ pyenchant==1.6.7
 smartypants==1.8.6
 uuid==1.30
 psycopg2==2.6.2
-Pillow==3.3.0
+Pillow==3.3.1
 coverage==4.2
 versiontools==1.9.1
 pyflakes==1.2.3
