@@ -74,4 +74,4 @@ django-compressor==2.1
 gunicorn==19.6.0
 django-smtp-ssl==1.0
 
-ccnmtlsettings==1.1.2
+ccnmtlsettings==1.2.0
