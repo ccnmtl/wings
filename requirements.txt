@@ -55,7 +55,7 @@ django-statsd-mozilla==0.3.16
 django-smartif==0.1
 django-markwhat==1.5
 django-bootstrap3==7.1.0
-djangowind==0.16.0
+djangowind==0.16.1
 sorl==3.1
 django-pagetree==1.2.4
 raven==5.32.0
