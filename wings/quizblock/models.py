@@ -100,20 +100,18 @@ class Quiz(models.Model):
 
     @classmethod
     def create(self, request):
+        rhetorical = request.POST.get('rhetorical', '') != ''
+        allow_redo = request.POST.get('allow_redo', '') != ''
         return Quiz.objects.create(
             description=request.POST.get('description', ''),
-            rhetorical=request.POST.get(
-                'rhetorical',
-                ''),
-            allow_redo=request.POST.get(
-                'allow_redo',
-                ''),
+            rhetorical=rhetorical,
+            allow_redo=allow_redo,
         )
 
     def edit(self, vals, files):
         self.description = vals.get('description', '')
-        self.rhetorical = vals.get('rhetorical', '')
-        self.allow_redo = vals.get('allow_redo', '')
+        self.rhetorical = vals.get('rhetorical', False)
+        self.allow_redo = vals.get('allow_redo', False)
         self.save()
 
     def add_question_form(self, request=None):
