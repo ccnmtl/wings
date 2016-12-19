@@ -42,7 +42,7 @@ lxml==3.7.0
 ipaddress==1.0.17
 python-dateutil==2.6.0
 Faker==0.7.3
-factory_boy==2.7.0
+factory_boy==2.8.1
 statsd==3.2.1
 six==1.10.0
 sqlparse==0.2.2
