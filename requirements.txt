@@ -38,7 +38,7 @@ testtools==2.2.0
 testscenarios==0.5.0
 python-subunit==1.2.0
 ldap3==2.1.1
-lxml==3.7.0
+lxml==3.7.1
 ipaddress==1.0.17
 python-dateutil==2.6.0
 Faker==0.7.7
